@@ -70,10 +70,22 @@ def bibliography(papers):
             '| 年份 | 文献与原始来源 | 阅读深度 | 版本/状态 | 正文位置 |',
             '|---|---|---|---|---|']
     bib = ['% Generated from verified source catalogs. Partial author lists are marked with "and others".', '']
+    english = ['# References', '',
+               f'{len(papers)} distinct primary-source records, ordered by first-publication year. Community discussions are recorded separately. This is not a quality or popularity ranking.', '',
+               'Reading-depth labels are abbreviated; exact sections, limitations, and versions are recorded in [papers.json](data/papers.json). Full-text reading does not mean that every figure, proof, or experiment has been independently verified. Partial author lists are marked in the BibTeX export and should be completed from primary sources before submission.', '',
+               '| Year | Work and primary source | Reading depth | Version / type | Chapters |',
+               '|---|---|---|---|---|']
+    depth_en = {'摘要/元数据': 'Abstract / metadata', '摘要/引言': 'Abstract / introduction',
+                '全文文字': 'Full text', '官方报告选段': 'Official report sections',
+                '正文定向阅读': 'Selected full-text sections'}
     for p in sorted(papers, key=lambda x: (x['year'], x['title'])):
         locations = '、'.join(f'[{name[:2]}](docs/{name})' for name in p.get('cited_in', [])) or '索引／待深入综合'
         kind = '技术文章' if 'blog' in p['type'] else ('报告' if 'report' in p['type'] else '论文/预印本')
         rows.append(f"| {p['year']} | [{cell(p['title'])}]({p['canonical_url']}) | {reading_label(p)} | {version_label(p)} / {kind} | {locations} |")
+        en_locations = ', '.join(f'[{name[:2]}](docs/en/{name})' for name in p.get('cited_in', [])) or 'Catalog only'
+        en_kind = 'Technical article' if 'blog' in p['type'] else ('Report' if 'report' in p['type'] else 'Paper / preprint')
+        en_version = {'网页观测版': 'Web snapshot', '见元数据': 'See metadata'}.get(version_label(p), version_label(p))
+        english.append(f"| {p['year']} | [{cell(p['title'])}]({p['canonical_url']}) | {depth_en[reading_label(p)]} | {en_version} / {en_kind} | {en_locations} |")
         fields = {'title': p['title'], 'year': str(p['year']), 'url': p['canonical_url']}
         authors = p.get('authors')
         if authors:
@@ -87,6 +99,7 @@ def bibliography(papers):
             bib.append('  ' + k + ' = {' + v + '},')
         bib += ['}', '']
     (ROOT / 'REFERENCES.md').write_text('\n'.join(rows) + '\n')
+    (ROOT / 'REFERENCES.en.md').write_text('\n'.join(english) + '\n')
     (ROOT / 'references.bib').write_text('\n'.join(bib))
     (ROOT / 'data' / 'papers.json').write_text(json.dumps(papers, ensure_ascii=False, indent=2) + '\n')
 
@@ -164,7 +177,7 @@ def main():
 
 图为概念综合，不是实测曲线；箭头不自动意味着已证实的历史因果。
 
-阅读入口：[仓库说明](README.md) · [方法与范围](METHODOLOGY.md) · [文献索引](REFERENCES.md) · [更新日志](CHANGELOG.md)
+阅读入口：[中文首页](README-zh.md) · [English edition](SURVEY.en.md) · [方法与范围](METHODOLOGY.md) · [文献索引](REFERENCES.md) · [更新日志](CHANGELOG.md)
 
 '''
     parts = [lead]
@@ -175,7 +188,27 @@ def main():
     index = (ROOT / 'REFERENCES.md').read_text().split('| 年份 |', 1)[1]
     parts.append('| 年份 |' + index)
     (ROOT / 'SURVEY.zh-CN.md').write_text('\n\n---\n\n'.join(parts))
-    print(f'Built SURVEY.zh-CN.md, REFERENCES.md, references.bib, data/papers.json; {len(papers)} unique sources.')
+    en_lead = f'''# Scaling Law: A Problem-Driven Review
+
+Edition {state["edition"]} · Searches and verification through {date} · English living edition
+
+From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains {len(papers)} distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
+
+![Research problem evolution map](figures/evolution-map.png)
+
+The figure is a conceptual synthesis, not an experimental curve; arrows do not automatically establish historical causation.
+
+Reading links: [English homepage](README.md) · [Chinese edition](SURVEY.zh-CN.md) · [References](REFERENCES.en.md) · [Translation status](data/translation-status.json)
+
+'''
+    english = [en_lead]
+    for filename in CHAPTERS:
+        english.append(assemble_chapter(ROOT / 'docs/en' / filename))
+    english.append('## References\n\nFull metadata are available in the [reference index](REFERENCES.en.md), [BibTeX](references.bib), and [structured catalog](data/papers.json). Technical claims in the text link to their primary sources.\n')
+    index_en = (ROOT / 'REFERENCES.en.md').read_text().split('| Year |', 1)[1]
+    english.append('| Year |' + index_en)
+    (ROOT / 'SURVEY.en.md').write_text('\n\n---\n\n'.join(english))
+    print(f'Built Chinese and English surveys and reference indexes, BibTeX, and source metadata; {len(papers)} unique sources.')
 
 
 if __name__ == '__main__':

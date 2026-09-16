@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "source_language": "zh-CN",
+  "target_language": "en",
+  "reviewed_on": "2026-09-16",
+  "review_scope": "Complete chapter translations reviewed for argument, conditions, limitations, source-link multiplicity, and exact mathematics. Hashes detect later drift; they do not establish translation quality or independently revalidate the science.",
+  "chapters": {
+    "introduction.md": {
+      "source_path": "docs/introduction.md",
+      "translation_path": "docs/en/introduction.md",
+      "source_sha256": "3639e3b6defebc105ec56a35ff31ba6ad4e6a615e89ee5eddaa593684d22f8fe",
+      "translation_sha256": "4a95d0a25598bcd58e5646f7a4b36ead92a2c6d2875d6d617d48fe12762aa176",
+      "status": "reviewed_translation"
+    },
+    "01-predictability-budget.md": {
+      "source_path": "docs/01-predictability-budget.md",
+      "translation_path": "docs/en/01-predictability-budget.md",
+      "source_sha256": "4cd442bc8c97305056bda531f33d8a0028fbc4944d43c15101790f92dd49b059",
+      "translation_sha256": "a24120b7ffa2ba45543898fe0920a4bb3ae469b2ebc30a5ad3ea14449e1c71fd",
+      "status": "reviewed_translation"
+    },
+    "02-data.md": {
+      "source_path": "docs/02-data.md",
+      "translation_path": "docs/en/02-data.md",
+      "source_sha256": "667f1f7504a63ce465c2e89868151314de975d11f6e624624e312a32d417a3bd",
+      "translation_sha256": "ba11ba83b1b4642d2a66ad7723be6e1eeefadc978ff00a50ba3b7d5fe086e8da",
+      "status": "reviewed_translation"
+    },
+    "03-architecture-deployment.md": {
+      "source_path": "docs/03-architecture-deployment.md",
+      "translation_path": "docs/en/03-architecture-deployment.md",
+      "source_sha256": "18fc31b197e4eb3c0f5394017cace7e0424d3b387d1babfbbce2e1e0e754c65e",
+      "translation_sha256": "8873713ecf911dc8469f12ce02684179f097e95faad5451f604df3a9e114dafc",
+      "status": "reviewed_translation"
+    },
+    "04-posttraining.md": {
+      "source_path": "docs/04-posttraining.md",
+      "translation_path": "docs/en/04-posttraining.md",
+      "source_sha256": "df7eec01283cbb6ccba1f8b6f54f7008834fb56e5ee77adcc4fbf4fe9ffa451d",
+      "translation_sha256": "fa21ab9bdbfb73bf183424764547de70f86fdc89fa6af985619014eac8c692f2",
+      "status": "reviewed_translation"
+    },
+    "05-inference.md": {
+      "source_path": "docs/05-inference.md",
+      "translation_path": "docs/en/05-inference.md",
+      "source_sha256": "84754d5d5ca71934e8112dc16239ff400fae3e6c27f5839ee5fcd6e14c0b6db2",
+      "translation_sha256": "15abcc3f34fb4e76cb552b57ada05f66d631d5ff2c2d50818bb0a3bab9e437c8",
+      "status": "reviewed_translation"
+    },
+    "06-theory-evaluation.md": {
+      "source_path": "docs/06-theory-evaluation.md",
+      "translation_path": "docs/en/06-theory-evaluation.md",
+      "source_sha256": "67425c986794d738c4e8dba7b2a4a630488f7c23c77bf49f31d92fa25c4646b0",
+      "translation_sha256": "ea0059f87da7eba8f7b49e798ecce3df1da155133bac5f0ce1db4a72dfdaccd3",
+      "status": "reviewed_translation"
+    },
+    "07-multimodal.md": {
+      "source_path": "docs/07-multimodal.md",
+      "translation_path": "docs/en/07-multimodal.md",
+      "source_sha256": "5ffa6e4cc56a386dc97bf88d2faadc8c37cfc610df9fd6a88c48896bfddd877d",
+      "translation_sha256": "b080b47fec7ac01ededc7be4232f25f85881d238226aa2bca1a89c8aeb49e54a",
+      "status": "reviewed_translation"
+    },
+    "04-community-radar.md": {
+      "source_path": "docs/04-community-radar.md",
+      "translation_path": "docs/en/04-community-radar.md",
+      "source_sha256": "c8baf386fcc860388bd4e9080e02476442cbc55d4930d6e1abf7c87e92f4d8ec",
+      "translation_sha256": "3d06be30daee6d88adf494b71394c0254f9981b8b0dae3a48ee5ebf8149abbf1",
+      "status": "reviewed_translation"
+    },
+    "conclusion.md": {
+      "source_path": "docs/conclusion.md",
+      "translation_path": "docs/en/conclusion.md",
+      "source_sha256": "1da994adbac94b37ea4817e07e44b89386e4e76ada9daf2c52eb1a11a6af4630",
+      "translation_sha256": "2ae97a7173eae40295fce24c167df506d07089a0905c6f35236aa3aedb611ed9",
+      "status": "reviewed_translation"
+    },
+    "glossary.md": {
+      "source_path": "docs/glossary.md",
+      "translation_path": "docs/en/glossary.md",
+      "source_sha256": "3b7bbe4245a77d7f39371d12149387a3fd5190c79a41220a61835feeaa609c4e",
+      "translation_sha256": "4bd58d7ce4180a18006df4f31c327377084568a6ece1340dbff2f00011735158",
+      "status": "reviewed_translation"
+    },
+    "00-reference-method.md": {
+      "source_path": "docs/00-reference-method.md",
+      "translation_path": "docs/en/00-reference-method.md",
+      "source_sha256": "4193f1134476597a33944305d8cc2436d04fb37a70be6f857d8f58126f6d4a0b",
+      "translation_sha256": "ecba41a2aae87870ed5ae94a7aa922577b57ff08540d075d1bddaa4c081c1ad3",
+      "status": "reviewed_translation"
+    }
+  }
+}

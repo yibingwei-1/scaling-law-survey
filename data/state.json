@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "edition": "v0.2",
+  "edition": "v0.3",
   "last_successful_search": "2026-09-16",
   "last_content_update": "2026-09-16",
   "pdf_content_date": "2026-09-16",
@@ -45,5 +45,14 @@
     "摘要/元数据": 32,
     "官方报告选段": 1,
     "全文文字": 8
+  },
+  "languages": {
+    "default_homepage": "en",
+    "manuscripts": [
+      "en",
+      "zh-CN"
+    ],
+    "translated_chapters": 12,
+    "translation_reviewed_on": "2026-09-16"
   }
 }

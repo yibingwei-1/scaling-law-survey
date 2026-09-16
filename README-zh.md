@@ -8,7 +8,7 @@ Scaling law 的历史，是不断发现旧资源模型遗漏了什么、再重�
 
 每条主线按 **原始问题 → 核心洞见 → 方法机制 → 实验证据 → 剩余限制 → 后继分支** 展开。论文之间的连接区分直接回应、并行路线和综述归纳。
 
-**[完整综述](SURVEY.zh-CN.md)** · **[PDF 阅读版](output/pdf/scaling-law-survey.zh-CN.pdf)** · [文献与版本索引](REFERENCES.md) · [研究对话地图](docs/research-map.md) · [正文覆盖统计](docs/evidence-map.md) · [BibTeX](references.bib)
+**[中文完整综述](SURVEY.zh-CN.md)** · **[中文 PDF](output/pdf/scaling-law-survey.zh-CN.pdf)** · [English survey](SURVEY.en.md) · [English PDF](output/pdf/scaling-law-survey.en.pdf) · [文献与版本索引](REFERENCES.md) · [研究对话地图](docs/research-map.md) · [正文覆盖统计](docs/evidence-map.md) · [BibTeX](references.bib)
 
 ![Scaling law 的问题演化图](figures/evolution-map.png)
 
@@ -32,7 +32,7 @@ Scaling law 的历史，是不断发现旧资源模型遗漏了什么、再重�
 
 完整阅读了 [JonnesLin/post-training-survey](https://github.com/JonnesLin/post-training-survey/tree/main) 的中文前言、导论、七章、结论及 design/plan 文档，并核对其 468 条书目与正文 440 个唯一引用键。借鉴其问题演化图、分层展开和跨章联系；技术结论回到各自主源核验。[详细结构与生成方法拆解](docs/00-reference-method.md)。
 
-新增[两方面分析：文献研究与仓库出版结构](docs/reference-repository-analysis.md)，核对参考的双语章节、Markdown 用途、LaTeX、引用、研究笔记及发行方式，并列出本仓库的重构目标。当前仍为中文 Markdown/PDF 版，英文正文与 LaTeX 构建尚未实现；设计记录不代表迁移已完成。
+新增[两方面分析：文献研究与仓库出版结构](docs/reference-repository-analysis.md)，核对参考的双语章节、Markdown 用途、LaTeX、引用、研究笔记及发行方式，并列出本仓库的重构目标。当前已提供完整中英文 Markdown 正文与 PDF，默认首页为英文；LaTeX 构建仍未实现。分析文档保留当时的结构审查与后续目标，不代表所有目标都已完成。
 
 v0.1 只有45条主源、三篇压缩技术章，深度与覆盖不足。本次重构为七篇独立技术章，约3.7万正文汉字；文献库含161条去重主源，其中151条在技术章节实际引用。文献库规模、正文引用量和阅读深度分别报告。最新精确统计见[覆盖地图](docs/evidence-map.md)及[机器可读审计](data/citation-audit.json)；候选条目不冒充已精读论文。
 
@@ -44,7 +44,7 @@ X、YouTube、Reddit 目前有18条可回溯记录，包含作者发布、研究
 
 ## 持续维护
 
-已启用每周一 09:00（America/Los_Angeles）的 Codex 维护任务，检索论文、作者 blog、technical report 与三类社区，核验后更新问题链、文献、PDF与本仓库。只有实质变化、失败或需要用户操作时通知。调度依赖本地任务运行环境，具体流程见[UPDATING.md](UPDATING.md)。
+已启用每周一 09:00（America/Los_Angeles）的 Codex 维护任务，检索论文、作者 blog、technical report 与三类社区，核验后同步更新中英文问题链、文献、两种语言的 PDF 与本仓库。只有实质变化、失败或需要用户操作时通知。调度依赖本地任务运行环境，具体流程见[UPDATING.md](UPDATING.md)。
 
 - [检索与写作方法](METHODOLOGY.md)
 - [更新日志](CHANGELOG.md)与[发布状态](PUBLISHING.md)
@@ -54,7 +54,8 @@ X、YouTube、Reddit 目前有18条可回溯记录，包含作者发布、研究
 python3 scripts/build_survey.py
 python3 scripts/validate.py
 # PDF: reportlab、Pillow、pypdf；matplotlib用于数学排版
-python3 scripts/build_pdf.py --check
+python3 scripts/build_pdf.py --language zh --check
+python3 scripts/build_pdf.py --language en --check
 ```
 
-`docs/` 的七篇技术章与 `sources/` 的核验记录是维护源；完整综述、索引、正文覆盖审计与PDF由脚本构建。文中原论文、社区内容及参考仓库归原作者所有；本仓库只分发原创综合和链接，不分发第三方全文。
+`docs/` 的中文源章节、`docs/en/` 的完整英文对应章节与 `sources/` 的核验记录是维护源；两种语言的完整综述、索引、正文覆盖审计与 PDF 由脚本构建。[翻译复核记录](data/translation-status.json)检测任一语言的变化，复核后才更新文件指纹。文中原论文、社区内容及参考仓库归原作者所有；本仓库只分发原创综合和链接，不分发第三方全文。

@@ -1,6 +1,6 @@
 {
   "checked_on": "2026-09-16",
-  "edition": "v0.2",
+  "edition": "v0.3",
   "source_records": 161,
   "sources_cited_in_technical_chapters": 151,
   "technical_chapters": 7,
@@ -11,12 +11,40 @@
   "display_formulas_rendered": 23,
   "display_formula_fallbacks": 0,
   "local_links_and_schema": "pass",
-  "review": "All 58 PDF pages checked in contact sheets, with full-page checks of the contents, budget formulas, RL objective, mixed-modal formula and bibliography. Final inline notation changes checked separately. Key claims cross-reviewed; correction records in sources.",
+  "review": "Both PDFs inspected across all pages in contact sheets; selected English equation, contents, table, and bibliography pages checked at page scale. Previously reviewed Chinese content retained; changed Chinese pages 28–29 checked after the code-fence fix. Translations cross-reviewed for retained evidence conditions and limitations. The bilingual Markdown build is deterministic.",
   "limits": [
     "No independent rerun of cited experiments",
     "External URL availability is based on research verification logs, not an automated live link crawl",
     "Citation counts include explicitly marked abstract candidates and do not measure reading depth",
-    "Inline math uses readable text notation; display math is rendered"
+    "Inline math uses readable text notation; display math is rendered",
+    "Mermaid diagrams remain in the Markdown edition; the PDF displays an explicit note instead of rendering them. The separate overview figure is included in both PDFs."
   ],
-  "publication": "Public GitHub repository yibingwei-1/scaling-law-survey, main branch"
+  "publication": "Public GitHub repository yibingwei-1/scaling-law-survey, main branch",
+  "pdfs": {
+    "zh-CN": {
+      "pages": 58,
+      "link_annotations": 612,
+      "display_formulas_rendered": 23,
+      "display_formula_fallbacks": 0
+    },
+    "en": {
+      "pages": 82,
+      "link_annotations": 656,
+      "display_formulas_rendered": 23,
+      "display_formula_fallbacks": 0
+    }
+  },
+  "translation_review": {
+    "chapters": 12,
+    "status": "pass",
+    "checks": [
+      "Translation and scope-condition review",
+      "Source and translation fingerprints",
+      "Exact display mathematics",
+      "Inline mathematics and source-link multiplicity",
+      "English language residue scan",
+      "All maintained chapters included once in assembled manuscript"
+    ],
+    "manifest": "data/translation-status.json"
+  }
 }

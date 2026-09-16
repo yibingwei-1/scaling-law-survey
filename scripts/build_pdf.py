@@ -37,6 +37,13 @@ from reportlab.platypus import (
 from reportlab.platypus.tableofcontents import TableOfContents
 
 ROOT = Path(__file__).resolve().parents[1]
+LANG = 'zh'
+
+
+def localized(zh, en):
+    return en if LANG == 'en' else zh
+
+
 NAVY = colors.HexColor('#142F46')
 TEAL = colors.HexColor('#007F86')
 TEXT = colors.HexColor('#253541')
@@ -150,7 +157,7 @@ def inline(text):
 
 def make_styles():
     base = dict(fontName=FONT, fontSize=10, leading=16.4, textColor=TEXT,
-                wordWrap='CJK', splitLongWords=True, allowWidows=0, allowOrphans=0)
+                wordWrap=('CJK' if LANG == 'zh' else None), splitLongWords=True, allowWidows=0, allowOrphans=0)
     styles = {'body': ParagraphStyle('body', spaceAfter=7.5, **base)}
     styles['small'] = ParagraphStyle('small', **{**base, 'fontSize': 8.7, 'leading': 13.4}, textTransform=None, spaceAfter=6)
     styles['quote'] = ParagraphStyle('quote', **base, leftIndent=11, rightIndent=8,
@@ -161,13 +168,13 @@ def make_styles():
     for level, size, lead, before, after in [(1, 23, 31, 8, 16), (2, 17, 25, 19, 11),
                                            (3, 12.5, 19.5, 13, 7), (4, 10.6, 17, 10, 5)]:
         styles[f'h{level}'] = ParagraphStyle(f'h{level}', fontName=BOLD, fontSize=size,
-            leading=lead, textColor=NAVY if level < 3 else TEAL, wordWrap='CJK',
+            leading=lead, textColor=NAVY if level < 3 else TEAL, wordWrap=('CJK' if LANG == 'zh' else None),
             spaceBefore=before, spaceAfter=after, keepWithNext=True)
     styles['table'] = ParagraphStyle('table', fontName=FONT, fontSize=8.2, leading=12.5,
-        textColor=TEXT, wordWrap='CJK', splitLongWords=True, allowWidows=1, allowOrphans=1)
+        textColor=TEXT, wordWrap=('CJK' if LANG == 'zh' else None), splitLongWords=True, allowWidows=1, allowOrphans=1)
     styles['thead'] = ParagraphStyle('thead', parent=styles['table'], fontName=BOLD, textColor=colors.white)
     styles['code'] = ParagraphStyle('code', fontName=FONT, fontSize=8.4, leading=13.3,
-        textColor=NAVY, wordWrap='CJK', splitLongWords=True, borderColor=LINE,
+        textColor=NAVY, wordWrap=('CJK' if LANG == 'zh' else None), splitLongWords=True, borderColor=LINE,
         borderWidth=0.4, borderPadding=9, backColor=PALE, spaceBefore=4, spaceAfter=10)
     return styles
 
@@ -186,9 +193,9 @@ class SurveyDoc(BaseDocTemplate):
         self.addPageTemplates([PageTemplate('survey', [frame], onPage=self.decorate)])
 
     def beforeDocument(self):
-        self.canv.setTitle('Scaling Law：问题驱动的技术演化综述')
+        self.canv.setTitle(localized('Scaling Law：问题驱动的技术演化综述', 'Scaling Law: A Problem-Driven Review'))
         self.canv.setAuthor('Scaling Law Survey')
-        self.canv.setSubject('训练资源分配、数据、推理与后训练 scaling 的问题驱动综述')
+        self.canv.setSubject(localized('训练资源分配、数据、推理与后训练 scaling 的问题驱动综述', 'Resource allocation, data, inference, and post-training scaling'))
         self.heading_serial = 0
 
     def decorate(self, canvas, doc):
@@ -201,10 +208,10 @@ class SurveyDoc(BaseDocTemplate):
         canvas.line(doc.leftMargin, h-16.5*mm, w-doc.rightMargin, h-16.5*mm)
         canvas.setFillColor(MUTED)
         canvas.setFont(FONT, 8)
-        canvas.drawString(doc.leftMargin, h-13*mm, 'SCALING LAW  /  问题驱动综述')
+        canvas.drawString(doc.leftMargin, h-13*mm, localized('SCALING LAW  /  问题驱动综述', 'SCALING LAW  /  A PROBLEM-DRIVEN REVIEW'))
         canvas.drawRightString(w-doc.rightMargin, h-13*mm, self.edition)
         canvas.line(doc.leftMargin, 16.5*mm, w-doc.rightMargin, 16.5*mm)
-        canvas.drawString(doc.leftMargin, 12*mm, '来源链接可点击  ·  经验结论保留适用范围')
+        canvas.drawString(doc.leftMargin, 12*mm, localized('来源链接可点击  ·  经验结论保留适用范围', 'Linked primary sources  |  Findings retain their scope conditions'))
         canvas.drawRightString(w-doc.rightMargin, 12*mm, f'{doc.page:02d}')
         canvas.restoreState()
 
@@ -244,7 +251,7 @@ def markdown_table(lines, width):
         lengths = sorted(len(plain(r[col])) for r in rows)
         # Capping limits the effect of a single long URL or discussion cell.
         scores.append(max(5, min(32, lengths[len(lengths)//2]))**.65)
-    if n == 5 and rows[0][0] == '年份' and rows[0][-1] == '正文位置':
+    if n == 5 and (rows[0][0], rows[0][-1]) in [('年份', '正文位置'), ('Year', 'Chapters')]:
         widths = [width * fraction for fraction in (.075, .43, .15, .21, .135)]
     elif n == 2:
         ratio = max(.23, min(.40, scores[0]/sum(scores)))
@@ -439,7 +446,7 @@ def formula_block(lines, is_math=True, width=None):
         text = notation(source)
         rendered = '<br/>'.join(escape(safe_text(line)) for line in text.splitlines())
         return KeepTogether([
-            Paragraph('公式文本回退：未能完整排版；未识别的 LaTeX 记号保留如下。', STYLES['small']),
+            Paragraph(localized('公式文本回退：未能完整排版；未识别的 LaTeX 记号保留如下。', 'Equation fallback: unsupported LaTeX notation is preserved below.'), STYLES['small']),
             Paragraph(rendered or ' ', STYLES['code']),
         ])
 
@@ -463,14 +470,15 @@ def parse_markdown(text, width, source_dir):
                 story.append(heading(m.group(2), level))
             i += 1
             continue
-        if line.startswith('```'):
+        if line.startswith(('```', '~~~')):
+            fence = line[:3]
             language = line[3:].lower()
             block, i = [], i+1
-            while i < len(lines) and not lines[i].strip().startswith('```'):
+            while i < len(lines) and not lines[i].strip().startswith(fence):
                 block.append(lines[i])
                 i += 1
             if language == 'mermaid':
-                story.append(Paragraph('本处 Mermaid 图未在 PDF 中渲染；可编辑图及对应关系见 Markdown 正文。', STYLES['small']))
+                story.append(Paragraph(localized('本处 Mermaid 图未在 PDF 中渲染；可编辑图及对应关系见 Markdown 正文。', 'This Mermaid diagram is available in the Markdown edition; it is not rendered here.'), STYLES['small']))
             else:
                 story.append(formula_block(block, language in ('math', 'latex', 'tex'), width))
             i += 1
@@ -523,7 +531,7 @@ def parse_markdown(text, width, source_dir):
         block=[line]; i+=1
         while i < len(lines) and lines[i].strip():
             s=lines[i].strip()
-            if re.match(r'^(#{1,6}\s|>|```|\$\$|\\\[|[-*+]\s|\d+[.)]\s|!\[)',s): break
+            if re.match(r'^(#{1,6}\s|>|```|~~~|\$\$|\\\[|[-*+]\s|\d+[.)]\s|!\[)',s): break
             if '|' in s and i+1 < len(lines) and re.search(r'\|?\s*:?-{3,}',lines[i+1]): break
             block.append(s); i+=1
         story.append(Paragraph(inline(' '.join(block)), STYLES['body']))
@@ -532,49 +540,65 @@ def parse_markdown(text, width, source_dir):
 
 def cover(doc, edition, diagram):
     title=ParagraphStyle('cover-title', fontName=BOLD, fontSize=42, leading=50, textColor=NAVY)
-    subtitle=ParagraphStyle('cover-subtitle', fontName=BOLD, fontSize=20, leading=31, textColor=NAVY, wordWrap='CJK')
+    subtitle=ParagraphStyle('cover-subtitle', fontName=BOLD, fontSize=20, leading=31, textColor=NAVY, wordWrap=('CJK' if LANG == 'zh' else None))
     kicker=ParagraphStyle('cover-kicker', fontName=BOLD, fontSize=10, leading=16, textColor=TEAL, charSpace=1)
-    story=[Spacer(1, 19*mm), Paragraph('RESEARCH REVIEW  /  持续更新',kicker), Spacer(1,10*mm),
+    story=[Spacer(1, 19*mm), Paragraph(localized('RESEARCH REVIEW  /  持续更新', 'RESEARCH REVIEW  /  LIVING EDITION'),kicker), Spacer(1,10*mm),
            Paragraph('Scaling Law',title), Spacer(1,5*mm),
-           Paragraph('问题驱动的技术演化综述',subtitle), Spacer(1,10*mm),
+           Paragraph(localized('问题驱动的技术演化综述', 'A Problem-Driven Review'),subtitle), Spacer(1,10*mm),
            HRFlowable(width='100%', thickness=2, color=TEAL), Spacer(1,8*mm),
-           Paragraph('从资源配置到数据、推理与后训练的边界',STYLES['h3']),
-           Paragraph('沿着问题、方法、局限与下一步的关系，重建研究对话。',STYLES['body']),
-           Spacer(1,14*mm), Paragraph(f'版本日期  {edition}',STYLES['body']),
-           Paragraph('中文阅读版 · 原始论文、技术报告与社区讨论分层呈现',STYLES['small']),
-           Paragraph('本文包含可点击来源与导航书签。独立公式优先以数学排版呈现；不支持的公式明确标记文本回退。行内公式采用可读记号，持续修订以 Markdown 源文件为准。',STYLES['small']),
-           Spacer(1,12*mm), Paragraph('问题 → 核心洞察 → 方法 → 实验证据 → 限制 → 后续分支', STYLES['quote']),
+           Paragraph(localized('从资源配置到数据、推理与后训练的边界', 'Resource allocation, data, inference, and post-training'),STYLES['h3']),
+           Paragraph(localized('沿着问题、方法、局限与下一步的关系，重建研究对话。', 'Reconstructing the research conversation through problems, mechanisms, evidence, and remaining limits.'),STYLES['body']),
+           Spacer(1,14*mm), Paragraph(localized(f'版本日期  {edition}', f'Edition date  {edition}'),STYLES['body']),
+           Paragraph(localized('中文阅读版 · 原始论文、技术报告与社区讨论分层呈现', 'English edition | Primary research, technical reports, and community discussion'),STYLES['small']),
+           Paragraph(localized('本文包含可点击来源与导航书签。独立公式优先以数学排版呈现；不支持的公式明确标记文本回退。行内公式采用可读记号，持续修订以 Markdown 源文件为准。', 'Primary-source links and navigation bookmarks are clickable. Display equations are typeset; unsupported notation is explicitly identified. Inline mathematics uses readable text notation. The maintained Markdown is the authoritative text.'),STYLES['small']),
+           Spacer(1,12*mm), Paragraph(localized('问题 → 核心洞察 → 方法 → 实验证据 → 限制 → 后续分支', 'Problem → Insight → Method → Evidence → Limitations → Subsequent branches'), STYLES['quote']),
            PageBreak()]
-    story.append(Paragraph('阅读导航',STYLES['h1']))
-    story.append(Paragraph('目录页码与 PDF 页码一致。点击标题可跳转；侧边栏书签提供同样的章节导航。',STYLES['small']))
+    story.append(Paragraph(localized('阅读导航', 'Contents'),STYLES['h1']))
+    story.append(Paragraph(localized('目录页码与 PDF 页码一致。点击标题可跳转；侧边栏书签提供同样的章节导航。', 'Page numbers match the PDF. Select a title or use the sidebar bookmarks to navigate.'),STYLES['small']))
     toc=TableOfContents()
     toc.levelStyles=[ParagraphStyle('toc-main',fontName=BOLD,fontSize=10.3,leading=16,
-        textColor=NAVY,wordWrap='CJK',spaceBefore=7,leftIndent=0,rightIndent=28),
+        textColor=NAVY,wordWrap=('CJK' if LANG == 'zh' else None),spaceBefore=7,leftIndent=0,rightIndent=28),
         ParagraphStyle('toc-sub',fontName=FONT,fontSize=9.1,leading=14,
-        textColor=TEXT,wordWrap='CJK',spaceBefore=3,leftIndent=14,rightIndent=28)]
+        textColor=TEXT,wordWrap=('CJK' if LANG == 'zh' else None),spaceBefore=3,leftIndent=14,rightIndent=28)]
     toc.dotsMinLevel=0
     story += [toc,PageBreak()]
     if diagram and diagram.exists():
-        story.append(Paragraph('研究问题的演化图',STYLES['h1']))
+        story.append(Paragraph(localized('研究问题的演化图', 'A Map of the Research Questions'),STYLES['h1']))
         with PILImage.open(diagram) as im: iw,ih=im.size
         scale=min(doc.width/iw, 208*mm/ih)
         story.append(Image(str(diagram),width=iw*scale,height=ih*scale))
         story.append(Spacer(1,5*mm))
-        story.append(Paragraph('图示作为阅读索引。正文区分直接回应、共同瓶颈与并行路线；箭头不自动意味着已被证明的历史因果。',STYLES['small']))
+        story.append(Paragraph(localized('图示作为阅读索引。正文区分直接回应、共同瓶颈与并行路线；箭头不自动意味着已被证明的历史因果。', 'A reading guide. The text distinguishes direct responses, shared bottlenecks, and parallel approaches; arrows do not automatically establish historical causation.'),STYLES['small']))
         story.append(PageBreak())
     return story
 
 
 def main():
-    global MATH_PYTHON
+    global MATH_PYTHON, LANG, FONT, BOLD, STYLES
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--input',type=Path,default=ROOT/'SURVEY.zh-CN.md')
-    parser.add_argument('--output',type=Path,default=ROOT/'output/pdf/scaling-law-survey.zh-CN.pdf')
+    parser.add_argument('--input',type=Path,help='Defaults to the manuscript matching --language')
+    parser.add_argument('--output',type=Path,help='Defaults to the PDF matching --language')
     parser.add_argument('--diagram',type=Path,default=ROOT/'figures/evolution-map.png')
     parser.add_argument('--edition',default=None)
+    parser.add_argument('--language', choices=['zh', 'en'], default='zh')
     parser.add_argument('--math-python',help='Existing Python executable with matplotlib; no installation is performed')
     parser.add_argument('--check',action='store_true')
     args=parser.parse_args()
+    LANG = args.language
+    locale = 'en' if LANG == 'en' else 'zh-CN'
+    args.input = args.input or ROOT / f'SURVEY.{locale}.md'
+    args.output = args.output or ROOT / f'output/pdf/scaling-law-survey.{locale}.pdf'
+    if LANG == 'en':
+        regular = Path('/System/Library/Fonts/Supplemental/Arial.ttf')
+        bold = Path('/System/Library/Fonts/Supplemental/Arial Bold.ttf')
+        if regular.exists() and bold.exists():
+            pdfmetrics.registerFont(TTFont('SurveyLatin', str(regular)))
+            pdfmetrics.registerFont(TTFont('SurveyLatinBold', str(bold)))
+            pdfmetrics.registerFontFamily('SurveyLatin', normal='SurveyLatin', bold='SurveyLatinBold', italic='SurveyLatin', boldItalic='SurveyLatinBold')
+            FONT, BOLD = 'SurveyLatin', 'SurveyLatinBold'
+        else:
+            FONT, BOLD = 'Helvetica', 'Helvetica-Bold'
+        STYLES = make_styles()
     MATH_PYTHON = args.math_python
     text=args.input.read_text(encoding='utf-8')
     found=re.search(r'20\d{2}-\d{2}-\d{2}',text[:2500])
@@ -584,7 +608,7 @@ def main():
     story=cover(doc,edition,args.diagram)
     # The opening overview already has its own page after the contents.
     if args.diagram and args.diagram.exists():
-        text = text.replace('![研究问题演化图](figures/evolution-map.png)\n', '', 1)
+        text = re.sub(r'!\[[^\]]*\]\(figures/evolution-map\.png\)\n', '', text, count=1)
     story += parse_markdown(text,doc.width,args.input.parent)
     doc.multiBuild(story)
     print(f'Created {args.output} ({args.output.stat().st_size:,} bytes; font={FONT})')

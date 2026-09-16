@@ -19,5 +19,5 @@ jobs:
         run: |
           python3 scripts/build_survey.py
           python3 scripts/validate.py
-          git ls-files --error-unmatch SURVEY.zh-CN.md REFERENCES.md references.bib data/papers.json data/citation-audit.json docs/evidence-map.md
-          git diff --exit-code -- SURVEY.zh-CN.md REFERENCES.md references.bib data/papers.json data/citation-audit.json docs/evidence-map.md
+          git ls-files --error-unmatch SURVEY.zh-CN.md SURVEY.en.md REFERENCES.md REFERENCES.en.md references.bib data/papers.json data/citation-audit.json docs/evidence-map.md data/translation-status.json
+          git diff --exit-code -- SURVEY.zh-CN.md SURVEY.en.md REFERENCES.md REFERENCES.en.md references.bib data/papers.json data/citation-audit.json docs/evidence-map.md
