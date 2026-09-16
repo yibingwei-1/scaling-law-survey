@@ -30,6 +30,8 @@ Scaling law 的历史，是不断发现旧资源模型遗漏了什么、再重�
 
 完整阅读了 [JonnesLin/post-training-survey](https://github.com/JonnesLin/post-training-survey/tree/main) 的中文前言、导论、七章、结论及 design/plan 文档，并核对其 468 条书目与正文 440 个唯一引用键。借鉴其问题演化图、分层展开和跨章联系；技术结论回到各自主源核验。[详细结构与生成方法拆解](docs/00-reference-method.md)。
 
+新增[两方面分析：文献研究与仓库出版结构](docs/reference-repository-analysis.md)，核对参考的双语章节、Markdown 用途、LaTeX、引用、研究笔记及发行方式，并列出本仓库的重构目标。当前仍为中文 Markdown/PDF 版，英文正文与 LaTeX 构建尚未实现；设计记录不代表迁移已完成。
+
 v0.1 只有45条主源、三篇压缩技术章，深度与覆盖不足。本次重构为七篇独立技术章，约3.7万正文汉字；文献库含161条去重主源，其中151条在技术章节实际引用。文献库规模、正文引用量和阅读深度分别报告。最新精确统计见[覆盖地图](docs/evidence-map.md)及[机器可读审计](data/citation-audit.json)；候选条目不冒充已精读论文。
 
 ## 社区发现与证据

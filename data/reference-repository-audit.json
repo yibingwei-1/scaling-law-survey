@@ -1,0 +1,40 @@
+{
+  "checked_on": "2026-09-16",
+  "repository": "https://github.com/JonnesLin/post-training-survey",
+  "ref": "main",
+  "commit": "e00571cb25ac11f29867766a35bcb8ee6e806050",
+  "commit_date": "2026-04-02T20:10:11Z",
+  "file_count": 56,
+  "file_types": {
+    "tex": 30,
+    "markdown": 19,
+    "bibtex": 5,
+    "cff": 1,
+    "gitignore": 1
+  },
+  "local_snapshot_check": "All 56 file Git blob hashes match the current remote tree",
+  "full_bilingual_latex": true,
+  "full_bilingual_markdown": false,
+  "github_workflows_present": false,
+  "pdf_files_tracked": false,
+  "automatic_translation_sync_found": false,
+  "release": {
+    "tag": "v1.0",
+    "url": "https://github.com/JonnesLin/post-training-survey/releases/tag/v1.0",
+    "assets": [
+      "arxiv-submission.tar.gz"
+    ],
+    "archive_inspection": "Listed archive members without extracting or executing them; English LaTeX entry, chapters, preamble, bibliography and overview figure; no PDF"
+  },
+  "bibliography": {
+    "master_keys": 468,
+    "keys_cited_in_each_language_chapter_set": 440,
+    "part_keys": 241,
+    "parts_are_master_subset": true
+  },
+  "limitations": [
+    "Reference LaTeX was not compiled in this structural review",
+    "Paper claims and historical audit reports were not independently reverified",
+    "Proposed scaling-law restructuring is a design, not an implemented migration"
+  ]
+}
