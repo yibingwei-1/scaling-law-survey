@@ -1,58 +1,62 @@
-# Scaling Law Survey · 问题驱动的技术演化综述
+# Scaling Law Survey: A Problem-Driven Review
 
-**中文持续更新版 · 2026-09-16 · [GitHub 仓库](https://github.com/yibingwei-1/scaling-law-survey)**
+**English** | [**简体中文**](README-zh.md)
 
-Scaling law 的历史，是不断发现旧资源模型遗漏了什么、再重新求解最优分配的过程：从预测训练收益，到联合分配参数与数据，再到有效数据、稀疏架构、部署成本、后训练、推理时计算与能力测量。
+**Living survey · Updated September 16, 2026 · [GitHub repository](https://github.com/yibingwei-1/scaling-law-survey)**
 
-每条主线按 **原始问题 → 核心洞见 → 方法机制 → 实验证据 → 剩余限制 → 后继分支** 展开。论文之间的连接区分直接回应、并行路线和综述归纳。
+Scaling-law research repeatedly uncovers what an existing resource model leaves out, then revisits how resources should be allocated. This survey follows that development from predictable training returns and parameter–data allocation to effective data, sparse architectures, deployment costs, post-training, inference-time computation, and capability measurement.
 
-**[完整综述](SURVEY.zh-CN.md)** · **[PDF 阅读版](output/pdf/scaling-law-survey.zh-CN.pdf)** · [文献与版本索引](REFERENCES.md) · [研究对话地图](docs/research-map.md) · [正文覆盖统计](docs/evidence-map.md) · [BibTeX](references.bib)
+Each research thread follows **the original problem → the central insight → the mechanism → experimental evidence → remaining limitations → subsequent branches**. Connections distinguish direct responses, parallel approaches, and the survey's own synthesis.
 
-![Scaling law 的问题演化图](figures/evolution-map.png)
+**Edition status:** The Chinese manuscript and PDF are available. The full English manuscript is being translated and checked. This English README is the default repository homepage; a complete LaTeX build is not yet available.
 
-图为问题关系的概念综合，不是实验曲线。
+**[Chinese survey](SURVEY.zh-CN.md)** · **[Chinese PDF](output/pdf/scaling-law-survey.zh-CN.pdf)** · [References and versions](REFERENCES.md) · [Research map](docs/research-map.md) · [Coverage audit](docs/evidence-map.md) · [BibTeX](references.bib)
 
-## 七条研究对话
+![A conceptual map of scaling-law research](figures/evolution-map.png)
 
-| 章节 | 推动研究演化的问题 | 主要路径 |
+The figure summarizes relationships between research problems; it is not an experimental plot.
+
+## Seven Research Threads
+
+The chapter links below currently open the Chinese edition.
+
+| Chapter | Question driving the research | Main trajectory |
 |---|---|---|
-| [1. 可预测性与预算](docs/01-predictability-budget.md) | 投入前怎样预测收益？为什么最优配比会改变？ | 学习曲线 → Kaplan → Chinchilla → 复核、超参数迁移与训练配方 |
-| [2. 有效数据](docs/02-data.md) | 数据不够、价值不等、分布变化时如何继续扩展？ | 重复收益 → 去重筛选 → DoReMi / RegMix → 合成与信息保留 |
-| [3. 架构与部署](docs/03-architecture-deployment.md) | 总参数和 FLOPs 为什么不能独立代表成本？ | 路由与 MoE → 内存/IO/缓存 → 长上下文 → 生命周期优化 |
-| [4. 后训练与 RL](docs/04-posttraining.md) | 怎样把候选能力变成可靠策略，学习信号何时失效？ | 自训练 → 反馈与验证 → GRPO及后继 → 过优化、覆盖与课程 |
-| [5. 推理时计算](docs/05-inference.md) | 多算一次应该用来延长、重采样、搜索还是检查？ | CoT与多样本 → 搜索与PRM → 难度自适应 → 蒸馏与隐式深度 |
-| [6. 理论与能力评估](docs/06-theory-evaluation.md) | 幂律从何而来？loss 如何映射到可交付能力？ | 理论机制 → 特征学习 → 涌现/评分 → 外推、泛化与评测边界 |
-| [7. 多模态与交互](docs/07-multimodal.md) | 改变模态和反馈方式后，应该沿哪些资源轴扩展？ | 视觉规模 → 图文监督与混合 → 扩散计算 → 机器人与环境覆盖 |
+| [1. Predictability and budgets](docs/01-predictability-budget.md) | How can we predict returns before training, and why does the optimal allocation change? | Learning curves → Kaplan → Chinchilla → reanalysis, hyperparameter transfer, and training recipes |
+| [2. Effective data](docs/02-data.md) | How can scaling continue when data are limited, unequal in value, or drawn from changing distributions? | Repetition → deduplication and selection → DoReMi / RegMix → synthesis and information retention |
+| [3. Architecture and deployment](docs/03-architecture-deployment.md) | Why do parameter counts and FLOPs fail to capture practical cost on their own? | Routing and MoE → memory, I/O, and caching → long context → lifecycle optimization |
+| [4. Post-training and RL](docs/04-posttraining.md) | How do we turn available candidate solutions into reliable policies, and when do learning signals fail? | Self-training → feedback and verification → GRPO and successors → overoptimization, coverage, and curricula |
+| [5. Inference-time computation](docs/05-inference.md) | Should additional computation go to longer reasoning, resampling, search, or verification? | CoT and multiple samples → search and PRMs → difficulty-dependent budgets → distillation and latent depth |
+| [6. Theory and capability evaluation](docs/06-theory-evaluation.md) | Where do power laws come from, and how does loss relate to usable capabilities? | Mechanisms → feature learning → emergence and measurement → extrapolation and generalization limits |
+| [7. Multimodality and interaction](docs/07-multimodal.md) | Which resource dimensions matter when modalities and feedback change? | Vision scaling → image–text supervision and mixtures → diffusion computation → robotics and environmental coverage |
 
-另有[导论](docs/introduction.md)、[社区雷达](docs/04-community-radar.md)和[跨分支综合](docs/conclusion.md)。各章保留公式的变量定义、比较口径、关键实验条件与开放问题；基础阅读与前沿结果分层处理。
+The survey also includes an [introduction](docs/introduction.md), a [community discussion radar](docs/04-community-radar.md), and a [cross-thread synthesis](docs/conclusion.md). Chapters retain variable definitions, comparison protocols, experimental conditions, and open questions, while separating established foundations from preliminary findings.
 
-## 参考范例的方法，怎样落实到本仓库
+## Research Method and Reference Design
 
-完整阅读了 [JonnesLin/post-training-survey](https://github.com/JonnesLin/post-training-survey/tree/main) 的中文前言、导论、七章、结论及 design/plan 文档，并核对其 468 条书目与正文 440 个唯一引用键。借鉴其问题演化图、分层展开和跨章联系；技术结论回到各自主源核验。[详细结构与生成方法拆解](docs/00-reference-method.md)。
+The organization draws on [JonnesLin/post-training-survey](https://github.com/JonnesLin/post-training-survey). We read its Chinese preface, introduction, seven chapters, conclusion, and design and implementation documents, and checked its 468 bibliography entries against 440 unique citation keys used in the Chinese chapters. We adopt its problem-driven structure, depth hierarchy, and cross-thread connections while checking technical claims against their primary sources. See the [method analysis](docs/00-reference-method.md) and the [separate review of research organization and repository architecture](docs/reference-repository-analysis.md), both currently in Chinese.
 
-新增[两方面分析：文献研究与仓库出版结构](docs/reference-repository-analysis.md)，核对参考的双语章节、Markdown 用途、LaTeX、引用、研究笔记及发行方式，并列出本仓库的重构目标。当前仍为中文 Markdown/PDF 版，英文正文与 LaTeX 构建尚未实现；设计记录不代表迁移已完成。
+The initial edition contained 45 primary sources and three compressed technical chapters. The expanded edition has seven technical chapters, approximately 36,600 Chinese characters, and 161 distinct primary-source records, of which 151 are cited in the technical chapters. Catalog size, actual citation coverage, and reading depth are reported separately. Abstract-only candidates are not counted as close readings. Exact figures are available in the [coverage map](docs/evidence-map.md) and [machine-readable audit](data/citation-audit.json).
 
-v0.1 只有45条主源、三篇压缩技术章，深度与覆盖不足。本次重构为七篇独立技术章，约3.7万正文汉字；文献库含161条去重主源，其中151条在技术章节实际引用。文献库规模、正文引用量和阅读深度分别报告。最新精确统计见[覆盖地图](docs/evidence-map.md)及[机器可读审计](data/citation-audit.json)；候选条目不冒充已精读论文。
+## Community Discovery and Evidence
 
-## 社区发现与证据
+The repository records 18 traceable items from X, YouTube, and Reddit, including author announcements, research talks, engineering reproductions, and rebuttals. Engagement records retain observation dates and retrieval limitations; unavailable values remain `null`, and search-index snapshots are not presented as live rankings. Discussions identify questions and disagreements; papers, author experiments, and technical reports support technical judgments. See the [community radar](docs/04-community-radar.md).
 
-X、YouTube、Reddit 目前有18条可回溯记录，包含作者发布、研究者讲座、工程复现与反驳讨论。指标有观测日期，缺失值保留为 `null`；索引快照不当作实时热榜。讨论帮助发现争议，论文、作者实验和报告支撑技术判断。[社区雷达](docs/04-community-radar.md)。
+The main focus is language models, with theory, vision, diffusion, and robotics used to examine assumptions and boundaries. Searches extend through September 16, 2026, without a claim of exhaustive coverage. The survey does not independently reproduce the cited experiments. Individual records retain reading scope, version information, and limitations; selected 2026 results are distinguished from established findings.
 
-以 LLM 为主线，理论、视觉、扩散、机器人作为条件与边界的比较。检索截至2026-09-16，不宣称无遗漏；原始实验未由本综述独立重跑。每条文献记录阅读范围、版本和限制，2026年的代表性结果与成熟基础工作区别呈现。
+## Maintenance
 
-## 持续维护
+A Codex maintenance task is scheduled for Mondays at 09:00 in `America/Los_Angeles`. It searches papers, author blogs, technical reports, and the three community platforms, then updates the narrative, source records, PDF, and repository after verification. Notifications are reserved for substantive changes, failures, or required user action. Execution depends on the local task environment. See [UPDATING.md](UPDATING.md) for the maintenance procedure, currently documented in Chinese.
 
-已启用每周一 09:00（America/Los_Angeles）的 Codex 维护任务，检索论文、作者 blog、technical report 与三类社区，核验后更新问题链、文献、PDF与本仓库。只有实质变化、失败或需要用户操作时通知。调度依赖本地任务运行环境，具体流程见[UPDATING.md](UPDATING.md)。
-
-- [检索与写作方法](METHODOLOGY.md)
-- [更新日志](CHANGELOG.md)与[发布状态](PUBLISHING.md)
-- [逐条证据](sources/)与[维护状态](data/state.json)
+- [Research and writing methodology](METHODOLOGY.md)
+- [Changelog](CHANGELOG.md) and [publication status](PUBLISHING.md)
+- [Source records](sources/) and [maintenance state](data/state.json)
 
 ```bash
 python3 scripts/build_survey.py
 python3 scripts/validate.py
-# PDF: reportlab、Pillow、pypdf；matplotlib用于数学排版
+# PDF dependencies: reportlab, Pillow, pypdf; matplotlib for display mathematics
 python3 scripts/build_pdf.py --check
 ```
 
-`docs/` 的七篇技术章与 `sources/` 的核验记录是维护源；完整综述、索引、正文覆盖审计与PDF由脚本构建。文中原论文、社区内容及参考仓库归原作者所有；本仓库只分发原创综合和链接，不分发第三方全文。
+The technical chapters in `docs/` and verification records in `sources/` are maintained sources. The complete manuscript, reference index, citation audit, and PDF are generated artifacts. Original papers, community posts, and the reference repository remain the work of their respective authors; this repository distributes its own synthesis and links, not third-party full texts.
