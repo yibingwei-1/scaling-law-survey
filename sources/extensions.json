@@ -1,0 +1,225 @@
+[
+  {
+    "id": "openai2023gpt4",
+    "title": "GPT-4 Technical Report",
+    "year": 2023,
+    "url": "https://arxiv.org/html/2303.08774v6",
+    "type": "technical_report",
+    "branch": "loss_to_capability_forecast",
+    "problem": "超大训练run难以逐个调参；能否从小规模实验预报loss与任务能力？",
+    "insight": "固定训练方法下分别拟合内部代码留出集loss和HumanEval子集log pass rate，检验预先作出的外推。",
+    "limitation": "HumanEval题目需在有限采样中被各小模型至少解出一次，排除最难15题并分桶；部分桶偏离预测；绝对算力、架构与数据构建未披露。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v6, 2024-03-04",
+    "sections_read": [
+      "2 Scope and Limitations",
+      "3.1 Loss Prediction",
+      "3.2 Scaling of Capabilities on HumanEval"
+    ],
+    "authors": [
+      "OpenAI"
+    ]
+  },
+  {
+    "id": "schaeffer2023mirage",
+    "title": "Are Emergent Abilities of Large Language Models a Mirage?",
+    "year": 2023,
+    "url": "https://arxiv.org/html/2304.15004v2",
+    "type": "research_paper",
+    "branch": "emergence_measurement",
+    "problem": "基准上突跳的能力曲线是否说明模型内部发生突然变化？",
+    "insight": "非线性/离散指标、有限样本和规模采样可使平滑的底层改善表现为涌现；固定输出更换指标进行检验。",
+    "limitation": "不排除真实涌现；简化独立token模型不等同于真实生成机制；exact match可能仍是实际任务的正确效用指标。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, 2023-05-22",
+    "sections_read": [
+      "2 Mathematical Model",
+      "3–4 metric experiments",
+      "7 Discussion"
+    ],
+    "authors": [
+      "Rylan Schaeffer",
+      "Brando Miranda",
+      "Sanmi Koyejo"
+    ]
+  },
+  {
+    "id": "caballero2022bnsl",
+    "title": "Broken Neural Scaling Laws",
+    "year": 2022,
+    "url": "https://arxiv.org/html/2210.14891",
+    "type": "conference_paper",
+    "branch": "nonmonotonic_and_piecewise_scaling",
+    "problem": "单一幂律无法表达双下降、延迟转折和多个增长阶段。",
+    "insight": "以平滑连接的幂律区段表达多种曲线形状，并在既有实验上比较外推性能。",
+    "limitation": "未观察到转折附近的证据时不能任意预测新阶段；拟合灵活性并非普适定律证明。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "Unversioned HTML accessed 2026-09-16; abstract page current v17, 2023-07-24",
+    "sections_read": [
+      "4 Expressivity",
+      "5 Extrapolation experiments",
+      "6 Limits of predictability"
+    ],
+    "authors": [
+      "Ethan Caballero",
+      "Kshitij Gupta",
+      "Irina Rish",
+      "David Krueger"
+    ],
+    "publication_note": "First preprint 2022; ICLR 2023 verified on arXiv metadata."
+  },
+  {
+    "id": "henighan2020generative",
+    "title": "Scaling Laws for Autoregressive Generative Modeling",
+    "year": 2020,
+    "url": "https://arxiv.org/html/2010.14701v2",
+    "type": "research_paper",
+    "branch": "crossmodal_loss_scaling",
+    "problem": "语言建模中的scaling关系是否延伸至图像、视频、图文和数学任务？",
+    "insight": "在所测自回归模型中观察幂律加常数；生成loss的微小改善仍可能伴随下游表现提升。",
+    "limitation": "限定模型、数据表示与任务；低分辨率图像等实验不支持对所有现代多模态系统移植相同指数。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, 2020-11-06",
+    "sections_read": [
+      "Introduction",
+      "3.2 Image classification",
+      "4 Multimodal information gain"
+    ],
+    "authors": [
+      "Tom Henighan",
+      "Jared Kaplan",
+      "Mor Katz",
+      "Mark Chen",
+      "et al."
+    ]
+  },
+  {
+    "id": "zhai2021vit",
+    "title": "Scaling Vision Transformers",
+    "year": 2021,
+    "url": "https://arxiv.org/html/2106.04560v2",
+    "type": "conference_paper",
+    "branch": "vision_joint_scaling",
+    "problem": "视觉任务中只增加模型、数据或训练时长会遇到其他资源瓶颈。",
+    "insight": "联合变化资源以找误差—计算量前沿，用带两端饱和项的经验曲线描述视觉性能。",
+    "limitation": "分类错误率没有交叉熵的熵解释；patch数、分辨率与样本单位影响预算；不能直接移植文本指数。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, 2022-06-20",
+    "sections_read": [
+      "2 Main results",
+      "Appendices A, D, E"
+    ],
+    "authors": [
+      "Xiaohua Zhai",
+      "Alexander Kolesnikov",
+      "Neil Houlsby",
+      "Lucas Beyer"
+    ],
+    "publication_note": "First preprint 2021; CVPR 2022 verified via official CVF paper.",
+    "publication_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Zhai_Scaling_Vision_Transformers_CVPR_2022_paper.pdf"
+  },
+  {
+    "id": "radford2021clip",
+    "title": "Learning Transferable Visual Models From Natural Language Supervision",
+    "year": 2021,
+    "url": "https://arxiv.org/html/2103.00020v1",
+    "type": "research_paper",
+    "branch": "natural_language_supervision",
+    "problem": "固定类别标签限制视觉监督扩展和零样本迁移。",
+    "insight": "图文配对的对比目标以可扩展文本监督连接视觉表示与开放词汇分类；目标选择考虑零样本转移效率。",
+    "limitation": "原文报告计数、部分细粒度及分布外任务薄弱；开放词汇分类不等同开放任务能力或生成式视觉推理。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, 2021-02-26",
+    "sections_read": [
+      "2 Approach",
+      "5 Data contamination (context)",
+      "6 Limitations"
+    ],
+    "authors": [
+      "Alec Radford",
+      "Jong Wook Kim",
+      "Chris Hallacy",
+      "et al."
+    ]
+  },
+  {
+    "id": "gadre2023datacomp",
+    "title": "DataComp: In search of the next generation of multimodal datasets",
+    "year": 2023,
+    "url": "https://arxiv.org/html/2304.14108v5",
+    "type": "research_paper",
+    "branch": "multimodal_data_selection",
+    "problem": "数据、架构和训练计算同步改变导致数据改进难以归因。",
+    "insight": "固定CLIP训练流程与计算预算，在公共候选池上比较数据策略并用38个数据集评价迁移。",
+    "limitation": "ImageNet与平均表现相关并不意味着能替代每项下游任务；数据策略优劣依赖目标与所测模型族。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v5, 2023-10-20",
+    "sections_read": [
+      "3 DataComp benchmark",
+      "5.2–5.3 results and correlations",
+      "6 Discussion"
+    ],
+    "authors": [
+      "Samir Yitzhak Gadre",
+      "Gabriel Ilharco",
+      "Alex Fang",
+      "et al."
+    ]
+  },
+  {
+    "id": "kearns2026construct",
+    "title": "Quantifying construct validity in large language model evaluations",
+    "year": 2026,
+    "url": "https://arxiv.org/html/2602.15532v1",
+    "type": "thesis_preprint",
+    "branch": "evaluation_construct_validity",
+    "problem": "榜单分数、模型规模和潜在能力容易被视为同一变量。",
+    "insight": "在开放模型榜单上以潜在能力和测量误差建模能力与基准的关系。",
+    "limitation": "探索性因子分析而非验证性分析；主要为观察性研究，不建立规模到能力的因果机制。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, 2026-02-17",
+    "sections_read": [
+      "2.2 Construct validity",
+      "5.1 Findings",
+      "5.4 Limitations"
+    ],
+    "authors": [
+      "Ryan Othniel Kearns"
+    ],
+    "evidence_status": "frontier_not_consensus"
+  },
+  {
+    "id": "sarridis2026vlmbias",
+    "title": "Scaling Vision-Language Models Is Not Enough to Mitigate Bias",
+    "year": 2026,
+    "url": "https://arxiv.org/html/2607.28211v1",
+    "type": "preprint",
+    "branch": "multimodal_worst_group_scaling",
+    "problem": "总体视觉准确率改善是否同时改善伪相关环境下最差群体表现？",
+    "insight": "比较194个公开checkpoint，并在控制若干因素的组间比较中观察整体准确率与最差群体表现的分离。",
+    "limitation": "限定OpenCLIP模型和少数已知群体结构的基准；不覆盖所有生成式VLM、社会偏见或因果机制。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, 2026-07-30",
+    "sections_read": [
+      "1 Introduction",
+      "4 Results and matched comparisons",
+      "5 Limitations"
+    ],
+    "authors": [
+      "Ioannis Sarridis",
+      "Ioannis Kompatsiaris",
+      "Symeon Papadopoulos"
+    ],
+    "publication_note": "HTML states accepted at ACM Multimedia 2026; proceedings not separately verified.",
+    "evidence_status": "frontier_not_consensus"
+  }
+]

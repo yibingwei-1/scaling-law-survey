@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "edition": "v0.1",
+  "last_successful_search": "2026-09-16",
+  "last_content_update": "2026-09-16",
+  "pdf_content_date": "2026-09-16",
+  "coverage": "Representative narrative review; not exhaustive; primary claims not independently reproduced",
+  "automation": {
+    "id": "scaling-law",
+    "status": "ACTIVE",
+    "cadence": "Weekly Monday 09:00",
+    "timezone": "America/Los_Angeles",
+    "last_configuration_verified": "2026-09-16"
+  },
+  "publishing": {
+    "remote_url": null,
+    "status": "awaiting_github_authentication",
+    "proposed_name": "scaling-law-survey",
+    "visibility": "awaiting_user_preference"
+  },
+  "coverage_limits": [
+    "X post body and engagement counts unavailable for recorded entries",
+    "YouTube and Reddit engagement often obtained from search-index snapshots, not live counters",
+    "Some sources read only at abstract or selected-section depth; see per-entry records",
+    "2026 preprints are representative frontiers, not established consensus"
+  ],
+  "watchlist": [
+    "Full-text assessment of Scaling Laws for Optimal Data Mixtures (2507.09404)",
+    "Independent replications of adaptive inference budget and RL coverage claims",
+    "Primary text for recent Z.ai claims seen in community discussion",
+    "Expansion to long-horizon tool tasks and multimodal generative models"
+  ],
+  "last_validation_date": "2026-09-16",
+  "source_count": 45,
+  "community_count": 12
+}

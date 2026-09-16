@@ -1,0 +1,207 @@
+{
+  "searched_on": "2026-09-16",
+  "coverage": "Focused narrative review, not exhaustive systematic search",
+  "engine": "web.run search_query, followed by direct primary HTML/abstract-page access",
+  "query_batches": [
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters arxiv 2024",
+        "site.arxiv.org 2026 test time scaling reasoning reinforcement learning scaling laws",
+        "site.arxiv.org Does Reinforcement Learning Really Incentivize Reasoning Capacity LLM 2025"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site.arxiv.org 2026 test-time scaling reasoning inference compute optimal",
+        "site.arxiv.org 2026 reinforcement learning scaling laws reasoning",
+        "site.arxiv.org The Illusion of Thinking 2025 response critique",
+        "site.arxiv.org s1 Simple test-time scaling DeepSeek R1"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site.arxiv.org/abs/ \"2026\" \"test-time\" \"scaling\" reasoning budget",
+        "site.arxiv.org/abs/ \"2026\" \"Scaling Laws\" \"Reinforcement\"",
+        "site.arxiv.org/abs/ \"reinforcement learning\" \"beyond\" \"base model\" reasoning counter",
+        "site.arxiv.org/abs/ \"Inference Scaling Laws\" problem-solving"
+      ]
+    }
+  ],
+  "primary_sources_selected": [
+    {
+      "id": "wei2022cot",
+      "url": "https://arxiv.org/abs/2201.11903",
+      "reading_depth": "abstract_and_metadata",
+      "version_read": "v6",
+      "sections_read": "摘要"
+    },
+    {
+      "id": "wang2022selfconsistency",
+      "url": "https://arxiv.org/abs/2203.11171",
+      "reading_depth": "abstract_and_metadata",
+      "version_read": "v4",
+      "sections_read": "摘要"
+    },
+    {
+      "id": "lightman2023verify",
+      "url": "https://arxiv.org/abs/2305.20050",
+      "reading_depth": "abstract_and_metadata",
+      "version_read": "abstract page current",
+      "sections_read": "摘要"
+    },
+    {
+      "id": "snell2024testcompute",
+      "url": "https://arxiv.org/html/2408.03314v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§1–7，尤其§3难度估计、§5搜索失效"
+    },
+    {
+      "id": "wu2024inference",
+      "url": "https://arxiv.org/html/2408.00724v3",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v3",
+      "sections_read": "§1、§3–4方法实验与收敛讨论"
+    },
+    {
+      "id": "openai2024reason",
+      "url": "https://openai.com/index/learning-to-reason-with-llms/",
+      "reading_depth": "official_report_sections",
+      "version_read": "2024-09-12 official report",
+      "sections_read": "开篇计算增长及评测说明"
+    },
+    {
+      "id": "deepseek2025r1",
+      "url": "https://arxiv.org/html/2501.12948v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§2训练方法、§4.1蒸馏与§4.2失败尝试"
+    },
+    {
+      "id": "muennighoff2025s1",
+      "url": "https://arxiv.org/html/2501.19393v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§2–6，含§6.2扩张限制"
+    },
+    {
+      "id": "yang2025tops",
+      "url": "https://arxiv.org/html/2502.18080v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§1、§3–5"
+    },
+    {
+      "id": "metel2026minseek",
+      "url": "https://arxiv.org/html/2601.09855v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§3–4，重点§4.2单次生成与§4.3结果"
+    },
+    {
+      "id": "zhai2026adaptive",
+      "url": "https://arxiv.org/html/2604.14853v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§2、§4–6；MATH/GSM8K各200题"
+    },
+    {
+      "id": "yue2025rlboundary",
+      "url": "https://arxiv.org/html/2504.13837v5",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v5; compared v1",
+      "sections_read": "§2–5；元数据页核验NeurIPS 2025"
+    },
+    {
+      "id": "cai2026curriculum",
+      "url": "https://arxiv.org/html/2606.22317v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§3–5及limitations"
+    },
+    {
+      "id": "tan2025rlscaling",
+      "url": "https://arxiv.org/html/2509.25300v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§2指标和数据划分、§3拟合"
+    },
+    {
+      "id": "shojaee2025illusion",
+      "url": "https://arxiv.org/html/2506.06941v3",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v3",
+      "sections_read": "§3–4及Appendix补充实验"
+    },
+    {
+      "id": "lawsen2025comment",
+      "url": "https://arxiv.org/html/2506.09250v2",
+      "reading_depth": "full_text",
+      "version_read": "v2; compared v1",
+      "sections_read": "全文，特别§4更正与§5小样本限制"
+    },
+    {
+      "id": "zhao2025knowledge",
+      "url": "https://arxiv.org/html/2509.06861v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§3–5；§3.1明确不准外部检索"
+    },
+    {
+      "id": "hariri2026regimes",
+      "url": "https://arxiv.org/html/2608.04001v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§2–3；没有采用摘要与正文不一致的trace数量"
+    },
+    {
+      "id": "gao2022rewardoveroptimization",
+      "url": "https://arxiv.org/html/2210.10760v1",
+      "reading_depth": "full_text_key_sections",
+      "version_read": "v1",
+      "sections_read": "§1–3（含函数形式、RM容量/数据和PPO–BoN比较）、§4.1、§4.3–4.5；未复算附录证明或复现实验"
+    }
+  ],
+  "screening_notes": [
+    "Technical claims are supported by original papers or official author reports; social discussion and secondary aggregation were discovery leads only.",
+    "First-version dates and the specific read versions are distinguished. Yue v1 was checked against v5; Lawsen v1 was superseded by corrected v2.",
+    "2026 coverage includes January, April, June and August primary preprints. Search date is not a guarantee of complete coverage through that date.",
+    "Reading depth full_text_key_sections means the HTML full text was accessed and relevant introduction/method/evaluation/limitation passages were examined; it does not claim every appendix or proof was read.",
+    "2608.04001 search abstract says over 2 billion traces while HTML body states over 2 million sequences; neither number is used in the survey.",
+    "2604.14853 theory not independently audited; no exact-optimality theorem is endorsed in the prose.",
+    "2506.09250v2 retracts the v1 quadratic token-budget calculation as an explanation for typical collapse points. Survey explicitly preserves that correction.",
+    "2606.22317 uses targeted teacher guidance; survey does not characterize it as evidence for teacher-free pure-RL capability creation."
+  ],
+  "followup_candidates_not_used": [
+    {
+      "url": "https://arxiv.org/abs/2606.19354",
+      "reason": "Only secondary discovery snippet; primary full text not checked in this pass"
+    },
+    {
+      "url": "https://arxiv.org/abs/2601.16486",
+      "reason": "Agent wall-clock allocation candidate; primary full text not checked"
+    },
+    {
+      "url": "https://arxiv.org/abs/2606.03102",
+      "reason": "Adaptive sampling controller candidate; primary full text not checked"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.10928",
+      "reason": "Retrieval-augmented traces candidate; primary full text not checked"
+    }
+  ],
+  "direct_access_additions": [
+    {
+      "date": "2026-09-16",
+      "reason": "最终覆盖审查发现奖励模型过优化支线遗漏",
+      "urls": [
+        "https://arxiv.org/abs/2210.10760",
+        "https://arxiv.org/html/2210.10760v1"
+      ],
+      "verified": "题名、三位作者、2022-10-19 v1；synthetic gold RM设定、PPO/BoN经验曲线、容量趋势和§4.5局限"
+    }
+  ]
+}

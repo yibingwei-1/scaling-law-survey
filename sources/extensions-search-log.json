@@ -1,0 +1,165 @@
+{
+  "verification_date": "2026-09-16",
+  "scope": "Chapter 03: evaluation, emergence, forecasting, and selected multimodal branches",
+  "search_service": "web search with arXiv primary-source filtering; primary HTML targeted reading",
+  "search_batches": [
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site.arxiv.org Schaeffer 2023 Are Emergent Abilities Large Language Models Mirage",
+        "site.arxiv.org Broken Neural Scaling Laws Caballero 2022",
+        "site.arxiv.org Scaling Laws Autoregressive Generative Modeling Henighan 2020",
+        "site.arxiv.org Scaling Vision Transformers 2022 Zhai"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site.arxiv.org/abs/ 2026 scaling laws downstream evaluation prediction benchmark loss",
+        "site.arxiv.org/abs/ 2026 multimodal scaling laws evaluation contamination",
+        "site.arxiv.org DataComp In search next generation multimodal datasets 2023",
+        "site.arxiv.org CLIP Learning Transferable Visual Models Natural Language Supervision"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site.arxiv.org/abs/ \"2026\" \"scaling\" \"benchmark\" \"prediction\" language model",
+        "site.arxiv.org/abs/ \"2026\" \"multimodal\" \"evaluation\" \"scaling\""
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "method": "direct_url_followup",
+      "queries": [],
+      "urls": [
+        "https://arxiv.org/html/2303.08774"
+      ],
+      "reason": "Parent requested GPT-4 predictive scaling loss/HumanEval example."
+    }
+  ],
+  "selected": [
+    {
+      "id": "openai2023gpt4",
+      "url": "https://arxiv.org/html/2303.08774v6",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "2 Scope and Limitations",
+        "3.1 Loss Prediction",
+        "3.2 Scaling of Capabilities on HumanEval"
+      ],
+      "version_read": "v6, 2024-03-04"
+    },
+    {
+      "id": "schaeffer2023mirage",
+      "url": "https://arxiv.org/html/2304.15004v2",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "2 Mathematical Model",
+        "3–4 metric experiments",
+        "7 Discussion"
+      ],
+      "version_read": "v2, 2023-05-22"
+    },
+    {
+      "id": "caballero2022bnsl",
+      "url": "https://arxiv.org/html/2210.14891",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "4 Expressivity",
+        "5 Extrapolation experiments",
+        "6 Limits of predictability"
+      ],
+      "version_read": "Unversioned HTML accessed 2026-09-16; abstract page current v17, 2023-07-24"
+    },
+    {
+      "id": "henighan2020generative",
+      "url": "https://arxiv.org/html/2010.14701v2",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "Introduction",
+        "3.2 Image classification",
+        "4 Multimodal information gain"
+      ],
+      "version_read": "v2, 2020-11-06"
+    },
+    {
+      "id": "zhai2021vit",
+      "url": "https://arxiv.org/html/2106.04560v2",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "2 Main results",
+        "Appendices A, D, E"
+      ],
+      "version_read": "v2, 2022-06-20"
+    },
+    {
+      "id": "radford2021clip",
+      "url": "https://arxiv.org/html/2103.00020v1",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "2 Approach",
+        "5 Data contamination (context)",
+        "6 Limitations"
+      ],
+      "version_read": "v1, 2021-02-26"
+    },
+    {
+      "id": "gadre2023datacomp",
+      "url": "https://arxiv.org/html/2304.14108v5",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "3 DataComp benchmark",
+        "5.2–5.3 results and correlations",
+        "6 Discussion"
+      ],
+      "version_read": "v5, 2023-10-20"
+    },
+    {
+      "id": "kearns2026construct",
+      "url": "https://arxiv.org/html/2602.15532v1",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "2.2 Construct validity",
+        "5.1 Findings",
+        "5.4 Limitations"
+      ],
+      "version_read": "v1, 2026-02-17"
+    },
+    {
+      "id": "sarridis2026vlmbias",
+      "url": "https://arxiv.org/html/2607.28211v1",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "1 Introduction",
+        "4 Results and matched comparisons",
+        "5 Limitations"
+      ],
+      "version_read": "v1, 2026-07-30"
+    }
+  ],
+  "exclusions": [
+    {
+      "url": "https://arxiv.org/abs/2607.22043",
+      "reason": "Discovered as a candidate about native multimodal pretraining; full text not read, not used for technical conclusions."
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.22014",
+      "reason": "Mission-level aerial MLLM evaluation; abstract candidate only, outside concise chapter's chosen branches."
+    },
+    {
+      "url": "https://arxiv.org/abs/2606.08231",
+      "reason": "Survey candidate; not used as primary support."
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.08260",
+      "reason": "Seed2Scale abstract candidate; not selected for this focused chapter."
+    }
+  ],
+  "limitations": [
+    "Targeted narrative review, not a systematic or exhaustive review.",
+    "No citation-count or social-attention ranking inferred from search order.",
+    "2026 papers are emerging evidence; lack of independent replication is not treated as consensus.",
+    "Reading depth is targeted full text, not a claim to have read all appendices or reproduced experiments."
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-09-16",
+  "coverage": "Purposeful seed sample, not an exhaustive ranking; X 3, YouTube 3, Reddit 6",
+  "metric_policy": {
+    "null_means": "Not observable, not zero",
+    "time": "observed_at is retrieval date; platform counter snapshot time is unknown unless explicitly provided",
+    "reddit": "score is net/visible vote score, not total likes",
+    "cross_platform_ranking": false,
+    "screening_thresholds": {
+      "youtube_views": 100000,
+      "reddit_score": 100,
+      "x": "none: counters unavailable"
+    },
+    "threshold_status": "Editorial screening heuristics, not statistically calibrated popularity criteria",
+    "high_attention_proxy_count": 6
+  },
+  "entries": [
+    {
+      "id": "X-01",
+      "platform": "X",
+      "title": "s1 作者发布帖",
+      "url": "https://x.com/Muennighoff/status/1886405528777073134",
+      "author": "Niklas Muennighoff",
+      "published_at": null,
+      "topics": [
+        "test-time scaling",
+        "budget forcing",
+        "distillation"
+      ],
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2501.19393",
+          "kind": "paper",
+          "verification": "abstract_and_metadata_read"
+        },
+        {
+          "url": "https://github.com/simplescaling/s1",
+          "kind": "author_repository",
+          "verification": "read; README links this exact X post"
+        }
+      ],
+      "discovery_evidence_urls": [
+        "https://github.com/simplescaling/s1"
+      ],
+      "access_status": "403; post existence and association corroborated by author repository",
+      "attention_status": "unverified",
+      "discussion_focus": "作者如何把少量高质量推理轨迹与测试时预算控制连接；本次未读到完整回帖，不能归纳回帖共识。",
+      "evidence_limit": "只有作者仓库交叉链接和论文可读；X正文、发布时间、互动数未直接核验。",
+      "observed_at": "2026-09-16",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_evidence": null,
+      "metrics_source_kind": "not_available",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "X-02",
+      "platform": "X",
+      "title": "DeepSeek-R1-Lite-Preview 发布帖",
+      "url": "https://x.com/deepseek_ai/status/1859200141355536422",
+      "author": "DeepSeek",
+      "published_at": null,
+      "topics": [
+        "test-time scaling",
+        "reasoning models"
+      ],
+      "primary_sources": [
+        {
+          "url": "https://api-docs.deepseek.com/news/news1120/",
+          "kind": "official_blog",
+          "verification": "official-domain search-index text; direct open timed out"
+        },
+        {
+          "url": "https://arxiv.org/abs/2501.19393",
+          "kind": "paper",
+          "verification": "linked X URL appears in paper bibliography search result"
+        }
+      ],
+      "discovery_evidence_urls": [
+        "https://api-docs.deepseek.com/news/news1120/",
+        "https://praxis.ac.in/wp-content/uploads/2025/02/Test-Time-Scaling-Research-Paper-1.pdf"
+      ],
+      "access_status": "403; official announcement indexed and paper citation corroborates URL",
+      "attention_status": "unverified",
+      "discussion_focus": "从预训练预算转向推理时思考长度；原公告给出 AIME 随思考长度变化的主张。",
+      "evidence_limit": "Lite-Preview 是2024公告，不能把它与2025正式R1实验合并。未验证X互动；官方公告亦非独立复现。",
+      "observed_at": "2026-09-16",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_evidence": null,
+      "metrics_source_kind": "not_available",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "X-03",
+      "platform": "X",
+      "title": "Thoughts About Scaling Law",
+      "url": "https://x.com/jietang/status/2089941544581403107",
+      "author": "Jie Tang",
+      "published_at": null,
+      "topics": [
+        "post-training scaling",
+        "MoE",
+        "lifetime cost"
+      ],
+      "primary_sources": [
+        {
+          "url": "https://z.ai/blog/glm-5.3",
+          "kind": "official_blog",
+          "verification": "retrieved no readable text; pending"
+        },
+        {
+          "url": "https://arxiv.org/abs/2401.00448",
+          "kind": "related_paper",
+          "verification": "abstract_and_metadata_read; supports lifetime-cost background only"
+        }
+      ],
+      "discovery_evidence_urls": [
+        "https://www.reddit.com/r/LocalLLaMA/comments/1vsf9eg/thoughts_about_scaling_law_zai/",
+        "https://www.latent.space/p/ainews-death-of-params-zai-ceo-jie"
+      ],
+      "access_status": "403; post URL and excerpt cross-linked by Reddit and secondary coverage",
+      "attention_status": "unverified",
+      "discussion_focus": "社区把参数量、数据、激活计算量、后训练和部署条件放进同一预算问题。",
+      "evidence_limit": "Reddit帖日期为2026-08-19，但X精确日期未直接核验；第三方镜像热度未录为X指标。官方blog空页，具体GLM结果不进入技术结论。",
+      "observed_at": "2026-09-16",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_evidence": null,
+      "metrics_source_kind": "not_available",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "YT-01",
+      "platform": "YouTube",
+      "title": "s1: Simple test-time scaling: Just “wait…” + 1,000 training examples? | PAPER EXPLAINED",
+      "url": "https://www.youtube.com/watch?v=XuH2QTAC5yI",
+      "author": "AI Coffee Break with Letitia",
+      "published_at": "2025-03-23",
+      "topics": [
+        "test-time scaling",
+        "s1"
+      ],
+      "metrics": {
+        "likes": 335,
+        "comments": null,
+        "views": 5544,
+        "reposts": null,
+        "score": null
+      },
+      "metric_evidence": "Published: 2025-03-23, 5544 views, 335 likes",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2501.19393",
+          "kind": "paper",
+          "verification": "abstract_and_metadata_read"
+        }
+      ],
+      "access_status": "YouTube search-index metadata and description available; direct video fetch failed",
+      "attention_status": "context_below_screening_threshold",
+      "discussion_focus": "视频说明栏将数据选择、蒸馏与budget forcing连接，适合追踪s1如何被技术传播。",
+      "evidence_limit": "本次读取视频说明栏和元数据，未观看全文或读取评论；不足以称为平台热门。少量SFT样本不代表基座训练与教师生成成本为零。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "YT-02",
+      "platform": "YouTube",
+      "title": "Dave Plummer explains Deepseek R1",
+      "url": "https://www.youtube.com/watch?v=r3TpcHebtxM",
+      "author": "Dave's Garage",
+      "published_at": "2025-01-27",
+      "topics": [
+        "DeepSeek-R1",
+        "compute efficiency"
+      ],
+      "metrics": {
+        "likes": 128000,
+        "comments": null,
+        "views": 2436922,
+        "reposts": null,
+        "score": null
+      },
+      "metric_evidence": "Published: 2025-01-27, 2436922 views, 128000 likes",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2501.12948",
+          "kind": "technical_report_and_paper",
+          "verification": "abstract_and_metadata_read"
+        }
+      ],
+      "access_status": "YouTube search-index metadata and description available",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "R1的效率与开放性如何变成大众对扩大算力是否必要的讨论。",
+      "evidence_limit": "高观看反映传播规模，不能验证视频技术结论；未读取评论或完整视频。训练/后训练/蒸馏成本应回到技术报告分别核对。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "YT-03",
+      "platform": "YouTube",
+      "title": "Big Tech in panic mode... Did DeepSeek R1 just pop the AI bubble?",
+      "url": "https://www.youtube.com/watch?v=Nl7aCUsWykg",
+      "author": "Fireship",
+      "published_at": "2025-01-27",
+      "topics": [
+        "DeepSeek-R1",
+        "scaling economics"
+      ],
+      "metrics": {
+        "likes": 152000,
+        "comments": null,
+        "views": 3884394,
+        "reposts": null,
+        "score": null
+      },
+      "metric_evidence": "Published: 2025-01-27, 3884394 views, 152000 likes",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2501.12948",
+          "kind": "technical_report_and_paper",
+          "verification": "abstract_and_metadata_read"
+        }
+      ],
+      "access_status": "YouTube search-index metadata and description available",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "效率改进是否意味着规模投入失效，是该传播样本引出的经济与技术边界问题。",
+      "evidence_limit": "标题及简介采用新闻评论框架；不能由市场叙事推出scaling law失效。浏览与点赞为索引快照，未观看完整视频。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "RD-01",
+      "platform": "Reddit",
+      "community": "r/MachineLearning",
+      "title": "[D] New Llama scaling laws?",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1eq95ga",
+      "published_at": "2024-08-12",
+      "topics": [
+        "Chinchilla",
+        "overtraining",
+        "inference economics"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 48
+      },
+      "metric_evidence": "[Monday August 12 2024] [+48 votes]",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2203.15556",
+          "kind": "paper",
+          "verification": "metadata_read"
+        },
+        {
+          "url": "https://arxiv.org/abs/2401.00448",
+          "kind": "paper",
+          "verification": "abstract_and_metadata_read"
+        }
+      ],
+      "access_status": "search-index post and selected replies available; direct open failed",
+      "attention_status": "context_below_screening_threshold",
+      "discussion_focus": "为什么Llama式长训练没有推翻Chinchilla：固定训练预算的最优点与固定模型大小/部署成本的目标不同。",
+      "evidence_limit": "48为帖子score；索引中某回帖+96不能冒充帖子的点赞或评论总数；未取得完整评论树。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "RD-02",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "DeepSeek R1 has been officially released!",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1i5p549/deepseek_r1_has_been_officially_released/",
+      "published_at": "2025-01-20",
+      "topics": [
+        "DeepSeek-R1",
+        "benchmark validity",
+        "distillation"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 301
+      },
+      "metric_evidence": "[Monday January 20 2025] [+301 votes]",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2501.12948",
+          "kind": "technical_report_and_paper",
+          "verification": "abstract_and_metadata_read"
+        },
+        {
+          "url": "https://github.com/deepseek-ai/DeepSeek-R1",
+          "kind": "author_repository",
+          "verification": "linked by original Reddit post; not separately reviewed in this radar"
+        }
+      ],
+      "access_status": "post page and search-index selected replies available; current page omitted numeric counts",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "基准成绩能否转化为实际编码质量，以及大模型推理行为蒸馏到本地小模型后的能力与成本。",
+      "evidence_limit": "应用体验是线索，不是受控基准；发布帖早于报告上传日期，不能混用为论文日期。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "RD-03",
+      "platform": "Reddit",
+      "community": "r/MachineLearning",
+      "title": "[R] What do you all think of the latest Apple paper on current LLM capabilities?",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1l4nk5s",
+      "published_at": "2025-06-06",
+      "topics": [
+        "reasoning limits",
+        "evaluation",
+        "Illusion of Thinking"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 103
+      },
+      "metric_evidence": "[Friday June 06 2025] [+103 votes]",
+      "primary_sources": [
+        {
+          "url": "https://machinelearning.apple.com/research/illusion-of-thinking",
+          "kind": "official_research_page",
+          "verification": "read"
+        },
+        {
+          "url": "https://arxiv.org/abs/2506.09250",
+          "kind": "comment_paper",
+          "verification": "abstract_and_metadata_read"
+        }
+      ],
+      "access_status": "search-index post and selected replies available; direct open failed",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "复杂度增加后的准确率下降，应解释为通用推理极限还是受任务表示、输出预算和评测方式影响。",
+      "evidence_limit": "评论中关于模型完全不能推理的推广不是论文已证实结论；本雷达保留原研究与反驳两侧。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "RD-04",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "Comment on The Illusion of Thinking: Recent paper from Apple contain glaring flaws in the original study's experimental design, from not considering token limit to testing unsolvable puzzles.",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1lbgczn",
+      "published_at": "2025-06-14",
+      "topics": [
+        "reasoning limits",
+        "evaluation confounds",
+        "rebuttal"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 58
+      },
+      "metric_evidence": "[Saturday June 14 2025] [+58 votes]",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2506.09250v2",
+          "kind": "comment_paper",
+          "verification": "abstract and revision note read"
+        },
+        {
+          "url": "https://machinelearning.apple.com/research/illusion-of-thinking",
+          "kind": "official_research_page",
+          "verification": "read"
+        }
+      ],
+      "access_status": "search-index post and selected replies available",
+      "attention_status": "context_below_screening_threshold",
+      "discussion_focus": "token上限、无解实例与答案表示是否混淆了推理失败的解释；作为RD-03的对照。",
+      "evidence_limit": "反驳也是待评价证据；v2更正了v1若干内容，不能把帖子旧表述当当前论文结论。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "RD-05",
+      "platform": "Reddit",
+      "community": "r/MachineLearning",
+      "title": "There Will Be a Scientific Theory of Deep Learning [R]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1sun588/there_will_be_a_scientific_theory_of_deep/",
+      "published_at": "2026-04-24",
+      "topics": [
+        "scaling theory",
+        "learning mechanics",
+        "falsifiable predictions"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 263
+      },
+      "metric_evidence": "[Friday April 24 2026] [+263 votes]",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2604.21691",
+          "kind": "perspective_paper",
+          "verification": "abstract_and_metadata_read"
+        }
+      ],
+      "access_status": "search-index author post available",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "从拟合经验曲线进一步追问：什么机制能产生可证伪、可跨设置检验的定量预测。",
+      "evidence_limit": "作者宣传帖及观点论文具有议程设置作用，不能记为已建立统一理论；未取得评论总数。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "RD-06",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "Thoughts About Scaling Law - Z.ai",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vsf9eg/thoughts_about_scaling_law_zai/",
+      "published_at": "2026-08-19",
+      "topics": [
+        "post-training scaling",
+        "MoE",
+        "deployment constraints"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 519
+      },
+      "metric_evidence": "[Wednesday August 19 2026] [+519 votes]",
+      "primary_sources": [
+        {
+          "url": "https://z.ai/blog/glm-5.3",
+          "kind": "official_blog",
+          "verification": "retrieved no readable text; pending"
+        },
+        {
+          "url": "https://arxiv.org/abs/2401.00448",
+          "kind": "related_paper",
+          "verification": "abstract_and_metadata_read; supports lifetime-cost background only"
+        }
+      ],
+      "access_status": "post page and search-index selected replies available",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "研究者对后训练、参数和数据预算的讨论，与本地用户对显存、延迟、可部署性的约束发生碰撞。",
+      "evidence_limit": "有可见讨论信号，但帖中具体新模型效果和架构机制未由可读主源验证，只进入候选队列。与X-03是同一事件，不能算独立技术复现。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    }
+  ]
+}

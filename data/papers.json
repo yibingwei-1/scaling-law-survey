@@ -1,0 +1,1107 @@
+[
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "hestness2017",
+    "title": "Deep Learning Scaling is Predictable, Empirically",
+    "year": 2017,
+    "url": "https://arxiv.org/abs/1712.00409",
+    "branch": "pretraining_foundations",
+    "problem": "投入更多数据与计算前，缺乏跨任务的收益预测。",
+    "insight": "在充分调节容量与优化的实验中测量数据规模和泛化误差关系，区分幂律区间与饱和区间。",
+    "limitation": "经验规律依赖任务、数据分布和可测规模；不证明无限外推。",
+    "reading_depth": "原论文全文 HTML 中重点阅读摘要、§1–3、§5；查阅实验与方法片段，未逐项复算附录。",
+    "fulltext_url": "https://arxiv.org/html/1712.00409v1",
+    "authors": [
+      "Joel Hestness",
+      "et al."
+    ],
+    "first_published_date": "2017-12-01",
+    "last_revised_date": null,
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "canonical_url": "https://arxiv.org/abs/1712.00409",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "kaplan2020",
+    "title": "Scaling Laws for Neural Language Models",
+    "year": 2020,
+    "url": "https://arxiv.org/abs/2001.08361",
+    "branch": "compute_optimal_pretraining",
+    "problem": "固定训练预算应如何分配模型容量与训练数据？",
+    "insight": "联合描述参数、数据和训练计算关系，强调样本效率与未收敛时停止；经批大小调整的参数增长指数约0.73。",
+    "limitation": "非 embedding 参数与调整后计算口径、warmup和优化质量影响后续比较；结论针对其架构和区间。",
+    "reading_depth": "原论文全文 HTML 中重点阅读摘要、§1、§6及相关定义；未完整复算附录。",
+    "fulltext_url": "https://arxiv.org/html/2001.08361v1",
+    "authors": [
+      "Jared Kaplan",
+      "et al."
+    ],
+    "first_published_date": "2020-01-23",
+    "last_revised_date": null,
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "canonical_url": "https://arxiv.org/abs/2001.08361",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "hoffmann2022",
+    "title": "Training Compute-Optimal Large Language Models",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2203.15556",
+    "branch": "compute_optimal_pretraining",
+    "problem": "参数增长快于数据时，既定计算预算是否被低效分配？",
+    "insight": "用训练曲线包络、IsoFLOP和参数化损失三种估计，支持参数和token大致等比例扩展。",
+    "limitation": "大尺度验证有限；主要为不足一epoch；拟合系数、函数形式及远距离外推需复核。",
+    "reading_depth": "原论文全文 HTML 中重点阅读§1–3、§4相关结果及§5限制；核查公式2、4和表2、3。",
+    "fulltext_url": "https://arxiv.org/html/2203.15556v1",
+    "authors": [
+      "Jordan Hoffmann",
+      "et al."
+    ],
+    "first_published_date": "2022-03-29",
+    "last_revised_date": null,
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "canonical_url": "https://arxiv.org/abs/2203.15556",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "porian2024",
+    "title": "Resolving Discrepancies in Compute-Optimal Scaling of Language Models",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2406.19146",
+    "branch": "methodology_replication",
+    "problem": "Kaplan和Chinchilla对同一预算分配问题给出不同指数，差异来自何处？",
+    "insight": "逐项检查输出层FLOPs、warmup以及随规模变化的优化器调参，可恢复接近Chinchilla的结果；衰减本身非充分解释。",
+    "limitation": "受控复现并非所有历史训练配置的逐项一致重跑；其他语料和模型差异仍有开放问题。",
+    "reading_depth": "全文 HTML 重点阅读§1、§3逐项消融及§5；所读v4日期2025-01-19。",
+    "fulltext_url": "https://arxiv.org/html/2406.19146v4",
+    "version_read": "v4",
+    "authors": [
+      "Tomer Porian",
+      "et al."
+    ],
+    "first_published_date": "2024-06-27",
+    "last_revised_date": "2025-01-19",
+    "latest_version_verified": "v4",
+    "canonical_url": "https://arxiv.org/abs/2406.19146",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "besiroglu2024",
+    "title": "Chinchilla Scaling: A replication attempt",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2404.10102",
+    "branch": "methodology_replication",
+    "problem": "Chinchilla第三种参数拟合及其置信区间是否与实验图和其他两种方法一致？",
+    "insight": "从图像重建数据重新拟合，指出报告参数与不确定性存在问题，同时保留大体平衡扩展结论。",
+    "limitation": "基于重建数据；不是持有完整原始训练日志的完全复现。",
+    "reading_depth": "全文 HTML 重点阅读摘要、引言、数据重建与拟合说明；未运行作者代码。",
+    "fulltext_url": "https://arxiv.org/html/2404.10102v2",
+    "authors": [
+      "Tamay Besiroglu",
+      "et al."
+    ],
+    "first_published_date": "2024-04-15",
+    "last_revised_date": "2024-05-15",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "canonical_url": "https://arxiv.org/abs/2404.10102",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "muennighoff2023",
+    "title": "Scaling Data-Constrained Language Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2305.16264",
+    "branch": "data_repetition",
+    "problem": "唯一数据量有限时，总token增长可以由重复代替多少？",
+    "insight": "分离唯一token与重复次数，估计重复数据边际价值递减并重新求预算最优配置。",
+    "limitation": "少量重复接近独立数据的观察不能无条件跨语料推广；饱和公式不能完全刻画严重重复导致的性能恶化。",
+    "reading_depth": "全文 HTML 重点阅读§3方法及§5–7结果、限制；核查重复设置和四epoch实例。",
+    "fulltext_url": "https://arxiv.org/html/2305.16264",
+    "authors": [
+      "Niklas Muennighoff",
+      "et al."
+    ],
+    "first_published_date": "2023-05-25",
+    "last_revised_date": "2025-06-28",
+    "version_read": null,
+    "latest_version_verified": "v5",
+    "version_note": "此前重点章节通过无版本HTML链接阅读，未留存确切版本；最新版本仅经元数据核验，故不回填为全文已读版本。",
+    "canonical_url": "https://arxiv.org/abs/2305.16264",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "sorscher2022",
+    "title": "Beyond neural scaling laws: beating power law scaling via data pruning",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2206.14486",
+    "branch": "data_selection",
+    "problem": "随机扩大数据集的幂律改善昂贵，样本筛选能否提高效率？",
+    "insight": "理论上高质量剪枝指标可改变样本量与误差的关系，并以图像任务研究实际收益。",
+    "limitation": "高质量指标、类别平衡和筛选计算成本构成约束；没有证明通用LLM损失普遍指数下降。",
+    "reading_depth": "原始摘要及全文 HTML §7讨论和限制；未逐式检查理论附录或全部视觉实验。",
+    "fulltext_url": "https://arxiv.org/html/2206.14486",
+    "authors": [
+      "Ben Sorscher",
+      "et al."
+    ],
+    "first_published_date": "2022-06-29",
+    "last_revised_date": "2023-04-21",
+    "version_read": null,
+    "latest_version_verified": "v6",
+    "version_note": "此前重点章节通过无版本HTML链接阅读，未留存确切版本；最新版本仅经元数据核验，故不回填为全文已读版本。",
+    "canonical_url": "https://arxiv.org/abs/2206.14486",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "li2024dclm",
+    "title": "DataComp-LM: In search of the next generation of training sets for language models",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2406.11794",
+    "branch": "data_curation",
+    "problem": "不同数据集结果混杂了架构、算力和训练配方，难以判断数据处理本身价值。",
+    "insight": "提供标准化语料、训练和评估框架，对去重、过滤和混合进行受控比较。",
+    "limitation": "实验至7B；运行间方差和组合未充分探索；评估主要侧重语言理解，不能将质量视为全任务统一标量。",
+    "reading_depth": "全文 HTML 摘要、引言、§6限制及相关结果表；所读v4日期2025-04-21。",
+    "fulltext_url": "https://arxiv.org/html/2406.11794v4",
+    "version_read": "v4",
+    "authors": [
+      "Jeffrey Li",
+      "et al."
+    ],
+    "first_published_date": "2024-06-17",
+    "last_revised_date": "2025-04-21",
+    "latest_version_verified": "v4",
+    "canonical_url": "https://arxiv.org/abs/2406.11794",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "ye2024",
+    "title": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2403.16952",
+    "branch": "data_mixture",
+    "problem": "多领域预训练数据配比依赖试错，完整训练前难预测效果。",
+    "insight": "拟合混合比例和领域损失，再嵌套模型规模、训练步数规律以预测配方。",
+    "limitation": "本综述尚未独立检查全部外推实验；候选领域定义和目标分布限制推广。",
+    "reading_depth": "原始摘要与全文 HTML 引言核查；未精读全部方法、消融及附录；所读v2日期2025-03-20。",
+    "fulltext_url": "https://arxiv.org/html/2403.16952v2",
+    "version_read": "v2",
+    "authors": [
+      "Jiasheng Ye",
+      "et al."
+    ],
+    "first_published_date": "2024-03-25",
+    "last_revised_date": "2025-03-20",
+    "latest_version_verified": "v2",
+    "canonical_url": "https://arxiv.org/abs/2403.16952",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "shumailov2023",
+    "title": "The Curse of Recursion: Training on Generated Data Makes Models Forget",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2305.17493",
+    "branch": "synthetic_data_collapse",
+    "problem": "生成内容循环进入后续训练集是否损失原始分布信息？",
+    "insight": "研究递归生成—训练反馈中有限采样等误差累积和尾部消失。",
+    "limitation": "特定反馈过程不能推出所有合成数据都必然有害；本次Nature正式版页面未成功获取。",
+    "reading_depth": "原论文HTML v3的摘要、引言、§3定义和误差机制；未把Nature正式版记为全文已读。",
+    "fulltext_url": "https://arxiv.org/html/2305.17493v3",
+    "version_read": "v3",
+    "related_publication_url": "https://www.nature.com/articles/s41586-024-07566-y",
+    "related_publication_title": "AI models collapse when trained on recursively generated data",
+    "related_publication_year": 2024,
+    "authors": [
+      "Ilia Shumailov",
+      "et al."
+    ],
+    "first_published_date": "2023-05-27",
+    "last_revised_date": "2024-04-14",
+    "latest_version_verified": "v3",
+    "canonical_url": "https://arxiv.org/abs/2305.17493",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "gerstgrasser2024",
+    "title": "Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2404.01413",
+    "branch": "synthetic_data_collapse",
+    "problem": "递归合成训练中的退化是否依赖旧数据被替换这一条件？",
+    "insight": "比较替换与累积真实/合成数据；所测条件下累积能避免对应退化，线性模型提供有界误差说明。",
+    "limitation": "累积改变数据量与计算需求；不保证任意固定预算和分布的合成数据安全。",
+    "reading_depth": "全文HTML重点阅读语言实验设置和结果、附录E累积/替换的成本与误差分析。",
+    "fulltext_url": "https://arxiv.org/html/2404.01413",
+    "authors": [
+      "Matthias Gerstgrasser",
+      "et al."
+    ],
+    "first_published_date": "2024-04-01",
+    "last_revised_date": "2024-04-29",
+    "version_read": null,
+    "latest_version_verified": "v2",
+    "version_note": "此前重点章节通过无版本HTML链接阅读，未留存确切版本；最新版本仅经元数据核验，故不回填为全文已读版本。",
+    "canonical_url": "https://arxiv.org/abs/2404.01413",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "clark2022",
+    "title": "Unified Scaling Laws for Routed Language Models",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2202.01169",
+    "branch": "architecture_moe",
+    "problem": "条件计算解耦容量与活动计算后，如何比较稠密和路由模型的规模规律？",
+    "insight": "将模型容量与计算作为独立轴并构造有效参数量描述不同路由模型。",
+    "limitation": "主要实验固定130B训练token，不是联合优化数据、模型和专家的完整处方。",
+    "reading_depth": "原始摘要及全文HTML §2训练和参数定义、相关路由说明；附录F入口核查。",
+    "fulltext_url": "https://arxiv.org/html/2202.01169",
+    "authors": [
+      "Aidan Clark",
+      "et al."
+    ],
+    "first_published_date": "2022-02-02",
+    "last_revised_date": "2022-02-09",
+    "version_read": null,
+    "latest_version_verified": "v2",
+    "version_note": "此前重点章节通过无版本HTML链接阅读，未留存确切版本；最新版本仅经元数据核验，故不回填为全文已读版本。",
+    "canonical_url": "https://arxiv.org/abs/2202.01169",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "krajewski2024",
+    "title": "Scaling Laws for Fine-Grained Mixture of Experts",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2402.07871",
+    "branch": "architecture_moe",
+    "problem": "固定数据量的MoE规律不足以优化训练预算；专家大小是否也应优化？",
+    "insight": "把专家粒度与参数、token一起建模，纳入路由开销求优化配置。",
+    "limitation": "高粒度增加路由、通信和内存代价，FLOPs收益不直接等同墙钟时间收益。",
+    "reading_depth": "全文HTML重点阅读§3对前作限制、§4粒度定义及§6计算成本；未复现全部拟合。",
+    "fulltext_url": "https://arxiv.org/html/2402.07871v1",
+    "authors": [
+      "Jakub Krajewski",
+      "et al."
+    ],
+    "first_published_date": "2024-02-12",
+    "last_revised_date": null,
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "canonical_url": "https://arxiv.org/abs/2402.07871",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "sardana2023",
+    "title": "Beyond Chinchilla-Optimal: Accounting for Inference in Language Model Scaling Laws",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2401.00448",
+    "branch": "lifecycle_cost",
+    "problem": "只最小化训练成本忽略了模型部署后的大量推理需求。",
+    "insight": "在给定质量和推理需求下优化训练加推理总成本，高需求可使更小且训练更久的模型更优。",
+    "limitation": "依赖推理需求估计、数据充足和成本近似；常见token比例区间的拟合可能高估极高比例下数据收益。",
+    "reading_depth": "全文HTML重点阅读引言、§2目标与公式，摘要中47次训练和高token比例结果；未实测硬件成本。",
+    "fulltext_url": "https://arxiv.org/html/2401.00448",
+    "publication_year": 2024,
+    "year_note": "首个arXiv提交时间为2023-12-31；通常按ICML 2024引用。",
+    "authors": [
+      "Nikhil Sardana",
+      "et al."
+    ],
+    "first_published_date": "2023-12-31",
+    "last_revised_date": "2025-04-14",
+    "version_read": null,
+    "latest_version_verified": "v3",
+    "version_note": "此前重点章节通过无版本HTML链接阅读，未留存确切版本；最新版本仅经元数据核验，故不回填为全文已读版本。",
+    "canonical_url": "https://arxiv.org/abs/2401.00448",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "bahri2021",
+    "title": "Explaining Neural Scaling Laws",
+    "year": 2021,
+    "url": "https://arxiv.org/abs/2102.06701",
+    "branch": "theory",
+    "problem": "不同数据与模型规模下的幂律来自哪些机制？",
+    "insight": "区分方差受限与分辨率受限区域，并联系流形或核谱性质。",
+    "limitation": "简化假设和受控设置的解释不等于通用Transformer的完整理论。",
+    "reading_depth": "原始摘要及全文HTML §1机制分类与条件；未逐式复算证明。",
+    "fulltext_url": "https://arxiv.org/html/2102.06701",
+    "authors": [
+      "Yasaman Bahri",
+      "et al."
+    ],
+    "first_published_date": "2021-02-12",
+    "last_revised_date": "2024-04-29",
+    "version_read": null,
+    "latest_version_verified": "v2",
+    "version_note": "此前重点章节通过无版本HTML链接阅读，未留存确切版本；最新版本仅经元数据核验，故不回填为全文已读版本。",
+    "canonical_url": "https://arxiv.org/abs/2102.06701",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "michaud2023",
+    "title": "The Quantization Model of Neural Scaling",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2303.13506",
+    "branch": "theory",
+    "problem": "总体损失平滑下降与部分技能变化如何并存？",
+    "insight": "以离散知识技能单元及使用频率分布解释总体规模曲线。",
+    "limitation": "离散性、技能独立性及参数数据替代关系均有限制；不应视作已证实的真实模型唯一机制。",
+    "reading_depth": "全文HTML摘要、引言和§7限制；核查v3日期2024-01-13；未重跑技能分解。",
+    "fulltext_url": "https://arxiv.org/html/2303.13506v3",
+    "version_read": "v3",
+    "authors": [
+      "Eric J. Michaud",
+      "et al."
+    ],
+    "first_published_date": "2023-03-23",
+    "last_revised_date": "2024-01-13",
+    "latest_version_verified": "v3",
+    "canonical_url": "https://arxiv.org/abs/2303.13506",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "shukor2025",
+    "title": "Scaling Laws for Optimal Data Mixtures",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2507.09404",
+    "branch": "data_mixture_watchlist",
+    "problem": "需要同时预测模型大小、数据量和领域比例下的目标性能。",
+    "insight": "原始摘要报告对N、D及领域权重联合建模并跨语言、多模态和视觉设置检验。",
+    "limitation": "本次仅摘要核查，未评审实验与外推假设；作为待精读条目，不作为已确立结论。",
+    "reading_depth": "原始arXiv摘要与元数据；全文待精读。",
+    "authors": [
+      "Mustafa Shukor",
+      "et al."
+    ],
+    "first_published_date": "2025-07-12",
+    "last_revised_date": "2025-10-02",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "version_note": "v2 仅摘要和元数据已读，全文待精读。",
+    "canonical_url": "https://arxiv.org/abs/2507.09404",
+    "catalogs": [
+      "foundations"
+    ]
+  },
+  {
+    "id": "wei2022cot",
+    "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2201.11903",
+    "type": "paper",
+    "branch": "推理时计算前史",
+    "problem": "直接给答案难以展开多步计算",
+    "insight": "用中间推理示范改变生成过程",
+    "limitation": "非通用幂律；此章仅作历史背景",
+    "reading_depth": "abstract_and_metadata",
+    "verification_date": "2026-09-16",
+    "version_read": "v6",
+    "sections_read": "摘要",
+    "canonical_url": "https://arxiv.org/abs/2201.11903",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "wang2022selfconsistency",
+    "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2203.11171",
+    "type": "paper",
+    "branch": "并行采样",
+    "problem": "单条贪心路径容易出错",
+    "insight": "采样多个推理链并聚合最终答案",
+    "limitation": "不保证高频答案正确，需额外生成成本",
+    "reading_depth": "abstract_and_metadata",
+    "verification_date": "2026-09-16",
+    "version_read": "v4",
+    "sections_read": "摘要",
+    "canonical_url": "https://arxiv.org/abs/2203.11171",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "lightman2023verify",
+    "title": "Let's Verify Step by Step",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2305.20050",
+    "type": "paper",
+    "branch": "过程验证",
+    "problem": "最终结果反馈不能定位中间错误",
+    "insight": "比较过程监督和结果监督以改善推理选择",
+    "limitation": "监督与验证成本；本章仅使用方法层结论",
+    "reading_depth": "abstract_and_metadata",
+    "verification_date": "2026-09-16",
+    "version_read": "abstract page current",
+    "sections_read": "摘要",
+    "canonical_url": "https://arxiv.org/abs/2305.20050",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "snell2024testcompute",
+    "title": "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters",
+    "year": 2024,
+    "url": "https://arxiv.org/html/2408.03314v1",
+    "type": "paper",
+    "branch": "计算最优推理",
+    "problem": "固定测试预算如何分给搜索和修订",
+    "insight": "策略依赖题目相对底座难度",
+    "limitation": "最难题收益小；难度估计成本未计入主要比较；非普遍14倍替代",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§1–7，尤其§3难度估计、§5搜索失效",
+    "canonical_url": "https://arxiv.org/abs/2408.03314",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "wu2024inference",
+    "title": "Inference Scaling Laws: An Empirical Analysis of Compute-Optimal Inference for LLM Problem-Solving",
+    "year": 2024,
+    "url": "https://arxiv.org/html/2408.00724v3",
+    "type": "paper",
+    "branch": "计算最优推理",
+    "problem": "模型大小与推理策略成本不能分别比较",
+    "insight": "比较FLOPs前沿并提出Rebase搜索",
+    "limitation": "数学任务上的条件性规律；投票饱和而非无限改善",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§1、§3–4方法实验与收敛讨论",
+    "canonical_url": "https://arxiv.org/abs/2408.00724",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "openai2024reason",
+    "title": "Learning to reason with LLMs",
+    "year": 2024,
+    "url": "https://openai.com/index/learning-to-reason-with-llms/",
+    "type": "official_blog",
+    "branch": "推理RL",
+    "problem": "模型需要学会有效消费推理预算",
+    "insight": "展示RL训练计算和测试思考计算两个增长轴",
+    "limitation": "训练配方和拟合公式未完整公开；公司自报",
+    "reading_depth": "official_report_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "2024-09-12 official report",
+    "sections_read": "开篇计算增长及评测说明",
+    "canonical_url": "https://openai.com/index/learning-to-reason-with-llms",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "deepseek2025r1",
+    "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+    "year": 2025,
+    "url": "https://arxiv.org/html/2501.12948v1",
+    "type": "technical_report",
+    "branch": "推理RL与蒸馏",
+    "problem": "昂贵的推理标注和不可复现的闭源训练配方",
+    "insight": "可验证奖励GRPO及多阶段SFT/RL；向小模型蒸馏",
+    "limitation": "R1-Zero已有预训练底座；最终R1含SFT；规则奖励领域受限",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§2训练方法、§4.1蒸馏与§4.2失败尝试",
+    "canonical_url": "https://arxiv.org/abs/2501.12948",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "muennighoff2025s1",
+    "title": "s1: Simple test-time scaling",
+    "year": 2025,
+    "url": "https://arxiv.org/html/2501.19393v1",
+    "type": "paper",
+    "branch": "蒸馏与串行控制",
+    "problem": "复杂推理配方难以低成本复现和控制",
+    "insight": "精选1000条轨迹SFT并用budget forcing控制思考",
+    "limitation": "额外长度会饱和，上下文有限，教师和底座成本不能忽略",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§2–6，含§6.2扩张限制",
+    "canonical_url": "https://arxiv.org/abs/2501.19393",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "yang2025tops",
+    "title": "Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning",
+    "year": 2025,
+    "url": "https://arxiv.org/html/2502.18080v1",
+    "type": "preprint",
+    "branch": "适应性推理长度",
+    "problem": "过长CoT可能降低表现",
+    "insight": "不同努力程度中选最短正确轨迹自改进",
+    "limitation": "数学及有限底座；需要正确性反馈",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§1、§3–5",
+    "canonical_url": "https://arxiv.org/abs/2502.18080",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "metel2026minseek",
+    "title": "Thinking Long, but Short: Stable Sequential Test-Time Scaling for Large Reasoning Models",
+    "year": 2026,
+    "url": "https://arxiv.org/html/2601.09855v1",
+    "type": "conference_paper",
+    "branch": "串行扩张稳定性",
+    "problem": "持续堆积思考片段导致重复、不稳定和缓存负担",
+    "insight": "保留较短片段并调整KV缓存位置编码",
+    "limitation": "两个R1蒸馏底座；每配置单次生成；长输出不等于无限能力增长",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§3–4，重点§4.2单次生成与§4.3结果",
+    "publication_venue": "Findings of the Association for Computational Linguistics: EACL 2026",
+    "publication_month": "2026-03",
+    "publication_url": "https://aclanthology.org/2026.findings-eacl.153/",
+    "doi": "10.18653/v1/2026.findings-eacl.153",
+    "publication_note": "技术内容以 arXiv v1 阅读为准；正式出版元数据已由 ACL Anthology 核验。",
+    "canonical_url": "https://arxiv.org/abs/2601.09855",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "zhai2026adaptive",
+    "title": "Adaptive Test-Time Compute Allocation for Reasoning LLMs via Constrained Policy Optimization",
+    "year": 2026,
+    "url": "https://arxiv.org/html/2604.14853v1",
+    "type": "preprint",
+    "branch": "自适应预算分配",
+    "problem": "相同预算分给不同输入造成浪费",
+    "insight": "离线效用表与拉格朗日分配标签，轻量分类器学习路由",
+    "limitation": "离散预算、离线效用估计、每基准200题再作80/20划分；路由特征含一次LLM调用的熵，采样预算不等于完整端到端成本；本文未复核最优性证明",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§2、§4–6及§E.2；MATH/GSM8K各抽取200题，80/20划分；§5.1单次LLM熵特征",
+    "canonical_url": "https://arxiv.org/abs/2604.14853",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "yue2025rlboundary",
+    "title": "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?",
+    "year": 2025,
+    "url": "https://arxiv.org/html/2504.13837v5",
+    "type": "paper",
+    "branch": "RL能力边界争议",
+    "problem": "pass@1无法区分概率重分配和可解集合扩大",
+    "insight": "比较完整pass@k曲线及覆盖、困惑度",
+    "limitation": "有限k并非严格支持集；不证明一切RL都无法学习新能力",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v5; compared v1",
+    "sections_read": "§2–5；元数据页核验NeurIPS 2025",
+    "canonical_url": "https://arxiv.org/abs/2504.13837",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "cai2026curriculum",
+    "title": "Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model",
+    "year": 2026,
+    "url": "https://arxiv.org/html/2606.22317v1",
+    "type": "preprint",
+    "branch": "稀疏反馈与课程",
+    "problem": "全失败组没有奖励对比信号",
+    "insight": "探测边界、加入定向teacher guidance、RL巩固",
+    "limitation": "混合教师监督与RL，不能视为纯RL反证",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§3–5及limitations",
+    "canonical_url": "https://arxiv.org/abs/2606.22317",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "tan2025rlscaling",
+    "title": "Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study in Mathematical Reasoning",
+    "year": 2025,
+    "url": "https://arxiv.org/html/2509.25300v1",
+    "type": "preprint",
+    "branch": "后训练经验规律",
+    "problem": "预训练拟合不能直接指导RL资源分配",
+    "insight": "54组Qwen2.5实验拟合后训练错误率与预算",
+    "limitation": "0.5B–14B；error rate非交叉熵；预训练投入未匹配",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§2指标和数据划分、§3拟合",
+    "canonical_url": "https://arxiv.org/abs/2509.25300",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "shojaee2025illusion",
+    "title": "The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity",
+    "year": 2025,
+    "url": "https://arxiv.org/html/2506.06941v3",
+    "type": "paper",
+    "branch": "复杂度与评估边界",
+    "problem": "固定数学排行榜难以控制任务复杂度",
+    "insight": "可控谜题与轨迹分析揭示复杂度条件下失败",
+    "limitation": "特定任务/输出格式/模型结果不能推为普遍不可能定理",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§3–4及Appendix补充实验",
+    "canonical_url": "https://arxiv.org/abs/2506.06941",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "lawsen2025comment",
+    "title": "Comment on The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity",
+    "year": 2025,
+    "url": "https://arxiv.org/html/2506.09250v2",
+    "type": "commentary_preprint",
+    "branch": "复杂度与评估争议",
+    "problem": "表示和输出协议可能混淆失败解释",
+    "insight": "质疑长度和可解性，测试生成函数表示",
+    "limitation": "v2修正v1 token分析；替代表达实验有限；不是完全推翻原实验",
+    "reading_depth": "full_text",
+    "verification_date": "2026-09-16",
+    "version_read": "v2; compared v1",
+    "sections_read": "全文，特别§4更正与§5小样本限制",
+    "canonical_url": "https://arxiv.org/abs/2506.09250",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "zhao2025knowledge",
+    "title": "Test-Time Scaling in Reasoning Models Is Not Effective for Knowledge-Intensive Tasks Yet",
+    "year": 2025,
+    "url": "https://arxiv.org/html/2509.06861v1",
+    "type": "preprint",
+    "branch": "知识与推理扩张边界",
+    "problem": "数学推理收益能否迁移到事实性任务",
+    "insight": "12个模型SimpleQA/FRAMES测试区分准确率和弃答行为",
+    "limitation": "禁止检索，仅串行思考；启用思考与继续加预算效果不同",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§3–5；§3.1明确不准外部检索",
+    "canonical_url": "https://arxiv.org/abs/2509.06861",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "hariri2026regimes",
+    "title": "Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility",
+    "year": 2026,
+    "url": "https://arxiv.org/html/2608.04001v2",
+    "type": "preprint",
+    "branch": "评测协议与复现",
+    "problem": "不同算法共用标量预算掩盖统计和系统差异",
+    "insight": "三种推理计算形态，完整系统评测与候选库诊断分离",
+    "limitation": "本章仅采用评测框架；新预印本尚未经独立复现",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "v2 §2–3，重点§2.4完整搜索成本和§3评测系统、离线候选库与在线停止的区分；不引用trace总数",
+    "first_published_date": "2026-08-04",
+    "last_revised_date": "2026-08-31",
+    "canonical_url": "https://arxiv.org/abs/2608.04001",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "gao2022rewardoveroptimization",
+    "title": "Scaling Laws for Reward Model Overoptimization",
+    "authors": [
+      "Leo Gao",
+      "John Schulman",
+      "Jacob Hilton"
+    ],
+    "year": 2022,
+    "first_published_date": "2022-10-19",
+    "last_revised_date": null,
+    "url": "https://arxiv.org/html/2210.10760v1",
+    "metadata_url": "https://arxiv.org/abs/2210.10760",
+    "type": "paper",
+    "branch": "RLHF奖励代理与过优化",
+    "problem": "固定奖励模型存在误差，更多策略优化或候选搜索可能提高代理分数却降低参照目标",
+    "insight": "在gold RM生成标签的合成设置中，联合测量RM容量和优化强度，分别拟合PPO与best-of-N的gold奖励曲线",
+    "limitation": "gold RM并非人类真值；经验函数和KL刻度不能作为跨算法通用计算规律；未覆盖标签与真实意图的偏差",
+    "reading_depth": "full_text_key_sections",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§1–3（含函数形式、RM容量/数据和PPO–BoN比较）、§4.1、§4.3–4.5；未复算附录证明或复现实验",
+    "canonical_url": "https://arxiv.org/abs/2210.10760",
+    "catalogs": [
+      "frontier"
+    ]
+  },
+  {
+    "id": "openai2023gpt4",
+    "title": "GPT-4 Technical Report",
+    "year": 2023,
+    "url": "https://arxiv.org/html/2303.08774v6",
+    "type": "technical_report",
+    "branch": "loss_to_capability_forecast",
+    "problem": "超大训练run难以逐个调参；能否从小规模实验预报loss与任务能力？",
+    "insight": "固定训练方法下分别拟合内部代码留出集loss和HumanEval子集log pass rate，检验预先作出的外推。",
+    "limitation": "HumanEval题目需在有限采样中被各小模型至少解出一次，排除最难15题并分桶；部分桶偏离预测；绝对算力、架构与数据构建未披露。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v6, 2024-03-04",
+    "sections_read": [
+      "2 Scope and Limitations",
+      "3.1 Loss Prediction",
+      "3.2 Scaling of Capabilities on HumanEval"
+    ],
+    "authors": [
+      "OpenAI"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2303.08774",
+    "catalogs": [
+      "extensions"
+    ]
+  },
+  {
+    "id": "schaeffer2023mirage",
+    "title": "Are Emergent Abilities of Large Language Models a Mirage?",
+    "year": 2023,
+    "url": "https://arxiv.org/html/2304.15004v2",
+    "type": "research_paper",
+    "branch": "emergence_measurement",
+    "problem": "基准上突跳的能力曲线是否说明模型内部发生突然变化？",
+    "insight": "非线性/离散指标、有限样本和规模采样可使平滑的底层改善表现为涌现；固定输出更换指标进行检验。",
+    "limitation": "不排除真实涌现；简化独立token模型不等同于真实生成机制；exact match可能仍是实际任务的正确效用指标。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, 2023-05-22",
+    "sections_read": [
+      "2 Mathematical Model",
+      "3–4 metric experiments",
+      "7 Discussion"
+    ],
+    "authors": [
+      "Rylan Schaeffer",
+      "Brando Miranda",
+      "Sanmi Koyejo"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2304.15004",
+    "catalogs": [
+      "extensions"
+    ]
+  },
+  {
+    "id": "caballero2022bnsl",
+    "title": "Broken Neural Scaling Laws",
+    "year": 2022,
+    "url": "https://arxiv.org/html/2210.14891",
+    "type": "conference_paper",
+    "branch": "nonmonotonic_and_piecewise_scaling",
+    "problem": "单一幂律无法表达双下降、延迟转折和多个增长阶段。",
+    "insight": "以平滑连接的幂律区段表达多种曲线形状，并在既有实验上比较外推性能。",
+    "limitation": "未观察到转折附近的证据时不能任意预测新阶段；拟合灵活性并非普适定律证明。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "Unversioned HTML accessed 2026-09-16; abstract page current v17, 2023-07-24",
+    "sections_read": [
+      "4 Expressivity",
+      "5 Extrapolation experiments",
+      "6 Limits of predictability"
+    ],
+    "authors": [
+      "Ethan Caballero",
+      "Kshitij Gupta",
+      "Irina Rish",
+      "David Krueger"
+    ],
+    "publication_note": "First preprint 2022; ICLR 2023 verified on arXiv metadata.",
+    "canonical_url": "https://arxiv.org/abs/2210.14891",
+    "catalogs": [
+      "extensions"
+    ]
+  },
+  {
+    "id": "henighan2020generative",
+    "title": "Scaling Laws for Autoregressive Generative Modeling",
+    "year": 2020,
+    "url": "https://arxiv.org/html/2010.14701v2",
+    "type": "research_paper",
+    "branch": "crossmodal_loss_scaling",
+    "problem": "语言建模中的scaling关系是否延伸至图像、视频、图文和数学任务？",
+    "insight": "在所测自回归模型中观察幂律加常数；生成loss的微小改善仍可能伴随下游表现提升。",
+    "limitation": "限定模型、数据表示与任务；低分辨率图像等实验不支持对所有现代多模态系统移植相同指数。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, 2020-11-06",
+    "sections_read": [
+      "Introduction",
+      "3.2 Image classification",
+      "4 Multimodal information gain"
+    ],
+    "authors": [
+      "Tom Henighan",
+      "Jared Kaplan",
+      "Mor Katz",
+      "Mark Chen",
+      "et al."
+    ],
+    "canonical_url": "https://arxiv.org/abs/2010.14701",
+    "catalogs": [
+      "extensions"
+    ]
+  },
+  {
+    "id": "zhai2021vit",
+    "title": "Scaling Vision Transformers",
+    "year": 2021,
+    "url": "https://arxiv.org/html/2106.04560v2",
+    "type": "conference_paper",
+    "branch": "vision_joint_scaling",
+    "problem": "视觉任务中只增加模型、数据或训练时长会遇到其他资源瓶颈。",
+    "insight": "联合变化资源以找误差—计算量前沿，用带两端饱和项的经验曲线描述视觉性能。",
+    "limitation": "分类错误率没有交叉熵的熵解释；patch数、分辨率与样本单位影响预算；不能直接移植文本指数。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, 2022-06-20",
+    "sections_read": [
+      "2 Main results",
+      "Appendices A, D, E"
+    ],
+    "authors": [
+      "Xiaohua Zhai",
+      "Alexander Kolesnikov",
+      "Neil Houlsby",
+      "Lucas Beyer"
+    ],
+    "publication_note": "First preprint 2021; CVPR 2022 verified via official CVF paper.",
+    "publication_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Zhai_Scaling_Vision_Transformers_CVPR_2022_paper.pdf",
+    "canonical_url": "https://arxiv.org/abs/2106.04560",
+    "catalogs": [
+      "extensions"
+    ]
+  },
+  {
+    "id": "radford2021clip",
+    "title": "Learning Transferable Visual Models From Natural Language Supervision",
+    "year": 2021,
+    "url": "https://arxiv.org/html/2103.00020v1",
+    "type": "research_paper",
+    "branch": "natural_language_supervision",
+    "problem": "固定类别标签限制视觉监督扩展和零样本迁移。",
+    "insight": "图文配对的对比目标以可扩展文本监督连接视觉表示与开放词汇分类；目标选择考虑零样本转移效率。",
+    "limitation": "原文报告计数、部分细粒度及分布外任务薄弱；开放词汇分类不等同开放任务能力或生成式视觉推理。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, 2021-02-26",
+    "sections_read": [
+      "2 Approach",
+      "5 Data contamination (context)",
+      "6 Limitations"
+    ],
+    "authors": [
+      "Alec Radford",
+      "Jong Wook Kim",
+      "Chris Hallacy",
+      "et al."
+    ],
+    "canonical_url": "https://arxiv.org/abs/2103.00020",
+    "catalogs": [
+      "extensions"
+    ]
+  },
+  {
+    "id": "gadre2023datacomp",
+    "title": "DataComp: In search of the next generation of multimodal datasets",
+    "year": 2023,
+    "url": "https://arxiv.org/html/2304.14108v5",
+    "type": "research_paper",
+    "branch": "multimodal_data_selection",
+    "problem": "数据、架构和训练计算同步改变导致数据改进难以归因。",
+    "insight": "固定CLIP训练流程与计算预算，在公共候选池上比较数据策略并用38个数据集评价迁移。",
+    "limitation": "ImageNet与平均表现相关并不意味着能替代每项下游任务；数据策略优劣依赖目标与所测模型族。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v5, 2023-10-20",
+    "sections_read": [
+      "3 DataComp benchmark",
+      "5.2–5.3 results and correlations",
+      "6 Discussion"
+    ],
+    "authors": [
+      "Samir Yitzhak Gadre",
+      "Gabriel Ilharco",
+      "Alex Fang",
+      "et al."
+    ],
+    "canonical_url": "https://arxiv.org/abs/2304.14108",
+    "catalogs": [
+      "extensions"
+    ]
+  },
+  {
+    "id": "kearns2026construct",
+    "title": "Quantifying construct validity in large language model evaluations",
+    "year": 2026,
+    "url": "https://arxiv.org/html/2602.15532v1",
+    "type": "thesis_preprint",
+    "branch": "evaluation_construct_validity",
+    "problem": "榜单分数、模型规模和潜在能力容易被视为同一变量。",
+    "insight": "在开放模型榜单上以潜在能力和测量误差建模能力与基准的关系。",
+    "limitation": "探索性因子分析而非验证性分析；主要为观察性研究，不建立规模到能力的因果机制。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, 2026-02-17",
+    "sections_read": [
+      "2.2 Construct validity",
+      "5.1 Findings",
+      "5.4 Limitations"
+    ],
+    "authors": [
+      "Ryan Othniel Kearns"
+    ],
+    "evidence_status": "frontier_not_consensus",
+    "canonical_url": "https://arxiv.org/abs/2602.15532",
+    "catalogs": [
+      "extensions"
+    ]
+  },
+  {
+    "id": "sarridis2026vlmbias",
+    "title": "Scaling Vision-Language Models Is Not Enough to Mitigate Bias",
+    "year": 2026,
+    "url": "https://arxiv.org/html/2607.28211v1",
+    "type": "preprint",
+    "branch": "multimodal_worst_group_scaling",
+    "problem": "总体视觉准确率改善是否同时改善伪相关环境下最差群体表现？",
+    "insight": "比较194个公开checkpoint，并在控制若干因素的组间比较中观察整体准确率与最差群体表现的分离。",
+    "limitation": "限定OpenCLIP模型和少数已知群体结构的基准；不覆盖所有生成式VLM、社会偏见或因果机制。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, 2026-07-30",
+    "sections_read": [
+      "1 Introduction",
+      "4 Results and matched comparisons",
+      "5 Limitations"
+    ],
+    "authors": [
+      "Ioannis Sarridis",
+      "Ioannis Kompatsiaris",
+      "Symeon Papadopoulos"
+    ],
+    "publication_note": "HTML states accepted at ACM Multimedia 2026; proceedings not separately verified.",
+    "evidence_status": "frontier_not_consensus",
+    "canonical_url": "https://arxiv.org/abs/2607.28211",
+    "catalogs": [
+      "extensions"
+    ]
+  }
+]

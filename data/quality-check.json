@@ -1,0 +1,17 @@
+{
+  "checked_on": "2026-09-16",
+  "source_records": 45,
+  "community_records": 12,
+  "pdf_pages": 27,
+  "pdf_link_annotations": 244,
+  "display_formulas_rendered": 6,
+  "display_formula_fallbacks": 0,
+  "local_links_and_schema": "pass",
+  "review": "All PDF pages inspected in contact sheets; formula page inspected separately; final table pagination change inspected on pages 24–27.",
+  "limits": [
+    "No independent rerun of cited experiments",
+    "External URL availability is based on research verification logs, not an automated live link crawl",
+    "Inline math uses readable text notation; display math is rendered"
+  ],
+  "publication": "GitHub authentication pending"
+}
