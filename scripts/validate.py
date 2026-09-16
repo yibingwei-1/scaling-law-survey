@@ -5,6 +5,7 @@ import re
 from datetime import date
 from pathlib import Path
 from urllib.parse import unquote, urlparse
+from build_survey import CATALOGS, CHAPTERS
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = {'id', 'title', 'year', 'url', 'type', 'branch', 'problem',
@@ -14,7 +15,7 @@ REQUIRED = {'id', 'title', 'year', 'url', 'type', 'branch', 'problem',
 def main():
     problems = []
     ids = set()
-    for group in ['foundations', 'frontier', 'extensions']:
+    for group in CATALOGS:
         path = ROOT / 'sources' / f'{group}.json'
         entries = json.loads(path.read_text())
         for p in entries:
@@ -28,6 +29,9 @@ def main():
                 problems.append(f'Invalid URL: {p["url"]}')
             if p['year'] > date.today().year:
                 problems.append(f'Future source: {p["id"]}')
+    for name in CHAPTERS:
+        if not (ROOT / 'docs' / name).exists():
+            problems.append(f'Missing maintained chapter: {name}')
     social = json.loads((ROOT / 'sources/community.json').read_text())['entries']
     platforms = {e['platform'] for e in social}
     if not {'X', 'YouTube', 'Reddit'} <= platforms:

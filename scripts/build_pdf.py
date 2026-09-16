@@ -74,15 +74,19 @@ def notation(text):
     text = re.sub(r'\\(?:begin|end)\{(?:aligned|gathered|split)\}', '', text)
     text = re.sub(r'\\label\{[^}]+\}', '', text)
     text = re.sub(r'\\tag\{([^}]+)\}', r' (\1)', text)
+    text = re.sub(r'\\rm(?![A-Za-z])\s*', '', text)
     for _ in range(5):
-        text = re.sub(r'\\(?:text|mathrm|mathbf|mathcal|operatorname|textbf|textrm)\{([^{}]*)\}', r'\1', text)
+        text = re.sub(r'\\(?:text|mathrm|mathbf|mathcal|mathbb|operatorname|textbf|textrm)\{([^{}]*)\}', r'\1', text)
+        text = re.sub(r'\\(bar|tilde)\{([^{}]*)\}', r'\1(\2)', text)
         text = re.sub(r'\\frac\{([^{}]*)\}\{([^{}]*)\}', r'(\1)/(\2)', text)
         text = re.sub(r'\\sqrt\{([^{}]*)\}', r'sqrt(\1)', text)
         text = re.sub(r'([_^])\{([^{}]*)\}', r'\1(\2)', text)
+    text = re.sub(r'\\(bar|tilde)\s*(\\[A-Za-z]+|[A-Za-z])', r'\1(\2)', text)
     replacements = {
         'alpha': 'alpha', 'beta': 'beta', 'gamma': 'gamma', 'delta': 'delta',
         'theta': 'theta', 'lambda': 'lambda', 'epsilon': 'epsilon', 'pi': 'pi',
         'eta': 'eta', 'sigma': 'sigma', 'mu': 'mu', 'rho': 'rho', 'phi': 'phi',
+        'Delta': 'Delta', 'ell': 'ell', 'top': 'T',
         'approx': ' ~= ', 'simeq': ' ~= ', 'sim': ' ~ ', 'propto': ' proportional to ',
         'times': ' x ', 'cdot': ' * ', 'leq': ' <= ', 'geq': ' >= ', 'le': ' <= ',
         'ge': ' >= ', 'neq': ' != ', 'infty': 'infinity', 'to': ' -> ',
@@ -240,7 +244,9 @@ def markdown_table(lines, width):
         lengths = sorted(len(plain(r[col])) for r in rows)
         # Capping limits the effect of a single long URL or discussion cell.
         scores.append(max(5, min(32, lengths[len(lengths)//2]))**.65)
-    if n == 2:
+    if n == 5 and rows[0][0] == '年份' and rows[0][-1] == '正文位置':
+        widths = [width * fraction for fraction in (.075, .43, .15, .21, .135)]
+    elif n == 2:
         ratio = max(.23, min(.40, scores[0]/sum(scores)))
         widths = [width*ratio, width*(1-ratio)]
     else:

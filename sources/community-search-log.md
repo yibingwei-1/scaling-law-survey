@@ -76,3 +76,10 @@
 ## 下轮追加记录方式
 
 后续保留该日期的历史字段，在独立快照或 `observations` 数组中追加新观测；记录查询时间窗、平台、原帖 URL、访问状态、计数来源和真实指标时间。若只有新的搜索摘要，不把它冒充实时平台观测。对同一论文的发布、批评、作者回应与复现分开记事件，并用主源 ID 关联。新的传播事件只有在改变已有研究链或暴露明确缺口时才更新综述正文。
+
+
+## 2026-09-16 扩展复核
+
+新增6条记录：YT-04–06、RD-07–08、X-04。查询覆盖 YouTube Jared Kaplan / Stanford CS336 scaling laws，Reddit test-time scaling 与 HF 复现，X Chinchilla/s1/test-time compute。保留平台原始链接，不采用二级镜像计数。YouTube元数据含观看、赞、发布日期；未观看全文。RD-07主帖与作者关于验证器/显存/FLOPs的回复可读；score来自检索索引。RD-08直接访问错误但索引文本和score可读。X-04原帖索引正文和明确标注的7,143 Views可读；直接打开返回空正文，其他裸数字不作指标。既有X三帖仍无可核验计数。
+
+HF作者blog完整文本经官方Space链接的hf.space iframe读取：实验设置、BoN、beam search、DVTS、难度分桶、局限、署名均可读；记录到sources/editorial.json。所有计数观测日是检索日，快照采集时刻未知。未发现即未发现，不推断为平台没有讨论。

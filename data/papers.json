@@ -24,6 +24,9 @@
     "canonical_url": "https://arxiv.org/abs/1712.00409",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
     ]
   },
   {
@@ -51,6 +54,9 @@
     "canonical_url": "https://arxiv.org/abs/2001.08361",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
     ]
   },
   {
@@ -78,6 +84,10 @@
     "canonical_url": "https://arxiv.org/abs/2203.15556",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md",
+      "02-data.md"
     ]
   },
   {
@@ -105,6 +115,9 @@
     "canonical_url": "https://arxiv.org/abs/2406.19146",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
     ]
   },
   {
@@ -132,6 +145,9 @@
     "canonical_url": "https://arxiv.org/abs/2404.10102",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
     ]
   },
   {
@@ -160,6 +176,9 @@
     "canonical_url": "https://arxiv.org/abs/2305.16264",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
     ]
   },
   {
@@ -188,6 +207,9 @@
     "canonical_url": "https://arxiv.org/abs/2206.14486",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
     ]
   },
   {
@@ -215,6 +237,9 @@
     "canonical_url": "https://arxiv.org/abs/2406.11794",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
     ]
   },
   {
@@ -242,6 +267,9 @@
     "canonical_url": "https://arxiv.org/abs/2403.16952",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
     ]
   },
   {
@@ -272,6 +300,9 @@
     "canonical_url": "https://arxiv.org/abs/2305.17493",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
     ]
   },
   {
@@ -300,6 +331,9 @@
     "canonical_url": "https://arxiv.org/abs/2404.01413",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
     ]
   },
   {
@@ -328,6 +362,9 @@
     "canonical_url": "https://arxiv.org/abs/2202.01169",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
     ]
   },
   {
@@ -355,6 +392,9 @@
     "canonical_url": "https://arxiv.org/abs/2402.07871",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
     ]
   },
   {
@@ -385,6 +425,9 @@
     "canonical_url": "https://arxiv.org/abs/2401.00448",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
     ]
   },
   {
@@ -413,6 +456,9 @@
     "canonical_url": "https://arxiv.org/abs/2102.06701",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
     ]
   },
   {
@@ -440,6 +486,9 @@
     "canonical_url": "https://arxiv.org/abs/2303.13506",
     "catalogs": [
       "foundations"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
     ]
   },
   {
@@ -467,7 +516,8 @@
     "canonical_url": "https://arxiv.org/abs/2507.09404",
     "catalogs": [
       "foundations"
-    ]
+    ],
+    "cited_in": []
   },
   {
     "id": "wei2022cot",
@@ -486,6 +536,9 @@
     "canonical_url": "https://arxiv.org/abs/2201.11903",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -505,6 +558,9 @@
     "canonical_url": "https://arxiv.org/abs/2203.11171",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -524,6 +580,9 @@
     "canonical_url": "https://arxiv.org/abs/2305.20050",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
     ]
   },
   {
@@ -543,6 +602,9 @@
     "canonical_url": "https://arxiv.org/abs/2408.03314",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -562,6 +624,9 @@
     "canonical_url": "https://arxiv.org/abs/2408.00724",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -581,6 +646,9 @@
     "canonical_url": "https://openai.com/index/learning-to-reason-with-llms",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
     ]
   },
   {
@@ -600,6 +668,9 @@
     "canonical_url": "https://arxiv.org/abs/2501.12948",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
     ]
   },
   {
@@ -619,6 +690,9 @@
     "canonical_url": "https://arxiv.org/abs/2501.19393",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -638,6 +712,9 @@
     "canonical_url": "https://arxiv.org/abs/2502.18080",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -662,6 +739,9 @@
     "canonical_url": "https://arxiv.org/abs/2601.09855",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -681,6 +761,9 @@
     "canonical_url": "https://arxiv.org/abs/2604.14853",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -700,6 +783,9 @@
     "canonical_url": "https://arxiv.org/abs/2504.13837",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
     ]
   },
   {
@@ -719,6 +805,9 @@
     "canonical_url": "https://arxiv.org/abs/2606.22317",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
     ]
   },
   {
@@ -738,6 +827,9 @@
     "canonical_url": "https://arxiv.org/abs/2509.25300",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
     ]
   },
   {
@@ -757,6 +849,9 @@
     "canonical_url": "https://arxiv.org/abs/2506.06941",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -776,6 +871,9 @@
     "canonical_url": "https://arxiv.org/abs/2506.09250",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -795,6 +893,9 @@
     "canonical_url": "https://arxiv.org/abs/2509.06861",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -816,6 +917,9 @@
     "canonical_url": "https://arxiv.org/abs/2608.04001",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   },
   {
@@ -843,6 +947,9 @@
     "canonical_url": "https://arxiv.org/abs/2210.10760",
     "catalogs": [
       "frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
     ]
   },
   {
@@ -869,6 +976,9 @@
     "canonical_url": "https://arxiv.org/abs/2303.08774",
     "catalogs": [
       "extensions"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
     ]
   },
   {
@@ -897,6 +1007,9 @@
     "canonical_url": "https://arxiv.org/abs/2304.15004",
     "catalogs": [
       "extensions"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
     ]
   },
   {
@@ -927,6 +1040,9 @@
     "canonical_url": "https://arxiv.org/abs/2210.14891",
     "catalogs": [
       "extensions"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
     ]
   },
   {
@@ -957,6 +1073,9 @@
     "canonical_url": "https://arxiv.org/abs/2010.14701",
     "catalogs": [
       "extensions"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
     ]
   },
   {
@@ -987,6 +1106,9 @@
     "canonical_url": "https://arxiv.org/abs/2106.04560",
     "catalogs": [
       "extensions"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
     ]
   },
   {
@@ -1016,6 +1138,9 @@
     "canonical_url": "https://arxiv.org/abs/2103.00020",
     "catalogs": [
       "extensions"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
     ]
   },
   {
@@ -1045,6 +1170,9 @@
     "canonical_url": "https://arxiv.org/abs/2304.14108",
     "catalogs": [
       "extensions"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
     ]
   },
   {
@@ -1072,6 +1200,9 @@
     "canonical_url": "https://arxiv.org/abs/2602.15532",
     "catalogs": [
       "extensions"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
     ]
   },
   {
@@ -1102,6 +1233,5233 @@
     "canonical_url": "https://arxiv.org/abs/2607.28211",
     "catalogs": [
       "extensions"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "brown2020gpt3",
+    "title": "Language Models are Few-Shot Learners",
+    "year": 2020,
+    "authors": [
+      "Tom B. Brown",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2005.14165",
+    "fulltext_url": "https://arxiv.org/html/2005.14165v4",
+    "type": "paper",
+    "branch": "能力扩展与公开实验",
+    "problem": "预训练损失下降能否变成无需权重更新的任务适应？",
+    "insight": "跨多个规模测量上下文示例下的任务表现；将规模外推转化为实际大模型训练。",
+    "limitation": "不是固定计算的容量消融；数据污染处理存在已披露缺陷。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§2训练设置、§3任务结果相关段、§4污染分析",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2020-05-28",
+    "last_revised_date": "2020-07-22",
+    "version": "v4",
+    "version_read": "v4",
+    "latest_version_verified": "v4",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2005.14165",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "rae2021gopher",
+    "title": "Scaling Language Models: Methods, Analysis & Insights from Training Gopher",
+    "year": 2021,
+    "authors": [
+      "Jack W. Rae",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2112.11446",
+    "fulltext_url": "https://arxiv.org/html/2112.11446v2",
+    "type": "paper",
+    "branch": "能力扩展与公开实验",
+    "problem": "模型更大时哪些任务仍然受益，哪些能力持续困难？",
+    "insight": "用280B模型及较小模型比较广泛任务，展示知识与推理任务收益的异质性。",
+    "limitation": "不能把平均任务提升解释为每种能力都按同一幂律增长。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§4.3规模与任务分析及引言",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2021-12-08",
+    "last_revised_date": "2022-01-21",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2112.11446",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "zhang2022opt",
+    "title": "OPT: Open Pre-trained Transformer Language Models",
+    "year": 2022,
+    "authors": [
+      "Susan Zhang",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2205.01068",
+    "fulltext_url": "https://arxiv.org/html/2205.01068v4",
+    "type": "paper",
+    "branch": "可复现性与训练系统",
+    "problem": "闭源大模型难以审计训练过程和实际成本。",
+    "insight": "发布多规模模型及训练日志，记录大规模训练的稳定性与硬件问题。",
+    "limitation": "同名规模不保证与GPT-3完全控制变量；运行成本含基础设施因素。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§2.5训练日志及模型设置",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2022-05-02",
+    "last_revised_date": "2022-06-21",
+    "version": "v4",
+    "version_read": "v4",
+    "latest_version_verified": "v4",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2205.01068",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "biderman2023pythia",
+    "title": "Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling",
+    "year": 2023,
+    "authors": [
+      "Stella Biderman",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2304.01373",
+    "fulltext_url": "https://arxiv.org/html/2304.01373v2",
+    "type": "paper",
+    "branch": "可复现性与训练系统",
+    "problem": "混杂的模型家族难以分离规模、数据顺序和训练时刻的影响。",
+    "insight": "统一框架、数据顺序和密集检查点，开放8种规模各两个数据版本。",
+    "limitation": "统一训练安排适合动力学分析，不等同于各规模计算最优前沿。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "引言、§2套件设计与检查点",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2023-04-03",
+    "last_revised_date": "2023-05-31",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2304.01373",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "touvron2023llama",
+    "title": "LLaMA: Open and Efficient Foundation Language Models",
+    "year": 2023,
+    "authors": [
+      "Hugo Touvron",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2302.13971",
+    "fulltext_url": "https://arxiv.org/html/2302.13971v1",
+    "type": "paper",
+    "branch": "部署最优与过量训练",
+    "problem": "仅最小化预训练成本会产生推理昂贵的模型。",
+    "insight": "通过更多公开来源数据训练较小模型，把推理成本纳入设计目标。",
+    "limitation": "跨模型能力比较同时改变数据和训练配方，不能仅归因于参数效率。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "引言、训练设置和推理成本动机",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2023-02-27",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2302.13971",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "dubey2024llama3",
+    "title": "The Llama 3 Herd of Models",
+    "year": 2024,
+    "authors": [
+      "Aaron Grattafiori",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2407.21783",
+    "fulltext_url": "https://arxiv.org/html/2407.21783v3",
+    "type": "technical_report",
+    "branch": "规模预测与部署",
+    "problem": "如何从小实验选择405B模型并预测任务表现？",
+    "insight": "IsoFLOP搜索连接最优参数/token，结合任务NLL到准确率映射进行外推。",
+    "limitation": "任务映射含不同训练配方的Llama 2锚点；并非通用、同分布的任务外推定理。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§3.1–3.3，重点§3.2.1与系统设置",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2024-07-31",
+    "last_revised_date": "2024-11-23",
+    "version": "v3",
+    "version_read": "v3",
+    "latest_version_verified": "v3",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2407.21783",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "groeneveld2024olmo",
+    "title": "OLMo: Accelerating the Science of Language Models",
+    "year": 2024,
+    "authors": [
+      "Dirk Groeneveld",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2402.00838",
+    "fulltext_url": "https://arxiv.org/html/2402.00838v4",
+    "type": "paper",
+    "branch": "可复现性与训练系统",
+    "problem": "仅有权重无法复核数据和训练配方导致的规模收益。",
+    "insight": "开放训练数据、代码、日志、检查点及评估，支撑可复核语言模型研究。",
+    "limitation": "公开性不是性能领先的证据；数据与评估仍有选择边界。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "引言与§2开放组成",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2024-02-01",
+    "last_revised_date": "2024-06-07",
+    "version": "v4",
+    "version_read": "v4",
+    "latest_version_verified": "v4",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2402.00838",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "chowdhery2022palm",
+    "title": "PaLM: Scaling Language Modeling with Pathways",
+    "year": 2022,
+    "authors": [
+      "Aakanksha Chowdhery",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2204.02311",
+    "fulltext_url": "https://arxiv.org/html/2204.02311v5",
+    "type": "paper",
+    "branch": "大规模训练实践",
+    "problem": "如何在大规模加速器集群上扩展稠密语言模型？",
+    "insight": "Pathways训练540B稠密Transformer，展示6144 TPU v4上的训练实践。",
+    "limitation": "报告整体配方结果不能识别单个系统或架构因素的因果收益。",
+    "reading_depth": "abstract_and_introduction",
+    "sections_read": "摘要、引言",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "C：主源摘要/引言核验，仅入库待精读",
+    "first_published_date": "2022-04-05",
+    "last_revised_date": "2022-10-05",
+    "version": "v5",
+    "version_read": "v5",
+    "latest_version_verified": "v5",
+    "narrative_use": false,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2204.02311",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": []
+  },
+  {
+    "id": "yang2020tensor4",
+    "title": "Feature Learning in Infinite-Width Neural Networks",
+    "year": 2020,
+    "authors": [
+      "Greg Yang",
+      "Edward J. Hu"
+    ],
+    "url": "https://arxiv.org/abs/2011.14522",
+    "fulltext_url": "https://arxiv.org/html/2011.14522v3",
+    "type": "paper",
+    "branch": "参数化与优化尺度",
+    "problem": "无限宽极限为何常丢失实际网络中的特征学习？",
+    "insight": "分类参数化并构造保留特征学习的无限宽极限，为μP提供理论前身。",
+    "limitation": "无限宽理论本身不推出有限规模语言模型损失幂律。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "摘要、引言及参数化动机；未精读证明",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2020-11-30",
+    "last_revised_date": "2022-07-15",
+    "version": "v3",
+    "version_read": "v3",
+    "latest_version_verified": "v3",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2011.14522",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "yang2022tensor5",
+    "title": "Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer",
+    "year": 2022,
+    "authors": [
+      "Greg Yang",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2203.03466",
+    "fulltext_url": "https://arxiv.org/html/2203.03466v2",
+    "type": "paper",
+    "branch": "参数化与优化尺度",
+    "problem": "每个规模重新调参昂贵，固定超参数又会扭曲规模比较。",
+    "insight": "μP协调初始化、学习率和输出缩放，使部分超参数可由窄模型迁移至宽模型。",
+    "limitation": "宽度理论不能直接推广深度和正则化；6.7B实验有位置编码与精度差异。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§1–7，重点Table 3、§6.1、§7.4、Appendix B",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2022-03-07",
+    "last_revised_date": "2022-03-28",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2203.03466",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "xie2023doremi",
+    "title": "DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining",
+    "year": 2023,
+    "authors": [
+      "Sang Michael Xie",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2305.10429",
+    "fulltext_url": "https://arxiv.org/html/2305.10429v4",
+    "type": "paper",
+    "branch": "数据混合优化",
+    "problem": "未知下游任务时，按语料大小采样可能浪费训练计算。",
+    "insight": "用参考模型的超额损失构造域级DRO，以小代理估计数据权重并用于大模型。",
+    "limitation": "依赖参考模型与领域划分；代理到目标规模的迁移是经验结果。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§1–4、§6、Algorithm 1及实验配置",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2023-05-17",
+    "last_revised_date": "2023-11-21",
+    "version": "v4",
+    "version_read": "v4",
+    "latest_version_verified": "v4",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2305.10429",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "liu2024regmix",
+    "title": "RegMix: Data Mixture as Regression for Language Model Pre-training",
+    "year": 2024,
+    "authors": [
+      "Qian Liu",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2407.01492",
+    "fulltext_url": "https://arxiv.org/html/2407.01492v2",
+    "type": "paper",
+    "branch": "数据混合优化",
+    "problem": "为每个混合方案训练较大代理仍太昂贵。",
+    "insight": "利用大量极小代理训练混合比例到验证损失的回归器，依赖经验排序稳定性。",
+    "limitation": "比较时对DoReMi权重重新归一化；Pile-CC目标不等于所有下游目标。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "引言、§3方法、§5实验和比较限制",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2024-07-01",
+    "last_revised_date": "2025-01-23",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2407.01492",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "penedo2024fineweb",
+    "title": "The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale",
+    "year": 2024,
+    "authors": [
+      "Guilherme Penedo",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2406.17557",
+    "fulltext_url": "https://arxiv.org/html/2406.17557v2",
+    "type": "paper",
+    "branch": "数据质量与覆盖",
+    "problem": "扩大网页语料时，过滤收益与覆盖损失如何权衡？",
+    "insight": "通过可控预训练消融建立FineWeb及教育质量筛选版本FineWeb-Edu。",
+    "limitation": "小规模学术评估选择的过滤器可能改变非学术与少数语言变体的覆盖。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§4.1–4.2、§6、数据构造与教育筛选实验",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2024-06-25",
+    "last_revised_date": "2024-10-31",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2406.17557",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "allal2025smollm2",
+    "title": "SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model",
+    "year": 2025,
+    "authors": [
+      "Loubna Ben Allal",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2502.02737",
+    "fulltext_url": "https://arxiv.org/html/2502.02737v1",
+    "type": "technical_report",
+    "branch": "部署最优与数据课程",
+    "problem": "小模型极长训练中，静态数据混合能否持续提供有效学习信号？",
+    "insight": "1.7B模型约11T训练，分阶段调整网页、代码、数学和合成语料，并在中间检查点做数据消融。",
+    "limitation": "混合变化、学习率变化和额外计算存在混杂；不是所有同尺寸基线上的全面优势。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "引言、§3、§4.3–4.7",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2025-02-04",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2502.02737",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "soldaini2024dolma",
+    "title": "Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research",
+    "year": 2024,
+    "authors": [
+      "Luca Soldaini",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2402.00159",
+    "fulltext_url": "https://arxiv.org/html/2402.00159v2",
+    "type": "paper",
+    "branch": "数据质量与开放基础设施",
+    "problem": "数据处理不透明使规模研究难以复核和替换数据变量。",
+    "insight": "开放3T token语料和模块化清洗、内容过滤、去重管线。",
+    "limitation": "过滤器叠加会减少供给；保留率与任务质量之间需测量而非预设。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "引言与§5过滤、去重相关片段",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2024-01-31",
+    "last_revised_date": "2024-06-06",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2402.00159",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "villalobos2022data",
+    "title": "Will we run out of data? Limits of LLM scaling based on human-generated data",
+    "year": 2022,
+    "authors": [
+      "Pablo Villalobos",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2211.04325",
+    "fulltext_url": "https://arxiv.org/html/2211.04325v2",
+    "type": "paper",
+    "branch": "数据供给边界",
+    "problem": "计算持续扩展时公开人类文本供给是否同步增长？",
+    "insight": "将有效数据存量估计与训练需求趋势联立，给出条件性的耗尽时间分布。",
+    "limitation": "2026–2032是2024版本趋势假设下预测区间，并非2026现状观测。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§1–3，数据存量、需求预测及替代来源",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2022-10-26",
+    "last_revised_date": "2024-06-04",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2211.04325",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "gadre2024overtraining",
+    "title": "Language models scale reliably with over-training and on downstream tasks",
+    "year": 2024,
+    "authors": [
+      "Samir Yitzhak Gadre",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2403.08540",
+    "fulltext_url": "https://arxiv.org/html/2403.08540v2",
+    "type": "paper",
+    "branch": "部署最优与过量训练",
+    "problem": "偏离训练计算最优的数据/参数比例后，规模曲线还可预测吗？",
+    "insight": "把token multiplier显式纳入损失模型，并用验证损失预测一组下游任务平均误差。",
+    "limitation": "难任务和单任务外推有限；假设及训练配方适用范围不能无限延伸。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§2–3、§6、实验范围与任务筛选",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2024-03-13",
+    "last_revised_date": "2024-06-14",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2403.08540",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "hernandez2021transfer",
+    "title": "Scaling Laws for Transfer",
+    "year": 2021,
+    "authors": [
+      "Danny Hernandez",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2102.01293",
+    "fulltext_url": "https://arxiv.org/html/2102.01293v1",
+    "type": "paper",
+    "branch": "迁移学习规模律",
+    "problem": "预训练能折算成多少目标任务数据？",
+    "insight": "以有效数据量刻画预训练与目标数据、模型容量的关系。",
+    "limitation": "当前扩展仅核验摘要与元数据，未用于正文实质结论。",
+    "reading_depth": "abstract_and_metadata",
+    "sections_read": "摘要、元数据",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "C：主源摘要/引言核验，仅入库待精读",
+    "first_published_date": "2021-02-02",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "narrative_use": false,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2102.01293",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": []
+  },
+  {
+    "id": "lee2021dedup",
+    "title": "Deduplicating Training Data Makes Language Models Better",
+    "year": 2021,
+    "authors": [
+      "Katherine Lee",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2107.06499",
+    "fulltext_url": "https://arxiv.org/html/2107.06499v2",
+    "type": "paper",
+    "branch": "数据冗余与评估",
+    "problem": "重复文本浪费token并增加记忆复制及训练测试重叠。",
+    "insight": "组合长字符串匹配和近似文档去重，比较训练模型和重复输出。",
+    "limitation": "不意味着所有有意重复都无效；去重阈值改变语料分布。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "引言、方法概述与1.5B C4结果片段",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2021-07-14",
+    "last_revised_date": "2022-03-24",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2107.06499",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "eldan2023tinystories",
+    "title": "TinyStories: How Small Can Language Models Be and Still Speak Coherent English?",
+    "year": 2023,
+    "authors": [
+      "Ronen Eldan",
+      "Yuanzhi Li"
+    ],
+    "url": "https://arxiv.org/abs/2305.07759",
+    "fulltext_url": "https://arxiv.org/html/2305.07759v2",
+    "type": "paper",
+    "branch": "受控合成数据",
+    "problem": "压缩语言分布的复杂度后，小模型能否形成连贯生成？",
+    "insight": "用受限词汇与情节的合成故事构造可控小模型研究环境。",
+    "limitation": "当前仅摘要和引言阅读；受限故事与模型评委不足以推出一般能力。",
+    "reading_depth": "abstract_and_introduction",
+    "sections_read": "摘要、引言",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "C：主源摘要/引言核验，仅入库待精读",
+    "first_published_date": "2023-05-12",
+    "last_revised_date": "2023-05-24",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": false,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2305.07759",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": []
+  },
+  {
+    "id": "xie2023dsir",
+    "title": "Data Selection for Language Models via Importance Resampling",
+    "year": 2023,
+    "authors": [
+      "Sang Michael Xie",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2302.03169",
+    "fulltext_url": "https://arxiv.org/html/2302.03169v3",
+    "type": "paper",
+    "branch": "目标导向数据选择",
+    "problem": "给定目标领域样本时如何从大语料中廉价选择训练文本？",
+    "insight": "在低维hashed n-gram特征空间估计密度比并重采样，减少神经模型逐文档打分成本。",
+    "limitation": "要求目标样本可得；特征空间匹配不等同于语义质量的全面匹配。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "引言、§4–5实验与效率；方法公式未完整复算",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2023-02-06",
+    "last_revised_date": "2023-11-18",
+    "version": "v3",
+    "version_read": "v3",
+    "latest_version_verified": "v3",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2302.03169",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "fedus2021switch",
+    "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+    "year": 2021,
+    "authors": [
+      "William Fedus",
+      "Barret Zoph",
+      "Noam Shazeer"
+    ],
+    "url": "https://arxiv.org/abs/2101.03961",
+    "fulltext_url": "https://arxiv.org/html/2101.03961v3",
+    "type": "paper",
+    "branch": "稀疏专家与系统",
+    "problem": "扩大容量会同步扩大每token计算；传统MoE路由复杂且不稳定。",
+    "insight": "top-1路由、容量与负载约束、选择性高精度使稀疏扩展更易运行。",
+    "limitation": "原实验主要T5式目标和TPU；丢token、通信与容量填充仍影响实际成本。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§2.1–2.4及Table 1–2",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2021-01-11",
+    "last_revised_date": "2022-06-16",
+    "version": "v3",
+    "version_read": "v3",
+    "latest_version_verified": "v3",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2101.03961",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "lepikhin2020gshard",
+    "title": "GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding",
+    "year": 2020,
+    "authors": [
+      "Dmitry Lepikhin",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2006.16668",
+    "fulltext_url": "https://arxiv.org/html/2006.16668v1",
+    "type": "paper",
+    "branch": "稀疏专家与系统",
+    "problem": "条件计算仍需要可扩展的分片编译和跨设备通信。",
+    "insight": "结合MoE与SPMD自动分片实现大规模多语言机器翻译模型。",
+    "limitation": "任务是多语言翻译，不能直接转写成通用自回归LM的同预算收益。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§1动机、系统设计概述及实验范围",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2020-06-30",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2006.16668",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "jiang2024mixtral",
+    "title": "Mixtral of Experts",
+    "year": 2024,
+    "authors": [
+      "Albert Q. Jiang",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2401.04088",
+    "fulltext_url": "https://arxiv.org/html/2401.04088v1",
+    "type": "paper",
+    "branch": "稀疏专家与部署",
+    "problem": "稀疏专家能否转为可用的开放自回归语言模型？",
+    "insight": "每层8专家选2，使总参数与激活参数解耦。",
+    "limitation": "服务显存按总参数计，路由与访存使激活参数不等于最终延迟。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§2架构、性能分析、§3部署成本说明",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2024-01-08",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2401.04088",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "dai2024deepseekmoe",
+    "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models",
+    "year": 2024,
+    "authors": [
+      "Damai Dai",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2401.06066",
+    "fulltext_url": "https://arxiv.org/html/2401.06066v1",
+    "type": "technical_report",
+    "branch": "稀疏专家与系统",
+    "problem": "粗粒度专家同时承担共享知识和专门知识，可能冗余且组合不足。",
+    "insight": "细分专家并设置常激活共享专家，在近似固定专家参数和计算下增加组合灵活性。",
+    "limitation": "相同总参数稠密模型只是实验参照，不是一般严格性能上界；通信成本未由参数匹配消除。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§2–4方法、负载平衡、验证设置与§5规模扩展",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2024-01-11",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2401.06066",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "deepseek2024v2",
+    "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+    "year": 2024,
+    "authors": [
+      "DeepSeek-AI"
+    ],
+    "url": "https://arxiv.org/abs/2405.04434",
+    "fulltext_url": "https://arxiv.org/html/2405.04434v5",
+    "type": "technical_report",
+    "branch": "稀疏专家与部署",
+    "problem": "MoE节省FFN计算后，KV缓存与细粒度专家通信仍限制效率。",
+    "insight": "直接继承DeepSeekMoE，加入MLA低秩KV压缩及设备受限路由。",
+    "limitation": "MLA需要处理RoPE与矩阵吸收的不兼容；报告吞吐增益依赖其服务设置。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§2.1–2.2、§3.2.3及相关消融表",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2024-05-07",
+    "last_revised_date": "2024-06-19",
+    "version": "v5",
+    "version_read": "v5",
+    "latest_version_verified": "v5",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2405.04434",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "deepseek2024v3",
+    "title": "DeepSeek-V3 Technical Report",
+    "year": 2024,
+    "authors": [
+      "DeepSeek-AI"
+    ],
+    "url": "https://arxiv.org/abs/2412.19437",
+    "fulltext_url": "https://arxiv.org/html/2412.19437v2",
+    "type": "technical_report",
+    "branch": "稀疏专家与系统",
+    "problem": "扩展专家与集群时，负载损失、低精度和跨节点通信如何共同优化？",
+    "insight": "沿用MLA/DeepSeekMoE，结合路由偏置平衡、FP8、DualPipe及多token预测。",
+    "limitation": "仍有小的序列级辅助损失；报告训练成本不含前期研究与消融费用。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§1成本表、§2.1–2.2、§3系统概述",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2024-12-27",
+    "last_revised_date": "2025-02-18",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2412.19437",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "dao2022flash",
+    "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+    "year": 2022,
+    "authors": [
+      "Tri Dao",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2205.14135",
+    "fulltext_url": "https://arxiv.org/html/2205.14135v2",
+    "type": "paper",
+    "branch": "注意力系统与长上下文",
+    "problem": "注意力中间矩阵的HBM读写阻碍实际加速。",
+    "insight": "分块在线softmax和反向重计算避免落盘二次中间矩阵，保持精确注意力。",
+    "limitation": "仍需二次算术计算；IO下界与加速比有硬件和SRAM适用条件。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§2–4、Algorithm 1、Theorem 1–2及限制；未复算全部证明",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2022-05-27",
+    "last_revised_date": "2022-06-23",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2205.14135",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "dao2023flash2",
+    "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+    "year": 2023,
+    "authors": [
+      "Tri Dao"
+    ],
+    "url": "https://arxiv.org/abs/2307.08691",
+    "fulltext_url": "https://arxiv.org/html/2307.08691v1",
+    "type": "paper",
+    "branch": "注意力系统与长上下文",
+    "problem": "减少HBM访问后，线程占用和共享内存通信仍限制注意力吞吐。",
+    "insight": "减少非矩阵FLOPs，按序列并行并改进warp间工作划分。",
+    "limitation": "约2倍加速针对所测A100内核，端到端增益不同；未改变注意力表达式或二次计算阶。",
+    "reading_depth": "full_text_key_sections",
+    "sections_read": "§2–4，尤其§3.1算法与§3.2–3.3并行机制",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+    "first_published_date": "2023-07-17",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2307.08691",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "kwon2023paged",
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "year": 2023,
+    "authors": [
+      "Woosuk Kwon",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2309.06180",
+    "fulltext_url": "https://arxiv.org/html/2309.06180v1",
+    "type": "paper",
+    "branch": "推理服务与KV管理",
+    "problem": "动态请求长度、内存碎片和重复前缀限制批量吞吐。",
+    "insight": "KV按固定块非连续存储、按需分配并共享前缀，结合vLLM调度。",
+    "limitation": "减少分配浪费，不直接压缩每token的KV表示；收益依赖工作负载与比较系统。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§1–4问题、分页机制和共享设计",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2023-09-12",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2309.06180",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "pope2022inference",
+    "title": "Efficiently Scaling Transformer Inference",
+    "year": 2022,
+    "authors": [
+      "Reiner Pope",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2211.05102",
+    "fulltext_url": "https://arxiv.org/html/2211.05102v1",
+    "type": "paper",
+    "branch": "推理服务与成本模型",
+    "problem": "训练高利用率配置不一定适合低延迟生成。",
+    "insight": "针对TPU v4解析比较并行布局、批大小和prefill/decode的延迟吞吐前沿。",
+    "limitation": "最优布局依赖硬件、模型、上下文及SLA；不能把最大吞吐当最低单请求延迟。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§1–2分析动机及部署结果；未复算全部分片模型",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2022-11-09",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2211.05102",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "shazeer2019mqa",
+    "title": "Fast Transformer Decoding: One Write-Head is All You Need",
+    "year": 2019,
+    "authors": [
+      "Noam Shazeer"
+    ],
+    "url": "https://arxiv.org/abs/1911.02150",
+    "fulltext_url": "https://arxiv.org/html/1911.02150v1",
+    "type": "paper",
+    "branch": "KV表示压缩",
+    "problem": "自回归解码反复加载多头KV导致带宽瓶颈。",
+    "insight": "多query共享一组key/value，减少缓存与带宽。",
+    "limitation": "表达容量与推理速度存在权衡；原实验主要机器翻译等较小设置。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§2–4、性能分析和等参数实验",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2019-11-06",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/1911.02150",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "ainslie2023gqa",
+    "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+    "year": 2023,
+    "authors": [
+      "Joshua Ainslie",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2305.13245",
+    "fulltext_url": "https://arxiv.org/html/2305.13245v3",
+    "type": "paper",
+    "branch": "KV表示压缩",
+    "problem": "MQA的容量损失与重新训练成本阻碍迁移。",
+    "insight": "按query分组共享KV，并通过均值聚合头和少量uptraining转换既有检查点。",
+    "limitation": "5%原预训练计算是其T5设置经验值，不保证任意架构转换质量。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§1–3方法、设置、转换实验",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2023-05-22",
+    "last_revised_date": "2023-12-23",
+    "version": "v3",
+    "version_read": "v3",
+    "latest_version_verified": "v3",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2305.13245",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "rajbhandari2019zero",
+    "title": "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models",
+    "year": 2019,
+    "authors": [
+      "Samyam Rajbhandari",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/1910.02054",
+    "fulltext_url": "https://arxiv.org/html/1910.02054v3",
+    "type": "paper",
+    "branch": "大规模训练内存",
+    "problem": "数据并行重复保存优化器、梯度与参数，浪费集群总显存。",
+    "insight": "逐阶段分片模型状态，并管理激活与临时内存。",
+    "limitation": "更小单卡状态伴随通信与调度成本；理论可容纳规模不等于该规模实训完成。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§1与模型状态/残余状态内存分析、三阶段设计",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2019-10-04",
+    "last_revised_date": "2020-05-13",
+    "version": "v3",
+    "version_read": "v3",
+    "latest_version_verified": "v3",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/1910.02054",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "shoeybi2019megatron",
+    "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+    "year": 2019,
+    "authors": [
+      "Mohammad Shoeybi",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/1909.08053",
+    "fulltext_url": "https://arxiv.org/html/1909.08053v4",
+    "type": "paper",
+    "branch": "大规模训练并行",
+    "problem": "单卡无法保存大模型，朴素逐层分配又降低设备利用率。",
+    "insight": "利用Transformer层结构进行张量并行，并与数据并行组合。",
+    "limitation": "跨设备通信与批大小影响效率；76% scaling efficiency不是76%硬件峰值利用率。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§1、§3模型并行与性能实验概述",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2019-09-17",
+    "last_revised_date": "2020-03-13",
+    "version": "v4",
+    "version_read": "v4",
+    "latest_version_verified": "v4",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/1909.08053",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "gu2023mamba",
+    "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+    "year": 2023,
+    "authors": [
+      "Albert Gu",
+      "Tri Dao"
+    ],
+    "url": "https://arxiv.org/abs/2312.00752",
+    "fulltext_url": "https://arxiv.org/html/2312.00752v2",
+    "type": "paper",
+    "branch": "序列架构与长上下文",
+    "problem": "注意力保留所有token导致长序列计算与KV存储增长。",
+    "insight": "输入相关SSM参数选择性更新固定维状态，配合硬件友好的scan。",
+    "limitation": "百万长度实验包含DNA/音频设置；线性复杂度不是同等语言长程检索能力保证。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§2–3、§4.2相关设置、§5限制",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2023-12-01",
+    "last_revised_date": "2024-05-31",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2312.00752",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "xiong2023longcontext",
+    "title": "Effective Long-Context Scaling of Foundation Models",
+    "year": 2023,
+    "authors": [
+      "Wenhan Xiong",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2309.16039",
+    "fulltext_url": "https://arxiv.org/html/2309.16039v3",
+    "type": "paper",
+    "branch": "长上下文训练配方",
+    "problem": "可容纳长序列并不意味着模型能利用长距离信息。",
+    "insight": "从短上下文模型继续预训练，联合调整位置编码、序列长度和数据混合。",
+    "limitation": "400B额外token不可视为零成本扩窗；报告结果依赖模型和评估设置。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "§2训练配置、§4消融相关片段",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+    "first_published_date": "2023-09-27",
+    "last_revised_date": "2023-11-14",
+    "version": "v3",
+    "version_read": "v3",
+    "latest_version_verified": "v3",
+    "narrative_use": true,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2309.16039",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "abdin2024phi3",
+    "title": "Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone",
+    "year": 2024,
+    "authors": [
+      "Marah Abdin",
+      "et al."
+    ],
+    "url": "https://arxiv.org/abs/2404.14219",
+    "fulltext_url": "https://arxiv.org/html/2404.14219v4",
+    "type": "technical_report",
+    "branch": "小模型与数据质量",
+    "problem": "如何以数据与训练配方提高适合端侧模型的能力？",
+    "insight": "报告小模型能力与数据选择路线，作为后续精读候选。",
+    "limitation": "当前仅核验元数据与摘要；v4包含后续Phi-3.5内容，不把它追溯成v1结论。",
+    "reading_depth": "abstract_and_metadata",
+    "sections_read": "摘要、元数据",
+    "verification_date": "2026-09-16",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "C：主源摘要/引言核验，仅入库待精读",
+    "first_published_date": "2024-04-22",
+    "last_revised_date": "2024-08-30",
+    "version": "v4",
+    "version_read": "v4",
+    "latest_version_verified": "v4",
+    "narrative_use": false,
+    "metadata_notes": "日期为arXiv首发/修订日期；作者仅列可核验首位作者及et al.或短完整列表。",
+    "canonical_url": "https://arxiv.org/abs/2404.14219",
+    "catalogs": [
+      "expansion-foundations"
+    ],
+    "cited_in": []
+  },
+  {
+    "id": "cobbe2021verifiers",
+    "title": "Training Verifiers to Solve Math Word Problems",
+    "authors": [
+      "Karl Cobbe",
+      "Vineet Kosaraju",
+      "Mohammad Bavarian",
+      "Mark Chen",
+      "Heewoo Jun",
+      "Lukasz Kaiser",
+      "Matthias Plappert",
+      "Jerry Tworek",
+      "Jacob Hilton",
+      "Reiichiro Nakano",
+      "Christopher Hesse",
+      "John Schulman"
+    ],
+    "date": "2021-10-27",
+    "year": 2021,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2110.14168",
+    "type": "paper",
+    "branch": "verifier",
+    "problem": "生成多次后怎样选出正确解",
+    "insight": "独立训练生成器与答案验证器，将采样覆盖转化为选择收益",
+    "limitation": "oracle覆盖不等于实际选择率；过拟合可能损害生成多样性",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "§4：生成器与验证器训练、test@1/test@100及过拟合",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2110.14168v2",
+    "canonical_url": "https://arxiv.org/abs/2110.14168",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "zelikman2022star",
+    "title": "STaR: Bootstrapping Reasoning With Reasoning",
+    "authors": [
+      "Eric Zelikman",
+      "Yuhuai Wu",
+      "Jesse Mu",
+      "Noah D. Goodman"
+    ],
+    "date": "2022-03-28",
+    "year": 2022,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2203.14465",
+    "type": "paper",
+    "branch": "self_training",
+    "problem": "少量推理示范不足以训练稳定推理",
+    "insight": "筛选自生成正确轨迹，失败样本可用答案提示进行rationalization",
+    "limitation": "正确答案可伴随错误步骤；答案提示带来额外信息；收益依赖任务",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "§3–5：算法、训练重置、rationalization及实验限制",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2203.14465v2",
+    "canonical_url": "https://arxiv.org/abs/2203.14465",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "uesato2022process",
+    "title": "Solving math word problems with process- and outcome-based feedback",
+    "authors": [
+      "Jonathan Uesato",
+      "Nate Kushman",
+      "Ramana Kumar",
+      "Francis Song",
+      "Noah Siegel",
+      "Lisa Wang",
+      "Antonia Creswell",
+      "Geoffrey Irving",
+      "Irina Higgins"
+    ],
+    "date": "2022-11-25",
+    "year": 2022,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2211.14275",
+    "type": "paper",
+    "branch": "verifier",
+    "problem": "最终答案正确不能保证步骤可靠",
+    "insight": "分别评价答案和过程，比较过程反馈与结果反馈",
+    "limitation": "GSM8K特定设置；不同目标与标注成本不能压为单一胜负",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§2–4：数据、反馈来源、答案与trace错误指标",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2211.14275v1",
+    "canonical_url": "https://arxiv.org/abs/2211.14275",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "gulcehre2023rest",
+    "title": "Reinforced Self-Training (ReST) for Language Modeling",
+    "authors": [
+      "Caglar Gulcehre",
+      "Tom Le Paine",
+      "Srivatsan Srinivasan",
+      "Ksenia Konyushkova",
+      "Lotte Weerts",
+      "Abhishek Sharma",
+      "Aditya Siddhant",
+      "Alex Ahern",
+      "Miaosen Wang",
+      "Chenjie Gu",
+      "Wolfgang Macherey",
+      "Arnaud Doucet",
+      "Orhan Firat",
+      "Nando de Freitas"
+    ],
+    "date": "2023-08-17",
+    "year": 2023,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2308.08998",
+    "type": "paper",
+    "branch": "self_training",
+    "problem": "在线生成昂贵且难以充分利用样本",
+    "insight": "Grow生成数据，Improve离线多次使用高质量数据",
+    "limitation": "原始机器翻译及学习奖励设置不等同数学二元验证",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "引言与方法：Grow/Improve、过滤、机器翻译评价",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2308.08998v2",
+    "canonical_url": "https://arxiv.org/abs/2308.08998",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "singh2023restem",
+    "title": "Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models",
+    "authors": [
+      "Avi Singh",
+      "John D. Co-Reyes",
+      "Rishabh Agarwal",
+      "Ankesh Anand",
+      "Piyush Patil",
+      "Xavier Garcia",
+      "Peter J. Liu",
+      "James Harrison",
+      "Jaehoon Lee",
+      "Kelvin Xu",
+      "Aaron Parisi",
+      "Abhishek Kumar",
+      "Alex Alemi",
+      "Alex Rizkowsky",
+      "Azade Nova",
+      "Ben Adlam",
+      "Bernd Bohnet",
+      "Gamaleldin Elsayed",
+      "Hanie Sedghi",
+      "Igor Mordatch",
+      "Isabelle Simpson",
+      "Izzeddin Gur",
+      "Jasper Snoek",
+      "Jeffrey Pennington",
+      "Jiri Hron",
+      "Kathleen Kenealy",
+      "Kevin Swersky",
+      "Kshiteej Mahajan",
+      "Laura Culp",
+      "Lechao Xiao",
+      "Maxwell L. Bileschi",
+      "Noah Constant",
+      "Roman Novak",
+      "Rosanne Liu",
+      "Tris Warkentin",
+      "Yundi Qian",
+      "Yamini Bansal",
+      "Ethan Dyer",
+      "Behnam Neyshabur",
+      "Jascha Sohl-Dickstein",
+      "Noah Fiedel"
+    ],
+    "date": "2023-12-11",
+    "year": 2023,
+    "version": null,
+    "url": "https://arxiv.org/abs/2312.06585",
+    "type": "paper",
+    "branch": "self_training",
+    "problem": "自训练的生成与更新怎样随规模扩展",
+    "insight": "以EM视角组织奖励加权采样和监督更新",
+    "limitation": "有限采样、奖励误判与分布外泛化不受理想EM单调性保证",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": null,
+    "sections_read": "§3–5：EM目标、拒绝采样、PaLM2数学代码实验与限制",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2312.06585",
+    "canonical_url": "https://arxiv.org/abs/2312.06585",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "yao2023tot",
+    "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+    "authors": [
+      "Shunyu Yao",
+      "Dian Yu",
+      "Jeffrey Zhao",
+      "Izhak Shafran",
+      "Thomas L. Griffiths",
+      "Yuan Cao",
+      "Karthik Narasimhan"
+    ],
+    "date": "2023-05-17",
+    "year": 2023,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2305.10601",
+    "type": "paper",
+    "branch": "search",
+    "problem": "单一路径缺少回退与全局探索",
+    "insight": "把thought生成、评价及树搜索解耦",
+    "limitation": "依赖任务分解和状态评价；仅特定任务实验",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "§3：thought粒度、生成、评价、BFS/DFS；任务设置",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2305.10601v2",
+    "canonical_url": "https://arxiv.org/abs/2305.10601",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "zhou2023lats",
+    "title": "Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models",
+    "authors": [
+      "Andy Zhou",
+      "Kai Yan",
+      "Michal Shlapentokh-Rothman",
+      "Haohan Wang",
+      "Yu-Xiong Wang"
+    ],
+    "date": "2023-10-06",
+    "year": 2023,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/2310.04406",
+    "type": "paper",
+    "branch": "search",
+    "problem": "推理、行动和规划缺少统一搜索框架",
+    "insight": "把环境反馈、MCTS和反思结合",
+    "limitation": "工具调用及环境可重置性影响成本与适用边界",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§4：selection/expansion/evaluation/simulation/backpropagation",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2310.04406v3",
+    "canonical_url": "https://arxiv.org/abs/2310.04406",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "zhang2024restmcts",
+    "title": "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search",
+    "authors": [
+      "Dan Zhang",
+      "Sining Zhoubian",
+      "Ziniu Hu",
+      "Yisong Yue",
+      "Yuxiao Dong",
+      "Jie Tang"
+    ],
+    "date": "2024-06-06",
+    "year": 2024,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/2406.03816",
+    "type": "paper",
+    "branch": "search_self_training",
+    "problem": "搜索得到的好路径如何改善后续策略",
+    "insight": "联合过程价值引导MCTS与策略/价值自训练",
+    "limitation": "依赖训练时答案反馈；策略与价值共享偏差可循环放大",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§3：MCTS*、正确路径距离、过程价值及迭代训练",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2406.03816v3",
+    "canonical_url": "https://arxiv.org/abs/2406.03816",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "wang2023mathshepherd",
+    "title": "Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations",
+    "authors": [
+      "Peiyi Wang",
+      "Lei Li",
+      "Zhihong Shao",
+      "R.X. Xu",
+      "Damai Dai",
+      "Yifei Li",
+      "Deli Chen",
+      "Y.Wu",
+      "Zhifang Sui"
+    ],
+    "date": "2023-12-14",
+    "year": 2023,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/2312.08935",
+    "type": "paper",
+    "branch": "verifier",
+    "problem": "人工步骤标签成本高",
+    "insight": "从前缀多次续写自动构造hard/soft过程标签",
+    "limitation": "续写成功估计策略相关价值，不等价步骤逻辑正确",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§3.1–3.5：自动标签、PRM、重排与step-wise PPO",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2312.08935v3",
+    "canonical_url": "https://arxiv.org/abs/2312.08935",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "azerbayev2023llemma",
+    "title": "Llemma: An Open Language Model For Mathematics",
+    "authors": [
+      "Zhangir Azerbayev",
+      "Hailey Schoelkopf",
+      "Keiran Paster",
+      "Marco Dos Santos",
+      "Stephen McAleer",
+      "Albert Q. Jiang",
+      "Jia Deng",
+      "Stella Biderman",
+      "Sean Welleck"
+    ],
+    "date": "2023-10-16",
+    "year": 2023,
+    "version": null,
+    "url": "https://arxiv.org/abs/2310.10631",
+    "type": "paper",
+    "branch": "math_data",
+    "problem": "通用底座缺乏数学领域覆盖",
+    "insight": "在数学文本与代码上持续预训练开放底座",
+    "limitation": "领域数据及已有Code Llama能力是初始条件；不证明RL从零学会数学",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": null,
+    "sections_read": "§2：Proof-Pile-2构建、混合与训练规模",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2310.10631",
+    "canonical_url": "https://arxiv.org/abs/2310.10631",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "yu2023metamath",
+    "title": "MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models",
+    "authors": [
+      "Longhui Yu",
+      "Weisen Jiang",
+      "Han Shi",
+      "Jincheng Yu",
+      "Zhengying Liu",
+      "Yu Zhang",
+      "James T. Kwok",
+      "Zhenguo Li",
+      "Adrian Weller",
+      "Weiyang Liu"
+    ],
+    "date": "2023-09-21",
+    "year": 2023,
+    "version": "v4",
+    "url": "https://arxiv.org/abs/2309.12284",
+    "type": "paper",
+    "branch": "math_data",
+    "problem": "数学微调题目和表达多样性不足",
+    "insight": "重述、反向提问等方式扩充数学监督",
+    "limitation": "教师与答案筛选带来额外信息；合成样本非独立新知识",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v4",
+    "sections_read": "§3：问题重构、前后向生成与过滤",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2309.12284v4",
+    "canonical_url": "https://arxiv.org/abs/2309.12284",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "shao2024deepseekmath",
+    "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+    "authors": [
+      "Zhihong Shao",
+      "Peiyi Wang",
+      "Qihao Zhu",
+      "Runxin Xu",
+      "Junxiao Song",
+      "Xiao Bi",
+      "Haowei Zhang",
+      "Mingchuan Zhang",
+      "Y.K. Li",
+      "Y. Wu",
+      "Daya Guo"
+    ],
+    "date": "2024-02-05",
+    "year": 2024,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/2402.03300",
+    "type": "paper",
+    "branch": "rl_objective",
+    "problem": "数学数据与RL计算成本限制推理训练",
+    "insight": "领域预训练配合GRPO，以组奖励代替独立critic基线",
+    "limitation": "组采样仍昂贵；长度与标准差归一化影响优化目标",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§2与§4：数据、持续预训练、GRPO目标与训练",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2402.03300v3",
+    "canonical_url": "https://arxiv.org/abs/2402.03300",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "xin2024prover15",
+    "title": "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+    "authors": [
+      "Huajian Xin",
+      "Z.Z. Ren",
+      "Junxiao Song",
+      "Zhihong Shao",
+      "Wanjia Zhao",
+      "Haocheng Wang",
+      "Bo Liu",
+      "Liyue Zhang",
+      "Xuan Lu",
+      "Qiushi Du",
+      "Wenjun Gao",
+      "Qihao Zhu",
+      "Dejian Yang",
+      "Zhibin Gou",
+      "Z.F. Wu",
+      "Fuli Luo",
+      "Chong Ruan"
+    ],
+    "date": "2024-08-15",
+    "year": 2024,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2408.08152",
+    "type": "paper",
+    "branch": "formal_verification",
+    "problem": "自然语言判断难以保证证明与定位错误",
+    "insight": "利用Lean反馈、有效前缀续写及RMaxTS搜索",
+    "limitation": "形式正确性不保证自然语言问题形式化无误",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§2.3–3：RL、proof截断续写与MCTS/RMaxTS",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2408.08152v1",
+    "canonical_url": "https://arxiv.org/abs/2408.08152",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "qi2024rstar",
+    "title": "Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solvers",
+    "authors": [
+      "Zhenting Qi",
+      "Mingyuan Ma",
+      "Jiahang Xu",
+      "Li Lyna Zhang",
+      "Fan Yang",
+      "Mao Yang"
+    ],
+    "date": "2024-08-12",
+    "year": 2024,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2408.06195",
+    "type": "paper",
+    "branch": "search",
+    "problem": "小模型生成及自评能力弱",
+    "insight": "多种推理动作MCTS与另一模型互相验证",
+    "limitation": "模型一致不等于独立证据；共同错误仍可能存在",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§3：动作空间、MCTS与mutual verification",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2408.06195v1",
+    "canonical_url": "https://arxiv.org/abs/2408.06195",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "guan2025rstarmath",
+    "title": "rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking",
+    "authors": [
+      "Xinyu Guan",
+      "Li Lyna Zhang",
+      "Yifei Liu",
+      "Ning Shang",
+      "Youran Sun",
+      "Yi Zhu",
+      "Fan Yang",
+      "Mao Yang"
+    ],
+    "date": "2025-01-08",
+    "year": 2025,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2501.04519",
+    "type": "paper",
+    "branch": "search_self_training",
+    "problem": "小模型如何用搜索数据逐轮提升数学能力",
+    "insight": "代码增强轨迹、过程偏好模型和多轮自训练",
+    "limitation": "小参数不代表低总成本；预训练与轨迹生成成本需计入",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§3：policy/PPM、数据生成及四轮自演化",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2501.04519v1",
+    "canonical_url": "https://arxiv.org/abs/2501.04519",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "lambert2024tulu3",
+    "title": "Tulu 3: Pushing Frontiers in Open Language Model Post-Training",
+    "authors": [
+      "Nathan Lambert",
+      "Jacob Morrison",
+      "Valentina Pyatkin",
+      "Shengyi Huang",
+      "Hamish Ivison",
+      "Faeze Brahman",
+      "Lester James V. Miranda",
+      "Alisa Liu",
+      "Nouha Dziri",
+      "Shane Lyu",
+      "Yuling Gu",
+      "Saumya Malik",
+      "Victoria Graf",
+      "Jena D. Hwang",
+      "Jiangjiang Yang",
+      "Ronan Le Bras",
+      "Oyvind Tafjord",
+      "Chris Wilhelm",
+      "Luca Soldaini",
+      "Noah A. Smith",
+      "Yizhong Wang",
+      "Pradeep Dasigi",
+      "Hannaneh Hajishirzi"
+    ],
+    "date": "2024-11-22",
+    "year": 2024,
+    "version": null,
+    "url": "https://arxiv.org/abs/2411.15124",
+    "type": "paper",
+    "branch": "rlvr_recipe",
+    "problem": "开放后训练缺少可分析的完整配方",
+    "insight": "SFT、DPO与规则可验证RL组成公开流程",
+    "limitation": "训练奖励不代表测试泛化；RLVR覆盖任务受检查器限制",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": null,
+    "sections_read": "§6.1–6.4：RLVR、奖励、数据与底座/奖励消融",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2411.15124",
+    "canonical_url": "https://arxiv.org/abs/2411.15124",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "olmo2024olmo2",
+    "title": "2 OLMo 2 Furious",
+    "authors": [
+      "Team OLMo",
+      "Pete Walsh",
+      "Luca Soldaini",
+      "Dirk Groeneveld",
+      "Kyle Lo",
+      "Shane Arora",
+      "Akshita Bhagia",
+      "Yuling Gu",
+      "Shengyi Huang",
+      "Matt Jordan",
+      "Nathan Lambert",
+      "Dustin Schwenk",
+      "Oyvind Tafjord",
+      "Taira Anderson",
+      "David Atkinson",
+      "Faeze Brahman",
+      "Christopher Clark",
+      "Pradeep Dasigi",
+      "Nouha Dziri",
+      "Michal Guerquin",
+      "Hamish Ivison",
+      "Pang Wei Koh",
+      "Jiacheng Liu",
+      "Saumya Malik",
+      "William Merrill",
+      "Lester James V. Miranda",
+      "Jacob Morrison",
+      "Tyler Murray",
+      "Crystal Nam",
+      "Valentina Pyatkin",
+      "Aman Rangapur",
+      "Michael Schmitz",
+      "Sam Skjonsberg",
+      "David Wadden",
+      "Christopher Wilhelm",
+      "Michael Wilson",
+      "Luke Zettlemoyer",
+      "Ali Farhadi",
+      "Noah A. Smith",
+      "Hannaneh Hajishirzi"
+    ],
+    "date": "2024-12-31",
+    "year": 2024,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/2501.00656",
+    "type": "paper",
+    "branch": "rlvr_recipe",
+    "problem": "预训练到后训练缺少可追溯开放模型链",
+    "insight": "公开检查点并按Tulu流程构建后训练",
+    "limitation": "开放性改善可审计性，不等于排除数据与优化混杂",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§5：post-training、SFT、DPO与RLVR",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2501.00656v3",
+    "canonical_url": "https://arxiv.org/abs/2501.00656",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "hu2025orz",
+    "title": "Open-Reasoner-Zero: An Open Source Approach to Scaling Up Reinforcement Learning on the Base Model",
+    "authors": [
+      "Jingcheng Hu",
+      "Yinmin Zhang",
+      "Qi Han",
+      "Daxin Jiang",
+      "Xiangyu Zhang",
+      "Heung-Yeung Shum"
+    ],
+    "date": "2025-03-31",
+    "year": 2025,
+    "version": null,
+    "url": "https://arxiv.org/abs/2503.24290",
+    "type": "paper",
+    "branch": "rlvr_recipe",
+    "problem": "复杂RL配方妨碍辨识可扩展要素",
+    "insight": "简化PPO、规则奖励与数据/训练消融",
+    "limitation": "特定无KL及GAE设置不保证普适；更新步数不能替代FLOPs",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": null,
+    "sections_read": "§2–3：PPO设置、critic、数据规模消融",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2503.24290",
+    "canonical_url": "https://arxiv.org/abs/2503.24290",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "zeng2025simplerl",
+    "title": "SimpleRL-Zoo: Investigating and Taming Zero Reinforcement Learning for Open Base Models in the Wild",
+    "authors": [
+      "Weihao Zeng",
+      "Yuzhen Huang",
+      "Qian Liu",
+      "Wei Liu",
+      "Keqing He",
+      "Zejun Ma",
+      "Junxian He"
+    ],
+    "date": "2025-03-24",
+    "year": 2025,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/2503.18892",
+    "type": "paper",
+    "branch": "rlvr_recipe",
+    "problem": "单底座上的Zero RL经验难以推广",
+    "insight": "比较多种开放底座、数据难度及奖励模板",
+    "limitation": "推理长度或反思话语不是新增能力的充分证据",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§2.1–2.4：十种底座、数据难度、模板与格式奖励",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2503.18892v3",
+    "canonical_url": "https://arxiv.org/abs/2503.18892",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "yu2025dapo",
+    "title": "DAPO: An Open-Source LLM Reinforcement Learning System at Scale",
+    "authors": [
+      "Qiying Yu",
+      "Zheng Zhang",
+      "Ruofei Zhu",
+      "Yufeng Yuan",
+      "Xiaochen Zuo",
+      "Yu Yue",
+      "Tiantian Fan",
+      "Gaohong Liu",
+      "Lingjun Liu",
+      "Xin Liu",
+      "Haibin Lin",
+      "Zhiqi Lin",
+      "Bole Ma",
+      "Guangming Sheng",
+      "Yuxuan Tong",
+      "Chi Zhang",
+      "Mofan Zhang",
+      "Wang Zhang",
+      "Hang Zhu",
+      "Jinhua Zhu",
+      "Jiaze Chen",
+      "Jiangjie Chen",
+      "Chengyi Wang",
+      "Hongli Yu",
+      "Weinan Dai",
+      "Yuxuan Song",
+      "Xiangpeng Wei",
+      "Hao Zhou",
+      "Jingjing Liu",
+      "Wei-Ying Ma",
+      "Ya-Qin Zhang",
+      "Lin Yan",
+      "Mu Qiao",
+      "Yonghui Wu",
+      "Mingxuan Wang"
+    ],
+    "date": "2025-03-18",
+    "year": 2025,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2503.14476",
+    "type": "paper",
+    "branch": "rl_objective",
+    "problem": "长推理RL出现探索衰减和训练信号浪费",
+    "insight": "Clip-Higher、动态采样、token loss及过长奖励处理",
+    "limitation": "重采样也消耗预算；多项配方收益不能全归因单一技巧",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "§3：四项核心设计与对应消融",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2503.14476v2",
+    "canonical_url": "https://arxiv.org/abs/2503.14476",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "liu2025drgrpo",
+    "title": "Understanding R1-Zero-Like Training: A Critical Perspective",
+    "authors": [
+      "Zichen Liu",
+      "Changyu Chen",
+      "Wenjun Li",
+      "Penghui Qi",
+      "Tianyu Pang",
+      "Chao Du",
+      "Wee Sun Lee",
+      "Min Lin"
+    ],
+    "date": "2025-03-26",
+    "year": 2025,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2503.20783",
+    "type": "paper",
+    "branch": "rl_objective",
+    "problem": "GRPO归一化造成长度和难度权重偏移",
+    "insight": "分析目标偏置并提出Dr.GRPO去除特定归一化",
+    "limitation": "去偏相对于所选目标；不是任何场景下无偏或稳定的保证",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "§3：response-length及difficulty bias、Dr.GRPO",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2503.20783v2",
+    "canonical_url": "https://arxiv.org/abs/2503.20783",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "zheng2025gspo",
+    "title": "Group Sequence Policy Optimization",
+    "authors": [
+      "Chujie Zheng",
+      "Shixuan Liu",
+      "Mingze Li",
+      "Xiong-Hui Chen",
+      "Bowen Yu",
+      "Chang Gao",
+      "Kai Dang",
+      "Yuqiong Liu",
+      "Rui Men",
+      "An Yang",
+      "Jingren Zhou",
+      "Junyang Lin"
+    ],
+    "date": "2025-07-24",
+    "year": 2025,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2507.18071",
+    "type": "paper",
+    "branch": "rl_objective",
+    "problem": "token级重要性比值在长序列与MoE中不稳定",
+    "insight": "序列长度归一化概率比及序列级clipping",
+    "limitation": "比值不是普通联合密度比；经验稳定不否定所有token级方法",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "§4–5：目标、MoE路由与稳定性实验",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2507.18071v2",
+    "canonical_url": "https://arxiv.org/abs/2507.18071",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "yue2025vapo",
+    "title": "VAPO: Efficient and Reliable Reinforcement Learning for Advanced Reasoning Tasks",
+    "authors": [
+      "Yu Yue",
+      "Yufeng Yuan",
+      "Qiying Yu",
+      "Xiaochen Zuo",
+      "Ruofei Zhu",
+      "Wenyuan Xu",
+      "Jiaze Chen",
+      "Chengyi Wang",
+      "TianTian Fan",
+      "Zhengyin Du",
+      "Xiangpeng Wei",
+      "Xiangyu Yu",
+      "Gaohong Liu",
+      "Juncai Liu",
+      "Lingjun Liu",
+      "Haibin Lin",
+      "Zhiqi Lin",
+      "Bole Ma",
+      "Chi Zhang",
+      "Mofan Zhang",
+      "Wang Zhang",
+      "Hang Zhu",
+      "Ru Zhang",
+      "Xin Liu",
+      "Mingxuan Wang",
+      "Yonghui Wu",
+      "Lin Yan"
+    ],
+    "date": "2025-04-07",
+    "year": 2025,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/2504.05118",
+    "type": "paper",
+    "branch": "rl_objective",
+    "problem": "长轨迹的价值误差和稀疏奖励削弱信用分配",
+    "insight": "价值预训练、长度相关GAE与训练稳定设计",
+    "limitation": "特定配方及任务证据，不能推出critic总是优于组基线",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§3–4：value pretraining、GAE与长度适配",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2504.05118v3",
+    "canonical_url": "https://arxiv.org/abs/2504.05118",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "shao2025deepseekmath2",
+    "title": "DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning",
+    "authors": [
+      "Zhihong Shao",
+      "Yuxiang Luo",
+      "Chengda Lu",
+      "Z.Z. Ren",
+      "Jiewen Hu",
+      "Tian Ye",
+      "Zhibin Gou",
+      "Shirong Ma",
+      "Xiaokang Zhang"
+    ],
+    "date": "2025-11-27",
+    "year": 2025,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2511.22570",
+    "type": "paper",
+    "branch": "verifier",
+    "problem": "证明质量难以用简单最终答案奖励评价",
+    "insight": "联合生成式verifier、meta-verifier与自分析训练",
+    "limitation": "多候选多验证高预算；非形式正确性保证",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§2–3：verifier训练、meta-verification、generator及高预算评估",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2511.22570v1",
+    "canonical_url": "https://arxiv.org/abs/2511.22570",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "ouyang2022instructgpt",
+    "title": "Training language models to follow instructions with human feedback",
+    "authors": [
+      "Long Ouyang",
+      "Jeff Wu",
+      "Xu Jiang",
+      "Diogo Almeida",
+      "Carroll L. Wainwright",
+      "Pamela Mishkin",
+      "Chong Zhang",
+      "Sandhini Agarwal",
+      "Katarina Slama",
+      "Alex Ray",
+      "John Schulman",
+      "Jacob Hilton",
+      "Fraser Kelton",
+      "Luke Miller",
+      "Maddie Simens",
+      "Amanda Askell",
+      "Peter Welinder",
+      "Paul Christiano",
+      "Jan Leike",
+      "Ryan Lowe"
+    ],
+    "date": "2022-03-04",
+    "year": 2022,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2203.02155",
+    "type": "paper",
+    "branch": "preference_alignment",
+    "problem": "语言建模目标未必符合用户意图",
+    "insight": "示范SFT、偏好奖励模型和PPO对齐",
+    "limitation": "偏好优势只在所测提示分布成立；奖励误差仍在",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§3及结果：SFT/RM/PPO流程、偏好比较与限制",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2203.02155v1",
+    "canonical_url": "https://arxiv.org/abs/2203.02155",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "rafailov2023dpo",
+    "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+    "authors": [
+      "Rafael Rafailov",
+      "Archit Sharma",
+      "Eric Mitchell",
+      "Stefano Ermon",
+      "Christopher D. Manning",
+      "Chelsea Finn"
+    ],
+    "date": "2023-05-29",
+    "year": 2023,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/2305.18290",
+    "type": "paper",
+    "branch": "preference_alignment",
+    "problem": "显式奖励模型加RL的偏好流程复杂",
+    "insight": "KL约束与偏好模型下重参数化为分类目标",
+    "limitation": "离线偏好覆盖与理论假设限制泛化，不消除探索需要",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§4：RLHF目标、最优策略重参数化与DPO损失",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2305.18290v3",
+    "canonical_url": "https://arxiv.org/abs/2305.18290",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "yuan2024selfreward",
+    "title": "Self-Rewarding Language Models",
+    "authors": [
+      "Weizhe Yuan",
+      "Richard Yuanzhe Pang",
+      "Kyunghyun Cho",
+      "Xian Li",
+      "Sainbayar Sukhbaatar",
+      "Jing Xu",
+      "Jason Weston"
+    ],
+    "date": "2024-01-18",
+    "year": 2024,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/2401.10020",
+    "type": "paper",
+    "branch": "self_reward",
+    "problem": "人类偏好标注难以支撑持续迭代",
+    "insight": "模型自评候选并产生下一轮DPO偏好对",
+    "limitation": "依赖人类种子；偏好一致不保证事实或数学正确",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§2：IFT/EFT种子、judge提示与迭代DPO",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2401.10020v3",
+    "canonical_url": "https://arxiv.org/abs/2401.10020",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "dehghani2018ut",
+    "title": "Universal Transformers",
+    "authors": [
+      "Mostafa Dehghani",
+      "Stephan Gouws",
+      "Oriol Vinyals",
+      "Jakob Uszkoreit",
+      "Łukasz Kaiser"
+    ],
+    "date": "2018-07-10",
+    "year": 2018,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/1807.03819",
+    "type": "paper",
+    "branch": "latent_reasoning",
+    "problem": "固定深度难以适应不同计算难度",
+    "insight": "共享递归变换与适应计算时间",
+    "limitation": "递归深度不保证所有任务持续获益",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§2：共享深度、逐位置递归与ACT",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/1807.03819v3",
+    "canonical_url": "https://arxiv.org/abs/1807.03819",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "zelikman2024quietstar",
+    "title": "Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking",
+    "authors": [
+      "Eric Zelikman",
+      "Georges Harik",
+      "Yijia Shao",
+      "Varuna Jayasiri",
+      "Nick Haber",
+      "Noah D. Goodman"
+    ],
+    "date": "2024-03-14",
+    "year": 2024,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2403.09629",
+    "type": "paper",
+    "branch": "latent_reasoning",
+    "problem": "推理监督集中于少数专用题目",
+    "insight": "在文本位置学习辅助离散rationale以改善未来预测",
+    "limitation": "不是连续latent reasoning；额外采样与faithfulness未消失",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "§3–4：parallel rationale、mixing head、REINFORCE及teacher forcing",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2403.09629v2",
+    "canonical_url": "https://arxiv.org/abs/2403.09629",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "hao2024coconut",
+    "title": "Training Large Language Models to Reason in a Continuous Latent Space",
+    "authors": [
+      "Shibo Hao",
+      "Sainbayar Sukhbaatar",
+      "DiJia Su",
+      "Xian Li",
+      "Zhiting Hu",
+      "Jason Weston",
+      "Yuandong Tian"
+    ],
+    "date": "2024-12-09",
+    "year": 2024,
+    "version": "v4",
+    "url": "https://arxiv.org/abs/2412.06769",
+    "type": "paper",
+    "branch": "latent_reasoning",
+    "problem": "语言空间中间推理受表达和解码限制",
+    "insight": "连续隐状态反馈与逐步移除CoT的训练课程",
+    "limitation": "latent步骤仍消耗计算；模型和任务收益不同；BFS解释非普遍证明",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v4",
+    "sections_read": "v4 §3–5及附录C：课程、计算图、更大模型及限制",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2412.06769v4",
+    "canonical_url": "https://arxiv.org/abs/2412.06769",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "geiping2025recurrent",
+    "title": "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach",
+    "authors": [
+      "Jonas Geiping",
+      "Sean McLeish",
+      "Neel Jain",
+      "John Kirchenbauer",
+      "Siddharth Singh",
+      "Brian R. Bartoldson",
+      "Bhavya Kailkhura",
+      "Abhinav Bhatele",
+      "Tom Goldstein"
+    ],
+    "date": "2025-02-07",
+    "year": 2025,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2502.05171",
+    "type": "paper",
+    "branch": "latent_reasoning",
+    "problem": "输出token之外怎样扩展测试计算",
+    "insight": "共享核心模块递归、随机训练深度和可调推理深度",
+    "limitation": "计算增加不等于知识参数增加；稳定性和延迟约束",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "§3–4：递归架构、深度分布、截断反传与训练稳定",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2502.05171v2",
+    "canonical_url": "https://arxiv.org/abs/2502.05171",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "pfau2024dots",
+    "title": "Let's Think Dot by Dot: Hidden Computation in Transformer Language Models",
+    "authors": [
+      "Jacob Pfau",
+      "William Merrill",
+      "Samuel R. Bowman"
+    ],
+    "date": "2024-04-24",
+    "year": 2024,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2404.15758",
+    "type": "paper",
+    "branch": "latent_reasoning",
+    "problem": "可见推理文本与实际隐藏计算是否等价",
+    "insight": "受控合成实验中填充token也能承载计算",
+    "limitation": "专门训练的小模型合成任务；不能推广为任意模型点号提示",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§3–4：2SUM/3SUM、34M模型、训练与测试条件",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2404.15758v1",
+    "canonical_url": "https://arxiv.org/abs/2404.15758",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "chen2024overthinking",
+    "title": "Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs",
+    "authors": [
+      "Xingyu Chen",
+      "Jiahao Xu",
+      "Tian Liang",
+      "Zhiwei He",
+      "Jianhui Pang",
+      "Dian Yu",
+      "Linfeng Song",
+      "Qiuzhi Liu",
+      "Mengfei Zhou",
+      "Zhuosheng Zhang",
+      "Rui Wang",
+      "Zhaopeng Tu",
+      "Haitao Mi",
+      "Dong Yu"
+    ],
+    "date": "2024-12-30",
+    "year": 2024,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2412.21187",
+    "type": "paper",
+    "branch": "token_efficiency",
+    "problem": "推理模型产生不必要的重复解法",
+    "insight": "分析首次正确解与长短轨迹并优化简洁推理",
+    "limitation": "离线首次正确位置有oracle；线上停止不具备同等信息",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "§2–3：overthinking测量、正确轨迹与短链偏好",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2412.21187v2",
+    "canonical_url": "https://arxiv.org/abs/2412.21187",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "hou2025thinkprune",
+    "title": "ThinkPrune: Pruning Long Chain-of-Thought of LLMs via Reinforcement Learning",
+    "authors": [
+      "Bairu Hou",
+      "Yang Zhang",
+      "Jiabao Ji",
+      "Yujian Liu",
+      "Kaizhi Qian",
+      "Jacob Andreas",
+      "Shiyu Chang"
+    ],
+    "date": "2025-04-02",
+    "year": 2025,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2504.01296",
+    "type": "paper",
+    "branch": "token_efficiency",
+    "problem": "长CoT难以满足预算限制",
+    "insight": "在截断预算下按正确性强化并逐步收紧长度",
+    "limitation": "验证选择允许准确率下降；不是普遍无损压缩",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§3：截断奖励、迭代裁剪与检查点选择",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2504.01296v1",
+    "canonical_url": "https://arxiv.org/abs/2504.01296",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "yan2025luffy",
+    "title": "Learning to Reason under Off-Policy Guidance",
+    "authors": [
+      "Jianhao Yan",
+      "Yafu Li",
+      "Zican Hu",
+      "Zhi Wang",
+      "Ganqu Cui",
+      "Xiaoye Qu",
+      "Yu Cheng",
+      "Yue Zhang"
+    ],
+    "date": "2025-04-21",
+    "year": 2025,
+    "version": "v5",
+    "url": "https://arxiv.org/abs/2504.14945",
+    "type": "paper",
+    "branch": "off_policy_reasoning",
+    "problem": "on-policy策略难以探索教师成功轨迹",
+    "insight": "混合off-policy教师和on-policy样本并进行策略塑形",
+    "limitation": "教师成本与信息必须计入；不同于纯自发探索",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v5",
+    "sections_read": "§3：mixed-policy GRPO及policy shaping",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2504.14945v5",
+    "canonical_url": "https://arxiv.org/abs/2504.14945",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "brown2024monkeys",
+    "title": "Large Language Monkeys: Scaling Inference Compute with Repeated Sampling",
+    "authors": [
+      "Bradley Brown",
+      "Jordan Juravsky",
+      "Ryan Ehrlich",
+      "Ronald Clark",
+      "Quoc V. Le",
+      "Christopher Ré",
+      "Azalia Mirhoseini"
+    ],
+    "date": "2024-07-31",
+    "year": 2024,
+    "version": "v3",
+    "url": "https://arxiv.org/abs/2407.21787",
+    "type": "paper",
+    "branch": "inference_scaling",
+    "problem": "多次推理采样的覆盖收益能否继续扩展",
+    "insight": "测量重复采样、覆盖拟合与实际选择方法",
+    "limitation": "oracle覆盖与部署选择不同；不同曲线未必都能相同形式拟合",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3",
+    "sections_read": "§3–4：coverage scaling、sample budget与选择饱和",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2407.21787v3",
+    "canonical_url": "https://arxiv.org/abs/2407.21787",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "schaeffer2025monkeys",
+    "title": "How Do Large Language Monkeys Get Their Power (Laws)?",
+    "authors": [
+      "Rylan Schaeffer",
+      "Joshua Kazdan",
+      "John Hughes",
+      "Jordan Juravsky",
+      "Sara Price",
+      "Aengus Lynch",
+      "Erik Jones",
+      "Robert Kirk",
+      "Azalia Mirhoseini",
+      "Sanmi Koyejo"
+    ],
+    "date": "2025-02-24",
+    "year": 2025,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2502.17578",
+    "type": "paper",
+    "branch": "inference_scaling",
+    "problem": "为何重复采样的聚合曲线呈幂律",
+    "insight": "题目成功概率混合使指数衰减聚合为幂律",
+    "limitation": "独立采样与难度密度假设；指数依赖题目分布",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v1",
+    "sections_read": "§2–3：单题失败概率、混合积分与近零密度",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2502.17578v1",
+    "canonical_url": "https://arxiv.org/abs/2502.17578",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "khalifa2025thinkprm",
+    "title": "Process Reward Models That Think",
+    "authors": [
+      "Muhammad Khalifa",
+      "Rishabh Agarwal",
+      "Lajanugen Logeswaran",
+      "Jaekyeom Kim",
+      "Hao Peng",
+      "Moontae Lee",
+      "Honglak Lee",
+      "Lu Wang"
+    ],
+    "date": "2025-04-23",
+    "year": 2025,
+    "version": null,
+    "url": "https://arxiv.org/abs/2504.16828",
+    "type": "paper",
+    "branch": "verifier",
+    "problem": "固定标量过程判分缺乏复杂验证能力",
+    "insight": "用生成式检查CoT训练可扩展计算的verifier",
+    "limitation": "强教师成本未消失；部分分析是MATH-500选取子集",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": null,
+    "sections_read": "§3及附录E：合成检查轨迹、训练、预算与评估样本",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2504.16828",
+    "canonical_url": "https://arxiv.org/abs/2504.16828",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "zhang2025prmlessons",
+    "title": "The Lessons of Developing Process Reward Models in Mathematical Reasoning",
+    "authors": [
+      "Zhenru Zhang",
+      "Chujie Zheng",
+      "Yangzhen Wu",
+      "Beichen Zhang",
+      "Runji Lin",
+      "Bowen Yu",
+      "Dayiheng Liu",
+      "Jingren Zhou",
+      "Junyang Lin"
+    ],
+    "date": "2025-01-13",
+    "year": 2025,
+    "version": "v2",
+    "url": "https://arxiv.org/abs/2501.07301",
+    "type": "paper",
+    "branch": "verifier",
+    "problem": "自动PRM标签与实际逻辑正确性不匹配",
+    "insight": "比较MC、judge与人工标签并用共识过滤",
+    "limitation": "BoN答案准确率不能单独代表错误定位；MC仍可估计搜索价值",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2",
+    "sections_read": "§2–4：自动标签偏差、评价、共识过滤及ProcessBench",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2501.07301v2",
+    "canonical_url": "https://arxiv.org/abs/2501.07301",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "wang2024cream",
+    "title": "CREAM: Consistency Regularized Self-Rewarding Language Models",
+    "authors": [
+      "Zhaoyang Wang",
+      "Weilei He",
+      "Zhiyuan Liang",
+      "Xuchao Zhang",
+      "Chetan Bansal",
+      "Ying Wei",
+      "Weitong Zhang",
+      "Huaxiu Yao"
+    ],
+    "date": "2024-10-16",
+    "year": 2024,
+    "version": "v5",
+    "url": "https://arxiv.org/abs/2410.12735",
+    "type": "paper",
+    "branch": "self_reward",
+    "problem": "自奖励标签噪声会在迭代中强化",
+    "insight": "模型迭代间偏好一致性正则化",
+    "limitation": "稳定的共同错误仍可能被奖励；一致性不等于真实性",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v5",
+    "sections_read": "§3.2–3.3：一致性正则项与自奖励循环",
+    "evidence_status": "原文方法与相关结果定向阅读；非逐篇全部附录及代码复核",
+    "full_text_url": "https://arxiv.org/html/2410.12735v5",
+    "canonical_url": "https://arxiv.org/abs/2410.12735",
+    "catalogs": [
+      "expansion-frontier"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "rosenfeld2019generalization",
+    "title": "A Constructive Prediction of the Generalization Error Across Scales",
+    "authors": [
+      "Jonathan S. Rosenfeld",
+      "Amir Rosenfeld",
+      "Yonatan Belinkov",
+      "Nir Shavit"
+    ],
+    "year": 2019,
+    "url": "https://arxiv.org/abs/1909.12673v2",
+    "type": "research_paper",
+    "branch": "T6_empirical_generalization",
+    "problem": "只观察少数大模型难以预算化预测泛化误差。",
+    "insight": "构造模型和数据共同缩放下的误差函数，并跨视觉与语言实验检验预测。",
+    "limitation": "摘要核验；具体拟合条件和外推误差尚未全文复核。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Fri, 20 Dec 2019 18:20:34 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "1909.12673",
+    "first_submission_date": "2019-09-27",
+    "metadata_verified_from": "https://arxiv.org/abs/1909.12673",
+    "pdf_url": "https://arxiv.org/pdf/1909.12673v2",
+    "canonical_url": "https://arxiv.org/abs/1909.12673",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": []
+  },
+  {
+    "id": "nakkiran2019double",
+    "title": "Deep Double Descent: Where Bigger Models and More Data Hurt",
+    "authors": [
+      "Preetum Nakkiran",
+      "Gal Kaplun",
+      "Yamini Bansal",
+      "Tristan Yang",
+      "Boaz Barak",
+      "Ilya Sutskever"
+    ],
+    "year": 2019,
+    "url": "https://arxiv.org/abs/1912.02292v1",
+    "type": "research_paper",
+    "branch": "T6_nonmonotonicity",
+    "problem": "更大模型或更多数据并非在所有训练区域单调改善测试误差。",
+    "insight": "用有效模型复杂度连接模型规模、训练时间和样本量的双下降现象。",
+    "limitation": "摘要核验；双下降不等于已处于大规模平滑区间的前沿模型也必然反转。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Wed, 4 Dec 2019 22:47:31 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "1912.02292",
+    "first_submission_date": "2019-12-04",
+    "metadata_verified_from": "https://arxiv.org/abs/1912.02292",
+    "pdf_url": "https://arxiv.org/pdf/1912.02292v1",
+    "canonical_url": "https://arxiv.org/abs/1912.02292",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": []
+  },
+  {
+    "id": "bordelon2020spectrum",
+    "title": "Spectrum Dependent Learning Curves in Kernel Regression and Wide Neural Networks",
+    "authors": [
+      "Blake Bordelon",
+      "Abdulkadir Canatar",
+      "Cengiz Pehlevan"
+    ],
+    "year": 2020,
+    "url": "https://arxiv.org/abs/2002.02561v7",
+    "type": "research_paper",
+    "branch": "T6_kernel_spectrum",
+    "problem": "学习曲线的指数如何取决于数据分布与目标函数？",
+    "insight": "按核谱分解泛化误差，样本增加时逐步学习更高频目标模式。",
+    "limitation": "摘要核验；宽网络与核回归的对应有训练区域条件，不能覆盖任意特征学习。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v7, Thu, 25 Feb 2021 18:40:10 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2002.02561",
+    "first_submission_date": "2020-02-07",
+    "metadata_verified_from": "https://arxiv.org/abs/2002.02561",
+    "pdf_url": "https://arxiv.org/pdf/2002.02561v7",
+    "canonical_url": "https://arxiv.org/abs/2002.02561",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "sharma2020manifold",
+    "title": "A Neural Scaling Law from the Dimension of the Data Manifold",
+    "authors": [
+      "Utkarsh Sharma",
+      "Jared Kaplan"
+    ],
+    "year": 2020,
+    "url": "https://arxiv.org/abs/2004.10802v1",
+    "type": "research_paper",
+    "branch": "T6_manifold_resolution",
+    "problem": "资源增加为什么呈现幂律，而不同任务指数又不同？",
+    "insight": "将模型近似解释为数据流形上的回归，联系内在维度与参数缩放指数。",
+    "limitation": "摘要核验；平滑性、流形与逼近假设不可省略，约4/d不是通用经验常数。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Wed, 22 Apr 2020 19:16:06 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2004.10802",
+    "first_submission_date": "2020-04-22",
+    "metadata_verified_from": "https://arxiv.org/abs/2004.10802",
+    "pdf_url": "https://arxiv.org/pdf/2004.10802v1",
+    "canonical_url": "https://arxiv.org/abs/2004.10802",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "hutter2021learning",
+    "title": "Learning Curve Theory",
+    "authors": [
+      "Marcus Hutter"
+    ],
+    "year": 2021,
+    "url": "https://arxiv.org/abs/2102.04074v1",
+    "type": "research_paper",
+    "branch": "T6_long_tail",
+    "problem": "有限参数估计的经典速率难以解释更慢且多变的学习曲线。",
+    "insight": "以可数类别的记忆学习器把误差写成未见概率质量，推导长尾分布到数据指数的映射。",
+    "limitation": "没有跨类别泛化或真实深网优化；作者明确未证明该指数关系适用于神经网络。",
+    "reading_depth": "full_text",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Mon, 8 Feb 2021 09:25:31 UTC",
+    "sections_read": [
+      "§1–7",
+      "Appendix A–F（全部正文、证明文字及图注）"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2102.04074",
+    "first_submission_date": "2021-02-08",
+    "metadata_verified_from": "https://arxiv.org/abs/2102.04074",
+    "pdf_url": "https://arxiv.org/pdf/2102.04074v1",
+    "reading_scope_note": "已读PDF提取的完整正文、附录文字、表格及图注；跳过参考文献列表。未逐张目视审阅图片，非复现实验或逐行证明正确性审计。",
+    "canonical_url": "https://arxiv.org/abs/2102.04074",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "srivastava2022bigbench",
+    "title": "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models",
+    "authors": [
+      "Aarohi Srivastava",
+      "Abhinav Rastogi",
+      "Abhishek Rao",
+      "Abu Awal Md Shoeb",
+      "Abubakar Abid",
+      "Adam Fisch",
+      "Adam R. Brown",
+      "Adam Santoro",
+      "Aditya Gupta",
+      "Adrià Garriga-Alonso",
+      "Agnieszka Kluska",
+      "Aitor Lewkowycz",
+      "Akshat Agarwal",
+      "Alethea Power",
+      "Alex Ray",
+      "Alex Warstadt",
+      "Alexander W. Kocurek",
+      "Ali Safaya",
+      "Ali Tazarv",
+      "Alice Xiang",
+      "Alicia Parrish",
+      "Allen Nie",
+      "Aman Hussain",
+      "Amanda Askell",
+      "Amanda Dsouza",
+      "Ambrose Slone",
+      "Ameet Rahane",
+      "Anantharaman S. Iyer",
+      "Anders Andreassen",
+      "Andrea Madotto",
+      "Andrea Santilli",
+      "Andreas Stuhlmüller",
+      "Andrew Dai",
+      "Andrew La",
+      "Andrew Lampinen",
+      "Andy Zou",
+      "Angela Jiang",
+      "Angelica Chen",
+      "Anh Vuong",
+      "Animesh Gupta",
+      "Anna Gottardi",
+      "Antonio Norelli",
+      "Anu Venkatesh",
+      "Arash Gholamidavoodi",
+      "Arfa Tabassum",
+      "Arul Menezes",
+      "Arun Kirubarajan",
+      "Asher Mullokandov",
+      "Ashish Sabharwal",
+      "Austin Herrick",
+      "Avia Efrat",
+      "Aykut Erdem",
+      "Ayla Karakaş",
+      "B. Ryan Roberts",
+      "Bao Sheng Loe",
+      "Barret Zoph",
+      "Bartłomiej Bojanowski",
+      "Batuhan Özyurt",
+      "Behnam Hedayatnia",
+      "Behnam Neyshabur",
+      "Benjamin Inden",
+      "Benno Stein",
+      "Berk Ekmekci",
+      "Bill Yuchen Lin",
+      "Blake Howald",
+      "Bryan Orinion",
+      "Cameron Diao",
+      "Cameron Dour",
+      "Catherine Stinson",
+      "Cedrick Argueta",
+      "César Ferri Ramírez",
+      "Chandan Singh",
+      "Charles Rathkopf",
+      "Chenlin Meng",
+      "Chitta Baral",
+      "Chiyu Wu",
+      "Chris Callison-Burch",
+      "Chris Waites",
+      "Christian Voigt",
+      "Christopher D. Manning",
+      "Christopher Potts",
+      "Cindy Ramirez",
+      "Clara E. Rivera",
+      "Clemencia Siro",
+      "Colin Raffel",
+      "Courtney Ashcraft",
+      "Cristina Garbacea",
+      "Damien Sileo",
+      "Dan Garrette",
+      "Dan Hendrycks",
+      "Dan Kilman",
+      "Dan Roth",
+      "Daniel Freeman",
+      "Daniel Khashabi",
+      "Daniel Levy",
+      "Daniel Moseguí González",
+      "Danielle Perszyk",
+      "Danny Hernandez",
+      "Danqi Chen",
+      "Daphne Ippolito",
+      "Dar Gilboa",
+      "David Dohan",
+      "David Drakard",
+      "David Jurgens",
+      "Debajyoti Datta",
+      "Deep Ganguli",
+      "Denis Emelin",
+      "Denis Kleyko",
+      "Deniz Yuret",
+      "Derek Chen",
+      "Derek Tam",
+      "Dieuwke Hupkes",
+      "Diganta Misra",
+      "Dilyar Buzan",
+      "Dimitri Coelho Mollo",
+      "Diyi Yang",
+      "Dong-Ho Lee",
+      "Dylan Schrader",
+      "Ekaterina Shutova",
+      "Ekin Dogus Cubuk",
+      "Elad Segal",
+      "Eleanor Hagerman",
+      "Elizabeth Barnes",
+      "Elizabeth Donoway",
+      "Ellie Pavlick",
+      "Emanuele Rodola",
+      "Emma Lam",
+      "Eric Chu",
+      "Eric Tang",
+      "Erkut Erdem",
+      "Ernie Chang",
+      "Ethan A. Chi",
+      "Ethan Dyer",
+      "Ethan Jerzak",
+      "Ethan Kim",
+      "Eunice Engefu Manyasi",
+      "Evgenii Zheltonozhskii",
+      "Fanyue Xia",
+      "Fatemeh Siar",
+      "Fernando Martínez-Plumed",
+      "Francesca Happé",
+      "Francois Chollet",
+      "Frieda Rong",
+      "Gaurav Mishra",
+      "Genta Indra Winata",
+      "Gerard de Melo",
+      "Germán Kruszewski",
+      "Giambattista Parascandolo",
+      "Giorgio Mariani",
+      "Gloria Wang",
+      "Gonzalo Jaimovitch-López",
+      "Gregor Betz",
+      "Guy Gur-Ari",
+      "Hana Galijasevic",
+      "Hannah Kim",
+      "Hannah Rashkin",
+      "Hannaneh Hajishirzi",
+      "Harsh Mehta",
+      "Hayden Bogar",
+      "Henry Shevlin",
+      "Hinrich Schütze",
+      "Hiromu Yakura",
+      "Hongming Zhang",
+      "Hugh Mee Wong",
+      "Ian Ng",
+      "Isaac Noble",
+      "Jaap Jumelet",
+      "Jack Geissinger",
+      "Jackson Kernion",
+      "Jacob Hilton",
+      "Jaehoon Lee",
+      "Jaime Fernández Fisac",
+      "James B. Simon",
+      "James Koppel",
+      "James Zheng",
+      "James Zou",
+      "Jan Kocoń",
+      "Jana Thompson",
+      "Janelle Wingfield",
+      "Jared Kaplan",
+      "Jarema Radom",
+      "Jascha Sohl-Dickstein",
+      "Jason Phang",
+      "Jason Wei",
+      "Jason Yosinski",
+      "Jekaterina Novikova",
+      "Jelle Bosscher",
+      "Jennifer Marsh",
+      "Jeremy Kim",
+      "Jeroen Taal",
+      "Jesse Engel",
+      "Jesujoba Alabi",
+      "Jiacheng Xu",
+      "Jiaming Song",
+      "Jillian Tang",
+      "Joan Waweru",
+      "John Burden",
+      "John Miller",
+      "John U. Balis",
+      "Jonathan Batchelder",
+      "Jonathan Berant",
+      "Jörg Frohberg",
+      "Jos Rozen",
+      "Jose Hernandez-Orallo",
+      "Joseph Boudeman",
+      "Joseph Guerr",
+      "Joseph Jones",
+      "Joshua B. Tenenbaum",
+      "Joshua S. Rule",
+      "Joyce Chua",
+      "Kamil Kanclerz",
+      "Karen Livescu",
+      "Karl Krauth",
+      "Karthik Gopalakrishnan",
+      "Katerina Ignatyeva",
+      "Katja Markert",
+      "Kaustubh D. Dhole",
+      "Kevin Gimpel",
+      "Kevin Omondi",
+      "Kory Mathewson",
+      "Kristen Chiafullo",
+      "Ksenia Shkaruta",
+      "Kumar Shridhar",
+      "Kyle McDonell",
+      "Kyle Richardson",
+      "Laria Reynolds",
+      "Leo Gao",
+      "Li Zhang",
+      "Liam Dugan",
+      "Lianhui Qin",
+      "Lidia Contreras-Ochando",
+      "Louis-Philippe Morency",
+      "Luca Moschella",
+      "Lucas Lam",
+      "Lucy Noble",
+      "Ludwig Schmidt",
+      "Luheng He",
+      "Luis Oliveros Colón",
+      "Luke Metz",
+      "Lütfi Kerem Şenel",
+      "Maarten Bosma",
+      "Maarten Sap",
+      "Maartje ter Hoeve",
+      "Maheen Farooqi",
+      "Manaal Faruqui",
+      "Mantas Mazeika",
+      "Marco Baturan",
+      "Marco Marelli",
+      "Marco Maru",
+      "Maria Jose Ramírez Quintana",
+      "Marie Tolkiehn",
+      "Mario Giulianelli",
+      "Martha Lewis",
+      "Martin Potthast",
+      "Matthew L. Leavitt",
+      "Matthias Hagen",
+      "Mátyás Schubert",
+      "Medina Orduna Baitemirova",
+      "Melody Arnaud",
+      "Melvin McElrath",
+      "Michael A. Yee",
+      "Michael Cohen",
+      "Michael Gu",
+      "Michael Ivanitskiy",
+      "Michael Starritt",
+      "Michael Strube",
+      "Michał Swędrowski",
+      "Michele Bevilacqua",
+      "Michihiro Yasunaga",
+      "Mihir Kale",
+      "Mike Cain",
+      "Mimee Xu",
+      "Mirac Suzgun",
+      "Mitch Walker",
+      "Mo Tiwari",
+      "Mohit Bansal",
+      "Moin Aminnaseri",
+      "Mor Geva",
+      "Mozhdeh Gheini",
+      "Mukund Varma T",
+      "Nanyun Peng",
+      "Nathan A. Chi",
+      "Nayeon Lee",
+      "Neta Gur-Ari Krakover",
+      "Nicholas Cameron",
+      "Nicholas Roberts",
+      "Nick Doiron",
+      "Nicole Martinez",
+      "Nikita Nangia",
+      "Niklas Deckers",
+      "Niklas Muennighoff",
+      "Nitish Shirish Keskar",
+      "Niveditha S. Iyer",
+      "Noah Constant",
+      "Noah Fiedel",
+      "Nuan Wen",
+      "Oliver Zhang",
+      "Omar Agha",
+      "Omar Elbaghdadi",
+      "Omer Levy",
+      "Owain Evans",
+      "Pablo Antonio Moreno Casares",
+      "Parth Doshi",
+      "Pascale Fung",
+      "Paul Pu Liang",
+      "Paul Vicol",
+      "Pegah Alipoormolabashi",
+      "Peiyuan Liao",
+      "Percy Liang",
+      "Peter Chang",
+      "Peter Eckersley",
+      "Phu Mon Htut",
+      "Pinyu Hwang",
+      "Piotr Miłkowski",
+      "Piyush Patil",
+      "Pouya Pezeshkpour",
+      "Priti Oli",
+      "Qiaozhu Mei",
+      "Qing Lyu",
+      "Qinlang Chen",
+      "Rabin Banjade",
+      "Rachel Etta Rudolph",
+      "Raefer Gabriel",
+      "Rahel Habacker",
+      "Ramon Risco",
+      "Raphaël Millière",
+      "Rhythm Garg",
+      "Richard Barnes",
+      "Rif A. Saurous",
+      "Riku Arakawa",
+      "Robbe Raymaekers",
+      "Robert Frank",
+      "Rohan Sikand",
+      "Roman Novak",
+      "Roman Sitelew",
+      "Ronan LeBras",
+      "Rosanne Liu",
+      "Rowan Jacobs",
+      "Rui Zhang",
+      "Ruslan Salakhutdinov",
+      "Ryan Chi",
+      "Ryan Lee",
+      "Ryan Stovall",
+      "Ryan Teehan",
+      "Rylan Yang",
+      "Sahib Singh",
+      "Saif M. Mohammad",
+      "Sajant Anand",
+      "Sam Dillavou",
+      "Sam Shleifer",
+      "Sam Wiseman",
+      "Samuel Gruetter",
+      "Samuel R. Bowman",
+      "Samuel S. Schoenholz",
+      "Sanghyun Han",
+      "Sanjeev Kwatra",
+      "Sarah A. Rous",
+      "Sarik Ghazarian",
+      "Sayan Ghosh",
+      "Sean Casey",
+      "Sebastian Bischoff",
+      "Sebastian Gehrmann",
+      "Sebastian Schuster",
+      "Sepideh Sadeghi",
+      "Shadi Hamdan",
+      "Sharon Zhou",
+      "Shashank Srivastava",
+      "Sherry Shi",
+      "Shikhar Singh",
+      "Shima Asaadi",
+      "Shixiang Shane Gu",
+      "Shubh Pachchigar",
+      "Shubham Toshniwal",
+      "Shyam Upadhyay",
+      "Shyamolima",
+      "Debnath",
+      "Siamak Shakeri",
+      "Simon Thormeyer",
+      "Simone Melzi",
+      "Siva Reddy",
+      "Sneha Priscilla Makini",
+      "Soo-Hwan Lee",
+      "Spencer Torene",
+      "Sriharsha Hatwar",
+      "Stanislas Dehaene",
+      "Stefan Divic",
+      "Stefano Ermon",
+      "Stella Biderman",
+      "Stephanie Lin",
+      "Stephen Prasad",
+      "Steven T. Piantadosi",
+      "Stuart M. Shieber",
+      "Summer Misherghi",
+      "Svetlana Kiritchenko",
+      "Swaroop Mishra",
+      "Tal Linzen",
+      "Tal Schuster",
+      "Tao Li",
+      "Tao Yu",
+      "Tariq Ali",
+      "Tatsu Hashimoto",
+      "Te-Lin Wu",
+      "Théo Desbordes",
+      "Theodore Rothschild",
+      "Thomas Phan",
+      "Tianle Wang",
+      "Tiberius Nkinyili",
+      "Timo Schick",
+      "Timofei Kornev",
+      "Titus Tunduny",
+      "Tobias Gerstenberg",
+      "Trenton Chang",
+      "Trishala Neeraj",
+      "Tushar Khot",
+      "Tyler Shultz",
+      "Uri Shaham",
+      "Vedant Misra",
+      "Vera Demberg",
+      "Victoria Nyamai",
+      "Vikas Raunak",
+      "Vinay Ramasesh",
+      "Vinay Uday Prabhu",
+      "Vishakh Padmakumar",
+      "Vivek Srikumar",
+      "William Fedus",
+      "William Saunders",
+      "William Zhang",
+      "Wout Vossen",
+      "Xiang Ren",
+      "Xiaoyu Tong",
+      "Xinran Zhao",
+      "Xinyi Wu",
+      "Xudong Shen",
+      "Yadollah Yaghoobzadeh",
+      "Yair Lakretz",
+      "Yangqiu Song",
+      "Yasaman Bahri",
+      "Yejin Choi",
+      "Yichi Yang",
+      "Yiding Hao",
+      "Yifu Chen",
+      "Yonatan Belinkov",
+      "Yu Hou",
+      "Yufang Hou",
+      "Yuntao Bai",
+      "Zachary Seid",
+      "Zhuoye Zhao",
+      "Zijian Wang",
+      "Zijie J. Wang",
+      "Zirui Wang",
+      "Ziyi Wu"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2206.04615v3",
+    "type": "research_paper",
+    "branch": "T6_capability_measurement",
+    "problem": "平均语言建模损失不能刻画多种具体任务能力。",
+    "insight": "以广泛任务集合和跨规模模型建立能力增长、突破式曲线与偏差的观测底座。",
+    "limitation": "摘要核验；任务、提示与离散评分异质，综合均值不可代替逐项能力。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v3, Mon, 12 Jun 2023 17:51:15 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2206.04615",
+    "first_submission_date": "2022-06-09",
+    "metadata_verified_from": "https://arxiv.org/abs/2206.04615",
+    "pdf_url": "https://arxiv.org/pdf/2206.04615v3",
+    "canonical_url": "https://arxiv.org/abs/2206.04615",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "wei2022emergence",
+    "title": "Emergent Abilities of Large Language Models",
+    "authors": [
+      "Jason Wei",
+      "Yi Tay",
+      "Rishi Bommasani",
+      "Colin Raffel",
+      "Barret Zoph",
+      "Sebastian Borgeaud",
+      "Dani Yogatama",
+      "Maarten Bosma",
+      "Denny Zhou",
+      "Donald Metzler",
+      "Ed H. Chi",
+      "Tatsunori Hashimoto",
+      "Oriol Vinyals",
+      "Percy Liang",
+      "Jeff Dean",
+      "William Fedus"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2206.07682v2",
+    "type": "research_paper",
+    "branch": "T6_emergence",
+    "problem": "部分能力在小模型上近随机，大模型上才明显出现。",
+    "insight": "将此现象组织为涌现能力并强调从小规模曲线直接外推的困难。",
+    "limitation": "摘要核验；操作性现象定义不能单独确认内部机制突变。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Wed, 26 Oct 2022 05:06:24 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2206.07682",
+    "first_submission_date": "2022-06-15",
+    "metadata_verified_from": "https://arxiv.org/abs/2206.07682",
+    "pdf_url": "https://arxiv.org/pdf/2206.07682v2",
+    "canonical_url": "https://arxiv.org/abs/2206.07682",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "alabdulmohsin2022revisiting",
+    "title": "Revisiting Neural Scaling Laws in Language and Vision",
+    "authors": [
+      "Ibrahim Alabdulmohsin",
+      "Behnam Neyshabur",
+      "Xiaohua Zhai"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2209.06640v2",
+    "type": "research_paper",
+    "branch": "T6_extrapolation_validation",
+    "problem": "最佳样本内幂律拟合可能产生较差的规模外推。",
+    "insight": "以留出更大规模点的外推损失验证估计器，并用连接小规模饱和与渐近幂律的函数减小区间错配。",
+    "limitation": "正文定向阅读；仍假设所选函数族能覆盖目标区间，不能预知任意未观测转折。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Tue, 1 Nov 2022 08:59:38 UTC",
+    "sections_read": [
+      "§3–4：估计器与外推误差",
+      "§5.4–6：BIG-Bench及讨论"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2209.06640",
+    "first_submission_date": "2022-09-13",
+    "metadata_verified_from": "https://arxiv.org/abs/2209.06640",
+    "pdf_url": "https://arxiv.org/pdf/2209.06640v2",
+    "canonical_url": "https://arxiv.org/abs/2209.06640",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "maloney2022solvable",
+    "title": "A Solvable Model of Neural Scaling Laws",
+    "authors": [
+      "Alexander Maloney",
+      "Daniel A. Roberts",
+      "James Sully"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2210.16859v1",
+    "type": "research_paper",
+    "branch": "T6_random_features",
+    "problem": "模型、数据瓶颈及幂律平台能否从可解统计模型推出？",
+    "insight": "联合生成数据模型与随机特征模型，将数据谱长尾联系到测试误差以及有限谱范围的平台。",
+    "limitation": "摘要核验；随机特征与大样本极限不能直接提供现代LLM的工程指数。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Sun, 30 Oct 2022 15:13:18 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2210.16859",
+    "first_submission_date": "2022-10-30",
+    "metadata_verified_from": "https://arxiv.org/abs/2210.16859",
+    "pdf_url": "https://arxiv.org/pdf/2210.16859v1",
+    "canonical_url": "https://arxiv.org/abs/2210.16859",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "wei2022ushaped",
+    "title": "Inverse scaling can become U-shaped",
+    "authors": [
+      "Jason Wei",
+      "Najoung Kim",
+      "Yi Tay",
+      "Quoc V. Le"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2211.02011v5",
+    "type": "research_paper",
+    "branch": "T6_nonmonotonicity",
+    "problem": "较小规模上的inverse scaling是否会持续到更大规模？",
+    "insight": "扩大测试规模后发现部分原先下降的任务转为U形，并考察示例和CoT的影响。",
+    "limitation": "摘要核验；不是所有反向任务都反转，扩大观察区间不是普遍单调性的证明。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v5, Wed, 24 May 2023 06:55:50 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2211.02011",
+    "first_submission_date": "2022-11-03",
+    "metadata_verified_from": "https://arxiv.org/abs/2211.02011",
+    "pdf_url": "https://arxiv.org/pdf/2211.02011v5",
+    "canonical_url": "https://arxiv.org/abs/2211.02011",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": []
+  },
+  {
+    "id": "mckenzie2023inverse",
+    "title": "Inverse Scaling: When Bigger Isn't Better",
+    "authors": [
+      "Ian R. McKenzie",
+      "Alexander Lyzhov",
+      "Michael Pieler",
+      "Alicia Parrish",
+      "Aaron Mueller",
+      "Ameya Prabhu",
+      "Euan McLean",
+      "Aaron Kirtland",
+      "Alexis Ross",
+      "Alisa Liu",
+      "Andrew Gritsevskiy",
+      "Daniel Wurgaft",
+      "Derik Kauffman",
+      "Gabriel Recchia",
+      "Jiacheng Liu",
+      "Joe Cavanagh",
+      "Max Weiss",
+      "Sicong Huang",
+      "The Floating Droid",
+      "Tom Tseng",
+      "Tomasz Korbak",
+      "Xudong Shen",
+      "Yuhui Zhang",
+      "Zhengping Zhou",
+      "Najoung Kim",
+      "Samuel R. Bowman",
+      "Ethan Perez"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2306.09479v2",
+    "type": "research_paper",
+    "branch": "T6_objective_mismatch",
+    "problem": "语言模型loss改善为何仍伴随某些任务表现下降？",
+    "insight": "对11组任务分析记忆压过指令、不良模式模仿、干扰任务和误导示例等机制。",
+    "limitation": "摘要核验；反例由定向任务征集产生，不能估计所有任务的反向缩放频率。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Mon, 13 May 2024 01:25:12 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2306.09479",
+    "first_submission_date": "2023-06-15",
+    "metadata_verified_from": "https://arxiv.org/abs/2306.09479",
+    "pdf_url": "https://arxiv.org/pdf/2306.09479v2",
+    "canonical_url": "https://arxiv.org/abs/2306.09479",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": []
+  },
+  {
+    "id": "owen2024predictable",
+    "title": "How predictable is language model benchmark performance?",
+    "authors": [
+      "David Owen"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2401.04757v1",
+    "type": "research_paper",
+    "branch": "T6_aggregate_prediction",
+    "problem": "平均能力能否预测，是否意味着每个任务也同样可预测？",
+    "insight": "跨11个模型架构比较聚合基准与单项任务的compute外推，观察两者预测误差不同。",
+    "limitation": "摘要核验；报告的误差依赖任务集合与外推跨度，不是未来模型的普适误差上界。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Tue, 9 Jan 2024 17:34:30 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2401.04757",
+    "first_submission_date": "2024-01-09",
+    "metadata_verified_from": "https://arxiv.org/abs/2401.04757",
+    "pdf_url": "https://arxiv.org/pdf/2401.04757v1",
+    "canonical_url": "https://arxiv.org/abs/2401.04757",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": []
+  },
+  {
+    "id": "bordelon2024dynamical",
+    "title": "A Dynamical Model of Neural Scaling Laws",
+    "authors": [
+      "Blake Bordelon",
+      "Alexander Atanasov",
+      "Cengiz Pehlevan"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2402.01092v4",
+    "type": "research_paper",
+    "branch": "T6_training_dynamics",
+    "problem": "只分析训练终点的模型不能解释训练时间与参数量的非对称最优分配。",
+    "insight": "在梯度下降随机特征模型中显式引入时间、数据复用及有限模型瓶颈，并导出不同的瓶颈指数。",
+    "limitation": "正文定向阅读；真实特征学习网络的曲线与线性化预测存在偏离，不能直接外推至交叉熵加Adam训练。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v4, Sun, 23 Jun 2024 10:46:17 UTC",
+    "sections_read": [
+      "§4：bottleneck scalings",
+      "§5.1–6：feature learning与结论"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2402.01092",
+    "first_submission_date": "2024-02-02",
+    "metadata_verified_from": "https://arxiv.org/abs/2402.01092",
+    "pdf_url": "https://arxiv.org/pdf/2402.01092v4",
+    "canonical_url": "https://arxiv.org/abs/2402.01092",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "isik2024downstream",
+    "title": "Scaling Laws for Downstream Task Performance of Large Language Models",
+    "authors": [
+      "Berivan Isik",
+      "Natalia Ponomareva",
+      "Hussein Hazimeh",
+      "Dimitris Paparas",
+      "Sergei Vassilvitskii",
+      "Sanmi Koyejo"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2402.04177v3",
+    "type": "research_paper",
+    "branch": "T6_transfer_alignment",
+    "problem": "预训练规模带来的loss下降是否保证微调后的任务质量提高？",
+    "insight": "在翻译中分开考察预训练数据量、语言分布对齐与微调数据量，给出task score与下游CE分离的实证。",
+    "limitation": "完整正文及附录文字；主体为T5翻译实验，语言混合的启发式对齐分数不是一般迁移理论。",
+    "reading_depth": "full_text",
+    "verification_date": "2026-09-16",
+    "version_read": "v3, Thu, 29 Jan 2026 06:50:51 UTC",
+    "sections_read": [
+      "§1–6",
+      "Appendix A–C（含所有实验表与图注）"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2402.04177",
+    "first_submission_date": "2024-02-06",
+    "metadata_verified_from": "https://arxiv.org/abs/2402.04177",
+    "pdf_url": "https://arxiv.org/pdf/2402.04177v3",
+    "reading_scope_note": "已读PDF提取的完整正文、附录文字、表格及图注；跳过参考文献列表。未逐张目视审阅图片，非复现实验或逐行证明正确性审计。",
+    "canonical_url": "https://arxiv.org/abs/2402.04177",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "du2024lossperspective",
+    "title": "Understanding Emergent Abilities of Language Models from the Loss Perspective",
+    "authors": [
+      "Zhengxiao Du",
+      "Aohan Zeng",
+      "Yuxiao Dong",
+      "Jie Tang"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2403.15796v3",
+    "type": "research_paper",
+    "branch": "T6_emergence",
+    "problem": "参数量与评分连续性不足以确定何时出现任务表现转折。",
+    "insight": "在固定语料、tokenizer与架构族下按预训练loss对齐模型，并相对随机基线考察连续与离散指标。",
+    "limitation": "完整正文及附录文字；loss阈值依赖语料与tokenizer，跨架构、后训练和所有新能力未获保证。",
+    "reading_depth": "full_text",
+    "verification_date": "2026-09-16",
+    "version_read": "v3, Wed, 15 Jan 2025 02:48:59 UTC",
+    "sections_read": [
+      "§1–7",
+      "Appendix A–I"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2403.15796",
+    "first_submission_date": "2024-03-23",
+    "metadata_verified_from": "https://arxiv.org/abs/2403.15796",
+    "pdf_url": "https://arxiv.org/pdf/2403.15796v3",
+    "reading_scope_note": "已读PDF提取的完整正文、附录文字、表格及图注；跳过参考文献列表。未逐张目视审阅图片，非复现实验或逐行证明正确性审计。",
+    "canonical_url": "https://arxiv.org/abs/2403.15796",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "ruan2024observational",
+    "title": "Observational Scaling Laws and the Predictability of Language Model Performance",
+    "authors": [
+      "Yangjun Ruan",
+      "Chris J. Maddison",
+      "Tatsunori Hashimoto"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2405.10938v3",
+    "type": "research_paper",
+    "branch": "T6_observational_prediction",
+    "problem": "严格训练一系列同家族模型代价高，异构开放模型又不能直接合并compute轴。",
+    "insight": "从标准基准提取低维能力坐标，建立跨家族目标能力映射，结合强弱模型留出验证。",
+    "limitation": "正文定向阅读；输入本身是基准成绩而非纯训练预算，污染、家族内异质性及重型后训练均为边界。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v3, Tue, 1 Oct 2024 23:38:10 UTC",
+    "sections_read": [
+      "§3.1–3.4：方法",
+      "§4：留出验证设计",
+      "§5–7：实验设计选择、应用与局限"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2405.10938",
+    "first_submission_date": "2024-05-17",
+    "metadata_verified_from": "https://arxiv.org/abs/2405.10938",
+    "pdf_url": "https://arxiv.org/pdf/2405.10938v3",
+    "canonical_url": "https://arxiv.org/abs/2405.10938",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "bordelon2024feature",
+    "title": "How Feature Learning Can Improve Neural Scaling Laws",
+    "authors": [
+      "Blake Bordelon",
+      "Alexander Atanasov",
+      "Cengiz Pehlevan"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2409.17858v2",
+    "type": "research_paper",
+    "branch": "T6_feature_learning",
+    "problem": "固定核理论能产生幂律却低估会学习表征的网络改善速度。",
+    "insight": "让初始特征组合随训练改变，在目标相对初始核较难时推导训练时间指数提升。",
+    "limitation": "完整主文、未逐项审读证明附录；模型限制特征于初始张成空间，MSE/SGD与LLM配方有差异，CIFAR后期仍有理论偏差。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Fri, 4 Apr 2025 13:47:57 UTC",
+    "sections_read": [
+      "§1–6全部主文；未逐项读证明附录"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2409.17858",
+    "first_submission_date": "2024-09-26",
+    "metadata_verified_from": "https://arxiv.org/abs/2409.17858",
+    "pdf_url": "https://arxiv.org/pdf/2409.17858v2",
+    "canonical_url": "https://arxiv.org/abs/2409.17858",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "dosovitskiy2020vit",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "authors": [
+      "Alexey Dosovitskiy",
+      "Lucas Beyer",
+      "Alexander Kolesnikov",
+      "Dirk Weissenborn",
+      "Xiaohua Zhai",
+      "Thomas Unterthiner",
+      "Mostafa Dehghani",
+      "Matthias Minderer",
+      "Georg Heigold",
+      "Sylvain Gelly",
+      "Jakob Uszkoreit",
+      "Neil Houlsby"
+    ],
+    "year": 2020,
+    "url": "https://arxiv.org/abs/2010.11929v2",
+    "type": "research_paper",
+    "branch": "T7_vision_architecture",
+    "problem": "卷积归纳偏置是否是强视觉性能的必要条件？",
+    "insight": "将图像patch序列交给纯Transformer，在大规模预训练后迁移到视觉任务。",
+    "limitation": "摘要核验；架构可扩展证据不同于完整compute-optimal缩放定律。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Thu, 3 Jun 2021 13:08:56 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2010.11929",
+    "first_submission_date": "2020-10-22",
+    "metadata_verified_from": "https://arxiv.org/abs/2010.11929",
+    "pdf_url": "https://arxiv.org/pdf/2010.11929v2",
+    "canonical_url": "https://arxiv.org/abs/2010.11929",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "he2021mae",
+    "title": "Masked Autoencoders Are Scalable Vision Learners",
+    "authors": [
+      "Kaiming He",
+      "Xinlei Chen",
+      "Saining Xie",
+      "Yanghao Li",
+      "Piotr Dollár",
+      "Ross Girshick"
+    ],
+    "year": 2021,
+    "url": "https://arxiv.org/abs/2111.06377v3",
+    "type": "research_paper",
+    "branch": "T7_visual_self_supervision",
+    "problem": "大模型视觉训练如何减少标注与计算依赖？",
+    "insight": "高比例掩码配合只处理可见patch的编码器，形成有效自监督任务并减少编码计算。",
+    "limitation": "摘要核验；重建目标、特征迁移和最终任务质量需分别验证。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v3, Sun, 19 Dec 2021 19:23:25 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2111.06377",
+    "first_submission_date": "2021-11-11",
+    "metadata_verified_from": "https://arxiv.org/abs/2111.06377",
+    "pdf_url": "https://arxiv.org/pdf/2111.06377v3",
+    "canonical_url": "https://arxiv.org/abs/2111.06377",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "cherti2022openclip",
+    "title": "Reproducible scaling laws for contrastive language-image learning",
+    "authors": [
+      "Mehdi Cherti",
+      "Romain Beaumont",
+      "Ross Wightman",
+      "Mitchell Wortsman",
+      "Gabriel Ilharco",
+      "Cade Gordon",
+      "Christoph Schuhmann",
+      "Ludwig Schmidt",
+      "Jenia Jitsev"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2212.07143v2",
+    "type": "research_paper",
+    "branch": "T7_contrastive_data",
+    "problem": "闭源数据和模型使CLIP缩放规律难以复现及归因。",
+    "insight": "以公开LAION与OpenCLIP扫描模型、独立数据和已见样本数，比较分类、检索及迁移曲线。",
+    "limitation": "正文定向阅读；最大规模采样稀疏、调参有限，数据造成任务差异仍属作者假设。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Sat, 13 Jul 2024 14:20:07 UTC",
+    "sections_read": [
+      "§3：实验设计",
+      "§4.1：评价方法",
+      "§5–6：结果解释与局限"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2212.07143",
+    "first_submission_date": "2022-12-14",
+    "metadata_verified_from": "https://arxiv.org/abs/2212.07143",
+    "pdf_url": "https://arxiv.org/pdf/2212.07143v2",
+    "canonical_url": "https://arxiv.org/abs/2212.07143",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "dehghani2023vit22b",
+    "title": "Scaling Vision Transformers to 22 Billion Parameters",
+    "authors": [
+      "Mostafa Dehghani",
+      "Josip Djolonga",
+      "Basil Mustafa",
+      "Piotr Padlewski",
+      "Jonathan Heek",
+      "Justin Gilmer",
+      "Andreas Steiner",
+      "Mathilde Caron",
+      "Robert Geirhos",
+      "Ibrahim Alabdulmohsin",
+      "Rodolphe Jenatton",
+      "Lucas Beyer",
+      "Michael Tschannen",
+      "Anurag Arnab",
+      "Xiao Wang",
+      "Carlos Riquelme",
+      "Matthias Minderer",
+      "Joan Puigcerver",
+      "Utku Evci",
+      "Manoj Kumar",
+      "Sjoerd van Steenkiste",
+      "Gamaleldin F. Elsayed",
+      "Aravindh Mahendran",
+      "Fisher Yu",
+      "Avital Oliver",
+      "Fantine Huot",
+      "Jasmijn Bastings",
+      "Mark Patrick Collier",
+      "Alexey Gritsenko",
+      "Vighnesh Birodkar",
+      "Cristina Vasconcelos",
+      "Yi Tay",
+      "Thomas Mensink",
+      "Alexander Kolesnikov",
+      "Filip Pavetić",
+      "Dustin Tran",
+      "Thomas Kipf",
+      "Mario Lučić",
+      "Xiaohua Zhai",
+      "Daniel Keysers",
+      "Jeremiah Harmsen",
+      "Neil Houlsby"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2302.05442v1",
+    "type": "research_paper",
+    "branch": "T7_vision_architecture",
+    "problem": "视觉Transformer如何在更大参数量保持稳定与效率？",
+    "insight": "提出22B ViT训练配方并从迁移、鲁棒性及形状偏好等角度评价规模效果。",
+    "limitation": "摘要核验；大规模模型实证不是所有视觉目标共享同一指数的证明。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Fri, 10 Feb 2023 18:58:21 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2302.05442",
+    "first_submission_date": "2023-02-10",
+    "metadata_verified_from": "https://arxiv.org/abs/2302.05442",
+    "pdf_url": "https://arxiv.org/pdf/2302.05442v1",
+    "canonical_url": "https://arxiv.org/abs/2302.05442",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "zhai2023siglip",
+    "title": "Sigmoid Loss for Language Image Pre-Training",
+    "authors": [
+      "Xiaohua Zhai",
+      "Basil Mustafa",
+      "Alexander Kolesnikov",
+      "Lucas Beyer"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2303.15343v4",
+    "type": "research_paper",
+    "branch": "T7_contrastive_objective",
+    "problem": "对比学习的全局softmax与大batch耦合限制系统扩展。",
+    "insight": "成对sigmoid目标移除全局归一化依赖，并区分batch、正负样本对等变量。",
+    "limitation": "摘要核验；batch收益会饱和，目标变化后的系数不能直接沿用CLIP曲线。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v4, Wed, 27 Sep 2023 12:05:41 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2303.15343",
+    "first_submission_date": "2023-03-27",
+    "metadata_verified_from": "https://arxiv.org/abs/2303.15343",
+    "pdf_url": "https://arxiv.org/pdf/2303.15343v4",
+    "canonical_url": "https://arxiv.org/abs/2303.15343",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "aghajanyan2023mixedmodal",
+    "title": "Scaling Laws for Generative Mixed-Modal Language Models",
+    "authors": [
+      "Armen Aghajanyan",
+      "Lili Yu",
+      "Alexis Conneau",
+      "Wei-Ning Hsu",
+      "Karen Hambardzumyan",
+      "Susan Zhang",
+      "Stephen Roller",
+      "Naman Goyal",
+      "Omer Levy",
+      "Luke Zettlemoyer"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2301.03728v1",
+    "type": "research_paper",
+    "branch": "T7_modality_interaction",
+    "problem": "把不同模态放进共享模型后为何可能比独立训练更差？",
+    "insight": "在单模态资源项外显式拟合竞争与协同项，预测并实验检验Speech/Text竞争边界。",
+    "limitation": "完整正文及附录文字；主要研究双模态等比例token混合，固定tokenizer与有限规模，不证明任意多模态组合都协同。",
+    "reading_depth": "full_text",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Tue, 10 Jan 2023 00:20:06 UTC",
+    "sections_read": [
+      "§1–8",
+      "Appendix A.1–A.3.2、B"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2301.03728",
+    "first_submission_date": "2023-01-10",
+    "metadata_verified_from": "https://arxiv.org/abs/2301.03728",
+    "pdf_url": "https://arxiv.org/pdf/2301.03728v1",
+    "reading_scope_note": "已读PDF提取的完整正文、附录文字、表格及图注；跳过参考文献列表。未逐张目视审阅图片，非复现实验或逐行证明正确性审计。",
+    "canonical_url": "https://arxiv.org/abs/2301.03728",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "mckinzie2024mm1",
+    "title": "MM1: Methods, Analysis & Insights from Multimodal LLM Pre-training",
+    "authors": [
+      "Brandon McKinzie",
+      "Zhe Gan",
+      "Jean-Philippe Fauconnier",
+      "Sam Dodge",
+      "Bowen Zhang",
+      "Philipp Dufter",
+      "Dhruti Shah",
+      "Xianzhi Du",
+      "Futang Peng",
+      "Floris Weers",
+      "Anton Belyi",
+      "Haotian Zhang",
+      "Karanjeet Singh",
+      "Doug Kang",
+      "Ankur Jain",
+      "Hongyu Hè",
+      "Max Schwarzer",
+      "Tom Gunter",
+      "Xiang Kong",
+      "Aonan Zhang",
+      "Jianyu Wang",
+      "Chong Wang",
+      "Nan Du",
+      "Tao Lei",
+      "Sam Wiseman",
+      "Guoli Yin",
+      "Mark Lee",
+      "Zirui Wang",
+      "Ruoming Pang",
+      "Peter Grasch",
+      "Alexander Toshev",
+      "Yinfei Yang"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2403.09611v4",
+    "type": "research_paper",
+    "branch": "T7_multimodal_recipe",
+    "problem": "MLLM扩展中哪些视觉与数据选择真正决定收益？",
+    "insight": "消融图像编码器、分辨率、图像token和混合数据组成，建立扩展到30B模型的配方。",
+    "limitation": "摘要核验；配方层面消融不是各资源维度都独立扫描的幂律。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v4, Thu, 18 Apr 2024 18:51:04 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2403.09611",
+    "first_submission_date": "2024-03-14",
+    "metadata_verified_from": "https://arxiv.org/abs/2403.09611",
+    "pdf_url": "https://arxiv.org/pdf/2403.09611v4",
+    "canonical_url": "https://arxiv.org/abs/2403.09611",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "evans2024jest",
+    "title": "Data curation via joint example selection further accelerates multimodal learning",
+    "authors": [
+      "Talfan Evans",
+      "Nikhil Parthasarathy",
+      "Hamza Merzic",
+      "Olivier J. Henaff"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2406.17711v1",
+    "type": "research_paper",
+    "branch": "T7_batch_data_curation",
+    "problem": "独立筛选样本忽略对比目标中同一batch样本的相互作用。",
+    "insight": "用参考模型与当前模型的联合可学习性选择batch，并用近似模型降低选择开销。",
+    "limitation": "摘要核验；收益须计入参考模型与筛选成本，需阅读全文后比较固定预算控制。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Tue, 25 Jun 2024 16:52:37 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2406.17711",
+    "first_submission_date": "2024-06-25",
+    "metadata_verified_from": "https://arxiv.org/abs/2406.17711",
+    "pdf_url": "https://arxiv.org/pdf/2406.17711v1",
+    "canonical_url": "https://arxiv.org/abs/2406.17711",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "nichol2021improvedddpm",
+    "title": "Improved Denoising Diffusion Probabilistic Models",
+    "authors": [
+      "Alex Nichol",
+      "Prafulla Dhariwal"
+    ],
+    "year": 2021,
+    "url": "https://arxiv.org/abs/2102.09672v1",
+    "type": "research_paper",
+    "branch": "T7_diffusion_training",
+    "problem": "DDPM如何兼顾生成质量、likelihood与采样成本？",
+    "insight": "学习逆过程方差等改进允许减少采样前向次数，并观测容量/训练计算增加的平滑收益。",
+    "limitation": "摘要核验；likelihood、样本质量、推理次数是不同指标。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Thu, 18 Feb 2021 23:44:17 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2102.09672",
+    "first_submission_date": "2021-02-18",
+    "metadata_verified_from": "https://arxiv.org/abs/2102.09672",
+    "pdf_url": "https://arxiv.org/pdf/2102.09672v1",
+    "canonical_url": "https://arxiv.org/abs/2102.09672",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "rombach2021latent",
+    "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+    "authors": [
+      "Robin Rombach",
+      "Andreas Blattmann",
+      "Dominik Lorenz",
+      "Patrick Esser",
+      "Björn Ommer"
+    ],
+    "year": 2021,
+    "url": "https://arxiv.org/abs/2112.10752v2",
+    "type": "research_paper",
+    "branch": "T7_diffusion_representation",
+    "problem": "像素空间扩散训练和逐步采样成本高。",
+    "insight": "把扩散过程移到预训练自编码器latent，以压缩换取计算效率并保留感知细节。",
+    "limitation": "摘要核验；压缩表示自身引入信息与重建上限，不能把latent token等同文本token。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Wed, 13 Apr 2022 11:38:44 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2112.10752",
+    "first_submission_date": "2021-12-20",
+    "metadata_verified_from": "https://arxiv.org/abs/2112.10752",
+    "pdf_url": "https://arxiv.org/pdf/2112.10752v2",
+    "canonical_url": "https://arxiv.org/abs/2112.10752",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "peebles2022dit",
+    "title": "Scalable Diffusion Models with Transformers",
+    "authors": [
+      "William Peebles",
+      "Saining Xie"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2212.09748v2",
+    "type": "research_paper",
+    "branch": "T7_diffusion_architecture",
+    "problem": "扩散骨干能否以标准Transformer方式系统扩大？",
+    "insight": "以latent patch Transformer替代U-Net，比较深宽及输入token导致的GFLOPs变化与FID。",
+    "limitation": "摘要核验；forward GFLOPs及FID改善不自动给出模型、数据、训练时长的联合最优分配。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Thu, 2 Mar 2023 09:06:55 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2212.09748",
+    "first_submission_date": "2022-12-19",
+    "metadata_verified_from": "https://arxiv.org/abs/2212.09748",
+    "pdf_url": "https://arxiv.org/pdf/2212.09748v2",
+    "canonical_url": "https://arxiv.org/abs/2212.09748",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "esser2024rectifiedflow",
+    "title": "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis",
+    "authors": [
+      "Patrick Esser",
+      "Sumith Kulal",
+      "Andreas Blattmann",
+      "Rahim Entezari",
+      "Jonas Müller",
+      "Harry Saini",
+      "Yam Levi",
+      "Dominik Lorenz",
+      "Axel Sauer",
+      "Frederic Boesel",
+      "Dustin Podell",
+      "Tim Dockhorn",
+      "Zion English",
+      "Kyle Lacey",
+      "Alex Goodwin",
+      "Yannik Marek",
+      "Robin Rombach"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2403.03206v1",
+    "type": "research_paper",
+    "branch": "T7_diffusion_objective",
+    "problem": "高分辨率文生图如何把目标和架构变化转化为可预测收益？",
+    "insight": "结合感知相关噪声采样与双向图文Transformer，研究validation loss和生成评价的共同变化。",
+    "limitation": "摘要核验；目标、数据和架构共同变化，需全文隔离各因素贡献。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Tue, 5 Mar 2024 18:45:39 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2403.03206",
+    "first_submission_date": "2024-03-05",
+    "metadata_verified_from": "https://arxiv.org/abs/2403.03206",
+    "pdf_url": "https://arxiv.org/pdf/2403.03206v1",
+    "canonical_url": "https://arxiv.org/abs/2403.03206",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "ma2025diffusioninference",
+    "title": "Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps",
+    "authors": [
+      "Nanye Ma",
+      "Shangyuan Tong",
+      "Haolin Jia",
+      "Hexiang Hu",
+      "Yu-Chuan Su",
+      "Mingda Zhang",
+      "Xuan Yang",
+      "Yandong Li",
+      "Tommi Jaakkola",
+      "Xuhui Jia",
+      "Saining Xie"
+    ],
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2501.09732v1",
+    "type": "research_paper",
+    "branch": "T7_diffusion_inference",
+    "problem": "只增加去噪步数的推理收益很快饱和。",
+    "insight": "把预算投入初始噪声或中间路径搜索，并明确区分verifier与搜索算法的两条设计轴。",
+    "limitation": "完整正文及附录文字；代理评分可被过度优化，多样性损失、verifier成本和自动评估偏差需单列。",
+    "reading_depth": "full_text",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Thu, 16 Jan 2025 18:30:37 UTC",
+    "sections_read": [
+      "§1–7",
+      "Appendix A–E（含评价prompt与图注）"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2501.09732",
+    "first_submission_date": "2025-01-16",
+    "metadata_verified_from": "https://arxiv.org/abs/2501.09732",
+    "pdf_url": "https://arxiv.org/pdf/2501.09732v1",
+    "reading_scope_note": "已读PDF提取的完整正文、附录文字、表格及图注；跳过参考文献列表。未逐张目视审阅图片，非复现实验或逐行证明正确性审计。",
+    "canonical_url": "https://arxiv.org/abs/2501.09732",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "zhang2025diffusionsearch",
+    "title": "Inference-time Scaling of Diffusion Models through Classical Search",
+    "authors": [
+      "Xiangcheng Zhang",
+      "Haowei Lin",
+      "Haotian Ye",
+      "James Zou",
+      "Jianzhu Ma",
+      "Yitao Liang",
+      "Yilun Du"
+    ],
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.23614v2",
+    "type": "research_paper",
+    "branch": "T7_diffusion_inference",
+    "problem": "如何在推理时根据新目标更有效控制扩散输出？",
+    "insight": "将退火Langevin局部搜索与广度/深度树搜索组合，连接图像、规划和离线RL。",
+    "limitation": "摘要核验；各任务预算、评价器与基线细节待阅读全文，不据此认定优于所有采样方法。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Sun, 5 Oct 2025 15:58:19 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2505.23614",
+    "first_submission_date": "2025-05-29",
+    "metadata_verified_from": "https://arxiv.org/abs/2505.23614",
+    "pdf_url": "https://arxiv.org/pdf/2505.23614v2",
+    "canonical_url": "https://arxiv.org/abs/2505.23614",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "kang2026ipr",
+    "title": "Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement",
+    "authors": [
+      "Taegu Kang",
+      "Jaesik Yoon",
+      "Sungjin Ahn"
+    ],
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2605.19317v1",
+    "type": "research_paper",
+    "branch": "T7_diffusion_verifier_free",
+    "problem": "依赖外部verifier的扩散推理扩展如何用于评价器不足的场景？",
+    "insight": "在顺序混合噪声生成中部分重加噪、以剩余区域作条件重新生成，提高全局一致性。",
+    "limitation": "摘要核验的2026前沿候选；MNIST Sudoku等约束任务收益不能直接推广为通用图像质量规律。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Tue, 19 May 2026 03:53:50 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2605.19317",
+    "first_submission_date": "2026-05-19",
+    "metadata_verified_from": "https://arxiv.org/abs/2605.19317",
+    "pdf_url": "https://arxiv.org/pdf/2605.19317v1",
+    "canonical_url": "https://arxiv.org/abs/2605.19317",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "brohan2022rt1",
+    "title": "RT-1: Robotics Transformer for Real-World Control at Scale",
+    "authors": [
+      "Anthony Brohan",
+      "Noah Brown",
+      "Justice Carbajal",
+      "Yevgen Chebotar",
+      "Joseph Dabis",
+      "Chelsea Finn",
+      "Keerthana Gopalakrishnan",
+      "Karol Hausman",
+      "Alex Herzog",
+      "Jasmine Hsu",
+      "Julian Ibarz",
+      "Brian Ichter",
+      "Alex Irpan",
+      "Tomas Jackson",
+      "Sally Jesmonth",
+      "Nikhil J Joshi",
+      "Ryan Julian",
+      "Dmitry Kalashnikov",
+      "Yuheng Kuang",
+      "Isabel Leal",
+      "Kuang-Huei Lee",
+      "Sergey Levine",
+      "Yao Lu",
+      "Utsav Malla",
+      "Deeksha Manjunath",
+      "Igor Mordatch",
+      "Ofir Nachum",
+      "Carolina Parada",
+      "Jodilyn Peralta",
+      "Emily Perez",
+      "Karl Pertsch",
+      "Jornell Quiambao",
+      "Kanishka Rao",
+      "Michael Ryoo",
+      "Grecia Salazar",
+      "Pannag Sanketi",
+      "Kevin Sayed",
+      "Jaspiar Singh",
+      "Sumedh Sontakke",
+      "Austin Stone",
+      "Clayton Tan",
+      "Huong Tran",
+      "Vincent Vanhoucke",
+      "Steve Vega",
+      "Quan Vuong",
+      "Fei Xia",
+      "Ted Xiao",
+      "Peng Xu",
+      "Sichun Xu",
+      "Tianhe Yu",
+      "Brianna Zitkovich"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2212.06817v2",
+    "type": "research_paper",
+    "branch": "T7_robotics_generalist",
+    "problem": "机器人数据难收集且每任务单独训练限制知识共享。",
+    "insight": "以高容量Transformer吸收多任务真实机器人数据，并观察规模、多样性与泛化。",
+    "limitation": "摘要核验；系统可扩展性与资源指数识别应分开。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v2, Fri, 11 Aug 2023 17:45:27 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2212.06817",
+    "first_submission_date": "2022-12-13",
+    "metadata_verified_from": "https://arxiv.org/abs/2212.06817",
+    "pdf_url": "https://arxiv.org/pdf/2212.06817v2",
+    "canonical_url": "https://arxiv.org/abs/2212.06817",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "brohan2023rt2",
+    "title": "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control",
+    "authors": [
+      "Anthony Brohan",
+      "Noah Brown",
+      "Justice Carbajal",
+      "Yevgen Chebotar",
+      "Xi Chen",
+      "Krzysztof Choromanski",
+      "Tianli Ding",
+      "Danny Driess",
+      "Avinava Dubey",
+      "Chelsea Finn",
+      "Pete Florence",
+      "Chuyuan Fu",
+      "Montse Gonzalez Arenas",
+      "Keerthana Gopalakrishnan",
+      "Kehang Han",
+      "Karol Hausman",
+      "Alexander Herzog",
+      "Jasmine Hsu",
+      "Brian Ichter",
+      "Alex Irpan",
+      "Nikhil Joshi",
+      "Ryan Julian",
+      "Dmitry Kalashnikov",
+      "Yuheng Kuang",
+      "Isabel Leal",
+      "Lisa Lee",
+      "Tsang-Wei Edward Lee",
+      "Sergey Levine",
+      "Yao Lu",
+      "Henryk Michalewski",
+      "Igor Mordatch",
+      "Karl Pertsch",
+      "Kanishka Rao",
+      "Krista Reymann",
+      "Michael Ryoo",
+      "Grecia Salazar",
+      "Pannag Sanketi",
+      "Pierre Sermanet",
+      "Jaspiar Singh",
+      "Anikait Singh",
+      "Radu Soricut",
+      "Huong Tran",
+      "Vincent Vanhoucke",
+      "Quan Vuong",
+      "Ayzaan Wahid",
+      "Stefan Welker",
+      "Paul Wohlhart",
+      "Jialin Wu",
+      "Fei Xia",
+      "Ted Xiao",
+      "Peng Xu",
+      "Sichun Xu",
+      "Tianhe Yu",
+      "Brianna Zitkovich"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2307.15818v1",
+    "type": "research_paper",
+    "branch": "T7_robotics_web_transfer",
+    "problem": "视觉语言的网页知识如何进入闭环机器人控制？",
+    "insight": "把动作表示为token并联合微调机器人轨迹与视觉语言任务以迁移语义能力。",
+    "limitation": "摘要核验；语义泛化不能替代物理闭环与运动技能的独立验证。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Fri, 28 Jul 2023 21:18:02 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2307.15818",
+    "first_submission_date": "2023-07-28",
+    "metadata_verified_from": "https://arxiv.org/abs/2307.15818",
+    "pdf_url": "https://arxiv.org/pdf/2307.15818v1",
+    "canonical_url": "https://arxiv.org/abs/2307.15818",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "openx2023embodiment",
+    "title": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models",
+    "authors": [
+      "Embodiment Collaboration",
+      "Abby O'Neill",
+      "Abdul Rehman",
+      "Abhinav Gupta",
+      "Abhiram Maddukuri",
+      "Abhishek Gupta",
+      "Abhishek Padalkar",
+      "Abraham Lee",
+      "Acorn Pooley",
+      "Agrim Gupta",
+      "Ajay Mandlekar",
+      "Ajinkya Jain",
+      "Albert Tung",
+      "Alex Bewley",
+      "Alex Herzog",
+      "Alex Irpan",
+      "Alexander Khazatsky",
+      "Anant Rai",
+      "Anchit Gupta",
+      "Andrew Wang",
+      "Andrey Kolobov",
+      "Anikait Singh",
+      "Animesh Garg",
+      "Aniruddha Kembhavi",
+      "Annie Xie",
+      "Anthony Brohan",
+      "Antonin Raffin",
+      "Archit Sharma",
+      "Arefeh Yavary",
+      "Arhan Jain",
+      "Ashwin Balakrishna",
+      "Ayzaan Wahid",
+      "Ben Burgess-Limerick",
+      "Beomjoon Kim",
+      "Bernhard Schölkopf",
+      "Blake Wulfe",
+      "Brian Ichter",
+      "Cewu Lu",
+      "Charles Xu",
+      "Charlotte Le",
+      "Chelsea Finn",
+      "Chen Wang",
+      "Chenfeng Xu",
+      "Cheng Chi",
+      "Chenguang Huang",
+      "Christine Chan",
+      "Christopher Agia",
+      "Chuer Pan",
+      "Chuyuan Fu",
+      "Coline Devin",
+      "Danfei Xu",
+      "Daniel Morton",
+      "Danny Driess",
+      "Daphne Chen",
+      "Deepak Pathak",
+      "Dhruv Shah",
+      "Dieter Büchler",
+      "Dinesh Jayaraman",
+      "Dmitry Kalashnikov",
+      "Dorsa Sadigh",
+      "Edward Johns",
+      "Ethan Foster",
+      "Fangchen Liu",
+      "Federico Ceola",
+      "Fei Xia",
+      "Feiyu Zhao",
+      "Felipe Vieira Frujeri",
+      "Freek Stulp",
+      "Gaoyue Zhou",
+      "Gaurav S. Sukhatme",
+      "Gautam Salhotra",
+      "Ge Yan",
+      "Gilbert Feng",
+      "Giulio Schiavi",
+      "Glen Berseth",
+      "Gregory Kahn",
+      "Guangwen Yang",
+      "Guanzhi Wang",
+      "Hao Su",
+      "Hao-Shu Fang",
+      "Haochen Shi",
+      "Henghui Bao",
+      "Heni Ben Amor",
+      "Henrik I Christensen",
+      "Hiroki Furuta",
+      "Homanga Bharadhwaj",
+      "Homer Walke",
+      "Hongjie Fang",
+      "Huy Ha",
+      "Igor Mordatch",
+      "Ilija Radosavovic",
+      "Isabel Leal",
+      "Jacky Liang",
+      "Jad Abou-Chakra",
+      "Jaehyung Kim",
+      "Jaimyn Drake",
+      "Jan Peters",
+      "Jan Schneider",
+      "Jasmine Hsu",
+      "Jay Vakil",
+      "Jeannette Bohg",
+      "Jeffrey Bingham",
+      "Jeffrey Wu",
+      "Jensen Gao",
+      "Jiaheng Hu",
+      "Jiajun Wu",
+      "Jialin Wu",
+      "Jiankai Sun",
+      "Jianlan Luo",
+      "Jiayuan Gu",
+      "Jie Tan",
+      "Jihoon Oh",
+      "Jimmy Wu",
+      "Jingpei Lu",
+      "Jingyun Yang",
+      "Jitendra Malik",
+      "João Silvério",
+      "Joey Hejna",
+      "Jonathan Booher",
+      "Jonathan Tompson",
+      "Jonathan Yang",
+      "Jordi Salvador",
+      "Joseph J. Lim",
+      "Junhyek Han",
+      "Kaiyuan Wang",
+      "Kanishka Rao",
+      "Karl Pertsch",
+      "Karol Hausman",
+      "Keegan Go",
+      "Keerthana Gopalakrishnan",
+      "Ken Goldberg",
+      "Kendra Byrne",
+      "Kenneth Oslund",
+      "Kento Kawaharazuka",
+      "Kevin Black",
+      "Kevin Lin",
+      "Kevin Zhang",
+      "Kiana Ehsani",
+      "Kiran Lekkala",
+      "Kirsty Ellis",
+      "Krishan Rana",
+      "Krishnan Srinivasan",
+      "Kuan Fang",
+      "Kunal Pratap Singh",
+      "Kuo-Hao Zeng",
+      "Kyle Hatch",
+      "Kyle Hsu",
+      "Laurent Itti",
+      "Lawrence Yunliang Chen",
+      "Lerrel Pinto",
+      "Li Fei-Fei",
+      "Liam Tan",
+      "Linxi \"Jim\" Fan",
+      "Lionel Ott",
+      "Lisa Lee",
+      "Luca Weihs",
+      "Magnum Chen",
+      "Marion Lepert",
+      "Marius Memmel",
+      "Masayoshi Tomizuka",
+      "Masha Itkina",
+      "Mateo Guaman Castro",
+      "Max Spero",
+      "Maximilian Du",
+      "Michael Ahn",
+      "Michael C. Yip",
+      "Mingtong Zhang",
+      "Mingyu Ding",
+      "Minho Heo",
+      "Mohan Kumar Srirama",
+      "Mohit Sharma",
+      "Moo Jin Kim",
+      "Muhammad Zubair Irshad",
+      "Naoaki Kanazawa",
+      "Nicklas Hansen",
+      "Nicolas Heess",
+      "Nikhil J Joshi",
+      "Niko Suenderhauf",
+      "Ning Liu",
+      "Norman Di Palo",
+      "Nur Muhammad Mahi Shafiullah",
+      "Oier Mees",
+      "Oliver Kroemer",
+      "Osbert Bastani",
+      "Pannag R Sanketi",
+      "Patrick \"Tree\" Miller",
+      "Patrick Yin",
+      "Paul Wohlhart",
+      "Peng Xu",
+      "Peter David Fagan",
+      "Peter Mitrano",
+      "Pierre Sermanet",
+      "Pieter Abbeel",
+      "Priya Sundaresan",
+      "Qiuyu Chen",
+      "Quan Vuong",
+      "Rafael Rafailov",
+      "Ran Tian",
+      "Ria Doshi",
+      "Roberto Martín-Martín",
+      "Rohan Baijal",
+      "Rosario Scalise",
+      "Rose Hendrix",
+      "Roy Lin",
+      "Runjia Qian",
+      "Ruohan Zhang",
+      "Russell Mendonca",
+      "Rutav Shah",
+      "Ryan Hoque",
+      "Ryan Julian",
+      "Samuel Bustamante",
+      "Sean Kirmani",
+      "Sergey Levine",
+      "Shan Lin",
+      "Sherry Moore",
+      "Shikhar Bahl",
+      "Shivin Dass",
+      "Shubham Sonawani",
+      "Shubham Tulsiani",
+      "Shuran Song",
+      "Sichun Xu",
+      "Siddhant Haldar",
+      "Siddharth Karamcheti",
+      "Simeon Adebola",
+      "Simon Guist",
+      "Soroush Nasiriany",
+      "Stefan Schaal",
+      "Stefan Welker",
+      "Stephen Tian",
+      "Subramanian Ramamoorthy",
+      "Sudeep Dasari",
+      "Suneel Belkhale",
+      "Sungjae Park",
+      "Suraj Nair",
+      "Suvir Mirchandani",
+      "Takayuki Osa",
+      "Tanmay Gupta",
+      "Tatsuya Harada",
+      "Tatsuya Matsushima",
+      "Ted Xiao",
+      "Thomas Kollar",
+      "Tianhe Yu",
+      "Tianli Ding",
+      "Todor Davchev",
+      "Tony Z. Zhao",
+      "Travis Armstrong",
+      "Trevor Darrell",
+      "Trinity Chung",
+      "Vidhi Jain",
+      "Vikash Kumar",
+      "Vincent Vanhoucke",
+      "Vitor Guizilini",
+      "Wei Zhan",
+      "Wenxuan Zhou",
+      "Wolfram Burgard",
+      "Xi Chen",
+      "Xiangyu Chen",
+      "Xiaolong Wang",
+      "Xinghao Zhu",
+      "Xinyang Geng",
+      "Xiyuan Liu",
+      "Xu Liangwei",
+      "Xuanlin Li",
+      "Yansong Pang",
+      "Yao Lu",
+      "Yecheng Jason Ma",
+      "Yejin Kim",
+      "Yevgen Chebotar",
+      "Yifan Zhou",
+      "Yifeng Zhu",
+      "Yilin Wu",
+      "Ying Xu",
+      "Yixuan Wang",
+      "Yonatan Bisk",
+      "Yongqiang Dou",
+      "Yoonyoung Cho",
+      "Youngwoon Lee",
+      "Yuchen Cui",
+      "Yue Cao",
+      "Yueh-Hua Wu",
+      "Yujin Tang",
+      "Yuke Zhu",
+      "Yunchu Zhang",
+      "Yunfan Jiang",
+      "Yunshuang Li",
+      "Yunzhu Li",
+      "Yusuke Iwasawa",
+      "Yutaka Matsuo",
+      "Zehan Ma",
+      "Zhuo Xu",
+      "Zichen Jeff Cui",
+      "Zichen Zhang",
+      "Zipeng Fu",
+      "Zipeng Lin"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2310.08864v9",
+    "type": "research_paper",
+    "branch": "T7_robotics_cross_embodiment",
+    "problem": "机器人、机构与环境的异构数据妨碍形成共享预训练模型。",
+    "insight": "标准化多机器人数据格式并检验跨机器人正迁移。",
+    "limitation": "摘要核验；动作空间、采集分布与适配需求不能通过总轨迹数概括。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v9, Wed, 14 May 2025 15:22:36 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2310.08864",
+    "first_submission_date": "2023-10-13",
+    "metadata_verified_from": "https://arxiv.org/abs/2310.08864",
+    "pdf_url": "https://arxiv.org/pdf/2310.08864v9",
+    "canonical_url": "https://arxiv.org/abs/2310.08864",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "lin2024robotscaling",
+    "title": "Data Scaling Laws in Imitation Learning for Robotic Manipulation",
+    "authors": [
+      "Fanqi Lin",
+      "Yingdong Hu",
+      "Pingyue Sheng",
+      "Chuan Wen",
+      "Jiacheng You",
+      "Yang Gao"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2410.18647v4",
+    "type": "research_paper",
+    "branch": "T7_robotics_data_diversity",
+    "problem": "更多演示是否真的改善对未见环境和物体的闭环泛化？",
+    "insight": "区分环境、对象及每组合演示次数，发现多样性轴更有效，并把数据配方验证到新单任务。",
+    "limitation": "完整正文及附录文字；仅四个任务和一种策略算法，六点幂律未拟合不可约误差，1191组合预测尚未验证。",
+    "reading_depth": "full_text",
+    "verification_date": "2026-09-16",
+    "version_read": "v4, Fri, 26 Jun 2026 02:30:53 UTC",
+    "sections_read": [
+      "§1–7",
+      "Appendix A–G（含全部评分标准、原始分数表与图注）"
+    ],
+    "synthesis_status": "synthesized",
+    "arxiv_id": "2410.18647",
+    "first_submission_date": "2024-10-24",
+    "metadata_verified_from": "https://arxiv.org/abs/2410.18647",
+    "pdf_url": "https://arxiv.org/pdf/2410.18647v4",
+    "reading_scope_note": "已读PDF提取的完整正文、附录文字、表格及图注；跳过参考文献列表。未逐张目视审阅图片，非复现实验或逐行证明正确性审计。",
+    "canonical_url": "https://arxiv.org/abs/2410.18647",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "zhao2026axis",
+    "title": "AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation",
+    "authors": [
+      "Mengfei Zhao",
+      "Dihong Huang",
+      "Yikai Tang",
+      "Peihao Li",
+      "Mingxuan Yan",
+      "Ruiqi Zhuang",
+      "Yanjia Huang",
+      "Jie Wang",
+      "Hai Zhai",
+      "Tony Zhou",
+      "Rui Zhang",
+      "Zhexi Luo",
+      "Yuchen Huang",
+      "Jianfei Yang",
+      "Jiachen Li"
+    ],
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2607.21588v1",
+    "type": "research_paper",
+    "branch": "T7_robotics_data_engine",
+    "problem": "扩大机器人数据采集如何同时扩展任务覆盖与评测？",
+    "insight": "结合浏览器遥操作、自动任务生成与质量检查，形成可增长数据引擎及任务快照留出评测。",
+    "limitation": "摘要核验的2026前沿候选；增益基线、公平预算和跨实物部署细节待全文复核。",
+    "reading_depth": "abstract",
+    "verification_date": "2026-09-16",
+    "version_read": "v1, Thu, 23 Jul 2026 17:58:08 UTC",
+    "sections_read": [
+      "Abstract; bibliographic metadata; submission history"
+    ],
+    "synthesis_status": "candidate",
+    "arxiv_id": "2607.21588",
+    "first_submission_date": "2026-07-23",
+    "metadata_verified_from": "https://arxiv.org/abs/2607.21588",
+    "pdf_url": "https://arxiv.org/pdf/2607.21588v1",
+    "canonical_url": "https://arxiv.org/abs/2607.21588",
+    "catalogs": [
+      "expansion-evaluation"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "beeching2024scalingtesttimecompute",
+    "title": "Scaling test-time compute with open models",
+    "authors": [
+      "Edward Beeching",
+      "Lewis Tunstall",
+      "Sasha Rush"
+    ],
+    "year": 2024,
+    "first_published": "2024-12-16",
+    "publication_date_evidence": "author Reddit announcement; article citation specifies year 2024",
+    "url": "https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute",
+    "fulltext_url": "https://huggingfaceh4-blogpost-scaling-test-time-compute.hf.space/",
+    "type": "author_technical_blog",
+    "branch": [
+      "T5"
+    ],
+    "problem": "公开模型上如何复现按难度与预算选择搜索策略的收益。",
+    "insight": "验证器引导搜索与保留独立子树的DVTS互补，最优策略随题目难度和预算变化。",
+    "method": "Llama 1B/3B策略模型、8B PRM、MATH-500、1–256候选、五随机种子；比较多数投票、BoN、beam search和DVTS。",
+    "result": "作者报告在部分预算设置中小策略模型系统超过大模型基线；以生成预算为主要横轴。",
+    "limitation": "额外8B验证器与搜索不是零成本，未给统一端到端FLOPs比较；难度分桶可能使用离线信息；主要证据局限数学。",
+    "reading_depth": "full primary article text (220 rendered lines), figures not independently digitized",
+    "version_read": "web article retrieved 2026-09-16, no explicit version number",
+    "verification_date": "2026-09-16",
+    "synthesis_status": "incorporated",
+    "evidence_note": "工程复现实验与作者blog；不是独立复现实验由本综述执行。",
+    "canonical_url": "https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "05-inference.md"
     ]
   }
 ]

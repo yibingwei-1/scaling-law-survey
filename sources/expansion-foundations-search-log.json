@@ -1,0 +1,387 @@
+{
+  "verification_date": "2026-09-16",
+  "method": "arXiv metadata/version history direct open; version-pinned HTML targeted reading via web tools",
+  "systematic_review": false,
+  "records": [
+    {
+      "id": "brown2020gpt3",
+      "metadata_url": "https://arxiv.org/abs/2005.14165",
+      "reading_url": "https://arxiv.org/html/2005.14165v4",
+      "version": "v4",
+      "sections_read": "§2训练设置、§3任务结果相关段、§4污染分析",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "rae2021gopher",
+      "metadata_url": "https://arxiv.org/abs/2112.11446",
+      "reading_url": "https://arxiv.org/html/2112.11446v2",
+      "version": "v2",
+      "sections_read": "§4.3规模与任务分析及引言",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "zhang2022opt",
+      "metadata_url": "https://arxiv.org/abs/2205.01068",
+      "reading_url": "https://arxiv.org/html/2205.01068v4",
+      "version": "v4",
+      "sections_read": "§2.5训练日志及模型设置",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "biderman2023pythia",
+      "metadata_url": "https://arxiv.org/abs/2304.01373",
+      "reading_url": "https://arxiv.org/html/2304.01373v2",
+      "version": "v2",
+      "sections_read": "引言、§2套件设计与检查点",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "touvron2023llama",
+      "metadata_url": "https://arxiv.org/abs/2302.13971",
+      "reading_url": "https://arxiv.org/html/2302.13971v1",
+      "version": "v1",
+      "sections_read": "引言、训练设置和推理成本动机",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "dubey2024llama3",
+      "metadata_url": "https://arxiv.org/abs/2407.21783",
+      "reading_url": "https://arxiv.org/html/2407.21783v3",
+      "version": "v3",
+      "sections_read": "§3.1–3.3，重点§3.2.1与系统设置",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "groeneveld2024olmo",
+      "metadata_url": "https://arxiv.org/abs/2402.00838",
+      "reading_url": "https://arxiv.org/html/2402.00838v4",
+      "version": "v4",
+      "sections_read": "引言与§2开放组成",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "chowdhery2022palm",
+      "metadata_url": "https://arxiv.org/abs/2204.02311",
+      "reading_url": "https://arxiv.org/html/2204.02311v5",
+      "version": "v5",
+      "sections_read": "摘要、引言",
+      "reading_depth": "abstract_and_introduction",
+      "evidence_strength": "C：主源摘要/引言核验，仅入库待精读",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "yang2020tensor4",
+      "metadata_url": "https://arxiv.org/abs/2011.14522",
+      "reading_url": "https://arxiv.org/html/2011.14522v3",
+      "version": "v3",
+      "sections_read": "摘要、引言及参数化动机；未精读证明",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "yang2022tensor5",
+      "metadata_url": "https://arxiv.org/abs/2203.03466",
+      "reading_url": "https://arxiv.org/html/2203.03466v2",
+      "version": "v2",
+      "sections_read": "§1–7，重点Table 3、§6.1、§7.4、Appendix B",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "xie2023doremi",
+      "metadata_url": "https://arxiv.org/abs/2305.10429",
+      "reading_url": "https://arxiv.org/html/2305.10429v4",
+      "version": "v4",
+      "sections_read": "§1–4、§6、Algorithm 1及实验配置",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "liu2024regmix",
+      "metadata_url": "https://arxiv.org/abs/2407.01492",
+      "reading_url": "https://arxiv.org/html/2407.01492v2",
+      "version": "v2",
+      "sections_read": "引言、§3方法、§5实验和比较限制",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "penedo2024fineweb",
+      "metadata_url": "https://arxiv.org/abs/2406.17557",
+      "reading_url": "https://arxiv.org/html/2406.17557v2",
+      "version": "v2",
+      "sections_read": "§4.1–4.2、§6、数据构造与教育筛选实验",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "allal2025smollm2",
+      "metadata_url": "https://arxiv.org/abs/2502.02737",
+      "reading_url": "https://arxiv.org/html/2502.02737v1",
+      "version": "v1",
+      "sections_read": "引言、§3、§4.3–4.7",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "soldaini2024dolma",
+      "metadata_url": "https://arxiv.org/abs/2402.00159",
+      "reading_url": "https://arxiv.org/html/2402.00159v2",
+      "version": "v2",
+      "sections_read": "引言与§5过滤、去重相关片段",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "villalobos2022data",
+      "metadata_url": "https://arxiv.org/abs/2211.04325",
+      "reading_url": "https://arxiv.org/html/2211.04325v2",
+      "version": "v2",
+      "sections_read": "§1–3，数据存量、需求预测及替代来源",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "gadre2024overtraining",
+      "metadata_url": "https://arxiv.org/abs/2403.08540",
+      "reading_url": "https://arxiv.org/html/2403.08540v2",
+      "version": "v2",
+      "sections_read": "§2–3、§6、实验范围与任务筛选",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "hernandez2021transfer",
+      "metadata_url": "https://arxiv.org/abs/2102.01293",
+      "reading_url": "https://arxiv.org/html/2102.01293v1",
+      "version": "v1",
+      "sections_read": "摘要、元数据",
+      "reading_depth": "abstract_and_metadata",
+      "evidence_strength": "C：主源摘要/引言核验，仅入库待精读",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "lee2021dedup",
+      "metadata_url": "https://arxiv.org/abs/2107.06499",
+      "reading_url": "https://arxiv.org/html/2107.06499v2",
+      "version": "v2",
+      "sections_read": "引言、方法概述与1.5B C4结果片段",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "eldan2023tinystories",
+      "metadata_url": "https://arxiv.org/abs/2305.07759",
+      "reading_url": "https://arxiv.org/html/2305.07759v2",
+      "version": "v2",
+      "sections_read": "摘要、引言",
+      "reading_depth": "abstract_and_introduction",
+      "evidence_strength": "C：主源摘要/引言核验，仅入库待精读",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "xie2023dsir",
+      "metadata_url": "https://arxiv.org/abs/2302.03169",
+      "reading_url": "https://arxiv.org/html/2302.03169v3",
+      "version": "v3",
+      "sections_read": "引言、§4–5实验与效率；方法公式未完整复算",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "fedus2021switch",
+      "metadata_url": "https://arxiv.org/abs/2101.03961",
+      "reading_url": "https://arxiv.org/html/2101.03961v3",
+      "version": "v3",
+      "sections_read": "§2.1–2.4及Table 1–2",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "lepikhin2020gshard",
+      "metadata_url": "https://arxiv.org/abs/2006.16668",
+      "reading_url": "https://arxiv.org/html/2006.16668v1",
+      "version": "v1",
+      "sections_read": "§1动机、系统设计概述及实验范围",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "jiang2024mixtral",
+      "metadata_url": "https://arxiv.org/abs/2401.04088",
+      "reading_url": "https://arxiv.org/html/2401.04088v1",
+      "version": "v1",
+      "sections_read": "§2架构、性能分析、§3部署成本说明",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "dai2024deepseekmoe",
+      "metadata_url": "https://arxiv.org/abs/2401.06066",
+      "reading_url": "https://arxiv.org/html/2401.06066v1",
+      "version": "v1",
+      "sections_read": "§2–4方法、负载平衡、验证设置与§5规模扩展",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "deepseek2024v2",
+      "metadata_url": "https://arxiv.org/abs/2405.04434",
+      "reading_url": "https://arxiv.org/html/2405.04434v5",
+      "version": "v5",
+      "sections_read": "§2.1–2.2、§3.2.3及相关消融表",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "deepseek2024v3",
+      "metadata_url": "https://arxiv.org/abs/2412.19437",
+      "reading_url": "https://arxiv.org/html/2412.19437v2",
+      "version": "v2",
+      "sections_read": "§1成本表、§2.1–2.2、§3系统概述",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "dao2022flash",
+      "metadata_url": "https://arxiv.org/abs/2205.14135",
+      "reading_url": "https://arxiv.org/html/2205.14135v2",
+      "version": "v2",
+      "sections_read": "§2–4、Algorithm 1、Theorem 1–2及限制；未复算全部证明",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "dao2023flash2",
+      "metadata_url": "https://arxiv.org/abs/2307.08691",
+      "reading_url": "https://arxiv.org/html/2307.08691v1",
+      "version": "v1",
+      "sections_read": "§2–4，尤其§3.1算法与§3.2–3.3并行机制",
+      "reading_depth": "full_text_key_sections",
+      "evidence_strength": "A：已读主源核心方法、实验与限制，未独立复现",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "kwon2023paged",
+      "metadata_url": "https://arxiv.org/abs/2309.06180",
+      "reading_url": "https://arxiv.org/html/2309.06180v1",
+      "version": "v1",
+      "sections_read": "§1–4问题、分页机制和共享设计",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "pope2022inference",
+      "metadata_url": "https://arxiv.org/abs/2211.05102",
+      "reading_url": "https://arxiv.org/html/2211.05102v1",
+      "version": "v1",
+      "sections_read": "§1–2分析动机及部署结果；未复算全部分片模型",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "shazeer2019mqa",
+      "metadata_url": "https://arxiv.org/abs/1911.02150",
+      "reading_url": "https://arxiv.org/html/1911.02150v1",
+      "version": "v1",
+      "sections_read": "§2–4、性能分析和等参数实验",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "ainslie2023gqa",
+      "metadata_url": "https://arxiv.org/abs/2305.13245",
+      "reading_url": "https://arxiv.org/html/2305.13245v3",
+      "version": "v3",
+      "sections_read": "§1–3方法、设置、转换实验",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "rajbhandari2019zero",
+      "metadata_url": "https://arxiv.org/abs/1910.02054",
+      "reading_url": "https://arxiv.org/html/1910.02054v3",
+      "version": "v3",
+      "sections_read": "§1与模型状态/残余状态内存分析、三阶段设计",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "shoeybi2019megatron",
+      "metadata_url": "https://arxiv.org/abs/1909.08053",
+      "reading_url": "https://arxiv.org/html/1909.08053v4",
+      "version": "v4",
+      "sections_read": "§1、§3模型并行与性能实验概述",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "gu2023mamba",
+      "metadata_url": "https://arxiv.org/abs/2312.00752",
+      "reading_url": "https://arxiv.org/html/2312.00752v2",
+      "version": "v2",
+      "sections_read": "§2–3、§4.2相关设置、§5限制",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "xiong2023longcontext",
+      "metadata_url": "https://arxiv.org/abs/2309.16039",
+      "reading_url": "https://arxiv.org/html/2309.16039v3",
+      "version": "v3",
+      "sections_read": "§2训练配置、§4消融相关片段",
+      "reading_depth": "full_text_targeted",
+      "evidence_strength": "B：已读主源相关正文段落，结论限于所读范围",
+      "claims_and_limits_recorded": true
+    },
+    {
+      "id": "abdin2024phi3",
+      "metadata_url": "https://arxiv.org/abs/2404.14219",
+      "reading_url": "https://arxiv.org/html/2404.14219v4",
+      "version": "v4",
+      "sections_read": "摘要、元数据",
+      "reading_depth": "abstract_and_metadata",
+      "evidence_strength": "C：主源摘要/引言核验，仅入库待精读",
+      "claims_and_limits_recorded": true
+    }
+  ]
+}

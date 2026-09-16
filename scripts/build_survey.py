@@ -6,17 +6,20 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
-CATALOGS = ['foundations', 'frontier', 'extensions']
+CATALOGS = ['foundations', 'frontier', 'extensions',
+            'expansion-foundations', 'expansion-frontier', 'expansion-evaluation', 'editorial']
 CHAPTERS = [
-    'introduction.md', '00-reference-method.md',
-    '01-pretraining-data-architecture.md', '02-posttraining-inference.md',
-    '03-evaluation-multimodal.md', '04-community-radar.md', 'conclusion.md',
+    'introduction.md',
+    '01-predictability-budget.md', '02-data.md', '03-architecture-deployment.md',
+    '04-posttraining.md', '05-inference.md', '06-theory-evaluation.md',
+    '07-multimodal.md', '04-community-radar.md', 'conclusion.md',
+    'glossary.md', '00-reference-method.md',
 ]
 
 
 def canonical_url(url):
     match = re.search(r'arxiv\.org/(?:abs|html|pdf)/(\d{4}\.\d{4,5})', url)
-    return f'https://arxiv.org/abs/{match.group(1)}' if match else url.rstrip('/')
+    return f'https://arxiv.org/abs/{match.group(1)}' if match else url.split('#')[0].rstrip('/')
 
 
 def load_papers():
@@ -41,15 +44,36 @@ def cell(value):
     return str(value or '未完整记录').replace('|', '\\|').replace('\n', ' ')
 
 
+def reading_label(paper):
+    value = paper.get('reading_depth', '')
+    if value in ('abstract', 'abstract_and_metadata') or '全文待精读' in value:
+        return '摘要/元数据'
+    if value == 'abstract_and_introduction' or '未精读全部方法' in value:
+        return '摘要/引言'
+    if value == 'full_text' or value.startswith('full primary article'):
+        return '全文文字'
+    if value == 'official_report_sections':
+        return '官方报告选段'
+    return '正文定向阅读'
+
+
+def version_label(paper):
+    value = paper.get('version_read') or ''
+    match = re.search(r'\bv\d+\b', value)
+    return match.group() if match else ('网页观测版' if 'web' in value.lower() else '见元数据')
+
+
 def bibliography(papers):
     rows = ['# 文献索引', '',
             f'本索引含 {len(papers)} 条去重后的论文与技术报告主源；社区讨论另列。按首发年份排序，不代表质量或热度排名。', '',
-            '作者栏若为 et al. 仅记录经核验的首位作者；BibTeX 是轻量引用入口，投稿前应从主源补齐作者与正式出版信息。阅读深度详见结构化记录。', '',
-            '| 年份 | 文献与原始来源 | 阅读深度 | 版本/状态 |',
-            '|---|---|---|---|']
+            '作者栏若为 et al. 仅记录经核验的首位作者；BibTeX 是轻量引用入口，投稿前应从主源补齐作者与正式出版信息。表中阅读层级是简写，具体章节、局限和版本时间见 [papers.json](data/papers.json)。全文文字阅读不表示复核全部图像、代码或实验。', '',
+            '| 年份 | 文献与原始来源 | 阅读深度 | 版本/状态 | 正文位置 |',
+            '|---|---|---|---|---|']
     bib = ['% Generated from verified source catalogs. Partial author lists are marked with "and others".', '']
     for p in sorted(papers, key=lambda x: (x['year'], x['title'])):
-        rows.append(f"| {p['year']} | [{cell(p['title'])}]({p['canonical_url']}) | {cell(p.get('reading_depth'))} | {cell(p.get('version_read'))} / {cell(p['type'])} |")
+        locations = '、'.join(f'[{name[:2]}](docs/{name})' for name in p.get('cited_in', [])) or '索引／待深入综合'
+        kind = '技术文章' if 'blog' in p['type'] else ('报告' if 'report' in p['type'] else '论文/预印本')
+        rows.append(f"| {p['year']} | [{cell(p['title'])}]({p['canonical_url']}) | {reading_label(p)} | {version_label(p)} / {kind} | {locations} |")
         fields = {'title': p['title'], 'year': str(p['year']), 'url': p['canonical_url']}
         authors = p.get('authors')
         if authors:
@@ -65,6 +89,42 @@ def bibliography(papers):
     (ROOT / 'REFERENCES.md').write_text('\n'.join(rows) + '\n')
     (ROOT / 'references.bib').write_text('\n'.join(bib))
     (ROOT / 'data' / 'papers.json').write_text(json.dumps(papers, ensure_ascii=False, indent=2) + '\n')
+
+
+def citation_audit(papers):
+    """Measure actual technical-chapter citation coverage, separately from catalog size."""
+    lookup = {p['canonical_url']: p for p in papers}
+    aliases = {url: url for url in lookup}
+    for p in papers:
+        for field in ('publication_url', 'fulltext_url', 'full_text_url'):
+            if p.get(field):
+                aliases[canonical_url(p[field])] = p['canonical_url']
+    for p in papers:
+        p['cited_in'] = []
+    chapters = []
+    unmatched = {}
+    for name in CHAPTERS[1:8]:
+        body = (ROOT / 'docs' / name).read_text()
+        urls = {canonical_url(url) for url in re.findall(r'\]\((https?://[^\s)]+)\)', body)}
+        matched = sorted({aliases[url] for url in urls if url in aliases})
+        for url in matched:
+            lookup[url]['cited_in'].append(name)
+        unmatched[name] = sorted(urls - aliases.keys())
+        chapters.append({'file': name, 'title': body.splitlines()[0].lstrip('# '),
+                         'han_characters': len(re.findall(r'[\u4e00-\u9fff]', body)),
+                         'catalog_sources_cited': len(matched),
+                         'all_external_links': len(urls)})
+    audit = {'catalog_count': len(papers), 'cited_in_technical_chapters': sum(bool(p['cited_in']) for p in papers),
+             'chapters': chapters, 'external_links_without_catalog_match': unmatched}
+    (ROOT / 'data/citation-audit.json').write_text(json.dumps(audit, ensure_ascii=False, indent=2) + '\n')
+    rows = ['# 正文覆盖与阅读地图', '',
+            '由构建脚本按七篇技术章中的实际主源链接计算。引用数量、阅读深度、论证质量是不同维度；表格不把索引收录等同于深度综合。', '',
+            '| 问题线 | 正文汉字数 | 已收录主源引用数 |', '|---|---:|---:|']
+    for c in chapters:
+        rows.append(f"| [{c['title']}]({c['file']}) | {c['han_characters']:,} | {c['catalog_sources_cited']} |")
+    rows += ['', f"文献库去重后 {len(papers)} 条，其中 {audit['cited_in_technical_chapters']} 条在七篇技术章中实际引用。共享来源不重复计入总数。", '',
+             '逐条阅读深度与版本见[文献索引](../REFERENCES.md)，机器可读的章节映射见[citation-audit.json](../data/citation-audit.json)。', '']
+    (ROOT / 'docs/evidence-map.md').write_text('\n'.join(rows))
 
 
 def assemble_chapter(path):
@@ -90,6 +150,7 @@ def assemble_chapter(path):
 def main():
     (ROOT / 'data').mkdir(exist_ok=True)
     papers = load_papers()
+    citation_audit(papers)
     bibliography(papers)
     state = json.loads((ROOT / 'data/state.json').read_text())
     date = state['last_successful_search']

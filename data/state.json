@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "edition": "v0.1",
+  "edition": "v0.2",
   "last_successful_search": "2026-09-16",
   "last_content_update": "2026-09-16",
   "pdf_content_date": "2026-09-16",
@@ -13,24 +13,37 @@
     "last_configuration_verified": "2026-09-16"
   },
   "publishing": {
-    "remote_url": null,
-    "status": "awaiting_github_authentication",
-    "proposed_name": "scaling-law-survey",
-    "visibility": "awaiting_user_preference"
+    "remote_url": "https://github.com/yibingwei-1/scaling-law-survey",
+    "ssh_url": "git@github.com:yibingwei-1/scaling-law-survey.git",
+    "status": "published",
+    "visibility": "public",
+    "branch": "main",
+    "last_verified": "2026-09-16"
   },
   "coverage_limits": [
-    "X post body and engagement counts unavailable for recorded entries",
+    "Three X posts lack observable counters; one has a labeled search-index view count",
     "YouTube and Reddit engagement often obtained from search-index snapshots, not live counters",
     "Some sources read only at abstract or selected-section depth; see per-entry records",
     "2026 preprints are representative frontiers, not established consensus"
   ],
   "watchlist": [
     "Full-text assessment of Scaling Laws for Optimal Data Mixtures (2507.09404)",
-    "Independent replications of adaptive inference budget and RL coverage claims",
-    "Primary text for recent Z.ai claims seen in community discussion",
-    "Expansion to long-horizon tool tasks and multimodal generative models"
+    "Independent replications of adaptive inference budgets, verifier costs and RL coverage claims",
+    "Primary text and independent evidence for recent Z.ai claims seen in community discussion",
+    "Upgrade abstract-only kernel, vision, diffusion and robotics candidates to method and experiment reviews",
+    "Joint lifecycle budgets and long-horizon agent evaluation with full tool and verification costs"
   ],
   "last_validation_date": "2026-09-16",
-  "source_count": 45,
-  "community_count": 12
+  "source_count": 161,
+  "community_count": 18,
+  "technical_chapters": 7,
+  "sources_cited_in_technical_chapters": 151,
+  "technical_han_characters": 36566,
+  "reading_depth_summary": {
+    "正文定向阅读": 117,
+    "摘要/引言": 3,
+    "摘要/元数据": 32,
+    "官方报告选段": 1,
+    "全文文字": 8
+  }
 }

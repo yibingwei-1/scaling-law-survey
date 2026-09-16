@@ -1,0 +1,431 @@
+{
+  "date": "2026-09-16",
+  "scope": "补齐后训练、奖励学习、推理搜索和隐式深度历史支线；40篇新增原论文。原章另含2026前沿，本批不宣称截止日期全覆盖。",
+  "method": "主题检索→arXiv元数据核验→原文方法/目标/相关实验段落定向阅读→跨论文因果综合；未复现代码。",
+  "queries": [
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site:arxiv.org Training Verifiers to Solve Math Word Problems Cobbe",
+        "site:arxiv.org STaR Self Taught Reasoner Bootstrapping Reasoning",
+        "site:arxiv.org Solving math word problems process outcome based feedback Uesato",
+        "site:arxiv.org Reinforced Self Training ReST Gulcehre"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site:arxiv.org Beyond Human Data Scaling Self Training Problem Solving Large Language Models ReST",
+        "site:arxiv.org Tree of Thoughts Deliberate Problem Solving",
+        "site:arxiv.org Language Agent Tree Search Unifies Reasoning Acting Planning",
+        "site:arxiv.org ReST MCTS process reward guided tree search"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site:arxiv.org Math Shepherd Verify Reinforce LLMs Step by step",
+        "site:arxiv.org Llemma Open Language Model Mathematics",
+        "site:arxiv.org DeepSeekMath Pushing Limits Mathematical Reasoning Open Language Models",
+        "site:arxiv.org MetaMath Bootstrap Mathematical Questions"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site:arxiv.org DeepSeek Prover V1.5 Reinforcement Learning Monte Carlo Tree Search",
+        "site:arxiv.org rStar Math Small LLMs Master Math Reasoning",
+        "site:arxiv.org Mutual Reasoning Makes Smaller LLMs Stronger Problem Solvers rstar",
+        "site:arxiv.org WizardMath Empowering Mathematical Reasoning Reinforced Evol Instruct"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site:arxiv.org Tulu 3 Pushing Frontiers Open Language Model Post Training",
+        "site:arxiv.org 2 OLMo 2 Furious",
+        "site:arxiv.org Open Reasoner Zero Reinforcement Learning Scaling",
+        "site:arxiv.org SimpleRL Zoo Investigating Taming Zero Reinforcement Learning Open Base Models"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site:arxiv.org DAPO Open Source LLM Reinforcement Learning System Scale",
+        "site:arxiv.org Understanding R1 Zero Like Training Critical Perspective Dr GRPO",
+        "site:arxiv.org Group Sequence Policy Optimization",
+        "site:arxiv.org VAPO Efficient Reliable Reinforcement Learning Advanced Reasoning Tasks"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site:arxiv.org \"Math-Shepherd\"",
+        "site:arxiv.org \"2 OLMo 2 Furious\"",
+        "site:arxiv.org \"Understanding R1-Zero-Like Training\"",
+        "site:arxiv.org \"The Lessons of Developing Process Reward Models\""
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site:arxiv.org \"Large Language Monkeys\"",
+        "site:arxiv.org \"Scaling of Search and Learning\"",
+        "site:arxiv.org \"Process Reward Models That Think\"",
+        "site:arxiv.org \"LUFFY\""
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site:arxiv.org \"Universal Transformers\"",
+        "site:arxiv.org \"Quiet-STaR\"",
+        "site:arxiv.org \"Training Large Language Models to Reason in a Continuous Latent Space\"",
+        "site:arxiv.org \"Scaling up Test-Time Compute with Latent Reasoning\""
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "queries": [
+        "site:arxiv.org \"Stop Overthinking\"",
+        "site:arxiv.org \"ThinkPrune\"",
+        "site:arxiv.org \"Let's Think Dot by Dot\"",
+        "site:arxiv.org \"Self-Rewarding Language Models\""
+      ]
+    }
+  ],
+  "selection_rules": [
+    "原论文优先；不用社媒转述支撑技术结论",
+    "与已有frontier/extensions/foundations主源去重",
+    "以问题分支代表性及可核验机制为标准，不按讨论量排序"
+  ],
+  "reading_records": [
+    {
+      "id": "cobbe2021verifiers",
+      "url": "https://arxiv.org/abs/2110.14168",
+      "full_text_url": "https://arxiv.org/html/2110.14168v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "§4：生成器与验证器训练、test@1/test@100及过拟合"
+    },
+    {
+      "id": "zelikman2022star",
+      "url": "https://arxiv.org/abs/2203.14465",
+      "full_text_url": "https://arxiv.org/html/2203.14465v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "§3–5：算法、训练重置、rationalization及实验限制"
+    },
+    {
+      "id": "uesato2022process",
+      "url": "https://arxiv.org/abs/2211.14275",
+      "full_text_url": "https://arxiv.org/html/2211.14275v1",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v1",
+      "sections_read": "§2–4：数据、反馈来源、答案与trace错误指标"
+    },
+    {
+      "id": "gulcehre2023rest",
+      "url": "https://arxiv.org/abs/2308.08998",
+      "full_text_url": "https://arxiv.org/html/2308.08998v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "引言与方法：Grow/Improve、过滤、机器翻译评价"
+    },
+    {
+      "id": "singh2023restem",
+      "url": "https://arxiv.org/abs/2312.06585",
+      "full_text_url": "https://arxiv.org/html/2312.06585",
+      "reading_depth": "full_text_targeted",
+      "version_read": null,
+      "sections_read": "§3–5：EM目标、拒绝采样、PaLM2数学代码实验与限制"
+    },
+    {
+      "id": "yao2023tot",
+      "url": "https://arxiv.org/abs/2305.10601",
+      "full_text_url": "https://arxiv.org/html/2305.10601v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "§3：thought粒度、生成、评价、BFS/DFS；任务设置"
+    },
+    {
+      "id": "zhou2023lats",
+      "url": "https://arxiv.org/abs/2310.04406",
+      "full_text_url": "https://arxiv.org/html/2310.04406v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§4：selection/expansion/evaluation/simulation/backpropagation"
+    },
+    {
+      "id": "zhang2024restmcts",
+      "url": "https://arxiv.org/abs/2406.03816",
+      "full_text_url": "https://arxiv.org/html/2406.03816v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§3：MCTS*、正确路径距离、过程价值及迭代训练"
+    },
+    {
+      "id": "wang2023mathshepherd",
+      "url": "https://arxiv.org/abs/2312.08935",
+      "full_text_url": "https://arxiv.org/html/2312.08935v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§3.1–3.5：自动标签、PRM、重排与step-wise PPO"
+    },
+    {
+      "id": "azerbayev2023llemma",
+      "url": "https://arxiv.org/abs/2310.10631",
+      "full_text_url": "https://arxiv.org/html/2310.10631",
+      "reading_depth": "full_text_targeted",
+      "version_read": null,
+      "sections_read": "§2：Proof-Pile-2构建、混合与训练规模"
+    },
+    {
+      "id": "yu2023metamath",
+      "url": "https://arxiv.org/abs/2309.12284",
+      "full_text_url": "https://arxiv.org/html/2309.12284v4",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v4",
+      "sections_read": "§3：问题重构、前后向生成与过滤"
+    },
+    {
+      "id": "shao2024deepseekmath",
+      "url": "https://arxiv.org/abs/2402.03300",
+      "full_text_url": "https://arxiv.org/html/2402.03300v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§2与§4：数据、持续预训练、GRPO目标与训练"
+    },
+    {
+      "id": "xin2024prover15",
+      "url": "https://arxiv.org/abs/2408.08152",
+      "full_text_url": "https://arxiv.org/html/2408.08152v1",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v1",
+      "sections_read": "§2.3–3：RL、proof截断续写与MCTS/RMaxTS"
+    },
+    {
+      "id": "qi2024rstar",
+      "url": "https://arxiv.org/abs/2408.06195",
+      "full_text_url": "https://arxiv.org/html/2408.06195v1",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v1",
+      "sections_read": "§3：动作空间、MCTS与mutual verification"
+    },
+    {
+      "id": "guan2025rstarmath",
+      "url": "https://arxiv.org/abs/2501.04519",
+      "full_text_url": "https://arxiv.org/html/2501.04519v1",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v1",
+      "sections_read": "§3：policy/PPM、数据生成及四轮自演化"
+    },
+    {
+      "id": "lambert2024tulu3",
+      "url": "https://arxiv.org/abs/2411.15124",
+      "full_text_url": "https://arxiv.org/html/2411.15124",
+      "reading_depth": "full_text_targeted",
+      "version_read": null,
+      "sections_read": "§6.1–6.4：RLVR、奖励、数据与底座/奖励消融"
+    },
+    {
+      "id": "olmo2024olmo2",
+      "url": "https://arxiv.org/abs/2501.00656",
+      "full_text_url": "https://arxiv.org/html/2501.00656v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§5：post-training、SFT、DPO与RLVR"
+    },
+    {
+      "id": "hu2025orz",
+      "url": "https://arxiv.org/abs/2503.24290",
+      "full_text_url": "https://arxiv.org/html/2503.24290",
+      "reading_depth": "full_text_targeted",
+      "version_read": null,
+      "sections_read": "§2–3：PPO设置、critic、数据规模消融"
+    },
+    {
+      "id": "zeng2025simplerl",
+      "url": "https://arxiv.org/abs/2503.18892",
+      "full_text_url": "https://arxiv.org/html/2503.18892v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§2.1–2.4：十种底座、数据难度、模板与格式奖励"
+    },
+    {
+      "id": "yu2025dapo",
+      "url": "https://arxiv.org/abs/2503.14476",
+      "full_text_url": "https://arxiv.org/html/2503.14476v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "§3：四项核心设计与对应消融"
+    },
+    {
+      "id": "liu2025drgrpo",
+      "url": "https://arxiv.org/abs/2503.20783",
+      "full_text_url": "https://arxiv.org/html/2503.20783v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "§3：response-length及difficulty bias、Dr.GRPO"
+    },
+    {
+      "id": "zheng2025gspo",
+      "url": "https://arxiv.org/abs/2507.18071",
+      "full_text_url": "https://arxiv.org/html/2507.18071v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "§4–5：目标、MoE路由与稳定性实验"
+    },
+    {
+      "id": "yue2025vapo",
+      "url": "https://arxiv.org/abs/2504.05118",
+      "full_text_url": "https://arxiv.org/html/2504.05118v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§3–4：value pretraining、GAE与长度适配"
+    },
+    {
+      "id": "shao2025deepseekmath2",
+      "url": "https://arxiv.org/abs/2511.22570",
+      "full_text_url": "https://arxiv.org/html/2511.22570v1",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v1",
+      "sections_read": "§2–3：verifier训练、meta-verification、generator及高预算评估"
+    },
+    {
+      "id": "ouyang2022instructgpt",
+      "url": "https://arxiv.org/abs/2203.02155",
+      "full_text_url": "https://arxiv.org/html/2203.02155v1",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v1",
+      "sections_read": "§3及结果：SFT/RM/PPO流程、偏好比较与限制"
+    },
+    {
+      "id": "rafailov2023dpo",
+      "url": "https://arxiv.org/abs/2305.18290",
+      "full_text_url": "https://arxiv.org/html/2305.18290v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§4：RLHF目标、最优策略重参数化与DPO损失"
+    },
+    {
+      "id": "yuan2024selfreward",
+      "url": "https://arxiv.org/abs/2401.10020",
+      "full_text_url": "https://arxiv.org/html/2401.10020v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§2：IFT/EFT种子、judge提示与迭代DPO"
+    },
+    {
+      "id": "dehghani2018ut",
+      "url": "https://arxiv.org/abs/1807.03819",
+      "full_text_url": "https://arxiv.org/html/1807.03819v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§2：共享深度、逐位置递归与ACT"
+    },
+    {
+      "id": "zelikman2024quietstar",
+      "url": "https://arxiv.org/abs/2403.09629",
+      "full_text_url": "https://arxiv.org/html/2403.09629v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "§3–4：parallel rationale、mixing head、REINFORCE及teacher forcing"
+    },
+    {
+      "id": "hao2024coconut",
+      "url": "https://arxiv.org/abs/2412.06769",
+      "full_text_url": "https://arxiv.org/html/2412.06769v4",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v4",
+      "sections_read": "v4 §3–5及附录C：课程、计算图、更大模型及限制"
+    },
+    {
+      "id": "geiping2025recurrent",
+      "url": "https://arxiv.org/abs/2502.05171",
+      "full_text_url": "https://arxiv.org/html/2502.05171v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "§3–4：递归架构、深度分布、截断反传与训练稳定"
+    },
+    {
+      "id": "pfau2024dots",
+      "url": "https://arxiv.org/abs/2404.15758",
+      "full_text_url": "https://arxiv.org/html/2404.15758v1",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v1",
+      "sections_read": "§3–4：2SUM/3SUM、34M模型、训练与测试条件"
+    },
+    {
+      "id": "chen2024overthinking",
+      "url": "https://arxiv.org/abs/2412.21187",
+      "full_text_url": "https://arxiv.org/html/2412.21187v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "§2–3：overthinking测量、正确轨迹与短链偏好"
+    },
+    {
+      "id": "hou2025thinkprune",
+      "url": "https://arxiv.org/abs/2504.01296",
+      "full_text_url": "https://arxiv.org/html/2504.01296v1",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v1",
+      "sections_read": "§3：截断奖励、迭代裁剪与检查点选择"
+    },
+    {
+      "id": "yan2025luffy",
+      "url": "https://arxiv.org/abs/2504.14945",
+      "full_text_url": "https://arxiv.org/html/2504.14945v5",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v5",
+      "sections_read": "§3：mixed-policy GRPO及policy shaping"
+    },
+    {
+      "id": "brown2024monkeys",
+      "url": "https://arxiv.org/abs/2407.21787",
+      "full_text_url": "https://arxiv.org/html/2407.21787v3",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v3",
+      "sections_read": "§3–4：coverage scaling、sample budget与选择饱和"
+    },
+    {
+      "id": "schaeffer2025monkeys",
+      "url": "https://arxiv.org/abs/2502.17578",
+      "full_text_url": "https://arxiv.org/html/2502.17578v1",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v1",
+      "sections_read": "§2–3：单题失败概率、混合积分与近零密度"
+    },
+    {
+      "id": "khalifa2025thinkprm",
+      "url": "https://arxiv.org/abs/2504.16828",
+      "full_text_url": "https://arxiv.org/html/2504.16828",
+      "reading_depth": "full_text_targeted",
+      "version_read": null,
+      "sections_read": "§3及附录E：合成检查轨迹、训练、预算与评估样本"
+    },
+    {
+      "id": "zhang2025prmlessons",
+      "url": "https://arxiv.org/abs/2501.07301",
+      "full_text_url": "https://arxiv.org/html/2501.07301v2",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v2",
+      "sections_read": "§2–4：自动标签偏差、评价、共识过滤及ProcessBench"
+    },
+    {
+      "id": "wang2024cream",
+      "url": "https://arxiv.org/abs/2410.12735",
+      "full_text_url": "https://arxiv.org/html/2410.12735v5",
+      "reading_depth": "full_text_targeted",
+      "version_read": "v5",
+      "sections_read": "§3.2–3.3：一致性正则项与自奖励循环"
+    }
+  ],
+  "caveats": [
+    "部分arXiv版本号无法从本次读到页面明确钉住，version和version_read保留null",
+    "元数据初始日期按页面UTC日历日期记录，OLMo2为2024-12-31而非由2501编号推为2025",
+    "Coconut使用2026-08-23更新的v4；与早期版本结论不能无条件混用",
+    "阅读是方法与相关结果定向精读，不代表全部附录与代码已审阅",
+    "搜索可发现候选但只有原文核验内容进入正文；未核验的二手扩散不充当技术证据"
+  ]
+}

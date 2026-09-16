@@ -1,0 +1,30 @@
+[
+  {
+    "id": "beeching2024scalingtesttimecompute",
+    "title": "Scaling test-time compute with open models",
+    "authors": [
+      "Edward Beeching",
+      "Lewis Tunstall",
+      "Sasha Rush"
+    ],
+    "year": 2024,
+    "first_published": "2024-12-16",
+    "publication_date_evidence": "author Reddit announcement; article citation specifies year 2024",
+    "url": "https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute",
+    "fulltext_url": "https://huggingfaceh4-blogpost-scaling-test-time-compute.hf.space/",
+    "type": "author_technical_blog",
+    "branch": [
+      "T5"
+    ],
+    "problem": "公开模型上如何复现按难度与预算选择搜索策略的收益。",
+    "insight": "验证器引导搜索与保留独立子树的DVTS互补，最优策略随题目难度和预算变化。",
+    "method": "Llama 1B/3B策略模型、8B PRM、MATH-500、1–256候选、五随机种子；比较多数投票、BoN、beam search和DVTS。",
+    "result": "作者报告在部分预算设置中小策略模型系统超过大模型基线；以生成预算为主要横轴。",
+    "limitation": "额外8B验证器与搜索不是零成本，未给统一端到端FLOPs比较；难度分桶可能使用离线信息；主要证据局限数学。",
+    "reading_depth": "full primary article text (220 rendered lines), figures not independently digitized",
+    "version_read": "web article retrieved 2026-09-16, no explicit version number",
+    "verification_date": "2026-09-16",
+    "synthesis_status": "incorporated",
+    "evidence_note": "工程复现实验与作者blog；不是独立复现实验由本综述执行。"
+  }
+]

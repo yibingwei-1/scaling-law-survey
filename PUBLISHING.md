@@ -1,9 +1,7 @@
 # GitHub 发布状态
 
-首版的本地仓库内容已经准备；远端仓库尚未创建或推送。
+公开仓库：[yibingwei-1/scaling-law-survey](https://github.com/yibingwei-1/scaling-law-survey)。
 
-建议仓库名：`scaling-law-survey`。可见性待用户选择。当前检查到 GitHub 网页未登录，环境中没有可用 `gh` 命令或 GitHub token；因此不能把本地准备完成写成发布成功。
+2026-09-16 已确认仓库存在，SSH 身份认证为 `yibingwei-1`，初始内容已成功推送。默认分支为 `main`，远端为 `git@github.com:yibingwei-1/scaling-law-survey.git`。后续更新沿正常提交历史推送，禁止用强推覆盖用户修改。
 
-完成 GitHub 登录后，可以在用户账户下创建空仓库、绑定 `origin`、正常推送并核验网页显示。本项目不要求在聊天中提供密码或 token。若用 CLI，可安装官方 GitHub CLI，并由用户完成 `gh auth login`。
-
-发布前运行构建检查；只发布本仓库文件。参考 survey 的原始源码、原论文全文、社区网页镜像均不包含在发布内容中。远端 URL 确认后，更新 README 与 data/state.json。
+每次发布前构建综述、文献索引与PDF，检查字段、引用、本地链接及PDF排版；只发布本仓库研究内容与构建文件。维护状态记录在 [data/state.json](data/state.json)，最近提交以 GitHub 历史为准。

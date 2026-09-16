@@ -1,0 +1,64 @@
+{
+  "catalog_count": 161,
+  "cited_in_technical_chapters": 151,
+  "chapters": [
+    {
+      "file": "01-predictability-budget.md",
+      "title": "T1　可预测性、预算与训练配方：同一条曲线究竟在比较什么？",
+      "han_characters": 3399,
+      "catalog_sources_cited": 15,
+      "all_external_links": 15
+    },
+    {
+      "file": "02-data.md",
+      "title": "T2　数据瓶颈：从 token 数量到有效信息、混合与训练顺序",
+      "han_characters": 4364,
+      "catalog_sources_cited": 15,
+      "all_external_links": 15
+    },
+    {
+      "file": "03-architecture-deployment.md",
+      "title": "T3　架构与部署：参数、FLOPs、显存和实际成本为何分开演化？",
+      "han_characters": 4050,
+      "catalog_sources_cited": 19,
+      "all_external_links": 19
+    },
+    {
+      "file": "04-posttraining.md",
+      "title": "T4　后训练与强化学习：从反馈目标到可扩展推理策略",
+      "han_characters": 6590,
+      "catalog_sources_cited": 32,
+      "all_external_links": 32
+    },
+    {
+      "file": "05-inference.md",
+      "title": "T5　推理预算与搜索：如何把更多计算变成更可靠的答案",
+      "han_characters": 5972,
+      "catalog_sources_cited": 28,
+      "all_external_links": 29
+    },
+    {
+      "file": "06-theory-evaluation.md",
+      "title": "第六章　理论与能力评估：幂律为何出现，又能预测什么？",
+      "han_characters": 5840,
+      "catalog_sources_cited": 18,
+      "all_external_links": 18
+    },
+    {
+      "file": "07-multimodal.md",
+      "title": "第七章　视觉、多模态、扩散与机器人：扩大什么，才能改善目标能力？",
+      "han_characters": 6351,
+      "catalog_sources_cited": 25,
+      "all_external_links": 25
+    }
+  ],
+  "external_links_without_catalog_match": {
+    "01-predictability-budget.md": [],
+    "02-data.md": [],
+    "03-architecture-deployment.md": [],
+    "04-posttraining.md": [],
+    "05-inference.md": [],
+    "06-theory-evaluation.md": [],
+    "07-multimodal.md": []
+  }
+}

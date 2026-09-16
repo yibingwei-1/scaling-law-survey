@@ -1,0 +1,23 @@
+name: Validate survey
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Build maintained sources and validate links
+        run: |
+          python3 scripts/build_survey.py
+          python3 scripts/validate.py
+          git ls-files --error-unmatch SURVEY.zh-CN.md REFERENCES.md references.bib data/papers.json data/citation-audit.json docs/evidence-map.md
+          git diff --exit-code -- SURVEY.zh-CN.md REFERENCES.md references.bib data/papers.json data/citation-audit.json docs/evidence-map.md

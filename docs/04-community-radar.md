@@ -1,12 +1,12 @@
 # 社区讨论雷达：哪些争论值得写回 Scaling Law 综述？
 
-检索日期：**2026-09-16**。本轮建立了 **12 条可回溯记录：X 3 条、YouTube 3 条、Reddit 6 条**。其中 6 条有达到本仓库筛选阈值的可见关注信号；3 条作为解释争议的对照；3 条 X 原帖链接可回溯，但互动数未能核验。这里的日期代表本轮检索时间，**不代表搜索索引中的浏览或投票数就是当日实时数值**。
+检索日期：**2026-09-16**。本轮建立了 **18 条可回溯记录：X 4 条、YouTube 6 条、Reddit 8 条**。其中 8 条达到筛选阈值，7 条作为课程或争议对照，3 条 X 原帖的互动数仍无法核验。这里的日期代表本轮检索时间，**不代表搜索索引中的浏览或投票数就是当日实时数值**。
 
 社区的作用是暴露研究者和使用者尚未解决的问题。技术结论仍需回到论文、作者代码和官方报告：高观看量说明传播广，不能证明方法正确；讨论激烈也不等于结论已被独立复现。完整字段见 [community.json](../sources/community.json)，检索轨迹及未纳入线索见 [community-search-log.md](../sources/community-search-log.md)。
 
 ## 1. 如何操作化“讨论度高”
 
-第一轮采用明确但保守的编辑筛选阈值：YouTube 搜索索引显示观看数 ≥100,000，或 Reddit 帖子 score ≥100，就标记为 `high_attention_proxy`。这只是优先阅读信号，不是统计意义的“热门”定义，更不是平台全量排名。X 因本次原帖访问返回 403，全部标记 `unverified`；第三方镜像声称的浏览、点赞不写入 X 指标。
+第一轮采用明确但保守的编辑筛选阈值：YouTube 搜索索引显示观看数 ≥100,000，或 Reddit 帖子 score ≥100，就标记为 `high_attention_proxy`。这只是优先阅读信号，不是统计意义的“热门”定义，更不是平台全量排名。X 使用明确标注的观看数 ≥100,000 作为同样的阅读优先信号；当前仅 X-04 取得低于阈值的原帖索引观看数，其余三条仍未核验。第三方镜像声称的浏览、点赞不写入 X 指标。
 
 `context_below_screening_threshold` 留给有技术辨析价值的样本，例如 Chinchilla 最优性误读和 Apple 论文的反驳。这样既能采集广泛传播的议题，也能保留小众但必要的异议。阈值只决定检索优先级，不决定论文的科学价值。
 
@@ -28,6 +28,16 @@
 | RD-05 / Reddit | [There Will Be a Scientific Theory of Deep Learning](https://www.reddit.com/r/MachineLearning/comments/1sun588/there_will_be_a_scientific_theory_of_deep/)，2026-04-24 | score +263 | 达到阈值；经验规律与机制理论 |
 | RD-06 / Reddit | [Thoughts About Scaling Law - Z.ai](https://www.reddit.com/r/LocalLLaMA/comments/1vsf9eg/thoughts_about_scaling_law_zai/)，2026-08-19 | score +519 | 达到阈值；新主张待主源核验 |
 
+补充了与 scaling law 直接相关的研究者讲座和工程复现讨论。课程的阅读价值不依赖达到热度阈值；所有视频均只核验元数据及说明栏。
+
+| ID / 平台 | 帖子或视频 | 索引关注信号 | 接入问题线 |
+|---|---|---:|---|
+| YT-04 / YouTube | [Jared Kaplan 在 YC 的 scaling 讲座](https://www.youtube.com/watch?v=p8Jx4qvDoSo)，2025-07-29 发布 | 60,347 观看；965 赞 | 研究者如何连接预训练、RL 与计算效率；讲座举行于 2025-06-16 |
+| YT-05 / YouTube | [Stanford CS336 2026 Lecture 9](https://www.youtube.com/watch?v=Q15rhEWZPQ4)，2026-04-30 | 12,604 观看；173 赞 | 基础课程入口 |
+| YT-06 / YouTube | [Stanford CS336 2026 Lecture 11](https://www.youtube.com/watch?v=vTfEyOyzV9E)，2026-05-19 | 8,699 观看；128 赞 | 同一课程的后续讲授 |
+| RD-07 / Reddit | [HF 作者发布搜索复现与 DVTS](https://www.reddit.com/r/LocalLLaMA/comments/1hfw14v/)，2024-12-16 | score +507 | 高关注；生成器、验证器与成本应一起比较 |
+| RD-08 / Reddit | [o3 与 test-time scaling 讨论](https://www.reddit.com/r/LocalLLaMA/comments/1hirf2f/)，2024-12-20 | score +142 | 高关注；预算收益与本地部署约束 |
+
 X 原帖另列，避免将“作者权威”误记为“互动热度”：
 
 | ID | 原帖与关联主源 | 本次可验证范围 |
@@ -35,6 +45,8 @@ X 原帖另列，避免将“作者权威”误记为“互动热度”：
 | X-01 | [Niklas Muennighoff 发布 s1](https://x.com/Muennighoff/status/1886405528777073134)；[作者仓库](https://github.com/simplescaling/s1)、[论文](https://arxiv.org/abs/2501.19393) | 作者仓库直接链接该帖；原帖 403；发布时间、点赞、回复、转发、浏览均 `null` |
 | X-02 | [DeepSeek 发布 R1-Lite-Preview](https://x.com/deepseek_ai/status/1859200141355536422)；[官方公告](https://api-docs.deepseek.com/news/news1120/) | 原帖 URL 被 s1 论文引用，官方公告搜索索引可读；原帖 403；计数均 `null` |
 | X-03 | [Jie Tang: Thoughts About Scaling Law](https://x.com/jietang/status/2089941544581403107)；[关联官方 blog](https://z.ai/blog/glm-5.3) | Reddit 与二级报道可回溯同一原帖；X 403，官方 blog 未返回正文；计数均 `null` |
+
+| X-04 | [HF 搜索结果传播帖](https://x.com/kimmonismus/status/1869337064740938145)，2024-12-18 | 原帖索引显示 7,143 Views；直接页面正文未返回；其他未标注数字不解释为赞或转发。与 RD-07 是同一研究事件 |
 
 ## 3. 把讨论转成问题驱动的研究脉络
 
@@ -61,6 +73,14 @@ R1 的两条百万观看视频和发布帖显示，方法效率与成本叙事�
 RD-05 链接的 [2026 年观点论文](https://arxiv.org/abs/2604.21691) 主张把可解模型、可处理极限、宏观经验规律、超参数理论和普遍现象连接起来。这为综述增加“为什么会出现这样的指数、在哪些条件下可迁移”的理论分支；它是研究议程，不能写成统一理论已经完成。
 
 RD-06 与 X-03 则是近期候选：它们把部署条件、MoE 与后训练预算放到同一讨论中。不过本轮未取得关联官方 blog 的可读正文，所以**只记录问题，不采纳其中具体新模型效果或架构机制主张**。该事件在两个平台出现，算跨平台传播，不算两次独立技术验证。
+
+### 3.5 “3B 超过 70B”究竟比较了什么？
+
+RD-07 提供了一个比转述标题更有用的研究对话。发帖作者发布基于开放模型的搜索实验，读者马上追问：小生成器之外还有多大的验证器？256 次候选与大模型单次生成相比，是否真的节省计算？作者在回复中说明，未完成严格 FLOPs 比较，并认为大量采样的 3B 系统可能不如 70B 计算高效，但显存需求使其更容易部署。这里的回复是作者对自己实验的补充说明，仍应与正式技术材料一起阅读。[原帖及作者回应](https://www.reddit.com/r/LocalLLaMA/comments/1hfw14v/)。
+
+[作者技术文章](https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute) 的生成器、验证器和搜索算法共同构成被测系统。这个案例推动的问题不是“参数已无意义”，而是**在模型放得下、延迟可接受的约束内，如何组合生成和验证计算**。它与[架构与部署](03-architecture-deployment.md)章讨论相同的成本口径问题，又直接承接[推理时预算](05-inference.md)章的搜索分配。
+
+RD-08 将这种技术变化与 o3 的公众讨论联系起来，但社区对尚未公开训练过程的猜测没有足够证据。本综述仅采用其显式提出的预算问题，不采用“预训练已停止进步”之类推断。X-04 的传播标题同样压缩了实验条件，因此一次完整的更新应把**标题 → 作者实验 → 评论追问 → 作者限定 → 综述修订**连起来，而不是只新增一个热门链接。
 
 ## 4. 更新时如何保持可比性
 

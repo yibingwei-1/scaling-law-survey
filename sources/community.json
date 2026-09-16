@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "observed_at": "2026-09-16",
-  "coverage": "Purposeful seed sample, not an exhaustive ranking; X 3, YouTube 3, Reddit 6",
+  "coverage": "Purposeful seed sample, not an exhaustive ranking; X 4, YouTube 6, Reddit 8",
   "metric_policy": {
     "null_means": "Not observable, not zero",
     "time": "observed_at is retrieval date; platform counter snapshot time is unknown unless explicitly provided",
@@ -10,10 +10,10 @@
     "screening_thresholds": {
       "youtube_views": 100000,
       "reddit_score": 100,
-      "x": "none: counters unavailable"
+      "x": "100000 explicitly labeled views; unavailable counters remain null"
     },
     "threshold_status": "Editorial screening heuristics, not statistically calibrated popularity criteria",
-    "high_attention_proxy_count": 6
+    "high_attention_proxy_count": 8
   },
   "entries": [
     {
@@ -490,6 +490,216 @@
       "attention_status": "high_attention_proxy",
       "discussion_focus": "研究者对后训练、参数和数据预算的讨论，与本地用户对显存、延迟、可部署性的约束发生碰撞。",
       "evidence_limit": "有可见讨论信号，但帖中具体新模型效果和架构机制未由可读主源验证，只进入候选队列。与X-03是同一事件，不能算独立技术复现。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "YT-04",
+      "platform": "YouTube",
+      "community": "Y Combinator",
+      "title": "Scaling and the Road to Human-Level AI | Anthropic Co-founder Jared Kaplan",
+      "url": "https://www.youtube.com/watch?v=p8Jx4qvDoSo",
+      "published_at": "2025-07-29",
+      "topics": [
+        "scaling laws",
+        "research communication"
+      ],
+      "metrics": {
+        "likes": 965,
+        "comments": null,
+        "views": 60347,
+        "reposts": null,
+        "score": null
+      },
+      "metric_evidence": "search-index snapshot: views=60347, likes=965, Reddit score=None; only explicitly labeled metrics retained",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2001.08361",
+          "kind": "related_paper",
+          "verification": "existing survey core source; topic linkage, not complete video fact checking"
+        }
+      ],
+      "access_status": "metadata_and_description_only",
+      "attention_status": "context_below_screening_threshold",
+      "discussion_focus": "研究者公开讲述预训练、RL、计算效率与长期任务；作为议程入口，技术断言回到原论文。",
+      "evidence_limit": "索引指标采集时刻未知；未观察完整评论树；视频仅元数据与说明栏，未完整观看。X其他未标注的数字不推断为点赞或转发。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "YT-05",
+      "platform": "YouTube",
+      "community": "Stanford Online",
+      "title": "Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 9: Scaling Laws",
+      "url": "https://www.youtube.com/watch?v=Q15rhEWZPQ4",
+      "published_at": "2026-04-30",
+      "topics": [
+        "scaling laws",
+        "research communication"
+      ],
+      "metrics": {
+        "likes": 173,
+        "comments": null,
+        "views": 12604,
+        "reposts": null,
+        "score": null
+      },
+      "metric_evidence": "search-index snapshot: views=12604, likes=173, Reddit score=None; only explicitly labeled metrics retained",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2001.08361",
+          "kind": "related_paper",
+          "verification": "existing survey core source; topic linkage, not complete video fact checking"
+        }
+      ],
+      "access_status": "metadata_and_description_only",
+      "attention_status": "context_below_screening_threshold",
+      "discussion_focus": "基础课程入口：把经验规律与资源分配放入训练流程。",
+      "evidence_limit": "索引指标采集时刻未知；未观察完整评论树；视频仅元数据与说明栏，未完整观看。X其他未标注的数字不推断为点赞或转发。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "YT-06",
+      "platform": "YouTube",
+      "community": "Stanford Online",
+      "title": "Stanford CS336 Language Modeling from Scratch | Spring 2026 | Lecture 11: Scaling Laws",
+      "url": "https://www.youtube.com/watch?v=vTfEyOyzV9E",
+      "published_at": "2026-05-19",
+      "topics": [
+        "scaling laws",
+        "research communication"
+      ],
+      "metrics": {
+        "likes": 128,
+        "comments": null,
+        "views": 8699,
+        "reposts": null,
+        "score": null
+      },
+      "metric_evidence": "search-index snapshot: views=8699, likes=128, Reddit score=None; only explicitly labeled metrics retained",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2001.08361",
+          "kind": "related_paper",
+          "verification": "existing survey core source; topic linkage, not complete video fact checking"
+        }
+      ],
+      "access_status": "metadata_and_description_only",
+      "attention_status": "context_below_screening_threshold",
+      "discussion_focus": "同一课程系列的补充材料；不把同系列多视频当独立技术证据。",
+      "evidence_limit": "索引指标采集时刻未知；未观察完整评论树；视频仅元数据与说明栏，未完整观看。X其他未标注的数字不推断为点赞或转发。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "RD-07",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "Outperforming Llama 70B with Llama 3B on hard math by scaling test-time compute!",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1hfw14v/",
+      "published_at": "2024-12-16",
+      "topics": [
+        "compute allocation",
+        "inference cost"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 507
+      },
+      "metric_evidence": "search-index snapshot: views=None, likes=None, Reddit score=507; only explicitly labeled metrics retained",
+      "primary_sources": [
+        {
+          "url": "https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute",
+          "kind": "author_technical_blog",
+          "verification": "full rendered primary article read via linked hf.space iframe"
+        }
+      ],
+      "access_status": "post_and_selected_author_replies_read",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "作者解释PRM与搜索复现，评论进一步追问FLOPs、显存与验证器成本；作者明确区分计算效率和显存可部署性。",
+      "evidence_limit": "索引指标采集时刻未知；未观察完整评论树；视频仅元数据与说明栏，未完整观看。X其他未标注的数字不推断为点赞或转发。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "RD-08",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "With the o3 release, the new era of test time compute scaling begins",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1hirf2f/",
+      "published_at": "2024-12-20",
+      "topics": [
+        "compute allocation",
+        "inference cost"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 142
+      },
+      "metric_evidence": "search-index snapshot: views=None, likes=None, Reddit score=142; only explicitly labeled metrics retained",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2408.03314",
+          "kind": "related_paper",
+          "verification": "existing survey core source; supports cost-allocation background, not o3-specific claims"
+        }
+      ],
+      "access_status": "search_index_post_and_selected_replies",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "推理预算增加的收益与延迟、费用、本地硬件限制之间的讨论；关于未发布训练情况的猜测不纳入结论。",
+      "evidence_limit": "索引指标采集时刻未知；未观察完整评论树；视频仅元数据与说明栏，未完整观看。X其他未标注的数字不推断为点赞或转发。",
+      "observed_at": "2026-09-16",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false
+    },
+    {
+      "id": "X-04",
+      "platform": "X",
+      "community": "@kimmonismus",
+      "title": "Hugging Face researchers got 3b Llama to outperform 70b using search",
+      "url": "https://x.com/kimmonismus/status/1869337064740938145",
+      "published_at": "2024-12-18",
+      "topics": [
+        "compute allocation",
+        "inference cost"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": 7143,
+        "reposts": null,
+        "score": null
+      },
+      "metric_evidence": "search-index snapshot: views=7143, likes=None, Reddit score=None; only explicitly labeled metrics retained",
+      "primary_sources": [
+        {
+          "url": "https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute",
+          "kind": "author_technical_blog",
+          "verification": "full rendered primary article read via linked hf.space iframe"
+        }
+      ],
+      "access_status": "search_index_post_body",
+      "attention_status": "context_below_screening_threshold",
+      "discussion_focus": "同一HF研究的传播样本；标题将测试时与训练时计算概括成优劣关系，需回到完整成本口径。",
+      "evidence_limit": "索引指标采集时刻未知；未观察完整评论树；视频仅元数据与说明栏，未完整观看。X其他未标注的数字不推断为点赞或转发。",
       "observed_at": "2026-09-16",
       "metrics_source_kind": "search_index_snapshot",
       "metric_measurement_time": null,

@@ -1,17 +1,22 @@
 {
   "checked_on": "2026-09-16",
-  "source_records": 45,
-  "community_records": 12,
-  "pdf_pages": 27,
-  "pdf_link_annotations": 244,
-  "display_formulas_rendered": 6,
+  "edition": "v0.2",
+  "source_records": 161,
+  "sources_cited_in_technical_chapters": 151,
+  "technical_chapters": 7,
+  "technical_han_characters": 36566,
+  "community_records": 18,
+  "pdf_pages": 58,
+  "pdf_link_annotations": 612,
+  "display_formulas_rendered": 23,
   "display_formula_fallbacks": 0,
   "local_links_and_schema": "pass",
-  "review": "All PDF pages inspected in contact sheets; formula page inspected separately; final table pagination change inspected on pages 24–27.",
+  "review": "All 58 PDF pages checked in contact sheets, with full-page checks of the contents, budget formulas, RL objective, mixed-modal formula and bibliography. Final inline notation changes checked separately. Key claims cross-reviewed; correction records in sources.",
   "limits": [
     "No independent rerun of cited experiments",
     "External URL availability is based on research verification logs, not an automated live link crawl",
+    "Citation counts include explicitly marked abstract candidates and do not measure reading depth",
     "Inline math uses readable text notation; display math is rendered"
   ],
-  "publication": "GitHub authentication pending"
+  "publication": "Public GitHub repository yibingwei-1/scaling-law-survey, main branch"
 }
