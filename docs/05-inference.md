@@ -1,6 +1,6 @@
 # T5　推理预算与搜索：如何把更多计算变成更可靠的答案
 
-> 核验日期：2026-09-16。覆盖具有机制解释力的代表工作，2026材料仍多为预印本；未独立复现实验。来源、版本、阅读范围见 [frontier.json](../sources/frontier.json)、[expansion-frontier.json](../sources/expansion-frontier.json)；Hugging Face 作者博客由编辑主源库记录。
+> 核验日期：2026-09-21。覆盖具有机制解释力的代表工作，2026材料仍多为预印本；未独立复现实验。来源、版本、阅读范围见 [frontier.json](../sources/frontier.json)、[expansion-frontier.json](../sources/expansion-frontier.json)；Hugging Face 作者博客由编辑主源库记录。
 
 预训练把计算投入共享参数，推理时则为具体问题分配计算。Chain-of-Thought 通过中间步骤示范改变单条生成过程，Self-Consistency 通过多路径采样与答案聚合减轻单一路径的不稳定；它们打开串行和并行两个方向，但尚未解决成本与正确选择。[CoT](https://arxiv.org/abs/2201.11903)、[Self-Consistency](https://arxiv.org/abs/2203.11171)
 
@@ -39,6 +39,8 @@ LATS 把推理和行动放进同一搜索过程，结合环境反馈、MCTS 与�
 Wu 等从另一个角度比较模型大小、投票、验证与树搜索的 FLOPs–准确率前沿，并提出 Rebase 分配搜索预算。其分析说明投票会受答案分布限制而饱和：高频错误不会因为采样更多就自动变成正确答案。于是，“扩大模型”和“改善推理算法”的最优组合随预算变化；在所测数学任务上，较小模型加合适搜索可以更划算。[Wu 等，§1、§3–4](https://arxiv.org/html/2408.00724v3)。
 
 Hugging Face 的作者博客把这个问题接到可复现实验：在 MATH-500 上，用 1B／3B proposer 配合 8B PRM，比较 1–256 个候选预算并运行五个随机种子；DVTS 通过多个独立子树保留搜索多样性，降低单一路径过早占满预算的风险。它提供的是从论文策略到开放模型与工具实现的工程承接。比较中的候选预算并非统一端到端 FLOPs，生成器与验证器也有不同参数规模；因此“3B 系统超过 70B 单次模型”不能直接写成总计算成本更低。参数规模、显存占用、吞吐与累计推理成本需要分别报告。[Hugging Face 作者博客](https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute)
+
+执行调度又增加一个预算维度。2026 年 9 月的 Sample Count Is Not Enough 在 A100-SXM4 80GB 上，用 Phi-3-mini-4k-instruct 与 Qwen2.5-1.5B-Instruct，对 100 道 GSM8K 题各重复三轮（温度 1.0、top-p 0.95、每候选最多生成 512 token）。固定八个候选时，八次串行单候选调用的 GPU 设备总能耗为一次八候选批量调用的 4.64–4.86 倍，P95 延迟为 5.77–6.12 倍；各调度独立采样，生成 token 总量的差异不超过 1%。能耗包含测量期间的空闲消耗，但不是整机能耗。这把预算记账要求进一步具体化：候选数之外，还要记录调用结构与实测系统成本。这是特定 Hugging Face 批量生成条件下的结果，不是通用缩放指数或 FLOPs 等价比较；有依赖的搜索步骤与连续服务需要另行评估。[Sample Count Is Not Enough，v1，§III–VII](https://arxiv.org/html/2609.19499v1)
 
 ## 4. 验证预算应花在哪里？
 
@@ -146,4 +148,3 @@ $$
 同一优化还要受延迟、内存和吞吐约束。它提示真正待解决的问题是联合分配：更强的底座可能提高探索起点，更好的后训练可能提高每份推理预算的收益，更好的验证可能把候选潜力转成实际成功。三项都需要在匹配成本和任务分布下比较，现有结果尚未给出普适的兑换率。
 
 本章与[后训练与强化学习](04-posttraining.md)共同构成训练—推理反馈循环。后续更新应优先加入能够改变因果解释的证据，例如同底座受控 RL 扩展、独立 verifier 的跨分布检验、真实总成本下的预算分配，以及连续深度在更大规模上的稳定外推。
-

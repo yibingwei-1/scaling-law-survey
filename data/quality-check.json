@@ -1,17 +1,17 @@
 {
-  "checked_on": "2026-09-16",
-  "edition": "v0.3",
-  "source_records": 161,
-  "sources_cited_in_technical_chapters": 151,
+  "checked_on": "2026-09-21",
+  "edition": "v0.3.1",
+  "source_records": 165,
+  "sources_cited_in_technical_chapters": 155,
   "technical_chapters": 7,
-  "technical_han_characters": 36566,
-  "community_records": 18,
-  "pdf_pages": 58,
-  "pdf_link_annotations": 612,
+  "technical_han_characters": 37502,
+  "community_records": 19,
+  "pdf_pages": 60,
+  "pdf_link_annotations": 665,
   "display_formulas_rendered": 23,
   "display_formula_fallbacks": 0,
   "local_links_and_schema": "pass",
-  "review": "Both PDFs inspected across all pages in contact sheets; selected English equation, contents, table, and bibliography pages checked at page scale. Previously reviewed Chinese content retained; changed Chinese pages 28–29 checked after the code-fence fix. Translations cross-reviewed for retained evidence conditions and limitations. The bilingual Markdown build is deterministic.",
+  "review": "Both final language editions inspected in contact sheets, with page-scale checks of the new data, architecture, inference, robotics, community and bibliography sections. Inline math stars and adjacent Chinese links corrected; final changes re-rendered. All 441 external Markdown link occurrences per language retain their exact targets through inline conversion, and 312 distinct target URLs exist in each PDF. Source conditions and translations cross-reviewed; no independent experiment replication.",
   "limits": [
     "No independent rerun of cited experiments",
     "External URL availability is based on research verification logs, not an automated live link crawl",
@@ -22,16 +22,20 @@
   "publication": "Public GitHub repository yibingwei-1/scaling-law-survey, main branch",
   "pdfs": {
     "zh-CN": {
-      "pages": 58,
-      "link_annotations": 612,
+      "pages": 60,
+      "link_annotations": 665,
       "display_formulas_rendered": 23,
-      "display_formula_fallbacks": 0
+      "display_formula_fallbacks": 0,
+      "external_source_targets_verified": 312,
+      "external_link_occurrences_checked": 441
     },
     "en": {
-      "pages": 82,
-      "link_annotations": 656,
+      "pages": 84,
+      "link_annotations": 673,
       "display_formulas_rendered": 23,
-      "display_formula_fallbacks": 0
+      "display_formula_fallbacks": 0,
+      "external_source_targets_verified": 312,
+      "external_link_occurrences_checked": 441
     }
   },
   "translation_review": {
@@ -45,6 +49,8 @@
       "English language residue scan",
       "All maintained chapters included once in assembled manuscript"
     ],
-    "manifest": "data/translation-status.json"
+    "manifest": "data/translation-status.json",
+    "incremental_reviewed_on": "2026-09-21",
+    "incremental_chapters": 6
   }
 }

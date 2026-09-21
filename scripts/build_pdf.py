@@ -9,9 +9,10 @@ via --math-python; this script never installs packages.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 from datetime import date
 import hashlib
-from html import escape
+from html import escape, unescape
 import json
 import os
 from pathlib import Path
@@ -128,13 +129,16 @@ def plain(text):
 
 def inline(text):
     text = safe_text(text)
-    text = re.sub(r'\\\((.*?)\\\)', lambda m: notation(m.group(1)), text)
-    text = re.sub(r'(?<!\\)\$([^$\n]+)\$', lambda m: notation(m.group(1)), text)
     placeholders = []
 
     def protect(value):
         placeholders.append(value)
         return f'ZZPROTECTEDTOKEN{len(placeholders)-1}ZZ'
+
+    # Math stars and underscores must not become Markdown emphasis. Restore
+    # nested fragments in reverse order, including math inside a link label.
+    text = re.sub(r'\\\((.*?)\\\)', lambda m: protect(escape(notation(m.group(1)))), text)
+    text = re.sub(r'(?<!\\)\$([^$\n]+)\$', lambda m: protect(escape(notation(m.group(1)))), text)
 
     def link(m):
         label, url = m.group(1), m.group(2).strip().strip('<>')
@@ -143,15 +147,15 @@ def inline(text):
         # Relative repository links need not become invalid local hyperlinks.
         return protect(f'<font color="#007F86">{escape(plain(label))}</font>')
 
-    text = re.sub(r'\[([^\]]+)\]\(([^\s]+)(?:\s+"[^"]*")?\)', link, text)
+    text = re.sub(r'\[([^\]]+)\]\(([^\s)]+)(?:\s+"[^"]*")?\)', link, text)
     text = re.sub(r'`([^`]+)`', lambda m: protect(f'<font name="{FONT}" color="#355169">{escape(m.group(1))}</font>'), text)
     text = escape(text)
     text = re.sub(r'\*\*(.+?)\*\*', rf'<font name="{BOLD}">\1</font>', text)
     text = re.sub(r'(?<!\*)\*([^*]+)\*(?!\*)', r'<i>\1</i>', text)
     text = re.sub(r'(?<![="\w])(https?://[^\s<>]+)',
                   lambda m: f'<link href="{m.group(1)}" color="#007F86">{m.group(1)}</link>', text)
-    for i, fragment in enumerate(placeholders):
-        text = text.replace(f'ZZPROTECTEDTOKEN{i}ZZ', fragment)
+    for i in reversed(range(len(placeholders))):
+        text = text.replace(f'ZZPROTECTEDTOKEN{i}ZZ', placeholders[i])
     return text
 
 
@@ -617,7 +621,23 @@ def main():
         from pypdf import PdfReader
         reader=PdfReader(args.output)
         links=sum(1 for page in reader.pages for a in page.get('/Annots',[]) if a.get_object().get('/Subtype')=='/Link')
+        expected_urls = set()
+        for line_number, line in enumerate(text.splitlines(), 1):
+            expected = Counter(re.findall(r'\]\((https?://[^\s)]+)\)', line))
+            converted = Counter(unescape(url) for url in re.findall(r'<link href="([^"]+)"', inline(line)))
+            if expected - converted:
+                raise SystemExit(f'PDF inline conversion loses source links at line {line_number}: {expected - converted}')
+            expected_urls.update(expected)
+        actual_urls = set()
+        for page in reader.pages:
+            for annotation in page.get('/Annots', []):
+                action = annotation.get_object().get('/A', {})
+                if action.get('/URI'):
+                    actual_urls.add(str(action['/URI']))
+        if expected_urls - actual_urls:
+            raise SystemExit(f'PDF is missing source link targets: {sorted(expected_urls - actual_urls)}')
         print(f'Pages={len(reader.pages)}; link_annotations={links}; top_level_outline_items={len(reader.outline)}')
+        print(f'External source link targets verified: {len(expected_urls)}; per-line link multiplicity preserved')
 
 
 if __name__=='__main__':

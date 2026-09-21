@@ -1,6 +1,6 @@
 {
-  "catalog_count": 161,
-  "cited_in_technical_chapters": 151,
+  "catalog_count": 165,
+  "cited_in_technical_chapters": 155,
   "chapters": [
     {
       "file": "01-predictability-budget.md",
@@ -12,16 +12,16 @@
     {
       "file": "02-data.md",
       "title": "T2　数据瓶颈：从 token 数量到有效信息、混合与训练顺序",
-      "han_characters": 4364,
-      "catalog_sources_cited": 15,
-      "all_external_links": 15
+      "han_characters": 4567,
+      "catalog_sources_cited": 16,
+      "all_external_links": 17
     },
     {
       "file": "03-architecture-deployment.md",
       "title": "T3　架构与部署：参数、FLOPs、显存和实际成本为何分开演化？",
-      "han_characters": 4050,
-      "catalog_sources_cited": 19,
-      "all_external_links": 19
+      "han_characters": 4292,
+      "catalog_sources_cited": 20,
+      "all_external_links": 20
     },
     {
       "file": "04-posttraining.md",
@@ -33,9 +33,9 @@
     {
       "file": "05-inference.md",
       "title": "T5　推理预算与搜索：如何把更多计算变成更可靠的答案",
-      "han_characters": 5972,
-      "catalog_sources_cited": 28,
-      "all_external_links": 29
+      "han_characters": 6164,
+      "catalog_sources_cited": 29,
+      "all_external_links": 30
     },
     {
       "file": "06-theory-evaluation.md",
@@ -47,14 +47,16 @@
     {
       "file": "07-multimodal.md",
       "title": "第七章　视觉、多模态、扩散与机器人：扩大什么，才能改善目标能力？",
-      "han_characters": 6351,
-      "catalog_sources_cited": 25,
-      "all_external_links": 25
+      "han_characters": 6650,
+      "catalog_sources_cited": 26,
+      "all_external_links": 26
     }
   ],
   "external_links_without_catalog_match": {
     "01-predictability-budget.md": [],
-    "02-data.md": [],
+    "02-data.md": [
+      "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/sequence-weighting-note.pdf"
+    ],
     "03-architecture-deployment.md": [],
     "04-posttraining.md": [],
     "05-inference.md": [],

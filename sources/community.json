@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "observed_at": "2026-09-16",
-  "coverage": "Purposeful seed sample, not an exhaustive ranking; X 4, YouTube 6, Reddit 8",
+  "observed_at": "2026-09-21",
+  "coverage": "Purposeful cumulative sample, not an exhaustive ranking; X 4, YouTube 6, Reddit 9. Original snapshots retained; September 21 adds one below-threshold contextual record.",
   "metric_policy": {
     "null_means": "Not observable, not zero",
     "time": "observed_at is retrieval date; platform counter snapshot time is unknown unless explicitly provided",
@@ -704,6 +704,79 @@
       "metrics_source_kind": "search_index_snapshot",
       "metric_measurement_time": null,
       "comments_complete": false
+    },
+    {
+      "id": "RD-09",
+      "platform": "Reddit",
+      "community": "r/accelerate",
+      "title": "The Birth of the Robotics Scaling Law (Helix 2.5)",
+      "url": "https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/",
+      "author": "u/AMBNNJ",
+      "published_at": "2026-09-17",
+      "publication_date_evidence": "Parent researcher observed the exact thread URL in a search-index snapshot on 2026-09-21 showing [Thursday September 17 2026]. The direct reader separately showed only '5h ago'; its reference time is unknown.",
+      "topics": [
+        "robotics scaling",
+        "human demonstration data",
+        "zero-shot generalization",
+        "pretraining controls"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 52
+      },
+      "metric_evidence": "Parent researcher observed [+52 votes] beside the exact title and URL in this round's search-index result. Direct page reading did not expose a counter; 52 is an indexed snapshot, not a live count.",
+      "primary_sources": [
+        {
+          "url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+          "kind": "official_technical_report",
+          "verification": "Read official report sections defining zero-shot, the random-initialization control, fixed-task evaluation, and the data-scaling experiment; company-reported evidence, not independent replication."
+        }
+      ],
+      "discovery_evidence_urls": [
+        "https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/",
+        "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"
+      ],
+      "access_status": "Reddit body readable; visible direct-reader metrics unavailable. Publication date and score recovered from a parent-researcher-observed search-index snapshot.",
+      "attention_status": "context_below_screening_threshold",
+      "discussion_focus": "把“机器人 scaling law”标题拆成数据规模、预训练控制和任务迁移三个问题。官方报告的 zero-shot 针对未见环境与对象，任务依赖别处收集的微调数据；随机初始化对照不能回答与通用预训练 VLM 相比是否更优。",
+      "evidence_limit": "52 分低于本雷达 Reddit 100 分的编辑筛选阈值。索引计数时间未知，不能与直开相对时间拼成互动增长。未完整读取回帖，不能归纳社区共识；官方报告不能替代独立复现，也不能把 action-prediction loss 曲线直接解释为闭环任务成功率的幂律。",
+      "observed_at": "2026-09-21",
+      "metrics_source_kind": "search_index_snapshot_observed_by_parent_researcher",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "observations": [
+        {
+          "observed_at": "2026-09-21",
+          "observer": "parent_researcher",
+          "source_kind": "search_index_snapshot",
+          "url": "https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/",
+          "published_at": "2026-09-17",
+          "score": 52,
+          "metric_measurement_time": null,
+          "date_score_excerpt": "[Thursday September 17 2026] [+52 votes]",
+          "note": "Exact title and URL observed in the first query batch; not recovered by subsequent exact-URL searches."
+        },
+        {
+          "observed_at": "2026-09-21",
+          "observer": "community_researcher",
+          "source_kind": "direct_reader",
+          "url": "https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/",
+          "published_at": null,
+          "relative_time_text": "5h ago",
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "views": null,
+            "reposts": null,
+            "score": null
+          },
+          "note": "Relative time reference unavailable; retained as a separate observation, not converted to a calendar date and not used to contradict or confirm the dated index snapshot."
+        }
+      ]
     }
-  ]
+  ],
+  "observation_policy": "Each entry and observation retains its own retrieval date; top-level observed_at is the latest incremental update, not a refresh of historical counters."
 }

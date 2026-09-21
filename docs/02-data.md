@@ -1,6 +1,6 @@
 # T2　数据瓶颈：从 token 数量到有效信息、混合与训练顺序
 
-> 核验日期：2026-09-16。范围：唯一数据量、去重、选择、领域混合、数据课程、供给预测和合成反馈。区分原论文实验证据与本综述的机制归纳；未独立重跑数据处理或训练实验。阅读深度见 [经典来源](../sources/foundations.json)、[扩展来源](../sources/expansion-foundations.json)。仅摘要核验的 TinyStories、Phi-3、Scaling Laws for Transfer 等保留在来源库，未用作本章技术结论。
+> 核验日期：2026-09-21。范围：唯一数据量、去重、选择、领域混合、数据课程、供给预测和合成反馈。区分原论文实验证据与本综述的机制归纳；未独立重跑数据处理或训练实验。阅读深度见 [经典来源](../sources/foundations.json)、[扩展来源](../sources/expansion-foundations.json)。仅摘要核验的 TinyStories、Phi-3、Scaling Laws for Transfer 等保留在来源库，未用作本章技术结论。
 
 ## 1. 数据成为瓶颈，是因为 D 同时承担了太多含义
 
@@ -62,6 +62,10 @@ RegMix 明确将 DoReMi 等代理训练方法作为比较对象，提出另一�
 限制同样具体：优化目标主要是 Pile-CC 验证损失，因其在该实验中与下游表现相关；这个目标未必适合医疗、代码或多语言服务。与 DoReMi 的比较还把后者的领域权重重新归一化到可用领域，作者承认这可能影响基线。因此，合理结论是“在该候选域、目标和规模区间，用小模型学排序可以降低搜索成本”，而不是“RegMix 已全面淘汰 DoReMi”。[原论文 §5 及比较说明](https://arxiv.org/html/2407.01492v2)
 
 两者共享的前提是配方能跨规模迁移，区别在于怎样估计它：DoReMi 基于参考损失与动态鲁棒优化；RegMix 基于大量小实验的排序规律。原有 Data Mixing Laws 又尝试直接拟合领域比例与损失的函数关系，本综述对该项仅完成摘要和引言级核查，不据此添加更强的跨尺度结论。[Ye et al., 2024](https://arxiv.org/abs/2403.16952)
+
+### 新证据：小模型的权重响应未必能单调外推
+
+Jane Street 于 2026 年 9 月 14 日发布的研究，给配方跨规模迁移增加了一个检验条件。在内部文本基准上，研究者为序列随机分配 0.01–10 的对数均匀权重，训练三个模型家族三个 epoch，再用同一训练集的损失下降拟合有效权重指数 $p^*$。权重响应随规模呈先升后降的趋势，增加训练轮数还会移动峰值。这说明应检验代理与目标模型是否处于相近的权重响应区间；它不是 DoReMi 或 RegMix 的直接比较，也不是 held-out 泛化收益的尺度律。内部数据限制了外部复核，而用 $1/p^*$ 调整权重仍是未验证建议。[Renda & Mani，正文](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/)；[估计量说明](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/sequence-weighting-note.pdf)
 
 ## 7. 静态比例仍不够：SmolLM2 把训练阶段变成新变量
 

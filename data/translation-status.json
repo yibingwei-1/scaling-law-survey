@@ -2,15 +2,16 @@
   "schema_version": "1.0",
   "source_language": "zh-CN",
   "target_language": "en",
-  "reviewed_on": "2026-09-16",
+  "reviewed_on": "2026-09-21",
   "review_scope": "Complete chapter translations reviewed for argument, conditions, limitations, source-link multiplicity, and exact mathematics. Hashes detect later drift; they do not establish translation quality or independently revalidate the science.",
   "chapters": {
     "introduction.md": {
       "source_path": "docs/introduction.md",
       "translation_path": "docs/en/introduction.md",
-      "source_sha256": "3639e3b6defebc105ec56a35ff31ba6ad4e6a615e89ee5eddaa593684d22f8fe",
-      "translation_sha256": "4a95d0a25598bcd58e5646f7a4b36ead92a2c6d2875d6d617d48fe12762aa176",
-      "status": "reviewed_translation"
+      "source_sha256": "40fa9aea89d066c9300fdc39588985995b939b0d48f10b7a702e8ea408e8df3c",
+      "translation_sha256": "42c9c9e4e92a10a0ee40f5e448e56e8e617060d3e565fb34820b9e0296bd5606",
+      "status": "reviewed_translation",
+      "reviewed_on": "2026-09-21"
     },
     "01-predictability-budget.md": {
       "source_path": "docs/01-predictability-budget.md",
@@ -22,16 +23,18 @@
     "02-data.md": {
       "source_path": "docs/02-data.md",
       "translation_path": "docs/en/02-data.md",
-      "source_sha256": "667f1f7504a63ce465c2e89868151314de975d11f6e624624e312a32d417a3bd",
-      "translation_sha256": "ba11ba83b1b4642d2a66ad7723be6e1eeefadc978ff00a50ba3b7d5fe086e8da",
-      "status": "reviewed_translation"
+      "source_sha256": "cf567455957d84935ab023dda48c96eead55670793f7bb05af95eebe50254d87",
+      "translation_sha256": "bcf96b95be4b7cfcac03741381d3e6775c660765c0c654117fdcca3a6f4d17a6",
+      "status": "reviewed_translation",
+      "reviewed_on": "2026-09-21"
     },
     "03-architecture-deployment.md": {
       "source_path": "docs/03-architecture-deployment.md",
       "translation_path": "docs/en/03-architecture-deployment.md",
-      "source_sha256": "18fc31b197e4eb3c0f5394017cace7e0424d3b387d1babfbbce2e1e0e754c65e",
-      "translation_sha256": "8873713ecf911dc8469f12ce02684179f097e95faad5451f604df3a9e114dafc",
-      "status": "reviewed_translation"
+      "source_sha256": "7526c9dc0746424a732dd0954ed160918e7eb8e2d6daf426c73eef48f83a0594",
+      "translation_sha256": "8f2c23cff1ba562883cd42b7136004a107b80e68cd85ec9f6510037ee501bfd4",
+      "status": "reviewed_translation",
+      "reviewed_on": "2026-09-21"
     },
     "04-posttraining.md": {
       "source_path": "docs/04-posttraining.md",
@@ -43,9 +46,10 @@
     "05-inference.md": {
       "source_path": "docs/05-inference.md",
       "translation_path": "docs/en/05-inference.md",
-      "source_sha256": "84754d5d5ca71934e8112dc16239ff400fae3e6c27f5839ee5fcd6e14c0b6db2",
-      "translation_sha256": "15abcc3f34fb4e76cb552b57ada05f66d631d5ff2c2d50818bb0a3bab9e437c8",
-      "status": "reviewed_translation"
+      "source_sha256": "40f955d3110b53eb71d05be3f59a51303a6df439e97fbfad46f097fcc1b74f8a",
+      "translation_sha256": "624fb74d98f2eb9b11ef0173280071fac3f2c5f7c0dee044f4b9361df1ea3091",
+      "status": "reviewed_translation",
+      "reviewed_on": "2026-09-21"
     },
     "06-theory-evaluation.md": {
       "source_path": "docs/06-theory-evaluation.md",
@@ -57,16 +61,18 @@
     "07-multimodal.md": {
       "source_path": "docs/07-multimodal.md",
       "translation_path": "docs/en/07-multimodal.md",
-      "source_sha256": "5ffa6e4cc56a386dc97bf88d2faadc8c37cfc610df9fd6a88c48896bfddd877d",
-      "translation_sha256": "b080b47fec7ac01ededc7be4232f25f85881d238226aa2bca1a89c8aeb49e54a",
-      "status": "reviewed_translation"
+      "source_sha256": "33e6e7ab0f858697454ceb12e06447018a809578debe63b7b9cd810d09a8692a",
+      "translation_sha256": "e6690572faaba7dcbfce578b76f8dfda554076b866e8c0ef9f27a161b6c1fa6d",
+      "status": "reviewed_translation",
+      "reviewed_on": "2026-09-21"
     },
     "04-community-radar.md": {
       "source_path": "docs/04-community-radar.md",
       "translation_path": "docs/en/04-community-radar.md",
-      "source_sha256": "c8baf386fcc860388bd4e9080e02476442cbc55d4930d6e1abf7c87e92f4d8ec",
-      "translation_sha256": "3d06be30daee6d88adf494b71394c0254f9981b8b0dae3a48ee5ebf8149abbf1",
-      "status": "reviewed_translation"
+      "source_sha256": "dfc10d6a8577db2b8af86324a9371f3657c68eb7647210ff61e4c1eba821f6a8",
+      "translation_sha256": "e6bc26924fa12957637c7b6ba5f2135135986b70f186dc6ecaa4737a60667f08",
+      "status": "reviewed_translation",
+      "reviewed_on": "2026-09-21"
     },
     "conclusion.md": {
       "source_path": "docs/conclusion.md",
@@ -89,5 +95,17 @@
       "translation_sha256": "ecba41a2aae87870ed5ae94a7aa922577b57ff08540d075d1bddaa4c081c1ad3",
       "status": "reviewed_translation"
     }
+  },
+  "latest_incremental_review": {
+    "date": "2026-09-21",
+    "chapters": [
+      "introduction.md",
+      "02-data.md",
+      "03-architecture-deployment.md",
+      "05-inference.md",
+      "07-multimodal.md",
+      "04-community-radar.md"
+    ],
+    "scope": "New source-grounded paragraphs and dated community observation reviewed in both languages; unchanged chapters retain prior fingerprints. Full science not independently reproduced."
   }
 }

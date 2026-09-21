@@ -1,0 +1,197 @@
+{
+  "review_date": "2026-09-21",
+  "search_window": {
+    "from": "2026-09-02",
+    "through": "2026-09-21",
+    "basis": "Original publication or revision date in arXiv submission history; discovery/crawl dates are not publication dates."
+  },
+  "scope": "Targeted weekly maintenance: post-training/RL, inference budgets, verifiers, and test-time compute. Not an exhaustive review.",
+  "queries": [
+    {
+      "query": "site.arxiv.org/abs \"September\" \"2026\" \"test-time\" scaling",
+      "observed_leads": [
+        "2609.12757 via secondary index",
+        "2609.19499 via secondary index",
+        "2609.21032 via secondary index"
+      ]
+    },
+    {
+      "query": "site.arxiv.org \"2026-09\" \"reinforcement learning\" reasoning",
+      "observed_leads": [
+        "2609.03241",
+        "2609.05221",
+        "2605.06241 revision lead via secondary index"
+      ]
+    },
+    {
+      "query": "site.arxiv.org \"Sep 2026\" verifier reasoning",
+      "observed_leads": [
+        "2609.03241",
+        "2609.05221",
+        "2609.21263",
+        "2609.10537"
+      ]
+    },
+    {
+      "query": "\"Rethinking RL for LLM Reasoning\" \"arxiv\"",
+      "observed_leads": [
+        "2605.06241",
+        "official OpenReview PDF",
+        "third-party GitHub study; not used as technical evidence"
+      ]
+    },
+    {
+      "query": "site.arxiv.org \"test-time\" \"Submitted\" \"Sep 2026\" failure",
+      "observed_leads": [
+        "2609.03309",
+        "2609.21032",
+        "2609.01573 (indexed September 1; not promoted)"
+      ]
+    },
+    {
+      "query": "site.arxiv.org \"reward\" \"scaling\" \"Sep 2026\" collapse",
+      "observed_leads": [
+        "2609.14711",
+        "2609.21767",
+        "2609.01245 (indexed September 1; not promoted)"
+      ]
+    }
+  ],
+  "caution_on_query_logs": "Web search batches combine their results; observed_leads records relevant leads from each topic batch rather than a guaranteed per-query ranking. Secondary pages were used only for discovery.",
+  "candidates": [
+    {
+      "arxiv_id": "2609.19499",
+      "title": "Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling",
+      "primary_url": "https://arxiv.org/abs/2609.19499",
+      "full_text_url": "https://arxiv.org/html/2609.19499v1",
+      "first_submission_utc": "2026-09-16T23:29:57Z",
+      "latest_version_checked": "v1",
+      "date_evidence": "arXiv submission history lists v1 only. The secondary index's September 18 'Last Updated' is not an arXiv revision; a guessed v2 HTML endpoint returned an error and was discarded.",
+      "reading_depth": "Methods/results/limitations targeted: §§III–VII, Tables VI–VIII",
+      "old_bottleneck": "T5 distinguishes sample counts from real budgets, but lacked a controlled example separating candidate count from execution scheduling.",
+      "mechanism": "Hold eight candidates fixed and vary sequential call count versus batch size.",
+      "evidence_conditions": "Phi-3-mini-4k-instruct and Qwen2.5-1.5B-Instruct; fixed-N GSM8K study uses A100-SXM4 80GB, 100 prompts × 3 repetitions, temperature 1.0, top-p 0.95, 512-token cap. Logical output volumes differ by no more than 1%; schedules sample independently. Ratios in Table VI compare serial 8×1 to batched 1×8: 4.64–4.86 energy, 5.77–6.12 P95 latency.",
+      "limitation": "Gross GPU-device energy includes idle power during the interval, not whole-node energy. Loading/warm-up/final grading excluded. No FLOPs equivalence or mechanism isolation; limited models, hardware and Hugging Face batch generation. Continuous serving and dependent search are not tested.",
+      "changes_body": true,
+      "decision": "Added one concise, matched paragraph to Chinese and English T5 §3; source record supplied separately for root integration.",
+      "record_file": "sources/editorial.json",
+      "record_id": "kashaniyan2026samplecount"
+    },
+    {
+      "arxiv_id": "2609.03241",
+      "title": "FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience",
+      "primary_url": "https://arxiv.org/abs/2609.03241",
+      "full_text_url": "https://arxiv.org/html/2609.03241v1",
+      "first_submission_utc": "2026-09-03T00:47:11Z",
+      "latest_version_checked": "v1",
+      "reading_depth": "Abstract, §4.1/4.4 propositions and §5.1–5.2 setup/table targeted; no complete appendix or code audit.",
+      "old_bottleneck": "Sparse outcome feedback and dense same-model guidance can reinforce incorrect trajectories.",
+      "mechanism": "Use verifier-derived group-advantage sign to retain, reverse or disable privileged self-guidance, then fit a normalized response target through trajectory balance.",
+      "evidence_conditions": "Qwen3-4B/8B; common prompts, group size, verifier, length cap and evaluation within each backbone. Step-180 results over five seeds; AIME24 uses pass@16 whereas four other tests use pass@1.",
+      "limitation": "Training-time scoring sees solutions or task feedback; not information-free self-improvement. Theory conditions on realized groups and stopped scores. Averaged benchmarks mix pass@k protocols; independent reproduction and complete compute accounting not checked.",
+      "changes_body": false,
+      "decision": "Candidate only. Mechanistic extension of T4 self-feedback/verifier branch; does not presently require changing the existing narrative."
+    },
+    {
+      "arxiv_id": "2609.12757",
+      "title": "GraphAHA: Graph-Based Adaptive Search with Heterogeneous Actions for Test-Time Code Generation",
+      "primary_url": "https://arxiv.org/abs/2609.12757",
+      "full_text_url": "https://arxiv.org/html/2609.12757v1",
+      "first_submission_utc": "2026-09-11T12:08:55Z",
+      "latest_version_checked": "v1",
+      "reading_depth": "Canonical graph, score backup, experimental setup, Table 2 and budget analysis targeted; code not reproduced.",
+      "old_bottleneck": "Tree search duplicates equivalent program states and cannot share evaluations across convergent paths.",
+      "mechanism": "AST-normalized exact state merging in a DAG plus hierarchical Thompson sampling over sampling, repair and sketch/implementation actions.",
+      "evidence_conditions": "Qwen2.5-Coder-7B-Instruct and DeepSeek-Coder-V2-Lite-Instruct; 223 LiveCodeBench and 165 CodeContests problems, 32 calls, three seeds, temperature 1.0. Public-test and held-out correctness are separate; token-normalized curves also reported.",
+      "limitation": "The headline average gain concerns visible-test P-Pass@1. On Qwen LiveCodeBench, hidden-inclusive Pass@1 trails AB-MCTS by 2.1 points despite stronger public-test results. Low-budget performance initially trails sampling; calls/tokens are not measured energy or FLOPs.",
+      "changes_body": false,
+      "decision": "Candidate only; useful conditional counterexample to equating public verifier improvement with final correctness, but no main-text change this run."
+    },
+    {
+      "arxiv_id": "2609.21032",
+      "title": "Scaling Discovery through Test-Time Communication",
+      "primary_url": "https://arxiv.org/abs/2609.21032",
+      "full_text_url": "https://arxiv.org/html/2609.21032v1",
+      "first_submission_utc": "2026-09-17T19:38:04Z",
+      "latest_version_checked": "v1",
+      "reading_depth": "Abstract, contributions, §2/Table 1 and budget/feedback qualification targeted; not full 34-page or code audit.",
+      "old_bottleneck": "Independent candidate generation cannot reuse another agent's intermediate discoveries; communication may introduce coordination overhead.",
+      "mechanism": "Identical agents share a workspace and verified-progress records while preserving distinct exploratory approaches.",
+      "evidence_conditions": "ARC-AGI-3, polyomino packing and MNIST compression use task-specific action or per-agent time budgets; a Terminal-Bench 2.0 comparison shows team@2 does not beat pass@2.",
+      "limitation": "Benefits depend on sufficient budget and useful progress feedback. Per-agent time/action budgets are not a universal total-token/FLOPs comparison; finite single-agent failures do not prove zero support.",
+      "changes_body": false,
+      "decision": "Candidate only; potential later T5 extension after full protocol/cost audit, not evidence of a universal multi-agent scaling law."
+    },
+    {
+      "arxiv_id": "2605.06241",
+      "title": "Rethinking RL for LLM Reasoning: It's Sparse Policy Selection, Not Capability Learning",
+      "primary_url": "https://arxiv.org/abs/2605.06241",
+      "full_text_url": "https://arxiv.org/html/2605.06241v3",
+      "first_submission_utc": "2026-05-07T13:25:05Z",
+      "latest_version_checked": "v3",
+      "latest_revision_utc": "2026-09-06T00:35:48Z",
+      "reading_depth": "Version history, §5 objective and mixed-success filtering, Table 3 cost notes and §6 discussion targeted.",
+      "old_bottleneck": "Pass@1 gains alone do not identify whether RL introduces new strategies or changes probabilities.",
+      "mechanism": "Entropy-gated contrastive updates target sparse decision points using offline mixed-success rollouts.",
+      "evidence_conditions": "Comparisons with released RL checkpoints across multiple mathematical benchmarks; Table 3 includes estimated costs derived from published scripts at RunPod prices.",
+      "limitation": "Title is stronger than a universal conclusion supported by finite task/model tests. Costs are not uniformly measured matched end-to-end runs; data and training pipelines differ. No v2/v3 diff was completed, so the substantive revision content remains unverified.",
+      "changes_body": false,
+      "decision": "Revision-in-window candidate only; not a September first publication and not a verified new correction of prior results."
+    }
+  ],
+  "existing_source_version_checks": [
+    {
+      "arxiv_id": "2608.04001",
+      "url": "https://arxiv.org/abs/2608.04001",
+      "existing_version": "v2",
+      "latest_version": "v2",
+      "latest_date": "2026-08-31",
+      "result": "No in-window revision found"
+    },
+    {
+      "arxiv_id": "2606.22317",
+      "url": "https://arxiv.org/abs/2606.22317",
+      "existing_version": "v1",
+      "latest_version": "v1",
+      "latest_date": "2026-06-21",
+      "result": "No in-window revision found"
+    },
+    {
+      "arxiv_id": "2604.14853",
+      "url": "https://arxiv.org/abs/2604.14853",
+      "existing_version": "v1",
+      "latest_version": "v1",
+      "latest_date": "2026-04-16",
+      "result": "No in-window revision found"
+    },
+    {
+      "arxiv_id": "2412.06769",
+      "url": "https://arxiv.org/abs/2412.06769",
+      "existing_version": "v4",
+      "latest_version": "v4",
+      "latest_date": "2026-08-23",
+      "result": "No in-window revision found"
+    }
+  ],
+  "unpromoted_search_leads": [
+    "2609.05221: application-specific explainability/RLVR; abstract-level lead only.",
+    "2609.21263 and 2609.10537: application-specific verification, not followed for this scaling-focused maintenance.",
+    "2609.21767 and 2609.14711: robotics/quantum-domain leads, outside this agent's focused follow-up.",
+    "2609.03309: instruction-space code-generation lead, not fully read.",
+    "2609.01573 and 2609.01245: indexed September 1, before requested window; no qualifying revision established."
+  ],
+  "limitations": [
+    "Targeted search and selected primary-source reading, not exhaustive arXiv/API coverage.",
+    "No independent replication; no verified retraction or definitive reversal of the existing core claims found in these searches.",
+    "Only five new-to-this-repository candidates and four existing-version checks were taken through primary-source inspection.",
+    "The source-history check does not prove absence of unindexed author-blog corrections or later versions elsewhere.",
+    "Only the Sample Count paragraph and its source record are proposed for publication; other entries remain maintenance research notes."
+  ],
+  "changed_files": [
+    "docs/05-inference.md",
+    "docs/en/05-inference.md",
+    "sources/editorial.json",
+    "sources/weekly-2026-09-21-frontier.json"
+  ],
+  "integration_note": "The temporary merge record was incorporated into editorial.json and the temporary file removed after review."
+}

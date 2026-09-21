@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "edition": "v0.3",
-  "last_successful_search": "2026-09-16",
-  "last_content_update": "2026-09-16",
-  "pdf_content_date": "2026-09-16",
+  "edition": "v0.3.1",
+  "last_successful_search": "2026-09-21",
+  "last_content_update": "2026-09-21",
+  "pdf_content_date": "2026-09-21",
   "coverage": "Representative narrative review; not exhaustive; primary claims not independently reproduced",
   "automation": {
     "id": "scaling-law",
@@ -31,20 +31,23 @@
     "Independent replications of adaptive inference budgets, verifier costs and RL coverage claims",
     "Primary text and independent evidence for recent Z.ai claims seen in community discussion",
     "Upgrade abstract-only kernel, vision, diffusion and robotics candidates to method and experiment reviews",
-    "Joint lifecycle budgets and long-horizon agent evaluation with full tool and verification costs"
+    "Joint lifecycle budgets and long-horizon agent evaluation with full tool and verification costs",
+    "Independent checks of non-monotonic sequence-weight response and model-growth exponent gains, including loss-floor sensitivity",
+    "Matched-pretraining baselines and independent closed-loop evaluation for Helix 2.5",
+    "Audit 2609.21032 communication budgets and 2605.06241 v2/v3 differences before considering narrative changes"
   ],
-  "last_validation_date": "2026-09-16",
-  "source_count": 161,
-  "community_count": 18,
+  "last_validation_date": "2026-09-21",
+  "source_count": 165,
+  "community_count": 19,
   "technical_chapters": 7,
-  "sources_cited_in_technical_chapters": 151,
-  "technical_han_characters": 36566,
+  "sources_cited_in_technical_chapters": 155,
+  "technical_han_characters": 37502,
   "reading_depth_summary": {
-    "正文定向阅读": 117,
+    "正文定向阅读": 119,
     "摘要/引言": 3,
     "摘要/元数据": 32,
-    "官方报告选段": 1,
-    "全文文字": 8
+    "官方报告选段": 2,
+    "全文文字": 9
   },
   "languages": {
     "default_homepage": "en",
@@ -53,6 +56,17 @@
       "zh-CN"
     ],
     "translated_chapters": 12,
-    "translation_reviewed_on": "2026-09-16"
+    "translation_reviewed_on": "2026-09-21"
+  },
+  "last_search_run": {
+    "date": "2026-09-21",
+    "window_start": "2026-09-02",
+    "status": "completed_with_access_limits",
+    "record": "data/maintenance-runs/2026-09-21.json",
+    "access_limits": [
+      "X and YouTube direct reads failed; candidate URLs retained with null platform metrics.",
+      "Search indexing is incomplete; no claim of exhaustive September coverage.",
+      "Historical platform counts were not refreshed."
+    ]
   }
 }

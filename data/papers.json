@@ -6461,5 +6461,158 @@
     "cited_in": [
       "05-inference.md"
     ]
+  },
+  {
+    "id": "figure2026helix25",
+    "title": "Helix 2.5: Zero-Shot 30-Home Generalization",
+    "authors": [
+      "Figure"
+    ],
+    "year": 2026,
+    "first_published": "2026-09-17",
+    "publication_date_evidence": "Date printed on the official Figure report",
+    "url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+    "type": "official_technical_report",
+    "branch": [
+      "T7"
+    ],
+    "problem": "能否预测人类行为预训练数据对机器人迁移的收益，而不混淆离线损失和闭环成功。",
+    "insight": "固定模型与下游训练，扫描人类数据规模；另用预训练消融检查未见家庭中的任务执行。",
+    "method": "Four nested Index subsets spanning 8x data; fixed model size and downstream training; held-out action-prediction loss. Separate pretraining ablation across three behaviors and 30 unseen homes.",
+    "result": "Largest-run loss forecast error reported as 0.54% of loss variation over the measured data range; separate whole-task success comparison 9% versus 56%.",
+    "limitation": "Developer-reported evidence with four scale points; no joint compute/model law or arbitrary-task success extrapolation. Zero-shot concerns homes and objects, not absence of task-specific training. No independent replication by this survey.",
+    "reading_depth": "official_report_sections",
+    "sections_read": [
+      "Index Pretraining Drives Zero-Shot Generalization",
+      "Evaluating Three Whole-Body Behaviors in 30 Unseen Homes",
+      "A Human-to-Humanoid Robot Transfer Scaling Law",
+      "Appendix: Detailed Eval Criteria"
+    ],
+    "version_read": "web report retrieved 2026-09-21; no explicit revision number",
+    "verification_date": "2026-09-21",
+    "synthesis_status": "incorporated",
+    "evidence_note": "Text and reported protocol read; embedded images/videos not independently analyzed or digitized.",
+    "canonical_url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "renda2026sequenceweighting",
+    "title": "A study of sequence weighting at scale",
+    "year": 2026,
+    "authors": [
+      "Alex Renda",
+      "Nitya Mani"
+    ],
+    "url": "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/",
+    "fulltext_url": "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/",
+    "supplementary_url": "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/sequence-weighting-note.pdf",
+    "type": "author_blog",
+    "branch": "有效数据与混合跨尺度迁移",
+    "problem": "小规模模型的数据权重响应能否外推到大规模？",
+    "insight": "随机序列权重的响应指数随模型规模非单调，并随训练轮数改变；把权重效应从领域质量差异中分离。",
+    "limitation": "内部基准；测量同训练集损失下降而非泛化；权重补偿建议未实验验证。",
+    "reading_depth": "full_text",
+    "sections_read": "Full article text including Methodology, Results and Analysis, footnotes; attached one-page estimator note. Interactive plots were not independently reconstructed.",
+    "verification_date": "2026-09-21",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B: author experiment; internal data; no independent replication",
+    "first_published_date": "2026-09-14",
+    "last_revised_date": null,
+    "version": "web snapshot 2026-09-21",
+    "version_read": "web snapshot 2026-09-21 plus estimator note",
+    "latest_version_verified": null,
+    "narrative_use": true,
+    "metadata_notes": "Publication date is printed in the article, not inferred from crawler time; no revision date supplied.",
+    "first_published": "2026-09-14",
+    "method": "Random log-uniform sequence weights in [0.01, 10], three model families and three epochs; effective exponent fitted to same-training-set loss reductions.",
+    "result": "Non-monotonic weight-response trend across model scales; epoch count moves its peak.",
+    "synthesis_status": "incorporated",
+    "canonical_url": "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "chen2026modelgrowth",
+    "title": "How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents",
+    "year": 2026,
+    "authors": [
+      "Zixi Chen",
+      "Akshay Vegesna",
+      "Samip Dahal",
+      "Andrew Gordon Wilson"
+    ],
+    "url": "https://arxiv.org/abs/2609.19107",
+    "fulltext_url": "https://arxiv.org/html/2609.19107v2",
+    "type": "paper",
+    "branch": "架构、优化配方与预训练指数",
+    "problem": "架构变化是否只能移动规模曲线常数？",
+    "insight": "按架构拟合训练配方，分离边界算子、权重共享与训练中增长；在测量区间中增长的等损失计算优势随规模扩大。",
+    "limitation": "固定批大小；共用由基线估计的不可约损失；远距离外推未验证；跨GPT-3约20倍比较非受控。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "Abstract; §§1–4; selected §5/data-constrained results; Appendix B.5, C.1–C.5, D.1–D.2. Other appendix tuning grids and figures not fully audited.",
+    "verification_date": "2026-09-21",
+    "verification_status": "primary_source_verified",
+    "evidence_strength": "B: controlled author experiments in a finite scale range; no independent replication",
+    "first_published_date": "2026-09-16",
+    "last_revised_date": "2026-09-17",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "narrative_use": true,
+    "metadata_notes": "arXiv submission history verifies dates. v2 changes v1 abstract wording from exponential to power-law improvements; summary follows v2.",
+    "first_published": "2026-09-16",
+    "method": "Architecture-specific compute-optimal ladders on FineWeb and FineWeb-Edu; boundary-operator, weight-sharing and training-growth comparisons; held-out 7.4B run.",
+    "result": "Untied-Grow loss-matched compute multiplier over Vanilla increases from 1.30x near 1e18 FLOPs to 1.55x near 1e20 on FineWeb. A larger held-out run tests limited extrapolation; 1e25 FLOPs remains a forecast.",
+    "synthesis_status": "incorporated",
+    "canonical_url": "https://arxiv.org/abs/2609.19107",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "kashaniyan2026samplecount",
+    "title": "Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling",
+    "authors": [
+      "Mobina Kashaniyan",
+      "Ali Jannesari"
+    ],
+    "date": "2026-09-16",
+    "year": 2026,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2609.19499",
+    "type": "paper",
+    "branch": "inference-budget-systems",
+    "problem": "候选数相同并不意味着实际能耗与延迟相同",
+    "insight": "固定候选数，分开比较调用次数及每次批量大小，将逻辑采样预算与硬件执行成本分开记录",
+    "limitation": "两个小模型、A100/V100、Hugging Face批量生成；调度独立采样，非严格相同轨迹或FLOPs比较；设备总能耗非整机能耗，不能外推为连续批处理或依赖搜索的通用倍率",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-21",
+    "version_read": "v1",
+    "sections_read": "摘要、§III–VII；重点固定N=8的执行调度、采样和token口径、NVML测量边界、表VI–VIII及局限",
+    "evidence_status": "原站版本日期与方法、结果定向核验；未独立复现。原站仅列v1（2026-09-16 23:29:57 UTC），未将聚合页2026-09-18更新时间误当论文修订。",
+    "full_text_url": "https://arxiv.org/html/2609.19499v1",
+    "first_published": "2026-09-16",
+    "method": "Fix N=8 for two small models on A100-SXM4 80GB; 100 GSM8K prompts with three repetitions; compare 1x8, 2x4, 4x2, 8x1 schedules.",
+    "result": "Serial versus one-batch ratios: 4.64–4.86 gross GPU-device energy and 5.77–6.12 P95 latency, under the measured setup.",
+    "synthesis_status": "incorporated",
+    "canonical_url": "https://arxiv.org/abs/2609.19499",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
   }
 ]

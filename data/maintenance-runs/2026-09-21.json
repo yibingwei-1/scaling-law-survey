@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-21",
+  "edition": "v0.3.1",
+  "search_window": {
+    "from": "2026-09-02",
+    "through": "2026-09-21"
+  },
+  "status": "content_updated_validated",
+  "new_primary_sources": [
+    "renda2026sequenceweighting",
+    "chen2026modelgrowth",
+    "kashaniyan2026samplecount",
+    "figure2026helix25"
+  ],
+  "new_community_records": [
+    "RD-09"
+  ],
+  "new_high_attention_records": 0,
+  "catalog_count": 165,
+  "technical_sources_cited": 155,
+  "community_count": 19,
+  "chapters_changed": [
+    "T2",
+    "T3",
+    "T5",
+    "T7",
+    "community radar"
+  ],
+  "research_logs": [
+    "sources/weekly-2026-09-21-foundations.json",
+    "sources/weekly-2026-09-21-frontier.json",
+    "sources/weekly-2026-09-21-community.json",
+    "sources/weekly-2026-09-21-editor.json"
+  ],
+  "reason_for_body_updates": [
+    "Non-monotonic training-sequence weight response qualifies recipe transfer across scale.",
+    "Architecture growth affects fitted exponents; v2 wording and extrapolation boundaries matter.",
+    "Fixed candidate count does not determine measured GPU energy or latency.",
+    "Human-data transfer introduces a distinct data axis; action loss and closed-loop success remain separate."
+  ],
+  "review": [
+    "Primary-source dates and versions checked; no independent experiment replication.",
+    "Chinese and English additions reviewed for matched numeric conditions, costs and limitations.",
+    "Chen larger-run evidence distinguished from distant 1e25-FLOPs forecast.",
+    "Helix 0.54% loss-variation denominator and environment/object zero-shot scope cross-reviewed.",
+    "Fixed-N 100-prompt schedule experiment distinguished from the 500-prompt accuracy study."
+  ],
+  "access_limits": [
+    "X and YouTube direct reads failed; candidate URLs retained with null platform metrics.",
+    "Search indexing is incomplete; no claim of exhaustive September coverage.",
+    "Historical platform counts were not refreshed."
+  ],
+  "publication_target": "https://github.com/yibingwei-1/scaling-law-survey",
+  "validation": {
+    "metadata_and_local_links": "pass",
+    "translation_fingerprints_links_and_math": "pass",
+    "generated_text_artifact_determinism": "pass",
+    "pdf_visual_review": "all-page contact sheets and selected full-size pages",
+    "pdfs": {
+      "zh-CN": {
+        "pages": 60,
+        "link_annotations": 665,
+        "display_formulas_rendered": 23,
+        "display_formula_fallbacks": 0,
+        "external_source_targets_verified": 312,
+        "external_link_occurrences_checked": 441
+      },
+      "en": {
+        "pages": 84,
+        "link_annotations": 673,
+        "display_formulas_rendered": 23,
+        "display_formula_fallbacks": 0,
+        "external_source_targets_verified": 312,
+        "external_link_occurrences_checked": 441
+      }
+    },
+    "pdf_inline_regressions": "Math-star preservation, prose emphasis, nested math/link labels, adjacent Chinese links and per-line URL multiplicity checked."
+  }
+}

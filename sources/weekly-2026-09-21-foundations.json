@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "checked_on": "2026-09-21",
+  "window": {
+    "from": "2026-09-02",
+    "through": "2026-09-21"
+  },
+  "scope": "Pretraining budgets, effective data, MoE and deployment cost; targeted and non-exhaustive.",
+  "existing_coverage_checked": [
+    "data/state.json",
+    "sources/foundations.json",
+    "sources/expansion-foundations.json",
+    "sources/extensions.json",
+    "docs/01-predictability-budget.md",
+    "docs/02-data.md",
+    "docs/03-architecture-deployment.md"
+  ],
+  "duplicate_check": "rg of all sources/docs for candidate identifiers and sequence-weighting terms found no prior occurrence before this update.",
+  "queries": [
+    {
+      "date": "2026-09-21",
+      "queries": [
+        "site:arxiv.org \"scaling laws\" \"2026\" \"Sep\" pretraining",
+        "site:arxiv.org \"scaling\" \"2026\" \"Sep\" \"mixture of experts\"",
+        "site:arxiv.org \"scaling\" \"2026\" \"Sep\" \"data mixture\""
+      ],
+      "method": "web.search_query",
+      "results": [
+        {
+          "title": "MoEMB: Scaling Universal Multimodal Embeddings with Efficient Mixture-of-Experts Models",
+          "url": "https://arxiv.org/abs/2609.08663",
+          "date": "2026-09-08",
+          "status": "discovery_only_multimodal_branch"
+        },
+        {
+          "title": "SEAL: Reinforcing Global Safety in Mixture-of-Experts through Shared Expert ALignment",
+          "url": "https://arxiv.org/abs/2609.02293",
+          "date": "2026-09-02",
+          "status": "discovery_only_out_of_core_scaling_scope"
+        },
+        {
+          "title": "How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents",
+          "url": "https://arxiv.org/abs/2609.19107",
+          "date": "2026-09-16",
+          "status": "primary_verification_pending"
+        },
+        {
+          "title": "Efficiently Estimating Optimal Hyperparameter Scaling Laws through Power-Law Entropy Search",
+          "url": "https://arxiv.org/abs/2609.01431",
+          "date": "2026-09-01",
+          "status": "outside_window_initial_date_version_history_unchecked"
+        }
+      ]
+    }
+  ],
+  "additional_discovery": {
+    "method": "parent agent supplied official article for targeted verification",
+    "url": "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/"
+  },
+  "primary_reads": [
+    {
+      "url": "https://arxiv.org/abs/2609.19107",
+      "purpose": "Check authors and actual submission history",
+      "verified_dates": {
+        "v1": "2026-09-16T17:36:13Z",
+        "v2": "2026-09-17T16:25:43Z"
+      },
+      "outcome": "Current v2 verified; crawl date not used as publication date."
+    },
+    {
+      "url": "https://arxiv.org/html/2609.19107v1",
+      "purpose": "Initial full-text entry",
+      "outcome": "Superseded by v2; detected material abstract wording revision."
+    },
+    {
+      "url": "https://arxiv.org/html/2609.19107v2",
+      "purpose": "Mechanism, equal-compute controls, fitting/extrapolation scope",
+      "sections": "Abstract; §§1–4; selected §5/data-constrained results; Appendix B.5, C.1–C.5, D.1–D.2. Other appendix tuning grids and figures not fully audited.",
+      "outcome": "Targeted primary text available; recommended limited addition in architecture chapter."
+    },
+    {
+      "url": "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/",
+      "purpose": "Article date, authors, sequence weighting setup, outcome definitions and limitations",
+      "outcome": "Full article text accessible; recommended caveat on cross-scale mixture transfer."
+    },
+    {
+      "url": "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/sequence-weighting-note.pdf",
+      "purpose": "Distinguish effective weight exponent estimator from generalization or simple pointwise regression",
+      "outcome": "One-page PDF text read."
+    }
+  ],
+  "access_limits": [
+    "First attempt to click the supplementary note using the URL as reference returned an invalid-arguments tool error; retried with returned page reference and successfully read the PDF.",
+    "No experimental reproduction; no numerical reconstruction of interactive blog plots; paper appendix reading is targeted.",
+    "Candidate search results below are not promoted to source evidence without direct date/full-text verification."
+  ],
+  "decisions": [
+    {
+      "id": "renda2026sequenceweighting",
+      "status": "new_primary_evidence",
+      "date": "2026-09-14",
+      "rewrite_warranted": true,
+      "placement": "T2 after RegMix and before SmolLM2",
+      "reason": "Adds a directly measured boundary to assuming cross-scale transfer of data-weight response."
+    },
+    {
+      "id": "chen2026modelgrowth",
+      "status": "new_primary_evidence_and_revision",
+      "date": "2026-09-16",
+      "revised": "2026-09-17",
+      "rewrite_warranted": true,
+      "placement": "T3 after context/alternative architectures and before lifecycle budgets",
+      "reason": "Adds training-stage computational depth as a resource-allocation axis; distinguishes exponent evidence from uncontrolled cross-family headline."
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.08663",
+      "title": "MoEMB: Scaling Universal Multimodal Embeddings with Efficient Mixture-of-Experts Models",
+      "status": "pending_primary_review",
+      "date_from_search_record": "2026-09-08",
+      "date_primary_verified": false,
+      "rewrite_warranted": false,
+      "reason": "Multimodal retrieval branch; discovery only, not read or added."
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.02293",
+      "title": "SEAL: Reinforcing Global Safety in Mixture-of-Experts through Shared Expert ALignment",
+      "status": "pending_out_of_core_scope",
+      "date_from_search_record": "2026-09-02",
+      "date_primary_verified": false,
+      "rewrite_warranted": false,
+      "reason": "Safety alignment focus; not a verified scaling-law contribution in this pass."
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.01431",
+      "title": "Efficiently Estimating Optimal Hyperparameter Scaling Laws through Power-Law Entropy Search",
+      "status": "outside_window_initial_date_revision_unchecked",
+      "date_from_search_record": "2026-09-01",
+      "date_primary_verified": false,
+      "rewrite_warranted": false,
+      "reason": "Initial date precedes window; version history not assessed after prioritizing two stronger candidates."
+    }
+  ],
+  "artifacts_modified": [
+    "docs/02-data.md",
+    "docs/en/02-data.md",
+    "docs/03-architecture-deployment.md",
+    "docs/en/03-architecture-deployment.md"
+  ],
+  "records_file": "sources/editorial.json",
+  "maintenance_boundary": "Parent agent owns catalog integration, review manifest, global dates, derived artifacts and publication.",
+  "integration_note": "Two temporary merge records were incorporated into editorial.json and the temporary file removed after review."
+}

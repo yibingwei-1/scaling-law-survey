@@ -1,8 +1,10 @@
 # Community Radar: Which Debates Should Change the Scaling-Law Survey?
 
-Search date: **September 16, 2026**. This round established **18 traceable records: 4 from X, 6 from YouTube, and 8 from Reddit**. Eight meet the screening threshold, seven provide instructional or contrasting context, and engagement counts remain unverified for three X posts. The date identifies this search round; **it does not mean that views or votes in the search index are live counts from that day**.
+Initial search date: **September 16, 2026**. This round established **18 traceable records: 4 from X, 6 from YouTube, and 8 from Reddit**. Eight meet the screening threshold, seven provide instructional or contrasting context, and engagement counts remain unverified for three X posts. The date identifies this search round; **it does not mean that views or votes in the search index are live counts from that day**.
 
 Community discussion exposes unresolved questions among researchers and practitioners. Technical conclusions still require papers, author code, and official reports: high view counts indicate reach, not correctness, and vigorous debate is not independent replication. Full fields appear in [community.json](../../sources/community.json); searches and leads not included appear in [community-search-log.md](../../sources/community-search-log.md).
+
+The September 21 addition brings the cumulative record count to 19. Earlier counters retain their original observation dates; see Section 6 for the new record.
 
 ## 1. Operationalizing “High Attention”
 
@@ -92,3 +94,17 @@ A candidate enters the technical narrative only after the primary source establi
 ## 5. Limitations of This Round
 
 This is a purposive seed search concentrated on English-speaking communities, language models, and selected turning points. Search visibility, channel size, community population, emotionally framed headlines, and accumulated attention all affect counts. X login restrictions and missing YouTube comments make platform coverage uneven. Chinese and other non-English discussions, negative results, smaller research groups, and work outside social media may be underrepresented. The table supports decisions about what to verify next, not a ranking of the most popular papers across the field or a claim of community consensus.
+
+## 6. Observation Added on 2026-09-21: The Boundary of Zero-Shot Transfer in Robotics
+
+This search covered September 2–21, 2026. The observation below is a separate addition; the preceding September 16 sample and counts retain their original meaning. No newly verified high-attention item was added this round. One discussion below the screening threshold is included for its value in clarifying technical claims.
+
+| ID | Discussion and associated primary source | Publication-date evidence | Visible attention and classification |
+|---|---|---|---|
+| RD-09 | [The Birth of the Robotics Scaling Law (Helix 2.5)](https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/); [Figure's official report](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | This round's indexed snapshot explicitly displayed September 17, 2026 | Indexed score of 52, below the editorial Reddit threshold of 100; counter measurement time unknown |
+
+The record preserves two distinct observations. During retrieval on September 21, the lead researcher saw an indexed result with an explicit date and a score of 52. Directly opening the page exposed only the relative time “5h ago,” with no readable counter. Its reference time was unavailable, so it cannot revise the publication date or be combined with the indexed result to infer live engagement changes. Replies were not read comprehensively, and no community consensus is inferred.
+
+The headline raises a research question: **which distribution shift do the gains from more robot data actually cross?** The official report defines zero-shot in terms of unseen environments and objects; tasks are fine-tuned using data collected elsewhere. Its control uses random initialization under the same downstream settings, so this experiment does not directly establish superiority over general-purpose VLM pretraining. The data-scaling curve measures action-prediction loss, which cannot simply be equated with a power law for closed-loop task success. These qualifications come from [the report itself](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization); independent replication remains necessary.
+
+Related X and YouTube URLs were corroborated through public cross-links, but this round did not obtain verifiable platform publication dates or engagement metrics. They remain search-log candidates rather than high-attention evidence. See the [weekly search log](../../sources/weekly-2026-09-21-community.json) for queries, access limitations, and excluded candidates, and the [maintained community records](../../sources/community.json) for both RD-09 observations.

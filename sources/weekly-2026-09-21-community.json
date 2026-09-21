@@ -1,0 +1,386 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-09-21",
+  "window": {
+    "start": "2026-09-02",
+    "end": "2026-09-21",
+    "inclusive": true
+  },
+  "purpose": "Quiet weekly community radar: author reports, reproductions, and technically informative disagreements about scaling laws, test-time compute, compute-optimal allocation, and RL scaling.",
+  "policy": {
+    "missing_metrics": "null means unavailable, not zero",
+    "post_date": "Use explicit platform/index post dates only; search retrieval/crawl dates and secondary event dates are not platform publication dates.",
+    "technical_claims": "Use primary papers or official reports; social attention only motivates research questions.",
+    "attention_thresholds": {
+      "reddit_score": 100,
+      "youtube_views": 100000,
+      "x_explicit_views": 100000
+    },
+    "cross_platform_ranking": false,
+    "independent_replication_found": false
+  },
+  "queries": [
+    {
+      "batch": 1,
+      "search_queries": [
+        {
+          "query": "site:x.com (\"scaling law\" OR \"test-time compute\" OR \"compute-optimal\" OR \"RL scaling\") after:2026-09-01 before:2026-09-22"
+        },
+        {
+          "query": "site:youtube.com/watch (\"scaling laws\" OR \"test-time compute\" OR \"Helix 2.5\") after:2026-09-01 before:2026-09-22"
+        },
+        {
+          "query": "site:reddit.com (\"scaling law\" OR \"test-time compute\" OR \"compute-optimal\") after:2026-09-01 before:2026-09-22"
+        },
+        {
+          "query": "site:reddit.com/r/accelerate/comments/1wj3owl \"Helix\""
+        }
+      ],
+      "actions": [],
+      "outcome": "Retrieved low-score September Reddit discussions; no directly verifiable new high-attention X or YouTube record."
+    },
+    {
+      "batch": 2,
+      "search_queries": [
+        {
+          "query": "site:x.com \"Helix 2.5\""
+        },
+        {
+          "query": "site:youtube.com \"Helix 2.5\""
+        },
+        {
+          "query": "site:reddit.com \"The birth of the robotics scaling law\""
+        },
+        {
+          "query": "\"sequence weighting\" \"Jane Street\" September 2026"
+        }
+      ],
+      "actions": [],
+      "outcome": "Recovered official sequence-weighting source and Helix secondary coverage; directly opened Helix Reddit thread."
+    },
+    {
+      "batch": 3,
+      "search_queries": [
+        {
+          "query": "\"Helix 2.5\" Figure YouTube September 2026"
+        },
+        {
+          "query": "\"Helix 2.5\" \"x.com\" \"September\""
+        },
+        {
+          "query": "\"sequence weighting\" site:reddit.com"
+        },
+        {
+          "query": "\"2609.19107\" site:x.com"
+        }
+      ],
+      "actions": [],
+      "outcome": "Located Figure primary report and secondary pages with social cross-links."
+    },
+    {
+      "batch": 4,
+      "search_queries": [],
+      "actions": [
+        "Read Reddit thread, Figure official report, and two secondary pages for outbound social links"
+      ],
+      "outcome": "Read primary-source scope and controls; Reddit direct view showed relative time without visible metrics."
+    },
+    {
+      "batch": 5,
+      "search_queries": [
+        {
+          "query": "\"1wj3owl\" \"votes\""
+        },
+        {
+          "query": "\"Helix 2.5\" site:youtube.com/watch"
+        }
+      ],
+      "actions": [],
+      "outcome": "No recoverable score from exact Reddit search; social cross-links identified, direct X access failed."
+    },
+    {
+      "batch": 6,
+      "search_queries": [
+        {
+          "query": "\"The Birth of the Robotics Scaling Law\" \"September\""
+        },
+        {
+          "query": "\"sequence weighting at scale\" \"reddit\""
+        },
+        {
+          "query": "\"2609.19107\""
+        },
+        {
+          "query": "\"scaling laws\" site:youtube.com \"2026-09\""
+        }
+      ],
+      "actions": [],
+      "outcome": "No additional directly verifiable platform date or engagement metadata."
+    },
+    {
+      "batch": 7,
+      "search_queries": [
+        {
+          "query": "Helix 2.5",
+          "domains": [
+            "reddit.com"
+          ]
+        },
+        {
+          "query": "Helix 2.5",
+          "domains": [
+            "youtube.com"
+          ]
+        }
+      ],
+      "actions": [
+        "Attempted direct X and YouTube URLs; readers returned Internal Error"
+      ],
+      "outcome": "Platform-targeted searches did not recover verifiable counters; direct X and YouTube reads failed."
+    },
+    {
+      "batch": 8,
+      "search_queries": [
+        {
+          "query": "\"Helix 2.5\" \"52\" \"reddit\""
+        },
+        {
+          "query": "\"Helix\" \"Scaling Law\" \"September 18 2026\""
+        },
+        {
+          "query": "\"lJpM_2a1zrE\""
+        },
+        {
+          "query": "\"sequence weighting\" \"Renda\" \"x.com\""
+        }
+      ],
+      "actions": [],
+      "outcome": "Found secondary mentions of an exact YouTube URL, but no platform-verified publication date or metrics."
+    }
+  ],
+  "parent_discovery": {
+    "observer": "parent_researcher",
+    "observed_at": "2026-09-21",
+    "queries": [
+      "\"scaling laws\" \"September\" \"2026\" language models",
+      "\"scaling\" \"2026-09\" theory language model multimodal",
+      "\"scaling laws\" \"September 2026\" site:arxiv.org"
+    ],
+    "result": "Exact Helix Reddit title/URL with [Thursday September 17 2026] [+52 votes]. Separate from this subtask's direct page observation; snapshot measurement time unknown."
+  },
+  "accepted_records_file": "community.json",
+  "accepted_ids": [
+    "RD-09"
+  ],
+  "accepted_high_attention_proxy_count": 0,
+  "decision": "Add one below-threshold Helix discussion because its linked primary report exposes important zero-shot and baseline boundaries. No newly verified high-attention platform item in this retrieval sample. Do not infer absence of wider discussion. RD-09 has been merged into the maintained catalog; no historical counters were overwritten.",
+  "unverified_candidates": [
+    {
+      "platform": "X",
+      "url": "https://x.com/adcock_brett/status/2100657393923445017",
+      "linked_label": "Brett Adcock — extended footage from 30 homes",
+      "secondary_reported_date": "2026-09-17",
+      "discovery_source": "https://www.humanoidsdaily.com/robots/figure",
+      "title": null,
+      "published_at": null,
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "primary_sources": [
+        "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"
+      ],
+      "status": "unverified_platform_candidate_only",
+      "access_status": "Direct platform reader failed with Internal Error; exact URL confirmed as an outbound link in public secondary HTML.",
+      "exclusion_reason": "No directly verified platform publication date or engagement. Secondary link labels are discovery leads, not platform metadata or technical evidence."
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/adcock_brett/status/2100989784403657178",
+      "linked_label": "Brett Adcock — four hours of footage",
+      "secondary_reported_date": "2026-09-18",
+      "discovery_source": "https://roboticsweekly.news/issues/2026-09-18",
+      "title": null,
+      "published_at": null,
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "primary_sources": [
+        "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"
+      ],
+      "status": "unverified_platform_candidate_only",
+      "access_status": "Direct platform reader failed with Internal Error; exact URL confirmed as an outbound link in public secondary HTML.",
+      "exclusion_reason": "No directly verified platform publication date or engagement. Secondary link labels are discovery leads, not platform metadata or technical evidence."
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/adcock_brett/status/2100964268011335796",
+      "linked_label": "Brett Adcock — human-data announcement",
+      "secondary_reported_date": "2026-09-18",
+      "discovery_source": "https://roboticsweekly.news/issues/2026-09-18",
+      "title": null,
+      "published_at": null,
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "primary_sources": [
+        "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"
+      ],
+      "status": "unverified_platform_candidate_only",
+      "access_status": "Direct platform reader failed with Internal Error; exact URL confirmed as an outbound link in public secondary HTML.",
+      "exclusion_reason": "No directly verified platform publication date or engagement. Secondary link labels are discovery leads, not platform metadata or technical evidence."
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/keerthanpg/status/2100730154582790168",
+      "linked_label": "Keerthana Gopalakrishnan — baseline-comparison discussion lead",
+      "secondary_reported_date": "2026-09-17",
+      "discovery_source": "https://roboticsweekly.news/issues/2026-09-18",
+      "title": null,
+      "published_at": null,
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "primary_sources": [
+        "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"
+      ],
+      "status": "unverified_platform_candidate_only",
+      "access_status": "Direct platform reader failed with Internal Error; exact URL confirmed as an outbound link in public secondary HTML.",
+      "exclusion_reason": "No directly verified platform publication date or engagement. Secondary link labels are discovery leads, not platform metadata or technical evidence."
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=lJpM_2a1zrE",
+      "linked_label": "Watch Figure 03 with Helix 2.5 in unfamiliar homes",
+      "secondary_reported_date": null,
+      "discovery_source": "https://www.humanoidsdaily.com/robots/figure",
+      "title": null,
+      "published_at": null,
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "primary_sources": [
+        "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"
+      ],
+      "status": "unverified_platform_candidate_only",
+      "access_status": "Direct platform reader failed with Internal Error; exact URL confirmed as an outbound link in public secondary HTML.",
+      "exclusion_reason": "No directly verified platform publication date or engagement. Secondary link labels are discovery leads, not platform metadata or technical evidence."
+    }
+  ],
+  "not_selected": [
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/artificial/comments/1w7u5f7/are_we_finally_hitting_the_scalingwall_testtime/",
+      "title": "Are we finally hitting the “Scaling-Wall”? Test-Time Compute meta on AI Industry.",
+      "published_at": "2026-09-05",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 2
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "cluster": "scaling_wall_crosspost",
+      "status": "not_selected",
+      "exclusion_reason": "Below editorial attention threshold; broad speculation or repeated framing without a newly verified primary technical result. Cross-posts are one discussion cluster, not independent evidence."
+    },
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w7tzlc/are_we_finally_hitting_the_scalingwall_testtime/",
+      "title": "Are we finally hitting the “Scaling-Wall”? Test-Time Compute meta on AI Industry.",
+      "published_at": "2026-09-05",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 1
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "cluster": "scaling_wall_crosspost",
+      "status": "not_selected",
+      "exclusion_reason": "Below editorial attention threshold; broad speculation or repeated framing without a newly verified primary technical result. Cross-posts are one discussion cluster, not independent evidence."
+    },
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1w7u7wl/are_we_finally_hitting_the_scalingwall_testtime/",
+      "title": "Are we finally hitting the “Scaling-Wall”? Test-Time Compute meta on AI Industry.",
+      "published_at": "2026-09-05",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 2
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "cluster": "scaling_wall_crosspost",
+      "status": "not_selected",
+      "exclusion_reason": "Below editorial attention threshold; broad speculation or repeated framing without a newly verified primary technical result. Cross-posts are one discussion cluster, not independent evidence."
+    },
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/AskReddit/comments/1wfmwav/for_people_working_in_mlai_and_mathematicians_how/",
+      "title": "For people working in ML/AI and mathematicians, how far can LLM scaling laws realistically take us before we hit fundamental limits?",
+      "published_at": "2026-09-13",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 11
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "cluster": null,
+      "status": "not_selected",
+      "exclusion_reason": "Below editorial attention threshold; broad speculation or repeated framing without a newly verified primary technical result. Cross-posts are one discussion cluster, not independent evidence."
+    }
+  ],
+  "additional_primary_leads_without_verified_community_record": [
+    {
+      "url": "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/",
+      "note": "Official September 14 report found; no verifiable X/YouTube/Reddit post metadata recovered by this subtask. Primary technical review handled separately."
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.19107",
+      "note": "Model-growth lead supplied by parent; no verifiable community post recovered by this subtask. Primary technical review handled separately."
+    }
+  ],
+  "limitations": [
+    "Purposive English-language retrieval is not exhaustive and does not support a popularity ranking or platform-wide negative finding.",
+    "X and YouTube direct reads returned Internal Error; exact candidate URLs were confirmed through public secondary cross-links, but platform post dates and metrics remain unknown.",
+    "The Helix Reddit direct reader exposed relative '5h ago' without a counter; a separate parent-observed index snapshot exposed September 17 and 52 votes. Both observations are preserved rather than harmonized speculatively.",
+    "No comment-completeness guarantee. Comments or secondary summaries are not used as evidence for new technical claims.",
+    "Search filters used after:2026-09-01 before:2026-09-22; final inclusion uses the stated September 2–21 calendar window.",
+    "Older Figure video links encountered on a secondary source were excluded as unrelated historical releases; direct video metadata was not available."
+  ]
+}

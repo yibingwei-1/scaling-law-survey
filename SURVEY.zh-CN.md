@@ -1,8 +1,8 @@
 # Scaling Law：问题驱动的技术演化综述
 
-版本 v0.3 · 检索与核验截至 2026-09-16 · 中文持续更新版
+版本 v0.3.1 · 检索与核验截至 2026-09-21 · 中文持续更新版
 
-从“能否预测规模收益”到“如何联合分配预训练、后训练与推理预算”。本版含 161 条去重主源和独立社区雷达；属于代表性文献的叙事综合，非穷尽性系统综述，未独立复现实验。
+从“能否预测规模收益”到“如何联合分配预训练、后训练与推理预算”。本版含 165 条去重主源和独立社区雷达；属于代表性文献的叙事综合，非穷尽性系统综述，未独立复现实验。
 
 ![研究问题演化图](figures/evolution-map.png)
 
@@ -80,7 +80,7 @@ flowchart TD
 
 想理解经典争议，先读[可预测性与预算](docs/01-predictability-budget.md)的 Kaplan—Chinchilla—复现链，再读[数据](docs/02-data.md)和[部署成本](docs/03-architecture-deployment.md)。想判断“test-time scaling 是否接棒”，先读[后训练](docs/04-posttraining.md)和[推理时计算](docs/05-inference.md)中的 proposer、verifier 和策略分配，再读[能力评估](docs/06-theory-evaluation.md)与负面结果。想跟踪新工作，先看社区雷达提出了哪个问题，再回到原始证据，最后判断它应改变正文哪一条因果连接。
 
-本文以能够解释转折点的代表研究为核心，不按引用数或社媒曝光机械排序。全文的“当前”“最新”均相对于本次检索日期 2026-09-16；阅读范围与未解决问题在各章和元数据中披露。
+本文以能够解释转折点的代表研究为核心，不按引用数或社媒曝光机械排序。全文的“当前”“最新”均相对于最近增量检索日期 2026-09-21；阅读范围与未解决问题在各章和元数据中披露。
 
 
 ---
@@ -180,7 +180,7 @@ Llama 3 报告展示了规模律在大训练 run 中怎样成为决策程序。�
 
 ## T2　数据瓶颈：从 token 数量到有效信息、混合与训练顺序
 
-> 核验日期：2026-09-16。范围：唯一数据量、去重、选择、领域混合、数据课程、供给预测和合成反馈。区分原论文实验证据与本综述的机制归纳；未独立重跑数据处理或训练实验。阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。仅摘要核验的 TinyStories、Phi-3、Scaling Laws for Transfer 等保留在来源库，未用作本章技术结论。
+> 核验日期：2026-09-21。范围：唯一数据量、去重、选择、领域混合、数据课程、供给预测和合成反馈。区分原论文实验证据与本综述的机制归纳；未独立重跑数据处理或训练实验。阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。仅摘要核验的 TinyStories、Phi-3、Scaling Laws for Transfer 等保留在来源库，未用作本章技术结论。
 
 ### 1. 数据成为瓶颈，是因为 D 同时承担了太多含义
 
@@ -243,6 +243,10 @@ RegMix 明确将 DoReMi 等代理训练方法作为比较对象，提出另一�
 
 两者共享的前提是配方能跨规模迁移，区别在于怎样估计它：DoReMi 基于参考损失与动态鲁棒优化；RegMix 基于大量小实验的排序规律。原有 Data Mixing Laws 又尝试直接拟合领域比例与损失的函数关系，本综述对该项仅完成摘要和引言级核查，不据此添加更强的跨尺度结论。[Ye et al., 2024](https://arxiv.org/abs/2403.16952)
 
+#### 新证据：小模型的权重响应未必能单调外推
+
+Jane Street 于 2026 年 9 月 14 日发布的研究，给配方跨规模迁移增加了一个检验条件。在内部文本基准上，研究者为序列随机分配 0.01–10 的对数均匀权重，训练三个模型家族三个 epoch，再用同一训练集的损失下降拟合有效权重指数 $p^*$。权重响应随规模呈先升后降的趋势，增加训练轮数还会移动峰值。这说明应检验代理与目标模型是否处于相近的权重响应区间；它不是 DoReMi 或 RegMix 的直接比较，也不是 held-out 泛化收益的尺度律。内部数据限制了外部复核，而用 $1/p^*$ 调整权重仍是未验证建议。[Renda & Mani，正文](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/)；[估计量说明](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/sequence-weighting-note.pdf)
+
 ### 7. 静态比例仍不够：SmolLM2 把训练阶段变成新变量
 
 当小模型长期训练，最适合早期的语料可能不适合末期。SmolLM2 的 1.7B 模型训练约 11T token，并在四个阶段调整网页、代码、数学和合成文本比例。它承接 FineWeb 等公开数据基础设施，把问题从“选一个最佳混合”推进到“在当前检查点继续喂什么”。报告中的数据实验有的从中间检查点出发，因为较弱的随机初始化小模型未必能够可靠评估较难数据的后期价值。[SmolLM2，§4.3–4.7](https://arxiv.org/html/2502.02737v1)
@@ -278,7 +282,7 @@ Gerstgrasser 等人直接检验一个关键条件：原始真实数据被替换�
 
 ## T3　架构与部署：参数、FLOPs、显存和实际成本为何分开演化？
 
-> 核验日期：2026-09-16。范围：稀疏专家、训练并行、精确注意力实现、KV 表示与服务、长上下文和生命周期预算。本文将算法成本、硬件表现和模型质量分别讨论；不将某篇论文中的加速倍数视为跨硬件通用常数。原始来源与阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。未运行系统基准。
+> 核验日期：2026-09-21。范围：稀疏专家、训练并行、精确注意力实现、KV 表示与服务、长上下文和生命周期预算。本文将算法成本、硬件表现和模型质量分别讨论；不将某篇论文中的加速倍数视为跨硬件通用常数。原始来源与阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。未运行系统基准。
 
 ### 1. 当参数可以不被调用，规模律需要新的坐标
 
@@ -377,6 +381,10 @@ PagedAttention 处理的是正交问题：即使每个 token 的 KV 大小不变
 Mamba 选择另一条架构分支：不用 attention 保存可逐项检索的全部历史，而以输入相关的状态空间参数选择性更新状态。其基本形式是 $h_t=\bar A_t h_{t-1}+\bar B_t x_t,\ y_t=C_t h_t$，选择机制让信息保留依赖内容；硬件友好的 scan 解决输入相关参数破坏固定卷积形式后的计算问题。代价是历史被压入有限状态，线性序列复杂度并不自动保证与 attention 等价的精细检索能力。[Gu & Dao, 2023/2024，§2–3、§5](https://arxiv.org/html/2312.00752v2)
 
 原报告跨语言、DNA 和音频研究序列建模；百万长度相关结果不能不区分模态地改写成百万 token 通用语言理解。**本综述的归纳**是，长上下文的研究应至少同时测量长度、信息密度、有效利用任务及运行成本。模型支持的最大窗口只是其中一个条件，不能单独代表能力规模。
+
+#### 新进展：把计算深度安排到训练的不同阶段
+
+Chen 等人于 2026 年 9 月 16 日首发、17 日修订的研究，把递归计算从推理预算转向预训练分配：训练中增加核心模块的执行次数，并用边界算子归一化状态、重新注入早期表示。逐架构调参后，FineWeb 上Untied-Grow 相对标准模型的等损失计算优势，从 $10^{18}$ FLOPs 附近的 1.30 倍增至 $10^{20}$ 附近的 1.55 倍；FineWeb-Edu 也呈相似趋势，并以留出拟合的 7.4B 运行检验了向更大规模的延伸。这为“架构能改变拟合指数，而不只是常数”提供有限区间证据，但拟合共用基线估计的损失下限、批大小固定。对 GPT-3 的约 20 倍比较涉及不同数据与评测管线，并非受控架构收益；到 $10^{25}$ FLOPs 的远距离预测仍待验证。这里沿用 v2 的幂律表述，不能称为指数式性能增长。[Chen et al.，v2，§3–4、附录 C](https://arxiv.org/html/2609.19107v2)
 
 ### 7. 部署目标最终会反过来改变预训练
 
@@ -566,7 +574,7 @@ o1/R1 的提升引出了一个无法仅靠 pass@1 回答的问题：性能改善
 
 ## T5　推理预算与搜索：如何把更多计算变成更可靠的答案
 
-> 核验日期：2026-09-16。覆盖具有机制解释力的代表工作，2026材料仍多为预印本；未独立复现实验。来源、版本、阅读范围见 [frontier.json](sources/frontier.json)、[expansion-frontier.json](sources/expansion-frontier.json)；Hugging Face 作者博客由编辑主源库记录。
+> 核验日期：2026-09-21。覆盖具有机制解释力的代表工作，2026材料仍多为预印本；未独立复现实验。来源、版本、阅读范围见 [frontier.json](sources/frontier.json)、[expansion-frontier.json](sources/expansion-frontier.json)；Hugging Face 作者博客由编辑主源库记录。
 
 预训练把计算投入共享参数，推理时则为具体问题分配计算。Chain-of-Thought 通过中间步骤示范改变单条生成过程，Self-Consistency 通过多路径采样与答案聚合减轻单一路径的不稳定；它们打开串行和并行两个方向，但尚未解决成本与正确选择。[CoT](https://arxiv.org/abs/2201.11903)、[Self-Consistency](https://arxiv.org/abs/2203.11171)
 
@@ -605,6 +613,8 @@ LATS 把推理和行动放进同一搜索过程，结合环境反馈、MCTS 与�
 Wu 等从另一个角度比较模型大小、投票、验证与树搜索的 FLOPs–准确率前沿，并提出 Rebase 分配搜索预算。其分析说明投票会受答案分布限制而饱和：高频错误不会因为采样更多就自动变成正确答案。于是，“扩大模型”和“改善推理算法”的最优组合随预算变化；在所测数学任务上，较小模型加合适搜索可以更划算。[Wu 等，§1、§3–4](https://arxiv.org/html/2408.00724v3)。
 
 Hugging Face 的作者博客把这个问题接到可复现实验：在 MATH-500 上，用 1B／3B proposer 配合 8B PRM，比较 1–256 个候选预算并运行五个随机种子；DVTS 通过多个独立子树保留搜索多样性，降低单一路径过早占满预算的风险。它提供的是从论文策略到开放模型与工具实现的工程承接。比较中的候选预算并非统一端到端 FLOPs，生成器与验证器也有不同参数规模；因此“3B 系统超过 70B 单次模型”不能直接写成总计算成本更低。参数规模、显存占用、吞吐与累计推理成本需要分别报告。[Hugging Face 作者博客](https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute)
+
+执行调度又增加一个预算维度。2026 年 9 月的 Sample Count Is Not Enough 在 A100-SXM4 80GB 上，用 Phi-3-mini-4k-instruct 与 Qwen2.5-1.5B-Instruct，对 100 道 GSM8K 题各重复三轮（温度 1.0、top-p 0.95、每候选最多生成 512 token）。固定八个候选时，八次串行单候选调用的 GPU 设备总能耗为一次八候选批量调用的 4.64–4.86 倍，P95 延迟为 5.77–6.12 倍；各调度独立采样，生成 token 总量的差异不超过 1%。能耗包含测量期间的空闲消耗，但不是整机能耗。这把预算记账要求进一步具体化：候选数之外，还要记录调用结构与实测系统成本。这是特定 Hugging Face 批量生成条件下的结果，不是通用缩放指数或 FLOPs 等价比较；有依赖的搜索步骤与连续服务需要另行评估。[Sample Count Is Not Enough，v1，§III–VII](https://arxiv.org/html/2609.19499v1)
 
 ### 4. 验证预算应花在哪里？
 
@@ -712,7 +722,6 @@ $$
 同一优化还要受延迟、内存和吞吐约束。它提示真正待解决的问题是联合分配：更强的底座可能提高探索起点，更好的后训练可能提高每份推理预算的收益，更好的验证可能把候选潜力转成实际成功。三项都需要在匹配成本和任务分布下比较，现有结果尚未给出普适的兑换率。
 
 本章与[后训练与强化学习](docs/04-posttraining.md)共同构成训练—推理反馈循环。后续更新应优先加入能够改变因果解释的证据，例如同底座受控 RL 扩展、独立 verifier 的跨分布检验、真实总成本下的预算分配，以及连续深度在更大规模上的稳定外推。
-
 
 
 ---
@@ -851,7 +860,7 @@ Caballero 等的 Broken Neural Scaling Laws 进一步容纳多个平滑连接的
 
 ## 第七章　视觉、多模态、扩散与机器人：扩大什么，才能改善目标能力？
 
-> 更新：2026-09-16。问题线索 T7。跨领域迁移的是实验方法与资源分配问题，不预设共享一个指数。已阅读全文的核心包括 mixed-modal scaling、扩散推理搜索与机器人数据缩放；只读摘要的前沿或历史补充另作标注。
+> 更新：2026-09-21。问题线索 T7。跨领域迁移的是实验方法与资源分配问题，不预设共享一个指数。已阅读全文的核心包括 mixed-modal scaling、扩散推理搜索与机器人数据缩放；只读摘要的前沿或历史补充另作标注。
 
 语言模型中的参数量和 token 数提供了方便的起点，却不是所有领域天然共享的单位。一张图像可以变成数百个 patch、数千个离散码，或一个连续 latent；一条机器人轨迹还包含环境、物体、动作与时间相关性。因此，把各领域都画在 log-log 坐标中，并不能证明它们遵循相同资源关系。
 
@@ -963,6 +972,12 @@ Lin 等的 *Data Scaling Laws in Imitation Learning for Robotic Manipulation* �
 
 由此形成的研究链是：更大数据集让策略具有泛化潜力 → 必须拆解多样性与重复数量 → 必须在闭环未见环境测试 → 再检查数据规律是否跨任务、算法和硬件成立。作者明确没有解决任务级泛化、RL 数据缩放或复杂灵巧操作，主要结论也依赖一种策略学习路线。2026 年 AXIS 的社区采集、自动任务生成和任务快照评测，提出了扩大任务覆盖的新工程方向；本版仅核验摘要，将其保留为数据引擎候选，而不视作上述单任务幂律已获得跨任务验证。[Lin 等，§7](https://arxiv.org/abs/2410.18647v4)、[AXIS，2026](https://arxiv.org/abs/2607.21588v1)
 
+#### 新分支：预测人类数据迁移收益，不等于预测机器人成功率
+
+Figure 在 2026-09-17 的 Helix 2.5 报告，把采集问题扩展到人类经验能否迁移至全身机器人。四组嵌套 Index 子集覆盖 8 倍数据量，固定模型规模和下游训练，测量留出动作预测损失；作者用较小运行预测最大运行，误差为整个数据区间损失变化的 0.54%，并非成功率误差。另一个受控对照报告预训练把 30 个未见家庭、三种行为的完整任务成功率从 9% 提高到 56%。这里的 zero-shot 针对环境与物体，任务仍有异地采集的微调数据。[Figure 官方报告，数据缩放、评估与附录](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization)
+
+它延伸了“扩大哪种数据”的问题，但仍需分别验证离线预测与闭环执行。该证据来自开发方报告、有限数据区间和三种行为，不能据此推得任意任务成功率的幂律，或模型、数据与计算的联合最优关系；本综述未独立复现。
+
 ### 7.8 跨领域共同留下的瓶颈：平均进步与目标进步之间
 
 本章四条路线反复出现同一个结构。CLIP 增加覆盖以后，瓶颈转向数据分布与迁移目标；共享生成模型增加模态以后，瓶颈转向竞争与协同；扩散推理增加搜索以后，瓶颈转向评价器与多样性；机器人增加轨迹以后，瓶颈转向环境覆盖、数据采集和闭环评价。
@@ -980,16 +995,18 @@ Lin 等的 *Data Scaling Laws in Imitation Learning for Robotic Manipulation* �
 
 下一轮更新不应仅添加更大的模型发布。更能改变脉络的证据是：一项预测在更大规模的留出实验中成功或失败；相同预算下某个新数据或架构选择改变了瓶颈；跨目标或跨群体评价推翻了平均分给出的排序；一种方法把原先无法廉价获得的反馈转成可扩展信号。这些结果才能决定下一条研究分支为何出现。
 
-主源与阅读范围见 [新增元数据](sources/expansion-evaluation.json) 和 [核验日志](docs/expansion-evaluation.md)。对 Aghajanyan、Ma、Lin 已读完整正文及全部附录文字、表格与图注，未逐张目视审阅全部图像，也没有复现实验；Cherti 为正文定向阅读。其余新增节点明确保留摘要候选状态，原有来源沿用 [extensions.json](sources/extensions.json) 中的阅读记录。
+主源与阅读范围见 [新增元数据](sources/expansion-evaluation.json) 和 [核验日志](docs/expansion-evaluation.md)。对 Aghajanyan、Ma、Lin 已读完整正文及全部附录文字、表格与图注，未逐张目视审阅全部图像，也没有复现实验；Cherti 为正文定向阅读。9 月 21 日增补的 Figure 官方报告为定向阅读，记录在[编辑主源](sources/editorial.json)。上述其余新增节点明确保留摘要候选状态，原有来源沿用 [extensions.json](sources/extensions.json) 中的阅读记录。
 
 
 ---
 
 ## 社区讨论雷达：哪些争论值得写回 Scaling Law 综述？
 
-检索日期：**2026-09-16**。本轮建立了 **18 条可回溯记录：X 4 条、YouTube 6 条、Reddit 8 条**。其中 8 条达到筛选阈值，7 条作为课程或争议对照，3 条 X 原帖的互动数仍无法核验。这里的日期代表本轮检索时间，**不代表搜索索引中的浏览或投票数就是当日实时数值**。
+初版检索日期：**2026-09-16**。当时建立了 **18 条可回溯记录：X 4 条、YouTube 6 条、Reddit 8 条**。其中 8 条达到筛选阈值，7 条作为课程或争议对照，3 条 X 原帖的互动数仍无法核验。这里的日期代表本轮检索时间，**不代表搜索索引中的浏览或投票数就是当日实时数值**。
 
 社区的作用是暴露研究者和使用者尚未解决的问题。技术结论仍需回到论文、作者代码和官方报告：高观看量说明传播广，不能证明方法正确；讨论激烈也不等于结论已被独立复现。完整字段见 [community.json](sources/community.json)，检索轨迹及未纳入线索见 [community-search-log.md](sources/community-search-log.md)。
+
+2026-09-21 增补一条独立观测，累计 19 条记录；旧计数仍对应各自的原检索日期，新增内容见第 6 节。
 
 ### 1. 如何操作化“讨论度高”
 
@@ -1080,6 +1097,20 @@ RD-08 将这种技术变化与 o3 的公众讨论联系起来，但社区对尚�
 ### 5. 本轮局限
 
 本轮是有目的的种子检索，集中于英语社区、LLM 与指定的技术转折；搜索引擎可见性、频道体量、社区人口、标题情绪与历史积累都会影响计数。X 登录限制和 YouTube 评论缺失使跨平台覆盖不对称。中文及非英语讨论、负结果、较小研究团队和不使用社交平台的工作可能被低估。因此本表支持“哪些问题值得进一步核验”，不支持“全领域最受欢迎论文榜”或“社区已达成共识”。
+
+### 6. 2026-09-21 追加观测：机器人迁移的 zero-shot 边界
+
+本次检索覆盖 2026-09-02 至 2026-09-21。下面是独立追加的观测，前面的 2026-09-16 样本与计数保持原义。本轮没有新增可核验的高关注样本；纳入一条低于筛选阈值、但有技术辨析价值的讨论。
+
+| ID | 讨论与关联主源 | 发帖日期证据 | 可见关注度与定位 |
+|---|---|---|---|
+| RD-09 | [The Birth of the Robotics Scaling Law (Helix 2.5)](https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/)；[Figure 官方报告](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | 本轮索引快照明确显示 2026-09-17 | 索引快照 52 分，低于 Reddit 100 分的编辑筛选阈值；计数生成时间未知 |
+
+这条记录保留了两次不同的观测：主研究者在 9 月 21 日检索时看到带明确日期和 52 分的索引结果；直接打开页面时只读到相对时间“5h ago”，没有读到计数。后者的参照时间不明，不能据此改写发帖日期，也不能把两次读取拼成实时互动变化。未完整读取回帖，不概括社区共识。
+
+这个标题带来的研究问题是：**机器人数据规模的收益，究竟跨越了哪一种分布变化？** 官方报告将 zero-shot 限定为未见的环境和对象，任务通过别处收集的数据微调；其对照是相同下游设置下的随机初始化。因此该实验不能直接回答相对于通用 VLM 预训练是否更优。数据规模曲线使用动作预测损失，也不能直接等同于闭环任务成功率的幂律。这些限定来自[报告本身](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization)，仍需独立复现。
+
+相关 X 与 YouTube 链接虽可从公开页面交叉确认，但本轮未取得可核验的平台发帖日期或互动指标，继续留在候选日志，不作为高关注证据。完整查询、访问限制和未纳入候选见[本周检索日志](sources/weekly-2026-09-21-community.json)；RD-09 的两次观测见[正式社区记录](sources/community.json)。
 
 
 ---
@@ -1375,11 +1406,15 @@ Problem 框给出当前方法留下的具体矛盾；Solution 框压缩机制；
 | 2025 | [VAPO: Efficient and Reliable Reinforcement Learning for Advanced Reasoning Tasks](https://arxiv.org/abs/2504.05118) | 正文定向阅读 | v3 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2025 | [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](https://arxiv.org/abs/2501.04519) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2025 | [s1: Simple test-time scaling](https://arxiv.org/abs/2501.19393) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
+| 2026 | [A study of sequence weighting at scale](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale) | 全文文字 | 网页观测版 / 技术文章 | [02](docs/02-data.md) |
 | 2026 | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | 摘要/元数据 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Adaptive Test-Time Compute Allocation for Reasoning LLMs via Constrained Policy Optimization](https://arxiv.org/abs/2604.14853) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
+| 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | 官方报告选段 | 网页观测版 / 报告 | [07](docs/07-multimodal.md) |
+| 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | 正文定向阅读 | v2 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | 摘要/元数据 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | 正文定向阅读 | v1 / 论文/预印本 | [06](docs/06-theory-evaluation.md) |
+| 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Scaling Vision-Language Models Is Not Enough to Mitigate Bias](https://arxiv.org/abs/2607.28211) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Thinking Long, but Short: Stable Sequential Test-Time Scaling for Large Reasoning Models](https://arxiv.org/abs/2601.09855) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |

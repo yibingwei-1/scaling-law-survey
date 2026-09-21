@@ -1,8 +1,8 @@
 # Scaling Law: A Problem-Driven Review
 
-Edition v0.3 · Searches and verification through 2026-09-16 · English living edition
+Edition v0.3.1 · Searches and verification through 2026-09-21 · English living edition
 
-From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains 161 distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
+From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains 165 distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
 
 ![Research problem evolution map](figures/evolution-map.png)
 
@@ -80,7 +80,7 @@ A more detailed account of paper relationships and branching rationales is avail
 
 For the classical allocation debate, start with the Kaplan–Chinchilla–reanalysis chain in [predictability and budgets](docs/en/01-predictability-budget.md), then read [data](docs/en/02-data.md) and [deployment costs](docs/en/03-architecture-deployment.md). To assess whether test-time scaling is taking over, begin with the proposers, verifiers, and allocation policies in [post-training](docs/en/04-posttraining.md) and [inference-time computation](docs/en/05-inference.md), then examine [capability evaluation](docs/en/06-theory-evaluation.md) and negative results. To follow new work, first identify the question raised in the community radar, return to the primary evidence, and decide which connection in the narrative should change.
 
-This survey prioritizes representative studies that explain turning points rather than mechanically ranking papers by citations or social-media exposure. References to “current” or “latest” are relative to the search date, September 16, 2026. Reading scope and unresolved issues are disclosed in the chapters and metadata.
+This survey prioritizes representative studies that explain turning points rather than mechanically ranking papers by citations or social-media exposure. References to “current” or “latest” are relative to the latest incremental search date, September 21, 2026. Reading scope and unresolved issues are disclosed in the chapters and metadata.
 
 
 ---
@@ -180,7 +180,7 @@ For a model that will provide a long-running service, the objective must also in
 
 ## T2 Data Bottlenecks: From Token Counts to Useful Information, Mixtures, and Training Order
 
-> Verification date: 2026-09-16. Scope: unique data volume, deduplication, selection, domain mixtures, data curricula, supply forecasts, and synthetic feedback. The chapter distinguishes experimental evidence in the original papers from this survey's synthesis of mechanisms; data processing and training experiments were not independently rerun. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for reading depth. Works checked only at the abstract level, including TinyStories, Phi-3, and Scaling Laws for Transfer, remain in the source registry but are not used to support this chapter's technical conclusions.
+> Verification date: 2026-09-21. Scope: unique data volume, deduplication, selection, domain mixtures, data curricula, supply forecasts, and synthetic feedback. The chapter distinguishes experimental evidence in the original papers from this survey's synthesis of mechanisms; data processing and training experiments were not independently rerun. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for reading depth. Works checked only at the abstract level, including TinyStories, Phi-3, and Scaling Laws for Transfer, remain in the source registry but are not used to support this chapter's technical conclusions.
 
 ### 1. Data Becomes a Bottleneck Because D Carries Too Many Meanings
 
@@ -243,6 +243,10 @@ The limitations are equally specific. The primary optimization target was Pile-C
 
 Both methods assume that recipes can transfer across scales, but estimate them differently: DoReMi uses reference losses and dynamic robust optimization, whereas RegMix uses ranking patterns from many small experiments. The earlier Data Mixing Laws also attempts to fit the functional relationship between domain proportions and loss directly. This survey checked that work only at the abstract and introduction level and does not use it to add stronger cross-scale conclusions. [Ye et al., 2024](https://arxiv.org/abs/2403.16952)
 
+#### New Evidence: Small-Model Weight Responses Need Not Extrapolate Monotonically
+
+Jane Street's September 14, 2026 study adds a condition to recipe transfer. On an internal text benchmark, researchers randomly assigned sequences log-uniform weights from 0.01 to 10, trained three model families for three epochs, and fitted an effective weight exponent $p^*$ from loss reductions on the same training data. Weight responses tended to rise and then fall with model scale; additional epochs also shifted the peak. This suggests checking whether proxy and target models occupy similar weight-response regimes. It is neither a direct comparison with DoReMi or RegMix nor a scaling law for held-out generalization gains. Internal data limit external verification, and adjusting weights using $1/p^*$ remains an untested proposal. [Renda & Mani, article](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/); [estimator note](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/sequence-weighting-note.pdf)
+
 ### 7. Static Proportions Are Still Insufficient: SmolLM2 Introduces Training Stage as a Variable
 
 When small models are trained for a long time, the best corpus for an early stage may not be the best for a later one. SmolLM2 trained its 1.7B model on roughly 11T tokens, adjusting the proportions of web, code, mathematics, and synthetic text over four stages. Building on open data infrastructure such as FineWeb, it advances the question from choosing one best mixture to deciding what to feed the current checkpoint next. Some of the report's data experiments begin from intermediate checkpoints, because weaker, randomly initialized small models may not reliably assess the late-stage value of difficult data. [SmolLM2, §4.3–4.7](https://arxiv.org/html/2502.02737v1)
@@ -278,7 +282,7 @@ This also provides a practical accounting framework for reading papers: examine 
 
 ## T3 Architecture and Deployment: Why Do Parameters, FLOPs, GPU Memory, and Actual Costs Evolve Separately?
 
-> Verification date: 2026-09-16. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
+> Verification date: 2026-09-21. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
 
 ### 1. When Parameters Need Not Be Activated, Scaling Laws Need New Coordinates
 
@@ -377,6 +381,10 @@ In comparing data mixtures, the paper found that text quality and the training r
 Mamba takes a different architectural branch. Instead of using attention to retain the full history for item-by-item retrieval, it selectively updates a state using input-dependent state-space parameters. Its basic form is $h_t=\bar A_t h_{t-1}+\bar B_t x_t,\ y_t=C_t h_t$; selection makes information retention content-dependent. A hardware-friendly scan addresses the computational problem created when input-dependent parameters invalidate the fixed convolutional form. The trade-off is that history is compressed into a finite state. Linear sequence complexity does not automatically guarantee fine-grained retrieval equivalent to attention. [Gu & Dao, 2023/2024, §2–3 and §5](https://arxiv.org/html/2312.00752v2)
 
 The original report studies sequence modeling across language, DNA, and audio. Results involving million-length sequences cannot be recast as million-token general-purpose language understanding without distinguishing modalities. **This survey's synthesis** is that long-context research should jointly measure at least length, information density, tasks assessing effective use, and execution cost. A model's maximum supported window is only one condition and cannot by itself represent the scale of its capabilities.
+
+#### New Development: Allocating Computational Depth across Training Stages
+
+Chen et al. (September 16, 2026; revised September 17) shift recurrence from inference budgets to pretraining allocation: increase core passes during training, with boundary operators normalizing states and reinjecting early representations. After architecture-specific tuning, Untied-Grow's loss-matched compute advantage over a standard model increases from 1.30× near $10^{18}$ FLOPs to 1.55× near $10^{20}$ on FineWeb; FineWeb-Edu shows a similar trend, with a held-out 7.4B run testing extension beyond the fitted range. This supports architecture-dependent fitted exponents, beyond constant shifts, within a limited range. However, fits share a baseline-estimated loss floor and batch size remains fixed. The roughly 20× GPT-3 comparison uses different data and evaluation pipelines, so it is not a controlled architectural gain; the distant forecast at $10^{25}$ FLOPs remains unverified. We follow v2's power-law wording, not exponential performance growth. [Chen et al., v2, §3–4 and Appendix C](https://arxiv.org/html/2609.19107v2)
 
 ### 7. Deployment Objectives Ultimately Feed Back into Pretraining
 
@@ -566,7 +574,7 @@ The next chapter turns to [Inference Budgets and Search](docs/en/05-inference.md
 
 ## T5　Inference Budgets and Search: Turning More Compute into More Reliable Answers
 
-> Verification date: 2026-09-16. Covers representative works that help explain mechanisms; much of the 2026 material remains in preprint form. Experiments have not been independently reproduced. Sources, versions, and reading scope are recorded in [frontier.json](sources/frontier.json) and [expansion-frontier.json](sources/expansion-frontier.json); the Hugging Face authors' blog is recorded in the editorial primary-source collection.
+> Verification date: 2026-09-21. Covers representative works that help explain mechanisms; much of the 2026 material remains in preprint form. Experiments have not been independently reproduced. Sources, versions, and reading scope are recorded in [frontier.json](sources/frontier.json) and [expansion-frontier.json](sources/expansion-frontier.json); the Hugging Face authors' blog is recorded in the editorial primary-source collection.
 
 Pretraining invests compute in shared parameters, whereas inference allocates compute to a particular problem. Chain-of-Thought changes a single generation process through demonstrations of intermediate steps; Self-Consistency reduces the instability of a single path through multiple-path sampling and answer aggregation. They open serial and parallel directions, respectively, but leave cost and correct selection unresolved. [CoT](https://arxiv.org/abs/2201.11903), [Self-Consistency](https://arxiv.org/abs/2203.11171)
 
@@ -605,6 +613,8 @@ The next question is: **should the same budget be spent on more independent cand
 Wu et al. approach the issue from another direction, comparing the FLOPs–accuracy frontier across model size, voting, verification, and tree search, and proposing Rebase to allocate search budgets. Their analysis shows that voting can saturate because it is constrained by the answer distribution: a frequent wrong answer does not automatically become correct as sampling increases. The optimal combination of “scale the model” and “improve the inference algorithm” therefore changes with the budget. On the mathematical tasks tested, a smaller model with appropriate search can be more cost-effective. [Wu et al., §1 and §3–4](https://arxiv.org/html/2408.00724v3).
 
 The Hugging Face authors' blog connects this question to reproducible experiments. On MATH-500, it pairs 1B/3B proposers with an 8B PRM, comparing candidate budgets from 1 to 256 across five random seeds. DVTS preserves search diversity through multiple independent subtrees, reducing the risk that one path consumes the budget too early. This provides an engineering bridge from research strategies to implementations with open models and tools. Candidate budgets in the comparison are not matched end-to-end FLOPs, and the generators and verifiers have different parameter counts. Thus, “a 3B system outperforms a 70B model with a single response” does not directly mean lower total compute cost. Parameter count, GPU memory use, throughput, and cumulative inference cost need to be reported separately. [Hugging Face authors' blog](https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute)
+
+Execution schedule adds another budget dimension. On 100 GSM8K prompts, repeated three times, the September 2026 study Sample Count Is Not Enough tests Phi-3-mini-4k-instruct and Qwen2.5-1.5B-Instruct on A100-SXM4 80GB GPUs (temperature 1.0, top-p 0.95, maximum 512 generated tokens per candidate). Holding eight candidates fixed, eight sequential single-candidate calls consume 4.64–4.86× the gross GPU-device energy and incur 5.77–6.12× the P95 latency of one eight-candidate batch. Generated-token volumes differ by at most 1%; schedules sample independently. Energy includes idle consumption during measurement but excludes whole-node energy. This strengthens the budget-accounting requirement: report call structure and measured systems costs alongside candidate count. These are conditional Hugging Face batch-generation results, not a universal scaling exponent or a FLOPs-equivalent comparison; dependent search steps and continuous serving need separate evaluation. [Sample Count Is Not Enough, v1, §III–VII](https://arxiv.org/html/2609.19499v1)
 
 ### 4. Where Should the Verification Budget Go?
 
@@ -850,7 +860,7 @@ Reading records are available in the [new primary-source metadata](sources/expan
 
 ## Chapter 7 — Vision, Multimodality, Diffusion, and Robotics: What Should Be Scaled to Improve the Target Capability?
 
-> Updated: 2026-09-16. Problem thread T7. What transfers across domains is the experimental methodology and the resource-allocation question, not an assumed shared exponent. Core sources read in full include mixed-modal scaling, diffusion inference search, and robotic data scaling; frontier or historical additions checked only at the abstract level are marked separately.
+> Updated: 2026-09-21. Problem thread T7. What transfers across domains is the experimental methodology and the resource-allocation question, not an assumed shared exponent. Core sources read in full include mixed-modal scaling, diffusion inference search, and robotic data scaling; frontier or historical additions checked only at the abstract level are marked separately.
 
 Parameter counts and token counts in language models provide a convenient starting point, but they are not naturally shared units across every domain. An image can become hundreds of patches, thousands of discrete codes, or a continuous latent representation; a robotic trajectory also carries correlations involving environments, objects, actions, and time. Plotting different domains on log-log axes therefore does not establish that they follow the same resource relationships.
 
@@ -962,6 +972,12 @@ Experiments in the same paper also connect directly to evaluation in [Chapter 6]
 
 The resulting research chain is: larger datasets create the potential for policy generalization → diversity must be separated from repetition → testing must use closed-loop execution in unseen environments → the data relationship must then be checked across tasks, algorithms, and hardware. The authors explicitly do not resolve task-level generalization, RL data scaling, or complex dexterous manipulation, and their main conclusions depend on one policy-learning route. AXIS in 2026 proposes a new engineering direction for broader task coverage through community collection, automatic task generation, and task-snapshot evaluation. This edition has verified only its abstract and retains it as a data-engine candidate, not as cross-task validation of the preceding single-task power law. [Lin et al., §7](https://arxiv.org/abs/2410.18647v4), [AXIS, 2026](https://arxiv.org/abs/2607.21588v1)
 
+#### A New Branch: Forecasting Human-Data Transfer Is Not Forecasting Robotic Success
+
+Figure's September 17, 2026 Helix 2.5 report extends the collection question to human-to-humanoid transfer. Four nested Index subsets span an 8-fold data range, with model size and downstream training fixed. Smaller runs forecast the largest run's held-out action-prediction loss; the reported error is 0.54% of the loss variation across that range, not an error in success rate. A separate controlled comparison reports that pretraining raises whole-task success from 9% to 56% across three behaviors in 30 unseen homes. Zero-shot refers to environments and objects; task-specific fine-tuning data are collected elsewhere. [Figure's official report, scaling, evaluation, and appendix](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization)
+
+This extends the question of which data to expand, while keeping offline prediction and closed-loop execution as separate validation targets. Developer-reported results over a limited data range and three behaviors do not establish a power law for arbitrary task success or joint model–data–compute optimality. This survey has not independently reproduced the experiments.
+
 ### 7.8 A Shared Bottleneck Across Domains: Average Progress Versus Progress on the Target
 
 The four routes in this chapter repeatedly exhibit the same structure. After CLIP expands coverage, the bottleneck shifts to the data distribution and transfer objective. After shared generative models add modalities, it shifts to competition and synergy. After diffusion inference adds search, it shifts to evaluators and diversity. After robotics adds trajectories, it shifts to environment coverage, data collection, and closed-loop evaluation.
@@ -979,16 +995,18 @@ Sarridis et al.'s 2026 analysis of 194 public vision-language model checkpoints 
 
 The next update should not merely add larger model releases. Evidence more likely to change the narrative includes a prediction succeeding or failing on a larger held-out experiment; a new data or architecture choice changing the bottleneck at the same budget; evaluation across objectives or groups overturning the ranking implied by average scores; or a method turning previously expensive feedback into a scalable signal. These are the results that can explain why the next research branch emerges.
 
-Primary sources and reading scope are recorded in the [new metadata](sources/expansion-evaluation.json) and [verification log (Chinese)](docs/expansion-evaluation.md). For Aghajanyan, Ma, and Lin, the complete main text and all appendix text, tables, and captions have been read; not every image has been visually inspected, and the experiments have not been reproduced. Cherti received targeted reading of the main text. The remaining new nodes explicitly retain abstract-only candidate status; existing sources retain the reading records in [extensions.json](sources/extensions.json).
+Primary sources and reading scope are recorded in the [new metadata](sources/expansion-evaluation.json) and [verification log (Chinese)](docs/expansion-evaluation.md). For Aghajanyan, Ma, and Lin, the complete main text and all appendix text, tables, and captions have been read; not every image has been visually inspected, and the experiments have not been reproduced. Cherti received targeted reading of the main text. The September 21 update adds targeted reading of Figure’s official report, recorded in [editorial sources](sources/editorial.json). Other new nodes above explicitly retain abstract-only candidate status; existing sources retain the reading records in [extensions.json](sources/extensions.json).
 
 
 ---
 
 ## Community Radar: Which Debates Should Change the Scaling-Law Survey?
 
-Search date: **September 16, 2026**. This round established **18 traceable records: 4 from X, 6 from YouTube, and 8 from Reddit**. Eight meet the screening threshold, seven provide instructional or contrasting context, and engagement counts remain unverified for three X posts. The date identifies this search round; **it does not mean that views or votes in the search index are live counts from that day**.
+Initial search date: **September 16, 2026**. This round established **18 traceable records: 4 from X, 6 from YouTube, and 8 from Reddit**. Eight meet the screening threshold, seven provide instructional or contrasting context, and engagement counts remain unverified for three X posts. The date identifies this search round; **it does not mean that views or votes in the search index are live counts from that day**.
 
 Community discussion exposes unresolved questions among researchers and practitioners. Technical conclusions still require papers, author code, and official reports: high view counts indicate reach, not correctness, and vigorous debate is not independent replication. Full fields appear in [community.json](sources/community.json); searches and leads not included appear in [community-search-log.md](sources/community-search-log.md).
+
+The September 21 addition brings the cumulative record count to 19. Earlier counters retain their original observation dates; see Section 6 for the new record.
 
 ### 1. Operationalizing “High Attention”
 
@@ -1078,6 +1096,20 @@ A candidate enters the technical narrative only after the primary source establi
 ### 5. Limitations of This Round
 
 This is a purposive seed search concentrated on English-speaking communities, language models, and selected turning points. Search visibility, channel size, community population, emotionally framed headlines, and accumulated attention all affect counts. X login restrictions and missing YouTube comments make platform coverage uneven. Chinese and other non-English discussions, negative results, smaller research groups, and work outside social media may be underrepresented. The table supports decisions about what to verify next, not a ranking of the most popular papers across the field or a claim of community consensus.
+
+### 6. Observation Added on 2026-09-21: The Boundary of Zero-Shot Transfer in Robotics
+
+This search covered September 2–21, 2026. The observation below is a separate addition; the preceding September 16 sample and counts retain their original meaning. No newly verified high-attention item was added this round. One discussion below the screening threshold is included for its value in clarifying technical claims.
+
+| ID | Discussion and associated primary source | Publication-date evidence | Visible attention and classification |
+|---|---|---|---|
+| RD-09 | [The Birth of the Robotics Scaling Law (Helix 2.5)](https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/); [Figure's official report](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | This round's indexed snapshot explicitly displayed September 17, 2026 | Indexed score of 52, below the editorial Reddit threshold of 100; counter measurement time unknown |
+
+The record preserves two distinct observations. During retrieval on September 21, the lead researcher saw an indexed result with an explicit date and a score of 52. Directly opening the page exposed only the relative time “5h ago,” with no readable counter. Its reference time was unavailable, so it cannot revise the publication date or be combined with the indexed result to infer live engagement changes. Replies were not read comprehensively, and no community consensus is inferred.
+
+The headline raises a research question: **which distribution shift do the gains from more robot data actually cross?** The official report defines zero-shot in terms of unseen environments and objects; tasks are fine-tuned using data collected elsewhere. Its control uses random initialization under the same downstream settings, so this experiment does not directly establish superiority over general-purpose VLM pretraining. The data-scaling curve measures action-prediction loss, which cannot simply be equated with a power law for closed-loop task success. These qualifications come from [the report itself](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization); independent replication remains necessary.
+
+Related X and YouTube URLs were corroborated through public cross-links, but this round did not obtain verifiable platform publication dates or engagement metrics. They remain search-log candidates rather than high-attention evidence. See the [weekly search log](sources/weekly-2026-09-21-community.json) for queries, access limitations, and excluded candidates, and the [maintained community records](sources/community.json) for both RD-09 observations.
 
 
 ---
@@ -1373,11 +1405,15 @@ Full metadata are available in the [reference index](REFERENCES.en.md), [BibTeX]
 | 2025 | [VAPO: Efficient and Reliable Reinforcement Learning for Advanced Reasoning Tasks](https://arxiv.org/abs/2504.05118) | Selected full-text sections | v3 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2025 | [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](https://arxiv.org/abs/2501.04519) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2025 | [s1: Simple test-time scaling](https://arxiv.org/abs/2501.19393) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
+| 2026 | [A study of sequence weighting at scale](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale) | Full text | Web snapshot / Technical article | [02](docs/en/02-data.md) |
 | 2026 | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | Abstract / metadata | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Adaptive Test-Time Compute Allocation for Reasoning LLMs via Constrained Policy Optimization](https://arxiv.org/abs/2604.14853) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
+| 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | Official report sections | Web snapshot / Report | [07](docs/en/07-multimodal.md) |
+| 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | Selected full-text sections | v2 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | Abstract / metadata | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | Selected full-text sections | v1 / Paper / preprint | [06](docs/en/06-theory-evaluation.md) |
+| 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Scaling Vision-Language Models Is Not Enough to Mitigate Bias](https://arxiv.org/abs/2607.28211) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Thinking Long, but Short: Stable Sequential Test-Time Scaling for Large Reasoning Models](https://arxiv.org/abs/2601.09855) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |

@@ -1,0 +1,66 @@
+{
+  "run_date": "2026-09-21",
+  "window_start": "2026-09-02",
+  "window_end": "2026-09-21",
+  "scope": "Editor: theory/evaluation/multimodality/robotics, with leads forwarded to other review branches",
+  "queries": [
+    "\"scaling laws\" \"September\" \"2026\" language models",
+    "\"scaling\" \"2026-09\" theory language model multimodal",
+    "\"scaling laws\" \"September 2026\" site:arxiv.org",
+    "site:arxiv.org/abs/2609 \"scaling laws\"",
+    "site:arxiv.org \"How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents\"",
+    "site:figure.ai \"Helix 2.5\" scaling",
+    "site:janestreet.com \"sequence\" \"weight\" scaling",
+    "site:arxiv.org/abs/2609 scaling laws evaluation emergence benchmark",
+    "site:arxiv.org/abs/2609 scaling laws multimodal diffusion robotics",
+    "\"scaling laws\" \"September 2026\" site:deepmind.google OR site:research.google OR site:machinelearning.apple.com",
+    "site:reddit.com/r/accelerate/comments/1wj3owl/ \"Helix\""
+  ],
+  "selected": [
+    {
+      "url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+      "first_published": "2026-09-17",
+      "decision": "Incorporated as a bounded new branch in T7; primary report targeted reading, not independent replication."
+    }
+  ],
+  "forwarded": [
+    {
+      "url": "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/",
+      "to": "foundations"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.19107",
+      "to": "foundations"
+    }
+  ],
+  "not_incorporated": [
+    {
+      "url": "https://marlowe-research.stanford.edu/updates/leskovec-hero-run-2026-09/",
+      "reason": "Training schedule announcement, not a newly reported scaling experiment with results."
+    },
+    {
+      "url": "https://gfs.fields.utoronto.ca/talks/Internal-Data-Repetition-Destroys-Language-Model-Scaling-Laws",
+      "reason": "Talk scheduled for September 28, after the cutoff; no technical claim inferred from event title."
+    }
+  ],
+  "limitations": [
+    "Search results are sparse for explicit 2609 queries and often return older works; this is not evidence that no other September papers exist.",
+    "No citation or popularity ranking inferred from result order.",
+    "Secondary-news results used only to discover primary sources; unsupported insider claims not adopted.",
+    "No experiment replication or full visual analysis of embedded Figure media."
+  ],
+  "cross_review": {
+    "chen2026modelgrowth": "Read current arXiv history and v2 §§4.2–4.3/C.1. Added an explicit held-out 7.4B check; narrowed the unverified-forecast warning to 1e25 FLOPs rather than all larger scales.",
+    "figure2026helix25": "Independent reviewer confirmed the 0.54% denominator, environment/object zero-shot definition and separate success-rate ablation.",
+    "kashaniyan2026samplecount": "Independent reviewer confirmed the fixed-N study is 100 prompts x 3 and distinct from the 500-prompt accuracy study; GPU model, ratios and gross-device boundary verified."
+  },
+  "community_snapshot_forwarded": {
+    "url": "https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/",
+    "retrieved_on": "2026-09-21",
+    "source_kind": "search_index_snapshot",
+    "reported_date": "2026-09-17",
+    "reddit_score": 52,
+    "verbatim_metadata_excerpt": "[Thursday September 17 2026] [+52 votes]",
+    "limit": "Counter snapshot time unknown; later exact-URL search did not reproduce the result. The community log separately preserves a direct-page observation without counters."
+  }
+}
