@@ -4,7 +4,7 @@ Initial search date: **September 16, 2026**. This round established **18 traceab
 
 Community discussion exposes unresolved questions among researchers and practitioners. Technical conclusions still require papers, author code, and official reports: high view counts indicate reach, not correctness, and vigorous debate is not independent replication. Full fields appear in [community.json](../../sources/community.json); searches and leads not included appear in [community-search-log.md](../../sources/community-search-log.md).
 
-The September 21 addition brings the cumulative record count to 19. Earlier counters retain their original observation dates; see Section 6 for the new record.
+The September 21 and September 28 additions bring the cumulative record count to 20. Earlier counters retain their original observation dates; see Sections 6 and 7 for the new records.
 
 ## 1. Operationalizing “High Attention”
 
@@ -108,3 +108,7 @@ The record preserves two distinct observations. During retrieval on September 21
 The headline raises a research question: **which distribution shift do the gains from more robot data actually cross?** The official report defines zero-shot in terms of unseen environments and objects; tasks are fine-tuned using data collected elsewhere. Its control uses random initialization under the same downstream settings, so this experiment does not directly establish superiority over general-purpose VLM pretraining. The data-scaling curve measures action-prediction loss, which cannot simply be equated with a power law for closed-loop task success. These qualifications come from [the report itself](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization); independent replication remains necessary.
 
 Related X and YouTube URLs were corroborated through public cross-links, but this round did not obtain verifiable platform publication dates or engagement metrics. They remain search-log candidates rather than high-attention evidence. See the [weekly search log](../../sources/weekly-2026-09-21-community.json) for queries, access limitations, and excluded candidates, and the [maintained community records](../../sources/community.json) for both RD-09 observations.
+
+## 7. Observation Added on 2026-09-28: Separate Current Evaluation Failures from Long-Term Extrapolation
+
+The indexed result for [RD-10: RSI discussion](https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/) explicitly gives September 14, 2026 and a score of 288, meeting this radar's editorial Reddit threshold. It was retrieved on September 28; the counter's measurement time is unknown. The title is the poster's interpretation. Only the abstract and version history of the [linked study v2](https://arxiv.org/abs/2607.27191v2) were checked this round: observations from two cases cannot establish that RSI is impossible. The disagreement motivates recording models, tasks, budgets, and human intervention before extrapolating; comments are not technical evidence. Direct page reading exposed no counter, and no new verifiable X or YouTube attention metrics were obtained. Historical counts remain unchanged.

@@ -1,6 +1,6 @@
 # References
 
-165 distinct primary-source records, ordered by first-publication year. Community discussions are recorded separately. This is not a quality or popularity ranking.
+167 distinct primary-source records, ordered by first-publication year. Community discussions are recorded separately. This is not a quality or popularity ranking.
 
 Reading-depth labels are abbreviated; exact sections, limitations, and versions are recorded in [papers.json](data/papers.json). Full-text reading does not mean that every figure, proof, or experiment has been independently verified. Partial author lists are marked in the BibTeX export and should be completed from primary sources before submission.
 
@@ -146,7 +146,7 @@ Reading-depth labels are abbreviated; exact sections, limitations, and versions 
 | 2025 | [Open-Reasoner-Zero: An Open Source Approach to Scaling Up Reinforcement Learning on the Base Model](https://arxiv.org/abs/2503.24290) | Selected full-text sections | See metadata / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2025 | [Process Reward Models That Think](https://arxiv.org/abs/2504.16828) | Selected full-text sections | See metadata / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2025 | [Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study in Mathematical Reasoning](https://arxiv.org/abs/2509.25300) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
-| 2025 | [Scaling Laws for Optimal Data Mixtures](https://arxiv.org/abs/2507.09404) | Abstract / metadata | v2 / Paper / preprint | Catalog only |
+| 2025 | [Scaling Laws for Optimal Data Mixtures](https://arxiv.org/abs/2507.09404) | Selected full-text sections | v2 / Paper / preprint | [02](docs/en/02-data.md) |
 | 2025 | [Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach](https://arxiv.org/abs/2502.05171) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2025 | [SimpleRL-Zoo: Investigating and Taming Zero Reinforcement Learning for Open Base Models in the Wild](https://arxiv.org/abs/2503.18892) | Selected full-text sections | v3 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2025 | [SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model](https://arxiv.org/abs/2502.02737) | Selected full-text sections | v1 / Report | [02](docs/en/02-data.md) |
@@ -165,9 +165,11 @@ Reading-depth labels are abbreviated; exact sections, limitations, and versions 
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | Official report sections | Web snapshot / Report | [07](docs/en/07-multimodal.md) |
 | 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | Selected full-text sections | v2 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
+| 2026 | [Hyperparameter Scaling Laws Across MoE Sparsity](https://arxiv.org/abs/2609.08690) | Selected full-text sections | v1 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | Abstract / metadata | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
+| 2026 | [Planned Test-Time Scaling with Coordinated Reasoning Paths](https://arxiv.org/abs/2609.27374) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | Selected full-text sections | v1 / Paper / preprint | [06](docs/en/06-theory-evaluation.md) |
-| 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
+| 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Scaling Vision-Language Models Is Not Enough to Mitigate Bias](https://arxiv.org/abs/2607.28211) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Thinking Long, but Short: Stable Sequential Test-Time Scaling for Large Reasoning Models](https://arxiv.org/abs/2601.09855) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |

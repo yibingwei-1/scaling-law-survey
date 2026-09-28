@@ -2,16 +2,16 @@
   "schema_version": "1.0",
   "source_language": "zh-CN",
   "target_language": "en",
-  "reviewed_on": "2026-09-21",
+  "reviewed_on": "2026-09-28",
   "review_scope": "Complete chapter translations reviewed for argument, conditions, limitations, source-link multiplicity, and exact mathematics. Hashes detect later drift; they do not establish translation quality or independently revalidate the science.",
   "chapters": {
     "introduction.md": {
       "source_path": "docs/introduction.md",
       "translation_path": "docs/en/introduction.md",
-      "source_sha256": "40fa9aea89d066c9300fdc39588985995b939b0d48f10b7a702e8ea408e8df3c",
-      "translation_sha256": "42c9c9e4e92a10a0ee40f5e448e56e8e617060d3e565fb34820b9e0296bd5606",
+      "source_sha256": "8e21ac01df3eed799e14d020de566e31f688074cb050a1599f19a2a6e47445cb",
+      "translation_sha256": "d812710d52b021b4db12dba5ee88a0069c4b46a1c28615eb8072d8e4ff8dfd73",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-21"
+      "reviewed_on": "2026-09-28"
     },
     "01-predictability-budget.md": {
       "source_path": "docs/01-predictability-budget.md",
@@ -23,18 +23,18 @@
     "02-data.md": {
       "source_path": "docs/02-data.md",
       "translation_path": "docs/en/02-data.md",
-      "source_sha256": "cf567455957d84935ab023dda48c96eead55670793f7bb05af95eebe50254d87",
-      "translation_sha256": "bcf96b95be4b7cfcac03741381d3e6775c660765c0c654117fdcca3a6f4d17a6",
+      "source_sha256": "97f3d79e40e28581ed9e710d871145b42ae7f6c9dd4174e0178df7e4984117fd",
+      "translation_sha256": "0e088b9b64ad28be4d34f6fd40d49cbb61f2098c888f0ec014315a04626bf2e5",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-21"
+      "reviewed_on": "2026-09-28"
     },
     "03-architecture-deployment.md": {
       "source_path": "docs/03-architecture-deployment.md",
       "translation_path": "docs/en/03-architecture-deployment.md",
-      "source_sha256": "7526c9dc0746424a732dd0954ed160918e7eb8e2d6daf426c73eef48f83a0594",
-      "translation_sha256": "8f2c23cff1ba562883cd42b7136004a107b80e68cd85ec9f6510037ee501bfd4",
+      "source_sha256": "6224262fd952f42652aa8e511aa5a9ea4c115905f93f58f95f4d87b1190f20c7",
+      "translation_sha256": "9663de0c9ece078342fb13b2600b4edcb8f87a6b6fb01ad2e030925e56cc55dd",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-21"
+      "reviewed_on": "2026-09-28"
     },
     "04-posttraining.md": {
       "source_path": "docs/04-posttraining.md",
@@ -46,10 +46,10 @@
     "05-inference.md": {
       "source_path": "docs/05-inference.md",
       "translation_path": "docs/en/05-inference.md",
-      "source_sha256": "40f955d3110b53eb71d05be3f59a51303a6df439e97fbfad46f097fcc1b74f8a",
-      "translation_sha256": "624fb74d98f2eb9b11ef0173280071fac3f2c5f7c0dee044f4b9361df1ea3091",
+      "source_sha256": "6a707396a5fc515bfe810bf4b3678585fc77ee097d87d69d58e440f88b3029fd",
+      "translation_sha256": "09a4b380f1a515221e95eaf0eba1a074b6a81884b69d12d5c0668511ab4b9cdd",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-21"
+      "reviewed_on": "2026-09-28"
     },
     "06-theory-evaluation.md": {
       "source_path": "docs/06-theory-evaluation.md",
@@ -69,10 +69,10 @@
     "04-community-radar.md": {
       "source_path": "docs/04-community-radar.md",
       "translation_path": "docs/en/04-community-radar.md",
-      "source_sha256": "dfc10d6a8577db2b8af86324a9371f3657c68eb7647210ff61e4c1eba821f6a8",
-      "translation_sha256": "e6bc26924fa12957637c7b6ba5f2135135986b70f186dc6ecaa4737a60667f08",
+      "source_sha256": "ba65d01bd401061f443e8820a00d5f912da45b3a1b3158ade14ea3c4491d5871",
+      "translation_sha256": "f2cd3da85e4e886d97d1eb5de17857b1dc2d46ed9b68af8db4efa6dccff26df8",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-21"
+      "reviewed_on": "2026-09-28"
     },
     "conclusion.md": {
       "source_path": "docs/conclusion.md",
@@ -97,15 +97,14 @@
     }
   },
   "latest_incremental_review": {
-    "date": "2026-09-21",
+    "date": "2026-09-28",
     "chapters": [
       "introduction.md",
       "02-data.md",
       "03-architecture-deployment.md",
       "05-inference.md",
-      "07-multimodal.md",
       "04-community-radar.md"
     ],
-    "scope": "New source-grounded paragraphs and dated community observation reviewed in both languages; unchanged chapters retain prior fingerprints. Full science not independently reproduced."
+    "scope": "New arguments, numerical protocols, equations, links and limits cross-reviewed against primary sources in both languages. M definition added after review. Introduction search date paired; unchanged chapters retain prior fingerprints. No experiments independently reproduced."
   }
 }

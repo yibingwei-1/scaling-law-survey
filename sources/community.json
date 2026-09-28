@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "observed_at": "2026-09-21",
-  "coverage": "Purposeful cumulative sample, not an exhaustive ranking; X 4, YouTube 6, Reddit 9. Original snapshots retained; September 21 adds one below-threshold contextual record.",
+  "observed_at": "2026-09-28",
+  "coverage": "Purposeful cumulative sample, not an exhaustive ranking; X 4, YouTube 6, Reddit 10. Original snapshots retained; September 28 adds one high-attention proxy discussion of evaluation boundaries.",
   "metric_policy": {
     "null_means": "Not observable, not zero",
     "time": "observed_at is retrieval date; platform counter snapshot time is unknown unless explicitly provided",
@@ -13,7 +13,7 @@
       "x": "100000 explicitly labeled views; unavailable counters remain null"
     },
     "threshold_status": "Editorial screening heuristics, not statistically calibrated popularity criteria",
-    "high_attention_proxy_count": 8
+    "high_attention_proxy_count": 9
   },
   "entries": [
     {
@@ -774,6 +774,69 @@
             "score": null
           },
           "note": "Relative time reference unavailable; retained as a separate observation, not converted to a calendar date and not used to contradict or confirm the dated index snapshot."
+        }
+      ]
+    },
+    {
+      "id": "RD-10",
+      "platform": "Reddit",
+      "community": "r/MachineLearning",
+      "title": "RSI is not happening [R]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/",
+      "author": "u/we_are_mammals",
+      "published_at": "2026-09-14",
+      "publication_date_evidence": "Search-index result explicitly displayed [Monday September 14 2026]; direct reader exposed only relative '4h ago' with unknown reference time.",
+      "topics": [
+        "agent evaluation",
+        "test-time budgets",
+        "recursive self-improvement",
+        "limits of extrapolation"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 288
+      },
+      "metric_evidence": "[Monday September 14 2026] [+288 votes]",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2607.27191v2",
+          "title": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+          "kind": "paper",
+          "verification": "Abstract and submission history read; v1 July 29, 2026, v2 August 7, 2026. Full methods and supplementary artifacts not reviewed in this community subtask."
+        }
+      ],
+      "access_status": "Post body and selected replies readable. Direct-reader score and exact date unavailable; index supplies dated score snapshot.",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "Readers challenge the leap from failures of tested agents on two open-ended research cases to a forecast that recursive self-improvement is not near. The useful issue is how to distinguish research engineering, problem selection, verification cost, and end-to-end autonomous research under specified budgets.",
+      "evidence_limit": "The post title is the poster's interpretation, not the paper's established result. The primary abstract reports two shadow evaluations and qualitative failure modes; neither this limited evidence nor comment votes establish an impossibility result or an acceleration forecast. This is a newly discovered discussion of an older paper, not a paper first released this week.",
+      "observed_at": "2026-09-28",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "observations": [
+        {
+          "observed_at": "2026-09-28",
+          "source_kind": "search_index_snapshot",
+          "published_at": "2026-09-14",
+          "score": 288,
+          "metric_measurement_time": null
+        },
+        {
+          "observed_at": "2026-09-28",
+          "source_kind": "direct_reader",
+          "relative_time_text": "4h ago",
+          "published_at": null,
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "views": null,
+            "reposts": null,
+            "score": null
+          },
+          "note": "Reference time unknown; not converted into an absolute posting date. Selected replies read, not the entire tree."
         }
       ]
     }

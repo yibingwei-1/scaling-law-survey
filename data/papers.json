@@ -492,32 +492,55 @@
     ]
   },
   {
-    "verification_date": "2026-09-16",
+    "verification_date": "2026-09-28",
     "verification_status": "primary_source_verified",
     "type": "paper",
     "id": "shukor2025",
     "title": "Scaling Laws for Optimal Data Mixtures",
     "year": 2025,
     "url": "https://arxiv.org/abs/2507.09404",
-    "branch": "data_mixture_watchlist",
+    "branch": "data_mixture_scale_interaction",
     "problem": "需要同时预测模型大小、数据量和领域比例下的目标性能。",
-    "insight": "原始摘要报告对N、D及领域权重联合建模并跨语言、多模态和视觉设置检验。",
-    "limitation": "本次仅摘要核查，未评审实验与外推假设；作为待精读条目，不作为已确立结论。",
-    "reading_depth": "原始arXiv摘要与元数据；全文待精读。",
+    "insight": "将配比仅改变偏置的 additive 假设与配比改变参数/数据项系数的 joint 假设作比较，显式检验规模与配比的耦合。",
+    "limitation": "Fixed training mixture; no data repetition; target loss does not directly predict task accuracy. Six/eight-domain run-count ablations fix N; 7B optimized-mixture runs switch to cosine learning rate and are distinct from constant-rate extrapolation. No independent replication.",
+    "reading_depth": "full_text_targeted",
     "authors": [
       "Mustafa Shukor",
-      "et al."
+      "Louis Bethune",
+      "Dan Busbridge",
+      "David Grangier",
+      "Enrico Fini",
+      "Alaaeldin El-Nouby",
+      "Pierre Ablin"
     ],
     "first_published_date": "2025-07-12",
     "last_revised_date": "2025-10-02",
     "version_read": "v2",
     "latest_version_verified": "v2",
-    "version_note": "v2 仅摘要和元数据已读，全文待精读。",
+    "version_note": "v2 dated 2025-10-02 in submission history; HTML rendered title-page date is not a new submission. Upgraded from abstract-only watchlist review on 2026-09-28.",
+    "method": "Target-domain loss fitted against N, D and domain proportions; additive versus joint laws; LLM fit at 412M–1.4B, evaluate 3B/7B; separate native multimodal and vision settings.",
+    "result": "Held-out predictions support finite-range recipe transfer, with domain-dependent errors. Wikipedia MRE 4.45% additive / 2.09% joint; GitHub 1.17% / 2.51%.",
+    "sections_read": "arXiv v2 §§2–6 and §8; metadata and NeurIPS proceedings cross-check. Appendix proofs, complete fitting code and all plots were not independently audited.",
+    "fulltext_url": "https://arxiv.org/html/2507.09404v2",
+    "publication_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/bc1d640f841f752c689aae20b31198c1-Abstract-Conference.html",
+    "synthesis_status": "incorporated",
+    "reading_history": [
+      {
+        "date": "2026-09-16",
+        "scope": "abstract and metadata only"
+      },
+      {
+        "date": "2026-09-28",
+        "scope": "selected method, experimental, analysis and limitation sections"
+      }
+    ],
     "canonical_url": "https://arxiv.org/abs/2507.09404",
     "catalogs": [
       "foundations"
     ],
-    "cited_in": []
+    "cited_in": [
+      "02-data.md"
+    ]
   },
   {
     "id": "wei2022cot",
@@ -6590,7 +6613,7 @@
     ],
     "date": "2026-09-16",
     "year": 2026,
-    "version": "v1",
+    "version": "v2",
     "url": "https://arxiv.org/abs/2609.19499",
     "type": "paper",
     "branch": "inference-budget-systems",
@@ -6598,16 +6621,112 @@
     "insight": "固定候选数，分开比较调用次数及每次批量大小，将逻辑采样预算与硬件执行成本分开记录",
     "limitation": "两个小模型、A100/V100、Hugging Face批量生成；调度独立采样，非严格相同轨迹或FLOPs比较；设备总能耗非整机能耗，不能外推为连续批处理或依赖搜索的通用倍率",
     "reading_depth": "full_text_targeted",
-    "verification_date": "2026-09-21",
-    "version_read": "v1",
-    "sections_read": "摘要、§III–VII；重点固定N=8的执行调度、采样和token口径、NVML测量边界、表VI–VIII及局限",
-    "evidence_status": "原站版本日期与方法、结果定向核验；未独立复现。原站仅列v1（2026-09-16 23:29:57 UTC），未将聚合页2026-09-18更新时间误当论文修订。",
-    "full_text_url": "https://arxiv.org/html/2609.19499v1",
+    "verification_date": "2026-09-28",
+    "version_read": "v2",
+    "sections_read": "v2摘要、§III–IV方法/实验条件、§V-C表VI及相关复核、§VI–VII讨论与局限；与既有v1核验结论对照",
+    "evidence_status": "2026-09-21检索当时只显示v1；2026-09-28主站已列v2（2026-09-19 17:04:07 UTC）并标注SC26 EESP workshop接收。已定向复核v2方法、固定N表VI与局限，正文引用倍率及测量边界一致；未做完整版本diff，不能断言只改元数据。",
+    "full_text_url": "https://arxiv.org/html/2609.19499v2",
     "first_published": "2026-09-16",
     "method": "Fix N=8 for two small models on A100-SXM4 80GB; 100 GSM8K prompts with three repetitions; compare 1x8, 2x4, 4x2, 8x1 schedules.",
     "result": "Serial versus one-batch ratios: 4.64–4.86 gross GPU-device energy and 5.77–6.12 P95 latency, under the measured setup.",
     "synthesis_status": "incorporated",
+    "latest_revision": "2026-09-19",
+    "reading_history": [
+      {
+        "verification_date": "2026-09-21",
+        "version_read": "v1",
+        "full_text_url": "https://arxiv.org/html/2609.19499v1",
+        "sections_read": "摘要、§III–VII；重点固定N=8的执行调度、采样和token口径、NVML测量边界、表VI–VIII及局限",
+        "evidence_status": "原站版本日期与方法、结果定向核验；未独立复现。原站仅列v1（2026-09-16 23:29:57 UTC），未将聚合页2026-09-18更新时间误当论文修订。"
+      },
+      {
+        "verification_date": "2026-09-28",
+        "version_read": "v2",
+        "scope": "v2 methods, fixed-N Table VI, cross-node/short-output qualifications, discussion and limitations targeted; no complete source/PDF byte diff.",
+        "evidence_change": "The fixed-N energy and P95 ratios, independent-sampling caveat and gross-device-energy boundary cited in T5 agree with v2. No substantive reversal of that paragraph established."
+      }
+    ],
+    "last_revised_date": "2026-09-19",
+    "latest_version_verified": "v2",
     "canonical_url": "https://arxiv.org/abs/2609.19499",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "verification_date": "2026-09-28",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "tian2026moehyperparameters",
+    "title": "Hyperparameter Scaling Laws Across MoE Sparsity",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2609.08690",
+    "fulltext_url": "https://arxiv.org/html/2609.08690v1",
+    "authors": [
+      "Changxin Tian",
+      "Kunlong Chen",
+      "Jia Liu",
+      "Ziqi Liu",
+      "Zhiqiang Zhang",
+      "Jun Zhou"
+    ],
+    "first_published_date": "2026-09-08",
+    "last_revised_date": null,
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "branch": "architecture_and_systems",
+    "problem": "总参数或激活参数相同的 MoE 仍可能需要不同的学习率和 batch；稀疏度变化使小实验超参数迁移失效。",
+    "insight": "将专家激活比例 A 作为独立预测变量，分别以 (C,A) 和 (D,A) 拟合峰值学习率与全局 token batch；留组预测并在预先冻结的超稀疏配置上检验。",
+    "limitation": "单一骨干、语料、Muon、路由与调度；一个联合外推目标；激活参数量未超出拟合范围；全网格多种子覆盖不足；候选函数区间重叠；不构成下游能力定律。",
+    "reading_depth": "full_text_targeted",
+    "sections_read": "核验 arXiv 作者和完整版本历史；重点阅读 v1 HTML 摘要、§1–4.4、§6–7，查阅 §5；未审计附录 A–C、未视觉复核图像、未运行实验。",
+    "method": "Expert activation ratio supplements the existing scale variables in multiplicative power-law models for peak LR and global token batch. The gradient-noise explanation in §3.2 is an author-proposed mechanism; its Appendix C derivation was not audited. Leave-one-activation-ratio-out and leave-one-active-scale-out at whole loss-surface level; optimum extraction and fitting use training folds. Their primary grouped errors concern hyperparameter coordinates, not validation-loss predictions.",
+    "result": "Within the studied recipe, increasing sparsity shifts the preferred learning rate downward at fixed compute and token batch upward at fixed data; one frozen joint-extrapolation target lies near the observed optimum.",
+    "synthesis_status": "incorporated",
+    "canonical_url": "https://arxiv.org/abs/2609.08690",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "wu2026ptts",
+    "title": "Planned Test-Time Scaling with Coordinated Reasoning Paths",
+    "authors": [
+      "Xueqing Wu",
+      "Langxing Bai",
+      "Hritik Bansal",
+      "Po-Nien Kung",
+      "Shuo Li",
+      "Hao Liu",
+      "Nanyun Peng",
+      "Kai-Wei Chang"
+    ],
+    "date": "2026-09-23",
+    "year": 2026,
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2609.27374",
+    "type": "paper",
+    "branch": "inference-coverage-coordination",
+    "problem": "重复采样可能集中于相似失败路径；样本数增长不保证覆盖互补策略",
+    "insight": "把每组分支建模为规划器与执行器的联合策略，以组内任一成功的奖励训练规划器",
+    "limitation": "仅两种Qwen3规模及数学任务；覆盖率不等于部署选择准确率；从64样本池解析估计较小k且组内相关；没有核实包含规划、训练、选择的完整FLOPs或实测部署效率优势；理论比较最优策略类而非任意训练结果",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-09-28",
+    "version_read": "v1",
+    "sections_read": "摘要、§3.1–3.3方法与理论假设、§4.1–4.3实验/消融、Appendix B训练参数、Appendix C评估分析；未完整审计Appendix A全部证明及代码",
+    "evidence_status": "原站首发时间与版本核验；方法、分组采样、训练/推理长度及pass@k估计定向核验；无独立复现。",
+    "full_text_url": "https://arxiv.org/html/2609.27374v1",
+    "first_published": "2026-09-23",
+    "method": "Four outlines per plan; freeze Qwen3 executor; optimize planner with group pass@4 reward and 4k-token executor rollouts. Repeat groups for a 64-solution evaluation pool, capped at 10k tokens per solution.",
+    "result": "Across five mathematics benchmarks with Qwen3-1.7B/4B, the largest reported pass@64 gain is 13.4 percentage points for 1.7B; this is a coverage result.",
+    "synthesis_status": "incorporated",
+    "canonical_url": "https://arxiv.org/abs/2609.27374",
     "catalogs": [
       "editorial"
     ],

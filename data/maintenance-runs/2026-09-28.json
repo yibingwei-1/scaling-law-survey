@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-28",
+  "edition": "v0.3.2",
+  "search_window": {
+    "from": "2026-09-07",
+    "through": "2026-09-28"
+  },
+  "status": "content_updated_validated",
+  "new_primary_sources": [
+    "tian2026moehyperparameters",
+    "wu2026ptts"
+  ],
+  "upgraded_existing_sources": [
+    "shukor2025"
+  ],
+  "version_updates": [
+    "kashaniyan2026samplecount"
+  ],
+  "new_community_records": [
+    "RD-10"
+  ],
+  "new_high_attention_records": 1,
+  "chapters_changed": [
+    "T2",
+    "T3",
+    "T5",
+    "community radar"
+  ],
+  "research_logs": [
+    "sources/weekly-2026-09-28-foundations.json",
+    "sources/weekly-2026-09-28-frontier.json",
+    "sources/weekly-2026-09-28-community.json",
+    "sources/weekly-2026-09-28-editor.json"
+  ],
+  "reason_for_body_updates": [
+    "Explicit mixture/scale coupling adds a testable alternative to recipe-ranking transfer.",
+    "MoE expert activation ratio affects optimization transfer beyond parameter counts.",
+    "Coordinated reasoning groups offer a distinct coverage mechanism, with selector and budget limitations."
+  ],
+  "review": [
+    "Shukor source and bilingual conditions independently cross-checked.",
+    "Root read MoE methods, grouped validation, held-out scope and limitations.",
+    "Root read PTTS grouping, coverage estimator, optimal-policy-class conditions and training/evaluation length budgets.",
+    "Sample Count v2 preserves the quoted ratios; no complete version diff or independent replication claimed.",
+    "Historical September 21 version observation retained; current arXiv history now verifies September 19 v2."
+  ],
+  "access_limits": [
+    "Targeted search is non-exhaustive; indexing may omit recent work.",
+    "X and YouTube direct reads failed or lacked verifiable counters; candidates are retained, not treated as absent discussion.",
+    "Reddit dated scores are search-index snapshots with unknown measurement time; historical counters were not refreshed."
+  ],
+  "publication_target": "https://github.com/yibingwei-1/scaling-law-survey",
+  "validation": {
+    "metadata_and_local_links": "pass",
+    "translation_fingerprints_links_and_math": "pass",
+    "generated_text_artifact_determinism": "pass",
+    "pdf_visual_review": "All-page contact sheets and selected page-scale views; after the final T3 layout adjustment, all changed pages re-reviewed and the remaining pages verified byte-identical to the reviewed PNGs.",
+    "pdfs": {
+      "zh-CN": {
+        "pages": 61,
+        "link_annotations": 675,
+        "display_formulas_rendered": 24,
+        "display_formula_fallbacks": 0,
+        "external_source_targets_verified": 319,
+        "external_link_occurrences_checked": 449
+      },
+      "en": {
+        "pages": 86,
+        "link_annotations": 683,
+        "display_formulas_rendered": 24,
+        "display_formula_fallbacks": 0,
+        "external_source_targets_verified": 319,
+        "external_link_occurrences_checked": 449
+      }
+    },
+    "primary_source_review": "Selected methods, experiments and limitations cross-checked; no independent experiment replication."
+  },
+  "catalog_count": 167,
+  "technical_sources_cited": 158,
+  "community_count": 20
+}

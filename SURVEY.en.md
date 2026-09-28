@@ -1,8 +1,8 @@
 # Scaling Law: A Problem-Driven Review
 
-Edition v0.3.1 · Searches and verification through 2026-09-21 · English living edition
+Edition v0.3.2 · Searches and verification through 2026-09-28 · English living edition
 
-From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains 165 distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
+From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains 167 distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
 
 ![Research problem evolution map](figures/evolution-map.png)
 
@@ -80,7 +80,7 @@ A more detailed account of paper relationships and branching rationales is avail
 
 For the classical allocation debate, start with the Kaplan–Chinchilla–reanalysis chain in [predictability and budgets](docs/en/01-predictability-budget.md), then read [data](docs/en/02-data.md) and [deployment costs](docs/en/03-architecture-deployment.md). To assess whether test-time scaling is taking over, begin with the proposers, verifiers, and allocation policies in [post-training](docs/en/04-posttraining.md) and [inference-time computation](docs/en/05-inference.md), then examine [capability evaluation](docs/en/06-theory-evaluation.md) and negative results. To follow new work, first identify the question raised in the community radar, return to the primary evidence, and decide which connection in the narrative should change.
 
-This survey prioritizes representative studies that explain turning points rather than mechanically ranking papers by citations or social-media exposure. References to “current” or “latest” are relative to the latest incremental search date, September 21, 2026. Reading scope and unresolved issues are disclosed in the chapters and metadata.
+This survey prioritizes representative studies that explain turning points rather than mechanically ranking papers by citations or social-media exposure. References to “current” or “latest” are relative to the latest incremental search date, September 28, 2026. Reading scope and unresolved issues are disclosed in the chapters and metadata.
 
 
 ---
@@ -180,7 +180,7 @@ For a model that will provide a long-running service, the objective must also in
 
 ## T2 Data Bottlenecks: From Token Counts to Useful Information, Mixtures, and Training Order
 
-> Verification date: 2026-09-21. Scope: unique data volume, deduplication, selection, domain mixtures, data curricula, supply forecasts, and synthetic feedback. The chapter distinguishes experimental evidence in the original papers from this survey's synthesis of mechanisms; data processing and training experiments were not independently rerun. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for reading depth. Works checked only at the abstract level, including TinyStories, Phi-3, and Scaling Laws for Transfer, remain in the source registry but are not used to support this chapter's technical conclusions.
+> Verification date: 2026-09-28. Scope: unique data volume, deduplication, selection, domain mixtures, data curricula, supply forecasts, and synthetic feedback. The chapter distinguishes experimental evidence in the original papers from this survey's synthesis of mechanisms; data processing and training experiments were not independently rerun. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for reading depth. Works checked only at the abstract level, including TinyStories, Phi-3, and Scaling Laws for Transfer, remain in the source registry but are not used to support this chapter's technical conclusions.
 
 ### 1. Data Becomes a Bottleneck Because D Carries Too Many Meanings
 
@@ -243,6 +243,14 @@ The limitations are equally specific. The primary optimization target was Pile-C
 
 Both methods assume that recipes can transfer across scales, but estimate them differently: DoReMi uses reference losses and dynamic robust optimization, whereas RegMix uses ranking patterns from many small experiments. The earlier Data Mixing Laws also attempts to fit the functional relationship between domain proportions and loss directly. This survey checked that work only at the abstract and introduction level and does not use it to add stronger cross-scale conclusions. [Ye et al., 2024](https://arxiv.org/abs/2403.16952)
 
+#### From Ranking Transfer to Joint Prediction: Does the Best Mixture Change with Scale?
+
+Stable rankings do not predict the target-scale loss or rule out a moving optimum. [Shukor et al., 2025, §§2–6](https://arxiv.org/html/2507.09404v2) jointly model target-domain loss using parameter count $N$, training tokens $D$, and domain proportions $h$. In their additive form, only the bias term depends on the mixture, so a scale-independent optimum follows from the model structure. The joint form also makes the coefficients of the parameter and data terms depend on $h$, allowing budget-dependent optima. The advance is to turn recipe transfer into competing, testable fitting assumptions, not to establish that every task's optimum must move.
+
+The paper tests unseen mixtures and larger models in language, native multimodal, and vision pretraining. Its language experiments fit 412M–1.4B models and evaluate 3B/7B models. Greater flexibility does not improve every domain: the joint form reduces Wikipedia's mean relative validation-loss prediction error from the additive form's 4.45% to 2.09%, but raises GitHub's from 1.17% to 2.51%. These are loss-prediction errors, not task-accuracy gains. In the “10–20 runs” analysis, the six/eight-domain experiments fix model size; this does not establish that 20 training runs suffice for arbitrary cross-scale searches. Most fitting uses a constant learning rate. The optimized 7B runs switch to a cosine schedule, so their downstream results must be distinguished from numerical extrapolation of the original fitted curves.
+
+The approach still assumes a fixed mixture during training, omits repetition in scarce domains, and uses target loss as an indirect measure of downstream capability. **This survey's synthesis** is that it adds explicit coupling between scale and mixture without resolving data exhaustion or changing training stages. That connects it to the curriculum question below, rather than replacing research on training order. [Original paper, §§5–6 and §8](https://arxiv.org/html/2507.09404v2)
+
 #### New Evidence: Small-Model Weight Responses Need Not Extrapolate Monotonically
 
 Jane Street's September 14, 2026 study adds a condition to recipe transfer. On an internal text benchmark, researchers randomly assigned sequences log-uniform weights from 0.01 to 10, trained three model families for three epochs, and fitted an effective weight exponent $p^*$ from loss reductions on the same training data. Weight responses tended to rise and then fall with model scale; additional epochs also shifted the peak. This suggests checking whether proxy and target models occupy similar weight-response regimes. It is neither a direct comparison with DoReMi or RegMix nor a scaling law for held-out generalization gains. Internal data limit external verification, and adjusting weights using $1/p^*$ remains an untested proposal. [Renda & Mani, article](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/); [estimator note](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/sequence-weighting-note.pdf)
@@ -280,9 +288,9 @@ This also provides a practical accounting framework for reading papers: examine 
 
 ---
 
-## T3 Architecture and Deployment: Why Do Parameters, FLOPs, GPU Memory, and Actual Costs Evolve Separately?
+## T3 Architecture and Deployment: Distinguishing Parameters, FLOPs, GPU Memory, and Actual Costs
 
-> Verification date: 2026-09-21. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
+> Verification date: 2026-09-28. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
 
 ### 1. When Parameters Need Not Be Activated, Scaling Laws Need New Coordinates
 
@@ -297,6 +305,18 @@ Switch Transformers directly simplified routing: each token selects one expert r
 Clark et al. separated active computation from total capacity to study shared regularities in routed language models, but their main experiments fixed training at 130B tokens and did not jointly optimize data volume. Fine-Grained MoE explicitly identified this limitation and brought tokens, parameters, and expert granularity into joint optimization. Finer experts increase the flexibility of combinations, but also add routing overhead. This chain has evidence of direct inheritance and shows why a sparse-model scaling law cannot be obtained merely by replacing the parameter count in a dense formula with active parameters. [Clark et al., 2022](https://arxiv.org/html/2202.01169); [Scaling Laws for Fine-Grained Mixture of Experts, 2024](https://arxiv.org/html/2402.07871)
 
 Mixtral demonstrated how this architecture could enter open autoregressive models: two of eight experts are selected per layer, with roughly 47B total parameters and 13B active parameters per token. The report explicitly notes that serving memory depends on total parameters, while routing and memory access also affect device utilization; batched workloads more readily achieve higher arithmetic intensity. Describing its deployment cost simply as that of a 13B model therefore omits major constraints. [Jiang et al., 2024, §2 and §3](https://arxiv.org/html/2401.04088v1)
+
+#### Sparsity Also Changes Hyperparameter Transfer
+
+Choosing a sparse architecture also changes the optimization recipe. [Tian et al., 8 September 2026](https://arxiv.org/html/2609.08690v1) add the expert activation ratio $A=E_{\mathrm{act}}/E_{\mathrm{tot}}$ to hyperparameter prediction; this differs from the active-to-total parameter ratio. They fit
+
+$$
+\eta^*=k_\eta C^{\gamma_\eta}A^{\delta_\eta},\qquad B^*=k_B D^{\gamma_B}A^{\delta_B}.
+$$
+
+Here, $\eta$ is peak learning rate, $B$ global tokens per update, $D$ training tokens, and $C=MD$ non-embedding training FLOPs, and $M$ the architecture-specific analytically computed non-embedding FLOPs per token. Within their setting, greater sparsity favors a lower learning rate at fixed $C$ and a larger batch at fixed $D$.
+
+The study reports 1,800 runs, approximately 10M–324M activated parameters, and grouped validation holding out activation ratios or model scales. A frozen prediction falls near the observed optimal region for a 12B-total/324M-activated model with $A=1/64$, trained on 159B tokens. Activated size remains at the fitted range's boundary: this is one joint extrapolation in sparsity, tokens, and compute, not independent validation along every axis. The experiments share a hybrid attention backbone, Muon optimizer, corpus, and warmup–stable–decay schedule. Overlapping intervals across candidate functional forms and limited seed coverage leave uncertainty; these coefficients do not establish a universal recipe or downstream-capability law.
 
 ### 2. Landmark: DeepSeekMoE Moves from More Capacity to More Useful Experts
 
@@ -574,7 +594,7 @@ The next chapter turns to [Inference Budgets and Search](docs/en/05-inference.md
 
 ## T5　Inference Budgets and Search: Turning More Compute into More Reliable Answers
 
-> Verification date: 2026-09-21. Covers representative works that help explain mechanisms; much of the 2026 material remains in preprint form. Experiments have not been independently reproduced. Sources, versions, and reading scope are recorded in [frontier.json](sources/frontier.json) and [expansion-frontier.json](sources/expansion-frontier.json); the Hugging Face authors' blog is recorded in the editorial primary-source collection.
+> Verification date: 2026-09-28. Covers representative works that help explain mechanisms; much of the 2026 material remains in preprint form. Experiments have not been independently reproduced. Sources, versions, and reading scope are recorded in [frontier.json](sources/frontier.json) and [expansion-frontier.json](sources/expansion-frontier.json); the Hugging Face authors' blog is recorded in the editorial primary-source collection.
 
 Pretraining invests compute in shared parameters, whereas inference allocates compute to a particular problem. Chain-of-Thought changes a single generation process through demonstrations of intermediate steps; Self-Consistency reduces the instability of a single path through multiple-path sampling and answer aggregation. They open serial and parallel directions, respectively, but leave cost and correct selection unresolved. [CoT](https://arxiv.org/abs/2201.11903), [Self-Consistency](https://arxiv.org/abs/2203.11171)
 
@@ -593,6 +613,12 @@ $$
 When the success-probability density in the difficult-problem region is approximately $f(p)\propto p^{\alpha-1}$, then for large $k$ the integral can decay as $k^{-\alpha}$. An aggregate power law can arise from mixing problem difficulties; it does not require the computation for each individual problem to follow a power law. [How Do Large Language Monkeys Get Their Power (Laws)?, §2–3](https://arxiv.org/abs/2502.17578)
 
 This explanation yields two testable implications. First, changing the problem set changes the distribution of difficult problems and may therefore change the fitted exponent. Second, under the independent-sampling model, if $p$ is truly zero for some fraction of problems, a failure floor remains that even unlimited sampling cannot eliminate. The second implication follows under the formula's assumptions; finite experiments do not establish that a real problem “will never be answered correctly by the model.” Changes to temperature, prompts, tools, or post-training also change the original $p$ and correlation structure, so the old curve no longer has the same claim to extrapolation.
+
+#### From Independent Sampling to Coordinated Coverage
+
+Independent draws can revisit the same unsuccessful strategy, making branch coordination a separate question from increasing sample count. PTTS addresses this with a planner that jointly generates four outlines and a frozen executor that completes each outline; groups are repeated to collect 64 solutions. Its RL variant rewards the planner when any branch succeeds, using shorter executor rollouts during training: 4k tokens versus a 10k-token evaluation cap per solution. Across five mathematics benchmarks with Qwen3-1.7B/4B executors, the reported pass@64 gain over repeated sampling reaches 13.4 percentage points for the 1.7B model. [PTTS, v1, §§3–4](https://arxiv.org/html/2609.27374v1)
+
+This extends the coverage branch, not evidence that a deployment selector chooses better answers. The study generates 64 solutions and analytically estimates smaller-k coverage from that pool; coordinated groups also change the samples’ dependence structure. Consequently, the reported pass@32 advantage over repeated sampling’s pass@64 should not be read as a directly measured halving of end-to-end compute. A deployment comparison must count planning, executor generation, selection and amortized planner training, then measure latency or FLOPs. Likewise, theoretical inclusion of repeated sampling concerns the best policy achievable within the policy class; it does not guarantee that every trained planner improves performance.
 
 ### 2. From Repeating Whole Answers to Searching Intermediate States
 
@@ -614,7 +640,7 @@ Wu et al. approach the issue from another direction, comparing the FLOPs–accur
 
 The Hugging Face authors' blog connects this question to reproducible experiments. On MATH-500, it pairs 1B/3B proposers with an 8B PRM, comparing candidate budgets from 1 to 256 across five random seeds. DVTS preserves search diversity through multiple independent subtrees, reducing the risk that one path consumes the budget too early. This provides an engineering bridge from research strategies to implementations with open models and tools. Candidate budgets in the comparison are not matched end-to-end FLOPs, and the generators and verifiers have different parameter counts. Thus, “a 3B system outperforms a 70B model with a single response” does not directly mean lower total compute cost. Parameter count, GPU memory use, throughput, and cumulative inference cost need to be reported separately. [Hugging Face authors' blog](https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute)
 
-Execution schedule adds another budget dimension. On 100 GSM8K prompts, repeated three times, the September 2026 study Sample Count Is Not Enough tests Phi-3-mini-4k-instruct and Qwen2.5-1.5B-Instruct on A100-SXM4 80GB GPUs (temperature 1.0, top-p 0.95, maximum 512 generated tokens per candidate). Holding eight candidates fixed, eight sequential single-candidate calls consume 4.64–4.86× the gross GPU-device energy and incur 5.77–6.12× the P95 latency of one eight-candidate batch. Generated-token volumes differ by at most 1%; schedules sample independently. Energy includes idle consumption during measurement but excludes whole-node energy. This strengthens the budget-accounting requirement: report call structure and measured systems costs alongside candidate count. These are conditional Hugging Face batch-generation results, not a universal scaling exponent or a FLOPs-equivalent comparison; dependent search steps and continuous serving need separate evaluation. [Sample Count Is Not Enough, v1, §III–VII](https://arxiv.org/html/2609.19499v1)
+Execution schedule adds another budget dimension. On 100 GSM8K prompts, repeated three times, the September 2026 study Sample Count Is Not Enough tests Phi-3-mini-4k-instruct and Qwen2.5-1.5B-Instruct on A100-SXM4 80GB GPUs (temperature 1.0, top-p 0.95, maximum 512 generated tokens per candidate). Holding eight candidates fixed, eight sequential single-candidate calls consume 4.64–4.86× the gross GPU-device energy and incur 5.77–6.12× the P95 latency of one eight-candidate batch. Generated-token volumes differ by at most 1%; schedules sample independently. Energy includes idle consumption during measurement but excludes whole-node energy. This strengthens the budget-accounting requirement: report call structure and measured systems costs alongside candidate count. These are conditional Hugging Face batch-generation results, not a universal scaling exponent or a FLOPs-equivalent comparison; dependent search steps and continuous serving need separate evaluation. [Sample Count Is Not Enough, v2, §III–VII](https://arxiv.org/html/2609.19499v2)
 
 ### 4. Where Should the Verification Budget Go?
 
@@ -1006,7 +1032,7 @@ Initial search date: **September 16, 2026**. This round established **18 traceab
 
 Community discussion exposes unresolved questions among researchers and practitioners. Technical conclusions still require papers, author code, and official reports: high view counts indicate reach, not correctness, and vigorous debate is not independent replication. Full fields appear in [community.json](sources/community.json); searches and leads not included appear in [community-search-log.md](sources/community-search-log.md).
 
-The September 21 addition brings the cumulative record count to 19. Earlier counters retain their original observation dates; see Section 6 for the new record.
+The September 21 and September 28 additions bring the cumulative record count to 20. Earlier counters retain their original observation dates; see Sections 6 and 7 for the new records.
 
 ### 1. Operationalizing “High Attention”
 
@@ -1110,6 +1136,10 @@ The record preserves two distinct observations. During retrieval on September 21
 The headline raises a research question: **which distribution shift do the gains from more robot data actually cross?** The official report defines zero-shot in terms of unseen environments and objects; tasks are fine-tuned using data collected elsewhere. Its control uses random initialization under the same downstream settings, so this experiment does not directly establish superiority over general-purpose VLM pretraining. The data-scaling curve measures action-prediction loss, which cannot simply be equated with a power law for closed-loop task success. These qualifications come from [the report itself](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization); independent replication remains necessary.
 
 Related X and YouTube URLs were corroborated through public cross-links, but this round did not obtain verifiable platform publication dates or engagement metrics. They remain search-log candidates rather than high-attention evidence. See the [weekly search log](sources/weekly-2026-09-21-community.json) for queries, access limitations, and excluded candidates, and the [maintained community records](sources/community.json) for both RD-09 observations.
+
+### 7. Observation Added on 2026-09-28: Separate Current Evaluation Failures from Long-Term Extrapolation
+
+The indexed result for [RD-10: RSI discussion](https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/) explicitly gives September 14, 2026 and a score of 288, meeting this radar's editorial Reddit threshold. It was retrieved on September 28; the counter's measurement time is unknown. The title is the poster's interpretation. Only the abstract and version history of the [linked study v2](https://arxiv.org/abs/2607.27191v2) were checked this round: observations from two cases cannot establish that RSI is impossible. The disagreement motivates recording models, tasks, budgets, and human intervention before extrapolating; comments are not technical evidence. Direct page reading exposed no counter, and no new verifiable X or YouTube attention metrics were obtained. Historical counts remain unchanged.
 
 
 ---
@@ -1392,7 +1422,7 @@ Full metadata are available in the [reference index](REFERENCES.en.md), [BibTeX]
 | 2025 | [Open-Reasoner-Zero: An Open Source Approach to Scaling Up Reinforcement Learning on the Base Model](https://arxiv.org/abs/2503.24290) | Selected full-text sections | See metadata / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2025 | [Process Reward Models That Think](https://arxiv.org/abs/2504.16828) | Selected full-text sections | See metadata / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2025 | [Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study in Mathematical Reasoning](https://arxiv.org/abs/2509.25300) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
-| 2025 | [Scaling Laws for Optimal Data Mixtures](https://arxiv.org/abs/2507.09404) | Abstract / metadata | v2 / Paper / preprint | Catalog only |
+| 2025 | [Scaling Laws for Optimal Data Mixtures](https://arxiv.org/abs/2507.09404) | Selected full-text sections | v2 / Paper / preprint | [02](docs/en/02-data.md) |
 | 2025 | [Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach](https://arxiv.org/abs/2502.05171) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2025 | [SimpleRL-Zoo: Investigating and Taming Zero Reinforcement Learning for Open Base Models in the Wild](https://arxiv.org/abs/2503.18892) | Selected full-text sections | v3 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2025 | [SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model](https://arxiv.org/abs/2502.02737) | Selected full-text sections | v1 / Report | [02](docs/en/02-data.md) |
@@ -1411,9 +1441,11 @@ Full metadata are available in the [reference index](REFERENCES.en.md), [BibTeX]
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | Official report sections | Web snapshot / Report | [07](docs/en/07-multimodal.md) |
 | 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | Selected full-text sections | v2 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
+| 2026 | [Hyperparameter Scaling Laws Across MoE Sparsity](https://arxiv.org/abs/2609.08690) | Selected full-text sections | v1 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | Abstract / metadata | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
+| 2026 | [Planned Test-Time Scaling with Coordinated Reasoning Paths](https://arxiv.org/abs/2609.27374) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | Selected full-text sections | v1 / Paper / preprint | [06](docs/en/06-theory-evaluation.md) |
-| 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
+| 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Scaling Vision-Language Models Is Not Enough to Mitigate Bias](https://arxiv.org/abs/2607.28211) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Thinking Long, but Short: Stable Sequential Test-Time Scaling for Large Reasoning Models](https://arxiv.org/abs/2601.09855) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |

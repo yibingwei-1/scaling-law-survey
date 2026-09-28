@@ -1,0 +1,97 @@
+{
+  "date": "2026-09-28",
+  "window": {
+    "from": "2026-09-07",
+    "through": "2026-09-28"
+  },
+  "tools": "Built-in web search and primary HTML; parallel-cli absent from PATH; no claim of Parallel API execution.",
+  "queries": [
+    "\"scaling laws\" \"September\" \"2026\" after:2026-09-07 before:2026-09-29 (arxiv.org)",
+    "\"compute\" \"scaling\" \"September 2026\" after:2026-09-07 before:2026-09-29 (openai.com, anthropic.com, deepmind.google, research.google)",
+    "\"Scaling Laws for Optimal Data Mixtures\""
+  ],
+  "selection": "Broad queries did not establish an additional new primary result in the returned output; this is not evidence that none exists. Parallel branch searches recorded separately.",
+  "upgraded_existing_source": {
+    "verification_date": "2026-09-28",
+    "verification_status": "primary_source_verified",
+    "type": "paper",
+    "id": "shukor2025",
+    "title": "Scaling Laws for Optimal Data Mixtures",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2507.09404",
+    "branch": "data_mixture_scale_interaction",
+    "problem": "需要同时预测模型大小、数据量和领域比例下的目标性能。",
+    "insight": "将配比仅改变偏置的 additive 假设与配比改变参数/数据项系数的 joint 假设作比较，显式检验规模与配比的耦合。",
+    "limitation": "Fixed training mixture; no data repetition; target loss does not directly predict task accuracy. Six/eight-domain run-count ablations fix N; 7B optimized-mixture runs switch to cosine learning rate and are distinct from constant-rate extrapolation. No independent replication.",
+    "reading_depth": "full_text_targeted",
+    "authors": [
+      "Mustafa Shukor",
+      "Louis Bethune",
+      "Dan Busbridge",
+      "David Grangier",
+      "Enrico Fini",
+      "Alaaeldin El-Nouby",
+      "Pierre Ablin"
+    ],
+    "first_published_date": "2025-07-12",
+    "last_revised_date": "2025-10-02",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
+    "version_note": "v2 dated 2025-10-02 in submission history; HTML rendered title-page date is not a new submission. Upgraded from abstract-only watchlist review on 2026-09-28.",
+    "method": "Target-domain loss fitted against N, D and domain proportions; additive versus joint laws; LLM fit at 412M–1.4B, evaluate 3B/7B; separate native multimodal and vision settings.",
+    "result": "Held-out predictions support finite-range recipe transfer, with domain-dependent errors. Wikipedia MRE 4.45% additive / 2.09% joint; GitHub 1.17% / 2.51%.",
+    "sections_read": "arXiv v2 §§2–6 and §8; metadata and NeurIPS proceedings cross-check. Appendix proofs, complete fitting code and all plots were not independently audited.",
+    "fulltext_url": "https://arxiv.org/html/2507.09404v2",
+    "publication_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/bc1d640f841f752c689aae20b31198c1-Abstract-Conference.html",
+    "synthesis_status": "incorporated",
+    "reading_history": [
+      {
+        "date": "2026-09-16",
+        "scope": "abstract and metadata only"
+      },
+      {
+        "date": "2026-09-28",
+        "scope": "selected method, experimental, analysis and limitation sections"
+      }
+    ]
+  },
+  "review_notes": [
+    "Additive law scale-independent optimum is structural, not an observed universal fact.",
+    "Joint model lower training error does not mean better validation error in every domain.",
+    "6/8-domain 10–20-run ablations hold N fixed.",
+    "2025 first publication and revision retained; rendered HTML date not used as new publication date."
+  ],
+  "access_limits": [
+    "Search indexing incomplete; no exhaustive coverage claim.",
+    "No experiments independently replicated."
+  ],
+  "independent_checks": [
+    {
+      "source": "shukor2025",
+      "reviewer": "foundations research subtask",
+      "result": "Bilingual argument, fit/eval scales, domain-specific MRE, fixed-N ablations and cosine boundary checked against v2; pass."
+    },
+    {
+      "source": "RD-10",
+      "query": "site:reddit.com/r/MachineLearning/comments/1wgazy4 \"RSI\"",
+      "observed_at": "2026-09-28",
+      "index_excerpt": "[Monday September 14 2026] [+288 votes]",
+      "result": "Root independently recovered the same indexed date and score; not a live counter."
+    },
+    {
+      "source": "tian2026moehyperparameters",
+      "reviewer": "frontier research subtask",
+      "result": "Primary-source and bilingual checks passed; added missing definition of M as architecture-specific non-embedding FLOPs per token."
+    },
+    {
+      "source": "RD-10",
+      "reviewer": "community research subtask",
+      "result": "Bilingual paragraph checked; all prior 19 entries unchanged, total20, high-attention proxy count9."
+    },
+    {
+      "source": "wu2026ptts and kashaniyan2026samplecount",
+      "reviewer": "foundations research subtask",
+      "result": "Primary §3/4 PTTS grouping, lengths, 13.4-point coverage result and selector/cost/policy-class limits verified. Sample Count v2 N=8,100x3,energy/P95 ratios and measurement boundary verified; bilingual links/math/conditions match."
+    }
+  ]
+}

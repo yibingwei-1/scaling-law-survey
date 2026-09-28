@@ -1,6 +1,6 @@
-# T3 Architecture and Deployment: Why Do Parameters, FLOPs, GPU Memory, and Actual Costs Evolve Separately?
+# T3 Architecture and Deployment: Distinguishing Parameters, FLOPs, GPU Memory, and Actual Costs
 
-> Verification date: 2026-09-21. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](../../sources/foundations.json) and [additional sources](../../sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
+> Verification date: 2026-09-28. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](../../sources/foundations.json) and [additional sources](../../sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
 
 ## 1. When Parameters Need Not Be Activated, Scaling Laws Need New Coordinates
 
@@ -15,6 +15,18 @@ Switch Transformers directly simplified routing: each token selects one expert r
 Clark et al. separated active computation from total capacity to study shared regularities in routed language models, but their main experiments fixed training at 130B tokens and did not jointly optimize data volume. Fine-Grained MoE explicitly identified this limitation and brought tokens, parameters, and expert granularity into joint optimization. Finer experts increase the flexibility of combinations, but also add routing overhead. This chain has evidence of direct inheritance and shows why a sparse-model scaling law cannot be obtained merely by replacing the parameter count in a dense formula with active parameters. [Clark et al., 2022](https://arxiv.org/html/2202.01169); [Scaling Laws for Fine-Grained Mixture of Experts, 2024](https://arxiv.org/html/2402.07871)
 
 Mixtral demonstrated how this architecture could enter open autoregressive models: two of eight experts are selected per layer, with roughly 47B total parameters and 13B active parameters per token. The report explicitly notes that serving memory depends on total parameters, while routing and memory access also affect device utilization; batched workloads more readily achieve higher arithmetic intensity. Describing its deployment cost simply as that of a 13B model therefore omits major constraints. [Jiang et al., 2024, §2 and §3](https://arxiv.org/html/2401.04088v1)
+
+### Sparsity Also Changes Hyperparameter Transfer
+
+Choosing a sparse architecture also changes the optimization recipe. [Tian et al., 8 September 2026](https://arxiv.org/html/2609.08690v1) add the expert activation ratio $A=E_{\mathrm{act}}/E_{\mathrm{tot}}$ to hyperparameter prediction; this differs from the active-to-total parameter ratio. They fit
+
+$$
+\eta^*=k_\eta C^{\gamma_\eta}A^{\delta_\eta},\qquad B^*=k_B D^{\gamma_B}A^{\delta_B}.
+$$
+
+Here, $\eta$ is peak learning rate, $B$ global tokens per update, $D$ training tokens, and $C=MD$ non-embedding training FLOPs, and $M$ the architecture-specific analytically computed non-embedding FLOPs per token. Within their setting, greater sparsity favors a lower learning rate at fixed $C$ and a larger batch at fixed $D$.
+
+The study reports 1,800 runs, approximately 10M–324M activated parameters, and grouped validation holding out activation ratios or model scales. A frozen prediction falls near the observed optimal region for a 12B-total/324M-activated model with $A=1/64$, trained on 159B tokens. Activated size remains at the fitted range's boundary: this is one joint extrapolation in sparsity, tokens, and compute, not independent validation along every axis. The experiments share a hybrid attention backbone, Muon optimizer, corpus, and warmup–stable–decay schedule. Overlapping intervals across candidate functional forms and limited seed coverage leave uncertainty; these coefficients do not establish a universal recipe or downstream-capability law.
 
 ## 2. Landmark: DeepSeekMoE Moves from More Capacity to More Useful Experts
 

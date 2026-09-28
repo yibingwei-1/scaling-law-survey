@@ -1,0 +1,276 @@
+{
+  "review_date": "2026-09-28",
+  "search_window": {
+    "from": "2026-09-07",
+    "through": "2026-09-28",
+    "basis": "Original publication or revision date in primary submission history; discovery and crawl dates are not publication dates."
+  },
+  "scope": "Targeted weekly maintenance for post-training/RL, inference compute, multimodal and robotics. Research log and merge proposals only; not an exhaustive search.",
+  "local_context_read": [
+    "METHODOLOGY.md",
+    "sources/weekly-2026-09-21-frontier.json",
+    "docs/04-posttraining.md",
+    "docs/05-inference.md",
+    "docs/07-multimodal.md",
+    "sources/editorial.json"
+  ],
+  "local_read_limit": "The combined initial chapter read was output-truncated; relevant T4/T5/T7 passages were subsequently targeted. No claim of a new complete audit of every chapter.",
+  "queries": [
+    {
+      "query": "site:arxiv.org \"test-time scaling\" \"Sep 2026\"",
+      "batch": 1
+    },
+    {
+      "query": "site:arxiv.org \"reinforcement learning\" \"scaling\" \"Sep 2026\" \"23\"",
+      "batch": 1
+    },
+    {
+      "query": "site:arxiv.org \"robot\" \"scaling\" \"Sep 2026\"",
+      "batch": 1
+    },
+    {
+      "query": "site:arxiv.org \"multimodal\" \"scaling\" \"Sep 2026\" \"24\"",
+      "batch": 2
+    },
+    {
+      "query": "site:arxiv.org \"reinforcement learning\" \"scaling\" \"Sep 2026\" \"25\"",
+      "batch": 2
+    },
+    {
+      "query": "site:figure.ai \"September\" \"2026\" Helix scaling",
+      "batch": 2
+    }
+  ],
+  "query_results": [
+    {
+      "batch": 1,
+      "observed_primary_leads": [
+        "https://arxiv.org/abs/2609.27374",
+        "https://arxiv.org/abs/2609.22068",
+        "https://arxiv.org/abs/2609.21767",
+        "https://arxiv.org/abs/2609.18016"
+      ]
+    },
+    {
+      "batch": 2,
+      "observed_primary_leads": [
+        "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+        "https://www.figure.ai/news"
+      ],
+      "result": "Checked visible Helix report and news listing; no later technical scaling release established. No additional paper promoted from this batch."
+    }
+  ],
+  "caution_on_query_logs": "Batched search output combines results; batch leads are not guaranteed per-query rankings. Queries containing particular day numbers are discovery probes, not exhaustive date filters.",
+  "proposed_new_body_source": {
+    "classification": "new_primary_source_recommended_for_T5",
+    "arxiv_id": "2609.27374",
+    "first_submission_utc": "2026-09-23T05:25:10Z",
+    "latest_version_checked": "v1",
+    "latest_revision_utc": null,
+    "duplicate_check": "No existing 2609.27374 match in docs, sources or data before writing this log.",
+    "mechanism_and_conditions": "See source_record and matched insertion below; primary HTML §§3–4 and Appendix B/C read, not a complete proof/code audit.",
+    "proposed_insertion_location": "T5 §1: after the independent-sampling/difficulty-mixture argument and before §2 partial-state search. This is a new coordinated-coverage branch, not a universal exponent or a correction to Large Language Monkeys.",
+    "proposed_chinese": "独立采样可能反复走向同一种失败策略，因此，协调分支是不同于增加样本数的另一个问题。PTTS 用规划器一次联合生成四条提纲，再由冻结的执行器分别完成，并重复这一过程收集 64 条解答。其 RL 版本只要组内有分支成功就奖励规划器，训练时将执行器输出截为 4k token，评估时每条解答上限为 10k token。在 Qwen3-1.7B/4B 执行器的五项数学评测中，1.7B 模型相较重复采样的 pass@64 提升最高为 13.4 个百分点。[PTTS，v1，§3–4](https://arxiv.org/html/2609.27374v1)\n\n这扩展的是覆盖率支线，还不能证明部署中的选择器更能选对答案。论文生成 64 条解答，再从该集合解析估计较小 k 的覆盖率；协调分组也改变了样本的依赖结构。因此，论文报告的 pass@32 超过重复采样 pass@64，不应读成端到端计算实测减半。部署比较还须计入规划、执行、选择与摊销后的规划器训练，并实测延迟或 FLOPs。同样，理论上包含重复采样，约束的是策略类中最优可达策略，并不保证每个训练得到的规划器都提升表现。",
+    "proposed_english": "Independent draws can revisit the same unsuccessful strategy, making branch coordination a separate question from increasing sample count. PTTS addresses this with a planner that jointly generates four outlines and a frozen executor that completes each outline; groups are repeated to collect 64 solutions. Its RL variant rewards the planner when any branch succeeds, using shorter executor rollouts during training: 4k tokens versus a 10k-token evaluation cap per solution. Across five mathematics benchmarks with Qwen3-1.7B/4B executors, the reported pass@64 gain over repeated sampling reaches 13.4 percentage points for the 1.7B model. [PTTS, v1, §§3–4](https://arxiv.org/html/2609.27374v1)\n\nThis extends the coverage branch, not evidence that a deployment selector chooses better answers. The study generates 64 solutions and analytically estimates smaller-k coverage from that pool; coordinated groups also change the samples’ dependence structure. Consequently, the reported pass@32 advantage over repeated sampling’s pass@64 should not be read as a directly measured halving of end-to-end compute. A deployment comparison must count planning, executor generation, selection and amortized planner training, then measure latency or FLOPs. Likewise, theoretical inclusion of repeated sampling concerns the best policy achievable within the policy class; it does not guarantee that every trained planner improves performance.",
+    "english_word_count": 193,
+    "source_record": {
+      "id": "wu2026ptts",
+      "title": "Planned Test-Time Scaling with Coordinated Reasoning Paths",
+      "authors": [
+        "Xueqing Wu",
+        "Langxing Bai",
+        "Hritik Bansal",
+        "Po-Nien Kung",
+        "Shuo Li",
+        "Hao Liu",
+        "Nanyun Peng",
+        "Kai-Wei Chang"
+      ],
+      "date": "2026-09-23",
+      "year": 2026,
+      "version": "v1",
+      "url": "https://arxiv.org/abs/2609.27374",
+      "type": "paper",
+      "branch": "inference-coverage-coordination",
+      "problem": "重复采样可能集中于相似失败路径；样本数增长不保证覆盖互补策略",
+      "insight": "把每组分支建模为规划器与执行器的联合策略，以组内任一成功的奖励训练规划器",
+      "limitation": "仅两种Qwen3规模及数学任务；覆盖率不等于部署选择准确率；从64样本池解析估计较小k且组内相关；没有核实包含规划、训练、选择的完整FLOPs或实测部署效率优势；理论比较最优策略类而非任意训练结果",
+      "reading_depth": "full_text_targeted",
+      "verification_date": "2026-09-28",
+      "version_read": "v1",
+      "sections_read": "摘要、§3.1–3.3方法与理论假设、§4.1–4.3实验/消融、Appendix B训练参数、Appendix C评估分析；未完整审计Appendix A全部证明及代码",
+      "evidence_status": "原站首发时间与版本核验；方法、分组采样、训练/推理长度及pass@k估计定向核验；无独立复现。",
+      "full_text_url": "https://arxiv.org/html/2609.27374v1",
+      "first_published": "2026-09-23",
+      "method": "Four outlines per plan; freeze Qwen3 executor; optimize planner with group pass@4 reward and 4k-token executor rollouts. Repeat groups for a 64-solution evaluation pool, capped at 10k tokens per solution.",
+      "result": "Across five mathematics benchmarks with Qwen3-1.7B/4B, the largest reported pass@64 gain is 13.4 percentage points for 1.7B; this is a coverage result.",
+      "synthesis_status": "proposed"
+    },
+    "additional_audit_notes": [
+      "Appendix B specifies DAPO-Math-17K, 240 optimization steps, final checkpoint, 8×80GB A100 GPUs, rollout temperature 1.0; rollout temperature is not automatically the separately undisclosed evaluation temperature.",
+      "§4.1 uses the combinatorial estimate from n=64 responses. A smaller-k subset statistic should not automatically be equated with a separately executed smaller correlated-group deployment.",
+      "No FLOP text match was returned by the HTML find tool. This supports leaving FLOPs unclaimed, not a proof that every possible cost datum is absent.",
+      "Larger branching factors show diminishing or inconsistent benefits; the optimal-policy-class argument does not establish universal empirical dominance."
+    ],
+    "changes_body": false,
+    "decision": "Parent to integrate only after review; no chapter or main library edited by this subagent."
+  },
+  "existing_source_revision_proposal": {
+    "record_file": "sources/editorial.json",
+    "record_id": "kashaniyan2026samplecount",
+    "arxiv_id": "2609.19499",
+    "primary_url": "https://arxiv.org/abs/2609.19499",
+    "checked_full_text_url": "https://arxiv.org/html/2609.19499v2",
+    "first_submission_utc": "2026-09-16T23:29:57Z",
+    "latest_revision_utc": "2026-09-19T17:04:07Z",
+    "prior_recorded_observation": "2026-09-21 log recorded only v1 visible and an inaccessible guessed v2 endpoint.",
+    "current_observation": "2026-09-28 primary history lists v2; primary comments and journal reference identify acceptance at the third IEEE/ACM SC26 EESP workshop.",
+    "reading_depth": "v2 methods, fixed-N Table VI, cross-node/short-output qualifications, discussion and limitations targeted; no complete source/PDF byte diff.",
+    "evidence_change": "The fixed-N energy and P95 ratios, independent-sampling caveat and gross-device-energy boundary cited in T5 agree with v2. No substantive reversal of that paragraph established.",
+    "proposed_patch": {
+      "version": "v2",
+      "version_read": "v2",
+      "full_text_url": "https://arxiv.org/html/2609.19499v2",
+      "verification_date": "2026-09-28",
+      "latest_revision": "2026-09-19",
+      "evidence_status": "2026-09-21检索当时只显示v1；2026-09-28主站已列v2（2026-09-19 17:04:07 UTC）并标注SC26 EESP workshop接收。已定向复核v2方法、固定N表VI与局限，正文引用倍率及测量边界一致；未做完整版本diff，不能断言只改元数据。",
+      "sections_read": "v2摘要、§III–IV方法/实验条件、§V-C表VI及相关复核、§VI–VII讨论与局限；与既有v1核验结论对照"
+    },
+    "body_link_proposal": "Keep numerical paragraph; update both language citation labels and versioned full-text URLs from v1 to v2, with the dated version observation in the source audit trail.",
+    "historical_preservation": "Do not overwrite the 2026-09-21 weekly log. Add this dated observation and retain first publication date 2026-09-16.",
+    "count_as_new_source": false,
+    "changes_body": false
+  },
+  "retained_candidates": [
+    {
+      "arxiv_id": "2609.22068",
+      "title": "CodeMidas: Scaling Agentic Coding RL Environments from Code Itself",
+      "primary_url": "https://arxiv.org/abs/2609.22068",
+      "full_text_url": "https://arxiv.org/html/2609.22068v1",
+      "first_submission_utc": "2026-09-18T17:55:17Z",
+      "latest_version_checked": "v1",
+      "classification": "new_to_repository_candidate",
+      "reading_depth": "Abstract, §3 construction/filtering, §4 experimental setup/results and §5.1–5.2 scale/quality/behavior analysis; no code or complete Appendix A audit.",
+      "old_bottleneck": "Coding RL task supply can depend on development histories or pre-existing tests; synthetic verifiers can accept incorrect solutions.",
+      "mechanism": "Derive missing-functionality tasks and execution-grounded hidden tests from source code, then filter execution consistency, leakage and verdict disagreements.",
+      "evidence_conditions": "MiMo-V2.5 GRPO uses 5,545 tasks. Filtered 1k/3k/full pools and an unfiltered 8k pool share training configurations. DeepSWE increases from 10.0% to 21.7%; ProgramBench uses Almost Solved (at least 95% of tests), not ordinary pass rate.",
+      "limitation": "Combined filters do not isolate each quality mechanism; reported task-scale comparisons are not a fitted universal law or matched total construction-plus-training cost comparison. Behavior/success associations are not causal intervention evidence.",
+      "changes_body": false,
+      "decision": "Retain for later T4/data-quality synthesis; no extra main-text source this week."
+    },
+    {
+      "arxiv_id": "2609.21767",
+      "title": "Scaling Vision-Language Reward Learning for Robot Manipulation in Parallel Simulation",
+      "primary_url": "https://arxiv.org/abs/2609.21767",
+      "full_text_url": "https://arxiv.org/html/2609.21767v1",
+      "first_submission_utc": "2026-09-18T13:36:33Z",
+      "latest_version_checked": "v1",
+      "classification": "previous_search_lead_now_primary_read",
+      "reading_depth": "Abstract, method components, §V setup/controlled comparisons, §VI results and §VII limitations targeted; no code reproduction.",
+      "old_bottleneck": "Sequential VLM preference calls and single-environment collection make robot reward learning costly.",
+      "mechanism": "RAPID combines parallel simulation, adaptive updates, fewer calls per pair, reward-model stopping and representative frame selection.",
+      "evidence_conditions": "Five short Franka manipulation tasks in IsaacLab, three seeds; 1M steps per run. Full-system runtime 1.15h versus baseline 9.18h, but several components change. The matched two-stage-prompt parallel/adaptive comparison is 9.18h versus 3.13h.",
+      "limitation": "Entirely simulation; no sim-to-real result. Parallel environment count and update schedule change together. Second-VLM check is offline only; headline 8x is an integrated-system effect, not a universal hardware/data scaling exponent.",
+      "changes_body": false,
+      "decision": "Candidate only. Useful example of reward-cost accounting but does not alter existing T7 robot-data claims."
+    }
+  ],
+  "prior_candidate_version_checks": [
+    {
+      "arxiv_id": "2609.03241",
+      "primary_url": "https://arxiv.org/abs/2609.03241",
+      "latest_version": "v1",
+      "latest_date": "2026-09-03",
+      "classification": "unchanged_prior_candidate_outside_current_window",
+      "reading_depth": "Primary metadata/history only this round"
+    },
+    {
+      "arxiv_id": "2609.12757",
+      "primary_url": "https://arxiv.org/abs/2609.12757",
+      "latest_version": "v1",
+      "latest_date": "2026-09-11",
+      "classification": "unchanged_prior_candidate_in_window_duplicate",
+      "reading_depth": "Primary metadata/history only this round"
+    },
+    {
+      "arxiv_id": "2609.21032",
+      "primary_url": "https://arxiv.org/abs/2609.21032",
+      "latest_version": "v1",
+      "latest_date": "2026-09-17",
+      "classification": "unchanged_prior_candidate_in_window_duplicate",
+      "reading_depth": "Primary metadata/history only this round"
+    },
+    {
+      "arxiv_id": "2605.06241",
+      "primary_url": "https://arxiv.org/abs/2605.06241",
+      "latest_version": "v3",
+      "latest_revision_utc": "2026-09-06T00:35:48Z",
+      "classification": "unchanged_prior_candidate_outside_current_window",
+      "reading_depth": "Primary metadata/history only this round"
+    }
+  ],
+  "existing_source_version_checks": [
+    {
+      "arxiv_id": "2608.04001",
+      "url": "https://arxiv.org/abs/2608.04001",
+      "existing_version": "v2",
+      "latest_version": "v2",
+      "latest_revision_utc": "2026-08-31T18:11:17Z",
+      "result": "No in-window revision found in primary history"
+    },
+    {
+      "arxiv_id": "2606.22317",
+      "url": "https://arxiv.org/abs/2606.22317",
+      "existing_version": "v1",
+      "latest_version": "v1",
+      "latest_submission_utc": "2026-06-21T03:15:25Z",
+      "result": "No in-window revision found in primary history"
+    },
+    {
+      "arxiv_id": "2604.14853",
+      "url": "https://arxiv.org/abs/2604.14853",
+      "existing_version": "v1",
+      "latest_version": "v1",
+      "latest_submission_utc": "2026-04-16T10:39:22Z",
+      "result": "No in-window revision found in primary history"
+    },
+    {
+      "arxiv_id": "2412.06769",
+      "url": "https://arxiv.org/abs/2412.06769",
+      "existing_version": "v4",
+      "latest_version": "v4",
+      "latest_revision_utc": "2026-08-23T05:07:09Z",
+      "result": "No in-window revision found in primary history"
+    }
+  ],
+  "official_report_check": {
+    "title": "Helix 2.5 Zero-Shot 30-Home Generalization",
+    "primary_url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+    "visible_publication_date": "2026-09-17",
+    "reading_depth": "Visible author report claims and news listing checked against existing T7 paragraph",
+    "result": "Existing loss/data and 30-home claims corroborated; no explicit new revision date or later technical report established on the checked listing.",
+    "limitation": "No byte-level previous/current snapshot comparison; a news listing does not prove no update elsewhere.",
+    "classification": "existing_in_window_report_duplicate",
+    "changes_body": false
+  },
+  "unpromoted_search_leads": [
+    {
+      "arxiv_id": "2609.18016",
+      "primary_url": "https://arxiv.org/abs/2609.18016",
+      "title": "Causal-History Test-Time Scaling for Failure Recovery in Autoregressive World-Action Models",
+      "reading_depth": "Primary search-result snippet only",
+      "decision": "No abs/full-text/date audit completed; discovery lead only, no publication-date assertion or technical promotion."
+    }
+  ],
+  "limitations": [
+    "Six real search queries plus targeted primary version checks; not exhaustive arXiv/API, institution-blog or publication coverage.",
+    "No independent replication, retraction claim or definitive reversal of existing core technical conclusions established.",
+    "New candidates were read selectively; exact reading depth is recorded. No full proof, source-code or end-to-end compute audit claimed.",
+    "Publication and revision history must be distinguished from this round's discovery date; older in-window works are not automatically new to the review.",
+    "Only PTTS is proposed for new body integration, plus a non-duplicating Sample Count version update. All other leads remain research notes."
+  ],
+  "changed_files": [
+    "sources/weekly-2026-09-28-frontier.json"
+  ],
+  "integration_status": "Proposals only; parent will review and merge body/source changes."
+}

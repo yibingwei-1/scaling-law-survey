@@ -1,0 +1,660 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-09-28",
+  "window": {
+    "start": "2026-09-07",
+    "end": "2026-09-28",
+    "inclusive": true
+  },
+  "baseline_files_read": [
+    "METHODOLOGY.md",
+    "sources/community.json",
+    "sources/weekly-2026-09-21-community.json"
+  ],
+  "baseline_catalog_count": 19,
+  "scope": "Read-only community maintenance research for the scaling-law survey; no changes to maintained prose or community catalog.",
+  "policy": {
+    "missing_metrics": "null means not observed, not zero",
+    "index_metrics": "Search-index snapshots are not live counters; retrieval date is not metric measurement time.",
+    "publication_date": "Retain explicit calendar dates separately from unanchored relative page times; never infer posting time from crawl time.",
+    "attention_thresholds": {
+      "reddit_score": 100,
+      "youtube_views": 100000,
+      "x_explicit_views": 100000
+    },
+    "cross_platform_ranking": false,
+    "technical_evidence": "Only primary research supports technical conclusions; comments and interviews identify questions. Abstract-only reading remains abstract-only.",
+    "deduplication": "Canonical URL compared with the 19-entry catalog and the prior weekly log; earlier snapshots are never overwritten."
+  },
+  "queries": [
+    {
+      "batch": 1,
+      "search_queries": [
+        {
+          "query": "site:reddit.com (\"scaling law\" OR \"test-time compute\" OR \"compute-optimal\" OR \"RL scaling\") after:2026-09-06 before:2026-09-29"
+        },
+        {
+          "query": "site:x.com (\"scaling laws\" OR \"test-time compute\" OR \"sequence weighting\") after:2026-09-06 before:2026-09-29"
+        },
+        {
+          "query": "site:youtube.com/watch (\"scaling laws\" OR \"test-time compute\" OR \"Helix 2.5\") after:2026-09-06 before:2026-09-29"
+        },
+        {
+          "query": "site:reddit.com (\"model growth\" OR \"sequence weighting\" OR \"Helix 2.5\") after:2026-09-06 before:2026-09-29"
+        }
+      ],
+      "opened_urls": [],
+      "reader_actions": [],
+      "outcome": "Strict site/date queries returned no results; subsequent broader searches were necessary."
+    },
+    {
+      "batch": 2,
+      "search_queries": [
+        {
+          "query": "\"scaling laws\" \"September 2026\" reddit"
+        },
+        {
+          "query": "\"test-time compute\" \"September\" \"2026\" site:reddit.com"
+        },
+        {
+          "query": "\"Helix 2.5\" site:youtube.com"
+        },
+        {
+          "query": "\"sequence weighting\" site:x.com"
+        }
+      ],
+      "opened_urls": [],
+      "reader_actions": [],
+      "outcome": "Found substantial off-topic material, including a law-policy podcast named Scaling Laws. No verified target-platform candidate in this batch."
+    },
+    {
+      "batch": 3,
+      "search_queries": [
+        {
+          "query": "\"scaling laws\"",
+          "domains": [
+            "reddit.com"
+          ],
+          "recency_days": 21
+        },
+        {
+          "query": "\"test time compute\"",
+          "domains": [
+            "youtube.com"
+          ],
+          "recency_days": 21
+        },
+        {
+          "query": "\"scaling\" \"compute\"",
+          "domains": [
+            "x.com"
+          ],
+          "recency_days": 21
+        },
+        {
+          "query": "\"Helix 2.5\"",
+          "domains": [
+            "reddit.com"
+          ]
+        }
+      ],
+      "opened_urls": [],
+      "reader_actions": [],
+      "outcome": "Recovered September 16 Reddit Scaling Laws discussion (score 32); recency filtering also returned historical material, which was excluded by explicit publication date."
+    },
+    {
+      "batch": 4,
+      "search_queries": [
+        {
+          "query": "\"training compute\" \"September\" \"2026\"",
+          "domains": [
+            "reddit.com"
+          ]
+        },
+        {
+          "query": "\"reinforcement learning\" \"scaling\" \"September\" \"2026\"",
+          "domains": [
+            "reddit.com"
+          ]
+        },
+        {
+          "query": "\"sequence weighting\" reddit"
+        },
+        {
+          "query": "\"Helix 2.5\" YouTube September 2026"
+        }
+      ],
+      "opened_urls": [
+        "https://www.reddit.com/r/accelerate/comments/1wiby3b/scaling_laws/",
+        "https://www.youtube.com/watch?v=PrSf7IOYu-I",
+        "https://www.youtube.com/watch?v=lJpM_2a1zrE",
+        "https://x.com/adcock_brett/status/2100657393923445017"
+      ],
+      "reader_actions": [],
+      "outcome": "Recovered September 14 RSI discussion (score 288), a September 28 low-score data discussion, and previously seen AskReddit discussion. Direct X and YouTube reads returned Internal Error."
+    },
+    {
+      "batch": 5,
+      "search_queries": [
+        {
+          "query": "\"test-time compute\" \"September 2026\" -site:gsaadvantage.gov"
+        },
+        {
+          "query": "\"scaling laws\" \"September 2026\" \"YouTube\" -lawfare -podcasts.apple.com -Eastwood"
+        },
+        {
+          "query": "\"sequence weighting\" \"Jane\" \"x.com\""
+        },
+        {
+          "query": "\"model growth\" \"2026\" \"reddit\""
+        }
+      ],
+      "opened_urls": [
+        "https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/",
+        "https://www.humanoid.press/humanoid-daily/",
+        "https://www.reddit.com/r/accelerate/comments/1wiby3b/scaling_laws/"
+      ],
+      "reader_actions": [],
+      "outcome": "Read Reddit discussion bodies and secondary Helix coverage; found a model-growth discussion lead only on an aggregator, without a recoverable Reddit permalink."
+    },
+    {
+      "batch": 6,
+      "search_queries": [
+        {
+          "query": "\"PrSf7IOYu-I\""
+        },
+        {
+          "query": "\"How Model Growth, Recursion, and Boundary Operators\" reddit"
+        },
+        {
+          "query": "\"test-time\" \"September 2026\" site:reddit.com/r/LocalLLaMA"
+        },
+        {
+          "query": "\"scaling laws\" site:x.com/status after:2026-09-06 before:2026-09-29"
+        }
+      ],
+      "opened_urls": [
+        "https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/"
+      ],
+      "reader_actions": [
+        {
+          "action": "find",
+          "url": "https://www.humanoid.press/humanoid-daily/",
+          "pattern": "Adcock on Helix"
+        },
+        {
+          "action": "find",
+          "url": "https://www.humanoid.press/humanoid-daily/",
+          "pattern": "September 23"
+        }
+      ],
+      "outcome": "Corroborated the Dwarkesh video through a participant organization's cross-link; model-growth searches recovered primary paper and aggregators but no platform metadata."
+    },
+    {
+      "batch": 7,
+      "search_queries": [
+        {
+          "query": "\"PrSf7IOYu-I\" \"Dwarkesh\""
+        },
+        {
+          "query": "\"RSI is not happening\" paper"
+        },
+        {
+          "query": "\"A study of sequence weighting at scale\" \"reddit.com\""
+        },
+        {
+          "query": "\"scaling laws\" \"September 24\" \"2026\""
+        }
+      ],
+      "opened_urls": [
+        "https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/",
+        "https://www.humanoid.press/humanoid-daily/"
+      ],
+      "reader_actions": [],
+      "outcome": "Recovered the exact RSI paper URL and explicit dated Reddit index snapshot. Secondary accounts describe the video but their claimed view counts are not adopted as YouTube metrics."
+    },
+    {
+      "batch": 8,
+      "search_queries": [
+        {
+          "query": "\"AI researchers debate how close we are to recursive self-improvement\" site:youtube.com"
+        },
+        {
+          "query": "\"AI researchers debate how close\" site:dwarkesh.com"
+        },
+        {
+          "query": "\"RoboStrategy\" \"Helix 2.5\" YouTube"
+        },
+        {
+          "query": "\"sequence weighting at scale\" \"x.com\" OR \"twitter.com\""
+        }
+      ],
+      "opened_urls": [
+        "https://arxiv.org/abs/2607.27191"
+      ],
+      "reader_actions": [
+        {
+          "action": "click",
+          "url": "https://www.humanoid.press/humanoid-daily/",
+          "link_id": 79
+        }
+      ],
+      "outcome": "Read the RSI paper abstract/version history and the podcast host's dated episode page and relevant transcript sections. Secondary RoboStrategy coverage did not expose a verified video permalink in the reader."
+    },
+    {
+      "batch": 9,
+      "search_queries": [
+        {
+          "query": "\"PrSf7IOYu-I\" \"views\""
+        },
+        {
+          "query": "\"lJpM_2a1zrE\" \"views\""
+        },
+        {
+          "query": "\"scaling laws\" \"September\" \"2026\" \"site:x.com/\""
+        },
+        {
+          "query": "\"test-time compute\" \"September 2026\" \"youtube.com/watch\""
+        }
+      ],
+      "opened_urls": [
+        "https://arxiv.org/abs/2607.27191",
+        "https://www.dwarkesh.com/p/john-beren-charlie",
+        "https://www.humanoidsdaily.com/news/brett-adcock-four-chapters-figure-04"
+      ],
+      "reader_actions": [],
+      "outcome": "Exact-video-ID searches returned third-party reposts and unlabelled mirror numbers, not verified YouTube counters. Read primary metadata and the official episode page."
+    },
+    {
+      "batch": 10,
+      "search_queries": [],
+      "opened_urls": [
+        "https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/"
+      ],
+      "reader_actions": [
+        {
+          "action": "find",
+          "url": "https://www.humanoidsdaily.com/news/brett-adcock-four-chapters-figure-04",
+          "pattern": "youtube"
+        },
+        {
+          "action": "find",
+          "url": "https://www.humanoid.press/humanoid-daily/",
+          "pattern": "Watch Interview"
+        },
+        {
+          "action": "find",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/",
+          "pattern": "2607.27191"
+        },
+        {
+          "action": "click",
+          "url": "https://www.dwarkesh.com/p/john-beren-charlie",
+          "link_id": 5
+        }
+      ],
+      "outcome": "Re-opened existing Helix Reddit record without a fresh metric. Verified the RSI thread's primary-source link; no complete comments tree. Host YouTube click resolution failed."
+    }
+  ],
+  "search_query_count": 36,
+  "recommended_candidates": [
+    {
+      "candidate_id": "W28-RD-01",
+      "platform": "Reddit",
+      "community": "r/MachineLearning",
+      "title": "RSI is not happening [R]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/",
+      "author": "u/we_are_mammals",
+      "published_at": "2026-09-14",
+      "publication_date_evidence": "Search-index result explicitly displayed [Monday September 14 2026]; direct reader exposed only relative '4h ago' with unknown reference time.",
+      "observed_at": "2026-09-28",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 288
+      },
+      "metric_evidence": "[Monday September 14 2026] [+288 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "attention_status": "high_attention_proxy",
+      "comments_complete": false,
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2607.27191v2",
+          "title": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+          "kind": "paper",
+          "verification": "Abstract and submission history read; v1 July 29, 2026, v2 August 7, 2026. Full methods and supplementary artifacts not reviewed in this community subtask."
+        }
+      ],
+      "access_status": "Post body and selected replies readable. Direct-reader score and exact date unavailable; index supplies dated score snapshot.",
+      "discussion_focus": "Readers challenge the leap from failures of tested agents on two open-ended research cases to a forecast that recursive self-improvement is not near. The useful issue is how to distinguish research engineering, problem selection, verification cost, and end-to-end autonomous research under specified budgets.",
+      "evidence_limit": "The post title is the poster's interpretation, not the paper's established result. The primary abstract reports two shadow evaluations and qualitative failure modes; neither this limited evidence nor comment votes establish an impossibility result or an acceleration forecast. This is a newly discovered discussion of an older paper, not a paper first released this week.",
+      "proposed_action": "Consider a contextual radar entry connecting inference-time budgets to evaluation boundaries, after editorial review. Do not change the technical survey's scaling conclusions from this discussion alone.",
+      "observations": [
+        {
+          "observed_at": "2026-09-28",
+          "source_kind": "search_index_snapshot",
+          "published_at": "2026-09-14",
+          "score": 288,
+          "metric_measurement_time": null
+        },
+        {
+          "observed_at": "2026-09-28",
+          "source_kind": "direct_reader",
+          "relative_time_text": "4h ago",
+          "published_at": null,
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "views": null,
+            "reposts": null,
+            "score": null
+          },
+          "note": "Reference time unknown; not converted into an absolute posting date. Selected replies read, not the entire tree."
+        }
+      ]
+    }
+  ],
+  "high_attention_candidates_found": 1,
+  "accepted_records": [],
+  "maintenance_decision": "One previously unrecorded, dated high-attention Reddit discussion is worth editorial consideration as an evaluation-boundary example. It does not establish a new scaling law or a technical reversal. No verified new high-attention X/YouTube metric was recovered. All catalog changes remain for the parent editor. Proposed RD-10 and bilingual radar text are supplied for parent review only; no merge performed by this subtask.",
+  "context_candidates": [
+    {
+      "candidate_id": "W28-RD-02",
+      "platform": "Reddit",
+      "title": "Scaling Laws",
+      "url": "https://www.reddit.com/r/accelerate/comments/1wiby3b/scaling_laws/",
+      "author": "u/Only-Effort-1975",
+      "published_at": "2026-09-16",
+      "observed_at": "2026-09-28",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 32
+      },
+      "metric_evidence": "[Wednesday September 16 2026] [+32 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "attention_status": "context_below_screening_threshold",
+      "comments_complete": false,
+      "primary_sources": [
+        {
+          "url": "https://www.dwarkesh.com/p/john-beren-charlie",
+          "kind": "first_party_interview_transcript",
+          "verification": "Episode date, speakers, topic outline and relevant transcript sections read. A linked interview is not an empirical scaling experiment."
+        }
+      ],
+      "discovery_link": "https://www.youtube.com/watch?v=PrSf7IOYu-I",
+      "access_status": "Reddit body and selected replies readable; direct reader only showed '4d ago', with unknown reference time, and no counter.",
+      "discussion_focus": "Comments connect several resource axes and long-horizon agents, but claims that axes multiply are not independently established by the thread.",
+      "proposed_action": "Keep as a discovery lead; do not add a redundant speculative paragraph."
+    },
+    {
+      "candidate_id": "W28-YT-01",
+      "platform": "YouTube",
+      "title": "AI researchers debate how close we are to recursive self-improvement",
+      "title_evidence": "Exact episode title on the host's first-party page; direct YouTube title unavailable.",
+      "url": "https://www.youtube.com/watch?v=PrSf7IOYu-I",
+      "author": "Dwarkesh Patel",
+      "published_at": null,
+      "first_party_episode_date": "2026-09-11",
+      "observed_at": "2026-09-28",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "metrics_source_kind": "not_available",
+      "attention_status": "unverified",
+      "primary_sources": [
+        {
+          "url": "https://www.dwarkesh.com/p/john-beren-charlie",
+          "kind": "first_party_interview_transcript",
+          "verification": "Dated host page and relevant sections read; distinguishes data, RL environment design, generalization and research bottlenecks. No full-video viewing."
+        }
+      ],
+      "discovery_evidence_urls": [
+        "https://www.reddit.com/r/accelerate/comments/1wiby3b/scaling_laws/",
+        "https://www.dwarkesh.com/p/john-beren-charlie",
+        "https://www.linkedin.com/posts/baseten_rl-teaches-models-to-work-longer-but-reasoning-activity-7508277052282679296-P5tb"
+      ],
+      "access_status": "Direct YouTube read returned Internal Error; host page provides episode date and a YouTube link, and exact video URL is corroborated by Reddit and participant cross-link. Platform publication date and counters not independently read.",
+      "evidence_limit": "A third-party note claimed 351,000 views as of September 14, but that is not an observed YouTube counter and is not recorded as a metric. Substack's visible unlabeled numbers are not YouTube engagement.",
+      "proposed_action": "Retain as a first-party discussion lead with unavailable platform attention."
+    }
+  ],
+  "unverified_candidates": [
+    {
+      "platform": "X",
+      "url": "https://x.com/adcock_brett/status/2100657393923445017",
+      "published_at": null,
+      "observed_at": "2026-09-28",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "primary_sources": [
+        "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"
+      ],
+      "prior_log": "weekly-2026-09-21-community.json",
+      "status": "previous_candidate_rechecked_access_still_failed",
+      "access_status": "Direct reader returned Internal Error; no fresh body/date/counter. Previous cross-link evidence retained only in prior log.",
+      "proposed_action": "Do not add or refresh metrics."
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=lJpM_2a1zrE",
+      "published_at": null,
+      "observed_at": "2026-09-28",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "primary_sources": [
+        "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"
+      ],
+      "prior_log": "weekly-2026-09-21-community.json",
+      "status": "previous_candidate_rechecked_access_still_failed",
+      "access_status": "Direct reader returned Internal Error. Search results repeat exact URL elsewhere but provide no verified YouTube metric.",
+      "proposed_action": "Do not add or refresh metrics."
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/DanDr1s/status/2097043390953136437/photo/1",
+      "published_at": null,
+      "observed_at": "2026-09-28",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "primary_sources": [],
+      "discovery_source": "https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/",
+      "status": "cross_link_only_not_directly_read",
+      "access_status": "Exact X URL present in a selected Reddit reply; no direct read attempted in this bounded round.",
+      "evidence_limit": "Neither linked image nor its technical basis was inspected; publication window and popularity unverified.",
+      "proposed_action": "Discovery candidate only; no technical adoption."
+    }
+  ],
+  "existing_record_observations": [
+    {
+      "catalog_id": "RD-09",
+      "url": "https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/",
+      "observed_at": "2026-09-28",
+      "source_kind": "direct_reader",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "note": "Page remained readable, but no fresh counter was recovered. Prior September 21 score of 52 is not relabeled as a September 28 observation."
+    }
+  ],
+  "not_selected": [
+    {
+      "platform": "Reddit",
+      "title": "Is AI Model Training Moving From “More Data” to Better Data?",
+      "url": "https://www.reddit.com/r/u_Infamous_Lecture7294/comments/1ws75sw/is_ai_model_training_moving_from_more_data_to/",
+      "published_at": "2026-09-28",
+      "observed_at": "2026-09-28",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 1
+      },
+      "metric_evidence": "[Monday September 28 2026] [+1 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "primary_sources": [],
+      "reason": "Generic data-quality framing with no newly verified primary experiment; below attention threshold. Search-index-only screening."
+    },
+    {
+      "platform": "Reddit",
+      "title": "For people working in ML/AI and mathematicians, how far can LLM scaling laws realistically take us before we hit fundamental limits?",
+      "url": "https://www.reddit.com/r/AskReddit/comments/1wfmwav/for_people_working_in_mlai_and_mathematicians_how/",
+      "published_at": "2026-09-13",
+      "observed_at": "2026-09-28",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 11
+      },
+      "metric_evidence": "[Sunday September 13 2026] [+11 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "reason": "Already screened in the previous weekly log; broad speculation, below attention threshold, no new verified contribution."
+    }
+  ],
+  "unresolved_discovery_leads": [
+    {
+      "url": "https://gummysearch.com/r/mlscaling/",
+      "topic": "How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents",
+      "primary_source": "https://arxiv.org/abs/2609.19107",
+      "note": "Aggregator names a related Reddit discussion but no exact Reddit permalink, post date or post metrics were recovered. Aggregate community counts and third-party heat scores are not adopted."
+    },
+    {
+      "url": "https://www.humanoid.press/humanoid-daily/",
+      "topic": "RoboStrategy interview with Brett Adcock on Helix 2.5",
+      "primary_source": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+      "secondary_reported_date": "2026-09-23",
+      "note": "Secondary dated coverage names an interview, but the reader did not expose a confirmed video permalink. Not counted as a YouTube item."
+    },
+    {
+      "url": "https://www.dwarkesh.com/",
+      "topic": "Pretraining progress is mostly coming from data",
+      "first_party_listing_date": "2026-09-08",
+      "note": "Author-site listing identifies Dwarkesh Patel and Jerry Han. Sent to parent for primary-source review; no verified platform post or video metrics were recovered."
+    },
+    {
+      "url": "https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/",
+      "topic": "Sequence weighting",
+      "note": "Prior primary source targeted in exact-title X/Reddit searches; no verifiable new platform post recovered. This does not imply no discussion exists."
+    }
+  ],
+  "limitations": [
+    "Purposive English-language search, not exhaustive. Search operators/recency filters returned old or off-topic pages; explicit dates governed inclusion.",
+    "X search results were sparse or unrelated; direct X/YouTube reads failed. No absence-of-discussion inference is justified.",
+    "Relative timestamps on readable Reddit pages are apparently detached from retrieval time. Explicit index dates and scores remain separate observations; no engagement growth is inferred.",
+    "Reddit score 288 is a post score, not a reply score or comment count. Replies are used only to identify the scope dispute.",
+    "The associated research paper predates the search window; the discussion date qualifies this as new community discovery, not new technical evidence.",
+    "Mirror counters, third-party claimed YouTube views, forum/Telegram view counts, and Substack counters were not transferred into target-platform metrics.",
+    "Only abstracts/metadata and selected interview sections were read for newly linked primary materials; no independent replication or full-paper review was performed by this subtask.",
+    "No maintained community catalog or survey chapter was modified."
+  ],
+  "proposed_catalog_records": [
+    {
+      "id": "RD-10",
+      "platform": "Reddit",
+      "community": "r/MachineLearning",
+      "title": "RSI is not happening [R]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/",
+      "author": "u/we_are_mammals",
+      "published_at": "2026-09-14",
+      "publication_date_evidence": "Search-index result explicitly displayed [Monday September 14 2026]; direct reader exposed only relative '4h ago' with unknown reference time.",
+      "topics": [
+        "agent evaluation",
+        "test-time budgets",
+        "recursive self-improvement",
+        "limits of extrapolation"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 288
+      },
+      "metric_evidence": "[Monday September 14 2026] [+288 votes]",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2607.27191v2",
+          "title": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+          "kind": "paper",
+          "verification": "Abstract and submission history read; v1 July 29, 2026, v2 August 7, 2026. Full methods and supplementary artifacts not reviewed in this community subtask."
+        }
+      ],
+      "access_status": "Post body and selected replies readable. Direct-reader score and exact date unavailable; index supplies dated score snapshot.",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "Readers challenge the leap from failures of tested agents on two open-ended research cases to a forecast that recursive self-improvement is not near. The useful issue is how to distinguish research engineering, problem selection, verification cost, and end-to-end autonomous research under specified budgets.",
+      "evidence_limit": "The post title is the poster's interpretation, not the paper's established result. The primary abstract reports two shadow evaluations and qualitative failure modes; neither this limited evidence nor comment votes establish an impossibility result or an acceleration forecast. This is a newly discovered discussion of an older paper, not a paper first released this week.",
+      "observed_at": "2026-09-28",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "observations": [
+        {
+          "observed_at": "2026-09-28",
+          "source_kind": "search_index_snapshot",
+          "published_at": "2026-09-14",
+          "score": 288,
+          "metric_measurement_time": null
+        },
+        {
+          "observed_at": "2026-09-28",
+          "source_kind": "direct_reader",
+          "relative_time_text": "4h ago",
+          "published_at": null,
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "views": null,
+            "reposts": null,
+            "score": null
+          },
+          "note": "Reference time unknown; not converted into an absolute posting date. Selected replies read, not the entire tree."
+        }
+      ]
+    }
+  ],
+  "proposed_radar_addition": {
+    "zh_heading": "2026-09-28 追加观测：把当前评测失败与长期外推分开",
+    "zh_markdown": "[RD-10：RSI is not happening [R]](https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/) 的索引明确显示发帖日期 2026-09-14、288 分，达到本雷达 Reddit 的编辑筛选阈值；观测日期为 9 月 28 日，计数生成时间未知。标题是发帖者的概括。关联的[原研究 v2](https://arxiv.org/abs/2607.27191v2) 本轮仅核验摘要与版本：两个案例的观察不能论证 RSI 不可能。评论中的分歧提示应记录模型、任务、预算与人工介入，再讨论外推；评论本身不构成技术证据。本次直接页面没有可见计数，X 与 YouTube 亦未取得新的可核验热度指标，旧观测数值保持不变。",
+    "en_heading": "Observation Added on 2026-09-28: Separate Current Evaluation Failures from Long-Term Extrapolation",
+    "en_markdown": "The indexed result for [RD-10: RSI is not happening [R]](https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/) explicitly gives September 14, 2026 and a score of 288, meeting this radar's editorial Reddit threshold. It was retrieved on September 28; the counter's measurement time is unknown. The title is the poster's interpretation. Only the abstract and version history of the [linked study v2](https://arxiv.org/abs/2607.27191v2) were checked this round: observations from two cases cannot establish that RSI is impossible. The disagreement motivates recording models, tasks, budgets, and human intervention before extrapolating; comments are not technical evidence. Direct page reading exposed no counter, and no new verifiable X or YouTube attention metrics were obtained. Historical counts remain unchanged."
+  }
+}
