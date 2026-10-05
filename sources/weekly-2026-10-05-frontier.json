@@ -1,0 +1,326 @@
+{
+  "review_date": "2026-10-05",
+  "repository": "https://github.com/yibingwei-1/scaling-law-survey",
+  "baseline_head": "17b6a37",
+  "baseline_head_basis": "Provided by parent at task start; no checkout or other working directory created.",
+  "search_window": {
+    "from": "2026-09-14",
+    "through": "2026-10-05",
+    "basis": "Primary publication/revision timestamps, not crawl or discovery dates."
+  },
+  "scope": "Targeted weekly maintenance for T4 post-training/RL, T5 inference budgets, T6 capability evaluation, T7 multimodal/robotics. Not exhaustive.",
+  "local_context_read": [
+    "data/state.json",
+    "METHODOLOGY.md",
+    "sources/weekly-2026-09-28-frontier.json",
+    "data/papers.json relevant records",
+    "docs/04-posttraining.md selected headings and 2026 sections",
+    "docs/05-inference.md relevant coverage/verification/budget sections",
+    "docs/06-theory-evaluation.md §§6.5–6.9 selected passages",
+    "docs/07-multimodal.md robot/Helix and cross-domain evaluation passages"
+  ],
+  "local_read_limit": "Large combined tool output was truncated; current high-priority T5/T6/T7 passages and matching source records were read again selectively. No complete new chapter audit claimed.",
+  "queries": [
+    {
+      "query": "site:arxiv.org \"test-time\" \"scaling\" \"Oct 2026\"",
+      "batch": 1
+    },
+    {
+      "query": "site:arxiv.org \"reinforcement learning\" \"scaling\" \"30 Sep 2026\"",
+      "batch": 1
+    },
+    {
+      "query": "site:arxiv.org \"multimodal\" \"scaling\" \"Oct 2026\"",
+      "batch": 1
+    },
+    {
+      "query": "site:arxiv.org \"scaling\" \"evaluation\" \"September 2026\" \"test-time\"",
+      "batch": 2
+    },
+    {
+      "query": "site:figure.ai/news \"October\" \"2026\" \"Helix\"",
+      "batch": 2
+    },
+    {
+      "query": "site:arxiv.org \"scaling\" \"reasoning\" \"reinforcement learning\" \"October 2026\"",
+      "batch": 2
+    }
+  ],
+  "query_results": [
+    {
+      "batch": 1,
+      "observed_primary_leads": [
+        "https://arxiv.org/abs/2610.01110",
+        "https://arxiv.org/abs/2609.40221",
+        "https://arxiv.org/abs/2609.38854",
+        "https://arxiv.org/abs/2609.39220"
+      ]
+    },
+    {
+      "batch": 2,
+      "observed_primary_leads": [
+        "https://www.figure.ai/news"
+      ],
+      "result": "Visible news index shows a September 30 F.02 Decommission item and the existing September 17 Helix report. No new technical scaling result was established from that listing; decommission article itself not read."
+    }
+  ],
+  "query_log_caution": "Search batches merge results; no exact per-query rank attribution claimed. Day-specific strings are discovery probes, not complete date filters.",
+  "agent_supplied_leads": [
+    {
+      "url": "https://arxiv.org/abs/2609.39403",
+      "from": "foundations agent / parent",
+      "discovery_status": "Abstract-level lead supplied; independently opened primary metadata and methods/results before recording conclusions."
+    }
+  ],
+  "duplicate_check": "Before writing, candidate IDs had no existing main-source or chapter records; 2610.01110 already appeared in this run's parent editorial research log, so this is shared evidence rather than a second source.",
+  "proposed_body_additions": [
+    {
+      "priority": 1,
+      "arxiv_id": "2610.01110",
+      "classification": "new_primary_source_recommended",
+      "first_submission_utc": "2026-10-01T05:49:29Z",
+      "latest_version_checked": "v1",
+      "latest_revision_utc": null,
+      "insertion": {
+        "file": "docs/05-inference.md",
+        "english_file": "docs/en/05-inference.md",
+        "location": "End of §4 verification-budget discussion, before §5 stopping. Connect the existing coverage/selection distinction to a third loss mode: no usable final submission."
+      },
+      "proposed_chinese": "覆盖率还可能在选择阶段无法返回可用答案时损失。SELF-POT 把这一问题单列测量：其五模型面板对每个模型测试 100 道编程题，并对计划生成三个候选、再由同一模型选择的协议做事后回放。分母是 500 个计划执行单元，实际保留 498 个候选池，两条缺失记录仍计失败。增加“保留首个非空候选”的回退后，正确提交从 376 增至 437，且保留所有已发生的 judge 费用；覆盖空答案的回退规则是在发现一次被选答案为空后补充的。改用公开样例测试选择，则达到 453/500，并通过省去 judge 阶段，使各模型的逻辑 API 成本降低 12%–49%。[SELF-POT，v1，§2–3、附录 J.2](https://arxiv.org/html/2610.01110v1)\n\n这些是固定候选上的受控回放，不是同等实测支出下重新运行的端到端实验。API 成本按设定价格记账，不是账单或硬件测量；本地公开测试的执行开销另报。它使已有的“覆盖—选择”区分更具体：把平台期归因于推理边界之前，还应分开记录没有成功提交与选错答案。这里确认的是所测协议中可修复的损失，不能推广为追加推理必然改善部署效果。",
+      "proposed_english": "Coverage can also be lost when a selection stage fails to return a usable answer. SELF-POT makes this a separate measurement target. In post-hoc replays of a protocol scheduling three programming candidates and a same-model judge, its five-model panel covers 100 tasks per model: 500 scheduled cells, with 498 retained pools and two missing records counted as failures. Adding a first-nonempty-candidate fallback raises correct submissions from 376 to 437 while retaining all judge costs. The output-aware fallback rule was amended after inspecting an empty selected answer. Public-example selection instead reaches 453/500 and removes the judge stage, reducing logical API costs by 12–49% across models. [SELF-POT, v1, §§2–3 and Appendix J.2](https://arxiv.org/html/2610.01110v1)\n\nThese are controlled replays of saved candidates, not fresh end-to-end trials at matched expenditure. API costs use configured prices rather than invoices or hardware measurements; local public-test execution is reported separately. The result sharpens the existing coverage–selection distinction: record submission failures as well as wrong choices before attributing a plateau to reasoning limits. It establishes a repair in the tested protocols, not a general deployment gain from additional inference.",
+      "english_word_count": 179,
+      "source_record": {
+        "id": "yang2026selfpot",
+        "title": "How Much Can Language Models Gain from Test-Time Computation?",
+        "authors": [
+          "Bangji Yang",
+          "Jingyuan Li",
+          "Jiajun Fan",
+          "Yi Evie Zhang",
+          "Ruihan Guo",
+          "Hongba Ma",
+          "Neil He",
+          "Chumeng Liang",
+          "Qinglong Zheng",
+          "Zhanghan Ni",
+          "Ge Liu"
+        ],
+        "year": 2026,
+        "date": "2026-10-01",
+        "first_published": "2026-10-01",
+        "first_published_date": "2026-10-01",
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "url": "https://arxiv.org/abs/2610.01110",
+        "full_text_url": "https://arxiv.org/html/2610.01110v1",
+        "type": "paper",
+        "branch": "inference-evaluation-selection-cost",
+        "problem": "正确候选存在不保证可用提交；选择器失败、接口故障和遗漏的判分成本可能伪装成推理扩展的边界",
+        "insight": "固定候选池，分开回放选择规则与提交回退，并将所有模型阶段纳入API成本账目",
+        "limitation": "五模型面板与有限任务；每个执行单元一次采样；回放为事后分析和账目反事实，不是等实测成本的新部署实验；两条编程记录缺失仍计错；逻辑API费依赖设定价格，非硬件成本；公开测试本地执行另报；部分协议按上下文或接口限制未运行",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-10-05",
+        "sections_read": "原站元数据与版本史；v1摘要、§1–2全部方法/预算/成本、§3.1–3.3模型与核心结果、§4讨论、Appendix J.2同池选择/回退/成本/不确定性相关段落；未完整审计其余附录、代码或图像",
+        "evidence_status": "首发2026-10-01 05:49:29 UTC，主站仅列v1；已核三候选+同模型judge、500计划单元=五模型×100题、498保留池、事后空提交规则及成本边界；未独立复现。",
+        "method": "At each model, retained programming pools from three candidate generations plus same-model selection are replayed with fallback and public-example selectors; hidden grades only score choices.",
+        "result": "In 500 scheduled model-task cells (498 retained pools), first-nonempty fallback changes correct submissions from 376 to 437 at unchanged logical judge spending; public-example selection yields 453 and omits judge-stage API cost.",
+        "synthesis_status": "proposed"
+      },
+      "evidence_conditions": [
+        "Full benchmark contains 350 tasks: 60 mathematics, 100 coding, 160 AppWorld and 30 terminal; the proposed paragraph uses only the five-model × 100 coding scheduled cells.",
+        "Coding Parallel@4 schedules three candidate generations and one same-model joint-selection stage. The suffix is an output-budget multiplier, not the sample count.",
+        "The 498 retained coding pools comprise 496 with three recorded attempt slots and two partial GPT-OSS pools; two missing records remain wrong in the 500 denominator.",
+        "Judge plus first-nonempty fallback reaches 437; the index-only earlier rule reached 436. The additional empty-selected-answer trigger was specified after inspection and is post-hoc.",
+        "Public-only three-candidate selection reaches 453; its logical API accounting omits judge calls but keeps original generation/tool interactions. The local test replay took 838 seconds with four workers (3,299 summed worker-seconds), reported separately rather than monetized as free compute.",
+        "Each cell sampled once; same-pool replay intervals keep all five models together by task. This is not 500 independent questions or a universal model-population estimate."
+      ],
+      "limitations": [
+        "Replay is a counterfactual analysis of saved outputs, not a new matched-expenditure end-to-end trial or a refund of historical spending.",
+        "Reported API cost uses configured rates, not invoices or measured hardware energy/FLOPs; absolute price-sensitive frontiers were not promoted into the paragraph.",
+        "Some original protocols were not run for context or interface reasons; the comparison is not a complete common matrix for every model.",
+        "The evidence isolates a tested selector and failure policy, not the best possible verifier; agent plans that were never executed do not furnish oracle coverage."
+      ],
+      "changes_body": false,
+      "decision": "Parent to review and merge matched paragraphs and record; subagent did not modify chapters/main source library."
+    }
+  ],
+  "index_candidates": [
+    {
+      "priority": 2,
+      "arxiv_id": "2609.39403",
+      "classification": "new_primary_source_index_candidate",
+      "first_submission_utc": "2026-09-30T09:45:59Z",
+      "latest_version_checked": "v1",
+      "latest_revision_utc": null,
+      "source_record": {
+        "id": "pan2026ironmind",
+        "title": "IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining",
+        "authors": [
+          "Huimin Pan",
+          "Yufan Ren",
+          "Kunpeng Song",
+          "Siyang Wang",
+          "Xiwen Zhang",
+          "Xiaoyun Hu",
+          "Zhuoxu Duan",
+          "Hanrui Zheng",
+          "Jialeng Ni",
+          "Nathan Zhao",
+          "Sibo Ma",
+          "Zhenxuan Fan",
+          "Zhongyang Che",
+          "Danny Bao",
+          "Jiacheng Wei",
+          "Jerry Bai",
+          "Xiaoyu Yue",
+          "Xiaoyang Guo",
+          "Chenyi Chen"
+        ],
+        "year": 2026,
+        "date": "2026-09-30",
+        "first_published": "2026-09-30",
+        "first_published_date": "2026-09-30",
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "url": "https://arxiv.org/abs/2609.39403",
+        "full_text_url": "https://arxiv.org/html/2609.39403v1",
+        "type": "paper",
+        "branch": "multimodal-robotics-human-data-transfer",
+        "problem": "第一人称人类视频缺少躯干运动学且动作标注含噪；数据量与开环代理指标未必对应真实机器人成功率",
+        "insight": "用相机坐标动作和跨具身语义维度对齐减少显式身体重定向，单独比较数据扩展、动作坐标和辅助世界先验",
+        "limitation": "一种架构/数据混合、一个机器人平台、六项OOD任务每项10次；约40,000段目标机器人演示用于后训练，非无机器人数据迁移；预训练小时包含人类及非目标机器人数据；部分开环prior结果按同一次运行多checkpoint平均；无全成本/跨种子或独立复现保证",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-10-05",
+        "sections_read": "原站元数据和版本史；v1摘要、§3.1–3.3数据/表示/模型/训练、§4.1–4.5设置/多层评估/数据扩展/消融和§5局限；未视觉审计图7/10或代码、无运行复现",
+        "evidence_status": "首发2026-09-30 09:45:59 UTC，主站仅列v1；重点核验总预训练小时口径、目标机器人后训练、表4/5开环与闭环差异；保留为已定向阅读候选。",
+        "method": "Camera-space action alignment across human and non-target robot sources; fixed architecture/optimization/robot-data mixture while adding human video; subsequent IRON-R01 adaptation and separate open-/closed-loop tests.",
+        "result": "At 10,000 total pretraining hours, six-task real-robot success averages 55.0% without world priors, 26.7% in torso-frame control and 31.7% with world priors; ten trials per task. Auxiliary priors improve some reported open-loop metrics.",
+        "synthesis_status": "candidate"
+      },
+      "evidence_conditions": [
+        "Total pretraining budgets 250–10,000 hours combine human egocentric and non-target robot data; fixed robot mixture, additional scale from human portion. These are data hours, not GPU hours.",
+        "Architecture, optimization recipe and robot-data mixture held fixed across scaling; AdamW/global batch 1024. IRON-R01 data enters only in approximately 40,000 post-training episodes.",
+        "Reported validation-loss relation is log-linear in data hours, not a verified general power law for final success. Intermediate open-loop metrics and low-budget closed-loop results are not all monotone.",
+        "Real robot comparison uses one held-out IRON-R01 unit, six OOD tasks, ten trials per task, 10Hz control. The camera-space/torso-frame comparison uses the same 10,000-hour data and post-training data/compute budget.",
+        "Table 4 world-prior open-loop ablation averages multiple checkpoints from each run; Table 5 closed-loop success is 55.0% without priors and 31.7% with priors. The paper proposes objective mismatch as an explanation, not an isolated established mechanism."
+      ],
+      "why_not_body_this_week": "The review already develops offline-proxy/closed-loop mismatch and conditional human-data transfer. Six tasks with ten trials each on one embodiment add a useful concrete candidate but do not yet warrant expanding T7 this week. Parent requested index-only retention after review.",
+      "followup": "Audit exact scaling subset construction, repeated seeds/uncertainty, model size and total training costs, plus independent or broader closed-loop replication before promoting universal claims.",
+      "changes_body": false
+    }
+  ],
+  "shallow_candidates": [
+    {
+      "arxiv_id": "2609.38854",
+      "title": "Mitigating the Length-Scaling Tax with Online Distillation",
+      "primary_url": "https://arxiv.org/abs/2609.38854",
+      "full_text_url": "https://arxiv.org/html/2609.38854v1",
+      "first_submission_utc": "2026-09-30T03:11:27Z",
+      "latest_version_checked": "v1",
+      "reading_depth": "Primary abstract and metadata; HTML endpoint opened but no useful method section was read. Do not count as full-text reading.",
+      "old_bottleneck": "RL response length can increase even on already-solved queries.",
+      "abstract_mechanism": "Route solved prompts to self-distillation from an EMA teacher, retain RL on unsolved prompts.",
+      "limitation": "Solved-prompt definition, length-tax denominator, model/task controls and extra distillation cost not audited; numerical abstract claims not promoted.",
+      "decision": "Retain T4/T5 candidate; no source-library or body proposal this week."
+    },
+    {
+      "arxiv_id": "2609.40221",
+      "title": "PhantomEnvironments: Training LLM Agents in Fictional Worlds",
+      "primary_url": "https://arxiv.org/abs/2609.40221",
+      "first_submission_utc": "2026-09-30T17:26:57Z",
+      "latest_version_checked": "v1",
+      "reading_depth": "Primary abstract and submission history only",
+      "old_bottleneck": "Interactive RL requires scalable tasks and verifiable rewards.",
+      "abstract_mechanism": "Rule-generated fictional corpora and multi-hop search environments train search behavior without LLM-generated environment content.",
+      "limitation": "Transfer controls, contamination protocol and total resource costs unverified. Abstract's zero-marginal-cost language must not be read as zero RL rollout/training cost.",
+      "decision": "Candidate only; no quantitative scaling or capability conclusion adopted."
+    },
+    {
+      "arxiv_id": "2609.39220",
+      "title": "Learning Process Rewards via Reasoning State Propagation",
+      "primary_url": "https://arxiv.org/abs/2609.39220",
+      "first_submission_utc": "2026-09-30T07:59:03Z",
+      "latest_version_checked": "v1",
+      "reading_depth": "Primary abstract and submission history only",
+      "old_bottleneck": "PRM learning relies on process labels; independent-prefix scoring may underuse outcome supervision.",
+      "abstract_mechanism": "Propagate binary reasoning-validity states through learned break and repair transitions.",
+      "limitation": "Meaning of validity/repair, annotation controls, budget and baseline fairness not audited; abstract gains not used as technical conclusions.",
+      "decision": "T4 verifier candidate only."
+    }
+  ],
+  "version_checks": [
+    {
+      "id": "2609.27374",
+      "url": "https://arxiv.org/abs/2609.27374",
+      "latest_version": "v1",
+      "latest_timestamp_utc": "2026-09-23T05:25:10Z",
+      "classification": "existing_source_in_window_unchanged"
+    },
+    {
+      "id": "2609.19499",
+      "url": "https://arxiv.org/abs/2609.19499",
+      "latest_version": "v2",
+      "latest_timestamp_utc": "2026-09-19T17:04:07Z",
+      "classification": "existing_source_in_window_unchanged"
+    },
+    {
+      "id": "2609.22068",
+      "url": "https://arxiv.org/abs/2609.22068",
+      "latest_version": "v1",
+      "latest_timestamp_utc": "2026-09-18T17:55:17Z",
+      "classification": "previous_candidate_in_window_unchanged"
+    },
+    {
+      "id": "2609.21767",
+      "url": "https://arxiv.org/abs/2609.21767",
+      "latest_version": "v1",
+      "latest_timestamp_utc": "2026-09-18T13:36:33Z",
+      "classification": "previous_candidate_in_window_unchanged"
+    },
+    {
+      "id": "2608.04001",
+      "url": "https://arxiv.org/abs/2608.04001",
+      "latest_version": "v2",
+      "latest_timestamp_utc": "2026-08-31T18:11:17Z",
+      "classification": "existing_source_no_in_window_revision"
+    },
+    {
+      "id": "2606.22317",
+      "url": "https://arxiv.org/abs/2606.22317",
+      "latest_version": "v1",
+      "latest_timestamp_utc": "2026-06-21T03:15:25Z",
+      "classification": "existing_source_no_in_window_revision"
+    },
+    {
+      "id": "2604.14853",
+      "url": "https://arxiv.org/abs/2604.14853",
+      "latest_version": "v1",
+      "latest_timestamp_utc": "2026-04-16T10:39:22Z",
+      "classification": "existing_source_no_in_window_revision"
+    },
+    {
+      "id": "2412.06769",
+      "url": "https://arxiv.org/abs/2412.06769",
+      "latest_version": "v4",
+      "latest_timestamp_utc": "2026-08-23T05:07:09Z",
+      "classification": "existing_source_no_in_window_revision"
+    }
+  ],
+  "version_check_scope": "Eight primary submission histories read this round; methods of unchanged old sources were not reread. A latest-version check does not verify every unversioned author-site change.",
+  "limitations": [
+    "Six real queries and targeted primary-source reading/version checks, not exhaustive database coverage.",
+    "No independent replication, fresh code execution of papers, complete proof audit or PDF figure inspection.",
+    "Only SELF-POT is proposed for body integration. IronMind receives a complete candidate record; three additional new leads remain abstract-level notes.",
+    "No new universal scaling exponent, RL capability theorem or cross-domain law is established by this maintenance.",
+    "Search failure or absence of a discovered technical report is not evidence that no new work exists.",
+    "No third-party full text saved; this JSON contains metadata and analytical research notes only."
+  ],
+  "changed_files": [
+    "sources/weekly-2026-10-05-frontier.json"
+  ],
+  "integration_status": "Awaiting parent integration; main source libraries, chapters, generated outputs and state not modified by this subagent."
+}

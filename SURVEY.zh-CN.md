@@ -1,8 +1,8 @@
 # Scaling Law：问题驱动的技术演化综述
 
-版本 v0.3.2 · 检索与核验截至 2026-09-28 · 中文持续更新版
+版本 v0.3.3 · 检索与核验截至 2026-10-05 · 中文持续更新版
 
-从“能否预测规模收益”到“如何联合分配预训练、后训练与推理预算”。本版含 167 条去重主源和独立社区雷达；属于代表性文献的叙事综合，非穷尽性系统综述，未独立复现实验。
+从“能否预测规模收益”到“如何联合分配预训练、后训练与推理预算”。本版含 171 条去重主源和独立社区雷达；属于代表性文献的叙事综合，非穷尽性系统综述，未独立复现实验。
 
 ![研究问题演化图](figures/evolution-map.png)
 
@@ -80,7 +80,7 @@ flowchart TD
 
 想理解经典争议，先读[可预测性与预算](docs/01-predictability-budget.md)的 Kaplan—Chinchilla—复现链，再读[数据](docs/02-data.md)和[部署成本](docs/03-architecture-deployment.md)。想判断“test-time scaling 是否接棒”，先读[后训练](docs/04-posttraining.md)和[推理时计算](docs/05-inference.md)中的 proposer、verifier 和策略分配，再读[能力评估](docs/06-theory-evaluation.md)与负面结果。想跟踪新工作，先看社区雷达提出了哪个问题，再回到原始证据，最后判断它应改变正文哪一条因果连接。
 
-本文以能够解释转折点的代表研究为核心，不按引用数或社媒曝光机械排序。全文的“当前”“最新”均相对于最近增量检索日期 2026-09-28；阅读范围与未解决问题在各章和元数据中披露。
+本文以能够解释转折点的代表研究为核心，不按引用数或社媒曝光机械排序。全文的“当前”“最新”均相对于最近增量检索日期 2026-10-05；阅读范围与未解决问题在各章和元数据中披露。
 
 
 ---
@@ -180,7 +180,7 @@ Llama 3 报告展示了规模律在大训练 run 中怎样成为决策程序。�
 
 ## T2　数据瓶颈：从 token 数量到有效信息、混合与训练顺序
 
-> 核验日期：2026-09-28。范围：唯一数据量、去重、选择、领域混合、数据课程、供给预测和合成反馈。区分原论文实验证据与本综述的机制归纳；未独立重跑数据处理或训练实验。阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。仅摘要核验的 TinyStories、Phi-3、Scaling Laws for Transfer 等保留在来源库，未用作本章技术结论。
+> 核验日期：2026-10-05。范围：唯一数据量、去重、选择、领域混合、数据课程、供给预测和合成反馈。区分原论文实验证据与本综述的机制归纳；未独立重跑数据处理或训练实验。阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。仅摘要核验的 TinyStories、Phi-3、Scaling Laws for Transfer 等保留在来源库，未用作本章技术结论。
 
 ### 1. 数据成为瓶颈，是因为 D 同时承担了太多含义
 
@@ -279,6 +279,12 @@ Gerstgrasser 等人直接检验一个关键条件：原始真实数据被替换�
 
 这与 DoReMi、FineWeb 和数据课程的讨论最终汇合：生成器、过滤器和采样器都在重写训练分布。综述更新时应记录真实数据保留率、验证方式、尾部覆盖和总成本，而非把“合成”视作一个足够解释好坏的二元标签。特别是代码测试、数学验证等能提供额外反馈的场景，与纯粹模仿上一代文本的循环不是同一个信息过程；相关实证链应与后训练章节共同阅读，而不从 collapse 实验直接外推。
 
+#### 网络中的 AI 文本：保留人类数据以后，新增 token 仍可能有害
+
+递归替换并非唯一风险。[WildAI（Russell 等，2026），§4–6](https://arxiv.org/html/2609.40295v1)固定人类语料预算，再添加网络中自然出现、由检测器标注的 AI 文本。总 token 和计算量随添加增加，并非固定总计算量的替换实验。作者用饱和收益与独立危害项描述其净价值：稀缺数据条件下的初期收益可随添加量反转。726 个 19.9M–268M 模型用于拟合，74 个 477M/973M 模型用于留出验证。附录 D.1 也在这两个规模上比较候选函数，因此本综述不把其误差视为完全独立于模型选择的最终测试。这补充了前述混合研究：新增 token 的价值不仅可能递减，也可能因目标分布和已有预算而变为负值。
+
+评估分布本身也会掩盖问题。在论文中 FW26 人类标签子集损失上升的运行里，含 22.3% AI 标签 token 的混合验证集将其中 95.5% 显示为改善。因此需要分别报告目标域损失，而不能只用混合平均值选配方。该结论限于英语网页、检测器划分、不到 1B 的模型与预训练 next-token loss；它没有证明精心生成并验证的合成数据普遍有害，也未确立下游能力退化或前沿模型上的通用阈值。
+
 ### 10. 这一分支怎样继续更新？
 
 值得跟踪的新工作应回答明确的旧问题：是否降低了选择数据的计算成本，是否证明比例能在更大模型上迁移，是否引入训练阶段，是否在同预算下保留更多尾部覆盖，或者修正了数据供给预测。没有对照、没有目标定义的“更高质量 token”很难成为可积累的知识。
@@ -290,7 +296,7 @@ Gerstgrasser 等人直接检验一个关键条件：原始真实数据被替换�
 
 ## T3　架构与部署：区分参数、FLOPs、显存和实际成本
 
-> 核验日期：2026-09-28。范围：稀疏专家、训练并行、精确注意力实现、KV 表示与服务、长上下文和生命周期预算。本文将算法成本、硬件表现和模型质量分别讨论；不将某篇论文中的加速倍数视为跨硬件通用常数。原始来源与阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。未运行系统基准。
+> 核验日期：2026-10-05。范围：稀疏专家、训练并行、精确注意力实现、KV 表示与服务、长上下文和生命周期预算。本文将算法成本、硬件表现和模型质量分别讨论；不将某篇论文中的加速倍数视为跨硬件通用常数。原始来源与阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。未运行系统基准。
 
 ### 1. 当参数可以不被调用，规模律需要新的坐标
 
@@ -417,6 +423,12 @@ C_{\rm life}\approx6ND_{\rm train}+2ND_{\rm infer}.
 $$
 
 它省略了注意力长度、prefill/decode 区别、内存、通信及硬件利用率，只用于解释目标函数为什么改变。因此 [T1 的 overtraining](docs/01-predictability-budget.md) 和 [T2 的数据课程](docs/02-data.md) 不是偏离规模律的例外，而是在新的需求约束下重新分配资源。若后训练使模型每个请求生成更长推理，推理预算还会继续变化。
+
+#### 压缩之后，需要预测哪一种损失？
+
+相同部署目标也引出另一条路线：压缩已有模型，而非重新选择预训练规模。[Cheng 等，2026，§5–6](https://arxiv.org/html/2610.02462v1)研究剪枝、量化和蒸馏后，数学、代码与问答参考答案上的 teacher-forced 损失变化。共享剪枝密度响应形式，可将拟合所需配置测量数减半；在所测 Pythia、OLMo-2 与 Wanda 设置中，数学和代码的预测误差与全网格回归相差不超过 0.020 nat/token。但每种设置仍重拟合系数；迁移的是形式和测量方法，不是现成数值配方。计入加载、参考测量与校准后，后两种设置的 GPU 时间分别为全网格的 59% 和 70%，并非算力减半。
+
+预测更精细也未必改善决策：所测问答候选集合中，固定方法优先序与数值选择达到相同 regret。这里 regret 指所选候选相对同存储预算下最佳可行候选的损失差。生成 exact match 又可能与损失排序不一致，名义存储预算也不等于实测部署延迟。因此该工作主要补上测量效率和目标选择问题，尚未给出跨家族通用的压缩—能力定律。
 
 本综述由这些路线得到的共同判断是：系统创新可以把原来不可行的配置变为可行，架构创新可以改变容量与成本之间的关系，部署需求则可以改变什么叫“最优”。后续论文最值得更新的地方，是它修正了哪个约束、以什么对照证明净收益，以及新瓶颈出现在哪里。仅报更多总参数、更低激活参数或一次更高吞吐，都不足以完成这个论证。
 
@@ -594,7 +606,7 @@ o1/R1 的提升引出了一个无法仅靠 pass@1 回答的问题：性能改善
 
 ## T5　推理预算与搜索：如何把更多计算变成更可靠的答案
 
-> 核验日期：2026-09-28。覆盖具有机制解释力的代表工作，2026材料仍多为预印本；未独立复现实验。来源、版本、阅读范围见 [frontier.json](sources/frontier.json)、[expansion-frontier.json](sources/expansion-frontier.json)；Hugging Face 作者博客由编辑主源库记录。
+> 核验日期：2026-10-05。覆盖具有机制解释力的代表工作，2026材料仍多为预印本；未独立复现实验。来源、版本、阅读范围见 [frontier.json](sources/frontier.json)、[expansion-frontier.json](sources/expansion-frontier.json)；Hugging Face 作者博客由编辑主源库记录。
 
 预训练把计算投入共享参数，推理时则为具体问题分配计算。Chain-of-Thought 通过中间步骤示范改变单条生成过程，Self-Consistency 通过多路径采样与答案聚合减轻单一路径的不稳定；它们打开串行和并行两个方向，但尚未解决成本与正确选择。[CoT](https://arxiv.org/abs/2201.11903)、[Self-Consistency](https://arxiv.org/abs/2203.11171)
 
@@ -655,6 +667,12 @@ $$
 这只是记账式，不是已经被拟合的 scaling law。增加验证预算可能允许较弱生成器的候选被更好利用；也可能因为判分与生成共享错误，而收益很快饱和。把预算都用于验证也会遇到候选覆盖不足：若所有答案都错，完美选择器也无法交付正确答案。
 
 因此，系统比较最好同时画三条曲线：固定生成器扩展验证计算；固定 verifier 扩展生成计算；在相同总成本下联合分配二者。PRM 的标签规模、验证模型参数、每个候选的检查 token 和候选数量是不同轴，不能只挑其中一个当作“测试计算”。ThinkPRM 和 DeepSeekMath-V2 让这一维度变得更加显式，但它们在特定数学设置中的结果，还没有给出适用于开放领域事实核验的统一最优比例。
+
+#### 候选已经正确，提交为什么仍会失败？
+
+验证成本之外，选择协议还可能丢弃已有的可用输出。[SELF-POT（Yang 等，2026），§3.3、附录 J.2](https://arxiv.org/html/2610.01110v1)在同一批编程候选上回放选择规则：五个模型各 100 题，共 500 个预定评测单元；498 个候选池被保留，两项缺失仍计错。当 judge 没有给出有效非空答案时退回第一个非空候选，正确提交由 376 增至 437，已花费的 judge 成本仍全部计入。这个包含空候选处理的回退规则是事后修订，不能当作预注册干预。
+
+用公开样例选候选得到 453/500，并省去 judge 阶段的逻辑 API 费用；隐藏正确性标签只用于评分，不参与选择。这说明覆盖率、选择正确率和成功提交之间还隔着协议可靠性。但它是固定候选池上的事后回放，不是重新生成的等预算端到端试验；API 逻辑费用不是实际账单或硬件成本，本地测试执行另行记账。结果支持显式设计失败回退，不能证明更多测试时计算在任意任务上都更划算。
 
 ### 5. 从“想得更久”到“何时应该停”
 
@@ -1439,11 +1457,15 @@ Problem 框给出当前方法留下的具体矛盾；Solution 框压缩机制；
 | 2026 | [A study of sequence weighting at scale](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale) | 全文文字 | 网页观测版 / 技术文章 | [02](docs/02-data.md) |
 | 2026 | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | 摘要/元数据 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Adaptive Test-Time Compute Allocation for Reasoning LLMs via Constrained Policy Optimization](https://arxiv.org/abs/2604.14853) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
+| 2026 | [Capability Scaling-Down Laws for LLM Compression](https://arxiv.org/abs/2610.02462) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | 官方报告选段 | 网页观测版 / 报告 | [07](docs/07-multimodal.md) |
 | 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | 正文定向阅读 | v2 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
+| 2026 | [How Much Can Language Models Gain from Test-Time Computation?](https://arxiv.org/abs/2610.01110) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
+| 2026 | [How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text](https://arxiv.org/abs/2609.40295) | 正文定向阅读 | v1 / 论文/预印本 | [02](docs/02-data.md) |
 | 2026 | [Hyperparameter Scaling Laws Across MoE Sparsity](https://arxiv.org/abs/2609.08690) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | 摘要/元数据 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
+| 2026 | [IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining](https://arxiv.org/abs/2609.39403) | 正文定向阅读 | v1 / 论文/预印本 | 索引／待深入综合 |
 | 2026 | [Planned Test-Time Scaling with Coordinated Reasoning Paths](https://arxiv.org/abs/2609.27374) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | 正文定向阅读 | v1 / 论文/预印本 | [06](docs/06-theory-evaluation.md) |
 | 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |

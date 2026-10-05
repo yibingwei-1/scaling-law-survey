@@ -1,6 +1,6 @@
 {
-  "catalog_count": 167,
-  "cited_in_technical_chapters": 158,
+  "catalog_count": 171,
+  "cited_in_technical_chapters": 161,
   "chapters": [
     {
       "file": "01-predictability-budget.md",
@@ -12,16 +12,16 @@
     {
       "file": "02-data.md",
       "title": "T2　数据瓶颈：从 token 数量到有效信息、混合与训练顺序",
-      "han_characters": 5031,
-      "catalog_sources_cited": 17,
-      "all_external_links": 18
+      "han_characters": 5386,
+      "catalog_sources_cited": 18,
+      "all_external_links": 19
     },
     {
       "file": "03-architecture-deployment.md",
       "title": "T3　架构与部署：区分参数、FLOPs、显存和实际成本",
-      "han_characters": 4583,
-      "catalog_sources_cited": 21,
-      "all_external_links": 21
+      "han_characters": 4897,
+      "catalog_sources_cited": 22,
+      "all_external_links": 22
     },
     {
       "file": "04-posttraining.md",
@@ -33,9 +33,9 @@
     {
       "file": "05-inference.md",
       "title": "T5　推理预算与搜索：如何把更多计算变成更可靠的答案",
-      "han_characters": 6484,
-      "catalog_sources_cited": 30,
-      "all_external_links": 31
+      "han_characters": 6784,
+      "catalog_sources_cited": 31,
+      "all_external_links": 32
     },
     {
       "file": "06-theory-evaluation.md",

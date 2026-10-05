@@ -1,6 +1,6 @@
 # T3 Architecture and Deployment: Distinguishing Parameters, FLOPs, GPU Memory, and Actual Costs
 
-> Verification date: 2026-09-28. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](../../sources/foundations.json) and [additional sources](../../sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
+> Verification date: 2026-10-05. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](../../sources/foundations.json) and [additional sources](../../sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
 
 ## 1. When Parameters Need Not Be Activated, Scaling Laws Need New Coordinates
 
@@ -127,5 +127,11 @@ C_{\rm life}\approx6ND_{\rm train}+2ND_{\rm infer}.
 $$
 
 It omits attention length, the prefill/decode distinction, memory, communication, and hardware utilization, and serves only to explain why the objective changes. Thus, [overtraining in T1](01-predictability-budget.md) and [data curricula in T2](02-data.md) are not exceptions to scaling laws; they reallocate resources under new demand constraints. If post-training causes a model to generate longer reasoning for each request, the inference budget changes again.
+
+### Which Loss Should Be Predicted after Compression?
+
+The same deployment objective opens another route: compress an existing model instead of choosing a new pretraining scale. [Cheng et al., 2026, §§5–6](https://arxiv.org/html/2610.02462v1) study teacher-forced reference-answer loss changes in mathematics, code and question answering after pruning, quantization and distillation. Sharing the pruning-density response halves configuration measurements; across the tested Pythia, OLMo-2 and Wanda settings, math and code prediction errors remain within 0.020 nats/token of full-grid regression. Each setting still refits coefficients: the form and measurement strategy transfer, not a ready-made numerical recipe. Including loading, reference measurements and calibration, the latter two settings use 59% and 70% of full-grid GPU time, not half the compute.
+
+Finer prediction need not improve decisions: on the tested QA candidate sets, a fixed method priority matches numerical selection's regret, the loss gap to the best feasible candidate under the same storage budget. Generated exact match can also disagree with loss rankings, while nominal storage budgets do not measure deployment latency. The work primarily advances measurement efficiency and objective selection; it does not establish a universal compression–capability law across families.
 
 The shared conclusion this survey draws from these lines of work is that systems innovation can make previously infeasible configurations feasible, architectural innovation can change the relationship between capacity and cost, and deployment demand can change what counts as optimal. The most valuable updates from subsequent papers identify which constraint was revised, which controls establish the net benefit, and where the next bottleneck appears. Reporting more total parameters, fewer active parameters, or higher throughput in one experiment is insufficient to establish that argument.

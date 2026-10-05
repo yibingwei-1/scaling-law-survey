@@ -2,16 +2,16 @@
   "schema_version": "1.0",
   "source_language": "zh-CN",
   "target_language": "en",
-  "reviewed_on": "2026-09-28",
+  "reviewed_on": "2026-10-05",
   "review_scope": "Complete chapter translations reviewed for argument, conditions, limitations, source-link multiplicity, and exact mathematics. Hashes detect later drift; they do not establish translation quality or independently revalidate the science.",
   "chapters": {
     "introduction.md": {
       "source_path": "docs/introduction.md",
       "translation_path": "docs/en/introduction.md",
-      "source_sha256": "8e21ac01df3eed799e14d020de566e31f688074cb050a1599f19a2a6e47445cb",
-      "translation_sha256": "d812710d52b021b4db12dba5ee88a0069c4b46a1c28615eb8072d8e4ff8dfd73",
+      "source_sha256": "03f85c12d14ec9d941ee1aa8b8a0d7d3b55bf22dcb1ef8f2d21f0c0d00864eec",
+      "translation_sha256": "7fd493f41452c330763463bb14a836cfc31ddcc92504620efe90e4c940eb8439",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-28"
+      "reviewed_on": "2026-10-05"
     },
     "01-predictability-budget.md": {
       "source_path": "docs/01-predictability-budget.md",
@@ -23,18 +23,18 @@
     "02-data.md": {
       "source_path": "docs/02-data.md",
       "translation_path": "docs/en/02-data.md",
-      "source_sha256": "97f3d79e40e28581ed9e710d871145b42ae7f6c9dd4174e0178df7e4984117fd",
-      "translation_sha256": "0e088b9b64ad28be4d34f6fd40d49cbb61f2098c888f0ec014315a04626bf2e5",
+      "source_sha256": "626063780fdff50bc1df769e2738d8a460b26b93089233fadccd12e0fad90f5a",
+      "translation_sha256": "396669356adf87c3eaac68593f6ef3496e3f13ad98489c46c7b083d72aa0da10",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-28"
+      "reviewed_on": "2026-10-05"
     },
     "03-architecture-deployment.md": {
       "source_path": "docs/03-architecture-deployment.md",
       "translation_path": "docs/en/03-architecture-deployment.md",
-      "source_sha256": "6224262fd952f42652aa8e511aa5a9ea4c115905f93f58f95f4d87b1190f20c7",
-      "translation_sha256": "9663de0c9ece078342fb13b2600b4edcb8f87a6b6fb01ad2e030925e56cc55dd",
+      "source_sha256": "6b3bb127352b9c5f6d9c10da4397177980cd0e0c22590b82c5bfd2eb670b9960",
+      "translation_sha256": "0b189e29201dee401eaeb28f2d9e15d052aa16790da66ce1e669cb996949d34a",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-28"
+      "reviewed_on": "2026-10-05"
     },
     "04-posttraining.md": {
       "source_path": "docs/04-posttraining.md",
@@ -46,10 +46,10 @@
     "05-inference.md": {
       "source_path": "docs/05-inference.md",
       "translation_path": "docs/en/05-inference.md",
-      "source_sha256": "6a707396a5fc515bfe810bf4b3678585fc77ee097d87d69d58e440f88b3029fd",
-      "translation_sha256": "09a4b380f1a515221e95eaf0eba1a074b6a81884b69d12d5c0668511ab4b9cdd",
+      "source_sha256": "85a870286f4e5d4c1544bf22568205eba0a316e5e55fea8b4ff60edf83bd3689",
+      "translation_sha256": "517b4863edefc0aaa0156aea6bacd6eed86ba5ec56796b308a5990af162bf370",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-28"
+      "reviewed_on": "2026-10-05"
     },
     "06-theory-evaluation.md": {
       "source_path": "docs/06-theory-evaluation.md",
@@ -97,14 +97,13 @@
     }
   },
   "latest_incremental_review": {
-    "date": "2026-09-28",
+    "date": "2026-10-05",
     "chapters": [
       "introduction.md",
       "02-data.md",
       "03-architecture-deployment.md",
-      "05-inference.md",
-      "04-community-radar.md"
+      "05-inference.md"
     ],
-    "scope": "New arguments, numerical protocols, equations, links and limits cross-reviewed against primary sources in both languages. M definition added after review. Introduction search date paired; unchanged chapters retain prior fingerprints. No experiments independently reproduced."
+    "scope": "Three new technical arguments cross-reviewed against selected primary sections in both languages. FW26 subset/token denominator, increasing compute, form-selection boundary and feasible-candidate regret clarified after review. Introduction date paired. Unchanged chapters retain prior hashes; no independent experiments."
   }
 }

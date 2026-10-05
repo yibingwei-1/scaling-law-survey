@@ -1,8 +1,8 @@
 # Scaling Law: A Problem-Driven Review
 
-Edition v0.3.2 · Searches and verification through 2026-09-28 · English living edition
+Edition v0.3.3 · Searches and verification through 2026-10-05 · English living edition
 
-From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains 167 distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
+From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains 171 distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
 
 ![Research problem evolution map](figures/evolution-map.png)
 
@@ -80,7 +80,7 @@ A more detailed account of paper relationships and branching rationales is avail
 
 For the classical allocation debate, start with the Kaplan–Chinchilla–reanalysis chain in [predictability and budgets](docs/en/01-predictability-budget.md), then read [data](docs/en/02-data.md) and [deployment costs](docs/en/03-architecture-deployment.md). To assess whether test-time scaling is taking over, begin with the proposers, verifiers, and allocation policies in [post-training](docs/en/04-posttraining.md) and [inference-time computation](docs/en/05-inference.md), then examine [capability evaluation](docs/en/06-theory-evaluation.md) and negative results. To follow new work, first identify the question raised in the community radar, return to the primary evidence, and decide which connection in the narrative should change.
 
-This survey prioritizes representative studies that explain turning points rather than mechanically ranking papers by citations or social-media exposure. References to “current” or “latest” are relative to the latest incremental search date, September 28, 2026. Reading scope and unresolved issues are disclosed in the chapters and metadata.
+This survey prioritizes representative studies that explain turning points rather than mechanically ranking papers by citations or social-media exposure. References to “current” or “latest” are relative to the latest incremental search date, October 5, 2026. Reading scope and unresolved issues are disclosed in the chapters and metadata.
 
 
 ---
@@ -180,7 +180,7 @@ For a model that will provide a long-running service, the objective must also in
 
 ## T2 Data Bottlenecks: From Token Counts to Useful Information, Mixtures, and Training Order
 
-> Verification date: 2026-09-28. Scope: unique data volume, deduplication, selection, domain mixtures, data curricula, supply forecasts, and synthetic feedback. The chapter distinguishes experimental evidence in the original papers from this survey's synthesis of mechanisms; data processing and training experiments were not independently rerun. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for reading depth. Works checked only at the abstract level, including TinyStories, Phi-3, and Scaling Laws for Transfer, remain in the source registry but are not used to support this chapter's technical conclusions.
+> Verification date: 2026-10-05. Scope: unique data volume, deduplication, selection, domain mixtures, data curricula, supply forecasts, and synthetic feedback. The chapter distinguishes experimental evidence in the original papers from this survey's synthesis of mechanisms; data processing and training experiments were not independently rerun. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for reading depth. Works checked only at the abstract level, including TinyStories, Phi-3, and Scaling Laws for Transfer, remain in the source registry but are not used to support this chapter's technical conclusions.
 
 ### 1. Data Becomes a Bottleneck Because D Carries Too Many Meanings
 
@@ -279,6 +279,12 @@ Gerstgrasser et al. directly tested a crucial condition: is the original real da
 
 This discussion ultimately converges with DoReMi, FineWeb, and data curricula: generators, filters, and samplers all reshape the training distribution. Updates to the survey should record real-data retention, verification methods, tail coverage, and total cost, rather than treating “synthetic” as a binary label sufficient to explain success or failure. In particular, settings with additional feedback, such as code tests or mathematical verification, involve a different information process from a loop that merely imitates the previous generation's text. Their empirical research chains should be read alongside the post-training chapter, rather than inferred directly from collapse experiments.
 
+#### Wild AI Web Text: Added Tokens Can Hurt Even When Human Data Are Retained
+
+Recursive replacement is not the only risk. [WildAI (Russell et al., 2026), §§4–6](https://arxiv.org/html/2609.40295v1) fixes the human-data budget and adds naturally occurring web text labeled as AI-generated by detectors. Additions increase tokens and compute; this is not fixed-compute substitution. Its model separates a saturating benefit from a harm term: initial gains under data scarcity can reverse as additions grow. It fits 726 models of 19.9M–268M parameters and holds out 74 models at 477M/973M. Appendix D.1 also compares candidate forms on these sizes; we therefore do not treat the reported errors as a final test independent of model selection. This extends the mixture question: an added token's value can become negative, depending on the target distribution and existing budget.
+
+Evaluation mixtures can conceal that harm. Among runs whose loss rose on the human-labeled FW26 subset, a validation mixture containing 22.3% AI-labeled tokens reported improvement for 95.5%. Reporting target-domain losses separately therefore matters when selecting a recipe. The evidence concerns English web text, detector-defined splits, sub-1B models and pretraining next-token loss. It does not establish that deliberately generated, verified synthetic data are generally harmful, that downstream capabilities deteriorate, or that the same thresholds apply to frontier models.
+
 ### 10. How Should This Branch Continue to Be Updated?
 
 New work worth tracking should answer a specific unresolved question: does it reduce the computational cost of data selection, demonstrate transfer of mixture proportions to larger models, incorporate training stage, preserve more tail coverage under the same budget, or revise a forecast of data supply? Claims of higher-quality tokens without controls or defined objectives are difficult to accumulate into knowledge.
@@ -290,7 +296,7 @@ This also provides a practical accounting framework for reading papers: examine 
 
 ## T3 Architecture and Deployment: Distinguishing Parameters, FLOPs, GPU Memory, and Actual Costs
 
-> Verification date: 2026-09-28. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
+> Verification date: 2026-10-05. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
 
 ### 1. When Parameters Need Not Be Activated, Scaling Laws Need New Coordinates
 
@@ -417,6 +423,12 @@ C_{\rm life}\approx6ND_{\rm train}+2ND_{\rm infer}.
 $$
 
 It omits attention length, the prefill/decode distinction, memory, communication, and hardware utilization, and serves only to explain why the objective changes. Thus, [overtraining in T1](docs/en/01-predictability-budget.md) and [data curricula in T2](docs/en/02-data.md) are not exceptions to scaling laws; they reallocate resources under new demand constraints. If post-training causes a model to generate longer reasoning for each request, the inference budget changes again.
+
+#### Which Loss Should Be Predicted after Compression?
+
+The same deployment objective opens another route: compress an existing model instead of choosing a new pretraining scale. [Cheng et al., 2026, §§5–6](https://arxiv.org/html/2610.02462v1) study teacher-forced reference-answer loss changes in mathematics, code and question answering after pruning, quantization and distillation. Sharing the pruning-density response halves configuration measurements; across the tested Pythia, OLMo-2 and Wanda settings, math and code prediction errors remain within 0.020 nats/token of full-grid regression. Each setting still refits coefficients: the form and measurement strategy transfer, not a ready-made numerical recipe. Including loading, reference measurements and calibration, the latter two settings use 59% and 70% of full-grid GPU time, not half the compute.
+
+Finer prediction need not improve decisions: on the tested QA candidate sets, a fixed method priority matches numerical selection's regret, the loss gap to the best feasible candidate under the same storage budget. Generated exact match can also disagree with loss rankings, while nominal storage budgets do not measure deployment latency. The work primarily advances measurement efficiency and objective selection; it does not establish a universal compression–capability law across families.
 
 The shared conclusion this survey draws from these lines of work is that systems innovation can make previously infeasible configurations feasible, architectural innovation can change the relationship between capacity and cost, and deployment demand can change what counts as optimal. The most valuable updates from subsequent papers identify which constraint was revised, which controls establish the net benefit, and where the next bottleneck appears. Reporting more total parameters, fewer active parameters, or higher throughput in one experiment is insufficient to establish that argument.
 
@@ -594,7 +606,7 @@ The next chapter turns to [Inference Budgets and Search](docs/en/05-inference.md
 
 ## T5　Inference Budgets and Search: Turning More Compute into More Reliable Answers
 
-> Verification date: 2026-09-28. Covers representative works that help explain mechanisms; much of the 2026 material remains in preprint form. Experiments have not been independently reproduced. Sources, versions, and reading scope are recorded in [frontier.json](sources/frontier.json) and [expansion-frontier.json](sources/expansion-frontier.json); the Hugging Face authors' blog is recorded in the editorial primary-source collection.
+> Verification date: 2026-10-05. Covers representative works that help explain mechanisms; much of the 2026 material remains in preprint form. Experiments have not been independently reproduced. Sources, versions, and reading scope are recorded in [frontier.json](sources/frontier.json) and [expansion-frontier.json](sources/expansion-frontier.json); the Hugging Face authors' blog is recorded in the editorial primary-source collection.
 
 Pretraining invests compute in shared parameters, whereas inference allocates compute to a particular problem. Chain-of-Thought changes a single generation process through demonstrations of intermediate steps; Self-Consistency reduces the instability of a single path through multiple-path sampling and answer aggregation. They open serial and parallel directions, respectively, but leave cost and correct selection unresolved. [CoT](https://arxiv.org/abs/2201.11903), [Self-Consistency](https://arxiv.org/abs/2203.11171)
 
@@ -655,6 +667,12 @@ $$
 This is an accounting identity, not an already fitted scaling law. More verification compute may allow better use of a weaker generator's candidates, or its benefits may saturate quickly because scoring and generation share errors. Spending the entire budget on verification also encounters insufficient candidate coverage: if every answer is wrong, even a perfect selector cannot deliver a correct one.
 
 System comparisons should therefore ideally show three curves together: scale verification compute with a fixed generator; scale generation compute with a fixed verifier; and jointly allocate the two under the same total cost. PRM label volume, verification-model parameters, checking tokens per candidate, and candidate count are different axes. None should be singled out as if it alone constituted “test compute.” ThinkPRM and DeepSeekMath-V2 make this dimension more explicit, but their results in particular mathematical settings do not yet establish a single optimal ratio for open-domain fact verification.
+
+#### Why Can Submission Fail Even When a Correct Candidate Exists?
+
+Beyond verification cost, a selection protocol can discard usable outputs. [SELF-POT (Yang et al., 2026), §3.3 and Appendix J.2](https://arxiv.org/html/2610.01110v1) replays selection on fixed programming pools: five models each face 100 tasks, giving 500 scheduled cells; 498 pools are retained and two missing records remain failures. Falling back to the first nonempty candidate when judging returns no valid nonempty answer increases correct submissions from 376 to 437, retaining all spent judge costs. This output-aware fallback is a post-hoc amendment, not a preregistered intervention.
+
+Public-example selection reaches 453/500 while removing judge-stage logical API charges; hidden correctness labels score outcomes but never guide selection. Coverage, selection accuracy and successful submission therefore also depend on protocol reliability. However, this is a retrospective replay on fixed candidates, not freshly generated, matched-budget end-to-end trials. Logical API charges are neither invoices nor hardware costs; local test execution is accounted for separately. The result supports explicit failure recovery, not a general claim that more test-time compute is cost-effective on every task.
 
 ### 5. From “Think Longer” to “When Should Thinking Stop?”
 
@@ -1438,11 +1456,15 @@ Full metadata are available in the [reference index](REFERENCES.en.md), [BibTeX]
 | 2026 | [A study of sequence weighting at scale](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale) | Full text | Web snapshot / Technical article | [02](docs/en/02-data.md) |
 | 2026 | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | Abstract / metadata | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Adaptive Test-Time Compute Allocation for Reasoning LLMs via Constrained Policy Optimization](https://arxiv.org/abs/2604.14853) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
+| 2026 | [Capability Scaling-Down Laws for LLM Compression](https://arxiv.org/abs/2610.02462) | Selected full-text sections | v1 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | Official report sections | Web snapshot / Report | [07](docs/en/07-multimodal.md) |
 | 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | Selected full-text sections | v2 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
+| 2026 | [How Much Can Language Models Gain from Test-Time Computation?](https://arxiv.org/abs/2610.01110) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
+| 2026 | [How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text](https://arxiv.org/abs/2609.40295) | Selected full-text sections | v1 / Paper / preprint | [02](docs/en/02-data.md) |
 | 2026 | [Hyperparameter Scaling Laws Across MoE Sparsity](https://arxiv.org/abs/2609.08690) | Selected full-text sections | v1 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | Abstract / metadata | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
+| 2026 | [IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining](https://arxiv.org/abs/2609.39403) | Selected full-text sections | v1 / Paper / preprint | Catalog only |
 | 2026 | [Planned Test-Time Scaling with Coordinated Reasoning Paths](https://arxiv.org/abs/2609.27374) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | Selected full-text sections | v1 / Paper / preprint | [06](docs/en/06-theory-evaluation.md) |
 | 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |

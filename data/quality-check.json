@@ -1,17 +1,17 @@
 {
-  "checked_on": "2026-09-28",
-  "edition": "v0.3.2",
-  "source_records": 167,
-  "sources_cited_in_technical_chapters": 158,
+  "checked_on": "2026-10-05",
+  "edition": "v0.3.3",
+  "source_records": 171,
+  "sources_cited_in_technical_chapters": 161,
   "technical_chapters": 7,
-  "technical_han_characters": 38577,
+  "technical_han_characters": 39546,
   "community_records": 20,
-  "pdf_pages": 61,
-  "pdf_link_annotations": 675,
+  "pdf_pages": 62,
+  "pdf_link_annotations": 687,
   "display_formulas_rendered": 24,
   "display_formula_fallbacks": 0,
   "local_links_and_schema": "pass",
-  "review": "Both editions inspected in all-page contact sheets, with page-scale review of new data-mixture, MoE, PTTS, community and reference material. After simplifying the T3 title and displaying the MoE equations, both PDFs were rebuilt and all changed pages re-inspected; remaining PNG pages were byte-identical to the reviewed render. All 449 external Markdown link occurrences per language retain their exact targets through inline conversion, and 319 distinct targets exist in each PDF. Source conditions and changed translations cross-reviewed; no experiments independently replicated.",
+  "review": "Both editions inspected in all-page contact sheets, with page-scale review of the new WildAI, compression, SELF-POT and IronMind reference material. Formula introductions and quote boxes now stay together, including preceding headings. After both pagination repairs, every changed page was visually re-inspected; all other PNG pages were pixel-identical to a reviewed rendering. All 456 external Markdown link occurrences per language retain their targets through inline conversion, and 326 distinct targets exist in each PDF. Changed arguments, numbers, conditions and paired translations cross-reviewed; no experiments independently replicated.",
   "limits": [
     "No independent rerun of cited experiments",
     "External URL availability is based on research verification logs, not an automated live link crawl",
@@ -22,20 +22,22 @@
   "publication": "Public GitHub repository yibingwei-1/scaling-law-survey, main branch",
   "pdfs": {
     "zh-CN": {
-      "pages": 61,
-      "link_annotations": 675,
+      "pages": 62,
+      "link_annotations": 687,
       "display_formulas_rendered": 24,
       "display_formula_fallbacks": 0,
-      "external_source_targets_verified": 319,
-      "external_link_occurrences_checked": 449
+      "external_source_targets_verified": 326,
+      "external_link_occurrences_checked": 456,
+      "sha256": "cf9afe7bdbf95c3ba084c6eee244593e9312d1582f044f634c62d8f51803d7e6"
     },
     "en": {
-      "pages": 86,
-      "link_annotations": 683,
+      "pages": 88,
+      "link_annotations": 696,
       "display_formulas_rendered": 24,
       "display_formula_fallbacks": 0,
-      "external_source_targets_verified": 319,
-      "external_link_occurrences_checked": 449
+      "external_source_targets_verified": 326,
+      "external_link_occurrences_checked": 456,
+      "sha256": "c9cad895c40c9070408e5b11566d6f692723c82a2e59175c59ca4c4662ea5348"
     }
   },
   "translation_review": {
@@ -50,7 +52,7 @@
       "All maintained chapters included once in assembled manuscript"
     ],
     "manifest": "data/translation-status.json",
-    "incremental_reviewed_on": "2026-09-28",
-    "incremental_chapters": 5
+    "incremental_reviewed_on": "2026-10-05",
+    "incremental_chapters": 4
   }
 }

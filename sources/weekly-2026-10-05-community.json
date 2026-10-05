@@ -1,0 +1,593 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-10-05",
+  "window": {
+    "start": "2026-09-14",
+    "end": "2026-10-05",
+    "inclusive": true
+  },
+  "baseline_files_read": [
+    "sources/community.json",
+    "docs/04-community-radar.md",
+    "data/state.json",
+    "sources/weekly-2026-09-28-community.json"
+  ],
+  "baseline_catalog_count": 20,
+  "baseline_edition": "v0.3.2",
+  "scope": "Community discovery and primary-source follow-up confined to the scaling-law survey. Only this weekly log is written; no main catalog, prose, state, or historical counter is modified.",
+  "policy": {
+    "missing_metrics": "null means not observed, not zero.",
+    "index_metrics": "Search-index observations are snapshots, not current platform counters. Observation date and metric measurement time are separate.",
+    "publication_date": "Use explicit calendar dates where visible. Do not infer absolute posting dates from crawl dates, unanchored relative times, or a recent reply to an old post.",
+    "attention_thresholds": {
+      "reddit_score": 100,
+      "youtube_views": 100000,
+      "x_explicit_views": 100000
+    },
+    "cross_platform_ranking": false,
+    "technical_evidence": "Primary papers and author reports inform research relevance. Community claims, votes, and secondary summaries are not technical evidence.",
+    "deduplication": "Compared canonical URLs against the 20-record community catalog; compared recurring discovery leads with the prior weekly log. Existing records and previous observations remain unchanged."
+  },
+  "queries": [
+    {
+      "batch": 1,
+      "queries": [
+        {
+          "q": "\"scaling laws\" after:2026-09-13 before:2026-10-06",
+          "domains": [
+            "reddit.com"
+          ]
+        },
+        {
+          "q": "\"test-time compute\" after:2026-09-13 before:2026-10-06",
+          "domains": [
+            "reddit.com"
+          ]
+        },
+        {
+          "q": "\"scaling laws\" \"2026\" \"September\" \"October\"",
+          "domains": [
+            "youtube.com"
+          ]
+        },
+        {
+          "q": "\"scaling\" \"compute\" after:2026-09-13 before:2026-10-06",
+          "domains": [
+            "x.com"
+          ]
+        }
+      ],
+      "outcome": "Reddit returned the existing Helix thread, an earlier Scaling Laws candidate, a low-score September 28 ceiling discussion, and older posts. X and YouTube did not yield a verified new high-attention target."
+    },
+    {
+      "batch": 2,
+      "queries": [
+        {
+          "q": "\"scaling\" \"September 2026\" \"reinforcement\" site:reddit.com/r/LocalLLaMA"
+        },
+        {
+          "q": "\"scaling laws\" \"October\" \"2026\" site:reddit.com"
+        },
+        {
+          "q": "\"training data\" \"September 2026\" site:reddit.com/r/MachineLearning"
+        },
+        {
+          "q": "\"test-time\" \"2026-09\" \"youtube.com/watch\""
+        }
+      ],
+      "outcome": "Found a September 26 entertainment evaluation post and cross-post; no verified scaling experiment. Mirrors supplied a Tim Dettmers release-week lead without an exact X status URL."
+    },
+    {
+      "batch": 3,
+      "queries": [
+        {
+          "q": "\"Frontier AI on Hardware You Own\""
+        },
+        {
+          "q": "\"scaling\" \"September 30 2026\"",
+          "domains": [
+            "reddit.com"
+          ]
+        },
+        {
+          "q": "\"compute\" \"October 01 2026\"",
+          "domains": [
+            "reddit.com/r/LocalLLaMA"
+          ]
+        },
+        {
+          "q": "\"reasoning\" \"September 2026\" \"scaling\" site:youtube.com/watch"
+        }
+      ],
+      "outcome": "Exact release-week and late-September scaling searches mainly returned irrelevant or secondary material; no new verifiable community record."
+    },
+    {
+      "batch": 4,
+      "queries": [
+        {
+          "q": "\"scaling law\"",
+          "domains": [
+            "reddit.com"
+          ],
+          "recency": 7
+        },
+        {
+          "q": "\"test-time\" \"compute\"",
+          "domains": [
+            "reddit.com/r/MachineLearning",
+            "reddit.com/r/LocalLLaMA"
+          ],
+          "recency": 14
+        },
+        {
+          "q": "\"RL\" \"scaling\" -site:blog.x.com -site:communitynotes.x.com",
+          "domains": [
+            "x.com"
+          ],
+          "recency": 21
+        },
+        {
+          "q": "\"Tim Dettmers\" \"2026\" \"September\""
+        }
+      ],
+      "outcome": "Recovered the official September 21 dlab announcement URL via secondary discovery. Recency filters also returned older material, which was not treated as newly posted."
+    },
+    {
+      "batch": 5,
+      "queries": [
+        {
+          "q": "\"How Much Is an AI Token Worth\""
+        },
+        {
+          "q": "\"WildAI\" \"Pangram\" site:x.com"
+        },
+        {
+          "q": "\"CliffCompaction\" site:reddit.com"
+        },
+        {
+          "q": "\"Tim Dettmers\" \"September 22 2026\" site:reddit.com"
+        }
+      ],
+      "outcome": "Verified WildAI primary-paper and author/repository links; found CliffCompaction Reddit posts and a short-video link. MindPattern's Reddit-finding link returned an error, so no original Reddit release-week thread was recovered."
+    },
+    {
+      "batch": 6,
+      "queries": [
+        {
+          "q": "\"WildAI\" site:reddit.com"
+        },
+        {
+          "q": "\"Jenna\" \"AI Token\" site:x.com"
+        },
+        {
+          "q": "\"dlab\" \"frontier\" site:reddit.com/r/LocalLLaMA"
+        },
+        {
+          "q": "\"CliffCompaction\" site:x.com"
+        }
+      ],
+      "outcome": "Exact WildAI/CliffCompaction X and Reddit searches returned no results in this batch. Direct YouTube and one Reddit page fetches failed; CliffCompaction primary abstract and version history were readable."
+    },
+    {
+      "batch": 7,
+      "queries": [
+        {
+          "q": "\"CliffCompaction\" \"votes\""
+        },
+        {
+          "q": "\"WildAI\" \"Jenna\" \"twitter\""
+        },
+        {
+          "q": "\"2609.40295\" site:x.com OR site:reddit.com OR site:youtube.com"
+        },
+        {
+          "q": "\"scaling laws\" \"September 2026\" site:youtube.com/watch"
+        }
+      ],
+      "outcome": "Found WildAI author's announcement in indexed X-profile mirrors and a dated 2-vote CliffCompaction Reddit snapshot. Unlabelled mirror counter strips were not converted to standard metrics."
+    },
+    {
+      "batch": 8,
+      "queries": [
+        {
+          "q": "\"How much is an AI token worth\" \"jennajrussell\""
+        },
+        {
+          "q": "\"WildAI\" site:youtube.com"
+        },
+        {
+          "q": "\"CliffCompaction\" site:youtube.com"
+        },
+        {
+          "q": "\"sequence weighting\" \"September\" \"2026\" site:reddit.com OR site:x.com"
+        }
+      ],
+      "outcome": "Found Nitter's indexed October 1 WildAI announcement/retweet text. Direct Sotwe failed, Nitter showed an access queue, and a TwStalker mirror timed out. No verified fresh YouTube date or views recovered."
+    },
+    {
+      "batch": 9,
+      "queries": [
+        {
+          "q": "\"jennajrussell/status\" \"How much is an AI token\""
+        },
+        {
+          "q": "\"2609.26779\" \"votes\""
+        },
+        {
+          "q": "\"SELF-POT\" site:reddit.com OR site:x.com OR site:youtube.com"
+        },
+        {
+          "q": "\"Compression\" \"2610.02462\" site:reddit.com OR site:x.com OR site:youtube.com"
+        }
+      ],
+      "outcome": "Exact X-status, SELF-POT, and 2610.02462 searches produced no qualifying platform record. X author profile direct fetch failed. Secondary content was not promoted to technical evidence."
+    }
+  ],
+  "search_query_count": 36,
+  "recommended_candidates": [],
+  "accepted_records": [],
+  "proposed_catalog_records": [],
+  "proposed_radar_addition": null,
+  "high_attention_candidates_found": 1,
+  "high_attention_count_note": "One newly discovered in-window event met the Reddit score screen (128 votes); its 44-vote cross-post is the same event. It is not recommended because it lacks a controlled scaling study or verified primary research.",
+  "maintenance_decision": "Recommend no new community catalog entries this week. WildAI has a promising author-announcement lead but no recovered canonical status link or unambiguous attention metric. CliffCompaction is a relevant low-attention discovery whose primary paper merits technical review; this does not justify representing it as a highly discussed result. The high-score entertainment evaluation is excluded on research-value grounds.",
+  "context_candidates": [
+    {
+      "candidate_id": "W1005-RD-01",
+      "platform": "Reddit",
+      "community": "r/rajistics",
+      "title": "CliffCompaction and why it has the Agent Forget",
+      "url": "https://www.reddit.com/r/rajistics/comments/1wsidq4/cliffcompaction_and_why_it_has_the_agent_forget/",
+      "author": "u/rshah4",
+      "published_at": "2026-09-28",
+      "observed_at": "2026-10-05",
+      "publication_date_evidence": "Search index explicitly displayed [Monday September 28 2026]. Direct reader displayed only '2d ago' with unknown reference time.",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 2
+      },
+      "metric_evidence": "[Monday September 28 2026] [+2 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "attention_status": "context_below_screening_threshold",
+      "comments_complete": false,
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2609.26779v1",
+          "title": "CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents",
+          "kind": "paper",
+          "verification": "Abstract and version history read; v1 submitted September 22, 2026. Methods and supplementary material not read in this community subtask."
+        }
+      ],
+      "related_links": [
+        "https://www.youtube.com/shorts/_95LR00FVX8",
+        "https://timdettmers.com/2026/09/21/dlab-open-source-week/"
+      ],
+      "discussion_focus": "A short explainer frames context deletion versus summarization as a trade-off for long-running coding agents; its useful research lead is the joint cost of memory handling and multiple rollouts.",
+      "evidence_limit": "Two indexed votes are below the screen. The post is an explanation, not an independent replication. Abstract-level cost and performance claims require matched-budget methods review before technical incorporation.",
+      "access_status": "Direct post text and author readable. Direct absolute date, vote count, comment count, and full comment tree unavailable.",
+      "proposed_action": "Keep as a discovery candidate; consider the primary paper during technical maintenance without adding a community-radar record."
+    },
+    {
+      "candidate_id": "W1005-RD-02",
+      "platform": "Reddit",
+      "community": "r/newAIParadigms",
+      "title": "Are we hitting a ceiling with LLM scaling?",
+      "url": "https://www.reddit.com/r/newAIParadigms/comments/1ws7fee/are_we_hitting_a_ceiling_with_llm_scaling/",
+      "author": null,
+      "published_at": "2026-09-28",
+      "observed_at": "2026-10-05",
+      "publication_date_evidence": "Search index explicitly displayed [Monday September 28 2026].",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 12
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "metric_evidence": "[Monday September 28 2026] [+12 votes]",
+      "attention_status": "context_below_screening_threshold",
+      "comments_complete": false,
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2507.21184v5",
+          "title": "Can Language Models Discover Scaling Laws?",
+          "kind": "paper",
+          "verification": "Primary abstract and submission history read. v1 July 27, 2025; current v5 January 22, 2026. No new version in the search window."
+        }
+      ],
+      "discussion_focus": "A scaling-ceiling discussion links to automated law discovery in a reply; this is a route to a methodological paper, not evidence for a scaling ceiling.",
+      "evidence_limit": "Low-score speculative discussion. The paper studies fitting and extrapolation; its abstract cannot support a general claim that scaling has stopped.",
+      "access_status": "Search-index post and selected reply excerpt only; no independent full-thread or live-counter verification.",
+      "proposed_action": "Retain as a low-priority methodological lead; do not add a community record this round."
+    },
+    {
+      "candidate_id": "W1005-RD-03",
+      "platform": "Reddit",
+      "title": "Scaling Laws",
+      "url": "https://www.reddit.com/r/accelerate/comments/1wiby3b/scaling_laws/",
+      "author": null,
+      "published_at": "2026-09-16",
+      "observed_at": "2026-10-05",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 32
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "metric_evidence": "[Wednesday September 16 2026] [+32 votes]",
+      "attention_status": "context_below_screening_threshold",
+      "previous_weekly_candidate": "sources/weekly-2026-09-28-community.json:W28-RD-02",
+      "primary_sources": [],
+      "discussion_focus": "Recurring qualitative discussion of multiple scaling axes; no new controlled result identified.",
+      "evidence_limit": "Already a prior-week candidate. This separate search observation neither refreshes the historical log nor establishes growth in engagement.",
+      "proposed_action": "No addition."
+    }
+  ],
+  "unverified_candidates": [
+    {
+      "candidate_id": "W1005-X-01",
+      "platform": "X",
+      "author": "@jennajrussell",
+      "title": "WildAI / How much is an AI token worth? author announcement",
+      "url": null,
+      "author_profile_url": "https://x.com/jennajrussell",
+      "observed_at": "2026-10-05",
+      "published_at": null,
+      "date_evidence": "Nitter search index labels the reproduced original and retweet 'Oct 1' without a year; Sotwe/TwStalker show unanchored relative times. Exact original status/date not verified.",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": null,
+      "metric_measurement_time": null,
+      "attention_status": "unverified",
+      "discovery_urls": [
+        "https://www.sotwe.com/jennajrussell?lang=en",
+        "https://nitter.jaydenha.uk/max_spero_",
+        "https://source.twstalker.com/irisiris_l"
+      ],
+      "unlabelled_counter_observations": [
+        {
+          "source_url": "https://www.sotwe.com/jennajrussell?lang=en",
+          "observed_at": "2026-10-05",
+          "raw_counter_strip": "14 / 245 / 50 / 114 / 28K",
+          "interpretation": null
+        },
+        {
+          "source_url": "https://nitter.jaydenha.uk/max_spero_",
+          "observed_at": "2026-10-05",
+          "raw_counter_strip": "12 / 49 / 242 / 26,570",
+          "interpretation": null
+        }
+      ],
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2609.40295",
+          "title": "How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text",
+          "kind": "paper",
+          "verification": "Primary abstract indexed by search read; dated September 30, 2026. Full text is being reviewed separately by the parent editor."
+        },
+        {
+          "url": "https://github.com/pangramlabs/WildAI",
+          "kind": "author_repository",
+          "verification": "Search-index README excerpt read; no code execution or replication."
+        }
+      ],
+      "discussion_focus": "The author announcement links data mixture, target distribution, and whether extra AI web text helps or harms; a relevant discovery lead for the data chapter.",
+      "evidence_limit": "No canonical status URL recovered. Unlabelled numbers cannot be safely assigned to views, likes, replies, or reposts. Mirror replies mentioning omitted experiments are not adopted as technical evidence.",
+      "access_status": "X profile direct fetch failed. Sotwe direct fetch failed; Nitter direct page was an access queue; TwStalker direct page timed out. Search-index excerpts remain available.",
+      "proposed_action": "Do not add to the main community catalog until original post/date is verifiable. No claim of meeting attention thresholds."
+    },
+    {
+      "candidate_id": "W1005-YT-01",
+      "platform": "YouTube",
+      "title": null,
+      "url": "https://www.youtube.com/shorts/_95LR00FVX8",
+      "author": null,
+      "published_at": null,
+      "observed_at": "2026-10-05",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": null,
+      "metric_measurement_time": null,
+      "attention_status": "unverified",
+      "discovery_url": "https://www.reddit.com/r/rajistics/comments/1wsidq4/cliffcompaction_and_why_it_has_the_agent_forget/",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2609.26779v1",
+          "kind": "paper"
+        }
+      ],
+      "access_status": "Direct video fetch returned cache miss. Video ID recovered from readable Reddit post. Video title, upload date, channel and metrics were not independently verified.",
+      "evidence_limit": "The Reddit post date is not a verified video upload date. No transcript or video review performed.",
+      "proposed_action": "Retain link only; no catalog addition."
+    },
+    {
+      "candidate_id": "W1005-RD-04",
+      "platform": "Reddit",
+      "title": "Long-running coding agents may be better off deleting context than summarizing it",
+      "url": "https://www.reddit.com/r/PracticalAgenticDev/comments/1wsaw8v/longrunning_coding_agents_may_be_better_off/",
+      "author": null,
+      "published_at": null,
+      "observed_at": "2026-10-05",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": null,
+      "metric_measurement_time": null,
+      "attention_status": "unverified",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2609.26779v1",
+          "kind": "paper",
+          "link_relationship": "Topic match from indexed CliffCompaction excerpt; outbound link not independently read."
+        }
+      ],
+      "access_status": "Search-index title and excerpt available; direct fetch returned cache miss.",
+      "evidence_limit": "Index said 'last week' without an explicit posting date; do not infer a calendar date or window eligibility. No visible metrics.",
+      "proposed_action": "No addition."
+    }
+  ],
+  "existing_record_observations": [
+    {
+      "record_id": "RD-09",
+      "url": "https://www.reddit.com/r/accelerate/comments/1wj3owl/the_birth_of_the_robotics_scaling_law_helix_25/",
+      "observed_at": "2026-10-05",
+      "source_kind": "search_index_snapshot",
+      "published_at": "2026-09-17",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 55
+      },
+      "metric_measurement_time": null,
+      "metric_evidence": "[Thursday September 17 2026] [+55 votes]",
+      "note": "Newly retrieved index snapshot, kept only in this weekly log. The catalog's September 21 observation of 52 votes remains unchanged. Unknown measurement times and vote fuzzing preclude interpreting the difference as growth."
+    }
+  ],
+  "not_selected": [
+    {
+      "platform": "Reddit",
+      "title": "Press X to Doubt Eval: I told 14 AI models it's September 2026 and showed them 20 things that actually happened this year without websearch. On average they gave reality a 36% chance.",
+      "url": "https://www.reddit.com/r/singularity/comments/1wqne7g/press_x_to_doubt_eval_i_told_14_ai_models_its/",
+      "published_at": "2026-09-26",
+      "observed_at": "2026-10-05",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 128
+      },
+      "metric_evidence": "[Saturday September 26 2026] [+128 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "attention_status": "high_attention_proxy",
+      "primary_sources": [],
+      "related_crosspost": {
+        "url": "https://www.reddit.com/r/accelerate/comments/1wqne6p/press_x_to_doubt_eval_i_told_14_ai_models_its/",
+        "published_at": "2026-09-26",
+        "score": 44,
+        "source_kind": "search_index_snapshot",
+        "metric_measurement_time": null
+      },
+      "reason": "Entertainment-style 20-item, one-run-per-model evaluation with no verified primary scaling study or controlled budget intervention. The claimed current-events premises were not verified. A high score does not resolve selection/calibration problems or justify a scaling-law conclusion. Cross-post is the same event, not replication.",
+      "read_depth": "Indexed post and selected replies; direct page fetched but the entire comment tree was not reviewed."
+    },
+    {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wpk5js/am_i_missing_something_from_modern_models_or_is/",
+      "published_at": "2026-09-25",
+      "observed_at": "2026-10-05",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 7
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "reason": "Speculation about Transformer architectures and AGI without a new primary scaling experiment."
+    },
+    {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1hiqxkv/so_begins_the_era_of_test_time_compute/",
+      "published_at": "2024-12-20",
+      "observed_at": "2026-10-05",
+      "reason": "Old post returned because of a September 28 reply. Reply date does not make the original post eligible."
+    },
+    {
+      "url": "https://www.reddit.com/r/AskReddit/comments/1wfmwav/for_people_working_in_mlai_and_mathematicians_how/",
+      "published_at": "2026-09-13",
+      "observed_at": "2026-10-05",
+      "reason": "Original post predates the inclusive window; September 14 comments do not change its posting date."
+    }
+  ],
+  "primary_source_checks": [
+    {
+      "url": "https://timdettmers.com/2026/09/21/dlab-open-source-week/",
+      "title": "dlab Open Source Week: Frontier AI on Your Own Hardware",
+      "author": "Tim Dettmers",
+      "published_at": "2026-09-21",
+      "read_depth": "Full rendered blog text read, including release description and contextual argument; no implementation execution.",
+      "finding": "The author presents a connected release plan for local inference, compaction and agents. Its budget-relevant claim is that cheaper per-rollout context handling can fund multiple rollouts. Announced capabilities remain author reports and require paper-level cost/selector controls or independent replication; promotional hardware comparisons are not established scaling laws.",
+      "technical_incorporation": "No technical text changed by this subtask."
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.26779v1",
+      "title": "CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents",
+      "authors": [
+        "Trang Nguyen",
+        "Eulrang Cho",
+        "Bingqing Chen",
+        "Tim Dettmers"
+      ],
+      "published_at": "2026-09-22",
+      "read_depth": "Abstract and submission history only.",
+      "finding": "The proposed compaction only drops or truncates original context and never re-compacts rewritten summaries. Authors report improved cost/performance for bounded-context coding and parallel rollouts. Relevance is a joint memory-and-inference budget axis, not a demonstrated universal law.",
+      "next_check": "Read methods for matched models, budgets, actual answer selection, tool/runtime costs, task distributions and independent code execution before citing quantitative comparisons."
+    },
+    {
+      "url": "https://arxiv.org/abs/2507.21184v5",
+      "title": "Can Language Models Discover Scaling Laws?",
+      "authors": [
+        "Haowei Lin",
+        "Haotian Ye",
+        "Wenzheng Feng",
+        "Quzhe Huang",
+        "Yujun Li",
+        "Hubert Lim",
+        "Zhengrui Li",
+        "Xiangyu Wang",
+        "Jianzhu Ma",
+        "Yitao Liang",
+        "James Zou"
+      ],
+      "published_at": "2025-07-27",
+      "version_date": "2026-01-22",
+      "read_depth": "Abstract and submission history only.",
+      "finding": "SLDAgent jointly searches functional form and fitted parameters on eight curated law-discovery tasks. Relevant to extrapolation methodology and model selection; an old paper rediscovered in a new discussion, not a new publication or proof of a scaling ceiling.",
+      "next_check": "Inspect held-out splits, candidate-function search budget, overfitting safeguards and independent extrapolation tests if selected for a future methods update."
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.40295",
+      "title": "How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text",
+      "published_at": "2026-09-30",
+      "read_depth": "Primary indexed abstract and author-repository excerpt only in this subtask.",
+      "finding": "WildAI separates wild AI web text from deliberately generated training data and studies human-target versus AI-target loss. This provides a technically relevant data-mixture lead independently of whether its community announcement is verifiable.",
+      "next_check": "Parent editor owns full-text evaluation; this community log does not import numerical results from mirrors or author replies."
+    }
+  ],
+  "limitations": [
+    "Search coverage is a bounded discovery pass, not a complete census. Negative search results do not establish that no relevant discussion exists.",
+    "Thirty-six actual queries covered Reddit, X and YouTube. Date/recency operators still returned older or irrelevant pages, so explicit post dates were separately screened.",
+    "Search-index Reddit scores have unknown measurement times. Direct renderings can display stale relative times and hide scores; neither is treated as a live API response.",
+    "X direct access and mirror direct access were limited. Unlabelled mirror number strips are preserved only as uninterpreted observations; canonical WildAI status URL not recovered.",
+    "The one recovered new YouTube short could not be opened. Its date, title, channel, views, likes and comments remain null; no claim of YouTube popularity is made.",
+    "No controlled independent replication was verified from a community post in this round. Abstract-only primary-paper follow-up remains labelled abstract-only.",
+    "Historical catalog metrics were not overwritten. Newly retrieved observations are not engagement trend estimates.",
+    "No paper full text, dataset, credentials or private material was uploaded. This file stores metadata, brief paraphrases, limited metric evidence and public URLs only."
+  ]
+}

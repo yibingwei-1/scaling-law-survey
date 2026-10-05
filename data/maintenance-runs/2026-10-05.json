@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-05",
+  "edition": "v0.3.3",
+  "search_window": {
+    "from": "2026-09-14",
+    "through": "2026-10-05"
+  },
+  "status": "content_updated_validated",
+  "new_primary_sources": [
+    "russell2026wildai",
+    "cheng2026scalingdown",
+    "yang2026selfpot",
+    "pan2026ironmind"
+  ],
+  "new_body_sources": [
+    "russell2026wildai",
+    "cheng2026scalingdown",
+    "yang2026selfpot"
+  ],
+  "catalog_only_sources": [
+    "pan2026ironmind"
+  ],
+  "new_community_records": [],
+  "new_high_attention_records": 0,
+  "chapters_changed": [
+    "T2",
+    "T3",
+    "T5"
+  ],
+  "research_logs": [
+    "sources/weekly-2026-10-05-foundations.json",
+    "sources/weekly-2026-10-05-frontier.json",
+    "sources/weekly-2026-10-05-community.json",
+    "sources/weekly-2026-10-05-editor.json"
+  ],
+  "reason_for_body_updates": [
+    "Wild AI web text can have negative marginal value even with retained human data; validation mixtures can mask the target-domain loss.",
+    "Compression-form transfer, coefficient transfer, measurement efficiency and selection value require separate evidence.",
+    "Selection failures and output recovery are distinct from candidate coverage; replay must preserve its cost and post-hoc boundaries."
+  ],
+  "review": [
+    "Root and research subtasks reviewed primary conditions and paired translations; no experiments replicated.",
+    "WildAI held-out sizes also enter candidate-form comparisons; no claim of a fully independent final test.",
+    "IronMind remains catalog-only given narrow closed-loop evidence and overlap with existing T7 questions.",
+    "Prior community entries and historical counters unchanged; unverified leads retained in the weekly log.",
+    "Final PDF revisions remove detached formula introductions, split quote boxes and orphaned chapter headings; changed pages independently re-inspected."
+  ],
+  "access_limits": [
+    "Targeted search is non-exhaustive and indexing can omit recent work.",
+    "WildAI author X leads lacked a verified canonical status URL and standard counters; no formal community record added.",
+    "Some X/YouTube/Reddit direct reads failed or lacked counters; this does not establish absent discussion.",
+    "New papers are preprints; selected full-text review is not independent replication."
+  ],
+  "publication_target": "https://github.com/yibingwei-1/scaling-law-survey",
+  "validation": {
+    "status": "pass",
+    "date": "2026-10-05",
+    "checks": [
+      "scripts/build_survey.py",
+      "Eight generated artifacts unchanged on rebuild",
+      "scripts/validate.py: 171 sources, 20 community records, 41 Markdown files",
+      "Both PDF languages built with --check: 24 display formulas rendered, zero fallbacks each",
+      "PDF all-page contact-sheet review plus page-scale new-content and changed-pagination review",
+      "Paired translations reviewed before updating four chapter fingerprints",
+      "All repository JSON parsed; git diff --check passed"
+    ],
+    "pdf_pages": {
+      "en": 88,
+      "zh-CN": 62
+    },
+    "record": "data/quality-check.json",
+    "limits": "No independent experiment reproduction; web discovery and community platform access remain incomplete."
+  },
+  "counts": {
+    "catalog": 171,
+    "technical_sources_cited": 161,
+    "community": 20,
+    "technical_han_characters": 39546
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-05",
+  "window": {
+    "from": "2026-09-14",
+    "through": "2026-10-05"
+  },
+  "tools": "Built-in web search and primary-source HTML. parallel-cli not found on PATH; no claim of Parallel API execution.",
+  "queries": [
+    "\"scaling laws\" \"October\" \"2026\" after:2026-09-14 before:2026-10-06 (arxiv.org)",
+    "\"scaling\" \"September 2026\" \"compute\" after:2026-09-14 before:2026-10-06 (openai.com, anthropic.com, deepmind.google, research.google)",
+    "\"scaling\" \"2609\" \"data\" after:2026-09-14 before:2026-10-06 (arxiv.org)",
+    "site:arxiv.org \"scaling laws\" \"Oct 2026\"",
+    "site:arxiv.org \"scaling\" \"30 Sep 2026\"",
+    "site:arxiv.org \"scaling\" \"2 Oct 2026\""
+  ],
+  "screening": [
+    {
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "decision": "Model release announcement surfaced; no new quantitative scaling law established from the returned announcement. Not promoted into the technical catalog.",
+      "reading_depth": "search_excerpt"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.00985",
+      "title": "Neural scaling laws and evolution of learnable activation functions of Kolmogorov-Arnold networks",
+      "decision": "Peripheral KAN image/scientific-regression result, retained as discovery only; insufficient evidence to change the LLM-centered narrative.",
+      "reading_depth": "abstract_search_result"
+    }
+  ],
+  "version_checks": [
+    {
+      "url": "https://arxiv.org/abs/2609.27374",
+      "latest_version_observed": "v1",
+      "first_published": "2026-09-23",
+      "last_revision": null,
+      "observed_on": "2026-10-05",
+      "outcome": "Same version as prior record; no claim of a new full-text audit or byte-level diff."
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.08690",
+      "latest_version_observed": "v1",
+      "first_published": "2026-09-08",
+      "last_revision": null,
+      "observed_on": "2026-10-05",
+      "outcome": "Same version as prior record; no claim of a new full-text audit or byte-level diff."
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.19107",
+      "latest_version_observed": "v2",
+      "first_published": "2026-09-16",
+      "last_revision": "2026-09-17",
+      "observed_on": "2026-10-05",
+      "outcome": "Same version as prior record; no claim of a new full-text audit or byte-level diff."
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.19499",
+      "latest_version_observed": "v2",
+      "first_published": "2026-09-16",
+      "last_revision": "2026-09-19",
+      "observed_on": "2026-10-05",
+      "outcome": "Same version as prior record; no claim of a new full-text audit or byte-level diff."
+    }
+  ],
+  "independent_reviews": [
+    {
+      "url": "https://arxiv.org/html/2609.40295v1",
+      "scope": "Metadata, detector labeling, training setup, benefit/harm structure, held-out model split, target-specific validation and limitations.",
+      "findings": [
+        "726 fitting runs through 268M; 74 held-out runs at 477M/973M.",
+        "Human budget held fixed while AI additions vary; human-token equivalence can change sign.",
+        "Mixed validation disguises human-target harm in the reported small English model setting; not proof all synthetic data damages downstream capability.",
+        "No independent experiment reproduction.",
+        "Appendix D.1 also compares candidate functional forms at the held-out 477M/973M sizes, so the manuscript does not describe the reported error as a final test independent of form selection."
+      ]
+    },
+    {
+      "url": "https://arxiv.org/html/2610.02462v1",
+      "scope": "Abstract, measurement-efficiency validation, selection results and relevant appendix evidence.",
+      "findings": [
+        "Transfer of functional form is distinct from transfer of coefficients; settings refit coefficients.",
+        "Half the configuration measurements is not half total GPU time.",
+        "Numerical prediction did not beat fixed method preference for QA in the tested selection panels.",
+        "Capability-specific teacher-forced loss is not equivalent to generated exact-match accuracy."
+      ]
+    },
+    {
+      "url": "https://arxiv.org/html/2610.01110v1",
+      "scope": "Metadata, selection/conversion results, retained-pool replay and accounting/failure details in Appendix J.2.",
+      "findings": [
+        "500 scheduled coding cells = five models times 100 tasks, with 498 retained pools.",
+        "Post-hoc output-aware fallback preserves spent judge costs; empty-choice failures differ from incorrect candidate generation.",
+        "Public examples choose candidates without hidden correctness labels; logical API savings exclude separately recorded local execution expense.",
+        "Counterfactual accounting on existing candidates is not an independently rerun matched-budget deployment comparison."
+      ]
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39403v1",
+      "scope": "Metadata, Table 5, closed-loop protocol and limitations.",
+      "findings": [
+        "Six tasks with ten trials each on one embodiment; separate open-loop proxy and real-robot success.",
+        "Catalog-only this week; existing T7 already discusses human-data transfer and proxy/closed-loop mismatch."
+      ]
+    }
+  ],
+  "access_limits": [
+    "Targeted search is non-exhaustive and indexing can omit recent work.",
+    "No code execution or independent replication of paper experiments."
+  ]
+}

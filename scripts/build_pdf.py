@@ -503,6 +503,9 @@ def parse_markdown(text, width, source_dir):
                     i += 1
                 if i < len(lines):
                     block.append(lines[i].split(closing)[0])
+            # Keep a display equation with its introductory paragraph.
+            if story and isinstance(story[-1], Paragraph) and story[-1].style.name == 'body':
+                story[-1].keepWithNext = True
             story.append(formula_block(block, width=width))
             i += 1
             continue
@@ -525,7 +528,11 @@ def parse_markdown(text, width, source_dir):
             block=[]
             while i < len(lines) and lines[i].strip().startswith('>'):
                 block.append(lines[i].strip().lstrip('>').strip()); i+=1
-            story.append(Paragraph(inline(' '.join(block)), STYLES['quote']))
+            quote_group = [Paragraph(inline(' '.join(block)), STYLES['quote'])]
+            # Include preceding headings so an intact box cannot orphan its title.
+            while story and isinstance(story[-1], Paragraph) and story[-1].getKeepWithNext():
+                quote_group.insert(0, story.pop())
+            story.append(KeepTogether(quote_group))
             continue
         lm=re.match(r'^([-*+]\s+|\d+[.)]\s+)(.+)', line)
         if lm:

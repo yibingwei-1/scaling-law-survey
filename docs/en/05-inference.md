@@ -1,6 +1,6 @@
 # T5　Inference Budgets and Search: Turning More Compute into More Reliable Answers
 
-> Verification date: 2026-09-28. Covers representative works that help explain mechanisms; much of the 2026 material remains in preprint form. Experiments have not been independently reproduced. Sources, versions, and reading scope are recorded in [frontier.json](../../sources/frontier.json) and [expansion-frontier.json](../../sources/expansion-frontier.json); the Hugging Face authors' blog is recorded in the editorial primary-source collection.
+> Verification date: 2026-10-05. Covers representative works that help explain mechanisms; much of the 2026 material remains in preprint form. Experiments have not been independently reproduced. Sources, versions, and reading scope are recorded in [frontier.json](../../sources/frontier.json) and [expansion-frontier.json](../../sources/expansion-frontier.json); the Hugging Face authors' blog is recorded in the editorial primary-source collection.
 
 Pretraining invests compute in shared parameters, whereas inference allocates compute to a particular problem. Chain-of-Thought changes a single generation process through demonstrations of intermediate steps; Self-Consistency reduces the instability of a single path through multiple-path sampling and answer aggregation. They open serial and parallel directions, respectively, but leave cost and correct selection unresolved. [CoT](https://arxiv.org/abs/2201.11903), [Self-Consistency](https://arxiv.org/abs/2203.11171)
 
@@ -61,6 +61,12 @@ $$
 This is an accounting identity, not an already fitted scaling law. More verification compute may allow better use of a weaker generator's candidates, or its benefits may saturate quickly because scoring and generation share errors. Spending the entire budget on verification also encounters insufficient candidate coverage: if every answer is wrong, even a perfect selector cannot deliver a correct one.
 
 System comparisons should therefore ideally show three curves together: scale verification compute with a fixed generator; scale generation compute with a fixed verifier; and jointly allocate the two under the same total cost. PRM label volume, verification-model parameters, checking tokens per candidate, and candidate count are different axes. None should be singled out as if it alone constituted “test compute.” ThinkPRM and DeepSeekMath-V2 make this dimension more explicit, but their results in particular mathematical settings do not yet establish a single optimal ratio for open-domain fact verification.
+
+### Why Can Submission Fail Even When a Correct Candidate Exists?
+
+Beyond verification cost, a selection protocol can discard usable outputs. [SELF-POT (Yang et al., 2026), §3.3 and Appendix J.2](https://arxiv.org/html/2610.01110v1) replays selection on fixed programming pools: five models each face 100 tasks, giving 500 scheduled cells; 498 pools are retained and two missing records remain failures. Falling back to the first nonempty candidate when judging returns no valid nonempty answer increases correct submissions from 376 to 437, retaining all spent judge costs. This output-aware fallback is a post-hoc amendment, not a preregistered intervention.
+
+Public-example selection reaches 453/500 while removing judge-stage logical API charges; hidden correctness labels score outcomes but never guide selection. Coverage, selection accuracy and successful submission therefore also depend on protocol reliability. However, this is a retrospective replay on fixed candidates, not freshly generated, matched-budget end-to-end trials. Logical API charges are neither invoices nor hardware costs; local test execution is accounted for separately. The result supports explicit failure recovery, not a general claim that more test-time compute is cost-effective on every task.
 
 ## 5. From “Think Longer” to “When Should Thinking Stop?”
 

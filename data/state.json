@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "edition": "v0.3.2",
-  "last_successful_search": "2026-09-28",
-  "last_content_update": "2026-09-28",
-  "pdf_content_date": "2026-09-28",
+  "edition": "v0.3.3",
+  "last_successful_search": "2026-10-05",
+  "last_content_update": "2026-10-05",
+  "pdf_content_date": "2026-10-05",
   "coverage": "Representative narrative review; not exhaustive; primary claims not independently reproduced",
   "automation": {
     "id": "scaling-law",
@@ -18,7 +18,7 @@
     "status": "published",
     "visibility": "public",
     "branch": "main",
-    "last_verified": "2026-09-28"
+    "last_verified": "2026-10-05"
   },
   "coverage_limits": [
     "Three X posts lack observable counters; one has a labeled search-index view count",
@@ -36,16 +36,20 @@
     "Audit 2609.21032 communication budgets and 2605.06241 v2/v3 differences before considering narrative changes",
     "Independent and cross-optimizer validation of MoE sparsity hyperparameter transfer beyond the single joint-extrapolation target.",
     "Evaluate coordinated PTTS groups with actual deployment selectors and complete planning/training/inference costs.",
-    "Audit CodeMidas task-quality effects and RAPID robot-reward cost controls before deeper synthesis."
+    "Audit CodeMidas task-quality effects and RAPID robot-reward cost controls before deeper synthesis.",
+    "Independent evaluation of WildAI beyond detector-defined English sub-1B pretraining and a final test not used for form selection.",
+    "Compression predictors: coefficient refitting, generated-task success and measured deployment cost under matched budgets.",
+    "SELF-POT fallback/selection reruns with fresh candidates and complete API plus local-execution costs.",
+    "IronMind broader closed-loop replication and uncertainty; CliffCompaction, length-scaling tax, PhantomEnvironments and reasoning-state PRM method/cost audits."
   ],
-  "last_validation_date": "2026-09-28",
-  "source_count": 167,
+  "last_validation_date": "2026-10-05",
+  "source_count": 171,
   "community_count": 20,
   "technical_chapters": 7,
-  "sources_cited_in_technical_chapters": 158,
-  "technical_han_characters": 38577,
+  "sources_cited_in_technical_chapters": 161,
+  "technical_han_characters": 39546,
   "reading_depth_summary": {
-    "正文定向阅读": 122,
+    "正文定向阅读": 126,
     "摘要/引言": 3,
     "摘要/元数据": 31,
     "官方报告选段": 2,
@@ -58,17 +62,18 @@
       "zh-CN"
     ],
     "translated_chapters": 12,
-    "translation_reviewed_on": "2026-09-28"
+    "translation_reviewed_on": "2026-10-05"
   },
   "last_search_run": {
-    "date": "2026-09-28",
-    "window_start": "2026-09-07",
+    "date": "2026-10-05",
+    "window_start": "2026-09-14",
     "status": "completed_with_access_limits",
-    "record": "data/maintenance-runs/2026-09-28.json",
+    "record": "data/maintenance-runs/2026-10-05.json",
     "access_limits": [
-      "Targeted search is non-exhaustive; indexing may omit recent work.",
-      "X and YouTube direct reads failed or lacked verifiable counters; candidates are retained, not treated as absent discussion.",
-      "Reddit dated scores are search-index snapshots with unknown measurement time; historical counters were not refreshed."
+      "Targeted search is non-exhaustive and indexing can omit recent work.",
+      "WildAI author X leads lacked a verified canonical status URL and standard counters; no formal community record added.",
+      "Some X/YouTube/Reddit direct reads failed or lacked counters; this does not establish absent discussion.",
+      "New papers are preprints; selected full-text review is not independent replication."
     ]
   },
   "pdf_status": "current"

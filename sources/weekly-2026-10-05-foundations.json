@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0",
+  "checked_on": "2026-10-05",
+  "window": {
+    "from": "2026-09-14",
+    "through": "2026-10-05"
+  },
+  "scope": "Targeted, non-exhaustive maintenance of T1 training prediction/budgets, T2 effective data, and T3 architecture/deployment. Exactly two new primary papers inspected in depth; body and catalog changes remain the editor's decision.",
+  "baseline": {
+    "head_reported_by_editor": "17b6a37",
+    "version": "0.3.2",
+    "last_search_date": "2026-09-28",
+    "existing_source_count": 167
+  },
+  "existing_coverage_checked": [
+    "data/state.json",
+    "METHODOLOGY.md",
+    "docs/01-predictability-budget.md",
+    "docs/02-data.md",
+    "docs/03-architecture-deployment.md",
+    "sources/foundations.json",
+    "sources/expansion-foundations.json",
+    "sources/editorial.json",
+    "sources/weekly-2026-09-28-foundations.json"
+  ],
+  "duplicate_check": "Before this log was created, rg for 2609.40295, 2610.02462, WildAI and Scaling-Down across sources/ and docs/ returned no matching record.",
+  "queries": [
+    {
+      "run_on": "2026-10-05",
+      "kind": "web.search_query",
+      "queries": [
+        "\"scaling laws\" \"2026\" \"Oct\" site:arxiv.org",
+        "\"scaling\" \"pretraining\" \"2026\" \"Sep 30\" site:arxiv.org",
+        "\"compute-optimal\" \"2026\" \"Sep\" site:arxiv.org",
+        "\"data mixture\" \"2026\" \"Oct\" site:arxiv.org"
+      ],
+      "result_summary": "Discovered WildAI and Capability Scaling-Down Laws, selected for primary-text inspection; IronMind and a KAN activation-function study retained only as search leads."
+    }
+  ],
+  "decisions": [
+    {
+      "status": "recommend_body_addition",
+      "id": "russell2026wildai",
+      "url": "https://arxiv.org/abs/2609.40295",
+      "date_basis": "arXiv submission history lists v1 2026-09-30T17:50:22Z and no later version on 2026-10-05.",
+      "old_problem": "T2 distinguishes recursive synthetic-data replacement and accumulation, but does not yet cover the marginal value of uncurated AI-written web text when the human corpus stays fixed, or masking by the validation mixture.",
+      "mechanism": "A saturating effective-token credit is combined with a separate harm term; both token value and the sign of a measured change depend on the evaluation target. This is an extension of data-mixture and effective-data questions, not a refutation of every use of synthetic data.",
+      "evidence": {
+        "design": "800 nanochat models, 19.9M–973M parameters (including input embeddings), human token budgets 2.9–87.5 tokens/parameter, AI-to-human token ratios 0–64; paired additions to fixed human controls, with fresh-human additions as a comparator.",
+        "fit_and_check": "726 models at 19.9M–268M for coefficient fitting; 74 models at 477M/973M reserved. Appendix D.1 also scores alternative functional forms on these reserved sizes.",
+        "law": "L=E+A/N^alpha+[B/D_eff^beta](1+H), D_eff=D_H[1+eta R*(1-exp(-r/R*))], r=D_A/D_H, R*=K t^rho, t=D_H/(20N), H=gamma t^u n^v[log(1+r)-r/(1+r)], n=N/10^8.",
+        "primary_metric": "Paired RMSE of the change in log loss relative to each human-only control, not absolute loss RMSE or task accuracy.",
+        "validation_mixture": "Of 553 AI-addition runs, 243 worsen human-labeled FW26 loss. A mixed target with 22.3% AI-labeled tokens presents 95.5% of those harmful runs as improvements (§5.2).",
+        "reported_prediction_comparison": "C4 paired RMSE is 0.83e-3 versus 1.41e-3 for the strongest existing human-target comparator, Shukor joint; the roughly 41% decrease concerns this metric over the tested AI ratios. Omitted from proposed body to avoid overstating independent validation.",
+        "key_boundaries": [
+          "Added tokens increase total training compute; this is not an equal-total-compute substitution experiment.",
+          "English web text, one training recipe, detector-derived provenance labels, and models below 1B. Corpus composition and topic/format differences can matter.",
+          "WildAI's enriched AI share is not an estimate of AI prevalence across the entire web.",
+          "The next-token-loss results do not establish broad capability collapse; the authors report CORE gains comparable to fresh human additions at these small sizes.",
+          "Appendix D.1 uses the reserved large sizes for candidate-form comparison and discusses choosing among penalties. Do not label the reported improvement an entirely untouched final test.",
+          "Forecasts of future AI prevalence and compute-equivalent cost are extrapolations, not observations; omitted from body suggestion."
+        ]
+      },
+      "suggested_insertion": {
+        "file": "docs/02-data.md",
+        "english_file": "docs/en/02-data.md",
+        "position": "In §9 after the recursive replacement/accumulation distinction and before §10; a short subsection about uncurated web AI text and evaluation mixtures.",
+        "relation_to_existing_work": "Connects T2 effective-data credit and Shukor joint mixtures to the synthetic-feedback discussion. Shukor joint is a direct benchmark comparator in this primary source."
+      },
+      "source_record": {
+        "verification_date": "2026-10-05",
+        "verification_status": "primary_source_verified",
+        "type": "paper",
+        "year": 2026,
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "evidence_strength": "targeted_primary_text_read_not_independently_reproduced",
+        "id": "russell2026wildai",
+        "title": "How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text",
+        "url": "https://arxiv.org/abs/2609.40295",
+        "fulltext_url": "https://arxiv.org/html/2609.40295v1",
+        "authors": [
+          "Jenna Russell",
+          "Ben Glickenhaus",
+          "Katherine Thai",
+          "John Wieting",
+          "Mohit Iyyer",
+          "Max Spero",
+          "Bradley Emi"
+        ],
+        "first_published_date": "2026-09-30",
+        "branch": "data",
+        "problem": "固定人类语料后，来自网页的 AI 文本是否仍能按正的有效 token 计入；混合验证集会不会遮蔽人类文本上的退化？",
+        "insight": "将饱和的数据收益与单独的危害项分开，并分别测量人类、AI 与混合目标；边际 token 价值与评估分布相关。",
+        "limitation": "800 个不足 1B 的模型、单配方、英语、检测器标签；添加数据增加计算量；loss 不等于能力；保留大规模实验同时参与候选形式比较，不能称为完全独立的最终测试；未复现。",
+        "reading_depth": "核验 arXiv 版本历史及作者；定向阅读 v1 HTML 摘要、§1–6、Appendix B 的参数计数、C.2–C.3 比较形式、D–D.1 拟合和选择、E 的度量说明；未完整审计所有附录、图像、代码或实验。",
+        "sections_read": [
+          "abstract",
+          "1–6",
+          "Appendix B: parameter counting",
+          "C.2–C.3",
+          "D–D.1",
+          "E: metric comparison"
+        ],
+        "narrative_use": "新增 T2 的有条件证据：网页 AI 文本的收益与危害，以及验证分布掩盖。",
+        "metadata_notes": "arXiv abstract page uses Ben Glickenhaus; HTML title page uses Benjamin Glickenhaus. Author list follows arXiv metadata. v1 timestamp: 2026-09-30T17:50:22Z."
+      },
+      "proposed_text_zh": "递归替换并不是生成文本进入训练的唯一方式。[Russell et al.，2026 年 9 月 30 日](https://arxiv.org/html/2609.40295v1)研究自然出现在网页中的未经专门策划的 AI 文本。在 800 个模型（19.9M–973M 参数）上，作者固定人类文本语料，再添加被检测器标为 AI 的 token。总 token 和计算量随之增加，因此这不是固定计算量的替换实验。其规律把饱和的数据收益与依赖人类数据预算、模型规模的危害项分开：添加文本起初可能帮助数据不足的模型，随后却提高人类文本 loss，而新增人类文本仍然有用。\n\n评估分布会改变结论。在含 22.3% AI 标签 token 的混合 FW26 验证集上，95.5% 的、会损害其中人类标签子集的运行，在整体指标中看起来反而改善。这支持分别报告两类子集。证据限于英语、检测器标注的网页文本、一套预训练配方及不足 1B 的模型，不能确立普遍的能力崩塌，也不能一概否定经过策划的合成数据。候选函数形式的比较也使用了较大的保留模型规模，因此不能把这些结果描述为完全未参与选择的最终测试。",
+      "proposed_text_en": "Recursive replacement is not the only way generated text enters training. [Russell et al., 30 September 2026](https://arxiv.org/html/2609.40295v1) study uncurated AI text found on the web. Across 800 models (19.9M–973M parameters), they hold the human corpus fixed and add AI-labeled tokens. Total tokens and compute increase, so this is not a fixed-compute substitution test. Their law separates saturating data credit from harm dependent on human budget and model size: additions can initially help data-starved models, then raise human-text loss, while fresh human additions remain useful.\n\nThe evaluation distribution changes the conclusion. With 22.3% AI-labeled tokens in mixed FW26 validation, 95.5% of runs that worsen its human-labeled subset appear improved overall. This supports reporting the two subsets separately. The evidence concerns English, detector-labeled web text, one pretraining recipe, and models below 1B parameters. It does not establish general capability collapse or a universal verdict on curated synthetic data. Functional-form comparisons also use the larger reserved model sizes, so those results should not be described as a completely untouched final test."
+    },
+    {
+      "status": "recommend_body_addition",
+      "id": "cheng2026scalingdown",
+      "url": "https://arxiv.org/abs/2610.02462",
+      "date_basis": "arXiv submission history lists v1 2026-10-01T20:35:12Z and no later version on 2026-10-05.",
+      "old_problem": "T3 separates parameters, FLOPs, memory and real deployment cost, but does not yet ask how cheaply compression response can be predicted or whether an accurate response model changes method selection.",
+      "mechanism": "Share a response shape across pruning densities, refit setting-specific coefficients, and evaluate both measurement efficiency and the decision value of predictions under an explicit nominal-storage constraint.",
+      "evidence": {
+        "target": "Teacher-forced, token-weighted reference-completion cross-entropy on 64 fixed probes per capability (MATH500, MBPP, 2Wiki QA); prompt tokens masked; units nats/native token. This is not generated-answer success rate.",
+        "pruning_form": "Delta L_c(x,d)=A_c(x)[(1-d)/0.3]^gamma_c, where d is retained density and A_c is linear in standardized initial-state descriptors. The compact response is tested for math and code; QA does not share the same simple curve.",
+        "measurement_design": "Pythia magnitude pruning, OLMo-2 magnitude pruning, and Pythia Wanda panels. Half-grid fits use 18/36 measurements per capability for Pythia or 12/24 for OLMo, with coefficients refitted separately on each panel.",
+        "result_scope": "Math/code predictor MAE differs from the full-grid regression by at most 0.020 nats/token in those panels. This is a difference between prediction errors, not an absolute 0.020-error guarantee.",
+        "timing": "Measured GPU time, including loading, reference measurements and calibration, is 59% of the full design for OLMo-2 and 70% for Wanda; half the configuration measurements does not mean half the total compute.",
+        "selection": "Selection is evaluated under nominal stored-matrix-parameter budgets. On the tested QA candidates, fixed method priority attains the same regret as numerical prediction; little evidence that finer prediction causes the observed QA benefit.",
+        "key_boundaries": [
+          "Cross-family/criterion transfer of the functional form is not zero-shot coefficient transfer; new settings require refitting.",
+          "Unseen source states can favor simple source-free median curves; extrapolation outside tested configurations can fail.",
+          "Nominal storage constraints are not measured latency, energy, FLOPs or whole-system cost.",
+          "Loss and generated-answer exact match can rank methods differently. Appendix H.2 end-marker controls do not remove that distinction.",
+          "Results depend on the implementations, probe distributions, configuration ranges and candidate set; code was not run or audited."
+        ]
+      },
+      "suggested_insertion": {
+        "file": "docs/03-architecture-deployment.md",
+        "english_file": "docs/en/03-architecture-deployment.md",
+        "position": "After §5's serving/storage discussion, as a short compression-response subsection; alternatively inside §7 after the lifecycle-cost argument.",
+        "relation_to_existing_work": "Connects deployment constraints to T1's cost of fitting a predictor and T6's loss-to-capability boundary. Do not state a direct historical lineage unless supported by the cited paper."
+      },
+      "source_record": {
+        "verification_date": "2026-10-05",
+        "verification_status": "primary_source_verified",
+        "type": "paper",
+        "year": 2026,
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "evidence_strength": "targeted_primary_text_read_not_independently_reproduced",
+        "id": "cheng2026scalingdown",
+        "title": "Capability Scaling-Down Laws for LLM Compression",
+        "url": "https://arxiv.org/abs/2610.02462",
+        "fulltext_url": "https://arxiv.org/html/2610.02462v1",
+        "authors": [
+          "Xueqi Cheng",
+          "Liang Wu",
+          "Kelly Wan",
+          "Liangjie Hong",
+          "Yushun Dong"
+        ],
+        "first_published_date": "2026-10-01",
+        "branch": "architecture_and_systems",
+        "problem": "压缩方法、配置和初始模型不同会产生不同的分任务损失；能否减少拟合测量，并证明数值预测确实改善部署选择？",
+        "insight": "共享剪枝密度响应、逐设置重拟合系数，并把预测误差、测量成本与名义存储约束下的决策价值分开检验。",
+        "limitation": "目标为 teacher-forced 参考答案 loss，非生成成功率；跨设置需重拟合；半测量非半 GPU 时间；存储代理非实测服务成本；QA 固定方法优先序达到同等 regret；有配置与分布边界，未复现。",
+        "reading_depth": "核验 arXiv 作者及版本历史；定向阅读 v1 HTML 摘要、§1–6、§8、Appendix A.3 的实验组、C 的外推讨论、H.2 终止符控制、I–J；未完整审计所有附录、图像、代码或实验。",
+        "sections_read": [
+          "abstract",
+          "1–6",
+          "8",
+          "Appendix A.3: cohorts",
+          "C: generalization discussion",
+          "H.2",
+          "I–J"
+        ],
+        "narrative_use": "新增 T3 的有条件压缩预测证据，明确减少测量、改善选择和改善硬件成本是三个不同命题。",
+        "metadata_notes": "v1 timestamp: 2026-10-01T20:35:12Z. Published repository and claimed reproducibility artifacts were not independently inspected."
+      },
+      "proposed_text_zh": "部署还需要预测压缩会损失什么。[Cheng et al.，2026 年 10 月 1 日](https://arxiv.org/html/2610.02462v1)研究剪枝、量化与蒸馏，以 teacher forcing 下参考答案的 loss 分别衡量数学、代码和问答；这个量不是任务成功率。跨保留密度共享剪枝响应后，拟合所需的配置测量减少一半；在每个设置分别重拟合系数的前提下，所测试的 Pythia、OLMo-2 和 Wanda 实验组中，数学与代码的预测误差与完整网格回归相差不超过 0.020 nats/token。节省的是测量数：OLMo-2 与 Wanda 的实际 GPU 时间仍分别为完整设计的 59% 和 70%。\n\n部署决策又增加一层边界。选择依据是名义上的存储参数预算，不是实测延迟或能耗。对所测试的问答候选，固定的方法优先序与数值预测选择得到相同 regret；这种收益并不依赖精细预测。loss 的改善也未必提高生成答案的 exact match。因此，其贡献是用更少测量估计响应、并检验预测是否改变决策的有条件协议，而不是普适的系数迁移或能力与硬件成本定律。",
+      "proposed_text_en": "Deployment also requires predicting what compression will remove. [Cheng et al., 1 October 2026](https://arxiv.org/html/2610.02462v1) study pruning, quantization, and distillation using teacher-forced reference-completion loss for mathematics, code, and question answering. This is not task success rate. Sharing a pruning response across densities reduces fitted configuration measurements by half; with coefficients refitted separately for each setting, math/code prediction errors stay within 0.020 nats/token of full-grid regression on the tested Pythia, OLMo-2, and Wanda panels. The saving concerns measurements: measured GPU time remains 59% of the full design for OLMo-2 and 70% for Wanda.\n\nThe deployment decision adds another boundary. Selection operates under nominal stored-parameter budgets, not measured latency or energy. On the tested question-answering candidates, a fixed method priority achieves the same regret as numerical selection; fine-grained prediction is not what explains that benefit. Loss gains also need not improve generated-answer exact match. The contribution is therefore a bounded protocol for cheaper response estimation and for checking whether prediction changes a decision; it does not establish universal coefficient transfer or a capability–hardware-cost law."
+    }
+  ],
+  "previous_items_rechecked": [
+    {
+      "title": "Hyperparameter Scaling Laws Across MoE Sparsity",
+      "url": "https://arxiv.org/abs/2609.08690",
+      "first_published_date": "2026-09-08",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "submission_timestamp": "2026-09-08T12:57:20Z",
+      "reading_depth_this_round": "Current metadata and submission history only.",
+      "decision": "No revision found; already integrated last week. Original date falls outside the current window."
+    },
+    {
+      "title": "How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents",
+      "url": "https://arxiv.org/abs/2609.19107",
+      "authors": [
+        "Zixi Chen",
+        "Akshay Vegesna",
+        "Samip Dahal",
+        "Andrew Gordon Wilson"
+      ],
+      "first_published_date": "2026-09-16",
+      "last_revised_date": "2026-09-17",
+      "latest_version_verified": "v2",
+      "submission_history": [
+        "v1 2026-09-16T17:36:13Z",
+        "v2 2026-09-17T16:25:43Z"
+      ],
+      "reading_depth_this_round": "Current metadata, abstract and submission history only.",
+      "decision": "Still v2; within the rolling window but already covered, so not a new addition."
+    },
+    {
+      "title": "Scaling Laws for Optimal Data Mixtures",
+      "url": "https://arxiv.org/abs/2507.09404",
+      "authors": [
+        "Mustafa Shukor",
+        "Louis Bethune",
+        "Dan Busbridge",
+        "David Grangier",
+        "Enrico Fini",
+        "Alaaeldin El-Nouby",
+        "Pierre Ablin"
+      ],
+      "first_published_date": "2025-07-12",
+      "last_revised_date": "2025-10-02",
+      "latest_version_verified": "v2",
+      "submission_history": [
+        "v1 2025-07-12T21:16:08Z",
+        "v2 2025-10-02T15:18:02Z"
+      ],
+      "reading_depth_this_round": "Current metadata, abstract and submission history only.",
+      "decision": "No new revision; substantive reading upgrade and body integration occurred last week. Do not mistake 2025-10-02 for a 2026 revision."
+    },
+    {
+      "title": "Efficiently Estimating Optimal Hyperparameter Scaling Laws through Power-Law Entropy Search",
+      "url": "https://arxiv.org/abs/2609.01431",
+      "authors": [
+        "Zhiliang Chen",
+        "Sebastian Ament",
+        "David Eriksson",
+        "Maximilian Balandat",
+        "Bryan Kian Hsiang Low",
+        "Eytan Bakshy",
+        "Jihao Andreas Lin"
+      ],
+      "first_published_date": "2026-09-01",
+      "last_revised_date": "2026-09-03",
+      "latest_version_verified": "v2",
+      "submission_history": [
+        "v1 2026-09-01T15:41:59Z",
+        "v2 2026-09-03T15:16:24Z"
+      ],
+      "reading_depth_this_round": "Current metadata, abstract and submission history only.",
+      "decision": "No new revision and outside the current window; remains a candidate, not promoted from abstract to detailed evidence."
+    }
+  ],
+  "discovery_only": [
+    {
+      "title": "IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining",
+      "url": "https://arxiv.org/abs/2609.39403",
+      "authors": null,
+      "first_published_date": null,
+      "last_revised_date": null,
+      "version_read": null,
+      "search_reported_date": "2026-09-30",
+      "date_verified": false,
+      "reading_depth": "Search result only; primary not opened by this researcher.",
+      "action": "Passed to the frontier/T7 researcher. No claim promoted in this log."
+    },
+    {
+      "title": "Neural scaling laws and evolution of learnable activation functions of Kolmogorov-Arnold networks",
+      "url": "https://arxiv.org/abs/2610.00985",
+      "authors": [
+        "Tilen Cadez",
+        "Sanghoon Lee",
+        "Kyoung-Min Kim"
+      ],
+      "first_published_date": null,
+      "last_revised_date": null,
+      "version_read": null,
+      "search_reported_date": "2026-10-01",
+      "date_verified": false,
+      "reading_depth": "Search result only; title/authors/date not independently checked on the primary page.",
+      "action": "Outside the selected LLM-budget/data/deployment focus; retained only as a discovery lead."
+    }
+  ],
+  "access_and_coverage_limits": [
+    "The primary abstract pages and requested HTML sections for both selected papers were accessible. No third-party full text was stored.",
+    "Some batched web outputs were truncated; follow-up targeted opens were used for metadata, WildAI form selection and validation masking, and compression selection/limitations. The reading scopes above do not claim complete appendix coverage.",
+    "This is a targeted search, not an exhaustive census or a guarantee that no other eligible primary report exists.",
+    "No code execution, independent reproduction, figure-image audit, or dataset inspection was performed.",
+    "Publication dates come from arXiv submission history; web crawl timestamps are not used as publication dates.",
+    "Only this weekly log is written by this researcher; chapter, source-catalog and generated-artifact integration is left to the editor."
+  ]
+}
