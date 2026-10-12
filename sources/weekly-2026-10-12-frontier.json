@@ -1,0 +1,338 @@
+{
+  "review_date": "2026-10-12",
+  "repository": "https://github.com/yibingwei-1/scaling-law-survey",
+  "baseline_head": "29a8013",
+  "baseline_head_basis": "Provided by parent; no checkout or alternate work directory created.",
+  "search_window": {
+    "from": "2026-09-21",
+    "through": "2026-10-12",
+    "basis": "Primary submission and revision timestamps, not search crawl dates."
+  },
+  "scope": "Targeted T4 reward/RL and T5 inference-budget maintenance, plus relevant verifier/multimodal discovery; non-exhaustive.",
+  "local_context_read": [
+    "METHODOLOGY.md",
+    "data/state.json",
+    "sources/weekly-2026-10-05-frontier.json",
+    "docs/04-posttraining.md §2 and selected adjacent text",
+    "existing T5 SELF-POT paragraphs and prior approved context",
+    "sources and data/papers.json candidate-ID search"
+  ],
+  "queries": [
+    {
+      "query": "site:arxiv.org \"test-time\" \"scaling\" \"Oct 2026\"",
+      "batch": 1
+    },
+    {
+      "query": "site:arxiv.org \"inference\" \"budget\" \"9 Oct 2026\"",
+      "batch": 1
+    },
+    {
+      "query": "site:arxiv.org \"reinforcement learning\" \"scaling\" \"October 2026\"",
+      "batch": 1
+    },
+    {
+      "query": "site:arxiv.org \"test-time\" \"8 Oct 2026\"",
+      "batch": 2
+    },
+    {
+      "query": "site:arxiv.org \"reasoning\" \"compute\" \"7 Oct 2026\"",
+      "batch": 2
+    },
+    {
+      "query": "site:arxiv.org \"reinforcement learning\" \"9 Oct 2026\"",
+      "batch": 2
+    }
+  ],
+  "query_results": [
+    {
+      "batch": 1,
+      "leads": [
+        "2610.04933",
+        "2610.01687",
+        "2610.01110",
+        "2610.04837"
+      ],
+      "note": "Merged search results; no individual query attribution or exact result rank claimed."
+    },
+    {
+      "batch": 2,
+      "result": "Tool returned no search results; absence is not evidence of no new work."
+    }
+  ],
+  "supplied_leads": [
+    {
+      "url": "https://arxiv.org/abs/2609.38526",
+      "from": "Parent",
+      "independently_checked": true
+    }
+  ],
+  "proposed_body_additions": [
+    {
+      "arxiv_id": "2609.38526",
+      "classification": "new_primary_source_recommended",
+      "first_submission_utc": "2026-09-29T20:43:25Z",
+      "latest_version_checked": "v1",
+      "source_record": {
+        "id": "aouad2026rewardoptimization",
+        "title": "Revisiting scaling laws for reward optimization",
+        "authors": [
+          "Ali Aouad",
+          "Aymane El Gadarri",
+          "Vivek F. Farias"
+        ],
+        "year": 2026,
+        "date": "2026-09-29",
+        "first_published": "2026-09-29",
+        "first_published_date": "2026-09-29",
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "url": "https://arxiv.org/abs/2609.38526",
+        "full_text_url": "https://arxiv.org/html/2609.38526v1",
+        "type": "paper",
+        "branch": "posttraining-reward-data-divergence",
+        "problem": "现有奖励过优化曲线不能清楚量化比较数据数量如何限制可支持的策略偏移。",
+        "insight": "将比较数 M 与期望 KL 预算 K 分开，用信息论选择模型推导可达奖励增益的联合界，并检验扫描优化强度所得峰值随比较数的拟合。",
+        "limitation": "独立高斯奖励、非自适应配对及不知道奖励的参考策略等理论假设；下界为构造性存在结果；实验以70B模型评分而非真实人类意图；主要验证峰值随M的关系，固定池tilting非实际RL训练；无全成本或二维外推保证。",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-10-12",
+        "sections_read": "原站元数据和版本史；v1 §§1–6，§3信息结构、§4定理及主文上界证明，Appendix A.2下界构造、A.3关键排名与有限预算步骤定向阅读，B.1–B.3实验设置、表1与表3、C图注；未逐式独立验算所有证明、未视觉审计曲线或复现代码。",
+        "evidence_status": "2026-09-29 20:43:25 UTC首发，仅v1。原理论及合成gold-RM实验，非独立复现。",
+        "method": "Gaussian reward selection with separate comparison and expected-KL constraints; Qwen3 proxy reward fitting followed by best-of-N and fixed-pool exponential reweighting.",
+        "result": "Supports a comparison-limited peak-reward trend under the tested synthetic-gold setup; not a universal compute scaling law or human-preference validation.",
+        "synthesis_status": "proposed"
+      },
+      "insertion": {
+        "file": "docs/04-posttraining.md",
+        "english_file": "docs/en/04-posttraining.md",
+        "location": "§2 after the Gao empirical curves and their gold-RM/KL limits, before §3 self-training; preferably a short subheading linking preference-data supply to optimization pressure."
+      },
+      "proposed_chinese": "Aouad、El Gadarri 与 Farias 进一步追问：偏好数据能支持多大的奖励优化压力？在回答奖励为独立高斯变量、比较配对不依赖奖励、参考策略不知道奖励等假设下，当提示间重叠比例固定时，其界给出的可达奖励增益阶为 $\\sqrt{\\min\\{\\log M,K\\}}$。其中 $M$ 是比较数量，$K$ 是期望 KL 散度预算，并非 FLOPs。下界依赖专门构造的比较集、代理和参考策略；它不保证常规 RM 训练达到该界，也没有证明超过该范围的所有策略都会退化。\n\n实验使用 70B gold RM 和 0.6B–4B Qwen3 代理，把 $M$ 从 600 扩到 300,000 时增加提示数、保持每题 300 对比较；评估使用不参与训练的 128 个提示，每题 8,192 个回答。主要拟合对象是扫描优化网格后取得的 gold 奖励峰值随 $M$ 的变化，并非已验证任意 $(M,K)$ 上的二维预测。指数倾斜也只是固定回答池的重加权，没有实际训练新策略。这把反馈供给接到了优化上限问题，但真实人类偏好、自适应收集和算力最优配置仍未解决。[原文 §3–6、附录 B](https://arxiv.org/html/2609.38526v1)",
+      "proposed_english": "Aouad, El Gadarri, and Farias ask how preference data limits the optimization pressure a reward model can support. Under independent Gaussian response rewards, reward-independent comparison pairs, and a reward-blind reference policy, their bounds give attainable reward gains of order $\\sqrt{\\min\\{\\log M,K\\}}$ when prompt overlap is fixed. Here $M$ counts comparisons and $K$ bounds expected KL divergence, not FLOPs. The lower bound uses a constructed comparison set, proxy, and reference policy; it does not guarantee that ordinary reward-model training attains the bound or prove that every policy deteriorates beyond it.\n\nExperiments use a 70B gold reward model and 0.6B–4B Qwen3 proxies. Increasing $M$ from 600 to 300,000 adds prompts while retaining 300 comparisons per prompt. Evaluation uses 128 disjoint prompts with 8,192 responses each. The principal fit concerns the gold-reward peak selected over an optimization grid as a function of $M$, rather than a validated two-dimensional forecast for arbitrary $(M,K)$. Exponential tilting reweights fixed response pools; it is not an actual policy-training experiment. This connects feedback supply to optimization limits, while leaving human preferences, adaptive data collection, and compute-optimal allocation unresolved. [Original paper, §§3–6 and Appendix B](https://arxiv.org/html/2609.38526v1)",
+      "english_word_count": 186,
+      "evidence_conditions": {
+        "theory": {
+          "reward_distribution": "IID N(mu,sigma²) over response universe",
+          "admissibility": "Each response belongs to prompt admissible set independently with probability p; A independent of rewards and preference data.",
+          "pair_collection": "E independent of R and A; not adaptive reward-driven preference collection.",
+          "reference": "Reward-blind pi0; expected base reward mu.",
+          "upper_bound": "Delta(pi) <= sigma sqrt(2 min{K, log(1+2pM)})",
+          "lower_bound": "Existential construction with m=floor(sqrt(2M)) responses, all pairs, posterior-mean proxy and constructed reward-blind base; lower order sigma sqrt(min{K,log(p sqrt(2M))}) for p sqrt(2M)>=4.",
+          "noise": "Independent Bradley–Terry labels; finite lower constant depends on beta/sigma.",
+          "interpretation": "For fixed overlap and growing effective budgets, matching order in M,K. The upper bound is not a theorem of inevitable reward decline above a threshold."
+        },
+        "experiment": {
+          "gold": "Llama-3.3-Nemotron-70B-Reward; simulated gold, not human ground truth.",
+          "proxy_parameters": [
+            600000000,
+            1700000000,
+            4000000000
+          ],
+          "reference_generator": "Qwen3-4B-Instruct-2507",
+          "training_prompts": 1000,
+          "training_source": "English first-turn Arena140K prompts",
+          "generation": {
+            "temperature": 1,
+            "top_p": 1,
+            "max_new_tokens": 1024
+          },
+          "comparisons_per_prompt": 300,
+          "M_range": [
+            600,
+            300000
+          ],
+          "M_change": "Expands prompt coverage in fixed reward-independent order, holding within-prompt comparisons fixed.",
+          "optimization": "One pass of full-parameter pairwise logistic training, AdamW constant LR1e-5; LR chosen using distinct validation prompts.",
+          "evaluation_prompts": 128,
+          "evaluation_responses_per_prompt": 8192,
+          "BoN_pressure_coordinate": "K_N=log(N)-(N-1)/N; conventional coordinate, not measured FLOPs.",
+          "target": "Peak standardized gold gain over observed N grid as a function of M.",
+          "tilting": "Uniform empirical reference over each fixed 8192-response pool, exponential proxy-score reweighting; not PPO or newly trained policy.",
+          "peak_selection": "Uses observed gold rewards to choose peak N; not a deployable gold-free tuning procedure.",
+          "noise_flip_fraction": 0.336
+        },
+        "fit_cautions": [
+          "Table1 square-root-log R² ranges 0.947–0.992 across all listed settings; abstract 97–99% omits lower noisy rows.",
+          "For 0.6B with BTL labels log M has slightly larger R² (0.954 vs0.951 BoN;0.949 vs0.947 Tilt); no universal statistically established superiority over log M.",
+          "Fits concern observed peaks and tested M range; no full two-dimensional (M,K) out-of-range prediction is validated.",
+          "Appendix B.2 reports non-Gaussian gold-score examples; empirical fit does not establish Gaussian reward assumptions in real language.",
+          "No independent replication, seed-variance audit, or end-to-end FLOPs/cost comparison performed."
+        ]
+      },
+      "decision": "Meaningful T4 synthesis because it explicitly continues the Gao question from scorer capacity to feedback-data constraints. Keep conditional and avoid universal recipe."
+    }
+  ],
+  "existing_source_patches": [
+    {
+      "id": "yang2026selfpot",
+      "url": "https://arxiv.org/abs/2610.01110",
+      "classification": "existing_source_revision_metadata_and_link_update",
+      "from_version": "v1",
+      "to_version": "v2",
+      "first_submission_utc": "2026-10-01T05:49:29Z",
+      "revision_utc": "2026-10-06T05:32:37Z",
+      "proposed_fields": {
+        "authors": [
+          "Bangji Yang",
+          "Jingyuan Li",
+          "Jiajun Fan",
+          "Yi Evie Zhang",
+          "Ruihan Guo",
+          "Hongbo Ma",
+          "Neil He",
+          "Chumeng Liang",
+          "Qinglong Zheng",
+          "Zhanghan Ni",
+          "Ge Liu"
+        ],
+        "last_revised_date": "2026-10-06",
+        "version": "v2",
+        "version_read": "v2",
+        "latest_version_verified": "v2",
+        "full_text_url": "https://arxiv.org/html/2610.01110v2",
+        "verification_date": "2026-10-12"
+      },
+      "confirmed_metadata_delta": "Sixth author Hongba Ma in v1 -> Hongbo Ma in v2. Title unchanged.",
+      "comparison": {
+        "scope": "Version-pinned v1/v2 HTML §3.3 and Appendix J.2, using rendered source lines and exact equality of 158 line-tagged returned lines around latter block; no full-source/PDF binary comparison.",
+        "result": "Relevant protocol, counts, fallback triggers, post-hoc status and cost statements unchanged.",
+        "preserved_values": {
+          "scheduled_cells": 500,
+          "retained_pools": 498,
+          "missing_counted_wrong": 2,
+          "judge_correct": 376,
+          "fallback_correct": 437,
+          "public_selection_correct": 453
+        },
+        "preserved_boundaries": [
+          "Fallback handles no valid nonempty choice, including an empty selected answer.",
+          "Output-aware amendment is post-hoc.",
+          "All judge costs retained for fallback; public-only selection omits judge-stage logical charges.",
+          "Local test execution separately reported; saved-pool replay is not fresh matched-expenditure end-to-end testing."
+        ]
+      },
+      "body_action": "Update both T5 source links to v2 if merging version patch; no new prose or numerical correction needed.",
+      "source_count_change": 0,
+      "warning": "Do not claim v2 has no other changes: only relevant sections and metadata were compared."
+    }
+  ],
+  "shallow_candidates": [
+    {
+      "arxiv_id": "2610.04933",
+      "title": "DiVeR: Decision-Critical Verifier Learning for VLA Test-Time Scaling",
+      "authors": [
+        "Seongheon Park",
+        "Heecheol Kim",
+        "Shulin Tian",
+        "Lilika Makabe",
+        "Namiko Saito",
+        "Katsushi Ikeuchi",
+        "Sharon Li",
+        "Yasuyuki Matsushita"
+      ],
+      "url": "https://arxiv.org/abs/2610.04933",
+      "first_submission_utc": "2026-10-04T04:25:40Z",
+      "version": "v1",
+      "reading_depth": "abstract_metadata",
+      "old_bottleneck": "Trajectory outcomes weight states alike although few states discriminate consequential actions.",
+      "abstract_mechanism": "Reweight verifier learning using sampled action-representation dispersion.",
+      "unverified": "Criticality definition, real-world sample counts, generation+verification latency and equal-cost controls.",
+      "decision": "Candidate only; no body claim or source-library promotion."
+    },
+    {
+      "arxiv_id": "2610.01687",
+      "title": "Architectural Sampling: Test-Time Scaling via Computational Diversity in Frozen Vision-Language Models",
+      "authors": [
+        "Akshit Singh",
+        "Shyam Marjit",
+        "Wei Lin",
+        "Leonid Karlinsky",
+        "M. Jehanzeb Mirza"
+      ],
+      "url": "https://arxiv.org/abs/2610.01687",
+      "first_submission_utc": "2026-10-01T13:44:11Z",
+      "version": "v1",
+      "reading_depth": "abstract_metadata",
+      "old_bottleneck": "Temperature sampling shares one computation path.",
+      "abstract_mechanism": "Vary layer-block reuse and repetition in frozen VLM forward passes.",
+      "unverified": "Equal candidate count does not mean equal FLOPs; pass@9 coverage does not establish actual selector success; architecture and latency controls unread.",
+      "decision": "Candidate only, useful future cross-link to latent depth and PTTS diversity."
+    },
+    {
+      "arxiv_id": "2610.04837",
+      "title": "CARET: Training-Free Test-Time Scaling for Repository-Level Code Completion",
+      "authors": [
+        "Jiajie Wang",
+        "Yutong Zhao",
+        "Kebin Peng",
+        "Sen He",
+        "Qing Guo",
+        "Tianlin Li"
+      ],
+      "url": "https://arxiv.org/abs/2610.04837",
+      "first_submission_utc": "2026-10-04T00:45:13Z",
+      "version": "v1",
+      "reading_depth": "abstract_metadata",
+      "old_bottleneck": "Repository completion treats retrieval and single greedy decoding separately.",
+      "abstract_mechanism": "Route retrieval by agreement, share cached prefix across samples and select by reverse-context likelihood.",
+      "unverified": "Token-level compute and measured latency are different; generation/reranking/caching denominators, suffix availability and contamination controls not audited.",
+      "decision": "Candidate only; no main-text efficiency claim this week."
+    }
+  ],
+  "version_checks": [
+    {
+      "id": "2609.38526",
+      "latest_version": "v1",
+      "latest_timestamp_utc": "2026-09-29T20:43:25Z",
+      "classification": "new_in_window_source"
+    },
+    {
+      "id": "2610.01110",
+      "latest_version": "v2",
+      "latest_timestamp_utc": "2026-10-06T05:32:37Z",
+      "classification": "existing_source_updated"
+    },
+    {
+      "id": "2609.27374",
+      "latest_version": "v1",
+      "latest_timestamp_utc": "2026-09-23T05:25:10Z",
+      "classification": "existing_source_unchanged"
+    },
+    {
+      "id": "2609.19499",
+      "latest_version": "v2",
+      "latest_timestamp_utc": "2026-09-19T17:04:07Z",
+      "classification": "existing_source_no_in_window_revision"
+    },
+    {
+      "id": "2609.38854",
+      "latest_version": "v1",
+      "latest_timestamp_utc": "2026-09-30T03:11:27Z",
+      "classification": "previous_candidate_unchanged"
+    },
+    {
+      "id": "2609.40221",
+      "latest_version": "v1",
+      "latest_timestamp_utc": "2026-09-30T17:26:57Z",
+      "classification": "previous_candidate_unchanged"
+    },
+    {
+      "id": "2609.39220",
+      "latest_version": "v1",
+      "latest_timestamp_utc": "2026-09-30T07:59:03Z",
+      "classification": "previous_candidate_unchanged"
+    }
+  ],
+  "limitations": [
+    "Six targeted search queries, not exhaustive indexing or systematic-review screening.",
+    "One proposed body source and one existing-source version patch; new abstract-only candidates do not warrant quantitative prose.",
+    "No code execution, independent experiment replication, full formal proof verification or PDF-figure visual audit.",
+    "Large initial combined output truncated; critical theory, experiment and SELF-POT sections reopened selectively before conclusions.",
+    "No third-party full text stored in the repository; metadata and analytical notes only."
+  ],
+  "changed_files": [
+    "sources/weekly-2026-10-12-frontier.json"
+  ],
+  "integration_status": "Parent owns canonical chapters, source library, state and publication. This log does not itself change body or source count."
+}

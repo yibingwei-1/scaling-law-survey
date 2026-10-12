@@ -1,0 +1,519 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-10-12",
+  "window": {
+    "start": "2026-09-21",
+    "end": "2026-10-12",
+    "inclusive": true
+  },
+  "baseline_head": "29a8013",
+  "baseline_files_read": [
+    "sources/community.json",
+    "docs/04-community-radar.md",
+    "data/state.json",
+    "sources/weekly-2026-10-05-community.json"
+  ],
+  "baseline_catalog_count": 20,
+  "baseline_edition": "v0.3.3",
+  "scope": "Only this weekly discovery log is written. The canonical community catalog, radar prose, source catalog, state and historical counters remain unchanged.",
+  "policy": {
+    "missing_metrics": "null means not observed, not zero.",
+    "index_metrics": "Index snapshots are not live counters; observation date and metric measurement time remain separate.",
+    "publication_date": "Use an explicit calendar date where available. Do not derive dates from crawl dates, unanchored relative labels or replies to older posts.",
+    "attention_thresholds": {
+      "reddit_score": 100,
+      "youtube_views": 100000,
+      "x_explicit_views": 100000
+    },
+    "cross_platform_ranking": false,
+    "technical_evidence": "Primary research and author reports support technical interpretation; community attention only identifies questions to investigate.",
+    "deduplication": "Canonical FrogNano thread URL absent from the 20-record community catalog. rg for FrogNano, TaskPilot and 2609.07925 found no existing catalog or prose entry. Recurring candidates are marked separately."
+  },
+  "search_query_count": 20,
+  "queries": [
+    {
+      "batch": 1,
+      "queries": [
+        {
+          "q": "\"scaling laws\" after:2026-09-20 before:2026-10-13 site:reddit.com"
+        },
+        {
+          "q": "\"test-time compute\" after:2026-09-20 before:2026-10-13 site:reddit.com"
+        },
+        {
+          "q": "\"scaling\" \"October 2026\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"scaling laws\" \"October\" \"2026\" site:x.com"
+        }
+      ],
+      "outcome": "Returned old posts with recent replies, a new low-score October 8 scaling-limit question, and the previously logged September 28 ceiling thread. No qualified new X or YouTube item."
+    },
+    {
+      "batch": 2,
+      "queries": [
+        {
+          "q": "\"reinforcement learning\" \"scaling\" \"October\" \"2026\" site:reddit.com/r/LocalLLaMA"
+        },
+        {
+          "q": "\"scaling\" \"October 2026\" site:reddit.com/r/MachineLearning"
+        },
+        {
+          "q": "\"WildAI\" \"jennajrussell\""
+        },
+        {
+          "q": "\"test-time\" \"October 2026\" site:youtube.com"
+        }
+      ],
+      "outcome": "Found the October 2 FrogNano release discussion with explicitly dated score 223. Also found low-score reward-model tutorial cross-posts, a high-score speculative release-rumor thread, and other unqualified context."
+    },
+    {
+      "batch": 3,
+      "queries": [
+        {
+          "q": "\"FrogNano\" \"TaskPilot\""
+        },
+        {
+          "q": "\"scaling laws\" \"October 2026\" \"youtube.com/watch\""
+        },
+        {
+          "q": "\"test-time\" \"2026-10\" site:x.com"
+        },
+        {
+          "q": "\"scaling\" \"October 2026\" \"Views\" site:x.com"
+        }
+      ],
+      "outcome": "Directly read FrogNano post and selected replies; found its primary paper/model card and author-profile mirrors. No canonical X status with verified date and labelled metrics, or qualifying YouTube item."
+    },
+    {
+      "batch": 4,
+      "queries": [
+        {
+          "q": "\"FrogNano\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"scaling laws\" \"October 2026\" \"Published\""
+        },
+        {
+          "q": "\"test-time scaling\" \"2026\" \"Oct\" \"YouTube\""
+        },
+        {
+          "q": "\"WildAI\" site:reddit.com OR site:youtube.com OR site:x.com"
+        }
+      ],
+      "outcome": "Follow-up searches for FrogNano, WildAI and test-time scaling did not recover a qualified new X/YouTube discussion. Off-topic results and secondary summaries were not treated as primary evidence."
+    },
+    {
+      "batch": 5,
+      "queries": [
+        {
+          "q": "\"test time compute\" \"scaling\" site:youtube.com after:2026-09-20 before:2026-10-13"
+        },
+        {
+          "q": "\"neural scaling\" site:youtube.com after:2026-09-20 before:2026-10-13"
+        },
+        {
+          "q": "\"FrogNano\" site:x.com/kim__minseon/status"
+        },
+        {
+          "q": "\"How much is an AI token worth\" site:x.com/jennajrussell/status"
+        }
+      ],
+      "outcome": "All four searches returned no results. Separately opened the complete rendered model card and selected v5 HTML sections."
+    }
+  ],
+  "proposal": {
+    "status": "pending_parent_review",
+    "recommended_new_community_records": 1,
+    "entry": {
+      "id": "RD-11",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "microsoft/FrogNano-4B-2609 · Hugging Face",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/",
+      "author": "u/jacek2023",
+      "published_at": "2026-10-02",
+      "publication_date_evidence": "Search-index result explicitly displayed [Friday October 02 2026]. The direct reader instead showed unanchored '1h ago'; this relative label is not converted into a calendar date.",
+      "topics": [
+        "compact coding agents",
+        "online task synthesis",
+        "RL curriculum",
+        "deployment constraints",
+        "full-system compute accounting"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 223
+      },
+      "metric_evidence": "[Friday October 02 2026] [+223 votes]",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2609.07925v5",
+          "title": "FrogNano: Training a 4B Coding Agent via Online Task Synthesis",
+          "kind": "paper",
+          "verification": "Abstract, authors and version history verified; selected v5 introduction and §§2–4.2 read, with a targeted v4 comparison. No complete paper/appendix review, complete revision diff, code execution or replication."
+        },
+        {
+          "url": "https://huggingface.co/microsoft/FrogNano-4B-2609",
+          "kind": "official_model_card",
+          "verification": "Rendered model card read, including origin, deployment, evaluation, limitations and AI task-generation disclosure. Repository artifacts and external links not comprehensively reviewed."
+        }
+      ],
+      "access_status": "Post body and selected replies readable; direct-reader numeric counters unavailable. Explicit publication date and score come from the search-index snapshot.",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "The small-model release connects local deployability with task curricula and tool interfaces. Replies include questions about hardware requirements and behavioral distillation; these motivate checking full-system cost and the primary disclosure of task-generation assistance.",
+      "evidence_limit": "223 is an indexed score with unknown measurement time, not a live count or cross-platform rank. The October 2 post predates the October 5 v5 revision. Primary sources distinguish not imitating solver trajectories from using AI-generated tasks and tests. Parameter count or community interest does not establish compute optimality. Selected replies, not the whole tree, were read; no independent reproduction was performed.",
+      "observed_at": "2026-10-12",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "observations": [
+        {
+          "observed_at": "2026-10-12",
+          "source_kind": "search_index_snapshot",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/",
+          "published_at": "2026-10-02",
+          "score": 223,
+          "metric_measurement_time": null,
+          "date_score_excerpt": "[Friday October 02 2026] [+223 votes]"
+        },
+        {
+          "observed_at": "2026-10-12",
+          "source_kind": "direct_reader",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/",
+          "published_at": null,
+          "relative_time_text": "1h ago",
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "views": null,
+            "reposts": null,
+            "score": null
+          },
+          "note": "Unanchored relative time; not treated as a new posting date or a refresh of the indexed count. Only selected replies read."
+        }
+      ]
+    },
+    "primary_source_catalog_record": {
+      "id": "kim2026frognano",
+      "title": "FrogNano: Training a 4B Coding Agent via Online Task Synthesis",
+      "authors": [
+        "Minseon Kim",
+        "Zhengyan Shi",
+        "Emiliano Penaloza",
+        "Christopher Cui",
+        "Roger Creus Castanyer",
+        "Maryam Hashemzadeh",
+        "Isadora White",
+        "Jonathan Light",
+        "Jeonghye Kim",
+        "Matheus Pereira",
+        "Darya Moldavskaya",
+        "Chinmay Singh",
+        "Fabio Vera",
+        "Baolin Peng",
+        "Xingdi Yuan",
+        "Marc-Alexandre Côté",
+        "Alessandro Sordoni"
+      ],
+      "year": 2026,
+      "date": "2026-09-07",
+      "first_published": "2026-09-07",
+      "first_published_date": "2026-09-07",
+      "last_revised_date": "2026-10-05",
+      "version": "v5",
+      "version_read": "v5",
+      "latest_version_verified": "v5",
+      "url": "https://arxiv.org/abs/2609.07925",
+      "canonical_url": "https://arxiv.org/abs/2609.07925",
+      "full_text_url": "https://arxiv.org/html/2609.07925v5",
+      "type": "paper",
+      "branch": "posttraining-adaptive-task-curricula",
+      "problem": "固定任务集合与工具接口会限制紧凑编码代理的有效学习。",
+      "insight": "按当前策略的可学习区间生成任务，并调整交互接口。",
+      "method": "Policy-guided synthetic task generation with a compact coding harness and RL.",
+      "result": "Authors report coding-agent improvements; benchmark and total-cost claims are not independently validated in this community follow-up.",
+      "limitation": "已继承预训练/后训练基座；任务生成也消耗外部模型资源。未完整审读结果/附录、未做完整版本差分或运行复现，不能仅由参数规模推断总算力最优。",
+      "reading_depth": "full_text_targeted",
+      "verification_date": "2026-10-12",
+      "sections_read": "arXiv metadata/abstract/version history; v5 introduction and §§2–4.2; corresponding selected v4 passages. Separately read rendered official model card. Not the whole paper, experimental appendices, code or model artifacts.",
+      "evidence_status": "Community-triggered catalog-only proposal. v1: 2026-09-07 19:39:38 UTC; v5: 2026-10-05 18:00:17 UTC. Full v4→v5 diff not performed; no claim that the discussed mechanisms were introduced in v5.",
+      "synthesis_status": "catalog_only",
+      "changes_existing_conclusion": "No technical chapter change proposed; retain for future full-cost and controlled-interface follow-up.",
+      "catalogs": [
+        "editorial"
+      ],
+      "cited_in": []
+    },
+    "technical_body_change": false,
+    "radar_row_zh": "| RD-11 | [FrogNano 4B 发布讨论](https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/)；[原论文 v5](https://arxiv.org/abs/2609.07925v5)、[官方模型卡](https://huggingface.co/microsoft/FrogNano-4B-2609) | 索引明确显示 2026-10-02 | 索引快照 223 分；10 月 12 日观测，计数生成时间未知，达到 Reddit 编辑筛选阈值 |",
+    "radar_row_en": "| RD-11 | [FrogNano 4B release discussion](https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/); [paper v5](https://arxiv.org/abs/2609.07925v5), [official model card](https://huggingface.co/microsoft/FrogNano-4B-2609) | Index explicitly shows 2026-10-02 | Indexed score 223; observed October 12, measurement time unknown; meets the Reddit editorial screening threshold |",
+    "radar_paragraph_zh": "这条讨论将小模型本地部署与任务课程、工具接口联系起来。[官方模型卡](https://huggingface.co/microsoft/FrogNano-4B-2609)区分“不模仿强模型解题轨迹”和“仍由 AI 生成任务、参考补丁与隐藏测试”。因此值得追踪的是完整生成、训练、验证成本及接口条件，不能由参数小推断总算力最优。本轮核验摘要、版本史、模型卡及部分方法段落，未复现；论文 v1 发布于 9 月 7 日，v5 修订于 10 月 5 日，未完成版本全文差分。10 月 2 日社区帖早于 v5，不能解释成对该修订的反馈。直接页面未显示计数，选读回帖不代表社区共识；本次仅建议雷达与主源索引收录。",
+    "radar_paragraph_en": "The discussion connects local deployment of a small model with task curricula and tool interfaces. The [official model card](https://huggingface.co/microsoft/FrogNano-4B-2609) distinguishes not imitating stronger-model solver trajectories from still using AI-generated tasks, reference patches and hidden tests. This motivates tracking generation, training and verification costs alongside interface conditions; small parameter count does not establish compute optimality. This round checked the abstract, version history, model card and selected method passages, without reproduction. Version 1 appeared September 7 and v5 was revised October 5; a complete revision diff was not performed. The October 2 post predates v5 and cannot be interpreted as feedback on that revision. The direct page exposed no counters, and selected replies do not establish community consensus. Only radar and source-index inclusion is proposed.",
+    "rationale": "One dated, above-threshold new discussion with readable primary sources and a concrete cost-accounting distinction. It does not justify expanding technical chapters this week."
+  },
+  "primary_source_checks": [
+    {
+      "url": "https://arxiv.org/abs/2609.07925v5",
+      "status": "metadata_abstract_version_history_read",
+      "first_published_at": "2026-09-07T19:39:38Z",
+      "latest_revised_at": "2026-10-05T18:00:17Z",
+      "latest_version": "v5",
+      "note": "Original publication predates the search window; v5 is within it. Community posting predates v5."
+    },
+    {
+      "url": "https://arxiv.org/html/2609.07925v5",
+      "status": "selected_method_sections_read",
+      "sections": "Introduction and §§2–4.2, plus beginning of §5.",
+      "note": "No complete results/appendix audit; not deeply synthesized."
+    },
+    {
+      "url": "https://arxiv.org/html/2609.07925v4",
+      "status": "selected_comparison_passages_read",
+      "note": "Selected introduction and method text also describes the task-generation/harness mechanisms. No complete text diff was computed, so no substantive v5 change is asserted."
+    },
+    {
+      "url": "https://huggingface.co/microsoft/FrogNano-4B-2609",
+      "status": "rendered_model_card_read",
+      "sections": "Overview, origin, deployment, limitations, evaluation framing, training disclosure including §4.4.",
+      "note": "Card's listed release date is September 22, 2026; distinct from paper v1 and Reddit posting. Repository files and external artifacts not audited."
+    }
+  ],
+  "context_candidates": [
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/singularity/comments/1x0ctxq/can_someone_explain_where_are_we_currently_as_it/",
+      "title": "Can someone explain where are we currently as it relates to AI Scaling laws? Are we close to hitting the limit yet?",
+      "published_at": "2026-10-08",
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 18
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "primary_sources": [],
+      "decision": "Below threshold; a broad question with no verified primary experimental source. Reply scores are not the post score."
+    },
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/newAIParadigms/comments/1ws7fee/are_we_hitting_a_ceiling_with_llm_scaling/",
+      "published_at": "2026-09-28",
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 12
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "primary_sources": [
+        "https://arxiv.org/abs/2507.21184"
+      ],
+      "decision": "Recurring prior-week candidate, not a new qualified record; linked paper not reread this week."
+    },
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/LocalLLM/comments/1x3gt18/reward_modeling_for_llms_training_scaling_and/",
+      "published_at": "2026-10-11",
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 1
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "related_urls": [
+        "https://pawankjha.substack.com/p/architecting-reinforcement-learning-f28"
+      ],
+      "decision": "Below threshold; explanatory tutorial rather than a verified new scaling experiment."
+    },
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/reinforcementlearning/comments/1x3gsfa/reward_modeling_for_llms_training_scaling_and/",
+      "published_at": "2026-10-11",
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 3
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "decision": "Cross-post of the same tutorial, not independent technical evidence."
+    },
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/MLSystemsDesign/comments/1wyr9m7/reward_modeling_for_llms_training_scaling_and/",
+      "published_at": "2026-10-06",
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 8
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "decision": "Another cross-post of the same tutorial; below threshold."
+    },
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/developersIndia/comments/1x45uld/how_is_ai_still_improving_so_fast_if_were_running/",
+      "published_at": "2026-10-12",
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 16
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "decision": "General data-supply discussion without a verified new study; below threshold."
+    },
+    {
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1wwrot7/crowdgpt_the_first_datacenterless_llm/",
+      "published_at": "2026-10-03",
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 60
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "decision": "Below threshold; project aspiration and historical references do not establish a completed new compute-scaling result."
+    }
+  ],
+  "unverified_candidates": [
+    {
+      "platform": "X",
+      "candidate": "FrogNano author announcement",
+      "canonical_status_url": null,
+      "profile_url": "https://x.com/kim__minseon",
+      "discovery_urls": [
+        "https://we.twstalker.com/kim__minseon",
+        "https://03-presentation.twstalker.com/kim__minseon"
+      ],
+      "published_at": null,
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": "unlabelled_third_party_profile_index",
+      "metric_measurement_time": null,
+      "primary_sources": [
+        "https://arxiv.org/abs/2609.07925v5",
+        "https://huggingface.co/microsoft/FrogNano-4B-2609"
+      ],
+      "access_status": "Direct X profile open returned Internal Error. Searches for original status yielded no result. Mirror relative '4 weeks ago' lacks a reference time; numeric strips are unlabelled.",
+      "decision": "Do not promote the mirror to a canonical X post or infer likes/views. May predate this window; unresolved."
+    },
+    {
+      "platform": "X",
+      "candidate": "WildAI author announcement follow-up",
+      "canonical_status_url": null,
+      "published_at": null,
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": "third_party_profile_search_result",
+      "metric_measurement_time": null,
+      "discovery_urls": [
+        "https://www.sotwe.com/jennajrussell?lang=en"
+      ],
+      "primary_sources": [
+        "https://arxiv.org/abs/2609.40295"
+      ],
+      "access_status": "Search returned third-party profile material with relative dates/unlabelled counters; exact original-status query empty.",
+      "decision": "Recurring prior-week lead; no verified new date, canonical status or platform metrics. Primary not reread in this community subtask."
+    },
+    {
+      "platform": "YouTube",
+      "candidate": "Prior CliffCompaction short follow-up",
+      "url": "https://www.youtube.com/shorts/_95LR00FVX8",
+      "published_at": null,
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": "unavailable",
+      "metric_measurement_time": null,
+      "access_status": "Direct open in this round returned Internal Error; no current title/upload-date/counter verification.",
+      "decision": "Retained only as a prior candidate access check. Does not qualify as an in-window observation or new entry."
+    }
+  ],
+  "not_selected": [
+    {
+      "url": "https://www.reddit.com/r/accelerate/comments/1x23szg/google_employee_claims_openais_bel_will_be_here/",
+      "published_at": "2026-10-10",
+      "observed_at": "2026-10-12",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 628
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "reason": "High attention alone is insufficient: unverified release forecasts and workplace anecdotes, without a verified controlled scaling study. No rumor adopted as fact."
+    },
+    {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1hiqxkv/so_begins_the_era_of_test_time_compute/",
+      "reason": "Original post is December 2024; recent reply/search inclusion does not make it an in-window post."
+    },
+    {
+      "url": "https://www.reddit.com/r/AskReddit/comments/1wfmwav/for_people_working_in_mlai_and_mathematicians_how/",
+      "reason": "Original post September 13, 2026 is outside the window; September 21 reply does not change its publication date."
+    }
+  ],
+  "limitations": [
+    "Purposive English-language keyword search, not exhaustive platform coverage or a popularity chart.",
+    "Search dates are filters, not evidence of publication; dated snippets and actual post identities were checked separately.",
+    "Most X results were mirrors without canonical status URLs or labelled counters. Direct author-profile open failed. Unknown values remain null.",
+    "No new YouTube item with verified in-window upload date and qualifying view count was found; the tested prior short failed to open. No video was watched and no transcript was reviewed in this round.",
+    "Reddit direct pages can expose content with stale/unanchored relative timestamps but no numeric counters. Only explicit indexed dates and scores are retained as snapshots.",
+    "FrogNano v5 metadata is verified, but the Reddit thread predates that revision. Partial v4/v5 reading does not establish an exhaustive revision diff.",
+    "Existing 20 records and their historical counts are untouched. Context-candidate counts are separate new search observations, not replacements for prior logs.",
+    "No third-party full text, credentials, personal machine paths or downloaded model artifacts are included."
+  ],
+  "maintenance_decision": {
+    "recommend_community_additions": 1,
+    "recommend_technical_prose_additions": 0,
+    "recommend_catalog_only_sources": 1,
+    "note": "Root reviews and merges the proposed record and bilingual radar material. No canonical files changed by this subtask."
+  }
+}

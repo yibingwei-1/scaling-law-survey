@@ -2,7 +2,7 @@
 
 **English** | [**简体中文**](README-zh.md)
 
-**Living survey · Updated October 5, 2026 · [GitHub repository](https://github.com/yibingwei-1/scaling-law-survey)**
+**Living survey · Updated October 12, 2026 · [GitHub repository](https://github.com/yibingwei-1/scaling-law-survey)**
 
 Scaling-law research repeatedly uncovers what an existing resource model leaves out, then revisits how resources should be allocated. This survey follows that development from predictable training returns and parameter–data allocation to effective data, sparse architectures, deployment costs, post-training, inference-time computation, and capability measurement.
 
@@ -16,7 +16,7 @@ Each research thread follows **the original problem → the central insight → 
 
 The figure summarizes relationships between research problems; it is not an experimental plot.
 
-**Latest update:** Wild AI web text and target-specific validation, compression-response prediction, and inference submission failures extend three research threads. Four primary sources were added: three enter the narrative; IronMind remains catalog-only. The catalog contains 171 primary sources, with 161 cited in technical chapters. No new community item met the verification and selection criteria. [October 5 update record](data/maintenance-runs/2026-10-05.json) preserves scope and access limitations.
+**Latest update:** Repeated-data comparisons, preference-data limits, depth mechanisms, and multimodal pairing extend four research threads. Five primary sources were added: four enter the technical narrative; FrogNano remains catalog-only. SELF-POT links and author metadata now reflect v2. The catalog contains 176 primary sources, with 165 cited in technical chapters, and 21 community records. The [October 12 update record](data/maintenance-runs/2026-10-12.json) preserves scope and access limitations.
 
 ## Seven Research Threads
 
@@ -38,13 +38,13 @@ The survey also includes an [introduction](docs/en/introduction.md), a [communit
 
 The organization draws on [JonnesLin/post-training-survey](https://github.com/JonnesLin/post-training-survey). We read its Chinese preface, introduction, seven chapters, conclusion, and design and implementation documents, and checked its 468 bibliography entries against 440 unique citation keys used in the Chinese chapters. We adopt its problem-driven structure, depth hierarchy, and cross-thread connections while checking technical claims against their primary sources. See the [method analysis](docs/en/00-reference-method.md) and the [separate review of research organization and repository architecture](docs/reference-repository-analysis.md), the latter in Chinese.
 
-The initial edition contained 45 primary sources and three compressed technical chapters. The expanded edition has seven technical chapters, approximately 39,500 Chinese characters, and 171 distinct primary-source records, of which 161 are cited in the technical chapters. Catalog size, actual citation coverage, and reading depth are reported separately. Abstract-only candidates are not counted as close readings. Exact figures are available in the [coverage map](docs/evidence-map.md) and [machine-readable audit](data/citation-audit.json).
+The initial edition contained 45 primary sources and three compressed technical chapters. The expanded edition has seven technical chapters, approximately 41,000 Chinese characters, and 176 distinct primary-source records, of which 165 are cited in the technical chapters. Catalog size, actual citation coverage, and reading depth are reported separately. Abstract-only candidates are not counted as close readings. Exact figures are available in the [coverage map](docs/evidence-map.md) and [machine-readable audit](data/citation-audit.json).
 
 ## Community Discovery and Evidence
 
-The repository records 20 traceable items from X, YouTube, and Reddit, including author announcements, research talks, engineering reproductions, and rebuttals. Engagement records retain observation dates and retrieval limitations; unavailable values remain `null`, and search-index snapshots are not presented as live rankings. Discussions identify questions and disagreements; papers, author experiments, and technical reports support technical judgments. See the [community radar](docs/en/04-community-radar.md).
+The repository records 21 traceable items from X, YouTube, and Reddit, including author announcements, research talks, engineering reproductions, and rebuttals. Engagement records retain observation dates and retrieval limitations; unavailable values remain `null`, and search-index snapshots are not presented as live rankings. Discussions identify questions and disagreements; papers, author experiments, and technical reports support technical judgments. See the [community radar](docs/en/04-community-radar.md).
 
-The main focus is language models, with theory, vision, diffusion, and robotics used to examine assumptions and boundaries. The latest incremental search extends through October 5, 2026, without a claim of exhaustive coverage. The survey does not independently reproduce the cited experiments. Individual records retain reading scope, version information, and limitations; selected 2026 results are distinguished from established findings.
+The main focus is language models, with theory, vision, diffusion, and robotics used to examine assumptions and boundaries. The latest incremental search extends through October 12, 2026, without a claim of exhaustive coverage. The survey does not independently reproduce the cited experiments. Individual records retain reading scope, version information, and limitations; selected 2026 results are distinguished from established findings.
 
 ## Maintenance
 

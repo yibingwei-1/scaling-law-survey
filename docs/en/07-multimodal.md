@@ -1,6 +1,6 @@
 # Chapter 7 — Vision, Multimodality, Diffusion, and Robotics: What Should Be Scaled to Improve the Target Capability?
 
-> Updated: 2026-09-21. Problem thread T7. What transfers across domains is the experimental methodology and the resource-allocation question, not an assumed shared exponent. Core sources read in full include mixed-modal scaling, diffusion inference search, and robotic data scaling; frontier or historical additions checked only at the abstract level are marked separately.
+> Updated: 2026-10-12. Problem thread T7. What transfers across domains is the experimental methodology and the resource-allocation question, not an assumed shared exponent. Core sources read in full include mixed-modal scaling, diffusion inference search, and robotic data scaling; frontier or historical additions checked only at the abstract level are marked separately.
 
 Parameter counts and token counts in language models provide a convenient starting point, but they are not naturally shared units across every domain. An image can become hundreds of patches, thousands of discrete codes, or a continuous latent representation; a robotic trajectory also carries correlations involving environments, objects, actions, and time. Plotting different domains on log-log axes therefore does not establish that they follow the same resource relationships.
 
@@ -54,6 +54,12 @@ This interaction view also explains why average loss can hide imbalances within 
 Unresolved boundaries concern representations, mixture ratios, and objectives. An image tokenizer's compression ratio changes sequence length, visual detail, and the actual cost per image; speech tokens introduce their own information loss. Equal token counts therefore should not be interpreted as equal semantic information. The appendix's comparisons of visual and speech reconstruction underscore that the tokenizer is part of the entire scaling system. Extending the result to unequal mixtures, more modalities, long video, different task losses, and perception–action loops requires identifying the interaction terms again, rather than copying these coefficients.
 
 MM1's abstract offers an engineering route to follow: image encoders, resolution, image-token counts, and mixtures of data types affect its models more than some connector designs. This agrees with the question raised here—resource and data bottlenecks remain after format unification—but MM1's detailed ablations remain candidate reading in this edition. Its abstract cannot justify a universal architectural ranking for all MLLMs. [MM1, 2024](https://arxiv.org/abs/2403.09611v4)
+
+### Pairing Is Also a Resource: Why Equal Modality Totals Are Insufficient
+
+Interaction terms leave another variable unidentified: whether modalities occur together in training examples. [Ma and Narayanan, 2026, §3–6](https://arxiv.org/html/2609.36263v1) hold per-modality counts and training updates fixed while varying pairing, measuring cross-entropy in Digits, VQA classification heads over frozen encoders, and NLVR2 fine-tuning. Their four-channel model separates redundant, modality-unique, and jointly available information; paired counts drive the last component, with a gate allowing learning to start only after sufficient paired exposure. This adds an experimental axis: more unpaired examples do not equal more cross-modal connections.
+
+However, more pairing means fewer distinct labeled rows and more epochs; equal updates also do not establish equal FLOPs across architectures. NLVR2 curves exclude seeds that never escape chance, and test loss uses validation-set temperature calibration, so these curves do not establish unconditional training success. The abstract's 3.2% versus 10.4% refers to Table 3's full-pairing holdout, not aggregate error across all extrapolation tests. The study supports counting pairing as a resource; unlabeled generative pretraining and frontier model scales remain untested.
 
 ## 7.4 From Understanding to Generation: Which Kind of Compute Does Diffusion Scale?
 

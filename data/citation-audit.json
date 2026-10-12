@@ -1,6 +1,6 @@
 {
-  "catalog_count": 171,
-  "cited_in_technical_chapters": 161,
+  "catalog_count": 176,
+  "cited_in_technical_chapters": 165,
   "chapters": [
     {
       "file": "01-predictability-budget.md",
@@ -12,9 +12,9 @@
     {
       "file": "02-data.md",
       "title": "T2　数据瓶颈：从 token 数量到有效信息、混合与训练顺序",
-      "han_characters": 5386,
-      "catalog_sources_cited": 18,
-      "all_external_links": 19
+      "han_characters": 5731,
+      "catalog_sources_cited": 19,
+      "all_external_links": 20
     },
     {
       "file": "03-architecture-deployment.md",
@@ -26,9 +26,9 @@
     {
       "file": "04-posttraining.md",
       "title": "T4　后训练与强化学习：从反馈目标到可扩展推理策略",
-      "han_characters": 6590,
-      "catalog_sources_cited": 32,
-      "all_external_links": 32
+      "han_characters": 6935,
+      "catalog_sources_cited": 33,
+      "all_external_links": 33
     },
     {
       "file": "05-inference.md",
@@ -40,16 +40,16 @@
     {
       "file": "06-theory-evaluation.md",
       "title": "第六章　理论与能力评估：幂律为何出现，又能预测什么？",
-      "han_characters": 5840,
-      "catalog_sources_cited": 18,
-      "all_external_links": 18
+      "han_characters": 6187,
+      "catalog_sources_cited": 19,
+      "all_external_links": 19
     },
     {
       "file": "07-multimodal.md",
       "title": "第七章　视觉、多模态、扩散与机器人：扩大什么，才能改善目标能力？",
-      "han_characters": 6650,
-      "catalog_sources_cited": 26,
-      "all_external_links": 26
+      "han_characters": 6963,
+      "catalog_sources_cited": 27,
+      "all_external_links": 27
     }
   ],
   "external_links_without_catalog_match": {

@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-12",
+  "edition": "v0.3.4",
+  "search_window": {
+    "from": "2026-09-21",
+    "through": "2026-10-12"
+  },
+  "status": "content_updated_validated",
+  "new_primary_sources": [
+    "chai2026repeatedtoken",
+    "aouad2026rewardoptimization",
+    "peng2026inversedepth",
+    "ma2026pairedmultimodal",
+    "kim2026frognano"
+  ],
+  "new_body_sources": [
+    "chai2026repeatedtoken",
+    "aouad2026rewardoptimization",
+    "peng2026inversedepth",
+    "ma2026pairedmultimodal"
+  ],
+  "catalog_only_sources": [
+    "kim2026frognano"
+  ],
+  "revised_sources": [
+    "yang2026selfpot"
+  ],
+  "new_community_records": [
+    "RD-11"
+  ],
+  "new_high_attention_records": 1,
+  "chapters_changed": [
+    "T2",
+    "T4",
+    "T5 (version link only)",
+    "T6",
+    "T7"
+  ],
+  "research_logs": [
+    "sources/weekly-2026-10-12-foundations.json",
+    "sources/weekly-2026-10-12-frontier.json",
+    "sources/weekly-2026-10-12-community.json",
+    "sources/weekly-2026-10-12-editor.json"
+  ],
+  "reason_for_body_updates": [
+    "Repeated-token value depends on fresh-data versus same-corpus reference and fixed budget.",
+    "Preference-data supply constrains attainable reward under a conditional selection model; this is not a compute law.",
+    "Selective retrieval and layer averaging offer a controlled mechanism for depth benefits; the identity alone does not prove an exponent.",
+    "Pairing is a separate resource beyond per-modality counts."
+  ],
+  "review": [
+    "New technical arguments and mathematical/experimental conditions cross-reviewed across languages before fingerprint updates.",
+    "FrogNano stays catalog-only; no full revision diff or experimental replication.",
+    "SELF-POT v2 selected evidence unchanged, sixth author corrected; no claim of complete version equivalence.",
+    "Prior 20 community entries retain historical counters unchanged.",
+    "Final PDF visual review completed after formula-layout and log/pi notation repairs; unchanged English pages verified pixel-identical."
+  ],
+  "access_limits": [
+    "Targeted discovery is not exhaustive; search indexing can omit recent work.",
+    "X mirrors lacked verified original status dates and labeled counters; no formal new X entry.",
+    "No qualifying new YouTube sample verified; tested prior short failed to open.",
+    "Reddit score is an indexed snapshot, not a live count.",
+    "Selected primary sections reviewed; no independent experiment reproduction."
+  ],
+  "publication_target": "https://github.com/yibingwei-1/scaling-law-survey",
+  "validation": {
+    "status": "pass",
+    "date": "2026-10-12",
+    "checks": [
+      "scripts/build_survey.py",
+      "Eight generated artifacts unchanged on rebuild",
+      "scripts/validate.py: 176 sources, 21 community records, 41 Markdown files",
+      "Both PDF languages built with --check: 26 display formulas, zero fallbacks each",
+      "Final all-page coverage through contact sheets and page-scale changed-content review",
+      "Paired translations reviewed before renewing seven chapter fingerprints",
+      "All repository JSON parsed; preserved 20 prior community entries; git diff --check passed"
+    ],
+    "pdf_pages": {
+      "en": 91,
+      "zh-CN": 64
+    },
+    "record": "data/quality-check.json",
+    "limits": "No independent experiment reproduction; discovery is targeted and platform access incomplete."
+  },
+  "counts": {
+    "catalog": 176,
+    "technical_sources_cited": 165,
+    "community": 21,
+    "technical_han_characters": 40896
+  }
+}

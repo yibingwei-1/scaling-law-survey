@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-12",
+  "window": {
+    "from": "2026-09-21",
+    "through": "2026-10-12"
+  },
+  "baseline_head": "29a8013f5fb298822374209d51017e7dff64ed4b",
+  "search_method": "Built-in web search and primary HTML/metadata readers. parallel-cli unavailable on PATH; no claim of its use. Targeted representative discovery, not exhaustive screening.",
+  "queries": [
+    "\"scaling laws\" \"2026\" after:2026-09-21 before:2026-10-13 [arxiv.org]",
+    "\"scaling\" \"October\" \"2026\" language model compute [arxiv.org]",
+    "\"scaling laws\" after:2026-10-04 before:2026-10-13 [arxiv.org]",
+    "\"scaling\" \"multimodal\" after:2026-09-21 before:2026-10-13 [arxiv.org]",
+    "\"scaling\" \"October 2026\" research [deepmind.google,research.google,anthropic.com,openai.com]",
+    "\"scaling\" \"theory\" \"2026\" after:2026-10-04 before:2026-10-13 [arxiv.org]",
+    "\"scaling\" after:2026-09-21 before:2026-10-13 [Hugging Face/Google/Meta/Epoch official sites]",
+    "\"scaling laws\" \"October 2026\" -site:arxiv.org -site:reddit.com -site:youtube.com",
+    "\"scaling\" \"2610\" \"theory\" language model [arxiv.org]",
+    "\"scaling laws\" \"2610\" \"robot\" OR \"diffusion\" [arxiv.org]",
+    "\"Emergent Inverse-Depth Scaling From Nonlinearity In Attention\" [arxiv.org]",
+    "\"scaling\" \"diffusion\" after:2026-10-04 before:2026-10-13 [arxiv.org]",
+    "\"scaling laws\" after:2026-09-21 before:2026-10-13 [Google Research,Hugging Face,Epoch]",
+    "\"Emergent Inverse-Depth\"",
+    "\"Peng\" \"Gore\" \"nonlinearity\" \"attention\" \"2026\"",
+    "\"scaling laws\" \"Oct 9\" \"2026\" [arxiv.org]"
+  ],
+  "query_notation": "Bracketed text records domain scope; domain groups with descriptive names summarize the filters rather than exact API arguments. No individual result ranking is claimed.",
+  "primary_decisions": [
+    {
+      "id": "ma2026pairedmultimodal",
+      "title": "Paired Multimodal Scaling Laws",
+      "year": 2026,
+      "first_published": "2026-09-28",
+      "first_published_utc": "2026-09-28T20:51:37Z",
+      "last_revised_date": null,
+      "url": "https://arxiv.org/abs/2609.36263",
+      "fulltext_url": "https://arxiv.org/html/2609.36263v1",
+      "type": "paper",
+      "branch": [
+        "T7",
+        "T2"
+      ],
+      "problem": "模态总量相同时，配对关系是否仍改变可学习的信息？",
+      "insight": "把配对数量作为独立资源，区分冗余、各模态独有和协同信息。",
+      "method": "Fixed per-modality counts and updates; Digits, frozen-encoder VQA heads and NLVR2 fine-tuning; four-channel fits.",
+      "result": "Pairing changes measured loss; delayed synergy motivates a gate. The headline 3.2%/10.4% comparison is the full-pairing holdout.",
+      "limitation": "Labeled-row count and epochs change; failed-to-start NLVR2 seeds filtered; calibrated loss; no generative-pretraining or frontier-scale validation.",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "3–6",
+        "Tables 1–3",
+        "Appendix A.3–A.4",
+        "Appendix B.3",
+        "Appendix C.1–C.3"
+      ],
+      "version_read": "arXiv v1",
+      "latest_version_verified": "v1",
+      "verification_date": "2026-10-12",
+      "synthesis_status": "incorporated",
+      "changes_existing_conclusion": "Adds pairing to resource accounting; does not establish a universal multimodal law.",
+      "evidence_note": "Primary sections read; no code execution, independent replication or figure digitization."
+    },
+    {
+      "id": "peng2026inversedepth",
+      "title": "Emergent Inverse-Depth Scaling From Nonlinearity In Attention",
+      "year": 2026,
+      "first_published": "2026-10-08",
+      "first_published_utc": "2026-10-08T01:23:54Z",
+      "last_revised_date": null,
+      "url": "https://arxiv.org/abs/2610.11063",
+      "fulltext_url": "https://arxiv.org/html/2610.11063v1",
+      "type": "paper",
+      "branch": [
+        "T6"
+      ],
+      "problem": "数据谱之外，非线性 attention 如何改变深度收益？",
+      "insight": "选择性检索与层间聚合可抵消预测分歧，共享误差保留为平台。",
+      "method": "Controlled ICL label copying and top-k aggregation; linear/nonlinear attention, depth fits and error decomposition.",
+      "result": "Approximately inverse-depth top-2 behavior; enabling context updates gives a saturating top-16 counterexample.",
+      "limitation": "Decomposition alone does not fix the exponent; simplified converged MSE experiments, no real-language or joint width/data/compute test.",
+      "reading_depth": "full_text_targeted",
+      "sections_read": [
+        "2–4",
+        "6",
+        "Appendix C.1–C.3",
+        "Appendix D.1,D.3,D.4"
+      ],
+      "version_read": "arXiv v1",
+      "latest_version_verified": "v1",
+      "verification_date": "2026-10-12",
+      "synthesis_status": "incorporated",
+      "changes_existing_conclusion": "Adds a conditional depth mechanism alongside spectral explanations, including an explicit counterexample.",
+      "evidence_note": "Selected derivations and reported controls read; proofs/code not independently verified. Primary first-publication date is October 8, unlike some secondary October 9 dates."
+    }
+  ],
+  "additional_reviews": [
+    "Chai repeated-token synthesis checked by foundations and independently by frontier: added 113/140 threshold restriction, prediction-target token unit and separate fixed-U sweep.",
+    "Aouad reward-optimization synthesis checked by frontier and independently by foundations; root reviewed metadata/introduction and integration. Added fixed overlap/reward-scale/large-effective-budget conditions and gold-selected-peak boundary.",
+    "Peng and Ma new Chinese/English paragraphs cross-reviewed by foundations. Tightened excess loss relative to fitted floor, split-stream/fixed-context representation, isotropic top-16 counterexample and distinct rather than independent label rows.",
+    "SELF-POT selected v1/v2 sections and author correction checked by frontier; paired T5 links updated without changing counts.",
+    "FrogNano catalog-only metadata/method review and community discovery logged separately. Root checked primary metadata and model-card entry; no technical-chapter expansion."
+  ],
+  "candidates_not_promoted": [
+    {
+      "url": "https://arxiv.org/abs/2610.08540",
+      "title": "Alignment Scaling Laws",
+      "scope_read": "Abstract and selected §5/7/9 passages",
+      "reason": "Need target-normalization, protocol and local-slope audit; reduced-task/LoRA evidence does not establish frontier generality."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.05062",
+      "reason": "VLA serving search lead only; no equal-budget or latency protocol audit."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.06784",
+      "reason": "HEP scaling is outside this LLM-centered incremental synthesis."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.06387",
+      "reason": "Secondary survey; not original experimental evidence."
+    }
+  ],
+  "other_search_outcomes": "WildAI and older ATLAS/tutorial results were duplicates or out of window. Official-site searches also returned release/events material without a new controlled scaling study; no release rumor adopted as a result.",
+  "limits": [
+    "No independent experiment reruns or full formal proof checking.",
+    "Paper versions established from arXiv history, not search crawl dates.",
+    "No third-party full texts uploaded; only bibliographic metadata and analytical notes.",
+    "Social-platform failures and missing counters are retained as access limits, not evidence of absent activity."
+  ]
+}

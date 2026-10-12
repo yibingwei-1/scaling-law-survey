@@ -1,6 +1,6 @@
 # Chapter 6 — Theory and Capability Evaluation: Why Do Power Laws Arise, and What Can They Predict?
 
-> Updated: 2026-09-16. Problem thread T6. This chapter places explanations of loss scaling and predictions of task capability within the same chain of evidence, while treating them as distinct claims. Connections between chapters are this survey's synthesis of research questions; relationships to prior work count as historical influence only when the source explicitly discusses them.
+> Updated: 2026-10-12. Problem thread T6. This chapter places explanations of loss scaling and predictions of task capability within the same chain of evidence, while treating them as distinct claims. Connections between chapters are this survey's synthesis of research questions; relationships to prior work count as historical influence only when the source explicitly discusses them.
 
 [Chapter 1](01-predictability-budget.md) established empirical relationships between resources and training outcomes; the [data chapter](02-data.md) and [architecture chapter](03-architecture-deployment.md) explained how changing the recipe changes those relationships. Successful fitting nevertheless leaves two questions: why can very different models exhibit power laws? And even if average prediction error is predictable, can we know when a model will solve a particular class of problems or pass a particular test? The first requires a mechanistic explanation; the second requires a bridge between measurement and transfer.
 
@@ -62,6 +62,18 @@ This also changes the connection to [Chapter 1](01-predictability-budget.md): if
 | Resolution / spectral modes | Unresolved representational directions | Changing data geometry and the target spectrum should change exponents | Representation evolution during training |
 | Training dynamics | Joint constraints from finite time and finite resources | Time, sample, and model bottlenecks can be asymmetric | More general networks and optimizers |
 | Feature learning | Training changes the effective kernel and learning directions | Exponents may change for tasks that are harder under the initial representation | Quantitative, advance predictions for modern LLMs |
+
+### Another Return to Depth: Selective Retrieval and Error Cancellation
+
+Spectral explanations still leave a question: can nonlinear attention change what depth does? [Peng et al., 2026, §2–4 and §6](https://arxiv.org/html/2610.11063v1) compare linear and softmax attention in controlled in-context learning: copying a matching token's label or averaging the two most relevant tokens' labels. On the latter task, nonlinear models show approximately inverse-depth decay of excess loss above a fitted floor across tested spectra. Selective retrieval lets layers form similar but nonidentical predictions: aggregation cancels some layer-specific errors, while shared error sets a plateau.
+
+With separate input and label streams and context fixed across layers, the controlled model can be written as a parallel average of layer predictions. In this representation, the mean squared error at depth $L$ satisfies
+
+$$
+\mathcal{R}_L=C_L+\frac{A_L-C_L}{L}.
+$$
+
+$C_L$ is the cross-layer shared-error term, and $A_L-C_L$ measures prediction disagreement. This identity alone does not prove an exponent of one; both terms' depth dependence needs checking. Appendix D.4's convergence fits provide an empirical consistency check. A counterexample matters: in the isotropic-spectrum extension, with context updates enabled, top-16 quickly saturates while top-2 retains depth gains. The mechanism supplements spectral accounts without replacing all such theories, and establishes neither real-language generality nor joint width, data, and compute optima.
 
 ## 6.5 From Loss to Capability: A Function Is Still Missing from the Prediction Chain
 

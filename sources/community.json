@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "observed_at": "2026-09-28",
+  "observed_at": "2026-10-12",
   "coverage": "Purposeful cumulative sample, not an exhaustive ranking; X 4, YouTube 6, Reddit 10. Original snapshots retained; September 28 adds one high-attention proxy discussion of evaluation boundaries.",
   "metric_policy": {
     "null_means": "Not observable, not zero",
@@ -837,6 +837,78 @@
             "score": null
           },
           "note": "Reference time unknown; not converted into an absolute posting date. Selected replies read, not the entire tree."
+        }
+      ]
+    },
+    {
+      "id": "RD-11",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "microsoft/FrogNano-4B-2609 · Hugging Face",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/",
+      "author": "u/jacek2023",
+      "published_at": "2026-10-02",
+      "publication_date_evidence": "Search-index result explicitly displayed [Friday October 02 2026]. The direct reader instead showed unanchored '1h ago'; this relative label is not converted into a calendar date.",
+      "topics": [
+        "compact coding agents",
+        "online task synthesis",
+        "RL curriculum",
+        "deployment constraints",
+        "full-system compute accounting"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 223
+      },
+      "metric_evidence": "[Friday October 02 2026] [+223 votes]",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2609.07925v5",
+          "title": "FrogNano: Training a 4B Coding Agent via Online Task Synthesis",
+          "kind": "paper",
+          "verification": "Abstract, authors and version history verified; selected v5 introduction and §§2–4.2 read, with a targeted v4 comparison. No complete paper/appendix review, complete revision diff, code execution or replication."
+        },
+        {
+          "url": "https://huggingface.co/microsoft/FrogNano-4B-2609",
+          "kind": "official_model_card",
+          "verification": "Rendered model card read, including origin, deployment, evaluation, limitations and AI task-generation disclosure. Repository artifacts and external links not comprehensively reviewed."
+        }
+      ],
+      "access_status": "Post body and selected replies readable; direct-reader numeric counters unavailable. Explicit publication date and score come from the search-index snapshot.",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "The small-model release connects local deployability with task curricula and tool interfaces. Replies include questions about hardware requirements and behavioral distillation; these motivate checking full-system cost and the primary disclosure of task-generation assistance.",
+      "evidence_limit": "223 is an indexed score with unknown measurement time, not a live count or cross-platform rank. The October 2 post predates the October 5 v5 revision. Primary sources distinguish not imitating solver trajectories from using AI-generated tasks and tests. Parameter count or community interest does not establish compute optimality. Selected replies, not the whole tree, were read; no independent reproduction was performed.",
+      "observed_at": "2026-10-12",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "observations": [
+        {
+          "observed_at": "2026-10-12",
+          "source_kind": "search_index_snapshot",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/",
+          "published_at": "2026-10-02",
+          "score": 223,
+          "metric_measurement_time": null,
+          "date_score_excerpt": "[Friday October 02 2026] [+223 votes]"
+        },
+        {
+          "observed_at": "2026-10-12",
+          "source_kind": "direct_reader",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/",
+          "published_at": null,
+          "relative_time_text": "1h ago",
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "views": null,
+            "reposts": null,
+            "score": null
+          },
+          "note": "Unanchored relative time; not treated as a new posting date or a refresh of the indexed count. Only selected replies read."
         }
       ]
     }

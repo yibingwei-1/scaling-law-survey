@@ -4,7 +4,7 @@ Initial search date: **September 16, 2026**. This round established **18 traceab
 
 Community discussion exposes unresolved questions among researchers and practitioners. Technical conclusions still require papers, author code, and official reports: high view counts indicate reach, not correctness, and vigorous debate is not independent replication. Full fields appear in [community.json](../../sources/community.json); searches and leads not included appear in [community-search-log.md](../../sources/community-search-log.md).
 
-The September 21 and September 28 additions bring the cumulative record count to 20. Earlier counters retain their original observation dates; see Sections 6 and 7 for the new records.
+The September 21, September 28, and October 12 additions bring the cumulative record count to 21. Earlier counters retain their original observation dates; see Sections 6–8 for the new records.
 
 ## 1. Operationalizing “High Attention”
 
@@ -112,3 +112,15 @@ Related X and YouTube URLs were corroborated through public cross-links, but thi
 ## 7. Observation Added on 2026-09-28: Separate Current Evaluation Failures from Long-Term Extrapolation
 
 The indexed result for [RD-10: RSI discussion](https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/) explicitly gives September 14, 2026 and a score of 288, meeting this radar's editorial Reddit threshold. It was retrieved on September 28; the counter's measurement time is unknown. The title is the poster's interpretation. Only the abstract and version history of the [linked study v2](https://arxiv.org/abs/2607.27191v2) were checked this round: observations from two cases cannot establish that RSI is impossible. The disagreement motivates recording models, tasks, budgets, and human intervention before extrapolating; comments are not technical evidence. Direct page reading exposed no counter, and no new verifiable X or YouTube attention metrics were obtained. Historical counts remain unchanged.
+
+## 8. October 12, 2026 Addition: Small Parameter Counts Do Not Establish Low System Cost
+
+The search window runs from September 21 through October 12, 2026.
+
+| ID | Discussion and primary sources | Publication-date evidence | Visible attention and classification |
+|---|---|---|---|
+| RD-11 | [FrogNano 4B release discussion](https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/); [paper v5](https://arxiv.org/abs/2609.07925v5), [official model card](https://huggingface.co/microsoft/FrogNano-4B-2609) | Index explicitly shows 2026-10-02 | Indexed score 223; observed October 12, measurement time unknown; meets the Reddit editorial screening threshold |
+
+The discussion connects local deployment of a small model with task curricula and tool interfaces. The [official model card](https://huggingface.co/microsoft/FrogNano-4B-2609) distinguishes not imitating stronger-model solver trajectories from still using AI-generated tasks, reference patches and hidden tests. This motivates tracking generation, training and verification costs alongside interface conditions; small parameter count does not establish compute optimality. This round checked the abstract, version history, model card and selected method passages, without reproduction. Version 1 appeared September 7 and v5 was revised October 5; a complete revision diff was not performed. The October 2 post predates v5 and cannot be interpreted as feedback on that revision. The direct page exposed no counters, and selected replies do not establish community consensus. The item is included only in the radar and source index.
+
+X post identities, dates, or labeled counters remain unverified. This round obtained no qualifying new YouTube sample, and the tested prior candidate failed to open directly. These access limits do not establish an absence of new discussion. See the [complete weekly log](../../sources/weekly-2026-10-12-community.json).

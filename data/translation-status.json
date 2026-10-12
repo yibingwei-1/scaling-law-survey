@@ -2,16 +2,16 @@
   "schema_version": "1.0",
   "source_language": "zh-CN",
   "target_language": "en",
-  "reviewed_on": "2026-10-05",
+  "reviewed_on": "2026-10-12",
   "review_scope": "Complete chapter translations reviewed for argument, conditions, limitations, source-link multiplicity, and exact mathematics. Hashes detect later drift; they do not establish translation quality or independently revalidate the science.",
   "chapters": {
     "introduction.md": {
       "source_path": "docs/introduction.md",
       "translation_path": "docs/en/introduction.md",
-      "source_sha256": "03f85c12d14ec9d941ee1aa8b8a0d7d3b55bf22dcb1ef8f2d21f0c0d00864eec",
-      "translation_sha256": "7fd493f41452c330763463bb14a836cfc31ddcc92504620efe90e4c940eb8439",
+      "source_sha256": "152cdeb024e7369d124268a71755c2c510109818ead60adbc5ef1a5d4c630436",
+      "translation_sha256": "716eed8d2961a747e46c430a4e4b782b8bfbb43edfb061f0a22bc9f15bce93e9",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-10-05"
+      "reviewed_on": "2026-10-12"
     },
     "01-predictability-budget.md": {
       "source_path": "docs/01-predictability-budget.md",
@@ -23,10 +23,10 @@
     "02-data.md": {
       "source_path": "docs/02-data.md",
       "translation_path": "docs/en/02-data.md",
-      "source_sha256": "626063780fdff50bc1df769e2738d8a460b26b93089233fadccd12e0fad90f5a",
-      "translation_sha256": "396669356adf87c3eaac68593f6ef3496e3f13ad98489c46c7b083d72aa0da10",
+      "source_sha256": "6d8450ca239893c12a264246d40109ff48de897f6e5c37b9732e4b7793456dc3",
+      "translation_sha256": "72e21a4d61c48c1810bc992074d26d2d05b09bddc158887dcba2601e8feaf0a4",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-10-05"
+      "reviewed_on": "2026-10-12"
     },
     "03-architecture-deployment.md": {
       "source_path": "docs/03-architecture-deployment.md",
@@ -39,40 +39,42 @@
     "04-posttraining.md": {
       "source_path": "docs/04-posttraining.md",
       "translation_path": "docs/en/04-posttraining.md",
-      "source_sha256": "df7eec01283cbb6ccba1f8b6f54f7008834fb56e5ee77adcc4fbf4fe9ffa451d",
-      "translation_sha256": "fa21ab9bdbfb73bf183424764547de70f86fdc89fa6af985619014eac8c692f2",
-      "status": "reviewed_translation"
+      "source_sha256": "d1caea70428d0bd1d46f2318982ad611eddd136d89a25a0be0bf75a380cc0263",
+      "translation_sha256": "a1b45c66476326ff0627e929962d004f753a525d77963f2f75365795ddbfb158",
+      "status": "reviewed_translation",
+      "reviewed_on": "2026-10-12"
     },
     "05-inference.md": {
       "source_path": "docs/05-inference.md",
       "translation_path": "docs/en/05-inference.md",
-      "source_sha256": "85a870286f4e5d4c1544bf22568205eba0a316e5e55fea8b4ff60edf83bd3689",
-      "translation_sha256": "517b4863edefc0aaa0156aea6bacd6eed86ba5ec56796b308a5990af162bf370",
+      "source_sha256": "9b730b2534e50c5c9fa1202c550a2913f44eab73d1cecc44923ea2d7680c30e1",
+      "translation_sha256": "e7952a27d6a78bacf2a7d9a4c89d91c349da804bf4ecc6cf27c09903e5cc2da6",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-10-05"
+      "reviewed_on": "2026-10-12"
     },
     "06-theory-evaluation.md": {
       "source_path": "docs/06-theory-evaluation.md",
       "translation_path": "docs/en/06-theory-evaluation.md",
-      "source_sha256": "67425c986794d738c4e8dba7b2a4a630488f7c23c77bf49f31d92fa25c4646b0",
-      "translation_sha256": "ea0059f87da7eba8f7b49e798ecce3df1da155133bac5f0ce1db4a72dfdaccd3",
-      "status": "reviewed_translation"
+      "source_sha256": "17c0556a12024b22469183524284939a31580a5edea70912cd3ec88ad49ca9fb",
+      "translation_sha256": "bd6a43e6ab2e1f2fc94413df79d45b2783f6ebe81c59f698a39bb8669e286058",
+      "status": "reviewed_translation",
+      "reviewed_on": "2026-10-12"
     },
     "07-multimodal.md": {
       "source_path": "docs/07-multimodal.md",
       "translation_path": "docs/en/07-multimodal.md",
-      "source_sha256": "33e6e7ab0f858697454ceb12e06447018a809578debe63b7b9cd810d09a8692a",
-      "translation_sha256": "e6690572faaba7dcbfce578b76f8dfda554076b866e8c0ef9f27a161b6c1fa6d",
+      "source_sha256": "14f72d397e5713595f2f82b3497b0999f6e1d02dfb3ae6e9297d1a6c5b74d147",
+      "translation_sha256": "ce364b7480ff8fcddbf0d292e0df31a7bee4a0afd15cbe8b6838ff0c29c073e1",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-21"
+      "reviewed_on": "2026-10-12"
     },
     "04-community-radar.md": {
       "source_path": "docs/04-community-radar.md",
       "translation_path": "docs/en/04-community-radar.md",
-      "source_sha256": "ba65d01bd401061f443e8820a00d5f912da45b3a1b3158ade14ea3c4491d5871",
-      "translation_sha256": "f2cd3da85e4e886d97d1eb5de17857b1dc2d46ed9b68af8db4efa6dccff26df8",
+      "source_sha256": "4ae5791a192fb93c0aab56f20cc73c8400fac9eb0b758285f1251fe19aabc870",
+      "translation_sha256": "7eff32713e2926f99fa8292702fbd93a9d39ac1a3f06671206cdcd5b366cb9f6",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-09-28"
+      "reviewed_on": "2026-10-12"
     },
     "conclusion.md": {
       "source_path": "docs/conclusion.md",
@@ -97,13 +99,16 @@
     }
   },
   "latest_incremental_review": {
-    "date": "2026-10-05",
+    "date": "2026-10-12",
     "chapters": [
       "introduction.md",
       "02-data.md",
-      "03-architecture-deployment.md",
-      "05-inference.md"
+      "04-posttraining.md",
+      "05-inference.md",
+      "06-theory-evaluation.md",
+      "07-multimodal.md",
+      "04-community-radar.md"
     ],
-    "scope": "Three new technical arguments cross-reviewed against selected primary sections in both languages. FW26 subset/token denominator, increasing compute, form-selection boundary and feasible-candidate regret clarified after review. Introduction date paired. Unchanged chapters retain prior hashes; no independent experiments."
+    "scope": "Root read paired diffs after independent targeted primary-source checks. T2 fit subset/token units/separate fixed-U sweep, T4 conditional order/existential bound/gold peak/fixed-pool tilting, T6 excess loss/representation/identity/counterexample and T7 pairing/seed/calibration/holdout boundaries cross-reviewed. T5 v2 link and date paired; community addition independently checked against RD-11. Introduction date paired. Unchanged chapters retain their prior hashes; no experiments replicated. The same T4 order expression moved to display mathematics in both languages after a PDF inline-rendering defect; paired wording and mathematics rechecked. Whitespace between log and pi in the existing T4 inline objective corrected in both languages to preserve readable PDF notation; mathematical meaning unchanged."
   }
 }

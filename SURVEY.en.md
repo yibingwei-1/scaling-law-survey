@@ -1,8 +1,8 @@
 # Scaling Law: A Problem-Driven Review
 
-Edition v0.3.3 · Searches and verification through 2026-10-05 · English living edition
+Edition v0.3.4 · Searches and verification through 2026-10-12 · English living edition
 
-From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains 171 distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
+From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains 176 distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
 
 ![Research problem evolution map](figures/evolution-map.png)
 
@@ -80,7 +80,7 @@ A more detailed account of paper relationships and branching rationales is avail
 
 For the classical allocation debate, start with the Kaplan–Chinchilla–reanalysis chain in [predictability and budgets](docs/en/01-predictability-budget.md), then read [data](docs/en/02-data.md) and [deployment costs](docs/en/03-architecture-deployment.md). To assess whether test-time scaling is taking over, begin with the proposers, verifiers, and allocation policies in [post-training](docs/en/04-posttraining.md) and [inference-time computation](docs/en/05-inference.md), then examine [capability evaluation](docs/en/06-theory-evaluation.md) and negative results. To follow new work, first identify the question raised in the community radar, return to the primary evidence, and decide which connection in the narrative should change.
 
-This survey prioritizes representative studies that explain turning points rather than mechanically ranking papers by citations or social-media exposure. References to “current” or “latest” are relative to the latest incremental search date, October 5, 2026. Reading scope and unresolved issues are disclosed in the chapters and metadata.
+This survey prioritizes representative studies that explain turning points rather than mechanically ranking papers by citations or social-media exposure. References to “current” or “latest” are relative to the latest incremental search date, October 12, 2026. Reading scope and unresolved issues are disclosed in the chapters and metadata.
 
 
 ---
@@ -180,13 +180,19 @@ For a model that will provide a long-running service, the objective must also in
 
 ## T2 Data Bottlenecks: From Token Counts to Useful Information, Mixtures, and Training Order
 
-> Verification date: 2026-10-05. Scope: unique data volume, deduplication, selection, domain mixtures, data curricula, supply forecasts, and synthetic feedback. The chapter distinguishes experimental evidence in the original papers from this survey's synthesis of mechanisms; data processing and training experiments were not independently rerun. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for reading depth. Works checked only at the abstract level, including TinyStories, Phi-3, and Scaling Laws for Transfer, remain in the source registry but are not used to support this chapter's technical conclusions.
+> Verification date: 2026-10-12. Scope: unique data volume, deduplication, selection, domain mixtures, data curricula, supply forecasts, and synthetic feedback. The chapter distinguishes experimental evidence in the original papers from this survey's synthesis of mechanisms; data processing and training experiments were not independently rerun. See the [foundational sources](sources/foundations.json) and [additional sources](sources/expansion-foundations.json) for reading depth. Works checked only at the abstract level, including TinyStories, Phi-3, and Scaling Laws for Transfer, remain in the source registry but are not used to support this chapter's technical conclusions.
 
 ### 1. Data Becomes a Bottleneck Because D Carries Too Many Meanings
 
 In the dense-pretraining approximation $C\approx6ND$, $D$ first denotes the number of tokens processed during computation. This accounting variable can directly represent statistical dataset size only if every token supplies independent, homogeneous new information. Actual corpora contain repetition, domain differences, errors, and overlap between training and test data; identical token counts can also come from different tokenizers. **This survey organizes the discussion** by separating several questions: how much new content is available, which content to retain, how to allocate training proportions, in what order to train, and who generated the new content. Together these factors change the return curve, but they are not a single “quality parameter.”
 
 The training runs used for Chinchilla's scaling-law fitting analysis covered less than one epoch, so its formula alone cannot determine the value of repeatedly training on a finite corpus. This was not true of every domain in the final 1.4T-token model's training data: Table A1 reports 1.24 epochs for MassiveWeb and 3.40 for Wikipedia. The analytical runs must be distinguished from the final training recipe. Muennighoff et al. directly separated unique data volume, repetition count, and model capacity, fitting diminishing marginal returns to repeated tokens. In some experimental settings, the gap after four epochs of repetition was small, while further repetition showed substantial diminishing returns, and individual runs deteriorated; their saturating fit cannot fully represent that deterioration. This revises the assumption that all tokens are equivalent, but does not establish a threshold under which repeating any dataset four times is safe. [Hoffmann et al., 2022, §5](https://arxiv.org/html/2203.15556v1); [Muennighoff et al., 2023, §3 and §5–6](https://arxiv.org/html/2305.16264)
+
+#### Repetition Value Depends on the Reference and Fixed Budget
+
+How many epochs to use depends first on which budget stays fixed. [Chai and Xiong, 4 October 2026, §§3–7](https://arxiv.org/html/2610.05591v1) distinguish two references: one pass over the same corpus asks whether extra compute helps; fresh data at matched model size and total tokens measures repetition's opportunity cost. Their CommonCrawl grid spans 23M–361M non-embedding parameters, 5–300 total tokens per parameter, and 1–16 epochs. They model excess loss over fresh data as $\Delta L=A z^p$, with $z=(R-1)N_{\mathrm{total}}/U$: $R$ is epochs, $U$ unique tokens counted as prediction targets, and $N_{\mathrm{total}}$ includes embeddings. The excess-loss fit uses 113 of 140 repeated-data configurations above the 0.002 bpb resolution threshold. In a separate fixed-$U$ sweep, larger models reach minimum loss after fewer epochs; when $U$ grows proportionally to non-embedding parameters $N$, the preferred epoch count changes little on CommonCrawl.
+
+Counts still do not determine the outcome: at matched model size, unique corpus and epochs, consecutive shard replay raises loss relative to spacing repeats across epochs. The main grid has one run per configuration, uses no weight decay or dropout, and measures held-out bits per byte. Its fitted minimum is not a universal capability ceiling under finite data. The contribution clarifies references, fixed quantities and replay schedules; it does not establish a universal repetition threshold.
 
 The options in a data-limited setting are therefore not restricted to enlarging the model or stopping training. Repeating existing data, relaxing filters, adding heterogeneous domains, and generating new examples can all increase the nominal $D$, but introduce different biases. Comparisons should report total processed volume, unique data volume, and its sources together. Otherwise, an apparent improvement in data efficiency may simply reflect undisclosed repetition or distribution shifts.
 
@@ -437,7 +443,7 @@ The shared conclusion this survey draws from these lines of work is that systems
 
 ## T4　Post-Training and Reinforcement Learning: From Feedback Objectives to Scalable Reasoning Policies
 
-> Verification date: 2026-09-16. Organized around problems, mechanisms, experimental conditions, and limitations; a logical connection does not automatically establish direct historical influence. Newly added literature is recorded in [expansion-frontier.json](sources/expansion-frontier.json), and earlier turning points and 2026 material in [frontier.json](sources/frontier.json). Reading depth is recorded for each source; this chapter does not claim exhaustive coverage of all papers available by this date.
+> Verification date: 2026-10-12. Organized around problems, mechanisms, experimental conditions, and limitations; a logical connection does not automatically establish direct historical influence. Newly added literature is recorded in [expansion-frontier.json](sources/expansion-frontier.json), and earlier turning points and 2026 material in [frontier.json](sources/frontier.json). Reading depth is recorded for each source; this chapter does not claim exhaustive coverage of all papers available by this date.
 
 ### 1. The Starting Point Is Misaligned Objectives, Data, and Feedback, Not Insufficient Model Size
 
@@ -478,6 +484,18 @@ The coefficients vary smoothly with RM parameter count, and larger RMs generally
 
 The most important boundary is that **“gold” is defined as the reference only within the synthetic experiment. It is itself a proxy for human preferences, not actual human intent.** The study does not fully measure the second layer of mismatch between labeled preferences and real intent. The connection to verifier vulnerabilities in the next chapter is this review's synthesis across branches: both more PPO updates and more inference-time search concentrate pressure on errors in the scoring rule. Scaling compute must therefore be accompanied by checks for improvement in independent evaluations, rather than only increases in the optimized score. This also motivates subsequent attention to new feedback and scorer updates, instead of assuming that a fixed RM can be reused indefinitely. [§4.3–4.5](https://arxiv.org/html/2210.10760v1).
 
+#### How Much Optimization Can Preference Data Support?
+
+Aouad, El Gadarri, and Farias ask how preference data limits the optimization pressure a reward model can support. Under independent Gaussian response rewards, reward-independent comparison pairs, and a reward-blind reference policy, for fixed overlap and reward scale, with sufficiently many effective comparisons and a sufficiently large response space, their bounds give attainable reward gains of order
+
+$$
+\sqrt{\min\{\log M,K\}}.
+$$
+
+Here $M$ counts comparisons and $K$ bounds expected KL divergence, not FLOPs. The lower bound uses a constructed comparison set, proxy, and reference policy; it does not guarantee that ordinary reward-model training attains the bound or prove that every policy deteriorates beyond it.
+
+Experiments use a 70B gold reward model and 0.6B–4B Qwen3 proxies. Increasing $M$ from 600 to 300,000 adds prompts while retaining 300 comparisons per prompt. Evaluation uses 128 disjoint prompts with 8,192 responses each. The principal fit concerns the gold-reward peak selected over an optimization grid as a function of $M$, using gold scores rather than deployable gold-free tuning or a validated two-dimensional forecast for arbitrary $(M,K)$. Exponential tilting reweights fixed response pools; it is not an actual policy-training experiment. This connects feedback supply to optimization limits, while leaving human preferences, adaptive data collection, and compute-optimal allocation unresolved. [Original paper, §§3–6 and Appendix B](https://arxiv.org/html/2609.38526v1)
+
 ### 3. Key Turning Point One: Why Can Self-Training Improve, and Why Can It Run Out of Its Own Answers?
 
 When only a few reasoning demonstrations are available, directly expanding human annotation is expensive. STaR's insight is to turn the paths on which a model occasionally answers correctly into new training data: generate reasoning and answers, retain successful examples, then fine-tune. For failed problems, the paper also tries giving the model the correct answer so that it can construct a rationale backward, then removing the answer hint during training. In the original method, each round fine-tunes again from the original pretrained model to reduce overfitting from accumulated training. It does not simply continue training the same checkpoint indefinitely. [STaR, §3–4](https://arxiv.org/abs/2203.14465)
@@ -488,7 +506,7 @@ q_{t+1}(y\mid x)=
 \frac{R(x,y)\pi_t(y\mid x)}
 {\mathbb{E}_{y'\sim\pi_t}[R(x,y')]}.
 $$
-Subsequently maximizing $\mathbb{E}_{q_{t+1}}\log\pi_\theta(y\mid x)$ moves more probability mass onto good solutions already found. ReST-EM organizes this family of methods through an expectation-maximization perspective: binary rewards correspond to supervised learning after rejection sampling, and the paper studies the roles of model size, generation volume, and iteration in mathematics and code tasks. [ReST-EM, §3–5](https://arxiv.org/abs/2312.06585)
+Subsequently maximizing $\mathbb{E}_{q_{t+1}}\log \pi_\theta(y\mid x)$ moves more probability mass onto good solutions already found. ReST-EM organizes this family of methods through an expectation-maximization perspective: binary rewards correspond to supervised learning after rejection sampling, and the paper studies the roles of model size, generation volume, and iteration in mathematics and code tasks. [ReST-EM, §3–5](https://arxiv.org/abs/2312.06585)
 
 The formula also directly exposes a boundary. If every reward in the current sampled batch for a problem is zero, the empirical estimate of the normalizing denominator is zero, and that batch provides no positive examples. This does not mean that the true expectation in the formula is zero. If the checker accepts examples with incorrect reasoning but a correct answer, the incorrect steps will also be reinforced. Answer hints, teacher models, tools, and search can all introduce new information into the process; gains under these conditions cannot be attributed to a model creating knowledge from nothing. Conversely, failing to find an answer with finite sampling does not prove that the base model's probability of answering the problem correctly is strictly zero. These are two distinct issues in the debate over the boundaries of a model's support.
 
@@ -606,7 +624,7 @@ The next chapter turns to [Inference Budgets and Search](docs/en/05-inference.md
 
 ## T5　Inference Budgets and Search: Turning More Compute into More Reliable Answers
 
-> Verification date: 2026-10-05. Covers representative works that help explain mechanisms; much of the 2026 material remains in preprint form. Experiments have not been independently reproduced. Sources, versions, and reading scope are recorded in [frontier.json](sources/frontier.json) and [expansion-frontier.json](sources/expansion-frontier.json); the Hugging Face authors' blog is recorded in the editorial primary-source collection.
+> Verification date: 2026-10-12. Covers representative works that help explain mechanisms; much of the 2026 material remains in preprint form. Experiments have not been independently reproduced. Sources, versions, and reading scope are recorded in [frontier.json](sources/frontier.json) and [expansion-frontier.json](sources/expansion-frontier.json); the Hugging Face authors' blog is recorded in the editorial primary-source collection.
 
 Pretraining invests compute in shared parameters, whereas inference allocates compute to a particular problem. Chain-of-Thought changes a single generation process through demonstrations of intermediate steps; Self-Consistency reduces the instability of a single path through multiple-path sampling and answer aggregation. They open serial and parallel directions, respectively, but leave cost and correct selection unresolved. [CoT](https://arxiv.org/abs/2201.11903), [Self-Consistency](https://arxiv.org/abs/2203.11171)
 
@@ -670,7 +688,7 @@ System comparisons should therefore ideally show three curves together: scale ve
 
 #### Why Can Submission Fail Even When a Correct Candidate Exists?
 
-Beyond verification cost, a selection protocol can discard usable outputs. [SELF-POT (Yang et al., 2026), §3.3 and Appendix J.2](https://arxiv.org/html/2610.01110v1) replays selection on fixed programming pools: five models each face 100 tasks, giving 500 scheduled cells; 498 pools are retained and two missing records remain failures. Falling back to the first nonempty candidate when judging returns no valid nonempty answer increases correct submissions from 376 to 437, retaining all spent judge costs. This output-aware fallback is a post-hoc amendment, not a preregistered intervention.
+Beyond verification cost, a selection protocol can discard usable outputs. [SELF-POT (Yang et al., 2026), §3.3 and Appendix J.2](https://arxiv.org/html/2610.01110v2) replays selection on fixed programming pools: five models each face 100 tasks, giving 500 scheduled cells; 498 pools are retained and two missing records remain failures. Falling back to the first nonempty candidate when judging returns no valid nonempty answer increases correct submissions from 376 to 437, retaining all spent judge costs. This output-aware fallback is a post-hoc amendment, not a preregistered intervention.
 
 Public-example selection reaches 453/500 while removing judge-stage logical API charges; hidden correctness labels score outcomes but never guide selection. Coverage, selection accuracy and successful submission therefore also depend on protocol reliability. However, this is a retrospective replay on fixed candidates, not freshly generated, matched-budget end-to-end trials. Logical API charges are neither invoices nor hardware costs; local test execution is accounted for separately. The result supports explicit failure recovery, not a general claim that more test-time compute is cost-effective on every task.
 
@@ -772,7 +790,7 @@ Together with [Post-Training and Reinforcement Learning](docs/en/04-posttraining
 
 ## Chapter 6 — Theory and Capability Evaluation: Why Do Power Laws Arise, and What Can They Predict?
 
-> Updated: 2026-09-16. Problem thread T6. This chapter places explanations of loss scaling and predictions of task capability within the same chain of evidence, while treating them as distinct claims. Connections between chapters are this survey's synthesis of research questions; relationships to prior work count as historical influence only when the source explicitly discusses them.
+> Updated: 2026-10-12. Problem thread T6. This chapter places explanations of loss scaling and predictions of task capability within the same chain of evidence, while treating them as distinct claims. Connections between chapters are this survey's synthesis of research questions; relationships to prior work count as historical influence only when the source explicitly discusses them.
 
 [Chapter 1](docs/en/01-predictability-budget.md) established empirical relationships between resources and training outcomes; the [data chapter](docs/en/02-data.md) and [architecture chapter](docs/en/03-architecture-deployment.md) explained how changing the recipe changes those relationships. Successful fitting nevertheless leaves two questions: why can very different models exhibit power laws? And even if average prediction error is predictable, can we know when a model will solve a particular class of problems or pass a particular test? The first requires a mechanistic explanation; the second requires a bridge between measurement and transfer.
 
@@ -834,6 +852,18 @@ This also changes the connection to [Chapter 1](docs/en/01-predictability-budget
 | Resolution / spectral modes | Unresolved representational directions | Changing data geometry and the target spectrum should change exponents | Representation evolution during training |
 | Training dynamics | Joint constraints from finite time and finite resources | Time, sample, and model bottlenecks can be asymmetric | More general networks and optimizers |
 | Feature learning | Training changes the effective kernel and learning directions | Exponents may change for tasks that are harder under the initial representation | Quantitative, advance predictions for modern LLMs |
+
+#### Another Return to Depth: Selective Retrieval and Error Cancellation
+
+Spectral explanations still leave a question: can nonlinear attention change what depth does? [Peng et al., 2026, §2–4 and §6](https://arxiv.org/html/2610.11063v1) compare linear and softmax attention in controlled in-context learning: copying a matching token's label or averaging the two most relevant tokens' labels. On the latter task, nonlinear models show approximately inverse-depth decay of excess loss above a fitted floor across tested spectra. Selective retrieval lets layers form similar but nonidentical predictions: aggregation cancels some layer-specific errors, while shared error sets a plateau.
+
+With separate input and label streams and context fixed across layers, the controlled model can be written as a parallel average of layer predictions. In this representation, the mean squared error at depth $L$ satisfies
+
+$$
+\mathcal{R}_L=C_L+\frac{A_L-C_L}{L}.
+$$
+
+$C_L$ is the cross-layer shared-error term, and $A_L-C_L$ measures prediction disagreement. This identity alone does not prove an exponent of one; both terms' depth dependence needs checking. Appendix D.4's convergence fits provide an empirical consistency check. A counterexample matters: in the isotropic-spectrum extension, with context updates enabled, top-16 quickly saturates while top-2 retains depth gains. The mechanism supplements spectral accounts without replacing all such theories, and establishes neither real-language generality nor joint width, data, and compute optima.
 
 ### 6.5 From Loss to Capability: A Function Is Still Missing from the Prediction Chain
 
@@ -904,7 +934,7 @@ Reading records are available in the [new primary-source metadata](sources/expan
 
 ## Chapter 7 — Vision, Multimodality, Diffusion, and Robotics: What Should Be Scaled to Improve the Target Capability?
 
-> Updated: 2026-09-21. Problem thread T7. What transfers across domains is the experimental methodology and the resource-allocation question, not an assumed shared exponent. Core sources read in full include mixed-modal scaling, diffusion inference search, and robotic data scaling; frontier or historical additions checked only at the abstract level are marked separately.
+> Updated: 2026-10-12. Problem thread T7. What transfers across domains is the experimental methodology and the resource-allocation question, not an assumed shared exponent. Core sources read in full include mixed-modal scaling, diffusion inference search, and robotic data scaling; frontier or historical additions checked only at the abstract level are marked separately.
 
 Parameter counts and token counts in language models provide a convenient starting point, but they are not naturally shared units across every domain. An image can become hundreds of patches, thousands of discrete codes, or a continuous latent representation; a robotic trajectory also carries correlations involving environments, objects, actions, and time. Plotting different domains on log-log axes therefore does not establish that they follow the same resource relationships.
 
@@ -958,6 +988,12 @@ This interaction view also explains why average loss can hide imbalances within 
 Unresolved boundaries concern representations, mixture ratios, and objectives. An image tokenizer's compression ratio changes sequence length, visual detail, and the actual cost per image; speech tokens introduce their own information loss. Equal token counts therefore should not be interpreted as equal semantic information. The appendix's comparisons of visual and speech reconstruction underscore that the tokenizer is part of the entire scaling system. Extending the result to unequal mixtures, more modalities, long video, different task losses, and perception–action loops requires identifying the interaction terms again, rather than copying these coefficients.
 
 MM1's abstract offers an engineering route to follow: image encoders, resolution, image-token counts, and mixtures of data types affect its models more than some connector designs. This agrees with the question raised here—resource and data bottlenecks remain after format unification—but MM1's detailed ablations remain candidate reading in this edition. Its abstract cannot justify a universal architectural ranking for all MLLMs. [MM1, 2024](https://arxiv.org/abs/2403.09611v4)
+
+#### Pairing Is Also a Resource: Why Equal Modality Totals Are Insufficient
+
+Interaction terms leave another variable unidentified: whether modalities occur together in training examples. [Ma and Narayanan, 2026, §3–6](https://arxiv.org/html/2609.36263v1) hold per-modality counts and training updates fixed while varying pairing, measuring cross-entropy in Digits, VQA classification heads over frozen encoders, and NLVR2 fine-tuning. Their four-channel model separates redundant, modality-unique, and jointly available information; paired counts drive the last component, with a gate allowing learning to start only after sufficient paired exposure. This adds an experimental axis: more unpaired examples do not equal more cross-modal connections.
+
+However, more pairing means fewer distinct labeled rows and more epochs; equal updates also do not establish equal FLOPs across architectures. NLVR2 curves exclude seeds that never escape chance, and test loss uses validation-set temperature calibration, so these curves do not establish unconditional training success. The abstract's 3.2% versus 10.4% refers to Table 3's full-pairing holdout, not aggregate error across all extrapolation tests. The study supports counting pairing as a resource; unlabeled generative pretraining and frontier model scales remain untested.
 
 ### 7.4 From Understanding to Generation: Which Kind of Compute Does Diffusion Scale?
 
@@ -1050,7 +1086,7 @@ Initial search date: **September 16, 2026**. This round established **18 traceab
 
 Community discussion exposes unresolved questions among researchers and practitioners. Technical conclusions still require papers, author code, and official reports: high view counts indicate reach, not correctness, and vigorous debate is not independent replication. Full fields appear in [community.json](sources/community.json); searches and leads not included appear in [community-search-log.md](sources/community-search-log.md).
 
-The September 21 and September 28 additions bring the cumulative record count to 20. Earlier counters retain their original observation dates; see Sections 6 and 7 for the new records.
+The September 21, September 28, and October 12 additions bring the cumulative record count to 21. Earlier counters retain their original observation dates; see Sections 6–8 for the new records.
 
 ### 1. Operationalizing “High Attention”
 
@@ -1158,6 +1194,18 @@ Related X and YouTube URLs were corroborated through public cross-links, but thi
 ### 7. Observation Added on 2026-09-28: Separate Current Evaluation Failures from Long-Term Extrapolation
 
 The indexed result for [RD-10: RSI discussion](https://www.reddit.com/r/MachineLearning/comments/1wgazy4/rsi_is_not_happening_r/) explicitly gives September 14, 2026 and a score of 288, meeting this radar's editorial Reddit threshold. It was retrieved on September 28; the counter's measurement time is unknown. The title is the poster's interpretation. Only the abstract and version history of the [linked study v2](https://arxiv.org/abs/2607.27191v2) were checked this round: observations from two cases cannot establish that RSI is impossible. The disagreement motivates recording models, tasks, budgets, and human intervention before extrapolating; comments are not technical evidence. Direct page reading exposed no counter, and no new verifiable X or YouTube attention metrics were obtained. Historical counts remain unchanged.
+
+### 8. October 12, 2026 Addition: Small Parameter Counts Do Not Establish Low System Cost
+
+The search window runs from September 21 through October 12, 2026.
+
+| ID | Discussion and primary sources | Publication-date evidence | Visible attention and classification |
+|---|---|---|---|
+| RD-11 | [FrogNano 4B release discussion](https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/); [paper v5](https://arxiv.org/abs/2609.07925v5), [official model card](https://huggingface.co/microsoft/FrogNano-4B-2609) | Index explicitly shows 2026-10-02 | Indexed score 223; observed October 12, measurement time unknown; meets the Reddit editorial screening threshold |
+
+The discussion connects local deployment of a small model with task curricula and tool interfaces. The [official model card](https://huggingface.co/microsoft/FrogNano-4B-2609) distinguishes not imitating stronger-model solver trajectories from still using AI-generated tasks, reference patches and hidden tests. This motivates tracking generation, training and verification costs alongside interface conditions; small parameter count does not establish compute optimality. This round checked the abstract, version history, model card and selected method passages, without reproduction. Version 1 appeared September 7 and v5 was revised October 5; a complete revision diff was not performed. The October 2 post predates v5 and cannot be interpreted as feedback on that revision. The direct page exposed no counters, and selected replies do not establish community consensus. The item is included only in the radar and source index.
+
+X post identities, dates, or labeled counters remain unverified. This round obtained no qualifying new YouTube sample, and the tested prior candidate failed to open directly. These access limits do not establish an absence of new discussion. See the [complete weekly log](sources/weekly-2026-10-12-community.json).
 
 
 ---
@@ -1458,16 +1506,21 @@ Full metadata are available in the [reference index](REFERENCES.en.md), [BibTeX]
 | 2026 | [Adaptive Test-Time Compute Allocation for Reasoning LLMs via Constrained Policy Optimization](https://arxiv.org/abs/2604.14853) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Capability Scaling-Down Laws for LLM Compression](https://arxiv.org/abs/2610.02462) | Selected full-text sections | v1 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
+| 2026 | [Emergent Inverse-Depth Scaling From Nonlinearity In Attention](https://arxiv.org/abs/2610.11063) | Selected full-text sections | v1 / Paper / preprint | [06](docs/en/06-theory-evaluation.md) |
+| 2026 | [FrogNano: Training a 4B Coding Agent via Online Task Synthesis](https://arxiv.org/abs/2609.07925) | Selected full-text sections | v5 / Paper / preprint | Catalog only |
 | 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | Official report sections | Web snapshot / Report | [07](docs/en/07-multimodal.md) |
 | 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | Selected full-text sections | v2 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
-| 2026 | [How Much Can Language Models Gain from Test-Time Computation?](https://arxiv.org/abs/2610.01110) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
+| 2026 | [How Much Can Language Models Gain from Test-Time Computation?](https://arxiv.org/abs/2610.01110) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text](https://arxiv.org/abs/2609.40295) | Selected full-text sections | v1 / Paper / preprint | [02](docs/en/02-data.md) |
 | 2026 | [Hyperparameter Scaling Laws Across MoE Sparsity](https://arxiv.org/abs/2609.08690) | Selected full-text sections | v1 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | Abstract / metadata | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining](https://arxiv.org/abs/2609.39403) | Selected full-text sections | v1 / Paper / preprint | Catalog only |
+| 2026 | [Paired Multimodal Scaling Laws](https://arxiv.org/abs/2609.36263) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Planned Test-Time Scaling with Coordinated Reasoning Paths](https://arxiv.org/abs/2609.27374) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | Selected full-text sections | v1 / Paper / preprint | [06](docs/en/06-theory-evaluation.md) |
+| 2026 | [Revisiting scaling laws for reward optimization](https://arxiv.org/abs/2609.38526) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Scaling Vision-Language Models Is Not Enough to Mitigate Bias](https://arxiv.org/abs/2607.28211) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Thinking Long, but Short: Stable Sequential Test-Time Scaling for Large Reasoning Models](https://arxiv.org/abs/2601.09855) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
+| 2026 | [What Is a Repeated Token Worth? The Scaling Geometry of Multi-Epoch Pretraining](https://arxiv.org/abs/2610.05591) | Selected full-text sections | v1 / Paper / preprint | [02](docs/en/02-data.md) |

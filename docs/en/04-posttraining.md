@@ -1,6 +1,6 @@
 # T4　Post-Training and Reinforcement Learning: From Feedback Objectives to Scalable Reasoning Policies
 
-> Verification date: 2026-09-16. Organized around problems, mechanisms, experimental conditions, and limitations; a logical connection does not automatically establish direct historical influence. Newly added literature is recorded in [expansion-frontier.json](../../sources/expansion-frontier.json), and earlier turning points and 2026 material in [frontier.json](../../sources/frontier.json). Reading depth is recorded for each source; this chapter does not claim exhaustive coverage of all papers available by this date.
+> Verification date: 2026-10-12. Organized around problems, mechanisms, experimental conditions, and limitations; a logical connection does not automatically establish direct historical influence. Newly added literature is recorded in [expansion-frontier.json](../../sources/expansion-frontier.json), and earlier turning points and 2026 material in [frontier.json](../../sources/frontier.json). Reading depth is recorded for each source; this chapter does not claim exhaustive coverage of all papers available by this date.
 
 ## 1. The Starting Point Is Misaligned Objectives, Data, and Feedback, Not Insufficient Model Size
 
@@ -41,6 +41,18 @@ The coefficients vary smoothly with RM parameter count, and larger RMs generally
 
 The most important boundary is that **“gold” is defined as the reference only within the synthetic experiment. It is itself a proxy for human preferences, not actual human intent.** The study does not fully measure the second layer of mismatch between labeled preferences and real intent. The connection to verifier vulnerabilities in the next chapter is this review's synthesis across branches: both more PPO updates and more inference-time search concentrate pressure on errors in the scoring rule. Scaling compute must therefore be accompanied by checks for improvement in independent evaluations, rather than only increases in the optimized score. This also motivates subsequent attention to new feedback and scorer updates, instead of assuming that a fixed RM can be reused indefinitely. [§4.3–4.5](https://arxiv.org/html/2210.10760v1).
 
+### How Much Optimization Can Preference Data Support?
+
+Aouad, El Gadarri, and Farias ask how preference data limits the optimization pressure a reward model can support. Under independent Gaussian response rewards, reward-independent comparison pairs, and a reward-blind reference policy, for fixed overlap and reward scale, with sufficiently many effective comparisons and a sufficiently large response space, their bounds give attainable reward gains of order
+
+$$
+\sqrt{\min\{\log M,K\}}.
+$$
+
+Here $M$ counts comparisons and $K$ bounds expected KL divergence, not FLOPs. The lower bound uses a constructed comparison set, proxy, and reference policy; it does not guarantee that ordinary reward-model training attains the bound or prove that every policy deteriorates beyond it.
+
+Experiments use a 70B gold reward model and 0.6B–4B Qwen3 proxies. Increasing $M$ from 600 to 300,000 adds prompts while retaining 300 comparisons per prompt. Evaluation uses 128 disjoint prompts with 8,192 responses each. The principal fit concerns the gold-reward peak selected over an optimization grid as a function of $M$, using gold scores rather than deployable gold-free tuning or a validated two-dimensional forecast for arbitrary $(M,K)$. Exponential tilting reweights fixed response pools; it is not an actual policy-training experiment. This connects feedback supply to optimization limits, while leaving human preferences, adaptive data collection, and compute-optimal allocation unresolved. [Original paper, §§3–6 and Appendix B](https://arxiv.org/html/2609.38526v1)
+
 ## 3. Key Turning Point One: Why Can Self-Training Improve, and Why Can It Run Out of Its Own Answers?
 
 When only a few reasoning demonstrations are available, directly expanding human annotation is expensive. STaR's insight is to turn the paths on which a model occasionally answers correctly into new training data: generate reasoning and answers, retain successful examples, then fine-tune. For failed problems, the paper also tries giving the model the correct answer so that it can construct a rationale backward, then removing the answer hint during training. In the original method, each round fine-tunes again from the original pretrained model to reduce overfitting from accumulated training. It does not simply continue training the same checkpoint indefinitely. [STaR, §3–4](https://arxiv.org/abs/2203.14465)
@@ -51,7 +63,7 @@ q_{t+1}(y\mid x)=
 \frac{R(x,y)\pi_t(y\mid x)}
 {\mathbb{E}_{y'\sim\pi_t}[R(x,y')]}.
 $$
-Subsequently maximizing $\mathbb{E}_{q_{t+1}}\log\pi_\theta(y\mid x)$ moves more probability mass onto good solutions already found. ReST-EM organizes this family of methods through an expectation-maximization perspective: binary rewards correspond to supervised learning after rejection sampling, and the paper studies the roles of model size, generation volume, and iteration in mathematics and code tasks. [ReST-EM, §3–5](https://arxiv.org/abs/2312.06585)
+Subsequently maximizing $\mathbb{E}_{q_{t+1}}\log \pi_\theta(y\mid x)$ moves more probability mass onto good solutions already found. ReST-EM organizes this family of methods through an expectation-maximization perspective: binary rewards correspond to supervised learning after rejection sampling, and the paper studies the roles of model size, generation volume, and iteration in mathematics and code tasks. [ReST-EM, §3–5](https://arxiv.org/abs/2312.06585)
 
 The formula also directly exposes a boundary. If every reward in the current sampled batch for a problem is zero, the empirical estimate of the normalizing denominator is zero, and that batch provides no positive examples. This does not mean that the true expectation in the formula is zero. If the checker accepts examples with incorrect reasoning but a correct answer, the incorrect steps will also be reinforced. Answer hints, teacher models, tools, and search can all introduce new information into the process; gains under these conditions cannot be attributed to a model creating knowledge from nothing. Conversely, failing to find an answer with finite sampling does not prove that the base model's probability of answering the problem correctly is strictly zero. These are two distinct issues in the debate over the boundaries of a model's support.
 

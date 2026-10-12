@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "edition": "v0.3.3",
-  "last_successful_search": "2026-10-05",
-  "last_content_update": "2026-10-05",
-  "pdf_content_date": "2026-10-05",
+  "edition": "v0.3.4",
+  "last_successful_search": "2026-10-12",
+  "last_content_update": "2026-10-12",
+  "pdf_content_date": "2026-10-12",
   "coverage": "Representative narrative review; not exhaustive; primary claims not independently reproduced",
   "automation": {
     "id": "scaling-law",
@@ -18,7 +18,7 @@
     "status": "published",
     "visibility": "public",
     "branch": "main",
-    "last_verified": "2026-10-05"
+    "last_verified": "2026-10-12"
   },
   "coverage_limits": [
     "Three X posts lack observable counters; one has a labeled search-index view count",
@@ -40,16 +40,20 @@
     "Independent evaluation of WildAI beyond detector-defined English sub-1B pretraining and a final test not used for form selection.",
     "Compression predictors: coefficient refitting, generated-task success and measured deployment cost under matched budgets.",
     "SELF-POT fallback/selection reruns with fresh candidates and complete API plus local-execution costs.",
-    "IronMind broader closed-loop replication and uncertainty; CliffCompaction, length-scaling tax, PhantomEnvironments and reasoning-state PRM method/cost audits."
+    "IronMind broader closed-loop replication and uncertainty; CliffCompaction, length-scaling tax, PhantomEnvironments and reasoning-state PRM method/cost audits.",
+    "Repeated-data excess-loss fit beyond threshold-selected mostly single-run grids; average repeat value and marginal stopping rules differ.",
+    "Reward-data/KL limits beyond IID Gaussian and nonadaptive feedback; deployable peak selection without gold access.",
+    "Inverse-depth mechanisms beyond controlled split streams and fixed contexts; paired multimodal scaling without seed filtering at generative frontier scale.",
+    "FrogNano full-cost and interface-controlled evaluation; DiVeR, architectural sampling and CARET method/budget audits."
   ],
-  "last_validation_date": "2026-10-05",
-  "source_count": 171,
-  "community_count": 20,
+  "last_validation_date": "2026-10-12",
+  "source_count": 176,
+  "community_count": 21,
   "technical_chapters": 7,
-  "sources_cited_in_technical_chapters": 161,
-  "technical_han_characters": 39546,
+  "sources_cited_in_technical_chapters": 165,
+  "technical_han_characters": 40896,
   "reading_depth_summary": {
-    "正文定向阅读": 126,
+    "正文定向阅读": 131,
     "摘要/引言": 3,
     "摘要/元数据": 31,
     "官方报告选段": 2,
@@ -62,18 +66,19 @@
       "zh-CN"
     ],
     "translated_chapters": 12,
-    "translation_reviewed_on": "2026-10-05"
+    "translation_reviewed_on": "2026-10-12"
   },
   "last_search_run": {
-    "date": "2026-10-05",
-    "window_start": "2026-09-14",
+    "date": "2026-10-12",
+    "window_start": "2026-09-21",
     "status": "completed_with_access_limits",
-    "record": "data/maintenance-runs/2026-10-05.json",
+    "record": "data/maintenance-runs/2026-10-12.json",
     "access_limits": [
-      "Targeted search is non-exhaustive and indexing can omit recent work.",
-      "WildAI author X leads lacked a verified canonical status URL and standard counters; no formal community record added.",
-      "Some X/YouTube/Reddit direct reads failed or lacked counters; this does not establish absent discussion.",
-      "New papers are preprints; selected full-text review is not independent replication."
+      "Targeted discovery is not exhaustive; search indexing can omit recent work.",
+      "X mirrors lacked verified original status dates and labeled counters; no formal new X entry.",
+      "No qualifying new YouTube sample verified; tested prior short failed to open.",
+      "Reddit score is an indexed snapshot, not a live count.",
+      "Selected primary sections reviewed; no independent experiment reproduction."
     ]
   },
   "pdf_status": "current"
