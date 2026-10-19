@@ -1,0 +1,523 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-10-19",
+  "window": {
+    "start": "2026-09-28",
+    "end": "2026-10-19",
+    "inclusive": true
+  },
+  "baseline_head": "8618fcf",
+  "baseline_edition": "v0.3.4",
+  "baseline_catalog_count": 21,
+  "baseline_files_read": [
+    "METHODOLOGY.md",
+    "UPDATING.md",
+    "data/state.json",
+    "sources/community.json",
+    "sources/weekly-2026-10-12-community.json"
+  ],
+  "scope": "Community discovery and primary-source follow-up confined to this scaling-law survey. Only this weekly log is written; no canonical catalog, radar, state or historical counter is changed.",
+  "policy": {
+    "missing_metrics": "null means not observed, not zero.",
+    "index_metrics": "Search-index counters are snapshots with unknown measurement time, not current platform rankings.",
+    "publication_date": "Explicit calendar dates are retained where visible. Do not use crawl dates, recent replies, transcript-production dates or unanchored relative labels as original publication dates.",
+    "attention_thresholds": {
+      "reddit_score": 100,
+      "youtube_views": 100000,
+      "x_explicit_views": 100000
+    },
+    "cross_platform_ranking": false,
+    "technical_evidence": "Community discussion identifies questions; papers and author reports must support technical claims. Third-party reaction roundups cannot establish original-platform engagement or consensus.",
+    "deduplication": "Compared candidate identities with the 21 canonical entries and prior weekly log. Recurring low-score context is marked below; all 21 historical entries remain unchanged.",
+    "tools": "Actual searches used web__run. Parallel CLI was not used; the parent reported it unavailable on PATH."
+  },
+  "search_query_count": 32,
+  "queries": [
+    {
+      "batch": 1,
+      "queries": [
+        {
+          "q": "\"scaling laws\" after:2026-09-27 before:2026-10-20 site:reddit.com"
+        },
+        {
+          "q": "\"test-time\" \"scaling\" after:2026-09-27 before:2026-10-20 site:reddit.com"
+        },
+        {
+          "q": "\"scaling laws\" \"October 2026\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"scaling\" \"compute\" after:2026-09-27 before:2026-10-20 site:x.com"
+        }
+      ],
+      "outcome": "Returned October 8 and September 28 low-score discussions already seen in prior weekly logs, plus old original posts resurfaced by recent replies. X results were old infrastructure/blog pages rather than relevant new statuses; no qualifying YouTube item."
+    },
+    {
+      "batch": 2,
+      "queries": [
+        {
+          "q": "\"scaling\" \"October 2026\" \"reinforcement\" site:reddit.com/r/LocalLLaMA"
+        },
+        {
+          "q": "\"scaling\" \"October 2026\" site:reddit.com/r/MachineLearning"
+        },
+        {
+          "q": "\"inference\" \"October 2026\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"scaling laws\" site:x.com/ after:2026-09-27 -site:blog.x.com -site:communitynotes.x.com"
+        }
+      ],
+      "outcome": "Mostly irrelevant business/forecast results; found an October 8 low-score frozen-model memory demonstration post. No new qualified scaling-law discussion on the requested platforms."
+    },
+    {
+      "batch": 3,
+      "queries": [
+        {
+          "q": "\"compute-optimal\" after:2026-09-27 before:2026-10-20",
+          "domains": [
+            "reddit.com"
+          ]
+        },
+        {
+          "q": "\"scaling\" \"RL\" after:2026-10-11 before:2026-10-20",
+          "domains": [
+            "reddit.com/r/LocalLLaMA"
+          ]
+        },
+        {
+          "q": "\"test-time compute\" \"2026\"",
+          "domains": [
+            "youtube.com"
+          ],
+          "recency": 21
+        },
+        {
+          "q": "\"scaling laws\" \"2026\"",
+          "domains": [
+            "x.com"
+          ],
+          "recency": 21
+        }
+      ],
+      "outcome": "All four queries returned no results."
+    },
+    {
+      "batch": 4,
+      "queries": [
+        {
+          "q": "\"scaling\" \"October 16\" \"2026\" AI"
+        },
+        {
+          "q": "\"reinforcement learning\" \"October 2026\" \"reddit\""
+        },
+        {
+          "q": "\"scaling laws\" \"October\" \"2026\" \"YouTube\""
+        },
+        {
+          "q": "\"test-time scaling\" \"October\" \"2026\" \"Twitter\""
+        }
+      ],
+      "outcome": "Broader discovery found a secondary transcript for a Dwarkesh clip, an Indic-data report lead, and a low-score daily discussion about a new Goodfire interpretability essay. No platform metrics or upload dates were inferred from those secondary pages."
+    },
+    {
+      "batch": 5,
+      "queries": [
+        {
+          "q": "\"UdnYzYw-t5Y\""
+        },
+        {
+          "q": "\"Scaling Indic Pretraining\" \"reddit\""
+        },
+        {
+          "q": "\"October 2026\" \"superposition\" \"OpenAI\""
+        },
+        {
+          "q": "\"scaling laws\" \"October 2026\" \"Views\""
+        }
+      ],
+      "outcome": "Exact video-ID follow-up did not recover a verified platform upload date or counters. Found secondary coverage pointing to the Goodfire essay and a related reactions page. Direct YouTube open returned Internal Error."
+    },
+    {
+      "batch": 6,
+      "queries": [
+        {
+          "q": "\"Neural Networks Are Already Clean\" site:reddit.com"
+        },
+        {
+          "q": "\"Neural Networks Are Already Clean\" site:x.com"
+        },
+        {
+          "q": "\"Scaling Laws for Multimodal Data Mixtures\" (site:x.com OR site:reddit.com OR site:youtube.com)"
+        },
+        {
+          "q": "\"More Than Seeing\" \"Scalable Anchors\""
+        }
+      ],
+      "outcome": "Found low-score October 17–18 Reddit discussions of the Goodfire essay. The More Than Seeing query returned its primary arXiv abstract and mirrors; no verified new platform discussion for either multimodal title."
+    },
+    {
+      "batch": 7,
+      "queries": [
+        {
+          "q": "\"Neural Networks Are Already Clean\" \"goodfire.ai\""
+        },
+        {
+          "q": "\"2610.14423\" (site:x.com OR site:reddit.com OR site:youtube.com)"
+        },
+        {
+          "q": "\"2610.19443\" (site:x.com OR site:reddit.com OR site:youtube.com)"
+        },
+        {
+          "q": "\"Scaling Misuse Detection\" (site:x.com OR site:reddit.com OR site:youtube.com)"
+        }
+      ],
+      "outcome": "All four search queries returned no results. A separate open of the reactions page supplied original X/Reddit links, but its claimed engagement numbers were not adopted as platform metrics."
+    },
+    {
+      "batch": 8,
+      "queries": [
+        {
+          "q": "\"1x6pc0o\""
+        },
+        {
+          "q": "\"Interpretability might have been solved\" \"votes\""
+        },
+        {
+          "q": "\"2110757819427574056\""
+        },
+        {
+          "q": "\"Neural Networks Are Already Clean\" \"youtube\""
+        }
+      ],
+      "outcome": "Exact Reddit/X identifier and title follow-ups did not recover a dated original-platform score/view snapshot. Secondary discussion and unrelated material returned; the Goodfire primary essay opened successfully."
+    }
+  ],
+  "proposal": {
+    "status": "no_qualified_new_record",
+    "recommended_new_community_records": 0,
+    "entries": [],
+    "primary_source_catalog_records": [],
+    "radar_rows_zh": [],
+    "radar_rows_en": [],
+    "technical_body_change": false,
+    "rationale": "No new candidate combines sufficiently verified in-window publication/attention evidence and actionable primary-source interpretation. Keep the canonical catalog at 21. Access failures and search omissions are not evidence that no new discussions exist."
+  },
+  "context_candidates": [
+    {
+      "platform": "Reddit",
+      "title": "Can someone explain where are we currently as it relates to AI Scaling laws? Are we close to hitting the limit yet?",
+      "url": "https://www.reddit.com/r/singularity/comments/1x0ctxq/can_someone_explain_where_are_we_currently_as_it/",
+      "author": "u/StupidDialUp",
+      "published_at": "2026-10-08",
+      "publication_date_evidence": "[Thursday October 08 2026] [+18 votes]",
+      "observed_at": "2026-10-19",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 18
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "access_status": "Direct post and selected replies read; direct page had no numeric counter and only unanchored '3d ago'.",
+      "primary_sources": [],
+      "decision": "Recurring candidate from October 12, below threshold; no new verified primary experiment. A reply's 70 votes are not the post score. No historical observation overwritten."
+    },
+    {
+      "platform": "Reddit",
+      "title": "Are we hitting a ceiling with LLM scaling?",
+      "url": "https://www.reddit.com/r/newAIParadigms/comments/1ws7fee/are_we_hitting_a_ceiling_with_llm_scaling/",
+      "published_at": "2026-09-28",
+      "publication_date_evidence": "[Monday September 28 2026] [+12 votes]",
+      "observed_at": "2026-10-19",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 12
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "access_status": "Search-index post and selected replies only this round.",
+      "primary_sources": [
+        {
+          "url": "https://arxiv.org/abs/2507.21184",
+          "verification": "Link surfaced again in the indexed replies; primary paper not reread in this community subtask."
+        }
+      ],
+      "decision": "Recurring prior-week candidate; below threshold and not new technical evidence."
+    },
+    {
+      "platform": "Reddit",
+      "title": "AkbasCore MAM: The end of the one big context window era?",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x107xj/akbascore_mam_the_end_of_the_one_big_context/",
+      "published_at": "2026-10-08",
+      "publication_date_evidence": "[Thursday October 08 2026] [+41 votes]",
+      "observed_at": "2026-10-19",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 41
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "access_status": "Search-index post and selected replies only.",
+      "primary_sources": [],
+      "decision": "Below threshold; a small demonstration with future scaling ambitions. Release/code links were not recovered and validated in this subtask; reported benchmark numbers not adopted as survey evidence."
+    },
+    {
+      "platform": "Reddit",
+      "title": "Already Clean Neural Nets Might Enable Continual Learning",
+      "url": "https://www.reddit.com/r/ArtificialInteligence/comments/1x8h0dp/already_clean_neural_nets_might_enable_continual/",
+      "published_at": "2026-10-17",
+      "publication_date_evidence": "[Saturday October 17 2026] [+17 votes]",
+      "observed_at": "2026-10-19",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 17
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "access_status": "Indexed post only.",
+      "primary_sources": [
+        {
+          "url": "https://already-clean.goodfire.com/",
+          "verification": "Header, short-version framing, preliminary-audit caveats and selected passages read. Not the entire essay or interactive experiments."
+        }
+      ],
+      "decision": "Below threshold. The post extends an informal interpretability hypothesis into speculative memory/continual-learning proposals; those extensions are not established scaling results."
+    },
+    {
+      "platform": "Reddit",
+      "title": "Already Clean Neural Nets Might Enable Continual Learning",
+      "url": "https://www.reddit.com/r/newAIParadigms/comments/1x8rj7v/already_clean_neural_nets_might_enable_continual/",
+      "published_at": "2026-10-18",
+      "publication_date_evidence": "[Sunday October 18 2026] [+12 votes]",
+      "observed_at": "2026-10-19",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 12
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "access_status": "Indexed post only.",
+      "primary_sources": [
+        {
+          "url": "https://already-clean.goodfire.com/",
+          "verification": "Selected framing/caveat passages read, as above."
+        }
+      ],
+      "decision": "Same discussion cross-post, not an independent research result; below threshold."
+    },
+    {
+      "platform": "Reddit",
+      "title": "Singularity Daily Discussion Thread - Oct 16, 2026",
+      "url": "https://www.reddit.com/r/singularity/comments/1x7lehe/singularity_daily_discussion_thread_oct_16_2026/",
+      "published_at": "2026-10-16",
+      "publication_date_evidence": "[Friday October 16 2026] [+36 votes]",
+      "observed_at": "2026-10-19",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 36
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "access_status": "Search-index selected replies.",
+      "primary_sources": [],
+      "decision": "General daily thread; its total score is not a measure of attention to any particular technical claim. A reply prompted the Goodfire primary-source follow-up, without validating that reply's assertions."
+    }
+  ],
+  "unverified_candidates": [
+    {
+      "platform": "Reddit",
+      "title": "Interpretability might have been solved by an Open AI guy: \"Neural Networks Are Already Clean\"",
+      "url": "https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/",
+      "author": "u/FomalhautCalliclea",
+      "published_at": null,
+      "observed_at": "2026-10-19",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": "unavailable_on_direct_page",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "access_status": "Direct post and selected replies readable, but no numeric counters or absolute posting date. Relative '8h ago' has no usable reference time.",
+      "primary_sources": [
+        {
+          "url": "https://already-clean.goodfire.com/",
+          "kind": "author_research_essay",
+          "verification": "Selected introductory framing, preliminary-audit caveats and companion-paper statements read; full essay and interactive evidence not audited."
+        }
+      ],
+      "discovery_urls": [
+        "https://alreadyclean.novcog.us.com/reactions"
+      ],
+      "third_party_attention_claim": {
+        "claimed_score": 540,
+        "claimed_comments": 101,
+        "source_claimed_snapshot": "2026-10-16 around 13:00 UTC",
+        "source_url": "https://alreadyclean.novcog.us.com/reactions",
+        "adopted_as_platform_metrics": false,
+        "note": "The roundup says it used early archive snapshots. This subtask could not reproduce the date/score from an original-platform index or direct counter."
+      },
+      "discussion_focus": "Some replies conflate interpretable neurons, model size and a supposed end to scaling; other replies question the inference. The post title's employer and solved-interpretability framing are not endorsed.",
+      "decision": "Candidate only: verified original URL and readable primary essay, but original publication date and qualifying attention metric remain unverified. No change to the theory chapter."
+    },
+    {
+      "platform": "X",
+      "title": "Nick Cammarata launches Neural Networks Are Already Clean",
+      "url": "https://x.com/nickcammarata/status/2110757819427574056",
+      "author": "@nickcammarata",
+      "published_at": null,
+      "observed_at": "2026-10-19",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": "unavailable",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "access_status": "Following the original-status link returned 403 Forbidden. Exact status-ID search returned secondary coverage, not a verified original-platform date/counter.",
+      "primary_sources": [
+        {
+          "url": "https://already-clean.goodfire.com/",
+          "kind": "author_research_essay",
+          "verification": "Selected framing and limitation passages read."
+        }
+      ],
+      "discovery_urls": [
+        "https://alreadyclean.novcog.us.com/reactions",
+        "https://www.advanceintelligence.ai/2026-10-15"
+      ],
+      "third_party_attention_claim": {
+        "source_url": "https://alreadyclean.novcog.us.com/reactions",
+        "source_claimed_snapshot": "2026-10-16 around 13:00 UTC",
+        "claimed_views_approx": 2730000,
+        "claimed_likes_approx": 16600,
+        "claimed_quotes_approx": 1188,
+        "adopted_as_platform_metrics": false,
+        "note": "These are third-party claims, not observed X counters. They remain outside the metrics object and are not used to qualify this candidate."
+      },
+      "decision": "Original URL retained for follow-up; no formal new X record or high-attention classification from secondary counts."
+    },
+    {
+      "platform": "YouTube",
+      "title": "What comes after scaling pre-training? – Illya Sutskever",
+      "url": "https://www.youtube.com/watch?v=UdnYzYw-t5Y",
+      "channel": "Dwarkesh Clips (secondary transcript attribution only)",
+      "published_at": null,
+      "observed_at": "2026-10-19",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": "unavailable",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "access_status": "Direct video open returned Internal Error. Exact video-ID follow-up did not recover usable upload metadata or counters.",
+      "discovery_urls": [
+        "https://blumify.io/t/youtube/UdnYzYw-t5Y/what-comes-after-scaling-pre-training-illya-sutskever"
+      ],
+      "transcript_created_at": "2026-10-16",
+      "transcript_date_source": "Secondary transcript page labels this as its transcription date, not the video's upload date.",
+      "reading_depth": "Secondary metadata and summary only; video not watched and full transcript not analyzed.",
+      "primary_sources": [],
+      "decision": "Publication date and attention unknown. Do not interpret a new transcript as a newly uploaded interview or a fresh research result."
+    }
+  ],
+  "primary_source_checks": [
+    {
+      "url": "https://already-clean.goodfire.com/",
+      "title": "Neural Networks Are Already Clean",
+      "author": "Nick Cammarata",
+      "type": "author_research_essay",
+      "reading_depth": "official_report_sections",
+      "sections_read": "Header; selected Short Version and opening paragraphs; find results for working hypothesis, preliminary, and paper, including selected caveat and appendix passages.",
+      "verification_date": "2026-10-19",
+      "status": "candidate_only",
+      "finding": "The author explicitly frames the essay as an informal working hypothesis; reported interpretability proportions depend on thresholds, and a companion technical paper is forthcoming in the viewed text.",
+      "limitation": "Not a controlled universal scaling law or a proof that superposition is absent. Full essay, galleries, model code, and independent replications were not audited. No revision of established survey conclusions proposed."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.19443",
+      "title": "More Than Seeing: Vision as Scalable Anchors in Native Multimodal Pre-Training",
+      "reading_depth": "search_index_abstract",
+      "verification_date": "2026-10-19",
+      "status": "parent_handles_primary_review",
+      "finding": "Primary arXiv abstract surfaced in title search; not used to infer community attention. Parent separately owns the full source review."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.14423",
+      "title": "Scaling Laws for Multimodal Data Mixtures",
+      "reading_depth": "not_read_in_this_subtask",
+      "verification_date": "2026-10-19",
+      "status": "parent_provided_lead",
+      "finding": "Exact title/identifier platform queries found no verified community URL; parent separately reviews the primary paper."
+    }
+  ],
+  "not_selected": [
+    {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1hiqxkv/so_begins_the_era_of_test_time_compute/",
+      "reason": "Original December 20, 2024 post resurfaced through a September 28, 2026 reply. The reply does not make the old post new."
+    },
+    {
+      "url": "https://www.reddit.com/r/IntelligenceEngine/comments/1ufcoax/oh_yeah_might_have_found_a_scaling_law_seems/",
+      "reason": "Original June 25, 2026 claim outside the window; October 17 reply is not the original publication date. No empirical law adopted."
+    },
+    {
+      "url": "https://www.reddit.com/r/accelerate/comments/1ww26gw/so_here_we_are_at_the_final_quarter_of_2026_what/",
+      "reason": "October 2 general forecasting thread rather than a verified new technical result; no release speculation adopted."
+    },
+    {
+      "url": "https://www.reddit.com/r/developersIndia/comments/1h4poev",
+      "reason": "December 2, 2024 original outside the window, despite search match to Indic pretraining."
+    }
+  ],
+  "limitations": [
+    "Thirty-two purposive keyword queries are not an exhaustive census of X, YouTube or Reddit, and no platform popularity ranking is claimed.",
+    "Recent-date filters returned old posts, recent replies, current crawl timestamps and off-topic business material; those were not treated as newly published research.",
+    "No new qualifying X metric was verified. The tested Goodfire original status returned 403; third-party counts stay outside accepted metrics.",
+    "YouTube discovery produced a secondary transcript with an October 16 transcription date. Original upload date, view count and engagement remain null after direct access failed; no video was watched.",
+    "Reddit direct readers exposed post/reply text but omitted counters and absolute timestamps for the strongest new lead. Unanchored 8h/3d labels were not converted to dates.",
+    "Low-score candidates and cross-posts are discovery context, not evidence that a technical claim is correct or broadly agreed.",
+    "Primary follow-up was selected-section reading only; no experiments or independent replications were run.",
+    "All 21 canonical records and their historical counters are preserved. No source article text, credentials, local personal path or unrelated project material is stored in this log."
+  ],
+  "maintenance_decision": {
+    "recommend_community_additions": 0,
+    "recommend_technical_prose_additions": 0,
+    "recommend_catalog_only_sources": 0,
+    "preserve_canonical_record_count": 21,
+    "status": "completed_with_access_limits",
+    "note": "Retain the new Goodfire original links as unverified community candidates. Keep accepted community records at 21 and do not modify the radar merely to create an update."
+  }
+}

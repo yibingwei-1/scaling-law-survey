@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-19",
+  "scope": "Root reviewed paired changed paragraphs, numeric conditions and links after independent primary-source cross-review. Corrected 1B-pool learning-rate transfer, end-to-end training time, audio-to-text/vision direction and fold instability, and distinction between harness search budgets and held-out pass@1. Intro date and community access-limits wording paired. No new equations; unchanged chapters retain prior fingerprints. No experiments independently reproduced.",
+  "technical_reviews": [
+    {
+      "reviewer": "frontier",
+      "chapters": [
+        "T2",
+        "T3"
+      ],
+      "sources": [
+        "2610.15965v1",
+        "2610.17637v1"
+      ],
+      "corrections_applied": [
+        "Learning rate jointly tuned in 1B pool then transferred to smaller/larger pools.",
+        "Training-time scope replaces deployment duration."
+      ],
+      "outcome": "No unresolved substantive issue in reviewed passages; no code or complete proof audit."
+    },
+    {
+      "reviewer": "foundations",
+      "chapters": [
+        "T5"
+      ],
+      "sources": [
+        "2607.12227v4"
+      ],
+      "corrections_applied": [
+        "Separate K=5 search budget from validation-selected held-out pass@1 comparison."
+      ],
+      "outcome": "63.2, split and action/wall-clock/selection limits checked."
+    },
+    {
+      "reviewer": "community",
+      "chapters": [
+        "T7"
+      ],
+      "sources": [
+        "2610.14423v1"
+      ],
+      "corrections_applied": [
+        "Specify audio-to-text/vision directions and instability across folds.",
+        "Relative prediction error and shared-capacity title clarified."
+      ],
+      "outcome": "2.51/6.73, total parameter units, loss contents and repetition boundaries checked."
+    }
+  ],
+  "paired_review": {
+    "chapters": [
+      "introduction.md",
+      "02-data.md",
+      "03-architecture-deployment.md",
+      "05-inference.md",
+      "07-multimodal.md",
+      "04-community-radar.md"
+    ],
+    "completed_before_fingerprint_update": true,
+    "unchanged_content": "Prior reviewed chapters and old paragraphs retain previous scientific verification scope."
+  },
+  "pdf_review": {
+    "status": "pass",
+    "scope": "All English pages 1–93 and Chinese pages 1–66 visually inspected through 14 contact sheets. English page-scale review: 2,12,23,30,42,58,59,60,73,93; Chinese: 10,17,30,41,42,51,66. No visible clipping, overlap, orphan headings, missing glyphs, equation overflow or broken tables. All 26 display formulas rendered with zero fallback in both languages; inline mathematics remains readable text notation. Six changed chapter pairs reviewed before renewing fingerprints. No independent experiment reruns.",
+    "pdfs": {
+      "en": {
+        "pages": 93,
+        "link_annotations": 734,
+        "display_formulas_rendered": 26,
+        "display_formula_fallbacks": 0,
+        "external_source_targets_verified": 348,
+        "external_link_occurrences_checked": 479,
+        "sha256": "cf0938ea2f2a2478770ac8b0dc7a2807307f142e876ddf932597a8102945475f"
+      },
+      "zh-CN": {
+        "pages": 66,
+        "link_annotations": 720,
+        "display_formulas_rendered": 26,
+        "display_formula_fallbacks": 0,
+        "external_source_targets_verified": 348,
+        "external_link_occurrences_checked": 479,
+        "sha256": "762e95aa66192ffbf7b26e25c4c8c30923714cd55684a3d019dec5b3b786a440"
+      }
+    }
+  }
+}

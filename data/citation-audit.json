@@ -1,6 +1,6 @@
 {
-  "catalog_count": 176,
-  "cited_in_technical_chapters": 165,
+  "catalog_count": 182,
+  "cited_in_technical_chapters": 169,
   "chapters": [
     {
       "file": "01-predictability-budget.md",
@@ -12,16 +12,16 @@
     {
       "file": "02-data.md",
       "title": "T2　数据瓶颈：从 token 数量到有效信息、混合与训练顺序",
-      "han_characters": 5731,
-      "catalog_sources_cited": 19,
-      "all_external_links": 20
+      "han_characters": 6064,
+      "catalog_sources_cited": 20,
+      "all_external_links": 21
     },
     {
       "file": "03-architecture-deployment.md",
       "title": "T3　架构与部署：区分参数、FLOPs、显存和实际成本",
-      "han_characters": 4897,
-      "catalog_sources_cited": 22,
-      "all_external_links": 22
+      "han_characters": 5215,
+      "catalog_sources_cited": 23,
+      "all_external_links": 23
     },
     {
       "file": "04-posttraining.md",
@@ -33,9 +33,9 @@
     {
       "file": "05-inference.md",
       "title": "T5　推理预算与搜索：如何把更多计算变成更可靠的答案",
-      "han_characters": 6784,
-      "catalog_sources_cited": 31,
-      "all_external_links": 32
+      "han_characters": 7079,
+      "catalog_sources_cited": 32,
+      "all_external_links": 33
     },
     {
       "file": "06-theory-evaluation.md",
@@ -47,9 +47,9 @@
     {
       "file": "07-multimodal.md",
       "title": "第七章　视觉、多模态、扩散与机器人：扩大什么，才能改善目标能力？",
-      "han_characters": 6963,
-      "catalog_sources_cited": 27,
-      "all_external_links": 27
+      "han_characters": 7315,
+      "catalog_sources_cited": 28,
+      "all_external_links": 28
     }
   ],
   "external_links_without_catalog_match": {

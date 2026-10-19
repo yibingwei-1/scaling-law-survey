@@ -1,6 +1,6 @@
 # T3 Architecture and Deployment: Distinguishing Parameters, FLOPs, GPU Memory, and Actual Costs
 
-> Verification date: 2026-10-05. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](../../sources/foundations.json) and [additional sources](../../sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
+> Verification date: 2026-10-19. Scope: sparse experts, training parallelism, exact-attention implementations, KV representations and serving, long context, and lifecycle budgets. This chapter discusses algorithmic cost, hardware performance, and model quality separately; acceleration factors reported in individual papers are not treated as constants that generalize across hardware. See the [foundational sources](../../sources/foundations.json) and [additional sources](../../sources/expansion-foundations.json) for original sources and reading depth. No systems benchmarks were run.
 
 ## 1. When Parameters Need Not Be Activated, Scaling Laws Need New Coordinates
 
@@ -62,6 +62,12 @@ The systems branch faces another limitation: even if the algorithmic budget perm
 ZeRO instead addresses replicated storage in data parallelism. It progressively shards optimizer states, gradients, and parameters, allowing the cluster's aggregate memory to serve one model more efficiently. It does not make all communication free or eliminate every activation and temporary-buffer overhead. A discussion of theoretically accommodating a trillion parameters and evidence of completed training at that scale represent different levels of evidence. ZeRO can be combined with tensor parallelism because they address different memory and communication bottlenecks. [Rajbhandari et al., 2019/2020](https://arxiv.org/html/1910.02054v3)
 
 This survey treats such work as defining the feasible region for scaling experiments. A mathematically better $N,D$ configuration may run more slowly than a FLOPs-suboptimal configuration if it forces the model across low-bandwidth links, into overly small microbatches, or through frequent recomputation. Comparisons of training optima should therefore specify whether they optimize an ideal arithmetic budget or an actual budget for a particular cluster and deadline. The former cannot automatically stand in for the latter.
+
+### Low-Precision Training: Optimization Error Beyond Capacity Loss
+
+Lower precision changes both arithmetic cost and which errors training can remove. [Kim et al., 13 October 2026, §§3–4](https://arxiv.org/html/2610.17637v1) augment effective-parameter and effective-data models with separate persistent optimization-error terms for forward and backward quantization. Gradients evaluated at quantized weights can oscillate, while backward quantization can introduce bias. Convex analysis and a one-dimensional example motivate the form; they do not prove that real LLMs necessarily share this floor. The authors fit their 280M–910M non-embedding-parameter Qwen3 grid and published Quartet data, holding out larger models or token budgets in separate extrapolation splits.
+
+If the residual terms persist in the target regime, more compute shrinks other loss components until raising precision can become preferable to further enlarging a low-precision model. Yet increasing optimal precision with budget remains a conditional prediction: the cost model counts only matrix multiplication, assumes format speedups and equal block costs, and joint mixing relies on transfer assumptions across layers and passes. This adds precision to resource allocation without replacing end-to-end training-time measurements.
 
 ## 4. Landmark: Why Can FlashAttention Do More Arithmetic Yet Run Faster?
 

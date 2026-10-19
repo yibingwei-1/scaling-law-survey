@@ -1,0 +1,272 @@
+{
+  "date": "2026-10-19",
+  "window": {
+    "from": "2026-09-28",
+    "through": "2026-10-19"
+  },
+  "baseline_head": "8618fcfdeeeb5361131a13c8eec5331197f3b9a9",
+  "scope": "T4 post-training/RL and T5 inference budgets, primary-source new work and revisions. Canonical files not edited by this researcher.",
+  "method": "Built-in web search, primary arXiv metadata/HTML and official report reading; targeted discovery, not exhaustive. parallel-cli unavailable and not used. No experiments, paper code, complete version diff, or third-party full-text archival.",
+  "local_context_read": [
+    "METHODOLOGY.md",
+    "UPDATING.md",
+    "data/state.json",
+    "sources/weekly-2026-10-12-frontier.json (relevant record and candidate sections)",
+    "sources/weekly-2026-10-12-editor.json",
+    "docs/05-inference.md",
+    "docs/04-posttraining.md (reward-related search)",
+    "sources/editorial.json (existing source records)"
+  ],
+  "query_batches": [
+    {
+      "queries": [
+        "site:arxiv.org \"test-time\" \"scaling\" \"Oct 2026\"",
+        "site:arxiv.org \"reward\" \"scaling\" \"October 2026\"",
+        "site:arxiv.org \"inference\" \"budget\" \"16 Oct 2026\""
+      ],
+      "result_summary": "Merged results surfaced prior Architectural Sampling, DiVeR, SELF-POT, and CARET; no per-query ranking claimed."
+    },
+    {
+      "queries": [
+        "site:arxiv.org/abs/2610 \"test-time\" \"12 Oct 2026\"",
+        "site:arxiv.org/abs/2610 \"inference\" \"16 Oct 2026\"",
+        "site:arxiv.org/abs/2610 \"reinforcement learning\" \"15 Oct 2026\" scaling"
+      ],
+      "result_summary": "Empty results."
+    },
+    {
+      "queries": [
+        "site:arxiv.org/abs/2610 \"scaling\" \"reinforcement\" \"2026\"",
+        "site:arxiv.org/abs/2610 \"test-time\" \"verifier\"",
+        "site:arxiv.org/abs/2610 \"budget\" \"reasoning\"",
+        "site:arxiv.org/abs/2610 \"reward overoptimization\""
+      ],
+      "result_summary": "Merged output mostly older 2024–2025 papers/surveys; not treated as window-eligible discoveries."
+    },
+    {
+      "queries": [
+        "\"test time scaling\" \"October\" \"2026\" inference",
+        "\"reinforcement learning\" \"2026-10\" \"scaling\"",
+        "\"test-time\" \"Oct 13\" \"2026\"",
+        "\"inference\" \"Oct 16\" \"2026\" arxiv"
+      ],
+      "result_summary": "Mostly secondary explainers. One secondary lead linked harness evaluation 2607.12227; primary history corrected the secondary claim of October first publication to July first release/October revision."
+    }
+  ],
+  "supplied_leads": [
+    {
+      "url": "https://safeguards.anthropic.com/2026/self-assessment/",
+      "from": "root researcher",
+      "treatment": "Read official report; index-only recommendation."
+    }
+  ],
+  "existing_source_checks": [
+    {
+      "id": "aouad2026rewardoptimization",
+      "url": "https://arxiv.org/abs/2609.38526",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-09-29T20:43:25Z",
+      "changed_since_prior_week": false,
+      "reading_depth_this_week": "metadata and targeted HTML spot-check",
+      "sections_checked": "§3.1 assumptions, §4.2 bounds and §5.2–5.5 gold/model/peak-fit context through keyword search results",
+      "finding": "No new version. KL budget remains optimization pressure rather than FLOPs; empirical gold is Nemotron-70B-Reward and peak selection uses that gold. Existing qualification retained.",
+      "canonical_patch": null
+    },
+    {
+      "id": "yang2026selfpot",
+      "url": "https://arxiv.org/abs/2610.01110",
+      "latest_version_verified": "v2",
+      "first_published_utc": "2026-10-01T05:49:29Z",
+      "last_revised_utc": "2026-10-06T05:32:37Z",
+      "changed_since_prior_week": false,
+      "reading_depth_this_week": "metadata and targeted HTML spot-check",
+      "sections_checked": "§3.3 and Appendix J.2, Tables 13–14 and output-aware fallback paragraphs",
+      "finding": "500 scheduled cells, 498 retained pools, 376→437 and public selector453 unchanged; output-aware fallback remains post-hoc, judge costs retained, local public-test execution separate. No canonical correction found.",
+      "canonical_patch": null
+    }
+  ],
+  "recommended_body_additions": [
+    {
+      "source_record": {
+        "id": "wang2026harnessevaluation",
+        "title": "Rethinking the Evaluation of Harness Evolution for Agents",
+        "authors": [
+          "Yike Wang",
+          "Huaisheng Zhu",
+          "Zhengyu Hu",
+          "Yige Yuan",
+          "Zhengyu Chen",
+          "Shakti Senthil",
+          "Hannaneh Hajishirzi",
+          "Yulia Tsvetkov",
+          "Noah A. Smith",
+          "Pradeep Dasigi",
+          "Teng Xiao"
+        ],
+        "year": 2026,
+        "date": "2026-07-14",
+        "first_published": "2026-07-14",
+        "first_published_date": "2026-07-14",
+        "first_published_utc": "2026-07-14T00:18:42Z",
+        "last_revised_date": "2026-10-05",
+        "last_revised_utc": "2026-10-05T06:02:06Z",
+        "version": "v4",
+        "version_read": "v4",
+        "latest_version_verified": "v4",
+        "url": "https://arxiv.org/abs/2607.12227",
+        "full_text_url": "https://arxiv.org/html/2607.12227v4",
+        "type": "paper",
+        "branch": "inference-budget-harness-generalization",
+        "problem": "框架搜索可能把同题反复试验误写为可迁移改进，且未与相同反馈权限下的简单搜索比较。",
+        "insight": "分开共享框架演化与单任务框架适应；将搜索和最终评估任务隔离，并明确不同实验的预算单位。",
+        "method": "Terminal-Bench 2.1 uses three models, K=5 rollout rounds, two runs, and a 45/10/34 split; games compare task-specific adaptation against fixed-harness refinement.",
+        "result": "The held-out mean is 63.2 for both initial and evolved harnesses. Game adaptation can help under action or wall-clock caps; those caps are not equal FLOPs.",
+        "limitation": "Only one AHE-based implementation with external exploration disabled; small held-out set and two runs. Terminal editing cost excluded; ARC internal reasoning outside action cap; EdgeBench best-so-far includes host-only evaluations. No complete version diff or independent replication.",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-10-19",
+        "sections_read": "Primary arXiv metadata/history; v4 §§1–5, Tables 1–9, A.1 cost/configuration/metrics, A.3 larger-budget controls, B.1 action accounting and B.2 artifact use, C.1 protocol/cost and Table 15. Case studies B.3 only partly read; no code/figure audit.",
+        "synthesis_status": "proposed",
+        "changes_existing_conclusion": "Adds feedback access and held-out harness transfer to T5 budget accounting; does not reverse existing conditional test-time scaling claims.",
+        "evidence_status": "First release July 14, latest revision October 5, so this is a window-eligible revision of older work, not an October first publication. Reading did not establish which claims were introduced by v3/v4."
+      },
+      "placement": "T5 §4 after SELF-POT, as a short subsection on feedback access, harness search and generalization; optionally cross-link T6 evaluation discussion.",
+      "proposal_zh": "当额外推理还会改写 agent 的提示、工具或记忆，问题就变成：它改善了可复用的执行框架（harness），还是仅适应了正在评测的任务？Wang 等在 10 月修订稿中区分这两个目标。在 Terminal-Bench 2.1 上，他们以五轮 rollout、两次运行比较三个模型；按 45/10/34 题划分训练、验证和测试后，演化框架的平均留出成绩仍为 63.2。这是 rollout 预算比较，并非总 FLOPs 相同：框架编辑成本未计入。负面结果也有条件。针对单个任务的适应能改善游戏成绩，但 ARC-AGI-3 限制的是环境动作，不含内部推理；EdgeBench 则采用包含总结与编辑的 12 小时时限。后者还报告运行中观察到的最高分，包括未向 agent 展示的主机端评分，并非盲选最终提交。这要求分别报告反馈权限、搜索成本、留出迁移和选择协议；单题收益与这一有限负面结果，都不能确立可复用 agent 改进的普适定律。",
+      "proposal_en": "Once extra inference also rewrites an agent’s prompts, tools, or memory, the question is whether it improves a reusable harness or merely adapts to the evaluated tasks. Wang et al. separate these objectives in their October revision. On Terminal-Bench 2.1, they compare three models using five rollout rounds and two runs; a 45/10/34 train/validation/test split leaves the evolved harness’s mean held-out score unchanged at 63.2. This is a rollout-budget comparison, not equal total FLOPs: harness-editing cost is excluded. The negative result is conditional. Task-specific adaptation improves game scores, but ARC-AGI-3 caps environment actions, excluding internal reasoning, whereas EdgeBench uses a 12-hour window that includes summarization and editing. EdgeBench also reports the best score observed, including host-side evaluations hidden from the agent; this is not blind selection of a final submission. The implication is to report feedback access, search cost, held-out transfer, and selection protocol separately. Neither task-specific gains nor this limited negative result establish a general law for reusable agent improvement.",
+      "evidence_locator": [
+        "§4.1: 89 Terminal-Bench 2.1 tasks, three models, K=5, two runs",
+        "§4.4/Table3: 45/10/34 split, three-model held-out mean63.2→63.2",
+        "A.1 Cost: harness modification cost excluded",
+        "B.1: ARC budget2000 play/environment actions, internal reasoning/read-only inspection outside score",
+        "C.1 Cost: EdgeBench12h includes summaries/edits; agent idle during updates",
+        "C.1 Dataset/Table15: best-so-far including agent-hidden host evaluations"
+      ],
+      "cautions": [
+        "Do not call K=5 FLOPs-matched or claim all harness evolution fails.",
+        "Do not read ARC headline80% as energy/FLOPs efficiency; do not transfer it to deployment without the feedback/action protocol.",
+        "Do not report EdgeBench best-so-far as agent-blind final-output selection.",
+        "This week's read does not establish a v3→v4 substantive change; the record is newly discovered locally."
+      ]
+    }
+  ],
+  "recommended_index_only": [
+    {
+      "source_record": {
+        "id": "zhang2026selfassessment",
+        "title": "Scaling Misuse Detection with Self-Assessment",
+        "authors": [
+          "Yiming Zhang",
+          "Chen Xia",
+          "Andy Dau",
+          "John Wang",
+          "James Yu",
+          "Bobby Chen",
+          "Andreas Terzis",
+          "Nicholas Carlini",
+          "Erik Jones"
+        ],
+        "year": 2026,
+        "date": "2026-10-16",
+        "first_published": "2026-10-16",
+        "first_published_date": "2026-10-16",
+        "last_revised_date": null,
+        "version": null,
+        "version_read": "official web report as accessed 2026-10-19",
+        "latest_version_verified": null,
+        "url": "https://safeguards.anthropic.com/2026/self-assessment/",
+        "full_text_url": "https://safeguards.anthropic.com/2026/self-assessment/",
+        "type": "blog",
+        "branch": "inference-verification-cache-reuse",
+        "problem": "全流量监控若重新编码长对话，验证器计算开销会限制覆盖率。",
+        "insight": "在回答后复用已有 KV cache 生成短评估，将强分类器的政策判断经 SFT/RL 蒸馏到提供服务的模型。",
+        "method": "Synthetic conversations labeled by a Mythos Preview prompted teacher; assessment-only SFT plus schema and teacher-agreement rewards; offline screening after each response.",
+        "result": "Reported production estimate under 2% added inference compute. At 1% teacher-defined FPR, Fable 5 recalls 78% of teacher flags and 94% of priority>=7 flags.",
+        "limitation": "Teacher supplies both training and evaluation labels, so blind spots are not independently measured. Four-size SFT-only study uses a separate evaluation set without disclosed parameter counts or power-law fit. Not robust to a targeted adaptive attacker; no independent hardware/cost audit.",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-10-19",
+        "sections_read": "Official report Introduction, Method/Training/Data, all Results subsections, Discussion/Limitations and footnotes; figures read through textual explanations, not digitized.",
+        "synthesis_status": "index_only",
+        "changes_existing_conclusion": "Engineering example of marginal verification cost and correlated errors; no T5 body change recommended this week.",
+        "evidence_status": "Publication date printed October 16, 2026. No revision history shown. Production recall is agreement with an automated teacher, not human-ground-truth detection; four-model scaling experiment cannot be combined with the production result."
+      },
+      "why_no_body_change": "Cache reuse and teacher blind spots make a useful engineering example, but existing T5 already distinguishes verification cost and correlated error. Budget/transfer harness evidence is more consequential this week."
+    }
+  ],
+  "reviewed_candidates": [
+    {
+      "id": "wang2026caret",
+      "title": "CARET: Training-Free Test-Time Scaling for Repository-Level Code Completion",
+      "authors": [
+        "Jiajie Wang",
+        "Yutong Zhao",
+        "Kebin Peng",
+        "Sen He",
+        "Qing Guo",
+        "Tianlin Li"
+      ],
+      "url": "https://arxiv.org/abs/2610.04837",
+      "full_text_url": "https://arxiv.org/html/2610.04837v1",
+      "first_published_utc": "2026-10-04T00:45:13Z",
+      "latest_version_verified": "v1",
+      "new_version_since_prior_week": false,
+      "reading_depth": "full_text_targeted",
+      "sections_read": "II–VI methods, setup, Tables I–VI and validity discussion; no artifact/code rerun or figure audit.",
+      "previous_depth": "abstract/metadata",
+      "mechanism": "Route between retrieval contexts using candidate agreement, reuse prefix cache, then rank distinct completions by likelihood of existing right-hand code plus normalized votes; fixed DeepSeek-Coder-1.3B scorer.",
+      "conditions": "Six 1.1B–7B generators, three Python line/API benchmarks; ten samples per consulted context, temperature0.8/top-p0.95/max64tokens. H100 NVL96GB; timing40prompts/benchmark. Primary context selected using10%development set, main table reports fullsets.",
+      "limits": "Right context is available to selection while generators are left-to-right; no fill-in-the-middle comparator. ~1.45x is forward-token accounting with caching, excluding retrieval; reported end-to-end vs BM25 is1.9–3.1x. EM is not functional correctness; one sampling run.",
+      "internal_discrepancies": [
+        "Table V has reverse-likelihood31.54 below majority31.97 on CrossCodeEval, despite nearby claim it beats majority on every benchmark.",
+        "Table VI routing-on entries differ from Table I for the same model/benchmark (e.g. DS6.7B CrossCodeEval39.83 vs39.55); run/protocol distinction not reconciled in inspected text.",
+        "Main latency table values are benchmark means; prose1.3–2.9x and end-to-end1.9–3.1x use different scopes and cannot be interchanged."
+      ],
+      "decision": "Keep in weekly candidate log; no canonical/body upgrade.",
+      "next_check": "Reconcile table/run protocols and audit released cost counts, caching implementation, retrieval denominator and right-context/FIM-matched baseline."
+    },
+    {
+      "id": "park2026diver",
+      "title": "DiVeR: Decision-Critical Verifier Learning for VLA Test-Time Scaling",
+      "authors": [
+        "Seongheon Park",
+        "Heecheol Kim",
+        "Shulin Tian",
+        "Lilika Makabe",
+        "Namiko Saito",
+        "Katsushi Ikeuchi",
+        "Sharon Li",
+        "Yasuyuki Matsushita"
+      ],
+      "url": "https://arxiv.org/abs/2610.04933",
+      "full_text_url": "https://arxiv.org/html/2610.04933v1",
+      "first_published_utc": "2026-10-04T04:25:40Z",
+      "latest_version_verified": "v1",
+      "new_version_since_prior_week": false,
+      "reading_depth": "abstract_intro",
+      "sections_read": "Primary metadata/history, abstract, introduction and problem setup only.",
+      "mechanism": "Use sampled action-representation dispersion to weight outcome-based verifier training toward decision-critical states.",
+      "conditions": "Abstract/introduction report LIBERO, RoboCasa and Franka Research3 with frozen pi0/pi0.5 policies.",
+      "limits": "This week did not audit method/criticality definition, control/trialcounts, candidate-generation cost or latency. Headline700x concerns verifier stage and cannot establish total-system speedup.",
+      "decision": "Repeated prior candidate; do not promote shallow reading.",
+      "next_check": "§4,AppendixC.1/C.3 and full generation+verification budget controls before synthesis."
+    }
+  ],
+  "discarded_discovery_notes": [
+    {
+      "url": "https://www.microsoft.com/en-us/research/publication/tracing-the-traces-latent-temporal-signals-for-efficient-and-accurate-reasoning/",
+      "reason": "Search result says October2025/ICLR2026; not new publication in this window. No primary revision verified, so not admitted as new."
+    },
+    {
+      "url": "https://thesingularityreport.com/articles/rethinking-the-evaluation-of-harness-evolution-for-agents",
+      "reason": "Discovery pointer only. Date claim superseded by primary arXiv history; no technical conclusion rests on it."
+    },
+    {
+      "note": "Other search output included secondary explainers, old surveys and papers. No exhaustive novelty/no-paper claim follows from search sparsity."
+    }
+  ],
+  "editorial_summary": "One body-worthy addition recommended (harness feedback/budget/transfer); one primary official report recommended index-only (self-assessment); reward and SELF-POT unchanged; CARET read more deeply but retained as candidate; DiVeR remains shallow. No current source conclusion required reversal.",
+  "limitations": [
+    "Search results were sparse and included stale/recently-crawled material; completeness is not claimed.",
+    "Publication and revision dates came from original pages, not search indexing times.",
+    "No full-text downloads persisted; no independent experiments or code verification.",
+    "This log is research evidence/proposal only; root handles canonical integration, source status and publishing."
+  ]
+}

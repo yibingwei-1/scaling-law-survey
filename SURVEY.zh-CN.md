@@ -1,8 +1,8 @@
 # Scaling Law：问题驱动的技术演化综述
 
-版本 v0.3.4 · 检索与核验截至 2026-10-12 · 中文持续更新版
+版本 v0.3.5 · 检索与核验截至 2026-10-19 · 中文持续更新版
 
-从“能否预测规模收益”到“如何联合分配预训练、后训练与推理预算”。本版含 176 条去重主源和独立社区雷达；属于代表性文献的叙事综合，非穷尽性系统综述，未独立复现实验。
+从“能否预测规模收益”到“如何联合分配预训练、后训练与推理预算”。本版含 182 条去重主源和独立社区雷达；属于代表性文献的叙事综合，非穷尽性系统综述，未独立复现实验。
 
 ![研究问题演化图](figures/evolution-map.png)
 
@@ -80,7 +80,7 @@ flowchart TD
 
 想理解经典争议，先读[可预测性与预算](docs/01-predictability-budget.md)的 Kaplan—Chinchilla—复现链，再读[数据](docs/02-data.md)和[部署成本](docs/03-architecture-deployment.md)。想判断“test-time scaling 是否接棒”，先读[后训练](docs/04-posttraining.md)和[推理时计算](docs/05-inference.md)中的 proposer、verifier 和策略分配，再读[能力评估](docs/06-theory-evaluation.md)与负面结果。想跟踪新工作，先看社区雷达提出了哪个问题，再回到原始证据，最后判断它应改变正文哪一条因果连接。
 
-本文以能够解释转折点的代表研究为核心，不按引用数或社媒曝光机械排序。全文的“当前”“最新”均相对于最近增量检索日期 2026-10-12；阅读范围与未解决问题在各章和元数据中披露。
+本文以能够解释转折点的代表研究为核心，不按引用数或社媒曝光机械排序。全文的“当前”“最新”均相对于最近增量检索日期 2026-10-19；阅读范围与未解决问题在各章和元数据中披露。
 
 
 ---
@@ -180,7 +180,7 @@ Llama 3 报告展示了规模律在大训练 run 中怎样成为决策程序。�
 
 ## T2　数据瓶颈：从 token 数量到有效信息、混合与训练顺序
 
-> 核验日期：2026-10-12。范围：唯一数据量、去重、选择、领域混合、数据课程、供给预测和合成反馈。区分原论文实验证据与本综述的机制归纳；未独立重跑数据处理或训练实验。阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。仅摘要核验的 TinyStories、Phi-3、Scaling Laws for Transfer 等保留在来源库，未用作本章技术结论。
+> 核验日期：2026-10-19。范围：唯一数据量、去重、选择、领域混合、数据课程、供给预测和合成反馈。区分原论文实验证据与本综述的机制归纳；未独立重跑数据处理或训练实验。阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。仅摘要核验的 TinyStories、Phi-3、Scaling Laws for Transfer 等保留在来源库，未用作本章技术结论。
 
 ### 1. 数据成为瓶颈，是因为 D 同时承担了太多含义
 
@@ -193,6 +193,12 @@ Chinchilla 用于规模律拟合分析的训练运行不足一个 epoch，因此
 重复多少遍，首先取决于哪一种预算保持不变。[Chai 与 Xiong，2026 年 10 月 4 日，§3–7](https://arxiv.org/html/2610.05591v1)区分两种参照：与同一语料只训练一遍相比，增加 epoch 检验额外计算是否有益；与同模型、同总 token 数的新鲜数据相比，则衡量重复的机会成本。其 CommonCrawl 网格覆盖 23M–361M 非嵌入参数、每参数 5–300 个总 token、1–16 个 epoch，用 $\Delta L=A z^p$、$z=(R-1)N_{\mathrm{total}}/U$ 描述相对新鲜数据的超额损失；$R$ 是 epoch 数，$U$ 是按预测目标计数的唯一 token 数，$N_{\mathrm{total}}$ 包含嵌入参数。该超额损失拟合仅使用 140 个重复配置中高于 0.002 bpb 分辨率阈值的 113 个。在另一个固定 $U$ 的规模扫描中，更大模型在更少 epoch 后到达损失最低点；让 $U$ 与非嵌入参数 $N$ 同比例增长时，CommonCrawl 上的最佳 epoch 数变化很小。
 
 计数仍不足以决定结果：保持模型、唯一语料和 epoch 数不变，连续重放同一分片比跨 epoch 间隔重放的损失更高。主要网格每个配置只有一次运行，配方没有 weight decay 或 dropout，指标是留出文本的 bits per byte。拟合范围内的损失最低点不是数据受限训练的普遍能力上限；这项工作补充的是参照、固定变量和重复安排，不能给所有模型一个通用重复阈值。
+
+#### 配方会移动重复收益边界，串行时间也必须计入
+
+相同语料与重复次数之外，配方也会移动重复训练的收益边界。[Min，2026 年 10 月 11 日，§3–6](https://arxiv.org/html/2610.15965v1)先在 DCLM-Baseline 的 1B-token 主实验中联合调整 batch、学习率、weight decay 和停止 epoch，再将重复训练配方扩展至 0.333B–3B 唯一 token，迁移主实验所选学习率；模型为名义 153M–1.5B 的稠密模型。1B-token 主实验的验证损失随 batch 呈 U 形；较小 batch 的收益与随机梯度的正则化作用相符，但 batch 不是越小越好。每轮重新打包文档、共享输入输出嵌入并对嵌入施加衰减进一步改善结果，说明固定配方下的重复上限不是数据本身的上限。
+
+代价是小 batch 需要更多串行更新。作者因此分别考虑 GPU 数和截止时间，但主要时间轴以优化器步数等价量计，恰好使用指定 GPU 数的比较也不等于增加可用 GPU 上界必然有害。硬件延迟及 70B/10T 结果是明确标注的模拟或远距离外推。上述名义模型在共享嵌入后参数更少，主要结论来自验证集选择的配方；它们支持重新调优重复训练，尚不能确定通用 batch 或实际端到端训练时长。
 
 由此，少数据场景下的选择不是只有扩大模型或停止训练。重复已有数据、放宽过滤、加入异质领域和生成新样本都能增加账面 $D$，但引入的偏差不同。比较这些策略时，应同时报告总处理量、唯一数据量及其来源，否则“数据效率提高”可能仅来自未说明的重复与分布变化。
 
@@ -302,7 +308,7 @@ Gerstgrasser 等人直接检验一个关键条件：原始真实数据被替换�
 
 ## T3　架构与部署：区分参数、FLOPs、显存和实际成本
 
-> 核验日期：2026-10-05。范围：稀疏专家、训练并行、精确注意力实现、KV 表示与服务、长上下文和生命周期预算。本文将算法成本、硬件表现和模型质量分别讨论；不将某篇论文中的加速倍数视为跨硬件通用常数。原始来源与阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。未运行系统基准。
+> 核验日期：2026-10-19。范围：稀疏专家、训练并行、精确注意力实现、KV 表示与服务、长上下文和生命周期预算。本文将算法成本、硬件表现和模型质量分别讨论；不将某篇论文中的加速倍数视为跨硬件通用常数。原始来源与阅读深度见 [经典来源](sources/foundations.json)、[扩展来源](sources/expansion-foundations.json)。未运行系统基准。
 
 ### 1. 当参数可以不被调用，规模律需要新的坐标
 
@@ -364,6 +370,12 @@ V3 沿用 MLA 与 DeepSeekMoE，但把均衡专家负载的主要机制移出辅
 ZeRO 则从数据并行的重复存储切入，分阶段分片优化器状态、梯度和参数，使集群总显存更有效地服务一个模型。它没有让所有通信免费，也没有解决全部激活与临时缓冲开销；论文讨论“理论上能够容纳万亿参数”与“已经完成这个规模的训练”是不同证据级别。它与张量并行可以组合，回答的是不同内存和通信瓶颈。[Rajbhandari et al., 2019/2020](https://arxiv.org/html/1910.02054v3)
 
 本综述将这类工作看作规模实验的可行域：一个数学上较优的 $N,D$ 配置，如果迫使模型跨越低带宽链路、使用过小微批次或频繁重计算，实际可能比次优 FLOPs 配置更慢。因此，比较训练最优点时应说明它针对理想算术预算，还是针对指定集群与截止时间的实际预算；前者不能自动代替后者。
+
+#### 低精度训练：容量损失之外还有优化误差
+
+降低精度不仅改变每次矩阵运算的成本，也可能改变训练能消除哪些误差。[Kim 等，2026 年 10 月 13 日，§3–4](https://arxiv.org/html/2610.17637v1)在有效参数与有效数据模型之外，为前向和反向量化各加入残余优化误差项：量化权重处的梯度可能产生振荡，反向量化可能引入偏差。凸目标分析与一维例子为函数形式提供动机，并不证明真实 LLM 必然具有同样平台。作者在自有 280M–910M 非嵌入参数的 Qwen3 网格和已发表 Quartet 网格上拟合，并留出较大模型或 token 预算检验损失预测；这些是不同的外推切分。
+
+若该残余项在目标范围内保持不变，更多计算降低其他损失后，提高精度可能比继续扩大低精度模型更划算。但“预算越大、最优精度越高”仍是拟合模型的条件预测：成本只计矩阵运算，采用假定格式加速比与等层成本；跨层、跨前后向混合还依赖迁移假设。它把精度加入预算分配问题，不能代替完整训练的墙钟测量。
 
 ### 4. Landmark：FlashAttention 为什么可以多算一些，却更快？
 
@@ -624,7 +636,7 @@ o1/R1 的提升引出了一个无法仅靠 pass@1 回答的问题：性能改善
 
 ## T5　推理预算与搜索：如何把更多计算变成更可靠的答案
 
-> 核验日期：2026-10-12。覆盖具有机制解释力的代表工作，2026材料仍多为预印本；未独立复现实验。来源、版本、阅读范围见 [frontier.json](sources/frontier.json)、[expansion-frontier.json](sources/expansion-frontier.json)；Hugging Face 作者博客由编辑主源库记录。
+> 核验日期：2026-10-19。覆盖具有机制解释力的代表工作，2026材料仍多为预印本；未独立复现实验。来源、版本、阅读范围见 [frontier.json](sources/frontier.json)、[expansion-frontier.json](sources/expansion-frontier.json)；Hugging Face 作者博客由编辑主源库记录。
 
 预训练把计算投入共享参数，推理时则为具体问题分配计算。Chain-of-Thought 通过中间步骤示范改变单条生成过程，Self-Consistency 通过多路径采样与答案聚合减轻单一路径的不稳定；它们打开串行和并行两个方向，但尚未解决成本与正确选择。[CoT](https://arxiv.org/abs/2201.11903)、[Self-Consistency](https://arxiv.org/abs/2203.11171)
 
@@ -691,6 +703,10 @@ $$
 验证成本之外，选择协议还可能丢弃已有的可用输出。[SELF-POT（Yang 等，2026），§3.3、附录 J.2](https://arxiv.org/html/2610.01110v2)在同一批编程候选上回放选择规则：五个模型各 100 题，共 500 个预定评测单元；498 个候选池被保留，两项缺失仍计错。当 judge 没有给出有效非空答案时退回第一个非空候选，正确提交由 376 增至 437，已花费的 judge 成本仍全部计入。这个包含空候选处理的回退规则是事后修订，不能当作预注册干预。
 
 用公开样例选候选得到 453/500，并省去 judge 阶段的逻辑 API 费用；隐藏正确性标签只用于评分，不参与选择。这说明覆盖率、选择正确率和成功提交之间还隔着协议可靠性。但它是固定候选池上的事后回放，不是重新生成的等预算端到端试验；API 逻辑费用不是实际账单或硬件成本，本地测试执行另行记账。结果支持显式设计失败回退，不能证明更多测试时计算在任意任务上都更划算。
+
+#### 框架搜索：同题反馈不等于可迁移改进
+
+当额外推理还会改写 agent 的提示、工具或记忆，问题就变成：它改善了可复用的执行框架（harness），还是仅适应了正在评测的任务？[Wang 等在 10 月修订稿中](https://arxiv.org/html/2607.12227v4)区分这两个目标。在 Terminal-Bench 2.1 上，他们使用三个模型和两次运行，按 45/10/34 题划分训练、验证和测试；经过 K=5 轮搜索及验证集框架选择，测试集平均 pass@1 与初始框架均为 63.2。方法间搜索比较按 rollout 预算对齐，并非总 FLOPs 相同：框架编辑成本未计入。负面结果也有条件。针对单个任务的适应能改善游戏成绩，但 ARC-AGI-3 限制的是环境动作，不含内部推理；EdgeBench 则采用包含总结与编辑的 12 小时时限。后者还报告运行中观察到的最高分，包括未向 agent 展示的主机端评分，并非盲选最终提交。这要求分别报告反馈权限、搜索成本、留出迁移和选择协议；单题收益与这一有限负面结果，都不能确立可复用 agent 改进的普适定律。
 
 ### 5. 从“想得更久”到“何时应该停”
 
@@ -934,7 +950,7 @@ Caballero 等的 Broken Neural Scaling Laws 进一步容纳多个平滑连接的
 
 ## 第七章　视觉、多模态、扩散与机器人：扩大什么，才能改善目标能力？
 
-> 更新：2026-10-12。问题线索 T7。跨领域迁移的是实验方法与资源分配问题，不预设共享一个指数。已阅读全文的核心包括 mixed-modal scaling、扩散推理搜索与机器人数据缩放；只读摘要的前沿或历史补充另作标注。
+> 更新：2026-10-19。问题线索 T7。跨领域迁移的是实验方法与资源分配问题，不预设共享一个指数。已阅读全文的核心包括 mixed-modal scaling、扩散推理搜索与机器人数据缩放；只读摘要的前沿或历史补充另作标注。
 
 语言模型中的参数量和 token 数提供了方便的起点，却不是所有领域天然共享的单位。一张图像可以变成数百个 patch、数千个离散码，或一个连续 latent；一条机器人轨迹还包含环境、物体、动作与时间相关性。因此，把各领域都画在 log-log 坐标中，并不能证明它们遵循相同资源关系。
 
@@ -988,6 +1004,12 @@ $$
 尚未解决的边界来自表示、混合比例与目标。图像 tokenizer 的压缩率改变序列长度、视觉细节和每张图片的实际成本，语音 token 又有自己的信息丢失；因此不能把相同 token 数理解为相同语义信息。附录比较视觉与语音重建，正说明 tokenizer 是整个缩放系统的一部分。推广到不等比例混合、更多模态、长视频、不同任务损失以及感知—动作闭环，需要重新识别交互项，而不是照搬这组系数。
 
 MM1 的摘要提供一条可继续追踪的工程路线：图像编码器、分辨率、图像 token 数及不同数据类型的混合，比某些连接器设计更影响其模型效果。这与本节“统一格式之后仍有资源和数据瓶颈”的问题一致，但 MM1 的具体消融尚属本版候选阅读范围，不能据摘要将其结论推广成所有 MLLM 的架构排序。[MM1，2024](https://arxiv.org/abs/2403.09611v4)
+
+#### 不等比例混合：迁移收益还要扣除共享容量成本
+
+等比例交互之后，还需处理不同模态的供应量和重复次数。[Khandelwal 等，2026，§§3–6、附录 G–H](https://arxiv.org/html/2610.14423v1)用 268 次训练，把有方向的跨模态迁移、共享容量竞争和重复收益饱和分别放进有效数据与参数模型。实验采用固定 MoE 家族，总参数从 457M 到 8.3B，包含非激活专家与 embedding；因此这些规模不能直接当作每 token 的活动计算量。视觉和音频验证损失还包含关联文本，不能等同于纯感知质量。
+
+三次不重拟合的验证包含更大模型从头训练和两种继续预训练；九个模态损失中八个相对预测误差不超过 2.51%，但非文本占比较高的继续预训练中，文本误差达到 6.73%。延长训练可能消除该偏差只是作者解释，尚非验证结果。重复收益模型是渐近饱和，不是“两轮后无价值”；最优重复数仍取决于供应和预算。音频向文本和视觉的迁移系数接近零且跨折不稳定，也不表示加入音频没有容量成本。这推进了资源核算方式，但固定 tokenizer、主要单种子及消融指标间的取舍，不支持通用系数或任意规模外推。
 
 #### 配对本身也是资源：同样的模态总量为何仍不等价？
 
@@ -1207,6 +1229,10 @@ RD-08 将这种技术变化与 o3 的公众讨论联系起来，但社区对尚�
 这条讨论将小模型本地部署与任务课程、工具接口联系起来。[官方模型卡](https://huggingface.co/microsoft/FrogNano-4B-2609)区分“不模仿强模型解题轨迹”和“仍由 AI 生成任务、参考补丁与隐藏测试”。因此值得追踪的是完整生成、训练、验证成本及接口条件，不能由参数小推断总算力最优。本轮核验摘要、版本史、模型卡及部分方法段落，未复现；论文 v1 发布于 9 月 7 日，v5 修订于 10 月 5 日，未完成版本全文差分。10 月 2 日社区帖早于 v5，不能解释成对该修订的反馈。直接页面未显示计数，选读回帖不代表社区共识；本次仅收入雷达与主源索引。
 
 X 原帖身份、日期或有标签的指标仍未核验；YouTube 本轮未获得满足条件的新样本，已检查的旧候选直接访问失败。这些限制不表示没有新讨论。见[本周完整日志](sources/weekly-2026-10-12-community.json)。
+
+### 9. 2026-10-19 检索：未取得符合条件的新观测
+
+本轮覆盖 2026-09-28 至 2026-10-19，32 条三平台查询未得到可正式追加的观测，既有 21 条记录及历史计数保持不变。Goodfire 的讨论留作候选：Reddit 原链未显示可核验的绝对日期和分数，X 原链返回 403，第三方转述的浏览量不作平台指标。YouTube 转录日期不能替代视频上传日期，缺失计数仍留空。这些访问与核验限制不表示没有新讨论，也不足以改写关于 superposition 或 scaling 的技术结论。见[完整检索记录](sources/weekly-2026-10-19-community.json)。
 
 
 ---
@@ -1516,11 +1542,17 @@ Problem 框给出当前方法留下的具体矛盾；Solution 框压缩机制；
 | 2026 | [Hyperparameter Scaling Laws Across MoE Sparsity](https://arxiv.org/abs/2609.08690) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | 摘要/元数据 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining](https://arxiv.org/abs/2609.39403) | 正文定向阅读 | v1 / 论文/预印本 | 索引／待深入综合 |
+| 2026 | [Mixed Precision Scaling Laws for Quantized Pretraining](https://arxiv.org/abs/2610.17637) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
+| 2026 | [More Than Seeing: Vision as Scalable Anchors in Native Multimodal Pre-Training](https://arxiv.org/abs/2610.19443) | 正文定向阅读 | v1 / 论文/预印本 | 索引／待深入综合 |
 | 2026 | [Paired Multimodal Scaling Laws](https://arxiv.org/abs/2609.36263) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Planned Test-Time Scaling with Coordinated Reasoning Paths](https://arxiv.org/abs/2609.27374) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | 正文定向阅读 | v1 / 论文/预印本 | [06](docs/06-theory-evaluation.md) |
+| 2026 | [Rethinking the Evaluation of Harness Evolution for Agents](https://arxiv.org/abs/2607.12227) | 正文定向阅读 | v4 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Revisiting scaling laws for reward optimization](https://arxiv.org/abs/2609.38526) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
+| 2026 | [Scaling Laws for Multimodal Data Mixtures](https://arxiv.org/abs/2610.14423) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
+| 2026 | [Scaling Misuse Detection with Self-Assessment](https://safeguards.anthropic.com/2026/self-assessment) | 正文定向阅读 | 网页观测版 / 技术文章 | 索引／待深入综合 |
+| 2026 | [Scaling Repeated-Data Pretraining: Batch Size, Regularization, and GPU-Time Tradeoffs](https://arxiv.org/abs/2610.15965) | 正文定向阅读 | v1 / 论文/预印本 | [02](docs/02-data.md) |
 | 2026 | [Scaling Vision-Language Models Is Not Enough to Mitigate Bias](https://arxiv.org/abs/2607.28211) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Thinking Long, but Short: Stable Sequential Test-Time Scaling for Large Reasoning Models](https://arxiv.org/abs/2601.09855) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |

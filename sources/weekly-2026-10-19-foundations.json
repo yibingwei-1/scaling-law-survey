@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0",
+  "checked_on": "2026-10-19",
+  "window": {
+    "from": "2026-09-28",
+    "through": "2026-10-19"
+  },
+  "scope": "Targeted T1 training prediction/budgets, T2 effective data, and T3 architecture/deployment maintenance. Two new primary sources upgraded from discovery to methods/results reading. Not exhaustive.",
+  "baseline": {
+    "head_verified": "8618fcf",
+    "edition": "v0.3.4",
+    "last_successful_search": "2026-10-12",
+    "source_count": 176
+  },
+  "local_context_read": [
+    "METHODOLOGY.md",
+    "UPDATING.md",
+    "data/state.json",
+    "sources/weekly-2026-10-12-foundations.json",
+    "sources/weekly-2026-10-12-editor.json",
+    "docs/01-predictability-budget.md",
+    "docs/02-data.md: repetition subsection and data-selection context",
+    "docs/03-architecture-deployment.md: MoE, precision/parallelism, attention and serving sections",
+    "data/papers.json: catalog scan"
+  ],
+  "tools": {
+    "used": [
+      "web__run search_query/open/find",
+      "exec_command read-only local inspection"
+    ],
+    "discovered_but_not_called": [
+      "mcp__codex_apps__search_service_web_run"
+    ],
+    "parallel_cli": "command -v parallel-cli returned no executable; not used"
+  },
+  "queries": [
+    {
+      "batch": 1,
+      "kind": "web.search_query",
+      "run_on": "2026-10-19",
+      "queries": [
+        "site:arxiv.org \"scaling laws\" \"2026\" after:2026-10-11 before:2026-10-20",
+        "site:arxiv.org \"compute-optimal\" \"2026\" after:2026-09-28 before:2026-10-20",
+        "site:arxiv.org \"data\" \"scaling\" \"2610\" pretraining",
+        "\"scaling laws\" \"October 2026\" training MoE"
+      ],
+      "result_summary": "Broad discovery included a third-party paper digest naming spiking scaling, plus secondary tutorials and older/repeated results. The combined local-read/search output was truncated; no technical conclusion was taken from the lost portion."
+    },
+    {
+      "batch": 2,
+      "kind": "web.search_query",
+      "run_on": "2026-10-19",
+      "queries": [
+        "\"Compute-Optimal Scaling Laws for Spiking Language Models\"",
+        "\"Neural Dimensional Analysis\" arxiv",
+        "site:arxiv.org \"scaling\" \"Oct 2026\" \"pretraining\"",
+        "site:arxiv.org \"2610\" \"scaling\" \"data mixture\""
+      ],
+      "result_summary": "Primary arXiv results identified 2610.15965, 2610.17637 and 2610.15146. The first two were prioritized for direct primary reading. Radio-map scaling and dimensional-analysis discovery leads were not promoted."
+    }
+  ],
+  "duplicate_check": {
+    "method": "rg across sources/, docs/, and data/papers.json for IDs 2610.15965, 2610.17637, 2610.15146 and the first two titles before writing this log.",
+    "result": "No existing matches returned."
+  },
+  "previous_items_rechecked": [
+    {
+      "id": "chai2026repeatedtoken",
+      "title": "What Is a Repeated Token Worth? The Scaling Geometry of Multi-Epoch Pretraining",
+      "url": "https://arxiv.org/abs/2610.05591",
+      "first_published_date": "2026-10-04",
+      "first_submission_utc": "2026-10-04T22:55:50Z",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "reading_depth_this_round": "Primary abstract and submission history; no new full-text reread.",
+      "decision": "No revised version listed. Retain existing synthesis; new Min paper is a separate study, not a Chai revision."
+    },
+    {
+      "id": "russell2026wildai",
+      "title": "How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text",
+      "url": "https://arxiv.org/abs/2609.40295",
+      "first_published_date": "2026-09-30",
+      "first_submission_utc": "2026-09-30T17:50:22Z",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "reading_depth_this_round": "Current primary abstract and history.",
+      "decision": "No revised version listed; no body change from this recheck."
+    },
+    {
+      "id": "cheng2026scalingdown",
+      "title": "Capability Scaling-Down Laws for LLM Compression",
+      "url": "https://arxiv.org/abs/2610.02462",
+      "first_published_date": "2026-10-01",
+      "first_submission_utc": "2026-10-01T20:35:12Z",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "reading_depth_this_round": "Current primary abstract and history.",
+      "decision": "No revised version listed."
+    },
+    {
+      "id": "tian2026moehyperparameters",
+      "title": "Hyperparameter Scaling Laws Across MoE Sparsity",
+      "url": "https://arxiv.org/abs/2609.08690",
+      "first_published_date": "2026-09-08",
+      "first_submission_utc": "2026-09-08T12:57:20Z",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "reading_depth_this_round": "Current primary abstract and history.",
+      "decision": "No revision listed; original date outside this window."
+    }
+  ],
+  "decisions": [
+    {
+      "status": "recommend_body_addition",
+      "id": "min2026repeatedbatch",
+      "date_basis": "arXiv v1 history: 2026-10-11T22:42:39Z. Newly discovered this week within the rolling window, although its first submission predates the previous maintenance date.",
+      "old_problem": "T2 already treats repetition value as conditional on the reference, fixed quantities and replay order, but its Chai example uses a specific unregularized recipe. It does not show how jointly tuning batch and regularization changes the attainable repeated-data frontier, or why GPU count and sequential deadlines are distinct constraints.",
+      "mechanism": "Optimize batch size jointly with learning rate, weight decay and selected stopping epoch; vary document repacking and embedding regularization; distinguish optimizer-step budgets from hardware-latency projections.",
+      "source_record": {
+        "id": "min2026repeatedbatch",
+        "title": "Scaling Repeated-Data Pretraining: Batch Size, Regularization, and GPU-Time Tradeoffs",
+        "authors": [
+          "Sewon Min"
+        ],
+        "year": 2026,
+        "url": "https://arxiv.org/abs/2610.15965",
+        "fulltext_url": "https://arxiv.org/html/2610.15965v1",
+        "type": "paper",
+        "branch": "data-training-budget",
+        "first_published_date": "2026-10-11",
+        "first_submission_utc": "2026-10-11T22:42:39Z",
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "problem": "重复训练的收益上限依赖固定的 batch 与配方；单一 FLOPs 预算掩盖了小批训练的串行时长限制。",
+        "insight": "联合调整 batch、学习率、weight decay 和停止点，并通过每轮重打包、共享嵌入及嵌入衰减移动重复数据前沿；GPU 数与时间需分别约束。",
+        "method": "Dense decoder-only training on fixed DCLM-Baseline pools; validation-selected batch/recipe sweeps and optimizer-step-equivalent GPU/time frontiers, with separately labeled H100 simulations.",
+        "result": "Observed repeated-data validation loss has an interior batch optimum; repetition-aware recipes improve measured frontiers. This is conditional training-recipe evidence, not a universal epoch ceiling or measured frontier-scale speedup.",
+        "limitation": "153M–1.5B nominal untied sizes, smaller tied counts; 0.333B–3B unique tokens; AdamW/WSD and DCLM-specific. Validation-selected endpoints, limited pool-seed checks, no MoE validation. Exact-GPU/step-equivalent frontiers differ from availability upper bounds and end-to-end wall clock; 70B/10T is unvalidated illustrative extrapolation.",
+        "reading_depth": "full_text_targeted",
+        "sections_read": [
+          "abstract",
+          "1–6",
+          "Appendix A.1–A.3",
+          "Appendix B.1–B.2 and B.3 introductory metric discussion",
+          "Appendix D.1 introductory extrapolation conditions",
+          "Appendix D.3",
+          "Appendix F",
+          "selected Appendix E recipe tables"
+        ],
+        "verification_date": "2026-10-19",
+        "verification_status": "primary_source_verified",
+        "evidence_strength": "targeted_primary_text_read_not_independently_reproduced",
+        "reading_notes": "Read methods, main result tables, limitations and resource-model conditions. Did not independently rerun experiments, audit code, verify every appendix fit or visually inspect paper figures. v1 says code/exact commands will be released upon acceptance."
+      },
+      "evidence_conditions": {
+        "model_labels": "Nominal untied: 153,104,896 / 473,990,144 / 1,484,851,200 parameters. Tied: 101,724,672 / 371,229,696 / 1,279,330,304. Paper retains original labels after tying.",
+        "data": "DCLM-Baseline, document-disjoint validation, 100M validation tokens; context 4096. Main batch study uses 1B unique tokens; recipe extension uses 0.333B/1B/3B.",
+        "optimization": "AdamW, WSD, ~100M-token warmup, horizon-specific 10% decay; adaptive coordinate search jointly tunes learning rate and weight decay. B=16–512 sequences at nominal1.5B, B=32–512 for smaller models.",
+        "metric_and_selection": "Next-token validation CE, with best observed endpoints selected over learning rate, weight decay and epoch. These are tuned envelopes, not independent blind final tests.",
+        "batch_result": "On the 1B pool, original-recipe B=64 vs B=512 gives CE2.977 vs3.124 for nominal1.5B; the complete sweep is U-shaped. Small-batch stochastic regularization is a supported interpretation, not isolated causal proof.",
+        "recipe_result": "Repack changes document context compositions each epoch. Tying alone adds little; positive embedding decay supplies clearer gains. Combined recipe reaches CE2.946 at E32 vs original B64 CE2.977 E20 for nominal1.5B. Tying changes actual parameter count.",
+        "replication_scope": "Appendix B.1 checks three independently sampled 1B data pools at nominal1.5B and four batch settings. Do not describe this as every grid point having three initialization seeds.",
+        "resource_scope": "Figure8 uses optimizer-step deadlines. Figure9 and D.3 use exactly the indicated GPU count and fixed microbatch, with gradient accumulation. Extra available GPUs need not worsen an optimum when they may be left idle; the paper's worse-more-GPU cells are not a theorem under a GPU upper-bound constraint.",
+        "hardware_scope": "D.2/F use communication-aware H100 projections rather than end-to-end measurements. The 70B/10T 22.6-year illustration extrapolates far outside measured sizes; do not promote it to a validated duration forecast.",
+        "reproducibility": "Primary reproducibility statement says code and exact commands will be released upon acceptance; no public-code replication claimed.",
+        "relationship": "Directly revisits Kim2026/Xu2026 finite-data studies. Connection to the preceding Chai paragraph is the survey's synthesis; do not claim Min directly follows or refutes Chai."
+      },
+      "suggested_insertion": {
+        "file": "docs/02-data.md",
+        "english_file": "docs/en/02-data.md",
+        "position": "After the Chai subsection and before the final synthesis paragraph beginning 由此，少数据场景; short subheading linking repeat value to batch/regularization and training deadlines.",
+        "secondary_link": "Cross-reference T3 resource accounting without repeating the full experiment."
+      },
+      "proposed_text_zh": "相同语料与重复次数之外，配方也会移动重复训练的收益边界。[Min，2026 年 10 月 11 日，§3–6](https://arxiv.org/html/2610.15965v1)在 DCLM-Baseline 上联合调整 batch、学习率、weight decay 和停止 epoch，覆盖名义 153M–1.5B 的稠密模型及 0.333B–3B 唯一 token。1B-token 主实验的验证损失随 batch 呈 U 形；较小 batch 的收益与随机梯度的正则化作用相符，但 batch 不是越小越好。每轮重新打包文档、共享输入输出嵌入并对嵌入施加衰减进一步改善结果，说明固定配方下的重复上限不是数据本身的上限。\n\n代价是小 batch 需要更多串行更新。作者因此分别考虑 GPU 数和截止时间，但主要时间轴以优化器步数等价量计，恰好使用指定 GPU 数的比较也不等于增加可用 GPU 上界必然有害。硬件延迟及 70B/10T 结果是明确标注的模拟或远距离外推。上述名义模型在共享嵌入后参数更少，主要结论来自验证集选择的配方；它们支持重新调优重复训练，尚不能确定通用 batch 或真实部署时长。",
+      "proposed_text_en": "Beyond corpus size and repetition count, the training recipe can move the repeated-data frontier. [Min, 11 October 2026, §§3–6](https://arxiv.org/html/2610.15965v1) jointly tunes batch size, learning rate, weight decay and stopping epoch on DCLM-Baseline, covering nominally 153M–1.5B dense models and 0.333B–3B unique tokens. Validation loss is U-shaped in batch size in the main 1B-token experiment. Smaller batches are consistent with useful stochastic regularization, but smaller is not always better. Repacking documents each epoch, tying embeddings and applying embedding decay further improve results: a fixed recipe's repetition limit is not an intrinsic data limit.\n\nSmaller batches require more sequential updates, motivating separate GPU and deadline constraints. However, the main time axis uses optimizer-step equivalents, and comparisons using exactly a specified GPU count do not imply that increasing the available-GPU upper bound is harmful. Hardware latencies and the 70B/10T scenario are explicitly simulations or distant extrapolations. The nominal models become smaller after embedding tying, and recipes are validation-selected. The evidence supports retuning repeated-data training, without establishing a universal batch size or real deployment duration."
+    },
+    {
+      "status": "recommend_body_addition",
+      "id": "kim2026mixedprecision",
+      "date_basis": "arXiv v1 history: 2026-10-13T03:05:01Z; no revision listed.",
+      "old_problem": "T3 explains that parameter count/FLOPs and measured cost differ, but does not yet distinguish representational loss from persistent optimization error when lowering forward and backward precision.",
+      "mechanism": "Extend effective-parameter/effective-data models with separate additive forward/backward optimization-error terms; fit layer-wise interpolation and numerically optimize size/tokens/precision under an explicitly simplified speedup-aware cost model.",
+      "source_record": {
+        "id": "kim2026mixedprecision",
+        "title": "Mixed Precision Scaling Laws for Quantized Pretraining",
+        "authors": [
+          "Jinuk Kim",
+          "Rajarshi Saha",
+          "Muhammed Fatih Balin",
+          "Youngsuk Park"
+        ],
+        "year": 2026,
+        "url": "https://arxiv.org/abs/2610.17637",
+        "fulltext_url": "https://arxiv.org/html/2610.17637v1",
+        "type": "paper",
+        "branch": "architecture-precision-budget",
+        "first_published_date": "2026-10-13",
+        "first_submission_utc": "2026-10-13T03:05:01Z",
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "problem": "仅把量化折算成有效参数或有效 token，可能漏掉随训练持续的前后向优化误差，改变精度预算最优点。",
+        "insight": "将容量差距与优化差距分离，给前后向精度各加残余误差项，再预测分层混合精度与条件计算最优分配。",
+        "method": "Convex optimization bound and one-dimensional example motivate an empirical law; calibration/held-out loss fits on Qwen3-based and published Quartet grids; hardware-speedup-conditioned numerical allocation.",
+        "result": "Held-out loss prediction improves against Quartet in the reported grids; the fitted model predicts higher preferred precision as compute grows under stated cost assumptions. Neither claim establishes a general LLM asymptotic theorem or measured end-to-end hardware gain.",
+        "limitation": "Convex theory and a toy example only motivate the neural empirical form. Selected small dense-model/quantization grids; largest own model906M nonembedding/1.217B total. Form ablations use held-out errors. Cost ignores non-matmul operations and assumes speedups/equal block costs; mixed-pass allocation assumes transfer of layer-selection exponents.",
+        "reading_depth": "full_text_targeted",
+        "sections_read": [
+          "abstract",
+          "1–5",
+          "Remark3.1 and Example3.1",
+          "Tables1–8",
+          "Appendix A proof text",
+          "Appendix B.1–B.4",
+          "Appendix C ablation table"
+        ],
+        "verification_date": "2026-10-19",
+        "verification_status": "primary_source_verified",
+        "evidence_strength": "targeted_primary_text_read_not_independently_reproduced",
+        "reading_notes": "Read main methods, results, fitting splits, architecture counts, theory assumptions and hardware-cost definition. Did not audit code, rerun fits, verify all appendix numerical optimization, or inspect figure pixels."
+      },
+      "evidence_conditions": {
+        "equation": "L=(A(rho_N(psi_f)N)^(-alpha)+B(rho_D(psi_b)D)^(-beta))^gamma+epsilon_f(psi_f)+epsilon_b(psi_b)+E.",
+        "theory_scope": "Remark3.1 assumes a differentiable convex loss, deterministic forward quantizer, bounded second moments and eta=c/sqrt(T); it upper-bounds average expected loss. Example3.1 demonstrates nonvanishing optimization gap in a one-dimensional quantized quadratic. This does not prove universal neural-network floors or scale-independent epsilon terms; those are empirical modeling choices.",
+        "own_grid": "375 Qwen3-based runs; labels280M/430M/640M/910M are nonembedding. Exact nonembedding283M/429M/639M/906M; total497M/663M/911M/1217M. Budgets12.8B–35.8B; BF16/MXFP8/NVFP4 forward and five backward schemes. Qwen3-style, CompleteP, AdamW/WSD. Validation is C4; do not infer the training corpus from the validation name.",
+        "published_grid": "84 published Llama-style Quartet runs;30M/50M/100M/200M nonembedding,25–800TPP. This is reuse of published data, not an independent new replication of Quartet training.",
+        "extrapolation": "Model-size: fit three smaller models, evaluate largest. Data: fit smaller three models excluding highest budget, evaluate highest budget; largest model is excluded from data extrapolation. Qwen3 largest-size test is18.1B–29.9B, not35.8B.",
+        "fit_selection": "Two-stage BF16 then quantized calibration. Design choices are compared using held-out MSE in main Table5/AppendixC; no separate untouched final-test set is claimed here.",
+        "result_numbers": "Reported MSE improvement vs Quartet ranges1.6x–11x.11x comes from published Quartet model-size extrapolation (1.6e-4→1.4e-5). Own Qwen3 size extrapolation8.4e-6→5.3e-6; own data extrapolation2.7e-5→6.1e-6. Do not call11x an end-to-end compute improvement or universal own-grid result.",
+        "layer_mixing": "Fit strategy-specific interpolation exponents from smaller Qwen3 models; test910M. First/last-vs-middle sensitivity comparison varies one pass at a time. Joint allocation additionally assumes exponents independent of the other pass and NVFP4 backward technique.",
+        "cost_scope": "BF16-equivalent cost weights forward/backward2ND/4ND divided by assumed recipe speedups; equal cost per block and no operations beyond matmuls. MXFP8 baseline speedup1.8x comes from cited GEMM kernel evidence, not a measured complete training run. Optimal precision's increase with budget is a conditional prediction of this fitted law/cost model."
+      },
+      "suggested_insertion": {
+        "file": "docs/03-architecture-deployment.md",
+        "english_file": "docs/en/03-architecture-deployment.md",
+        "position": "A short subsection after §3 training-memory/parallelism discussion and before §4 FlashAttention, connecting precision-dependent statistical error to the distinction between arithmetic and actual cost."
+      },
+      "proposed_text_zh": "降低精度不仅改变每次矩阵运算的成本，也可能改变训练能消除哪些误差。[Kim 等，2026 年 10 月 13 日，§3–4](https://arxiv.org/html/2610.17637v1)在有效参数与有效数据模型之外，为前向和反向量化各加入残余优化误差项：量化权重处的梯度可能产生振荡，反向量化可能引入偏差。凸目标分析与一维例子为函数形式提供动机，并不证明真实 LLM 必然具有同样平台。作者在自有 280M–910M 非嵌入参数的 Qwen3 网格和已发表 Quartet 网格上拟合，并留出较大模型或 token 预算检验损失预测；这些是不同的外推切分。\n\n若该残余项在目标范围内保持不变，更多计算降低其他损失后，提高精度可能比继续扩大低精度模型更划算。但“预算越大、最优精度越高”仍是拟合模型的条件预测：成本只计矩阵运算，采用假定格式加速比与等层成本；跨层、跨前后向混合还依赖迁移假设。它把精度加入预算分配问题，不能代替完整训练的墙钟测量。",
+      "proposed_text_en": "Lower precision changes both arithmetic cost and which errors training can remove. [Kim et al., 13 October 2026, §§3–4](https://arxiv.org/html/2610.17637v1) augment effective-parameter and effective-data models with separate persistent optimization-error terms for forward and backward quantization. Gradients evaluated at quantized weights can oscillate, while backward quantization can introduce bias. Convex analysis and a one-dimensional example motivate the form; they do not prove that real LLMs necessarily share this floor. The authors fit their 280M–910M non-embedding-parameter Qwen3 grid and published Quartet data, holding out larger models or token budgets in separate extrapolation splits.\n\nIf the residual terms persist in the target regime, more compute shrinks other loss components until raising precision can become preferable to further enlarging a low-precision model. Yet increasing optimal precision with budget remains a conditional prediction: the cost model counts only matrix multiplication, assumes format speedups and equal block costs, and joint mixing relies on transfer assumptions across layers and passes. This adds precision to resource allocation without replacing end-to-end training-time measurements."
+    }
+  ],
+  "discovery_only": [
+    {
+      "id": "2610.15146",
+      "title": "Compute-Optimal Scaling Laws for Spiking Language Models",
+      "authors": [
+        "Dan Saunders",
+        "Benjamin Ren",
+        "Catherine He"
+      ],
+      "url": "https://arxiv.org/abs/2610.15146",
+      "first_published_date": "2026-10-10",
+      "first_submission_utc": "2026-10-10T19:46:24Z",
+      "last_revised_date": null,
+      "version_read": "v1 abstract/metadata only",
+      "latest_version_verified": "v1",
+      "reading_depth": "Primary abstract and submission history; no primary methods read.",
+      "action": "Retain as candidate, no body recommendation. Parameter-counting comparison may be useful, but sparse-activation energy claims require primary hardware/cost audit; secondary summaries are not adopted."
+    },
+    {
+      "id": "2610.19015",
+      "title": "Scaling Cheap Synthetic Pretraining Improves Indoor Radio-Map Prediction",
+      "url": "https://arxiv.org/abs/2610.19015",
+      "first_published_date": null,
+      "last_revised_date": null,
+      "version_read": null,
+      "reading_depth": "Search result only.",
+      "action": "Outside the prioritized LLM-centered T1–T3 incremental synthesis; no source record or claim promoted."
+    }
+  ],
+  "access_and_coverage_limits": [
+    "web__run primary HTML and version-history access succeeded for the two recommended papers and specified version checks. Search_service capability was discovered but not called.",
+    "parallel-cli remained unavailable on PATH. No claim of its use or of an unperformed API search.",
+    "Several large combined outputs were truncated. Critical candidate methods/results were reopened separately; local context reading does not imply every catalog record was reread.",
+    "Targeted discovery is not exhaustive; search-result publication/crawl dates were not substituted for arXiv submission histories.",
+    "No independent experiments, source-code audit, hardware measurement, figure digitization, or full proof verification. Reported empirical results remain authors' evidence.",
+    "No third-party full texts saved or published. This log is the only file written by this researcher; canonical content, source catalogs, state, manifests and builds remain with the editor."
+  ]
+}

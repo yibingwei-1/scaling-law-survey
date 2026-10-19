@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-19",
+  "window": {
+    "from": "2026-09-28",
+    "through": "2026-10-19"
+  },
+  "baseline_head": "8618fcfdeeeb5361131a13c8eec5331197f3b9a9",
+  "search_method": "Built-in web search and primary HTML/history reads; parallel-cli absent on PATH. Targeted representative discovery, not exhaustive.",
+  "queries": [
+    {
+      "q": "\"scaling laws\" after:2026-10-11 before:2026-10-20",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"multimodal\" after:2026-09-28 before:2026-10-20",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"theory\" after:2026-10-11 before:2026-10-20",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"October\" \"2026\"",
+      "domains": [
+        "research.google",
+        "deepmind.google",
+        "anthropic.com",
+        "openai.com"
+      ]
+    },
+    {
+      "q": "\"scaling laws\" \"2610\" \"theory\"",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"generalization\" after:2026-10-12 before:2026-10-20",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling laws\" \"October 2026\"",
+      "domains": [
+        "huggingface.co",
+        "epoch.ai",
+        "research.google",
+        "ai.meta.com"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"16 Oct 2026\"",
+      "domains": [
+        "arxiv.org"
+      ]
+    }
+  ],
+  "primary_decisions": [
+    {
+      "id": "khandelwal2026multimodalmixtures",
+      "title": "Scaling Laws for Multimodal Data Mixtures",
+      "authors": [
+        "Aditi Khandelwal",
+        "Ayush K. Tarun",
+        "Yixuan Xu",
+        "Imanol Schlag",
+        "Golnoosh Farnadi",
+        "Siva Reddy",
+        "Luke Zettlemoyer",
+        "Antoine Bosselut"
+      ],
+      "year": 2026,
+      "date": "2026-10-10",
+      "first_published": "2026-10-10",
+      "first_published_date": "2026-10-10",
+      "last_revised_date": null,
+      "version": "v1",
+      "version_read": "v1",
+      "latest_version_verified": "v1",
+      "url": "https://arxiv.org/abs/2610.14423",
+      "full_text_url": "https://arxiv.org/html/2610.14423v1",
+      "type": "paper",
+      "branch": "multimodal-mixture-capacity-repetition",
+      "problem": "等比例双模态交互难以指导不等比例、重复受限的三模态训练。",
+      "insight": "把跨模态迁移、共享容量竞争和各模态重复收益分开建模。",
+      "method": "268-run fixed-family MoE grid, positive effective parameter/data transformations, repetition saturation, three unre-fitted validation runs.",
+      "result": "Eight of nine validation losses within 2.51%; text in the non-text-heavy continuation differs by 6.73%.",
+      "limitation": "总参数包含非激活专家与embedding；视觉/音频验证loss含关联文本；主要单种子、固定tokenizer与架构；某些项并非在全部消融指标占优；继续预训练文本失败未被延长训练实证修复；15T示例仅外推。",
+      "reading_depth": "full_text_targeted",
+      "verification_date": "2026-10-19",
+      "sections_read": "Metadata/history; §§1–6, §9; Appendix G fit validation/ablations, H held-outs, I router interpretation. Not all appendices or visual plots.",
+      "evidence_status": "Primary metadata and selected sections; no independent reproduction, code audit or figure digitization.",
+      "synthesis_status": "incorporated",
+      "changes_existing_conclusion": "Adds directional mixing and capacity/repetition coupling to T7; no universal coefficients or repetition cutoff.",
+      "first_published_utc": "2026-10-10T00:42:37Z",
+      "evidence_notes": [
+        "6 total-parameter scales, 457M–8.3B, up to 150B tokens; fixed 16 routed experts/top-2 plus one shared.",
+        "Held-outs: scratch 12.6B A3.8B at 200B tokens; two 8.3B A2.6B continuations from 100B text.",
+        "No-transfer full-fit RMSE slightly better by 0.7%; worst error worse. Full model not uniformly best under every criterion.",
+        "Table 1 versus appendix unimodal vision exponent differs; no exact vision exponent adopted.",
+        "Text-to-vision aggregate sign depends on task: understanding text-token and image-generation fits differ.",
+        "Audio near-zero transfer is unstable across folds and does not remove its capacity cost.",
+        "Claimed NeurIPS spotlight is author metadata, not independently checked venue acceptance."
+      ]
+    },
+    {
+      "id": "wu2026visualanchors",
+      "title": "More Than Seeing: Vision as Scalable Anchors in Native Multimodal Pre-Training",
+      "authors": [
+        "Haoyuan Wu",
+        "Aoqi Wu",
+        "Jiani Hu",
+        "Bei Yu"
+      ],
+      "year": 2026,
+      "date": "2026-10-14",
+      "first_published": "2026-10-14",
+      "first_published_date": "2026-10-14",
+      "last_revised_date": null,
+      "version": "v1",
+      "version_read": "v1",
+      "latest_version_verified": "v1",
+      "url": "https://arxiv.org/abs/2610.19443",
+      "full_text_url": "https://arxiv.org/html/2610.19443v1",
+      "type": "paper",
+      "branch": "multimodal-controlled-content-transfer",
+      "problem": "改变多模态比例会同时改变文本监督和预算，难以归因视觉内容的作用。",
+      "insight": "在相同数据顺序、长度、掩码和模型下，用无内容padding替换图像embedding。",
+      "method": "Six MoE activated non-embedding scales 71M–3B, fixed multimodal/text input-token ratio 0.3, smoothed training text loss; matched img/pad runs.",
+      "result": "Authors report nearly unchanged text frontiers and growing multimodal relative loss gaps, with selective text-only spatial transfer.",
+      "limitation": "非无图像位置的text-only基线；325B含图像patch；训练loss代理非留出测试loss；同run两种拟合法非独立验证；空间收益不单调，不能推断普遍推理增益或超出测量范围的幂律。",
+      "reading_depth": "full_text_targeted",
+      "verification_date": "2026-10-19",
+      "sections_read": "Metadata/history; §§1–6 including methods, paired conditions and evaluation; appendix snippets only, no complete appendix/proof/code review.",
+      "evidence_status": "Primary metadata and selected sections; no independent reproduction, code audit or figure digitization.",
+      "synthesis_status": "catalog_only",
+      "changes_existing_conclusion": "Useful controlled-content complement; no new T7 body claim pending detailed evaluation and seed audit.",
+      "first_published_utc": "2026-10-14T02:33:34Z"
+    }
+  ],
+  "candidates_not_promoted": [
+    {
+      "title": "Dimension-Free Scaling Laws for Size Generalization: An Exponential Separation",
+      "authors": [
+        "Behrooz Tahmasebi",
+        "Melanie Weber"
+      ],
+      "url": "https://arxiv.org/abs/2610.19279",
+      "first_published_utc": "2026-10-13T22:55:32Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "abstract and selected formal setup §§3–4.3",
+      "reason": "Exact norm-preserving target transfer, invariant function spaces and uniform curvature/score assumptions; no LLM resource law. Full rate/proof audit pending. Extended abstract reportedly July10 workshop; not first-ever disclosure claimed."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.17080",
+      "reading_depth": "search result only",
+      "reason": "Long-horizon interleaved generation: budget-controlled scaling evidence not reviewed."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.20804",
+      "reading_depth": "search result only",
+      "reason": "Continual linear-regression regularization outside priority scope."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.21340",
+      "reading_depth": "search result only",
+      "reason": "PAC-Bayes broad claims require proof audit; no body claim."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.16837",
+      "reading_depth": "search result only",
+      "reason": "Syntactic language-model compute-controlled comparison retained for follow-up."
+    }
+  ],
+  "other_search_outcomes": "Paired Multimodal Scaling Laws is already cataloged. Official-site searches also returned policy, case studies and events without controlled scaling evidence. Anthropic self-assessment delegated to frontier. Community claims separately logged.",
+  "limits": [
+    "No independent experiments or complete proof/code audit.",
+    "No third-party full texts published.",
+    "Search results and social access failures do not establish absence of material."
+  ]
+}

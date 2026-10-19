@@ -1,17 +1,17 @@
 {
-  "checked_on": "2026-10-12",
-  "edition": "v0.3.4",
-  "source_records": 176,
-  "sources_cited_in_technical_chapters": 165,
+  "checked_on": "2026-10-19",
+  "edition": "v0.3.5",
+  "source_records": 182,
+  "sources_cited_in_technical_chapters": 169,
   "technical_chapters": 7,
-  "technical_han_characters": 40896,
+  "technical_han_characters": 42194,
   "community_records": 21,
-  "pdf_pages": 64,
-  "pdf_link_annotations": 705,
+  "pdf_pages": 66,
+  "pdf_link_annotations": 720,
   "display_formulas_rendered": 26,
   "display_formula_fallbacks": 0,
   "local_links_and_schema": "pass",
-  "review": "Initial English 91-page and Chinese 64-page contact sheets fully viewed, with page-scale checks of new material, contents and references. New T4 order formula moved to display math and existing log/pi spacing fixed after visual inspection. Final English changed pages 28–29 re-inspected; other 89 pages pixel-identical to the reviewed initial rendering. Final Chinese all-page contact sheets and targeted page-scale checks re-inspected after pagination changed. All 469 external Markdown link occurrences per language preserve multiplicity; 338 distinct source targets exist in each PDF. Seven changed chapter pairs reviewed before fingerprint updates. No independent experiment reruns.",
+  "review": "All English pages 1–93 and Chinese pages 1–66 visually inspected through 14 contact sheets. English page-scale review: 2,12,23,30,42,58,59,60,73,93; Chinese: 10,17,30,41,42,51,66. No visible clipping, overlap, orphan headings, missing glyphs, equation overflow or broken tables. All 26 display formulas rendered with zero fallback in both languages; inline mathematics remains readable text notation. Six changed chapter pairs reviewed before renewing fingerprints. No independent experiment reruns.",
   "limits": [
     "No independent rerun of cited experiments",
     "External URL availability is based on research verification logs, not an automated live link crawl",
@@ -22,22 +22,22 @@
   "publication": "Public GitHub repository yibingwei-1/scaling-law-survey, main branch",
   "pdfs": {
     "en": {
-      "pages": 91,
-      "link_annotations": 717,
+      "pages": 93,
+      "link_annotations": 734,
       "display_formulas_rendered": 26,
       "display_formula_fallbacks": 0,
-      "external_source_targets_verified": 338,
-      "external_link_occurrences_checked": 469,
-      "sha256": "d79a78e7282da54f9dc986a13c17479a1626a14af69c982bbf765afbe699cdb1"
+      "external_source_targets_verified": 348,
+      "external_link_occurrences_checked": 479,
+      "sha256": "cf0938ea2f2a2478770ac8b0dc7a2807307f142e876ddf932597a8102945475f"
     },
     "zh-CN": {
-      "pages": 64,
-      "link_annotations": 705,
+      "pages": 66,
+      "link_annotations": 720,
       "display_formulas_rendered": 26,
       "display_formula_fallbacks": 0,
-      "external_source_targets_verified": 338,
-      "external_link_occurrences_checked": 469,
-      "sha256": "4dc9e0f72ae991e8819dc6a30007b4be015b3a1d6ce5e02407898482eca68d35"
+      "external_source_targets_verified": 348,
+      "external_link_occurrences_checked": 479,
+      "sha256": "762e95aa66192ffbf7b26e25c4c8c30923714cd55684a3d019dec5b3b786a440"
     }
   },
   "translation_review": {
@@ -52,7 +52,7 @@
       "All maintained chapters included once in assembled manuscript"
     ],
     "manifest": "data/translation-status.json",
-    "incremental_reviewed_on": "2026-10-12",
-    "incremental_chapters": 7
+    "incremental_reviewed_on": "2026-10-19",
+    "incremental_chapters": 6
   }
 }

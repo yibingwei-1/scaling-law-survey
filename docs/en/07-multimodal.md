@@ -1,6 +1,6 @@
 # Chapter 7 — Vision, Multimodality, Diffusion, and Robotics: What Should Be Scaled to Improve the Target Capability?
 
-> Updated: 2026-10-12. Problem thread T7. What transfers across domains is the experimental methodology and the resource-allocation question, not an assumed shared exponent. Core sources read in full include mixed-modal scaling, diffusion inference search, and robotic data scaling; frontier or historical additions checked only at the abstract level are marked separately.
+> Updated: 2026-10-19. Problem thread T7. What transfers across domains is the experimental methodology and the resource-allocation question, not an assumed shared exponent. Core sources read in full include mixed-modal scaling, diffusion inference search, and robotic data scaling; frontier or historical additions checked only at the abstract level are marked separately.
 
 Parameter counts and token counts in language models provide a convenient starting point, but they are not naturally shared units across every domain. An image can become hundreds of patches, thousands of discrete codes, or a continuous latent representation; a robotic trajectory also carries correlations involving environments, objects, actions, and time. Plotting different domains on log-log axes therefore does not establish that they follow the same resource relationships.
 
@@ -54,6 +54,12 @@ This interaction view also explains why average loss can hide imbalances within 
 Unresolved boundaries concern representations, mixture ratios, and objectives. An image tokenizer's compression ratio changes sequence length, visual detail, and the actual cost per image; speech tokens introduce their own information loss. Equal token counts therefore should not be interpreted as equal semantic information. The appendix's comparisons of visual and speech reconstruction underscore that the tokenizer is part of the entire scaling system. Extending the result to unequal mixtures, more modalities, long video, different task losses, and perception–action loops requires identifying the interaction terms again, rather than copying these coefficients.
 
 MM1's abstract offers an engineering route to follow: image encoders, resolution, image-token counts, and mixtures of data types affect its models more than some connector designs. This agrees with the question raised here—resource and data bottlenecks remain after format unification—but MM1's detailed ablations remain candidate reading in this edition. Its abstract cannot justify a universal architectural ranking for all MLLMs. [MM1, 2024](https://arxiv.org/abs/2403.09611v4)
+
+### Unequal mixtures: transfer gains must be weighed against shared-capacity costs
+
+Equal-ratio interactions leave modality supply and repetition unresolved. [Khandelwal et al., 2026, §§3–6 and Appendices G–H](https://arxiv.org/html/2610.14423v1) use 268 training runs to separate directional transfer, shared-capacity competition, and repetition saturation in effective data and parameter models. The fixed MoE family spans 457M–8.3B total parameters, including inactive experts and embeddings; these counts cannot directly represent active computation per token. Vision and audio validation losses also include associated text, rather than measuring pure perceptual quality.
+
+Three validations without refitting cover larger-model training from scratch and two continued-pretraining mixtures. Eight of nine modality losses have relative prediction errors within 2.51%, but text error reaches 6.73% for the non-text-heavy continuation. Longer training is a proposed explanation for resolving this discrepancy, not a demonstrated fix. Repetition saturates asymptotically rather than becoming worthless after two epochs; optimal repetition still depends on supply and budget. Transfer from audio to text and vision is near zero and unstable across folds; this does not eliminate capacity costs. This extends resource accounting, but fixed tokenizers, mostly single-seed runs, and trade-offs across ablation metrics do not establish universal coefficients or unrestricted extrapolation.
 
 ### Pairing Is Also a Resource: Why Equal Modality Totals Are Insufficient
 

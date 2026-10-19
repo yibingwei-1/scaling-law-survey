@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-19",
+  "edition": "v0.3.5",
+  "search_window": {
+    "from": "2026-09-28",
+    "through": "2026-10-19"
+  },
+  "status": "content_updated_validated",
+  "new_primary_sources": [
+    "min2026repeatedbatch",
+    "kim2026mixedprecision",
+    "wang2026harnessevaluation",
+    "zhang2026selfassessment",
+    "khandelwal2026multimodalmixtures",
+    "wu2026visualanchors"
+  ],
+  "new_body_sources": [
+    "min2026repeatedbatch",
+    "kim2026mixedprecision",
+    "wang2026harnessevaluation",
+    "khandelwal2026multimodalmixtures"
+  ],
+  "catalog_only_sources": [
+    "zhang2026selfassessment",
+    "wu2026visualanchors"
+  ],
+  "revised_sources": [],
+  "new_community_records": [],
+  "new_high_attention_records": 0,
+  "chapters_changed": [
+    "T2",
+    "T3",
+    "T5",
+    "T7"
+  ],
+  "research_logs": [
+    "sources/weekly-2026-10-19-foundations.json",
+    "sources/weekly-2026-10-19-frontier.json",
+    "sources/weekly-2026-10-19-community.json",
+    "sources/weekly-2026-10-19-editor.json",
+    "sources/weekly-2026-10-19-review.json"
+  ],
+  "reason_for_body_updates": [
+    "Batch/regularization and sequential deadlines change repeated-data frontiers.",
+    "Forward/backward precision introduces a distinct empirical optimization-error constraint.",
+    "Harness search requires separating task feedback, reusable transfer and selection protocols.",
+    "Unequal multimodal mixing couples transfer, capacity and repetition; continuation validation includes a failure."
+  ],
+  "review": [
+    "Root reviewed paired changed paragraphs, numeric conditions and links after independent primary-source cross-review. Corrected 1B-pool learning-rate transfer, end-to-end training time, audio-to-text/vision direction and fold instability, and distinction between harness search budgets and held-out pass@1. Intro date and community access-limits wording paired. No new equations; unchanged chapters retain prior fingerprints. No experiments independently reproduced.",
+    "Prior 21 community records and all earlier source records preserved.",
+    "All English pages 1–93 and Chinese pages 1–66 visually inspected through 14 contact sheets. English page-scale review: 2,12,23,30,42,58,59,60,73,93; Chinese: 10,17,30,41,42,51,66. No visible clipping, overlap, orphan headings, missing glyphs, equation overflow or broken tables. All 26 display formulas rendered with zero fallback in both languages; inline mathematics remains readable text notation. Six changed chapter pairs reviewed before renewing fingerprints. No independent experiment reruns."
+  ],
+  "access_limits": [
+    "Targeted discovery is not exhaustive; search indexing can omit recent work.",
+    "X original returned 403; Reddit candidate lacked absolute date and visible counters.",
+    "YouTube transcript date is not an upload date; candidate direct access failed.",
+    "No qualifying new community entry; failures do not establish absence of discussion.",
+    "Selected primary sections reviewed; no independent experiment reproduction."
+  ],
+  "publication_target": "https://github.com/yibingwei-1/scaling-law-survey",
+  "counts": {
+    "catalog": 182,
+    "technical_sources_cited": 169,
+    "community": 21,
+    "technical_han_characters": 42194
+  },
+  "validation": {
+    "status": "pass",
+    "date": "2026-10-19",
+    "checks": [
+      "scripts/build_survey.py",
+      "Eight generated artifacts unchanged on rebuild",
+      "scripts/validate.py: 182 sources, 21 community records, 41 Markdown files",
+      "Both PDF languages built with --check: 26 display formulas, zero fallback",
+      "All-page visual coverage via contact sheets; selected pages at full-page scale",
+      "Six changed chapter pairs reviewed before fingerprint renewal",
+      "All repository JSON parsed; prior sources and 21 community records unchanged; git diff --check passed"
+    ],
+    "pdf_pages": {
+      "en": 93,
+      "zh-CN": 66
+    },
+    "record": "data/quality-check.json",
+    "limits": "Targeted discovery and incomplete platform access; no independent experiment reproduction."
+  }
+}

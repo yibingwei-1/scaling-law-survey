@@ -1,6 +1,6 @@
 # References
 
-176 distinct primary-source records, ordered by first-publication year. Community discussions are recorded separately. This is not a quality or popularity ranking.
+182 distinct primary-source records, ordered by first-publication year. Community discussions are recorded separately. This is not a quality or popularity ranking.
 
 Reading-depth labels are abbreviated; exact sections, limitations, and versions are recorded in [papers.json](data/papers.json). Full-text reading does not mean that every figure, proof, or experiment has been independently verified. Partial author lists are marked in the BibTeX export and should be completed from primary sources before submission.
 
@@ -173,11 +173,17 @@ Reading-depth labels are abbreviated; exact sections, limitations, and versions 
 | 2026 | [Hyperparameter Scaling Laws Across MoE Sparsity](https://arxiv.org/abs/2609.08690) | Selected full-text sections | v1 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | Abstract / metadata | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining](https://arxiv.org/abs/2609.39403) | Selected full-text sections | v1 / Paper / preprint | Catalog only |
+| 2026 | [Mixed Precision Scaling Laws for Quantized Pretraining](https://arxiv.org/abs/2610.17637) | Selected full-text sections | v1 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
+| 2026 | [More Than Seeing: Vision as Scalable Anchors in Native Multimodal Pre-Training](https://arxiv.org/abs/2610.19443) | Selected full-text sections | v1 / Paper / preprint | Catalog only |
 | 2026 | [Paired Multimodal Scaling Laws](https://arxiv.org/abs/2609.36263) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Planned Test-Time Scaling with Coordinated Reasoning Paths](https://arxiv.org/abs/2609.27374) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | Selected full-text sections | v1 / Paper / preprint | [06](docs/en/06-theory-evaluation.md) |
+| 2026 | [Rethinking the Evaluation of Harness Evolution for Agents](https://arxiv.org/abs/2607.12227) | Selected full-text sections | v4 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Revisiting scaling laws for reward optimization](https://arxiv.org/abs/2609.38526) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
+| 2026 | [Scaling Laws for Multimodal Data Mixtures](https://arxiv.org/abs/2610.14423) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
+| 2026 | [Scaling Misuse Detection with Self-Assessment](https://safeguards.anthropic.com/2026/self-assessment) | Selected full-text sections | Web snapshot / Technical article | Catalog only |
+| 2026 | [Scaling Repeated-Data Pretraining: Batch Size, Regularization, and GPU-Time Tradeoffs](https://arxiv.org/abs/2610.15965) | Selected full-text sections | v1 / Paper / preprint | [02](docs/en/02-data.md) |
 | 2026 | [Scaling Vision-Language Models Is Not Enough to Mitigate Bias](https://arxiv.org/abs/2607.28211) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Thinking Long, but Short: Stable Sequential Test-Time Scaling for Large Reasoning Models](https://arxiv.org/abs/2601.09855) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |

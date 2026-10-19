@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "edition": "v0.3.4",
-  "last_successful_search": "2026-10-12",
-  "last_content_update": "2026-10-12",
-  "pdf_content_date": "2026-10-12",
+  "edition": "v0.3.5",
+  "last_successful_search": "2026-10-19",
+  "last_content_update": "2026-10-19",
+  "pdf_content_date": "2026-10-19",
   "coverage": "Representative narrative review; not exhaustive; primary claims not independently reproduced",
   "automation": {
     "id": "scaling-law",
@@ -18,7 +18,7 @@
     "status": "published",
     "visibility": "public",
     "branch": "main",
-    "last_verified": "2026-10-12"
+    "last_verified": "2026-10-19"
   },
   "coverage_limits": [
     "Three X posts lack observable counters; one has a labeled search-index view count",
@@ -44,16 +44,21 @@
     "Repeated-data excess-loss fit beyond threshold-selected mostly single-run grids; average repeat value and marginal stopping rules differ.",
     "Reward-data/KL limits beyond IID Gaussian and nonadaptive feedback; deployable peak selection without gold access.",
     "Inverse-depth mechanisms beyond controlled split streams and fixed contexts; paired multimodal scaling without seed filtering at generative frontier scale.",
-    "FrogNano full-cost and interface-controlled evaluation; DiVeR, architectural sampling and CARET method/budget audits."
+    "FrogNano full-cost and interface-controlled evaluation; DiVeR, architectural sampling and CARET method/budget audits.",
+    "Repeated-data batch/regularization beyond DCLM and dense sub-1.5B models; measured hardware time with GPU availability rather than exact-use constraints.",
+    "Quantized-pretraining residual-error transfer and end-to-end timing beyond simplified GEMM cost models.",
+    "Harness evolution with unseen tasks, complete search/edit costs and deployable final selection.",
+    "Multimodal directional mixture/repetition fits across tokenizers and architectures; continuation text-loss failure and visual-content controlled-transfer seed audit.",
+    "Size-generalization theory assumptions/proofs; Goodfire working hypothesis and dated original social metrics."
   ],
-  "last_validation_date": "2026-10-12",
-  "source_count": 176,
+  "last_validation_date": "2026-10-19",
+  "source_count": 182,
   "community_count": 21,
   "technical_chapters": 7,
-  "sources_cited_in_technical_chapters": 165,
-  "technical_han_characters": 40896,
+  "sources_cited_in_technical_chapters": 169,
+  "technical_han_characters": 42194,
   "reading_depth_summary": {
-    "正文定向阅读": 131,
+    "正文定向阅读": 137,
     "摘要/引言": 3,
     "摘要/元数据": 31,
     "官方报告选段": 2,
@@ -66,18 +71,18 @@
       "zh-CN"
     ],
     "translated_chapters": 12,
-    "translation_reviewed_on": "2026-10-12"
+    "translation_reviewed_on": "2026-10-19"
   },
   "last_search_run": {
-    "date": "2026-10-12",
-    "window_start": "2026-09-21",
+    "date": "2026-10-19",
+    "window_start": "2026-09-28",
     "status": "completed_with_access_limits",
-    "record": "data/maintenance-runs/2026-10-12.json",
+    "record": "data/maintenance-runs/2026-10-19.json",
     "access_limits": [
       "Targeted discovery is not exhaustive; search indexing can omit recent work.",
-      "X mirrors lacked verified original status dates and labeled counters; no formal new X entry.",
-      "No qualifying new YouTube sample verified; tested prior short failed to open.",
-      "Reddit score is an indexed snapshot, not a live count.",
+      "X original returned 403; Reddit candidate lacked absolute date and visible counters.",
+      "YouTube transcript date is not an upload date; candidate direct access failed.",
+      "No qualifying new community entry; failures do not establish absence of discussion.",
       "Selected primary sections reviewed; no independent experiment reproduction."
     ]
   },
