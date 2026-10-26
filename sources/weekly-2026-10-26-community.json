@@ -1,0 +1,538 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-10-26",
+  "window": {
+    "start": "2026-10-05",
+    "end": "2026-10-26",
+    "inclusive": true
+  },
+  "baseline_head": "9b7d376e9332579266b6a5ddb2ee4dc488e693a4",
+  "baseline_edition": "v0.3.5",
+  "baseline_catalog_count": 21,
+  "baseline_files_read": [
+    {
+      "path": "METHODOLOGY.md",
+      "scope": "Maintenance and source/reading-depth policy."
+    },
+    {
+      "path": "UPDATING.md",
+      "scope": "Weekly scope, change policy and verification requirements."
+    },
+    {
+      "path": "data/state.json",
+      "scope": "Current edition and previous successful search date."
+    },
+    {
+      "path": "sources/community.json",
+      "scope": "All 21 record identities, historical observations and current metric policy; last two records inspected in full for schema."
+    },
+    {
+      "path": "docs/04-community-radar.md",
+      "scope": "Current framing, attention thresholds and latest weekly sections; earlier examples read selectively."
+    },
+    {
+      "path": "sources/weekly-2026-10-19-community.json",
+      "scope": "Previous queries, Goodfire/watchlist evidence, limitations and decision."
+    }
+  ],
+  "scope": "Community discovery and bounded primary-source follow-up confined to this repository. Only this weekly log is written; parent decides whether to merge the proposal. No canonical records, prose, historical metrics, state or git history are changed by this subtask.",
+  "policy": {
+    "missing_metrics": "null means not observed, not zero.",
+    "index_metrics": "Search-index counters are snapshots with unknown measurement time, not live platform statistics or rankings.",
+    "publication_date": "Only explicit dates are retained as publication dates. Crawl dates, transcript dates, recent replies and unanchored relative labels are not substituted.",
+    "attention_thresholds": {
+      "reddit_score": 100,
+      "youtube_views": 100000,
+      "x_explicit_views": 100000
+    },
+    "cross_platform_ranking": false,
+    "technical_evidence": "Community attention discovers questions; original author reports support only their stated claims. Votes do not validate mechanisms, replication or consensus.",
+    "deduplication": "RD-12 is absent from the 21 canonical identities but was an unverified candidate last week. Its newly observed dated index snapshot is not a revision of a historical accepted counter.",
+    "tools": "Actual searches and page reads used web__run; no private feeds, logged-in accounts, third-party metric extrapolation or platform-wide sampling."
+  },
+  "search_query_count": 24,
+  "queries": [
+    {
+      "batch": 1,
+      "queries": [
+        {
+          "q": "\"scaling laws\" after:2026-10-04 before:2026-10-27 site:reddit.com"
+        },
+        {
+          "q": "\"test-time compute\" after:2026-10-04 before:2026-10-27 site:reddit.com"
+        },
+        {
+          "q": "\"scaling laws\" \"October 2026\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"scaling laws\" after:2026-10-04 before:2026-10-27 site:x.com -site:blog.x.com -site:communitynotes.x.com"
+        }
+      ],
+      "outcome": "Returned a recurring October 8 low-score scaling-limit thread and older original posts surfaced with newer replies. No qualified new X or YouTube result."
+    },
+    {
+      "batch": 2,
+      "queries": [
+        {
+          "q": "\"compute-optimal\" after:2026-10-04 before:2026-10-27 site:reddit.com"
+        },
+        {
+          "q": "\"scaling\" \"October 2026\" \"reinforcement learning\" site:reddit.com/r/LocalLLaMA"
+        },
+        {
+          "q": "\"test-time scaling\" \"2026\" site:youtube.com/watch",
+          "recency": 21
+        },
+        {
+          "q": "\"Neural Networks Are Already Clean\" site:reddit.com"
+        }
+      ],
+      "outcome": "Goodfire exact-title query returned the original Reddit post with explicit October 15 date and score 887, plus lower-attention crossposts. A secondary discussion linked Leo Gao's author response. The other queries yielded no qualifying new sample."
+    },
+    {
+      "batch": 3,
+      "queries": [
+        {
+          "q": "\"On the Limits of Scale\" \"Inverse Scaling\" (site:reddit.com OR site:x.com OR site:youtube.com)"
+        },
+        {
+          "q": "\"Scaling Laws for Generative Reward Models\" (site:reddit.com OR site:x.com OR site:youtube.com)"
+        },
+        {
+          "q": "\"Harness Scaling\" (site:reddit.com OR site:x.com OR site:youtube.com)"
+        },
+        {
+          "q": "\"Microsoft\" \"Frontier Pre-training\" (site:reddit.com OR site:x.com OR site:youtube.com)"
+        }
+      ],
+      "outcome": "Exact-title searches for inverse scaling in VLMs, generative reward scaling, Harness Scaling, and Microsoft's frontier pre-training report returned no results."
+    },
+    {
+      "batch": 4,
+      "queries": [
+        {
+          "q": "\"2610.27360\" (site:reddit.com OR site:x.com OR site:youtube.com)"
+        },
+        {
+          "q": "\"2610.30765\" (site:reddit.com OR site:x.com OR site:youtube.com)"
+        },
+        {
+          "q": "\"2610.29458\" (site:reddit.com OR site:x.com OR site:youtube.com)"
+        },
+        {
+          "q": "\"pretraining\" \"Microsoft\" after:2026-10-14 before:2026-10-27 site:reddit.com"
+        }
+      ],
+      "outcome": "ArXiv-ID queries yielded no qualifying platform links. The Microsoft query found an October 15 r/MSFT thread with indexed score 23 and the official report link."
+    },
+    {
+      "batch": 5,
+      "queries": [
+        {
+          "q": "\"Neural Networks Are Already Clean\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"scaling\" \"October 2026\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"MAI-Base-2\" site:x.com"
+        },
+        {
+          "q": "\"test-time\" \"scaling\" after:2026-10-04 before:2026-10-27 site:x.com"
+        }
+      ],
+      "outcome": "Goodfire/October-scaling YouTube and MAI-Base-2/test-time-scaling X queries returned no results."
+    },
+    {
+      "batch": 6,
+      "queries": [
+        {
+          "q": "\"MAI-Base-2\" site:reddit.com/r/singularity"
+        },
+        {
+          "q": "\"MAI-Base-2\" site:reddit.com/r/LocalLLaMA"
+        },
+        {
+          "q": "\"generative reward\" \"scaling\" after:2026-10-04 before:2026-10-27 site:x.com"
+        },
+        {
+          "q": "\"AI\" \"scaling\" \"October 2026\" \"views\" site:youtube.com/watch"
+        }
+      ],
+      "outcome": "MAI-Base-2 targeted subreddit searches still returned the r/MSFT score-23 thread and low-score news roundups elsewhere. No qualifying X or YouTube sample."
+    }
+  ],
+  "proposal": {
+    "status": "one_qualified_community_record_for_parent_review",
+    "recommended_new_community_records": 1,
+    "entries": [
+      {
+        "id": "RD-12",
+        "platform": "Reddit",
+        "community": "r/singularity",
+        "title": "Interpretability might have been solved by an Open AI guy: \"Neural Networks Are Already Clean\"",
+        "url": "https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/",
+        "author": "u/FomalhautCalliclea",
+        "published_at": "2026-10-15",
+        "publication_date_evidence": "Search-index result explicitly displayed [Thursday October 15 2026]; the directly opened reader exposed only an unanchored '23h ago'. The latter is not converted into a posting date.",
+        "topics": [
+          "scaling and interpretability",
+          "neuron explanations",
+          "architecture and measurement",
+          "mechanistic evaluation"
+        ],
+        "metrics": {
+          "likes": null,
+          "comments": null,
+          "views": null,
+          "reposts": null,
+          "score": 887
+        },
+        "metric_evidence": "[Thursday October 15 2026] [+887 votes]",
+        "primary_sources": [
+          {
+            "url": "https://already-clean.goodfire.com/",
+            "title": "Neural Networks Are Already Clean",
+            "kind": "author_research_essay",
+            "verification": "Header, Short Version, threshold caveats, companion-paper statements and selected definition/appendix passages read; not the full essay, galleries or code."
+          },
+          {
+            "url": "https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean",
+            "title": "Neural networks are not already clean",
+            "kind": "author_technical_response",
+            "verification": "Leo Gao (leogao); page explicitly dated October 17, 2026. Full short article body and footnotes read; comments and linked works not comprehensively reviewed."
+          }
+        ],
+        "access_status": "Original Reddit post and selected replies readable. Absolute date and score are supplied by the search-index snapshot; the direct reader exposes no numeric counters.",
+        "attention_status": "high_attention_proxy",
+        "discussion_focus": "The discussion motivates separating readable neuron labels from evidence that explanations capture computation. It is a measurement and interpretation question relevant to claims about what changes with model scale.",
+        "evidence_limit": "The sensational title is the poster's framing. Goodfire calls its essay a working hypothesis; the response questions the evidential standard. Neither a universal scaling law nor interpretability solved follows. Indexed score 887 has unknown measurement time; no independent reproduction was performed.",
+        "observed_at": "2026-10-26",
+        "metrics_source_kind": "search_index_snapshot",
+        "metric_measurement_time": null,
+        "comments_complete": false,
+        "observations": [
+          {
+            "observed_at": "2026-10-26",
+            "source_kind": "search_index_snapshot",
+            "url": "https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/",
+            "published_at": "2026-10-15",
+            "score": 887,
+            "metric_measurement_time": null,
+            "date_score_excerpt": "[Thursday October 15 2026] [+887 votes]"
+          },
+          {
+            "observed_at": "2026-10-26",
+            "source_kind": "direct_reader",
+            "url": "https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/",
+            "published_at": null,
+            "relative_time_text": "23h ago",
+            "metrics": {
+              "likes": null,
+              "comments": null,
+              "views": null,
+              "reposts": null,
+              "score": null
+            },
+            "note": "Reference time unknown; not converted into a date. Selected replies, not the entire comment tree, were read. The reader may be cached and is not a live counter."
+          }
+        ]
+      }
+    ],
+    "primary_source_catalog_records": [],
+    "radar_rows_zh": [
+      "| RD-12 | [Goodfire 可解释性争议原帖](https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/) | 2026-10-15；887 票 | 10-26 取得的搜索索引快照，计数时点未知；直接读取无数值 | 神经元标签是否解释了计算，须回到作者论述与回应核验 |"
+    ],
+    "radar_rows_en": [
+      "| RD-12 | [Goodfire interpretability discussion](https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/) | 2026-10-15; score 887 | Search-index snapshot observed October 26; measurement time unknown; no direct-reader counter | Whether neuron labels explain computation requires checking author arguments and responses |"
+    ],
+    "radar_paragraph_zh": "本轮覆盖 2026-10-05 至 10-26，24 条三平台查询得到 1 条建议新增。上周未核验的 [Goodfire 原帖](https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/) 现取得明确的 10 月 15 日日期及 887 票索引快照；这不是实时计数，原有 21 条历史观测不变。[作者文章](https://already-clean.goodfire.com/) 自称工作假说，神经元可读性比例依赖阈值，配套技术论文仍标为待发布；[Leo Gao 10 月 17 日的回应](https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean) 则主张用替代激活后的下游行为检验解释，并指出解释神经元尚不等于理解神经元之间的计算。这是证据标准的争论，不能推出可解释性已经解决或普遍 scaling 机制已获证明。X 原链仍为 403，YouTube 旧候选本轮返回 Cache miss；没有指标不等于零关注。",
+    "radar_paragraph_en": "The October 5–26 window produced one proposed addition from 24 queries across the three platforms. The previously unverified [Goodfire thread](https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/) now has an explicit October 15 date and indexed score of 887. This is not a live count; the existing 21 historical observations remain unchanged. The [author's essay](https://already-clean.goodfire.com/) presents a working hypothesis, makes readability proportions threshold-dependent, and still describes its technical companion as forthcoming. [Leo Gao's October 17 response](https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean) argues for testing explanations through downstream behavior after replacing activations, and distinguishes explaining neurons from understanding computation between them. This dispute over evidence does not establish that interpretability is solved or prove a universal scaling mechanism. The X original still returned 403; the previously identified YouTube candidate returned Cache miss. Missing metrics do not mean zero attention.",
+    "technical_body_change": false,
+    "rationale": "The original post now meets the existing Reddit attention proxy and has an explicit in-window date. A directly readable author response supplies a concrete methodological question. Propose community coverage only; do not infer an established scaling result."
+  },
+  "context_candidates": [
+    {
+      "candidate_id": "CTX-MSFT",
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/MSFT/comments/1x6qkj1/msfts_maibase2_looks_promising_especially_looking/",
+      "title": "MSFT's MAI-Base-2 looks promising, especially looking at how their first model performed",
+      "published_at": "2026-10-15",
+      "observed_at": "2026-10-26",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 23
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "status": "not_proposed",
+      "reason": "Below attention threshold; do not add merely because the official report is technically relevant.",
+      "metric_evidence": "[Thursday October 15 2026] [+23 votes]",
+      "primary_sources": [
+        "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/"
+      ],
+      "access_status": "Search-index body read; original Reddit page not separately opened."
+    },
+    {
+      "candidate_id": "CTX-GF-FUT",
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/Futurology/comments/1x9clp3/neural_networks_are_already_clean/",
+      "title": "Neural Networks Are Already Clean - Interpretability might have been solved",
+      "published_at": "2026-10-18",
+      "observed_at": "2026-10-26",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 75
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "status": "not_proposed",
+      "reason": "Below threshold; duplicate research event, not independent corroboration.",
+      "metric_evidence": "[Sunday October 18 2026] [+75 votes]",
+      "primary_sources": [
+        "https://already-clean.goodfire.com/"
+      ],
+      "access_status": "Search-index snapshot only."
+    },
+    {
+      "candidate_id": "CTX-GF-CL",
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/ArtificialInteligence/comments/1x8h0dp/already_clean_neural_nets_might_enable_continual/",
+      "title": "Already clean neural nets might enable continual learning",
+      "published_at": "2026-10-17",
+      "observed_at": "2026-10-26",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 21
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "status": "not_proposed",
+      "reason": "Below threshold and extrapolative discussion; no separate validated continual-learning result followed.",
+      "metric_evidence": "[Saturday October 17 2026] [+21 votes]",
+      "primary_sources": [
+        "https://already-clean.goodfire.com/"
+      ],
+      "access_status": "Search-index snapshot only. No trend is inferred from last week's different snapshot."
+    },
+    {
+      "candidate_id": "CTX-SCALING",
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/singularity/comments/1x0ctxq/can_someone_explain_where_are_we_currently_as_it/",
+      "title": "Can someone explain where are we currently as it relates to scaling limits?",
+      "published_at": "2026-10-08",
+      "observed_at": "2026-10-26",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 18
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "status": "not_proposed",
+      "reason": "Recurring below-threshold context from prior weekly log; no new linked primary result verified.",
+      "metric_evidence": "[Thursday October 08 2026] [+18 votes]",
+      "access_status": "Search-index snapshot only; not a new canonical observation."
+    },
+    {
+      "candidate_id": "CTX-PROOFS",
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/ObscurePatentDangers/comments/1xdd9yj/unreleased_openai_frontier_models_generate/",
+      "title": "Unreleased OpenAI Frontier Models Generate Navier-Stokes and Bulk Math Proofs That Strain Human Verification Capacity",
+      "published_at": "2026-10-23",
+      "observed_at": "2026-10-26",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 81
+      },
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "status": "not_proposed",
+      "reason": "Below threshold; primary-source basis not checked, so no technical conclusion is retained.",
+      "metric_evidence": "[Friday October 23 2026] [+81 votes]",
+      "access_status": "Search-index snapshot only."
+    },
+    {
+      "candidate_id": "CTX-GF-RESPONSE-LINK",
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/singularity/comments/1xa944i/we_were_looking_at_it_wrong_the_explosive_claim/",
+      "title": "We were looking at it wrong: The explosive claim that's upended the AI world",
+      "published_at": null,
+      "observed_at": "2026-10-26",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": null,
+      "metric_measurement_time": null,
+      "status": "not_proposed",
+      "reason": "Used only to discover the author-response URL; main-post date and score not verified. Dated comments are not the original publication date.",
+      "primary_sources": [
+        "https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean"
+      ],
+      "access_status": "Selected search-index replies read; no main-post counter retained."
+    }
+  ],
+  "unverified_candidates": [
+    {
+      "candidate_id": "UNVERIFIED-X-GF",
+      "platform": "X",
+      "url": "https://x.com/nickcammarata/status/2110757819427574056",
+      "title": "Goodfire author announcement candidate",
+      "published_at": null,
+      "observed_at": "2026-10-26",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": null,
+      "metric_measurement_time": null,
+      "status": "not_proposed",
+      "reason": "Direct open failed with 403; no dated platform text or labeled counters available.",
+      "primary_sources": [
+        "https://already-clean.goodfire.com/"
+      ],
+      "access_status": "Direct fetch: (403) Forbidden. Previously known original URL; identity/date/metrics not newly authenticated."
+    },
+    {
+      "candidate_id": "UNVERIFIED-YT-ILYA",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=UdnYzYw-t5Y",
+      "title": "What comes after scaling pre-training? – Illya Sutskever",
+      "published_at": null,
+      "observed_at": "2026-10-26",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metrics_source_kind": null,
+      "metric_measurement_time": null,
+      "status": "not_proposed",
+      "reason": "Direct open failed; upload date and view count remain unknown. Previously discovered secondary title is not a fresh video inspection.",
+      "access_status": "Direct fetch: Cache miss. Video not watched; no transcript-production date used as upload date."
+    }
+  ],
+  "primary_source_checks": [
+    {
+      "url": "https://already-clean.goodfire.com/",
+      "title": "Neural Networks Are Already Clean",
+      "author": "Nick Cammarata",
+      "type": "author_research_essay",
+      "published_at": null,
+      "reading_depth": "official_report_sections",
+      "sections_read": "Header and Short Version; find-returned companion-paper and preliminary-audit caveats; selected definition and appendix passages on superposition. Not the entire 65-minute essay or all interactive examples.",
+      "verification_date": "2026-10-26",
+      "status": "community_context_only",
+      "finding": "Essay explicitly presents a working hypothesis. No new companion paper was verified in this bounded check.",
+      "limitation": "No independent experiments or controlled cross-scale validation audited."
+    },
+    {
+      "url": "https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean",
+      "title": "Neural networks are not already clean",
+      "author": "Leo Gao (leogao)",
+      "type": "author_technical_response",
+      "published_at": "2026-10-17",
+      "publication_date_evidence": "Direct page header: 17th Oct 2026.",
+      "reading_depth": "full_short_essay",
+      "sections_read": "Complete article body and seven footnotes; not the comment tree or all linked papers.",
+      "verification_date": "2026-10-26",
+      "status": "community_context_only",
+      "finding": "The response proposes stronger explanation validation; it acknowledges open issues and does not present a settled resolution.",
+      "limitation": "Not treated as a controlled replication or proof that the original hypothesis is false."
+    },
+    {
+      "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/",
+      "title": "Frontier Pre-training at Microsoft AI",
+      "author": "Microsoft AI",
+      "type": "official_report",
+      "published_at": "2026-10-15",
+      "publication_date_evidence": "Direct official page header: October 15, 2026.",
+      "reading_depth": "official_report_sections",
+      "sections_read": "Report text through What’s next: scaling ladders, recipe/compute comparison, hyperparameters, co-design and data. Embedded charts and downloadable PDF not independently inspected in this community task.",
+      "verification_date": "2026-10-26",
+      "status": "below_threshold_community_context",
+      "finding": "Official link and date verified; technical integration is handled independently by the parent.",
+      "limitation": "The r/MSFT score-23 thread is not promoted because its linked report is relevant."
+    }
+  ],
+  "not_selected": [
+    {
+      "url": "https://www.reddit.com/r/accelerate/comments/1t2t1rb/mit_study_explains_why_scaling_language_models/",
+      "reason": "Original May 3, 2026 post is outside this window; a recently returned index/reply is not a new original post. No historical metric overwritten."
+    },
+    {
+      "url": "https://www.reddit.com/r/IntelligenceEngine/comments/1ufcoax/oh_yeah_might_have_found_a_scaling_law_seems/",
+      "reason": "Original June 25 post is outside this window; October 17 reply is not the publication date."
+    },
+    {
+      "url": "https://www.reddit.com/r/Anthropic/comments/1x8913p/a_question_from_claude_if_neural_networks_are/",
+      "reason": "Speculative consciousness discussion is not actionable evidence about scaling mechanisms; not selected."
+    },
+    {
+      "url": "https://www.reddit.com/r/HebelnMitKopf/comments/1x834vs/ki_microsoft_misst_maibase2_nur_an_offenen/",
+      "reason": "Low-attention secondary news/commentary; no independent technical evidence added."
+    },
+    {
+      "url": "https://www.reddit.com/r/u_Excellent-Target-847/comments/1x77bjt/oneminute_daily_ai_news_10152026/",
+      "reason": "Low-attention multi-topic news roundup, not an independently verified scaling result."
+    }
+  ],
+  "targeted_paper_leads": [
+    {
+      "url": "https://arxiv.org/abs/2610.27360",
+      "title": "On the Limits of Scale: Inverse Scaling in Vision-Language Models",
+      "outcome": "Exact-title and ID searches across the three platforms did not yield a qualifying original discussion; primary-paper review delegated by parent elsewhere."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.30765",
+      "title": "Scaling Laws for Generative Reward Models",
+      "outcome": "Exact-title and ID queries did not yield a qualifying original discussion; no absence-of-discussion claim."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.29458",
+      "title": "Harness Scaling for Generalizable Agentic RL",
+      "outcome": "Exact-title and ID queries did not yield a qualifying original discussion; no absence-of-discussion claim."
+    }
+  ],
+  "limitations": [
+    "Search coverage is selective and not an exhaustive crawl. Several combined or date-restricted queries returned empty results; that does not establish absence of discussion.",
+    "Search-index counters can be stale and have unknown measurement times. Goodfire's explicit date/score are retained separately from its direct-reader unanchored relative label.",
+    "No verified live metrics were obtained. Missing values stay null; no social-platform total order or popularity ranking is constructed.",
+    "X original fetch returned 403; YouTube candidate fetch returned Cache miss. Third-party mirrors/transcript dates do not replace platform metrics or upload dates.",
+    "Goodfire was previously a candidate, not one of the 21 accepted records. No metric trend is inferred from third-party counts or older candidate snapshots.",
+    "Only selected Reddit replies were read. Essay working hypotheses and expert responses remain arguments to investigate, not proof or independent replication.",
+    "Only metadata, brief paraphrases and limited date/score excerpts are saved. No third-party article, transcript or comment-tree full text is copied into this log."
+  ],
+  "maintenance_decision": {
+    "recommend_community_additions": 1,
+    "recommend_technical_prose_additions": 0,
+    "recommend_catalog_only_sources": 0,
+    "baseline_canonical_record_count": 21,
+    "projected_record_count_if_parent_accepts": 22,
+    "status": "completed_with_one_proposal_and_access_limits",
+    "note": "Parent review and merge required; this subtask writes only the weekly log. Keep all prior 21 objects and their observed counters unchanged."
+  }
+}

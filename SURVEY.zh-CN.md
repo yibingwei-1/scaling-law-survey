@@ -1,8 +1,8 @@
 # Scaling Law：问题驱动的技术演化综述
 
-版本 v0.3.5 · 检索与核验截至 2026-10-19 · 中文持续更新版
+版本 v0.3.6 · 检索与核验截至 2026-10-26 · 中文持续更新版
 
-从“能否预测规模收益”到“如何联合分配预训练、后训练与推理预算”。本版含 182 条去重主源和独立社区雷达；属于代表性文献的叙事综合，非穷尽性系统综述，未独立复现实验。
+从“能否预测规模收益”到“如何联合分配预训练、后训练与推理预算”。本版含 187 条去重主源和独立社区雷达；属于代表性文献的叙事综合，非穷尽性系统综述，未独立复现实验。
 
 ![研究问题演化图](figures/evolution-map.png)
 
@@ -80,7 +80,7 @@ flowchart TD
 
 想理解经典争议，先读[可预测性与预算](docs/01-predictability-budget.md)的 Kaplan—Chinchilla—复现链，再读[数据](docs/02-data.md)和[部署成本](docs/03-architecture-deployment.md)。想判断“test-time scaling 是否接棒”，先读[后训练](docs/04-posttraining.md)和[推理时计算](docs/05-inference.md)中的 proposer、verifier 和策略分配，再读[能力评估](docs/06-theory-evaluation.md)与负面结果。想跟踪新工作，先看社区雷达提出了哪个问题，再回到原始证据，最后判断它应改变正文哪一条因果连接。
 
-本文以能够解释转折点的代表研究为核心，不按引用数或社媒曝光机械排序。全文的“当前”“最新”均相对于最近增量检索日期 2026-10-19；阅读范围与未解决问题在各章和元数据中披露。
+本文以能够解释转折点的代表研究为核心，不按引用数或社媒曝光机械排序。全文的“当前”“最新”均相对于最近增量检索日期 2026-10-26；阅读范围与未解决问题在各章和元数据中披露。
 
 
 ---
@@ -168,6 +168,12 @@ Llama 3 报告展示了规模律在大训练 run 中怎样成为决策程序。�
 能力预测是另一层：先拟合目标任务正确答案的负对数似然与训练计算之间的关系，再把该 NLL 映射为准确率。第二步不仅使用小模型，还包括 Llama 2 系列较大模型作为锚点；这些模型的数据与 tokenizer 并不完全相同。因而报告中的成功外推是具体管线的验证，不是“仅靠同分布小模型就能精确预测所有大模型任务”的证明。[同上，§3.2.1](https://arxiv.org/html/2407.21783v3)
 
 报告还揭示了 token 计数的隐含变量：tokenizer 改进提高了每 token 可承载的字符数量。两个模型都训练一万亿 token，未必处理了相同文本体量。对损失的比较也要注意单位：不同词表上的每 token 交叉熵不可直接当作同一个量。因此，大模型技术报告应被拆成可检验的多个主张：配置选择、验证损失预测、任务映射与系统实现分别有没有对照，而不是把整个模型的成功压成一个“scaling works”。[同上，§3.1–3.3](https://arxiv.org/html/2407.21783v3)
+
+#### 缩尺预测也要保留数据重用状态
+
+缩尺实验必须保留它要预测的训练状态。[Microsoft AI 于 2026 年 10 月 15 日发布的报告](https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/)，在保持每个活跃参数对应 token 数不变时，限制小规模训练中各数据源的唯一样本，使其重复次数与最终运行一致。这种 source scaling 针对一种配方迁移失败：小实验看到较多新数据，可能选择不足以应对大规模重复训练的正则化。报告还联合调节学习率和权重衰减，并在中间尺度验证拟合配方。
+
+这些证据需要分开：图 2 报告向 MAI-Base-2 的阶梯外推；宣传中的等损失 FLOPs 优势则来自另一个包含已完成模型的拟合，其匹配点属于插值。它不是这一优势的独立预测验证、墙钟加速或全能力排名。内部 bits-per-byte 评估，以及数据、优化器和架构同时变化，也限制了因果归因。由此，预算预测多了一项实践检查：让小实验复现数据重用与优化条件，并区分前瞻预测验证和事后效率估计。
 
 ### 7. 下一步应优化哪一笔账？
 
@@ -335,6 +341,12 @@ $$
 其中 $\eta$ 是峰值学习率，$B$ 是每次更新的全局 token 数，$D$ 是训练 token 数，$C=MD$ 是非嵌入训练 FLOPs，$M$ 是按架构解析计算的每 token 非嵌入 FLOPs。在其设置内，稀疏度提高对应固定 $C$ 下更低的学习率，以及固定 $D$ 下更大的 batch。
 
 研究报告了 1,800 次运行、约 10M–324M 激活参数，并按激活比例或模型规模留组验证。对总参数 12B、激活参数 324M、$A=1/64$、训练 159B token 的模型，预先冻结的预测接近所观察到的最优区域。激活规模仍位于拟合范围边缘：这是稀疏度、token 和计算量的一次联合外推，而非沿每个轴分别验证。实验共享混合注意力骨干、Muon 优化器、语料和 warmup–stable–decay 调度。候选函数形式的区间重叠且随机种子覆盖有限，因此仍有不确定性；这些系数不能确立普适配方或下游能力定律。
+
+#### 专家容量还取决于语言覆盖目标
+
+专家容量必须结合它服务的数据多样性来分配。[Dag 等的 2026 年 10 月 21 日 v3](https://arxiv.org/html/2610.20247v3) 联合建模活跃参数、专家数、语言覆盖和按重复收益递减调整的有效数据暴露量。主网格包括 64 个 Top-1 配置，活跃参数为 93M–590M。对共同的十二种语言，在匹配活跃参数和目标语言训练量后，把覆盖从十二种扩展到两百种，32 专家模型的平均损失惩罚比稠密模型小；报告降幅为 83%。这一比较并未保持总 token 数相同。
+
+拟合规律在留出配置上测试，但所有评估语言已经有拟合系数，不能解释为对未见语言的预测。更大模型与更长训练的外推仍有条件；恢复平均质量也可能让个别语言变差。逻辑算力同样不代表实际成本：在作者实现中，匹配模型大小、语言覆盖和训练终点（token 预算）后，32 专家所需 GPU 小时为稠密模型的中位 1.69 倍。主网格的种子覆盖有限，下游准确率的交互效应也随任务而变。结果把语言覆盖纳入资源分配，却不能建立专家容量普遍有益的结论。
 
 ### 2. Landmark：DeepSeekMoE 从“容量更多”转向“专家更有用”
 
@@ -507,6 +519,12 @@ $$
 其中 $M$ 是比较数量，$K$ 是期望 KL 散度预算，并非 FLOPs。下界依赖专门构造的比较集、代理和参考策略；它不保证常规 RM 训练达到该界，也没有证明超过该范围的所有策略都会退化。
 
 实验使用 70B gold RM 和 0.6B–4B Qwen3 代理，把 $M$ 从 600 扩到 300,000 时增加提示数、保持每题 300 对比较；评估使用不参与训练的 128 个提示，每题 8,192 个回答。主要拟合对象是扫描优化网格后取得的 gold 奖励峰值随 $M$ 的变化，峰值选择使用 gold 评分，并非可直接部署的无 gold 调参，也并非已验证任意 $(M,K)$ 上的二维预测。指数倾斜也只是固定回答池的重加权，没有实际训练新策略。这把反馈供给接到了优化上限问题，但真实人类偏好、自适应收集和算力最优配置仍未解决。[原文 §3–6、附录 B](https://arxiv.org/html/2609.38526v1)
+
+#### 静态 judge 更准，是否意味着在线 rewarder 更好？
+
+扩大奖励模型还需要决定：它应当预测什么？[Raychev 等](https://arxiv.org/html/2610.30765v1)在创意写作的 online DPO 中比较 0.6B–14B 的 Qwen3 生成式 judge。用 GRPO 训练的 Thinking judge 更准确地预测固定 Gold 标签，但 Answer-Only SFT judge 在八个匹配配置中的七个产生更高的策略峰值与最高五个评估快照平均 Gold Elo；五个配置的 Elo 差值条件置信区间完全为正。中间 Thinking 检查点也可能优于后来更准确的 judge。这把过优化问题推进到反馈选择：静态一致率未必预测反馈对变化中策略的价值。
+
+比较同时改变格式与训练目标，不能把差异归因于推理本身。Gold 是依据 Reddit 票数偏好训练的 32B 模型；另一 learned judge 的 80 次比较整体不确定。峰值由 Gold 事后选择，bootstrap 也不覆盖重训不确定性。参数扫描和样本内拟合并非等算力分配规则或普适定律，逐运行 token 上限的历史记录也不完整。因此，应在优化循环内检验 rewarder，不能据此声称人类写作质量更高或总成本更低。
 
 ### 3. 关键节点一：自训练为什么能进步，又为什么会用尽自己的答案？
 
@@ -707,6 +725,12 @@ $$
 #### 框架搜索：同题反馈不等于可迁移改进
 
 当额外推理还会改写 agent 的提示、工具或记忆，问题就变成：它改善了可复用的执行框架（harness），还是仅适应了正在评测的任务？[Wang 等在 10 月修订稿中](https://arxiv.org/html/2607.12227v4)区分这两个目标。在 Terminal-Bench 2.1 上，他们使用三个模型和两次运行，按 45/10/34 题划分训练、验证和测试；经过 K=5 轮搜索及验证集框架选择，测试集平均 pass@1 与初始框架均为 63.2。方法间搜索比较按 rollout 预算对齐，并非总 FLOPs 相同：框架编辑成本未计入。负面结果也有条件。针对单个任务的适应能改善游戏成绩，但 ARC-AGI-3 限制的是环境动作，不含内部推理；EdgeBench 则采用包含总结与编辑的 12 小时时限。后者还报告运行中观察到的最高分，包括未向 agent 展示的主机端评分，并非盲选最终提交。这要求分别报告反馈权限、搜索成本、留出迁移和选择协议；单题收益与这一有限负面结果，都不能确立可复用 agent 改进的普适定律。
+
+#### 训练时扩展框架：通过结构化变化学习迁移
+
+应对框架专门化的另一条路线改变训练，而不是在测试时搜索框架。[Bai 等](https://arxiv.org/html/2610.29458v1)把执行过程分成五个各有三种变体的组件，从 243 个配置中选出 18 个两两均衡的训练配置，让同一任务在连续 RL 更新中经历两个相近框架。他们使用 Qwen3-4B 与 30B-A3B、PPO 与 GRPO，在独立任务、18 个留出组合及外部框架上评测。4B GRPO 在未见 Claude Code 中的三基准平均 pass@1 为 37.22%，高于经 OpenClaw 训练的 RL 的 33.38%；这是三次评测运行的平均，不是三次独立训练。
+
+主要 RL 比较对齐 300 次更新、每次 128 条 rollout，并未实测对齐总 FLOPs 或墙钟成本。同一预算下，结构化 18 配置也优于穷举 243 配置；后者包含白箱测试配置，不能算留出泛化。因此，框架多样性如何组织，比数量本身更关键。这是有条件的训练时迁移证据，不能推翻此前测试时框架搜索的结论，也未建立普适缩放指数。
 
 ### 5. 从“想得更久”到“何时应该停”
 
@@ -1017,11 +1041,17 @@ MM1 的摘要提供一条可继续追踪的工程路线：图像编码器、分�
 
 但配对越多，不同标签行越少、重复轮数越多；相同更新数也不是跨架构的等 FLOPs。NLVR2 曲线排除了未脱离随机水平的种子，且测试损失经过验证集温度校准，不能据这些曲线推断无条件训练成功率。摘要的 3.2% 对 10.4% 对应表 3 的完全配对留出测试，并非全部外推测试的总体误差。该研究支持将配对计入资源模型，尚未验证无标签生成式预训练或前沿模型规模。
 
+#### 总体收益之后：子任务退步需要哪种证据？
+
+更低的混合损失或更高的总分，仍不能保证每个目标子任务受益。[Saxena 等，2026，§3–5、附录 D/L](https://arxiv.org/html/2610.27360v1)比较四个家族的 19 个已发布 VLM，用同题上“小模型对、大模型错”减去反向翻转数衡量净退步。要求至少 20 道题、净退步至少 5 题后，10,434 个合格比较中筛出 375 个案例；对全部 10,434 个比较做 BH 多重检验校正（FDR 0.05）后，仍显著的为 16 个。这不是 375 个独立能力退化，大模型在多数比较中仍占优。
+
+对两种模型同时重跑 CoT 后，375 个候选中仍有 96 个达到净退步阈值。但生成上限从 2,048 增到 4,096 tokens，而且 251 个案例中的小模型准确率下降；差距缩小不全是大模型恢复。训练数据、编码器和对齐差异也未被固定，因此不能把发布模型间的相关性解释为参数增加的因果效应。这一补充把第六章的测量边界带入多模态选择：平均规律可指导资源配置，目标子任务仍需配对评测与多重检验。
+
 ### 7.4 从理解到生成：扩散模型扩大的是哪一种计算？
 
 视觉语言理解常用分类、检索或问答指标；图像生成还关心样本逼真程度、文本条件满足度和总体多样性。它们可能随同一个干预朝不同方向变化。因此扩散 scaling 需要同时保留训练目标、采样过程与最终评价，而不能只报告更低 FID。
 
-已有摘要核验的三类工作说明了训练侧的演化。*Improved DDPM* 在改善 likelihood 与生成质量的同时研究逆过程方差，使较少采样前向调用仍可维持质量；latent diffusion 将主要生成过程移到压缩空间，减少像素空间计算；DiT 用 latent patch Transformer 替代 U-Net，并比较深度、宽度、token 数带来的前向 GFLOPs 与 FID 变化。三者分别改变采样参数化、表示空间和骨干架构，不能把收益全部归于“参数更多”。[Improved DDPM](https://arxiv.org/abs/2102.09672v1)、[Latent Diffusion](https://arxiv.org/abs/2112.10752v2)、[DiT](https://arxiv.org/abs/2212.09748v2)
+已有摘要核验的三类工作说明了训练侧的演化。*Improved DDPM* 在改善 likelihood 与生成质量的同时研究逆过程方差，使较少采样前向调用仍可维持质量；latent diffusion 将主要生成过程移到压缩空间，减少像素空间计算；DiT 用 latent patch Transformer 替代 U-Net，并比较深度、宽度、token 数带来的前向 GFLOPs 与 FID 变化。三者分别改变采样参数化、表示空间和骨干架构，不能把收益全部归于参数增加。[Improved DDPM](https://arxiv.org/abs/2102.09672v1)、[Latent Diffusion](https://arxiv.org/abs/2112.10752v2)、[DiT](https://arxiv.org/abs/2212.09748v2)
 
 *Scaling Rectified Flow Transformers* 又把噪声采样策略和图文 Transformer 架构放入大规模实验，连接验证损失与生成质量。这些是值得继续精读的训练侧节点；本版仅完成摘要和版本核验，尚不从中抽取统一训练最优指数。[Esser 等，2024](https://arxiv.org/abs/2403.03206v1)
 
@@ -1108,7 +1138,7 @@ Figure 在 2026-09-17 的 Helix 2.5 报告，把采集问题扩展到人类经�
 
 社区的作用是暴露研究者和使用者尚未解决的问题。技术结论仍需回到论文、作者代码和官方报告：高观看量说明传播广，不能证明方法正确；讨论激烈也不等于结论已被独立复现。完整字段见 [community.json](sources/community.json)，检索轨迹及未纳入线索见 [community-search-log.md](sources/community-search-log.md)。
 
-2026-09-21、2026-09-28 与 2026-10-12 各增补一条独立观测，累计 21 条记录；旧计数仍对应各自的原检索日期，新增内容见第 6–8 节。
+2026-09-21、2026-09-28、2026-10-12 与 2026-10-26 各增补一条独立观测，累计 22 条记录；旧计数仍对应各自的原检索日期，新增内容见第 6–8、10 节。
 
 ### 1. 如何操作化“讨论度高”
 
@@ -1233,6 +1263,10 @@ X 原帖身份、日期或有标签的指标仍未核验；YouTube 本轮未获�
 ### 9. 2026-10-19 检索：未取得符合条件的新观测
 
 本轮覆盖 2026-09-28 至 2026-10-19，32 条三平台查询未得到可正式追加的观测，既有 21 条记录及历史计数保持不变。Goodfire 的讨论留作候选：Reddit 原链未显示可核验的绝对日期和分数，X 原链返回 403，第三方转述的浏览量不作平台指标。YouTube 转录日期不能替代视频上传日期，缺失计数仍留空。这些访问与核验限制不表示没有新讨论，也不足以改写关于 superposition 或 scaling 的技术结论。见[完整检索记录](sources/weekly-2026-10-19-community.json)。
+
+### 10. 2026-10-26 追加观测：可读标签是否解释了计算？
+
+本轮覆盖 2026-10-05 至 10-26，24 条三平台查询得到 1 条正式新增。上周未核验的 [Goodfire 原帖](https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/) 现取得明确的 10 月 15 日日期及 887 票索引快照；这不是实时计数，原有 21 条历史观测不变。[作者文章](https://already-clean.goodfire.com/) 自称工作假说，神经元可读性比例依赖阈值，配套技术论文仍标为待发布；[Leo Gao 10 月 17 日的回应](https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean) 则主张用替代激活后的下游行为检验解释，并指出解释神经元尚不等于理解神经元之间的计算。这是证据标准的争论，不能推出可解释性已经解决或普遍 scaling 机制已获证明。X 原链仍为 403，YouTube 旧候选本轮返回 Cache miss；没有指标不等于零关注。 见[完整检索记录](sources/weekly-2026-10-26-community.json)。
 
 
 ---
@@ -1535,6 +1569,8 @@ Problem 框给出当前方法留下的具体矛盾；Solution 框压缩机制；
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Emergent Inverse-Depth Scaling From Nonlinearity In Attention](https://arxiv.org/abs/2610.11063) | 正文定向阅读 | v1 / 论文/预印本 | [06](docs/06-theory-evaluation.md) |
 | 2026 | [FrogNano: Training a 4B Coding Agent via Online Task Synthesis](https://arxiv.org/abs/2609.07925) | 正文定向阅读 | v5 / 论文/预印本 | 索引／待深入综合 |
+| 2026 | [Frontier Pre-training at Microsoft AI](https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai) | 官方报告选段 | 网页观测版 / 报告 | [01](docs/01-predictability-budget.md) |
+| 2026 | [Harness Scaling for Generalizable Agentic Reinforcement Learning](https://arxiv.org/abs/2610.29458) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | 官方报告选段 | 网页观测版 / 报告 | [07](docs/07-multimodal.md) |
 | 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | 正文定向阅读 | v2 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [How Much Can Language Models Gain from Test-Time Computation?](https://arxiv.org/abs/2610.01110) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
@@ -1544,14 +1580,17 @@ Problem 框给出当前方法留下的具体矛盾；Solution 框压缩机制；
 | 2026 | [IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining](https://arxiv.org/abs/2609.39403) | 正文定向阅读 | v1 / 论文/预印本 | 索引／待深入综合 |
 | 2026 | [Mixed Precision Scaling Laws for Quantized Pretraining](https://arxiv.org/abs/2610.17637) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [More Than Seeing: Vision as Scalable Anchors in Native Multimodal Pre-Training](https://arxiv.org/abs/2610.19443) | 正文定向阅读 | v1 / 论文/预印本 | 索引／待深入综合 |
+| 2026 | [On the Limits of Scale: Inverse Scaling in Vision-Language Models](https://arxiv.org/abs/2610.27360) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Paired Multimodal Scaling Laws](https://arxiv.org/abs/2609.36263) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Planned Test-Time Scaling with Coordinated Reasoning Paths](https://arxiv.org/abs/2609.27374) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | 正文定向阅读 | v1 / 论文/预印本 | [06](docs/06-theory-evaluation.md) |
 | 2026 | [Rethinking the Evaluation of Harness Evolution for Agents](https://arxiv.org/abs/2607.12227) | 正文定向阅读 | v4 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Revisiting scaling laws for reward optimization](https://arxiv.org/abs/2609.38526) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
+| 2026 | [Scaling Laws for Generative Reward Models](https://arxiv.org/abs/2610.30765) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Scaling Laws for Multimodal Data Mixtures](https://arxiv.org/abs/2610.14423) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Scaling Misuse Detection with Self-Assessment](https://safeguards.anthropic.com/2026/self-assessment) | 正文定向阅读 | 网页观测版 / 技术文章 | 索引／待深入综合 |
+| 2026 | [Scaling Multilingual Mixture-of-Experts: How Language Coverage Changes Capacity and Compute Allocation](https://arxiv.org/abs/2610.20247) | 正文定向阅读 | v3 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Scaling Repeated-Data Pretraining: Batch Size, Regularization, and GPU-Time Tradeoffs](https://arxiv.org/abs/2610.15965) | 正文定向阅读 | v1 / 论文/预印本 | [02](docs/02-data.md) |
 | 2026 | [Scaling Vision-Language Models Is Not Enough to Mitigate Bias](https://arxiv.org/abs/2607.28211) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |

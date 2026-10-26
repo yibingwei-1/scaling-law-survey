@@ -1,8 +1,8 @@
 # Scaling Law: A Problem-Driven Review
 
-Edition v0.3.5 · Searches and verification through 2026-10-19 · English living edition
+Edition v0.3.6 · Searches and verification through 2026-10-26 · English living edition
 
-From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains 182 distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
+From predicting returns to scale to jointly allocating pretraining, post-training, and inference budgets. This edition contains 187 distinct primary-source records and a separate community radar. It is a representative narrative review, not an exhaustive systematic review; the cited experiments have not been independently reproduced.
 
 ![Research problem evolution map](figures/evolution-map.png)
 
@@ -80,7 +80,7 @@ A more detailed account of paper relationships and branching rationales is avail
 
 For the classical allocation debate, start with the Kaplan–Chinchilla–reanalysis chain in [predictability and budgets](docs/en/01-predictability-budget.md), then read [data](docs/en/02-data.md) and [deployment costs](docs/en/03-architecture-deployment.md). To assess whether test-time scaling is taking over, begin with the proposers, verifiers, and allocation policies in [post-training](docs/en/04-posttraining.md) and [inference-time computation](docs/en/05-inference.md), then examine [capability evaluation](docs/en/06-theory-evaluation.md) and negative results. To follow new work, first identify the question raised in the community radar, return to the primary evidence, and decide which connection in the narrative should change.
 
-This survey prioritizes representative studies that explain turning points rather than mechanically ranking papers by citations or social-media exposure. References to “current” or “latest” are relative to the latest incremental search date, October 19, 2026. Reading scope and unresolved issues are disclosed in the chapters and metadata.
+This survey prioritizes representative studies that explain turning points rather than mechanically ranking papers by citations or social-media exposure. References to “current” or “latest” are relative to the latest incremental search date, October 26, 2026. Reading scope and unresolved issues are disclosed in the chapters and metadata.
 
 
 ---
@@ -168,6 +168,12 @@ The Llama 3 report illustrates how scaling laws can become a decision procedure 
 Capability prediction is a separate layer. The first step fits the relationship between training compute and the negative log-likelihood of correct answers on the target task; the second maps that NLL to accuracy. The second step uses not only small models but also larger Llama 2 models as anchors, despite differences in data and tokenizers. Successful extrapolation in the report therefore validates a particular pipeline. It does not prove that all large-model tasks can be predicted precisely using only small models trained on the same distribution. [Ibid., §3.2.1](https://arxiv.org/html/2407.21783v3)
 
 The report also exposes a hidden variable in token accounting: tokenizer improvements increased the number of characters represented by each token. Two models trained on a trillion tokens need not have processed the same amount of text. Loss comparisons must also respect their units: per-token cross-entropy over different vocabularies cannot be treated directly as the same quantity. Large-model technical reports should therefore be broken into separately testable claims, examining the controls for configuration selection, validation-loss prediction, task mapping, and systems implementation, rather than compressing the success of an entire model into “scaling works.” [Ibid., §3.1–3.3](https://arxiv.org/html/2407.21783v3)
+
+#### Scaling Ladders Must Preserve Data Reuse
+
+Scaling ladders must preserve the regime whose behavior they predict. [Microsoft AI’s 15 October 2026 report](https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/) restricts each source’s unique examples in smaller runs so that its repetition count matches the final run, while keeping tokens per active parameter fixed. This source scaling addresses a recipe-transfer failure: small runs seeing fresher data may favor insufficient regularization for the larger repeated-data run. The report also jointly tunes learning rate and weight decay, then validates fitted prescriptions at an intermediate scale.
+
+Evidence types remain separate. Figure 2 reports a ladder extrapolation to MAI-Base-2, whereas the advertised equal-loss FLOPs advantage uses another fit that includes the completed model and interpolates its matching point. It is not an independently validated prediction of that advantage, a wall-clock speedup, or a capability-wide ranking. Internal bits-per-byte evaluations and a jointly changed data, optimizer and architecture recipe also limit causal attribution. This adds a practical check to budget forecasting: reproduce data reuse and optimization conditions in the small-scale experiments, then distinguish forecast validation from retrospective efficiency estimation.
 
 ### 7. Which Cost Should Be Optimized Next?
 
@@ -335,6 +341,12 @@ $$
 Here, $\eta$ is peak learning rate, $B$ global tokens per update, $D$ training tokens, and $C=MD$ non-embedding training FLOPs, and $M$ the architecture-specific analytically computed non-embedding FLOPs per token. Within their setting, greater sparsity favors a lower learning rate at fixed $C$ and a larger batch at fixed $D$.
 
 The study reports 1,800 runs, approximately 10M–324M activated parameters, and grouped validation holding out activation ratios or model scales. A frozen prediction falls near the observed optimal region for a 12B-total/324M-activated model with $A=1/64$, trained on 159B tokens. Activated size remains at the fitted range's boundary: this is one joint extrapolation in sparsity, tokens, and compute, not independent validation along every axis. The experiments share a hybrid attention backbone, Muon optimizer, corpus, and warmup–stable–decay schedule. Overlapping intervals across candidate functional forms and limited seed coverage leave uncertainty; these coefficients do not establish a universal recipe or downstream-capability law.
+
+#### Expert Capacity Depends on Language Coverage
+
+Expert capacity must be allocated against the diversity it serves. [Dag et al. (v3, 21 October 2026)](https://arxiv.org/html/2610.20247v3) jointly model active parameters, expert count, language coverage and repetition-adjusted exposure. Their main grid contains 64 Top-1 configurations with 93M–590M active parameters. Across the same twelve languages, expanding coverage from twelve to two hundred produces a smaller mean loss penalty with 32 experts than with a dense model: the reported reduction is 83%, at matched active parameters and target-language exposure. Total tokens are not held equal in that comparison.
+
+The fitted law is tested on held-out configurations, but each evaluated language already has fitted coefficients; this is not prediction for unseen languages. Larger-model and longer-horizon extrapolation remains conditional, and restoring average quality can leave individual languages worse off. Nor does logical compute establish physical cost: in the authors’ implementation, matching model size, language coverage and training horizon gives median GPU-hours of 1.69 times the dense baseline for 32 experts. Main-grid seed coverage is limited, and downstream accuracy interactions vary by task. The result makes coverage a resource-allocation variable without establishing universal expert benefits.
 
 ### 2. Landmark: DeepSeekMoE Moves from More Capacity to More Useful Experts
 
@@ -507,6 +519,12 @@ $$
 Here $M$ counts comparisons and $K$ bounds expected KL divergence, not FLOPs. The lower bound uses a constructed comparison set, proxy, and reference policy; it does not guarantee that ordinary reward-model training attains the bound or prove that every policy deteriorates beyond it.
 
 Experiments use a 70B gold reward model and 0.6B–4B Qwen3 proxies. Increasing $M$ from 600 to 300,000 adds prompts while retaining 300 comparisons per prompt. Evaluation uses 128 disjoint prompts with 8,192 responses each. The principal fit concerns the gold-reward peak selected over an optimization grid as a function of $M$, using gold scores rather than deployable gold-free tuning or a validated two-dimensional forecast for arbitrary $(M,K)$. Exponential tilting reweights fixed response pools; it is not an actual policy-training experiment. This connects feedback supply to optimization limits, while leaving human preferences, adaptive data collection, and compute-optimal allocation unresolved. [Original paper, §§3–6 and Appendix B](https://arxiv.org/html/2609.38526v1)
+
+#### Does a More Accurate Static Judge Make a Better Online Rewarder?
+
+Scaling a rewarder also requires deciding what it should predict. [Raychev et al.](https://arxiv.org/html/2610.30765v1) compare Qwen3 generative judges of 0.6B–14B in creative-writing online DPO. Thinking judges trained with GRPO score higher on fixed Gold labels, yet Answer-Only SFT judges produce higher peak and top-five-average policy Elo in seven of eight matched configurations; five Elo gaps have conditional confidence intervals wholly above zero. Intermediate Thinking checkpoints can also be better rewarders than later, more accurate judges. This extends the overoptimization problem to rewarder selection: static agreement need not predict the usefulness of feedback on an evolving policy.
+
+The comparison changes both format and training objective; it does not identify reasoning as the cause. Gold is a learned 32B model trained on Reddit vote-derived preferences, and a different learned judge’s 80-comparison follow-up is inconclusive overall. Peaks are selected retrospectively by Gold; the bootstrap does not cover retraining uncertainty. Parameter sweeps and in-sample fits are neither compute-matched allocation rules nor universal scaling laws. Complete per-run token-cap provenance is also unavailable, so the evidence supports evaluating rewarders inside the optimization loop, not claiming superior human writing quality or lower total cost.
 
 ### 3. Key Turning Point One: Why Can Self-Training Improve, and Why Can It Run Out of Its Own Answers?
 
@@ -707,6 +725,12 @@ Public-example selection reaches 453/500 while removing judge-stage logical API 
 #### Harness Search: Same-Task Feedback Does Not Establish Transfer
 
 Once extra inference also rewrites an agent’s prompts, tools, or memory, the question is whether it improves a reusable harness or merely adapts to the evaluated tasks. [Wang et al.](https://arxiv.org/html/2607.12227v4) separate these objectives in their October revision. On Terminal-Bench 2.1, they use three models, two runs and a 45/10/34 train/validation/test split. After K=5 search rounds and validation-based harness selection, mean test pass@1 is 63.2 for both initial and selected harnesses. Search-method comparisons match rollout budgets, not total FLOPs: harness-editing cost is excluded. The negative result is conditional. Task-specific adaptation improves game scores, but ARC-AGI-3 caps environment actions, excluding internal reasoning, whereas EdgeBench uses a 12-hour window that includes summarization and editing. EdgeBench also reports the best score observed, including host-side evaluations hidden from the agent; this is not blind selection of a final submission. The implication is to report feedback access, search cost, held-out transfer, and selection protocol separately. Neither task-specific gains nor this limited negative result establish a general law for reusable agent improvement.
+
+#### Scaling Harnesses During Training: Learning Transfer through Structured Variation
+
+A separate response to harness specialization changes training rather than searching the harness at test time. [Bai et al.](https://arxiv.org/html/2610.29458v1) factor execution into five components with three variants each, select 18 of 243 configurations using pairwise-balanced design, and expose each task to two nearby harnesses over successive RL updates. With Qwen3-4B and 30B-A3B, PPO and GRPO, they evaluate disjoint tasks under 18 held-out combinations and external harnesses. For 4B GRPO, mean pass@1 across three benchmarks in unseen Claude Code reaches 37.22%, versus 33.38% for RL trained through OpenClaw; scores average three evaluation runs, not three independent trainings.
+
+The main RL comparison matches 300 updates and 128 rollouts per update, not measured total FLOPs or wall-clock cost. Structured 18-harness training also beats exhaustive 243-harness training at this budget; the latter includes the white-box test configurations and is not held-out generalization. Thus diversity organization, not simply harness count, matters. This supplies conditional training-time transfer evidence, not a refutation of the earlier test-time harness-search result or a universal scaling exponent.
 
 ### 5. From “Think Longer” to “When Should Thinking Stop?”
 
@@ -1017,6 +1041,12 @@ Interaction terms leave another variable unidentified: whether modalities occur 
 
 However, more pairing means fewer distinct labeled rows and more epochs; equal updates also do not establish equal FLOPs across architectures. NLVR2 curves exclude seeds that never escape chance, and test loss uses validation-set temperature calibration, so these curves do not establish unconditional training success. The abstract's 3.2% versus 10.4% refers to Table 3's full-pairing holdout, not aggregate error across all extrapolation tests. The study supports counting pairing as a resource; unlabeled generative pretraining and frontier model scales remain untested.
 
+#### After Aggregate Gains: What Evidence Establishes Subtask Regressions?
+
+Lower mixture loss or higher aggregate scores need not improve every target subtask. [Saxena et al., 2026, §3–5 and Appendices D/L](https://arxiv.org/html/2610.27360v1) compare 19 released VLMs in four families using paired correctness flips: smaller-correct/larger-wrong minus the reverse. Requiring at least 20 questions and at least five net regressions selects 375 cases from 10,434 eligible comparisons; 16 remain significant after BH multiple-testing correction (FDR 0.05) across all 10,434. These are not 375 independent capability failures; larger models win most comparisons.
+
+Rerunning both models with CoT leaves 96 of the 375 candidates meeting the same threshold. However, the token cap rises from 2,048 to 4,096, and smaller-model accuracy falls in 251 cases; narrowing gaps do not all represent larger-model recovery. Training data, encoders, and alignment also differ, preventing a causal interpretation of parameter increases. This connects Chapter 6's measurement limits to multimodal model selection: aggregate laws can guide allocation, while target subtasks still require paired evaluation and multiple-testing controls.
+
 ### 7.4 From Understanding to Generation: Which Kind of Compute Does Diffusion Scale?
 
 Vision-language understanding is often evaluated through classification, retrieval, or question answering. Image generation additionally concerns realism, satisfaction of text conditions, and overall diversity. These can move in different directions under the same intervention. Diffusion scaling must therefore retain the training objective, sampling process, and final evaluation together, rather than reporting only a lower FID.
@@ -1108,7 +1138,7 @@ Initial search date: **September 16, 2026**. This round established **18 traceab
 
 Community discussion exposes unresolved questions among researchers and practitioners. Technical conclusions still require papers, author code, and official reports: high view counts indicate reach, not correctness, and vigorous debate is not independent replication. Full fields appear in [community.json](sources/community.json); searches and leads not included appear in [community-search-log.md](sources/community-search-log.md).
 
-The September 21, September 28, and October 12 additions bring the cumulative record count to 21. Earlier counters retain their original observation dates; see Sections 6–8 for the new records.
+The September 21, September 28, October 12, and October 26 additions bring the cumulative record count to 22. Earlier counters retain their original observation dates; see Sections 6–8 and 10 for the new records.
 
 ### 1. Operationalizing “High Attention”
 
@@ -1232,6 +1262,10 @@ X post identities, dates, or labeled counters remain unverified. This round obta
 ### 9. Search on 2026-10-19: No New Qualifying Observation
 
 The 2026-09-28 to 2026-10-19 window yielded no formally eligible addition across 32 queries covering the three platforms. All 21 existing records and historical counters remain unchanged. Goodfire discussion stays a candidate: the Reddit original lacked a verifiable absolute date and score, the X original returned 403, and third-party view claims were not adopted as platform metrics. A YouTube transcript date does not establish the upload date; missing counters remain empty. These access and verification limits do not establish an absence of discussion or warrant changes to technical conclusions about superposition or scaling. See the [complete search record](sources/weekly-2026-10-19-community.json).
+
+### 10. October 26 Addition: Do Readable Labels Explain Computation?
+
+The October 5–26 window produced one adopted addition from 24 queries across the three platforms. The previously unverified [Goodfire thread](https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/) now has an explicit October 15 date and indexed score of 887. This is not a live count; the existing 21 historical observations remain unchanged. The [author's essay](https://already-clean.goodfire.com/) presents a working hypothesis, makes readability proportions threshold-dependent, and still describes its technical companion as forthcoming. [Leo Gao's October 17 response](https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean) argues for testing explanations through downstream behavior after replacing activations, and distinguishes explaining neurons from understanding computation between them. This dispute over evidence does not establish that interpretability is solved or prove a universal scaling mechanism. The X original still returned 403; the previously identified YouTube candidate returned Cache miss. Missing metrics do not mean zero attention. See the [complete search record](sources/weekly-2026-10-26-community.json).
 
 
 ---
@@ -1534,6 +1568,8 @@ Full metadata are available in the [reference index](REFERENCES.en.md), [BibTeX]
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2026 | [Emergent Inverse-Depth Scaling From Nonlinearity In Attention](https://arxiv.org/abs/2610.11063) | Selected full-text sections | v1 / Paper / preprint | [06](docs/en/06-theory-evaluation.md) |
 | 2026 | [FrogNano: Training a 4B Coding Agent via Online Task Synthesis](https://arxiv.org/abs/2609.07925) | Selected full-text sections | v5 / Paper / preprint | Catalog only |
+| 2026 | [Frontier Pre-training at Microsoft AI](https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai) | Official report sections | Web snapshot / Report | [01](docs/en/01-predictability-budget.md) |
+| 2026 | [Harness Scaling for Generalizable Agentic Reinforcement Learning](https://arxiv.org/abs/2610.29458) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | Official report sections | Web snapshot / Report | [07](docs/en/07-multimodal.md) |
 | 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | Selected full-text sections | v2 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [How Much Can Language Models Gain from Test-Time Computation?](https://arxiv.org/abs/2610.01110) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
@@ -1543,14 +1579,17 @@ Full metadata are available in the [reference index](REFERENCES.en.md), [BibTeX]
 | 2026 | [IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining](https://arxiv.org/abs/2609.39403) | Selected full-text sections | v1 / Paper / preprint | Catalog only |
 | 2026 | [Mixed Precision Scaling Laws for Quantized Pretraining](https://arxiv.org/abs/2610.17637) | Selected full-text sections | v1 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [More Than Seeing: Vision as Scalable Anchors in Native Multimodal Pre-Training](https://arxiv.org/abs/2610.19443) | Selected full-text sections | v1 / Paper / preprint | Catalog only |
+| 2026 | [On the Limits of Scale: Inverse Scaling in Vision-Language Models](https://arxiv.org/abs/2610.27360) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Paired Multimodal Scaling Laws](https://arxiv.org/abs/2609.36263) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Planned Test-Time Scaling with Coordinated Reasoning Paths](https://arxiv.org/abs/2609.27374) | Selected full-text sections | v1 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Quantifying construct validity in large language model evaluations](https://arxiv.org/abs/2602.15532) | Selected full-text sections | v1 / Paper / preprint | [06](docs/en/06-theory-evaluation.md) |
 | 2026 | [Rethinking the Evaluation of Harness Evolution for Agents](https://arxiv.org/abs/2607.12227) | Selected full-text sections | v4 / Paper / preprint | [05](docs/en/05-inference.md) |
 | 2026 | [Revisiting scaling laws for reward optimization](https://arxiv.org/abs/2609.38526) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |
+| 2026 | [Scaling Laws for Generative Reward Models](https://arxiv.org/abs/2610.30765) | Selected full-text sections | v1 / Paper / preprint | [04](docs/en/04-posttraining.md) |
 | 2026 | [Scaling Laws for Multimodal Data Mixtures](https://arxiv.org/abs/2610.14423) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Scaling Misuse Detection with Self-Assessment](https://safeguards.anthropic.com/2026/self-assessment) | Selected full-text sections | Web snapshot / Technical article | Catalog only |
+| 2026 | [Scaling Multilingual Mixture-of-Experts: How Language Coverage Changes Capacity and Compute Allocation](https://arxiv.org/abs/2610.20247) | Selected full-text sections | v3 / Paper / preprint | [03](docs/en/03-architecture-deployment.md) |
 | 2026 | [Scaling Repeated-Data Pretraining: Batch Size, Regularization, and GPU-Time Tradeoffs](https://arxiv.org/abs/2610.15965) | Selected full-text sections | v1 / Paper / preprint | [02](docs/en/02-data.md) |
 | 2026 | [Scaling Vision-Language Models Is Not Enough to Mitigate Bias](https://arxiv.org/abs/2607.28211) | Selected full-text sections | v1 / Paper / preprint | [07](docs/en/07-multimodal.md) |
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | Selected full-text sections | v2 / Paper / preprint | [05](docs/en/05-inference.md) |

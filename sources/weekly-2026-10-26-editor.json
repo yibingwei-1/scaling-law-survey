@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-26",
+  "window": {
+    "from": "2026-10-05",
+    "through": "2026-10-26"
+  },
+  "baseline_head": "9b7d376e9332579266b6a5ddb2ee4dc488e693a4",
+  "search_method": "Built-in web search and primary HTML/history reads; parallel-cli absent on PATH. Targeted representative discovery, not exhaustive.",
+  "queries": [
+    {
+      "q": "\"scaling laws\" after:2026-10-18 before:2026-10-27",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"multimodal\" after:2026-10-18 before:2026-10-27",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"theory\" after:2026-10-18 before:2026-10-27",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"October\" \"2026\"",
+      "domains": [
+        "research.google",
+        "deepmind.google",
+        "anthropic.com",
+        "openai.com"
+      ]
+    },
+    {
+      "q": "\"scaling law\" \"theory\" after:2026-10-05 before:2026-10-27",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling laws\" \"multimodal\" after:2026-10-05 before:2026-10-27",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"generalization\" after:2026-10-19 before:2026-10-27",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling laws\" \"October\" \"2026\"",
+      "domains": [
+        "epoch.ai",
+        "huggingface.co",
+        "research.google",
+        "ai.meta.com"
+      ]
+    }
+  ],
+  "primary_decisions": [
+    {
+      "id": "saxena2026vlminversescaling",
+      "title": "On the Limits of Scale: Inverse Scaling in Vision-Language Models",
+      "authors": [
+        "Rohit Saxena",
+        "Alessandro Suglia",
+        "Marek Rei",
+        "Pasquale Minervini"
+      ],
+      "year": 2026,
+      "date": "2026-10-19",
+      "first_published": "2026-10-19",
+      "first_published_date": "2026-10-19",
+      "first_published_utc": "2026-10-19T22:39:42Z",
+      "last_revised_date": null,
+      "version": "v1",
+      "version_read": "v1",
+      "latest_version_verified": "v1",
+      "url": "https://arxiv.org/abs/2610.27360",
+      "full_text_url": "https://arxiv.org/html/2610.27360v1",
+      "type": "paper",
+      "branch": "multimodal-subtask-evaluation",
+      "problem": "总分提升可能掩盖同一家族发布模型在特定子任务上的退步。",
+      "insight": "用相同问题上的双向正确性翻转衡量净退步，再区分候选筛选、多重检验和提示协议的影响。",
+      "method": "19 released VLMs in four families, eight benchmarks/nine splits; 10,434 eligible within-family comparisons with at least 20 questions; net flip threshold five. Direct zero-shot greedy generation; paired CoT retest of both models on the 375 selected cases.",
+      "result": "375 screened cases; 16 survive BH correction across all 10,434 eligible comparisons. CoT leaves 96/375 above the same net-five threshold under a different generation budget.",
+      "limitation": "发布模型的训练、编码器与对齐存在混淆；375是比较案例而非独立任务。CoT较长预算和小模型下降也会改变差值；统计筛选及重叠比较限制因果/总体解释。不能据此断言参数增加造成逆向缩放。",
+      "reading_depth": "full_text_targeted",
+      "verification_date": "2026-10-26",
+      "sections_read": "Metadata/history; §§1–5.5, selected §6 and limitations; Appendix A decoding/model table, selected B family tables, D multiple testing, E cross-family table, I active-parameter constraints, J option-order controls, K encoder tiers, L paired CoT design. Did not fully audit error taxonomy/human annotations, all case tables, code or figure pixels.",
+      "evidence_status": "Primary selected-section review; no independent experimental reproduction or full version/code audit.",
+      "synthesis_status": "incorporated",
+      "changes_existing_conclusion": "T7 adds subtask-level evaluation as a boundary of aggregate multimodal progress; does not overturn aggregate scaling.",
+      "evidence_notes": [
+        "BH denominator 10,434 yields 16; correcting only the 375 selected cases yields 54 and is not the adopted headline.",
+        "Most eligible comparisons favor larger models; 87% of 171 affected family-subtasks are non-monotonic.",
+        "CoT reruns both models, increases max tokens from 2048 to 4096, and smaller-model accuracy falls in 251/375 cases; attenuation is not all larger-model recovery.",
+        "Option-order audit covers only six strong BLINK cases, not all 375.",
+        "Total-parameter ordering mixes dense/MoE; Appendix I sensitivity checks do not supply matched independently trained recipes.",
+        "Code link https://github.com/saxenarohit/vlm_inverse_scaling observed in paper but not executed."
+      ]
+    }
+  ],
+  "candidates_not_promoted": [
+    {
+      "title": "Foundations of the Scaling Law",
+      "authors": [
+        "Tianyu Zhao",
+        "Zhixiang Ren"
+      ],
+      "url": "https://arxiv.org/abs/2610.27789",
+      "first_published_utc": "2026-10-20T07:52:23Z",
+      "last_revised_utc": "2026-10-23T11:01:21Z",
+      "latest_version_verified": "v2",
+      "reading_depth": "Metadata, abstract, contents and §§1–1.3 opening only",
+      "reason": "Unifying approximation/coverage/allocation framework; theorem assumptions and proofs not audited. Existing theory discussion not rewritten from abstract; no complete v1/v2 comparison."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.26794",
+      "title": "On Data Scaling in Tabular ML: More Data, Better Generalization?",
+      "reading_depth": "search abstract only",
+      "reason": "Tabular OOD validation/early stopping outside LLM priority; not adopted."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.27233",
+      "reading_depth": "search abstract only",
+      "reason": "Medical agent application; controlled scaling/cost evidence not audited."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.26802",
+      "reading_depth": "search result only",
+      "reason": "PEFT brain encoding outside priority scope."
+    }
+  ],
+  "version_checks": [
+    {
+      "url": "https://arxiv.org/abs/2610.14423",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-10T00:42:37Z",
+      "reading_scope": "Official metadata/history only; no new version visible."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.19443",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-14T02:33:34Z",
+      "reading_scope": "Official metadata/history only; no new version visible."
+    }
+  ],
+  "other_search_outcomes": "Reward-model and harness-RL leads delegated to frontier. Official sites also returned policy, security, event pages and OpenAI biological-data agent news listing, not adopted as controlled scaling evidence. Existing Khandelwal and self-assessment records deduplicated.",
+  "limits": [
+    "Selected primary sections only; no independent reruns or complete proof/code audit.",
+    "Two invalid HTML click arguments corrected by open/line navigation; not recorded as source access failure.",
+    "Search indexing and platform restrictions do not establish absence of new work."
+  ],
+  "prior_publication_check": {
+    "head": "9b7d376e9332579266b6a5ddb2ee4dc488e693a4",
+    "github_actions_status": "completed_success",
+    "run_url": "https://github.com/yibingwei-1/scaling-law-survey/actions/runs/39284037138"
+  }
+}

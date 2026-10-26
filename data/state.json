@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "edition": "v0.3.5",
-  "last_successful_search": "2026-10-19",
-  "last_content_update": "2026-10-19",
-  "pdf_content_date": "2026-10-19",
+  "edition": "v0.3.6",
+  "last_successful_search": "2026-10-26",
+  "last_content_update": "2026-10-26",
+  "pdf_content_date": "2026-10-26",
   "coverage": "Representative narrative review; not exhaustive; primary claims not independently reproduced",
   "automation": {
     "id": "scaling-law",
@@ -18,7 +18,7 @@
     "status": "published",
     "visibility": "public",
     "branch": "main",
-    "last_verified": "2026-10-19"
+    "last_verified": "2026-10-26"
   },
   "coverage_limits": [
     "Three X posts lack observable counters; one has a labeled search-index view count",
@@ -49,19 +49,24 @@
     "Quantized-pretraining residual-error transfer and end-to-end timing beyond simplified GEMM cost models.",
     "Harness evolution with unseen tasks, complete search/edit costs and deployable final selection.",
     "Multimodal directional mixture/repetition fits across tokenizers and architectures; continuation text-loss failure and visual-content controlled-transfer seed audit.",
-    "Size-generalization theory assumptions/proofs; Goodfire working hypothesis and dated original social metrics."
+    "Repetition-preserving scaling ladders: independent forecast tests and measured time under separately controlled recipe changes.",
+    "Multilingual MoE: independently selected final tests, per-language preservation, new languages and full physical costs.",
+    "Generative reward models: new judges/human ratings, deployable checkpoint selection and compute-normalized training recipes.",
+    "Harness-diverse RL: independent training seeds, full tool/token/runtime budgets and truly unseen execution systems.",
+    "VLM subtask regressions: matched training recipes, multiplicity controls and paired equal-budget prompting; scaling-theory proofs and active discovery budgets remain unaudited.",
+    "Size-generalization theory assumptions/proofs; Goodfire working hypothesis and mechanistic behavioral validation beyond readability labels."
   ],
-  "last_validation_date": "2026-10-19",
-  "source_count": 182,
-  "community_count": 21,
+  "last_validation_date": "2026-10-26",
+  "source_count": 187,
+  "community_count": 22,
   "technical_chapters": 7,
-  "sources_cited_in_technical_chapters": 169,
-  "technical_han_characters": 42194,
+  "sources_cited_in_technical_chapters": 174,
+  "technical_han_characters": 43695,
   "reading_depth_summary": {
-    "正文定向阅读": 137,
+    "正文定向阅读": 141,
     "摘要/引言": 3,
     "摘要/元数据": 31,
-    "官方报告选段": 2,
+    "官方报告选段": 3,
     "全文文字": 9
   },
   "languages": {
@@ -71,18 +76,17 @@
       "zh-CN"
     ],
     "translated_chapters": 12,
-    "translation_reviewed_on": "2026-10-19"
+    "translation_reviewed_on": "2026-10-26"
   },
   "last_search_run": {
-    "date": "2026-10-19",
-    "window_start": "2026-09-28",
+    "date": "2026-10-26",
+    "window_start": "2026-10-05",
     "status": "completed_with_access_limits",
-    "record": "data/maintenance-runs/2026-10-19.json",
+    "record": "data/maintenance-runs/2026-10-26.json",
     "access_limits": [
       "Targeted discovery is not exhaustive; search indexing can omit recent work.",
-      "X original returned 403; Reddit candidate lacked absolute date and visible counters.",
-      "YouTube transcript date is not an upload date; candidate direct access failed.",
-      "No qualifying new community entry; failures do not establish absence of discussion.",
+      "New Reddit record uses a dated search-index snapshot; direct reader has no numeric counters.",
+      "X original returned 403; YouTube candidate returned Cache miss. Failures do not establish absence of material.",
       "Selected primary sections reviewed; no independent experiment reproduction."
     ]
   },

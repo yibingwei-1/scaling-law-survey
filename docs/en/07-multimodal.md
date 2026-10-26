@@ -67,6 +67,12 @@ Interaction terms leave another variable unidentified: whether modalities occur 
 
 However, more pairing means fewer distinct labeled rows and more epochs; equal updates also do not establish equal FLOPs across architectures. NLVR2 curves exclude seeds that never escape chance, and test loss uses validation-set temperature calibration, so these curves do not establish unconditional training success. The abstract's 3.2% versus 10.4% refers to Table 3's full-pairing holdout, not aggregate error across all extrapolation tests. The study supports counting pairing as a resource; unlabeled generative pretraining and frontier model scales remain untested.
 
+### After Aggregate Gains: What Evidence Establishes Subtask Regressions?
+
+Lower mixture loss or higher aggregate scores need not improve every target subtask. [Saxena et al., 2026, §3–5 and Appendices D/L](https://arxiv.org/html/2610.27360v1) compare 19 released VLMs in four families using paired correctness flips: smaller-correct/larger-wrong minus the reverse. Requiring at least 20 questions and at least five net regressions selects 375 cases from 10,434 eligible comparisons; 16 remain significant after BH multiple-testing correction (FDR 0.05) across all 10,434. These are not 375 independent capability failures; larger models win most comparisons.
+
+Rerunning both models with CoT leaves 96 of the 375 candidates meeting the same threshold. However, the token cap rises from 2,048 to 4,096, and smaller-model accuracy falls in 251 cases; narrowing gaps do not all represent larger-model recovery. Training data, encoders, and alignment also differ, preventing a causal interpretation of parameter increases. This connects Chapter 6's measurement limits to multimodal model selection: aggregate laws can guide allocation, while target subtasks still require paired evaluation and multiple-testing controls.
+
 ## 7.4 From Understanding to Generation: Which Kind of Compute Does Diffusion Scale?
 
 Vision-language understanding is often evaluated through classification, retrieval, or question answering. Image generation additionally concerns realism, satisfaction of text conditions, and overall diversity. These can move in different directions under the same intervention. Diffusion scaling must therefore retain the training objective, sampling process, and final evaluation together, rather than reporting only a lower FID.

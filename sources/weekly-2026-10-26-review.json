@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-26",
+  "status": "paired_content_review_pass",
+  "scope": "Root reviewed all changed paired paragraphs, numbers, links and scope conditions, with independent cross-review of primary evidence and bilingual changes. Corrected training horizon versus wall-clock time, 1.69 times versus ambiguous increase, repetition-adjusted exposure, threshold inclusivity and Appendix E/L locator. Preserved Gold-selected snapshots, BH denominator, unequal token caps and historical community observations. No new formulas; unchanged chapters retain prior hashes. No independent experiments.",
+  "chapters": [
+    "introduction.md",
+    "01-predictability-budget.md",
+    "03-architecture-deployment.md",
+    "04-posttraining.md",
+    "05-inference.md",
+    "07-multimodal.md",
+    "04-community-radar.md"
+  ],
+  "primary_cross_reviews": [
+    {
+      "reviewer": "community",
+      "sources": [
+        "microsoft2026frontierpretraining",
+        "dag2026multilingualmoe"
+      ],
+      "read": "Microsoft related HTML/PDF text and Figure2/3 captions; Dag definitions, §5.2.1, B.1, C.2, H. No pixel inspection or code rerun.",
+      "findings": [
+        "Forecast and retrospective efficiency distinction supported.",
+        "83% is reduction of coverage penalty on shared languages; not equal total tokens.",
+        "Corrected 1.69-fold increase to 1.69 times and clarified horizon.",
+        "Corrected Chinese repetition-discount wording."
+      ]
+    },
+    {
+      "reviewer": "foundations",
+      "sources": [
+        "saxena2026vlminversescaling"
+      ],
+      "read": "v1 §3, §5–6, Appendices A/D/L and Tables35,45–46.",
+      "findings": [
+        "375/10434, BH-all16 at FDR.05, CoT96/375,251 and2048→4096 supported.",
+        "Corrected Appendix E locator to cross-family table; CoT read at L.",
+        "Changed above threshold to meeting/at least threshold."
+      ]
+    },
+    {
+      "reviewer": "root",
+      "sources": [
+        "raychev2026generativerewardscaling",
+        "bai2026harnessscaling"
+      ],
+      "read": "Official metadata/history; Raychev §§2–4.3, A.2–A.4, B.1–B.4 selected text/tables; Bai §§3.2–4.3, Appendix B design/table, C.1–C.2.",
+      "findings": [
+        "Confirmed7/8 point gaps,5 positive conditional intervals; learned Gold and different judge inconclusive.",
+        "Confirmed historical nominal512/2048 versus launcher500/1500; no compute-normalized inference.",
+        "Confirmed18/243,K=2 successiveupdates,300×128,37.22/33.38percent and three evaluation runs.",
+        "Full243 includes test combinations and is not held-out generalization."
+      ]
+    }
+  ],
+  "bilingual_cross_review": {
+    "reviewer": "frontier",
+    "scope": "All changed T1/T3/T4/T5/T7, introduction and radar paired paragraphs and links.",
+    "status": "pass_after_horizon_and_inclusive_threshold_wording_corrections"
+  },
+  "limitations": [
+    "Selected source sections, not complete proof/version/code audit.",
+    "No independent experiment reproduction.",
+    "PDF visual checks recorded after rebuilding."
+  ],
+  "final_copyedit": "Chinese T7: rephrased gains cannot all be attributed to more parameters without quotation marks to prevent line-initial closing punctuation; semantic equivalence with unchanged English reviewed by root.",
+  "pdf_visual_review": "All English pages 1–96 and Chinese pages 1–68 visually inspected through 14 contact sheets. English page-scale checks: 2,11,21,30,43,61,74,96; Chinese: 2,9,16,22,31,43,52,68. Root additionally inspected EN30/61 and ZH16/43. A Chinese page43 closing-punctuation wrap was corrected; final re-render and page comparison confirmed the affected scope, and the corrected page was visually rechecked. No remaining visible clipping, overlap, orphan headings, missing glyphs, equation overflow or broken tables. Both languages rendered26 display formulas with zero fallback; inline math remains readable text. No experiments independently reproduced."
+}

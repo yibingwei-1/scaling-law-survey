@@ -1,0 +1,414 @@
+{
+  "date": "2026-10-26",
+  "window": {
+    "from": "2026-10-05",
+    "through": "2026-10-26"
+  },
+  "baseline_head": "9b7d376e9332579266b6a5ddb2ee4dc488e693a4",
+  "scope": "T4 post-training/RL and T5 inference-budget/agent primary-source new work and versions. This researcher writes only this weekly log.",
+  "method": "Targeted built-in web search followed by primary arXiv metadata and HTML methods/results/appendix reading. Representative search, not exhaustive; no author code/training execution or third-party full-text archival.",
+  "local_context_read": [
+    "README.md",
+    "METHODOLOGY.md",
+    "UPDATING.md",
+    "data/state.json (edition,last successful search,watchlist; other fields partial)",
+    "CHANGELOG.md (recent entries)",
+    "docs/04-posttraining.md (reward sections and chapter structure)",
+    "docs/05-inference.md (budget,SELF-POT,harness and stopping sections)",
+    "sources/weekly-2026-10-19-frontier.json",
+    "sources/editorial.json (schema/sample)"
+  ],
+  "query_batches": [
+    {
+      "queries": [
+        "site:arxiv.org \"test-time scaling\" after:2026-10-18 before:2026-10-27",
+        "site:arxiv.org \"reinforcement learning\" \"scaling\" after:2026-10-18 before:2026-10-27",
+        "\"inference budget\" \"October 2026\""
+      ],
+      "result_summary": "Merged output partly truncated. Secondary leads surfaced Answer Delivery and agent papers; publication dates were not inferred from indexing. The RL query was repeated separately below."
+    },
+    {
+      "queries": [
+        "site:arxiv.org \"reinforcement learning\" \"scaling\" after:2026-10-18 before:2026-10-27"
+      ],
+      "result_summary": "Primary arXiv abstract hits: Harness Scaling2610.29458,BIRD-RL2610.29426,Trace2World2610.30792,SuperMimic2610.28480. Metadata histories subsequently opened."
+    },
+    {
+      "queries": [
+        "site:arxiv.org \"test-time\" \"budget\" after:2026-10-18 before:2026-10-27",
+        "site:openai.com \"October\" \"2026\" \"reinforcement learning\""
+      ],
+      "result_summary": "Merged results included Rewards for Budget-Aware Multi-Turn Agents2610.28409,ATEST2610.25519,BOSS2610.26383 and official OpenAI security/deployment/API pages. New paper metadata+abstracts opened; none promoted based on abstract alone. Official training-security article is not evidence of a quantitative scaling curve."
+    }
+  ],
+  "supplied_leads": [
+    {
+      "from": "root researcher",
+      "url": "https://arxiv.org/abs/2610.30765",
+      "treatment": "Read key full text and recommend T4 addition; official history corrects approximate Oct21 lead to Oct22."
+    },
+    {
+      "from": "root researcher",
+      "url": "https://arxiv.org/abs/2610.29458",
+      "treatment": "Independently surfaced in own RL search; recommend complementary training-time branch, not rebuttal of prior test-time protocol."
+    }
+  ],
+  "existing_source_checks": [
+    {
+      "id": "wang2026harnessevaluation",
+      "url": "https://arxiv.org/abs/2607.12227",
+      "latest_version_verified": "v4",
+      "first_published_utc": "2026-07-14T00:18:42Z",
+      "last_revised_utc": "2026-10-05T06:02:06Z",
+      "reading_depth_this_week": "primary metadata/history; existing local T5 text",
+      "changed_since_prior_week": false,
+      "canonical_patch": null,
+      "finding": "No newer version. The existing rollout-vs-FLOPs and held-out transfer qualifications remain applicable; no full version diff this week."
+    },
+    {
+      "id": "yang2026selfpot",
+      "url": "https://arxiv.org/abs/2610.01110",
+      "latest_version_verified": "v2",
+      "first_published_utc": "2026-10-01T05:49:29Z",
+      "last_revised_utc": "2026-10-06T05:32:37Z",
+      "reading_depth_this_week": "primary metadata/history; existing local T5 text",
+      "changed_since_prior_week": false,
+      "canonical_patch": null,
+      "finding": "No newer version; no claim of new execution or re-audit of all retained artifacts."
+    },
+    {
+      "id": "aouad2026rewardoptimization",
+      "url": "https://arxiv.org/abs/2609.38526",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-09-29T20:43:25Z",
+      "last_revised_utc": null,
+      "reading_depth_this_week": "primary metadata/history; existing local T4 text",
+      "changed_since_prior_week": false,
+      "canonical_patch": null,
+      "finding": "No newer version. KL remains a distribution-divergence budget, not compute."
+    },
+    {
+      "title": "CARET: Training-Free Test-Time Scaling for Repository-Level Code Completion",
+      "url": "https://arxiv.org/abs/2610.04837",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-04T00:45:13Z",
+      "reading_depth_this_week": "metadata only",
+      "changed_since_prior_week": false,
+      "canonical_patch": null,
+      "finding": "No window-eligible new version; previous candidate limitations not resolved by new evidence."
+    },
+    {
+      "title": "DiVeR: Decision-Critical Verifier Learning for VLA Test-Time Scaling",
+      "url": "https://arxiv.org/abs/2610.04933",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-04T04:25:40Z",
+      "reading_depth_this_week": "metadata only",
+      "changed_since_prior_week": false,
+      "canonical_patch": null,
+      "finding": "No window-eligible new version; previous shallow candidate not upgraded."
+    }
+  ],
+  "recommended_body_additions": [
+    {
+      "source_record": {
+        "id": "raychev2026generativerewardscaling",
+        "title": "Scaling Laws for Generative Reward Models",
+        "authors": [
+          "Angel Raychev",
+          "Nathan Lile",
+          "Rafael Rafailov"
+        ],
+        "date": "2026-10-22",
+        "first_published": "2026-10-22",
+        "first_published_date": "2026-10-22",
+        "first_published_utc": "2026-10-22T05:37:00Z",
+        "last_revised_date": null,
+        "last_revised_utc": null,
+        "url": "https://arxiv.org/abs/2610.30765",
+        "full_text_url": "https://arxiv.org/html/2610.30765v1",
+        "branch": [
+          "T4"
+        ],
+        "problem": "静态偏好判断更准确的生成式奖励模型，未必为不断变化的策略提供更有效的在线优化反馈。",
+        "insight": "把 judge 的离线 Gold 标签准确率与其作为 online-DPO rewarder 的策略轨迹分别评估；同时检查训练方法、检查点、容量及参照评估器。",
+        "method": "Qwen3 proxy judges 0.6B–14B; Answer-Only SFT versus Thinking GRPO; creative-writing policies 0.6B–8B; online DPO with fresh response pairs and frozen learned Qwen3-32B Gold evaluation.",
+        "result": "Answer-Only has higher peak and top-five-average Gold Elo in 7/8 matched configurations despite lower static accuracy; 5/8 gaps have positive conditional bootstrap intervals. A different learned judge yields 42/80 Answer-Only wins, inconclusive overall.",
+        "limitation": "Formats and objectives confounded; one model family and creative-writing domain; Gold is learned from Reddit vote-derived labels, not human adjudication of optimized outputs; retrospective Gold-selected snapshots; conditional match-row bootstrap excludes retraining/cluster uncertainty; no compute-matched allocation and incomplete historical token-cap provenance.",
+        "sections_read": "Primary abs/history; HTML §§1–5, conclusion, Tables1–6, Appendix A.1–A.4 textual trajectory/provenance discussion, B.1–B.5 evaluation/scaling-fit/gradient identity/follow-up; prompt templates partly read. Figures not digitized, artifact code and training not run.",
+        "changes_existing_conclusion": "Extends T4 overoptimization chain from reward capacity and pressure to the mismatch between static judge selection and online feedback usefulness; does not reverse prior conditional reward scaling findings.",
+        "evidence_status": "First release 2026-10-22; metadata and key full-text sections checked. No later revision shown.",
+        "year": 2026,
+        "type": "paper",
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-10-26",
+        "synthesis_status": "proposed",
+        "independent_replication": false
+      },
+      "placement": "T4 §2 after the Aouad reward-budget subsection and before self-training; new short subsection on selecting feedback by downstream optimization rather than static judge accuracy.",
+      "proposal_zh": "扩大奖励模型还需要决定：它应当预测什么？Raychev 等在创意写作的 online DPO 中比较 0.6B–14B 的 Qwen3 生成式 judge。用 GRPO 训练的 Thinking judge 更准确地预测固定 Gold 标签，但 Answer-Only SFT judge 在八个匹配配置中的七个产生更高的策略峰值与前五检查点平均 Gold Elo；中间 Thinking 检查点也可能优于后来更准确的 judge。这把过优化问题推进到反馈选择：静态一致率未必预测反馈对变化中策略的价值。比较同时改变格式与训练目标，不能把差异归因于推理本身。Gold 是依据 Reddit 票数偏好训练的 32B 模型；另一 learned judge 的 80 次比较整体不确定。峰值由 Gold 事后选择，bootstrap 也不覆盖重训不确定性。参数扫描和样本内拟合并非等算力分配规则或普适定律，逐运行 token 上限的历史记录也不完整。因此，应在优化循环内检验 rewarder，不能据此声称人类写作质量更高或总成本更低。",
+      "proposal_en": "Scaling a rewarder also requires deciding what it should predict. Raychev et al. compare Qwen3 generative judges of 0.6B–14B in creative-writing online DPO. Thinking judges trained with GRPO score higher on fixed Gold labels, yet Answer-Only SFT judges produce higher peak and top-five-average policy Elo in seven of eight matched configurations. Intermediate Thinking checkpoints can also be better rewarders than later, more accurate judges. This extends the overoptimization problem to rewarder selection: static agreement need not predict the usefulness of feedback on an evolving policy. The comparison changes both format and training objective; it does not identify reasoning as the cause. Gold is a learned 32B model trained on Reddit vote-derived preferences, and a different learned judge’s 80-comparison follow-up is inconclusive overall. Peaks are selected retrospectively by Gold; the bootstrap does not cover retraining uncertainty. Parameter sweeps and in-sample fits are neither compute-matched allocation rules nor universal scaling laws. Complete per-run token-cap provenance is also unavailable, so the evidence supports evaluating rewarders inside the optimization loop, not claiming superior human writing quality or lower total cost.",
+      "proposal_en_words": 176,
+      "evidence_locator": [
+        "§2: Answer-Only SFT versus Thinking GRPO; raw positional bonus cancels under within-group normalization except epsilon.",
+        "§3: data roles, reuse of 1,000 validation records, capacities, verdict filtering, nominal versus retained token caps.",
+        "§4.3/Table 3: 7/8 peak and top-five wins, 5/8 positive conditional intervals; intermediate checkpoint example.",
+        "§5/B.4: learned 32B Gold; different 235B judge 42/80, Wilson interval 41.7–63.1%.",
+        "A.4/B.1/B.2: parameter sums are not compute; Gold-selected summaries, sparse in-sample fits, no independent-seed uncertainty."
+      ],
+      "cost_protocol": {
+        "judge_training": "Gold SFT uses 21,000 source pairs expanded to both positional orders. Proxy data contain 21,827 raw training rows before filtering and order expansion. Answer-Only SFT: batch 128, LR 1e-5. Thinking GRPO: 16 prompts × 8 completions, LR 1e-6; actor KL loss coefficient 3e-5 remains enabled although the trainer-level KL reward controller is disabled.",
+        "policy_training": "Qwen3 policies 0.6B/1.7B/4B/8B; online DPO with thinking off, 192 prompts per batch, two responses per prompt, minibatch of 64 preference pairs, LR 1e-6, default beta 0.02. Proxy generates one completion per ordering; invalid verdicts contribute zero and zero-sum pairs are discarded. Main prepared prompt pool 90,000; main exports approximately 460 steps with evaluation every 10 steps.",
+        "token_accounting": "Nominal description: 512 prompt / 2048 response caps. Retained launcher: 500 / 1500. Resolved per-run configs were not all recovered. Judge reasoning length differs; no matched FLOPs, GPU-hours, or wall-clock budget established.",
+        "selection_and_uncertainty": "Peak/top-five snapshots selected by Gold evaluation. Bootstrap uses 200 independent match-row resamples, not prompt clusters, fresh generation or retraining. Gold and proxy arenas are fitted separately. Historical KL exports are partly smoothed and incompletely reconstructed; no validated KL frontier.",
+        "independent_control": "Different learned 235B judge: 80 comparisons, 76 unique prompts, seed 17, temperature zero, 24-token verdict limit, randomized presentation without swapped-order repeat. Neither human nor cross-family confirmation."
+      },
+      "cautions": [
+        "Gold is not direct human judgment of optimized outputs; source labels derive from Reddit votes.",
+        "Do not call reasoning causally harmful, Answer-Only universally better, or all seven positive gaps statistically significant.",
+        "The title and in-sample fit do not establish out-of-sample prediction or compute-optimal allocation.",
+        "No complete historical artifact reconstruction or new replication performed."
+      ]
+    },
+    {
+      "source_record": {
+        "id": "bai2026harnessscaling",
+        "title": "Harness Scaling for Generalizable Agentic Reinforcement Learning",
+        "authors": [
+          "Fei Bai",
+          "Huatong Song",
+          "Chuan Hao",
+          "Ran Tao",
+          "Jian Yang",
+          "Bryan Dai",
+          "Wayne Xin Zhao",
+          "Ji-Rong Wen"
+        ],
+        "date": "2026-10-21",
+        "first_published": "2026-10-21",
+        "first_published_date": "2026-10-21",
+        "first_published_utc": "2026-10-21T09:15:50Z",
+        "last_revised_date": null,
+        "last_revised_utc": null,
+        "url": "https://arxiv.org/abs/2610.29458",
+        "full_text_url": "https://arxiv.org/html/2610.29458v1",
+        "branch": [
+          "T4",
+          "T5"
+        ],
+        "problem": "通过单一执行框架训练的 agent 可能只适应该配置；测试时框架编辑并不自动带来可迁移改进。",
+        "insight": "在保持任务与环境语义的前提下，结构化改变执行框架，并区分留出组合迁移与外部黑箱框架迁移。",
+        "method": "Five three-level harness factors, 18 pairwise-balanced training configurations from 243, K=2 nearby harnesses per task on successive updates; Qwen3-4B/30B-A3B, PPO/GRPO, 300 updates; disjoint tasks,18 held-out combinations,Claude Code/OpenClaw evaluation.",
+        "result": "4B GRPO transfers to unseen Claude Code with mean pass@1 37.22 versus33.38 for OpenClaw-trained GRPO over three benchmarks. Structured18 outperforms random18 and exhaustive243 at fixed update/rollout budget; K=2 outperforms matched Repeat-2.",
+        "limitation": "Matched updates/rollouts do not establish equal token/FLOP/wall-clock cost; three evaluation runs do not establish independent-training uncertainty; rubric tasks use GPT-5.4; finite designed factors and two external harnesses; exhaustive243 includes white-box test configurations. No fitted universal exponent or direct replication of test-time harness editing.",
+        "sections_read": "Primary abs/history; HTML §§1–6, Tables1–4; Appendix A variants, B design/construction and Table6, C.1–C.3 configuration,compaction,black-box baselines,held-out evaluation,Repeat-2 and single-harness sensitivity; D behavioral-judge protocol. Figures not digitized and no training/code execution.",
+        "changes_existing_conclusion": "Adds training-time structured harness variation as a parallel repair to specialization; preserves the prior T5 distinction between test-time task adaptation and reusable harness improvement.",
+        "evidence_status": "First release2026-10-21; no later revision shown. A small arithmetic check of the18 listed design rows confirms all two-factor level pairs occur twice; this is not experimental replication.",
+        "year": 2026,
+        "type": "paper",
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-10-26",
+        "synthesis_status": "proposed",
+        "independent_replication": false
+      },
+      "placement": "T5 §4 immediately after existing harness-search subsection, with a bridge to T4: training-time variation is a separate intervention from test-time harness editing.",
+      "proposal_zh": "应对框架专门化的另一条路线改变训练，而不是在测试时搜索框架。Bai 等把执行过程分成五个各有三种变体的组件，从 243 个配置中选出 18 个两两均衡的训练配置，让同一任务在连续 RL 更新中经历两个相近框架。他们使用 Qwen3-4B 与 30B-A3B、PPO 与 GRPO，在独立任务、18 个留出组合及外部框架上评测。4B GRPO 在未见 Claude Code 中的三基准平均 pass@1 为 37.22，高于经 OpenClaw 训练的 RL 的 33.38；这是三次评测运行的平均，不是三次独立训练。主要 RL 比较对齐 300 次更新、每次 128 条 rollout，并未实测对齐总 FLOPs 或墙钟成本。同一预算下，结构化 18 配置也优于穷举 243 配置；后者包含白箱测试配置，不能算留出泛化。因此，框架多样性如何组织，比数量本身更关键。这是有条件的训练时迁移证据，不能推翻此前测试时框架搜索的结论，也未建立普适缩放指数。",
+      "proposal_en": "A separate response to harness specialization changes training rather than searching the harness at test time. Bai et al. factor execution into five components with three variants each, select 18 of 243 configurations using pairwise-balanced design, and expose each task to two nearby harnesses over successive RL updates. With Qwen3-4B and 30B-A3B, PPO and GRPO, they evaluate disjoint tasks under 18 held-out combinations and external harnesses. For 4B GRPO, mean pass@1 across three benchmarks in unseen Claude Code reaches 37.22, versus 33.38 for RL trained through OpenClaw; scores average three evaluation runs, not three independent trainings. The main RL comparison matches 300 updates and 128 rollouts per update, not measured total FLOPs or wall-clock cost. Structured 18-harness training also beats exhaustive 243-harness training at this budget; the latter includes the white-box test configurations and is not held-out generalization. Thus diversity organization, not simply harness count, matters. This supplies conditional training-time transfer evidence, not a refutation of the earlier test-time harness-search result or a universal scaling exponent.",
+      "proposal_en_words": 166,
+      "evidence_locator": [
+        "§3: five factors; strength-2 orthogonal design; K=2 nearest harness assignments over consecutive updates.",
+        "§4.1/Tables 1–2: two backbones, PPO/GRPO, 300 updates, 128 rollouts per update; disjoint benchmark tasks.",
+        "§4.3: nonmonotone harness-count effect; 243 includes held-out configurations; Random-18 and Repeat-2 controls.",
+        "Appendix C.1/Table 7: H20 counts, prompt/response caps, compaction segments; OpenClaw v2026.4.5 training / Claude Code v2.1.205 evaluation.",
+        "Appendix C.2: fixed 18 held-out configurations selected geometrically; three evaluation runs; GPT-5.4 rubric evaluation.",
+        "Appendix C.3/Tables 10–11: repeated-task and fixed-harness sensitivity controls."
+      ],
+      "cost_protocol": {
+        "training_data": "ClawGym-Task: 13.5K workspace tasks. Main RL: 300 optimization steps; GRPO uses 16 tasks × 8 rollouts, PPO 128 tasks × 1 rollout. K=2 assigns different harnesses over consecutive steps; it is not an additional doubling of each step's rollout count.",
+        "hardware": "Qwen3-4B: 16 NVIDIA H20 GPUs. Qwen3-30B-A3B: 32 H20 GPUs. veRL with asynchronous vLLM. Hardware count does not establish GPU-hours or wall-clock equality.",
+        "limits": "4B maximum prompt/response lengths: 8K/32K; 30B-A3B: 4K/60K. Dynamic batching. No temperature match found in HTML; complete actual generated-token, FLOP and wall-clock accounting not established.",
+        "compaction": "Summary/externalized-memory variants split one rollout into segments. GRPO normalization still groups eight original rollout rewards; segments inherit their parent's advantage and token-mean policy loss counts valid generated tokens once. Compaction changes computation and length, so equal rollouts are not equal total cost.",
+        "baselines": "OpenClaw SFT: 12,800 fixed trajectories reused for three epochs. OpenClaw RL: 300 updates × 128 fresh rollouts. Both approximately 38,400 trajectory-level exposures, without compute equivalence. Main black-box comparison uses GRPO and matched backbones/hyperparameters.",
+        "evaluation": "Three independent evaluation runs, one execution per task/harness/run; white-box scores average 18 fixed held-out configurations. ClawGym-Bench, JobBench-Easy and PinchBench tasks are disjoint from training. GPT-5.4 judges rubric-based tasks when required. Independent-training uncertainty is not established."
+      },
+      "cautions": [
+        "Different intervention, models, tasks and budgets from Wang et al.; not replication or refutation of test-time harness editing.",
+        "18 versus 243 does not mean more diversity always helps; full-space white-box evaluation is not held out.",
+        "Model-judged rubric scores are not all programmatically verified task success.",
+        "Do not equate matched update/rollout counts with FLOPs or deployment cost; no fitted scaling exponent."
+      ]
+    }
+  ],
+  "recommended_index_only": [],
+  "candidates_not_promoted": [
+    {
+      "arxiv_id": "2610.26384",
+      "title": "Answer Delivery Under a Shared Token Budget: An Audited Study of Stopping and Finalization",
+      "authors": [
+        "Yupeng Chang",
+        "Linyuan Gao",
+        "Zhiyuan Li",
+        "Yuan Wu",
+        "Yi Chang"
+      ],
+      "url": "https://arxiv.org/abs/2610.26384",
+      "first_published_utc": "2026-10-19T13:35:12Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "primary_abstract_and_metadata",
+      "mechanism_from_abstract": "First-valid-box stopping plus charged finalization cue targets failure to deliver an answer within a shared token budget. Abstract reports 100 GSM8K questions per model and a repeated run on those same questions.",
+      "evidence_conditions": "Abstract claims only; methods, full cost ledger and ablations not read this week.",
+      "limitation_and_next_check": "Closely related to current stopping/SELF-POT protocol chain. Need full cap, cue, physical-slot and independent question/seed audit before generalization; no new body claim from abstract.",
+      "body_change": false
+    },
+    {
+      "arxiv_id": "2610.28409",
+      "title": "Rewards for Budget-Aware Multi-Turn Agents That Adapt to Arbitrary Test-Time Constraints",
+      "authors": [
+        "Tom A. Lamb",
+        "Adam Golinski",
+        "Eleonora Gualdoni",
+        "Sinead Williamson",
+        "Michael Kirchhof"
+      ],
+      "url": "https://arxiv.org/abs/2610.28409",
+      "first_published_utc": "2026-10-20T15:49:32Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "primary_abstract_and_metadata",
+      "mechanism_from_abstract": "Compares eleven reward objectives for multi-turn budget compliance; Qwen3.5 4B/9B, AppWorld and BabyAI. Separate policies per environment/resource type are trained across budget values.",
+      "evidence_conditions": "Abstract claims only; methods, full cost ledger and ablations not read this week.",
+      "limitation_and_next_check": "Promising next-week priority: distinguish one policy per resource type from one universal policy; inspect training costs, hard external caps vs natural compliance, held-out budgets and transfer.",
+      "body_change": false
+    },
+    {
+      "arxiv_id": "2610.25519",
+      "title": "ATEST: Adaptive Resource-Aware Test-Time Scaling for LLM Inference",
+      "authors": [
+        "Mobina Kashaniyan",
+        "Ali Jannesari"
+      ],
+      "url": "https://arxiv.org/abs/2610.25519",
+      "first_published_utc": "2026-10-18T20:23:11Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "primary_abstract_and_metadata",
+      "mechanism_from_abstract": "Online stopping combines plurality stability with measured GPU conditions and learned energy costs; abstract describes A100 load variations and L40S/model transfer.",
+      "evidence_conditions": "Abstract claims only; methods, full cost ledger and ablations not read this week.",
+      "limitation_and_next_check": "Potential systems bridge. Need energy attribution under contention, hardware measurement boundaries, calibration amortization workload, tail latency and deferrals audit. No energy-efficiency headline adopted.",
+      "body_change": false
+    },
+    {
+      "arxiv_id": "2610.26383",
+      "title": "BOSS: Token-Budgeted Online Sampling and Selection for LLM Reasoning",
+      "authors": [
+        "Yupeng Chang",
+        "Yahan Li",
+        "Chenlu Guo",
+        "Diana Inkpen",
+        "Yuan Wu",
+        "Yi Chang"
+      ],
+      "url": "https://arxiv.org/abs/2610.26383",
+      "first_published_utc": "2026-10-19T13:34:47Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "primary_abstract_and_metadata",
+      "mechanism_from_abstract": "Joint stop/generate/adjudicate decisions under per-instance prompt-plus-completion caps; abstract describes two Llama-3.1 models and four reasoning benchmarks.",
+      "evidence_conditions": "Abstract claims only; methods, full cost ledger and ablations not read this week.",
+      "limitation_and_next_check": "Related to existing generator-verifier allocation branch. Need complete charged prompt/reused-prefix/judge accounting, matched candidate pools and selector controls; not independently assessed.",
+      "body_change": false
+    },
+    {
+      "arxiv_id": "2610.29426",
+      "title": "BIRD-RL: Scaling Agentic Reinforcement Learning over Stateful Data-Centric Environments",
+      "authors": [
+        "Ge Qu",
+        "Jinyang Li",
+        "Xiaohan Xu",
+        "Xiaolong Li",
+        "Bowen Qin",
+        "Nan Huo",
+        "Ziwei Tang",
+        "Chenhao Ma",
+        "Reynold Cheng"
+      ],
+      "url": "https://arxiv.org/abs/2610.29426",
+      "first_published_utc": "2026-10-21T08:50:39Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "primary_abstract_and_metadata",
+      "mechanism_from_abstract": "Trajectory-scoped persistent execution infrastructure reuses database replicas while preserving isolation; paired with four-stage curriculum.",
+      "evidence_conditions": "Abstract claims only; methods, full cost ledger and ablations not read this week.",
+      "limitation_and_next_check": "Need definition of spatial efficiency and infrastructure/curriculum controls before treating 12.8× headline as efficiency evidence; not total training compute.",
+      "body_change": false
+    },
+    {
+      "arxiv_id": "2610.30792",
+      "title": "Trace2World: Reconstructing App Worlds from Real Interaction Traces for Scalable GUI Agent Training",
+      "authors": [
+        "Zezhou Wang",
+        "Hanzhang Zhou",
+        "Panrong Tong",
+        "Quyu Kong",
+        "Pengxiang Li",
+        "Steven Hoi",
+        "Zhuzhong Qian",
+        "Yue Wang"
+      ],
+      "url": "https://arxiv.org/abs/2610.30792",
+      "first_published_utc": "2026-10-22T06:10:53Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "primary_abstract_and_metadata",
+      "mechanism_from_abstract": "Separates source-linked app behavior reconstruction from compilation; independent workflow replay and bounded repair precede learner-guided augmentation.",
+      "evidence_conditions": "Abstract claims only; methods, full cost ledger and ablations not read this week.",
+      "limitation_and_next_check": "Potential T7 source-grounding branch; parent notified. Need real-device transfer/task selection, denominator and reconstruction cost audit. No body change in this research lane.",
+      "body_change": false
+    },
+    {
+      "arxiv_id": "2610.28480",
+      "title": "SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model",
+      "authors": [
+        "Qiayuan Liao",
+        "Yiyang Shao",
+        "Junfeng Long",
+        "Kevin Zakka",
+        "Roberto Horowitz",
+        "Pieter Abbeel",
+        "Koushil Sreenath"
+      ],
+      "url": "https://arxiv.org/abs/2610.28480",
+      "first_published_utc": "2026-10-20T16:29:30Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "primary_abstract_and_metadata",
+      "mechanism_from_abstract": "One differentiable world model fits simulator transitions and trains a motion-tracking policy using short imagined-rollout backpropagation.",
+      "evidence_conditions": "Abstract claims only; methods, full cost ledger and ablations not read this week.",
+      "limitation_and_next_check": "Potential T7 lead; parent notified. GPU-hour headline requires baseline hardware, target-return, simulator-data generation and tuning budget audit. Abstract's broad bottleneck claim not adopted.",
+      "body_change": false
+    }
+  ],
+  "access_and_reading_limits": [
+    "Primary arXiv abs and HTML accessible for selected works; no accessblock prevented keysectionreading.",
+    "Some batched outputs were truncated; selected methods/appendices were reopened or printed from toolresult stores in boundedline ranges. Unread candidates remain abstract-only.",
+    "Source paper figures were not visually digitized; no author code or experiments run. Exact temperatures,actualtoken/energycosts and independenttrainingreplications were not inferred when absent.",
+    "No exhaustive social-media search or citation-ranking attempt in this task; community monitoring is handled separately.",
+    "No third-party full texts stored in repository."
+  ],
+  "editorial_summary": "Recommend two conditional body additions: generative rewarder static-vs-online mismatch (T4) and structured training-time harness diversity (T5/T4 bridge). Existing key-source versions unchanged; no prior canonical claim requires reversal. Other new candidates remain outside body pending protocol/cost inspection.",
+  "official_leads_not_promoted": [
+    {
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+      "title": "Securing our frontier model training environment",
+      "date_shown": "2026-10-23",
+      "reading_depth": "search_result_text",
+      "decision": "Official operational/safety report, not a verified compute-performance scaling study; no body/index addition."
+    },
+    {
+      "url": "https://deploymentsafety.openai.com/gpt-6-october/broken-search-tool",
+      "title": "GPT-6 Sol and GPT-6 Luna: October 2026 update",
+      "date_shown": "2026-10-07",
+      "reading_depth": "search_result_text",
+      "decision": "Release-specific evaluation context surfaced, but no cost-controlled scaling evidence audited; not promoted."
+    }
+  ]
+}

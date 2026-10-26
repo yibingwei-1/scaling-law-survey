@@ -7447,5 +7447,228 @@
       "editorial"
     ],
     "cited_in": []
+  },
+  {
+    "id": "microsoft2026frontierpretraining",
+    "title": "Frontier Pre-training at Microsoft AI",
+    "authors": [
+      "Microsoft AI"
+    ],
+    "author_note": "Institutional author; no named individual byline found on the inspected report.",
+    "year": 2026,
+    "date": "2026-10-15",
+    "first_published_date": "2026-10-15",
+    "first_published_utc": null,
+    "last_revised_date": null,
+    "last_revised_utc": null,
+    "version": null,
+    "version_read": "Official web report accessed 2026-10-26; linked PDF URL contains ?v=2 without a documented revision date.",
+    "latest_version_verified": null,
+    "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/",
+    "full_text_url": "https://microsoft.ai/pdf/Frontier-Pre-training-at-Microsoft-AI.pdf?v=2",
+    "type": "report",
+    "branch": "pretraining-prediction-repetition-aware-ladders",
+    "problem": "Small-scale experiments can change the fresh-versus-repeated data regime and thereby select a recipe that transfers poorly.",
+    "insight": "Preserve each source's repetition count while scaling tokens per active parameter; distinguish forecast validation from retrospective equal-loss efficiency fitting.",
+    "method": "Source-scaled ladders; joint LR/weight-decay search; intermediate-scale prescription checks; separate BPB-versus-FLOPs and wall-clock comparisons.",
+    "result": "Reported MAI-Base-2 ladder forecast and a separate retrospective FLOPs-efficiency interpolation. Proposed narrative emphasizes the protocol, not a universal speedup.",
+    "limitation": "Internal evaluation data and simultaneous recipe changes; no independent reproduction. Figure 3 includes completed MAI-Base-2 in fitting. BPB/FLOPs does not establish generation quality or elapsed-time advantage.",
+    "reading_depth": "official_report_sections",
+    "verification_date": "2026-10-26",
+    "sections_read": "Official HTML technical sections from model comparison through scaling data; PDF pp.1–6 text including architecture table and Figures 2–4 labels/captions. No PDF pixel inspection, code audit, or full experiment rerun.",
+    "synthesis_status": "incorporated",
+    "changes_existing_conclusion": "Deepens T1 recipe/extrapolation conditions and links to T2 repetition; does not overturn Kaplan/Chinchilla or establish universal hyperparameter coefficients.",
+    "evidence_status": "Newly discovered locally in the overlapping window, not published this calendar week. Website publication date printed 2026-10-15; no revision timeline disclosed.",
+    "canonical_url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "01-predictability-budget.md"
+    ]
+  },
+  {
+    "id": "dag2026multilingualmoe",
+    "title": "Scaling Multilingual Mixture-of-Experts: How Language Coverage Changes Capacity and Compute Allocation",
+    "authors": [
+      "Joel Dag",
+      "Nikit Srivastava",
+      "Hamada M. Zahera",
+      "Axel-Cyrille Ngonga Ngomo"
+    ],
+    "year": 2026,
+    "date": "2026-10-14",
+    "first_published_date": "2026-10-14",
+    "first_published_utc": "2026-10-14T14:20:19Z",
+    "last_revised_date": "2026-10-21",
+    "last_revised_utc": "2026-10-21T08:54:53Z",
+    "version": "v3",
+    "version_read": "v3",
+    "latest_version_verified": "v3",
+    "url": "https://arxiv.org/abs/2610.20247",
+    "full_text_url": "https://arxiv.org/html/2610.20247v3",
+    "type": "paper",
+    "branch": "architecture-moe-language-coverage-effective-data",
+    "problem": "Separate multilingual and MoE laws do not show whether added experts offset language-coverage costs or how preservation targets alter allocation.",
+    "insight": "Jointly model active/stored capacity, experts, per-language exposure, coverage and diminishing repetition returns; evaluate shared languages under explicit resource constraints.",
+    "method": "64-configuration Top-1 grid, structured configuration holdouts, selected seed and mixture controls, larger-model stress test; separate logical and measured hardware accounting.",
+    "result": "At matched target-language exposure, the common-language coverage penalty falls83% from dense to32 experts. Selected law mean holdout RMSE0.03319 versus refitted JointMoE(D_t)0.04617; not unseen-language generalization.",
+    "limitation": "Fixed corpus/tokenizer/Top-1 recipe; primary grid one seed. Reused endpoints are correlated; formula selection uses validation comparisons; no independent final-test or replication established. Hardware and downstream-task benefits do not follow uniformly.",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-10-26",
+    "sections_read": "v3 abstract and §§1–8; Appendix A setup/seeds/optimizer, B.1 fitting, B.2 selected ablation text/tables, B.3 parameterization, B.4–5 diagnostics/larger-model evaluation, C.1 and C.6 controls, D mixture controls, E allocation, F.1 protocol plus F.3 summary, G diagnostics, H physical cost. Large external benchmark tables and all figures not exhaustively audited; no code or experiment rerun.",
+    "synthesis_status": "incorporated",
+    "changes_existing_conclusion": "Adds coverage and per-language preservation as allocation axes in T3; deepens existing effective-data and cost boundaries rather than asserting every MoE scales better.",
+    "evidence_status": "First release10/14; v2 10/15; v3 10/21. Current v3 read; complete v1-v3 semantic diff not performed.",
+    "canonical_url": "https://arxiv.org/abs/2610.20247",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "03-architecture-deployment.md"
+    ]
+  },
+  {
+    "id": "saxena2026vlminversescaling",
+    "title": "On the Limits of Scale: Inverse Scaling in Vision-Language Models",
+    "authors": [
+      "Rohit Saxena",
+      "Alessandro Suglia",
+      "Marek Rei",
+      "Pasquale Minervini"
+    ],
+    "year": 2026,
+    "date": "2026-10-19",
+    "first_published": "2026-10-19",
+    "first_published_date": "2026-10-19",
+    "first_published_utc": "2026-10-19T22:39:42Z",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "url": "https://arxiv.org/abs/2610.27360",
+    "full_text_url": "https://arxiv.org/html/2610.27360v1",
+    "type": "paper",
+    "branch": "multimodal-subtask-evaluation",
+    "problem": "总分提升可能掩盖同一家族发布模型在特定子任务上的退步。",
+    "insight": "用相同问题上的双向正确性翻转衡量净退步，再区分候选筛选、多重检验和提示协议的影响。",
+    "method": "19 released VLMs in four families, eight benchmarks/nine splits; 10,434 eligible within-family comparisons with at least 20 questions; net flip threshold five. Direct zero-shot greedy generation; paired CoT retest of both models on the 375 selected cases.",
+    "result": "375 screened cases; 16 survive BH correction across all 10,434 eligible comparisons. CoT leaves 96/375 above the same net-five threshold under a different generation budget.",
+    "limitation": "发布模型的训练、编码器与对齐存在混淆；375是比较案例而非独立任务。CoT较长预算和小模型下降也会改变差值；统计筛选及重叠比较限制因果/总体解释。不能据此断言参数增加造成逆向缩放。",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-10-26",
+    "sections_read": "Metadata/history; §§1–5.5, selected §6 and limitations; Appendix A decoding/model table, selected B family tables, D multiple testing, E cross-family table, I active-parameter constraints, J option-order controls, K encoder tiers, L paired CoT design. Did not fully audit error taxonomy/human annotations, all case tables, code or figure pixels.",
+    "evidence_status": "Primary selected-section review; no independent experimental reproduction or full version/code audit.",
+    "synthesis_status": "incorporated",
+    "changes_existing_conclusion": "T7 adds subtask-level evaluation as a boundary of aggregate multimodal progress; does not overturn aggregate scaling.",
+    "evidence_notes": [
+      "BH denominator 10,434 yields 16; correcting only the 375 selected cases yields 54 and is not the adopted headline.",
+      "Most eligible comparisons favor larger models; 87% of 171 affected family-subtasks are non-monotonic.",
+      "CoT reruns both models, increases max tokens from 2048 to 4096, and smaller-model accuracy falls in 251/375 cases; attenuation is not all larger-model recovery.",
+      "Option-order audit covers only six strong BLINK cases, not all 375.",
+      "Total-parameter ordering mixes dense/MoE; Appendix I sensitivity checks do not supply matched independently trained recipes.",
+      "Code link https://github.com/saxenarohit/vlm_inverse_scaling observed in paper but not executed."
+    ],
+    "canonical_url": "https://arxiv.org/abs/2610.27360",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "07-multimodal.md"
+    ]
+  },
+  {
+    "id": "raychev2026generativerewardscaling",
+    "title": "Scaling Laws for Generative Reward Models",
+    "authors": [
+      "Angel Raychev",
+      "Nathan Lile",
+      "Rafael Rafailov"
+    ],
+    "date": "2026-10-22",
+    "first_published": "2026-10-22",
+    "first_published_date": "2026-10-22",
+    "first_published_utc": "2026-10-22T05:37:00Z",
+    "last_revised_date": null,
+    "last_revised_utc": null,
+    "url": "https://arxiv.org/abs/2610.30765",
+    "full_text_url": "https://arxiv.org/html/2610.30765v1",
+    "branch": [
+      "T4"
+    ],
+    "problem": "静态偏好判断更准确的生成式奖励模型，未必为不断变化的策略提供更有效的在线优化反馈。",
+    "insight": "把 judge 的离线 Gold 标签准确率与其作为 online-DPO rewarder 的策略轨迹分别评估；同时检查训练方法、检查点、容量及参照评估器。",
+    "method": "Qwen3 proxy judges 0.6B–14B; Answer-Only SFT versus Thinking GRPO; creative-writing policies 0.6B–8B; online DPO with fresh response pairs and frozen learned Qwen3-32B Gold evaluation.",
+    "result": "Answer-Only has higher peak and top-five-average Gold Elo in 7/8 matched configurations despite lower static accuracy; 5/8 gaps have positive conditional bootstrap intervals. A different learned judge yields 42/80 Answer-Only wins, inconclusive overall.",
+    "limitation": "Formats and objectives confounded; one model family and creative-writing domain; Gold is learned from Reddit vote-derived labels, not human adjudication of optimized outputs; retrospective Gold-selected snapshots; conditional match-row bootstrap excludes retraining/cluster uncertainty; no compute-matched allocation and incomplete historical token-cap provenance.",
+    "sections_read": "Primary abs/history; HTML §§1–5, conclusion, Tables1–6, Appendix A.1–A.4 textual trajectory/provenance discussion, B.1–B.5 evaluation/scaling-fit/gradient identity/follow-up; prompt templates partly read. Figures not digitized, artifact code and training not run.",
+    "changes_existing_conclusion": "Extends T4 overoptimization chain from reward capacity and pressure to the mismatch between static judge selection and online feedback usefulness; does not reverse prior conditional reward scaling findings.",
+    "evidence_status": "First release 2026-10-22; metadata and key full-text sections checked. No later revision shown.",
+    "year": 2026,
+    "type": "paper",
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-10-26",
+    "synthesis_status": "incorporated",
+    "independent_replication": false,
+    "canonical_url": "https://arxiv.org/abs/2610.30765",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "04-posttraining.md"
+    ]
+  },
+  {
+    "id": "bai2026harnessscaling",
+    "title": "Harness Scaling for Generalizable Agentic Reinforcement Learning",
+    "authors": [
+      "Fei Bai",
+      "Huatong Song",
+      "Chuan Hao",
+      "Ran Tao",
+      "Jian Yang",
+      "Bryan Dai",
+      "Wayne Xin Zhao",
+      "Ji-Rong Wen"
+    ],
+    "date": "2026-10-21",
+    "first_published": "2026-10-21",
+    "first_published_date": "2026-10-21",
+    "first_published_utc": "2026-10-21T09:15:50Z",
+    "last_revised_date": null,
+    "last_revised_utc": null,
+    "url": "https://arxiv.org/abs/2610.29458",
+    "full_text_url": "https://arxiv.org/html/2610.29458v1",
+    "branch": [
+      "T4",
+      "T5"
+    ],
+    "problem": "通过单一执行框架训练的 agent 可能只适应该配置；测试时框架编辑并不自动带来可迁移改进。",
+    "insight": "在保持任务与环境语义的前提下，结构化改变执行框架，并区分留出组合迁移与外部黑箱框架迁移。",
+    "method": "Five three-level harness factors, 18 pairwise-balanced training configurations from 243, K=2 nearby harnesses per task on successive updates; Qwen3-4B/30B-A3B, PPO/GRPO, 300 updates; disjoint tasks,18 held-out combinations,Claude Code/OpenClaw evaluation.",
+    "result": "4B GRPO transfers to unseen Claude Code with mean pass@1 37.22 versus33.38 for OpenClaw-trained GRPO over three benchmarks. Structured18 outperforms random18 and exhaustive243 at fixed update/rollout budget; K=2 outperforms matched Repeat-2.",
+    "limitation": "Matched updates/rollouts do not establish equal token/FLOP/wall-clock cost; three evaluation runs do not establish independent-training uncertainty; rubric tasks use GPT-5.4; finite designed factors and two external harnesses; exhaustive243 includes white-box test configurations. No fitted universal exponent or direct replication of test-time harness editing.",
+    "sections_read": "Primary abs/history; HTML §§1–6, Tables1–4; Appendix A variants, B design/construction and Table6, C.1–C.3 configuration,compaction,black-box baselines,held-out evaluation,Repeat-2 and single-harness sensitivity; D behavioral-judge protocol. Figures not digitized and no training/code execution.",
+    "changes_existing_conclusion": "Adds training-time structured harness variation as a parallel repair to specialization; preserves the prior T5 distinction between test-time task adaptation and reusable harness improvement.",
+    "evidence_status": "First release2026-10-21; no later revision shown. A small arithmetic check of the18 listed design rows confirms all two-factor level pairs occur twice; this is not experimental replication.",
+    "year": 2026,
+    "type": "paper",
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-10-26",
+    "synthesis_status": "incorporated",
+    "independent_replication": false,
+    "canonical_url": "https://arxiv.org/abs/2610.29458",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
   }
 ]

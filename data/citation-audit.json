@@ -1,13 +1,13 @@
 {
-  "catalog_count": 182,
-  "cited_in_technical_chapters": 169,
+  "catalog_count": 187,
+  "cited_in_technical_chapters": 174,
   "chapters": [
     {
       "file": "01-predictability-budget.md",
       "title": "T1　可预测性、预算与训练配方：同一条曲线究竟在比较什么？",
-      "han_characters": 3399,
-      "catalog_sources_cited": 15,
-      "all_external_links": 15
+      "han_characters": 3698,
+      "catalog_sources_cited": 16,
+      "all_external_links": 16
     },
     {
       "file": "02-data.md",
@@ -19,23 +19,23 @@
     {
       "file": "03-architecture-deployment.md",
       "title": "T3　架构与部署：区分参数、FLOPs、显存和实际成本",
-      "han_characters": 5215,
-      "catalog_sources_cited": 23,
-      "all_external_links": 23
+      "han_characters": 5550,
+      "catalog_sources_cited": 24,
+      "all_external_links": 24
     },
     {
       "file": "04-posttraining.md",
       "title": "T4　后训练与强化学习：从反馈目标到可扩展推理策略",
-      "han_characters": 6935,
-      "catalog_sources_cited": 33,
-      "all_external_links": 33
+      "han_characters": 7227,
+      "catalog_sources_cited": 34,
+      "all_external_links": 34
     },
     {
       "file": "05-inference.md",
       "title": "T5　推理预算与搜索：如何把更多计算变成更可靠的答案",
-      "han_characters": 7079,
-      "catalog_sources_cited": 32,
-      "all_external_links": 33
+      "han_characters": 7357,
+      "catalog_sources_cited": 33,
+      "all_external_links": 34
     },
     {
       "file": "06-theory-evaluation.md",
@@ -47,9 +47,9 @@
     {
       "file": "07-multimodal.md",
       "title": "第七章　视觉、多模态、扩散与机器人：扩大什么，才能改善目标能力？",
-      "han_characters": 7315,
-      "catalog_sources_cited": 28,
-      "all_external_links": 28
+      "han_characters": 7612,
+      "catalog_sources_cited": 29,
+      "all_external_links": 29
     }
   ],
   "external_links_without_catalog_match": {

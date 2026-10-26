@@ -1,17 +1,17 @@
 {
-  "checked_on": "2026-10-19",
-  "edition": "v0.3.5",
-  "source_records": 182,
-  "sources_cited_in_technical_chapters": 169,
+  "checked_on": "2026-10-26",
+  "edition": "v0.3.6",
+  "source_records": 187,
+  "sources_cited_in_technical_chapters": 174,
   "technical_chapters": 7,
-  "technical_han_characters": 42194,
-  "community_records": 21,
-  "pdf_pages": 66,
-  "pdf_link_annotations": 720,
+  "technical_han_characters": 43695,
+  "community_records": 22,
+  "pdf_pages": 68,
+  "pdf_link_annotations": 737,
   "display_formulas_rendered": 26,
   "display_formula_fallbacks": 0,
   "local_links_and_schema": "pass",
-  "review": "All English pages 1–93 and Chinese pages 1–66 visually inspected through 14 contact sheets. English page-scale review: 2,12,23,30,42,58,59,60,73,93; Chinese: 10,17,30,41,42,51,66. No visible clipping, overlap, orphan headings, missing glyphs, equation overflow or broken tables. All 26 display formulas rendered with zero fallback in both languages; inline mathematics remains readable text notation. Six changed chapter pairs reviewed before renewing fingerprints. No independent experiment reruns.",
+  "review": "All English pages 1–96 and Chinese pages 1–68 visually inspected through 14 contact sheets. English page-scale checks: 2,11,21,30,43,61,74,96; Chinese: 2,9,16,22,31,43,52,68. Root additionally inspected EN30/61 and ZH16/43. A Chinese page43 closing-punctuation wrap was corrected; final re-render and page comparison confirmed the affected scope, and the corrected page was visually rechecked. No remaining visible clipping, overlap, orphan headings, missing glyphs, equation overflow or broken tables. Both languages rendered26 display formulas with zero fallback; inline math remains readable text. No experiments independently reproduced.",
   "limits": [
     "No independent rerun of cited experiments",
     "External URL availability is based on research verification logs, not an automated live link crawl",
@@ -22,22 +22,22 @@
   "publication": "Public GitHub repository yibingwei-1/scaling-law-survey, main branch",
   "pdfs": {
     "en": {
-      "pages": 93,
-      "link_annotations": 734,
+      "pages": 96,
+      "link_annotations": 753,
       "display_formulas_rendered": 26,
       "display_formula_fallbacks": 0,
-      "external_source_targets_verified": 348,
-      "external_link_occurrences_checked": 479,
-      "sha256": "cf0938ea2f2a2478770ac8b0dc7a2807307f142e876ddf932597a8102945475f"
+      "external_source_targets_verified": 361,
+      "external_link_occurrences_checked": 492,
+      "sha256": "c413d856c788d1d79af4185635c6418b7d2cac42f4efe6afccc32a457f7b0e8f"
     },
     "zh-CN": {
-      "pages": 66,
-      "link_annotations": 720,
+      "pages": 68,
+      "link_annotations": 737,
       "display_formulas_rendered": 26,
       "display_formula_fallbacks": 0,
-      "external_source_targets_verified": 348,
-      "external_link_occurrences_checked": 479,
-      "sha256": "762e95aa66192ffbf7b26e25c4c8c30923714cd55684a3d019dec5b3b786a440"
+      "external_source_targets_verified": 361,
+      "external_link_occurrences_checked": 492,
+      "sha256": "959866e656f4ef5603e27f3c73234a0e53a2e3fb970949609e57baf5ab0f2333"
     }
   },
   "translation_review": {
@@ -52,7 +52,7 @@
       "All maintained chapters included once in assembled manuscript"
     ],
     "manifest": "data/translation-status.json",
-    "incremental_reviewed_on": "2026-10-19",
-    "incremental_chapters": 6
+    "incremental_reviewed_on": "2026-10-26",
+    "incremental_chapters": 7
   }
 }

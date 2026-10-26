@@ -4,7 +4,7 @@ Initial search date: **September 16, 2026**. This round established **18 traceab
 
 Community discussion exposes unresolved questions among researchers and practitioners. Technical conclusions still require papers, author code, and official reports: high view counts indicate reach, not correctness, and vigorous debate is not independent replication. Full fields appear in [community.json](../../sources/community.json); searches and leads not included appear in [community-search-log.md](../../sources/community-search-log.md).
 
-The September 21, September 28, and October 12 additions bring the cumulative record count to 21. Earlier counters retain their original observation dates; see Sections 6–8 for the new records.
+The September 21, September 28, October 12, and October 26 additions bring the cumulative record count to 22. Earlier counters retain their original observation dates; see Sections 6–8 and 10 for the new records.
 
 ## 1. Operationalizing “High Attention”
 
@@ -128,3 +128,7 @@ X post identities, dates, or labeled counters remain unverified. This round obta
 ## 9. Search on 2026-10-19: No New Qualifying Observation
 
 The 2026-09-28 to 2026-10-19 window yielded no formally eligible addition across 32 queries covering the three platforms. All 21 existing records and historical counters remain unchanged. Goodfire discussion stays a candidate: the Reddit original lacked a verifiable absolute date and score, the X original returned 403, and third-party view claims were not adopted as platform metrics. A YouTube transcript date does not establish the upload date; missing counters remain empty. These access and verification limits do not establish an absence of discussion or warrant changes to technical conclusions about superposition or scaling. See the [complete search record](../../sources/weekly-2026-10-19-community.json).
+
+## 10. October 26 Addition: Do Readable Labels Explain Computation?
+
+The October 5–26 window produced one adopted addition from 24 queries across the three platforms. The previously unverified [Goodfire thread](https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/) now has an explicit October 15 date and indexed score of 887. This is not a live count; the existing 21 historical observations remain unchanged. The [author's essay](https://already-clean.goodfire.com/) presents a working hypothesis, makes readability proportions threshold-dependent, and still describes its technical companion as forthcoming. [Leo Gao's October 17 response](https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean) argues for testing explanations through downstream behavior after replacing activations, and distinguishes explaining neurons from understanding computation between them. This dispute over evidence does not establish that interpretability is solved or prove a universal scaling mechanism. The X original still returned 403; the previously identified YouTube candidate returned Cache miss. Missing metrics do not mean zero attention. See the [complete search record](../../sources/weekly-2026-10-26-community.json).

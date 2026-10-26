@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-26",
+  "edition": "v0.3.6",
+  "search_window": {
+    "from": "2026-10-05",
+    "through": "2026-10-26"
+  },
+  "status": "content_updated_validated",
+  "new_primary_sources": [
+    "microsoft2026frontierpretraining",
+    "dag2026multilingualmoe",
+    "raychev2026generativerewardscaling",
+    "bai2026harnessscaling",
+    "saxena2026vlminversescaling"
+  ],
+  "new_body_sources": [
+    "microsoft2026frontierpretraining",
+    "dag2026multilingualmoe",
+    "raychev2026generativerewardscaling",
+    "bai2026harnessscaling",
+    "saxena2026vlminversescaling"
+  ],
+  "catalog_only_sources": [],
+  "revised_sources": [],
+  "new_community_records": [
+    "RD-12"
+  ],
+  "new_high_attention_records": 1,
+  "chapters_changed": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7"
+  ],
+  "research_logs": [
+    "sources/weekly-2026-10-26-foundations.json",
+    "sources/weekly-2026-10-26-frontier.json",
+    "sources/weekly-2026-10-26-community.json",
+    "sources/weekly-2026-10-26-editor.json",
+    "sources/weekly-2026-10-26-review.json"
+  ],
+  "reason_for_body_updates": [
+    "Repetition-preserving small runs distinguish forecast validation from retrospective efficiency estimation.",
+    "Language coverage and per-language preservation alter expert allocation.",
+    "Static judge agreement need not select an effective online rewarder.",
+    "Structured harness variation during RL adds a separate transfer route from test-time harness search.",
+    "Aggregate multimodal progress requires subtask and multiple-testing controls."
+  ],
+  "access_limits": [
+    "Targeted discovery is not exhaustive; search indexing can omit recent work.",
+    "New Reddit record uses a dated search-index snapshot; direct reader has no numeric counters.",
+    "X original returned 403; YouTube candidate returned Cache miss. Failures do not establish absence of material.",
+    "Selected primary sections reviewed; no independent experiment reproduction."
+  ],
+  "publication_target": "https://github.com/yibingwei-1/scaling-law-survey",
+  "review": [
+    "Root reviewed all changed paired paragraphs, numbers, links and scope conditions, with independent cross-review of primary evidence and bilingual changes. Corrected training horizon versus wall-clock time, 1.69 times versus ambiguous increase, repetition-adjusted exposure, threshold inclusivity and Appendix E/L locator. Preserved Gold-selected snapshots, BH denominator, unequal token caps and historical community observations. No new formulas; unchanged chapters retain prior hashes. No independent experiments. Final Chinese diffusion wording removes quoted punctuation at line start; meaning reviewed against unchanged English paragraph.",
+    "Prior 21 community and all 182 primary source records preserved.",
+    "All English pages 1–96 and Chinese pages 1–68 visually inspected through 14 contact sheets. English page-scale checks: 2,11,21,30,43,61,74,96; Chinese: 2,9,16,22,31,43,52,68. Root additionally inspected EN30/61 and ZH16/43. A Chinese page43 closing-punctuation wrap was corrected; final re-render and page comparison confirmed the affected scope, and the corrected page was visually rechecked. No remaining visible clipping, overlap, orphan headings, missing glyphs, equation overflow or broken tables. Both languages rendered26 display formulas with zero fallback; inline math remains readable text. No experiments independently reproduced."
+  ],
+  "validation": {
+    "status": "pass",
+    "date": "2026-10-26",
+    "checks": [
+      "scripts/build_survey.py",
+      "Eight generated artifacts unchanged on rebuild",
+      "scripts/validate.py:187 sources,22 community records,41 Markdown files",
+      "Both PDF languages built with --check:26 formulas,zero fallback",
+      "All-page contact sheets and selected full-page views; final Chinese copyedit re-rendered and rechecked",
+      "Seven changed chapter pairs reviewed before renewing fingerprints",
+      "All repository JSON parsed; prior182 sources and21 community records unchanged; git diff --check passed"
+    ],
+    "pdf_pages": {
+      "en": 96,
+      "zh-CN": 68
+    },
+    "record": "data/quality-check.json",
+    "limits": "Targeted discovery and incomplete platform access; no independent experiment reproduction."
+  },
+  "counts": {
+    "catalog": 187,
+    "technical_sources_cited": 174,
+    "community": 22,
+    "technical_han_characters": 43695
+  }
+}

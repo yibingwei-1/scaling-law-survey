@@ -911,6 +911,78 @@
           "note": "Unanchored relative time; not treated as a new posting date or a refresh of the indexed count. Only selected replies read."
         }
       ]
+    },
+    {
+      "id": "RD-12",
+      "platform": "Reddit",
+      "community": "r/singularity",
+      "title": "Interpretability might have been solved by an Open AI guy: \"Neural Networks Are Already Clean\"",
+      "url": "https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/",
+      "author": "u/FomalhautCalliclea",
+      "published_at": "2026-10-15",
+      "publication_date_evidence": "Search-index result explicitly displayed [Thursday October 15 2026]; the directly opened reader exposed only an unanchored '23h ago'. The latter is not converted into a posting date.",
+      "topics": [
+        "scaling and interpretability",
+        "neuron explanations",
+        "architecture and measurement",
+        "mechanistic evaluation"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 887
+      },
+      "metric_evidence": "[Thursday October 15 2026] [+887 votes]",
+      "primary_sources": [
+        {
+          "url": "https://already-clean.goodfire.com/",
+          "title": "Neural Networks Are Already Clean",
+          "kind": "author_research_essay",
+          "verification": "Header, Short Version, threshold caveats, companion-paper statements and selected definition/appendix passages read; not the full essay, galleries or code."
+        },
+        {
+          "url": "https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean",
+          "title": "Neural networks are not already clean",
+          "kind": "author_technical_response",
+          "verification": "Leo Gao (leogao); page explicitly dated October 17, 2026. Full short article body and footnotes read; comments and linked works not comprehensively reviewed."
+        }
+      ],
+      "access_status": "Original Reddit post and selected replies readable. Absolute date and score are supplied by the search-index snapshot; the direct reader exposes no numeric counters.",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "The discussion motivates separating readable neuron labels from evidence that explanations capture computation. It is a measurement and interpretation question relevant to claims about what changes with model scale.",
+      "evidence_limit": "The sensational title is the poster's framing. Goodfire calls its essay a working hypothesis; the response questions the evidential standard. Neither a universal scaling law nor interpretability solved follows. Indexed score 887 has unknown measurement time; no independent reproduction was performed.",
+      "observed_at": "2026-10-26",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "observations": [
+        {
+          "observed_at": "2026-10-26",
+          "source_kind": "search_index_snapshot",
+          "url": "https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/",
+          "published_at": "2026-10-15",
+          "score": 887,
+          "metric_measurement_time": null,
+          "date_score_excerpt": "[Thursday October 15 2026] [+887 votes]"
+        },
+        {
+          "observed_at": "2026-10-26",
+          "source_kind": "direct_reader",
+          "url": "https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/",
+          "published_at": null,
+          "relative_time_text": "23h ago",
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "views": null,
+            "reposts": null,
+            "score": null
+          },
+          "note": "Reference time unknown; not converted into a date. Selected replies, not the entire comment tree, were read. The reader may be cached and is not a live counter."
+        }
+      ]
     }
   ],
   "observation_policy": "Each entry and observation retains its own retrieval date; top-level observed_at is the latest incremental update, not a refresh of historical counters."
