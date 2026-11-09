@@ -1,0 +1,435 @@
+{
+  "schema_version": "1.0",
+  "checked_on": "2026-11-02",
+  "window": {
+    "start": "2026-10-12",
+    "end": "2026-11-02",
+    "priority_after": "2026-10-26"
+  },
+  "scope": "T1 predictability/budgets/optimization; T2 effective data; T3 architecture/deployment. Targeted narrative maintenance, not an exhaustive review.",
+  "baseline": {
+    "head": "49446bef5026f105aaba5f02e83523857fdd6a94",
+    "edition": "v0.3.6",
+    "source_count": 187,
+    "technical_citations": 174,
+    "head_verified_by": "git rev-parse HEAD",
+    "previous_successful_search": "2026-10-26"
+  },
+  "local_context_read": [
+    "README.md current entry and latest-update paragraph",
+    "METHODOLOGY.md",
+    "UPDATING.md",
+    "data/state.json",
+    "CHANGELOG.md recent entries",
+    "docs/01-predictability-budget.md",
+    "docs/02-data.md existing repetition, selection and mixtures narrative; headings and relevant passages",
+    "docs/03-architecture-deployment.md existing sparsity/precision/cost narrative; headings and relevant passages",
+    "sources/weekly-2026-10-26-foundations.json",
+    "Source/doc ID deduplication with rg"
+  ],
+  "tools": {
+    "skill": "literature-review",
+    "primary": "web__run search/open/find, primary arXiv HTML/PDF and Microsoft AI page",
+    "parallel_cli": {
+      "command": "command -v parallel-cli",
+      "exit_code": 1,
+      "status": "not found in current PATH; not used"
+    },
+    "write_scope": "Only this weekly JSON; no canonical edits, no downloaded third-party full text, no reproduction."
+  },
+  "queries": [
+    {
+      "queries": [
+        "\"scaling laws\" \"pretraining\" after:2026-10-26 before:2026-11-03",
+        "\"compute optimal\" \"scaling\" after:2026-10-26 before:2026-11-03",
+        "\"mixture of experts\" \"scaling\" after:2026-10-26 before:2026-11-03",
+        "\"scaling laws\" \"data\" site:arxiv.org after:2026-10-26 before:2026-11-03"
+      ],
+      "result": "Mostly old primary pages and index freshness. Secondary cere-bro page identified AIR 2610.40362. Primary search results also exposed tool-use and vision candidates forwarded or left outside this branch. Date filters did not prevent old results; no crawl date treated as publication."
+    },
+    {
+      "queries": [
+        "site:arxiv.org/abs/2610 \"scaling\" \"pretraining\" \"Oct 2026\"",
+        "site:arxiv.org/abs/2610 \"scaling\" \"compute\" \"27 Oct\"",
+        "site:arxiv.org/abs/2610 \"scaling\" \"data\" \"28 Oct\"",
+        "site:arxiv.org/abs/2610 \"mixture\" \"29 Oct\""
+      ],
+      "result": "Min duplicate; multilingual pixel 2610.29681, waveform 2610.05649, ShellElastic 2610.15124 candidates. Dates verified only where separately recorded."
+    },
+    {
+      "queries": [
+        "site:arxiv.org \"scaling\" \"Oct\" \"2026\" \"data\" \"30\" pretraining",
+        "site:arxiv.org \"Loop Scaling Laws\"",
+        "site:arxiv.org \"InfoLaw\"",
+        "\"scaling laws\" \"pretraining\" \"October 2026\" blog after:2026-10-12"
+      ],
+      "result": "Loop MoE ID2609.40316, secondary issue12 identified Ambiguous Fits2610.34514; Microsoft duplicate. InfoLaw query returned no useful primary result in this batch. Secondary descriptions used only as discovery leads."
+    },
+    {
+      "queries": [
+        "\"InfoLaw\" scaling",
+        "\"Ambiguous Fits\" \"Rashomon\"",
+        "site:arxiv.org/abs/2610 scaling \"Oct 30\" \"data\"",
+        "site:arxiv.org/abs/2610 scaling \"Oct 27\" \"compute\""
+      ],
+      "result": "Primary Ambiguous Fits and InfoLaw IDs and author site. Other queries returned unrelated older records, not evidence of no new work."
+    }
+  ],
+  "duplicate_check": {
+    "command": "rg -n '2610.34514|2610.40362|2609.40316|InfoLaw|Rashomon|Affine Inverse' sources data/papers.json docs --glob '!weekly-2026-11-02*'",
+    "result": "No matches before this log was created. This is an ID/title check, not semantic proof that all related work is absent."
+  },
+  "previous_items_rechecked": [
+    {
+      "id": "dag2026multilingualmoe",
+      "url": "https://arxiv.org/abs/2610.20247",
+      "title": "Scaling Multilingual Mixture-of-Experts: How Language Coverage Changes Capacity and Compute Allocation",
+      "authors": [
+        "Joel Dag",
+        "Nikit Srivastava",
+        "Hamada M. Zahera",
+        "Axel-Cyrille Ngonga Ngomo"
+      ],
+      "first_published_utc": "2026-10-14T14:20:19Z",
+      "last_revised_utc": "2026-10-21T08:54:53Z",
+      "latest_version_verified": "v3",
+      "reading_scope_this_run": "abstract/metadata/history only",
+      "decision": "No version increment since October26; no new full-text reading or complete revision diff claimed."
+    },
+    {
+      "id": "min2026repeatedbatch",
+      "url": "https://arxiv.org/abs/2610.15965",
+      "title": "Scaling Repeated-Data Pretraining: Batch Size, Regularization, and GPU-Time Tradeoffs",
+      "authors": [
+        "Sewon Min"
+      ],
+      "first_published_utc": "2026-10-11T22:42:39Z",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "reading_scope_this_run": "abstract/metadata/history only",
+      "decision": "Unchanged v1; prior methods review not repeated. First publication outside current window, retained as version watch."
+    },
+    {
+      "id": "kim2026mixedprecision",
+      "url": "https://arxiv.org/abs/2610.17637",
+      "title": "Mixed Precision Scaling Laws for Quantized Pretraining",
+      "authors": [
+        "Jinuk Kim",
+        "Rajarshi Saha",
+        "Muhammed Fatih Balin",
+        "Youngsuk Park"
+      ],
+      "first_published_utc": "2026-10-13T03:05:01Z",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "reading_scope_this_run": "abstract/metadata/history only",
+      "decision": "Unchanged v1; no new narrative change."
+    },
+    {
+      "id": "chai2026repeatedtoken",
+      "url": "https://arxiv.org/abs/2610.05591",
+      "title": "What Is a Repeated Token Worth? The Scaling Geometry of Multi-Epoch Pretraining",
+      "authors": [
+        "Yekun Chai",
+        "Haoyi Xiong"
+      ],
+      "first_published_utc": "2026-10-04T22:55:50Z",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "reading_scope_this_run": "abstract/metadata/history only",
+      "decision": "Unchanged v1; no new narrative change."
+    },
+    {
+      "id": "microsoft2026frontierpretraining",
+      "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/",
+      "title": "Frontier Pre-training at Microsoft AI",
+      "authors": [
+        "Microsoft AI"
+      ],
+      "first_published_date": "2026-10-15",
+      "last_revised_date": null,
+      "latest_version_verified": null,
+      "reading_scope_this_run": "Printed date, current introductory text and indexed primary source-scaling/equal-loss-comparison passages",
+      "decision": "No dated revision disclosed; relevant passages remain consistent with prior reading. No archived byte-level diff or fresh PDF review performed; not a claim the page has never changed."
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "recommend_short_body_addition",
+      "priority": 1,
+      "source_record": {
+        "id": "mlodozeniec2026ambiguousfits",
+        "title": "Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation",
+        "authors": [
+          "Bruno Mlodozeniec",
+          "Spencer Frei"
+        ],
+        "year": 2026,
+        "date": "2026-10-25",
+        "first_published_date": "2026-10-25",
+        "first_published_utc": "2026-10-25T19:16:53Z",
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "url": "https://arxiv.org/abs/2610.34514",
+        "full_text_url": "https://arxiv.org/html/2610.34514v1",
+        "type": "paper",
+        "branch": "predictability-fitting-extrapolation-identifiability",
+        "problem": "A low fitting loss neither certifies solver optimality nor uniquely determines extrapolation.",
+        "insight": "Separate numerical optimization error from prediction disagreement among near-minimizers; bound both within a declared model and search domain.",
+        "method": "Monotone reparameterization and deterministic branch-and-bound for log-residual Huber fitting; synthetic examples plus four published scaling ladders.",
+        "result": "Near-equal fits can extrapolate differently. Certified fit bounds and synthetic prediction envelopes are demonstrated; real five-parameter bands are local-search inner approximations.",
+        "limitation": "Domain/form/objective/tolerance-conditional guarantees; single realized ladders omit training/evaluation noise. Tight certified five-parameter envelopes exceeded the authors' budget. Digitized legacy data and no independent experiment/code reproduction.",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-11-02",
+        "sections_read": "HTML abstract/introduction; §§2–3; Theorem1, §§4.1–4.2 algorithm and reparameterization, §§4.4–4.5; selected related-work/conclusion; Appendix B.1 and C experiment descriptions; selected A.2 target-corner extension. All proofs, every algorithm detail and plotted pixels were not independently audited.",
+        "synthesis_status": "proposed",
+        "changes_existing_conclusion": "Adds set-valued forecast/optimization-certification boundary after T1's Chinchilla replication discussion; does not overturn scaling or certify a universal extrapolation law.",
+        "evidence_status": "Newly discovered in overlapping window; first posted October25, not October27-or-later."
+      },
+      "placement": "T1 §2, after the Porian/Besiroglu fitting-replication discussion and before §3 optimization transfer. Short subsection; no new formula required.",
+      "proposal_en": "A better optimized fit need not identify a unique forecast. Mlodozeniec and Frei (25 October 2026) distinguish solver error from the Rashomon effect: different parameters can fit the observed ladder nearly equally well yet extrapolate differently. Their branch-and-bound method bounds fitting loss over parameter boxes, discards impossible regions, and can certify near-optimality and the prediction range of acceptable fits within a declared domain.\n\nThe study reanalyses four published ladders, including digitized Chinchilla and Llama 3 points, alongside synthetic examples. A crucial boundary separates the demonstrations: the real five-parameter prediction bands use local search and are inner approximations, because tight certified envelopes exceeded the available budget. The certified synthetic envelopes therefore should not be generalized into complete certification of every reported real-data forecast. Guarantees are conditional on the chosen power-law family, parameter bounds, fitting objective and tolerance; they neither model run-to-run randomness nor establish statistical confidence or correct functional form. This extends the earlier replication debate: report optimization error and viable forecast variation separately, then test forecasts on new scales.",
+      "proposal_zh": "更充分地优化拟合，不一定能识别唯一的预测。Mlodozeniec 与 Frei（2026 年 10 月 25 日）区分求解器误差与 Rashomon 效应：不同参数可同样贴合已有阶梯数据，却给出不同外推。其分支定界方法对参数盒内的拟合损失求界、剔除不可能区域，并能在声明的参数域内认证近似最优性及可接受拟合的预测范围。\n\n研究重新分析四组已发表阶梯，包括从图中提取的 Chinchilla 与 Llama 3 数据，并使用合成例子。必须区分两类演示：真实五参数规律的预测带采用局部搜索，只是完整包络的内近似，因为严格包络认证超出可用预算。因此，合成例子的认证包络不能扩写为所有真实数据预测都已完整认证。保证依赖所选幂律族、参数边界、拟合目标和容差；既未建模运行间随机性，也不构成统计置信区间或函数形式正确性的证明。这将早先的复核争论推进一步：分别报告优化误差与可行预测的差异，再用新尺度检验预测。",
+      "proposal_en_words": 169,
+      "checks": [
+        {
+          "locator": "§2.2; §4.2 Eq1–5",
+          "facts": "Family E+sum A_i*x_i^(-alpha_i); mean Huber_0.001 of log residuals. Guarantees over a declared compact transformed hyperrectangle with positive E/C lower bounds and 0<r<=1. Implementation permits zero lower bounds not covered by stated proofs."
+        },
+        {
+          "locator": "§3; Appendix B.1",
+          "facts": "Four ladders: Apple DCLM149 runs; Delphi81 fit runs plus7 held-out large runs; digitized Chinchilla123 and Llama3 133. Real five-parameter extrema are sought at300x maximum fit compute along D=20N; no actual new300x training by this study."
+        },
+        {
+          "locator": "§4.4–4.5; Appendix C/Figure2",
+          "facts": "SLSQP multi-start bands are inner approximations, not complete certified envelopes. Certification at tight five-parameter tolerances exceeds compute budget. Do not turn general algorithm guarantees into completed full certification of these real-data bands."
+        },
+        {
+          "locator": "Appendix C/Figure1",
+          "facts": "Synthetic ten-point piecewise ground truth with2% multiplicative noise; two fits differ<0.12% in fitting loss and imply74.6x compute-equivalence gap at3e23. This is a constructed extrapolation example, not measured model speedup. Complete synthetic figure used about2min on60cores; not runtime of all real-data envelopes."
+        },
+        {
+          "locator": "§4.5",
+          "facts": "Conditioning on one ladder realization ignores initialization/data seed and evaluation randomness. Prediction range is not a statistical confidence interval and does not certify the chosen functional family."
+        }
+      ],
+      "reproduction_and_cost": "No code run, proof replication or experiment rerun. Runtime reported in source cannot establish a general speed advantage versus SciPy because implementation and task differ."
+    },
+    {
+      "decision": "recommend_short_body_addition",
+      "priority": 2,
+      "source_record": {
+        "id": "yu2026effectivelrschedule",
+        "title": "Your LR Schedule May Not Be Principled: Effective Learning Rate Scheduling in Weight-Normalized Training",
+        "authors": [
+          "Qifan Yu",
+          "Xinyu Ma",
+          "Xingyan Bin",
+          "Di He"
+        ],
+        "year": 2026,
+        "date": "2026-10-29",
+        "first_published_date": "2026-10-29",
+        "first_published_utc": "2026-10-29T16:15:08Z",
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "url": "https://arxiv.org/abs/2610.40362",
+        "full_text_url": "https://arxiv.org/pdf/2610.40362v1",
+        "type": "paper",
+        "branch": "optimization-effective-learning-rate-scaling-controls",
+        "problem": "Nominal learning-rate controls can hide changing relative updates when weight norms evolve, confounding normalization comparisons.",
+        "insight": "Track blockwise nominal-rate/norm trajectories; compare schedules after matching their relevant controls and distinguish replayed dynamics from prospective scheduling.",
+        "method": "WN/WD norm/LR replay interventions; idealized directional-alignment analysis; AIR finite-horizon affine inverse-square-root schedule; two Muon MoE sizes and stage/schedule sweeps.",
+        "result": "Matched effective-rate trajectories largely align WN/WD loss curves; AIR terminal training/evaluation loss about0.01 below cosine at two reported scales under matched cumulative LR.",
+        "limitation": "Individual trajectories rather than seed averages; evaluation-selected shape parameters and unequal tuning sweeps. Theory uses fixed target and constant-coefficient tangent dynamics, not general LM loss. No independent replication, universal scaling exponent or total research-cost saving established.",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-11-02",
+        "sections_read": "Primary PDF text: §2 effective-rate definitions/replay, §3 directional dynamics/AIR, §4 setup/Table1, selected §5.2–5.4, §7; Appendix B.3 discrete identity/B.4 geometric constraints/B.5–6; C.1–7 settings, loss reporting, sweeps and intervention controls. No full proof/code audit, PDF pixel inspection or experiment rerun.",
+        "synthesis_status": "proposed",
+        "changes_existing_conclusion": "Deepens T1 §3 optimization controls: matched nominal LR does not imply matched relative update. Does not establish AIR as universally optimal or modify the canonical parameter/data exponent.",
+        "evidence_status": "arXiv first submission October29; PDF cover prints October30. Canonical first publication follows submission history; no revision recorded."
+      },
+      "placement": "T1 §3 after μP/μTransfer discussion and before §4 open measurement infrastructure. The survey connection is editorial synthesis, not a claim AIR directly succeeds μP.",
+      "proposal_en": "Matching nominal learning rates need not match optimization dynamics. Yu et al. (29 October 2026) track each parameter block's effective rate as nominal rate divided by its norm. Replaying recorded norms or adjusting blockwise rates largely aligns weight-normalized and weight-decayed training, suggesting that some apparent normalization gains arise from the induced schedule. Their AIR schedule affinely adjusts inverse-square-root decay to a finite horizon.\n\nUnder Muon and fixed-norm comparisons, MoEs with 110M and 790M active parameters train on 128B and 500B tokens respectively. Matching warmup duration, terminal rate and the cumulative rate sum, while allowing peaks to differ, yields about 0.01 lower terminal loss than cosine. These are individual trajectories, with schedule shapes selected during evaluation and unequal tuning sweeps. The supporting theory optimizes alignment under fixed-target, constant-coefficient dynamics, not language-model loss generally; transferring recorded trajectories also differs from choosing a deployable schedule beforehand. This adds a control to scaling experiments: inspect realized relative updates and schedule selection, rather than attributing a curve shift to normalization or capacity alone.",
+      "proposal_zh": "名义学习率相同，不代表优化动力学相同。Yu 等（2026 年 10 月 29 日）用名义学习率除以参数块范数，追踪各块的有效学习率。回放记录的范数或调整各块学习率后，权重归一化与权重衰减训练的轨迹大体接近，提示某些表面上的归一化收益来自诱导出的调度。其 AIR 调度将平方根倒数衰减作仿射调整，以适应有限训练时域。\n\n在 Muon 和固定范数的比较中，110M 与 790M 活跃参数的 MoE 分别训练 128B 与 500B token。匹配 warmup 时长、末端学习率及累计学习率之和，同时允许峰值不同，终点损失比 cosine 低约 0.01。这些是单条运行轨迹，调度形状在评估中选择，调参扫描也不等预算。理论支持是在固定目标、常系数动力学下优化方向对齐，并不一般性地优化语言模型损失；迁移已记录轨迹也不同于事先选择可部署调度。由此，规模实验多了一项控制：检查实际相对更新与调度选择，不能把曲线移动全部归因于归一化或容量。",
+      "proposal_en_words": 168,
+      "checks": [
+        {
+          "locator": "§2 Eq3–4/Figure2",
+          "facts": "Norm-based effective LR=eta_k/r_k, not eta/r². WN-to-WD via recorded norms or fixed-norm block LR; reverse matching also replays recorded WD norms. Norm replay loss gap<2e-4, fixed-norm LR matching leaves several e-3. These controlled replays are not a ready-made schedule known before the reference run."
+        },
+        {
+          "locator": "§3; Appendix B.3–4",
+          "facts": "Ideal fixed target v, tangential fixed-magnitude updates, positive constant drift and constant coefficient b. Inverse-square-root maximizes scalar alignment dynamics without fixed peak/endpoint/LR budget; physical cosine interpretation restricted by m²+a²/(2b)<=1. Affine endpoint schedule is inspired by this optimum, not proven globally optimal for LM loss."
+        },
+        {
+          "locator": "§4.1/Table1; C.1/Table3",
+          "facts": "110M active/4.7B total on128B tokens (48h x16 GPUs per complete run);790M active/35.7B total on500B tokens (168h x32). Muon and Frobenius normalization. GPU model, corpus and tokenizer not identified in retrieved setup; do not infer H100 or benchmark-wide cost."
+        },
+        {
+          "locator": "§4.1–4.3; C.2–C.5",
+          "facts": "Same warmup duration/terminal LR/discrete LR sum including warmup; peak may differ. Shapes selected during evaluation; Table1 final train/eval gaps: small1.740/2.185 versus1.730/2.174, large1.431/1.843 versus1.421/1.832. Tuning ranges/counts differ; normalization by e-fold width does not equalize tuning budget."
+        },
+        {
+          "locator": "C.3; §5.2; C.6–7",
+          "facts": "Training endpoint uses EMA over last100 finite log observations, evaluation last finite point. These are single trajectories, not independent-seed means. Shared-tail experiment matches full sum; individual stage swap may not preserve sum; late-exponent intervention varies integrated LR<1%, not exact matching."
+        },
+        {
+          "locator": "§7",
+          "facts": "Authors leave quantitative alignment-to-loss link, evolving update statistics, further architectures/optimizers/scales and CT/SFT/RL for future work."
+        }
+      ],
+      "reproduction_and_cost": "No independent training rerun or runtime verification. Per-run durations exclude an enumerated complete tuning/research budget; proposal claims loss/control evidence, not measured speedup."
+    }
+  ],
+  "discovery_only": [
+    {
+      "title": "Where, When, and How Many Bits? Scaling Laws for SGD with Stochastic Rounding",
+      "authors": [
+        "Zhichao Wang",
+        "Michael W. Mahoney"
+      ],
+      "url": "https://arxiv.org/abs/2610.41074",
+      "first_published_utc": "2026-10-29T23:42:46Z",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "reading_depth": "abstract/metadata/history",
+      "decision": "Relevant next precision-theory audit; not promoted after two prioritized method reviews. Abstract conditions: two-layer linear fixed random features, fresh Gaussian power-law data, independent forward/backward rounding; proofs and empirical extensions not read."
+    },
+    {
+      "title": "Scaling Laws for Looped Mixture of Experts",
+      "authors": [
+        "Yanbei Chen",
+        "Anirudh Goyal",
+        "Raghuraman Krishnamoorthi"
+      ],
+      "url": "https://arxiv.org/abs/2609.40316",
+      "first_published_utc": "2026-09-30T17:53:47Z",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "reading_depth": "abstract/metadata/history",
+      "decision": "Old first release and unchanged v1 outside current window; potential backfill. HF/index surfacing not publication or revision."
+    },
+    {
+      "title": "InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition",
+      "authors": [
+        "Fengze Liu",
+        "Weidong Zhou",
+        "Binbin Liu",
+        "Ping Guo",
+        "Zijun Wang",
+        "Bingni Zhang",
+        "Yifan Zhang",
+        "Yifeng Yu",
+        "Xiaohuan Zhou",
+        "Taifeng Wang"
+      ],
+      "url": "https://arxiv.org/abs/2605.02364",
+      "first_published_utc": "2026-05-04T09:07:54Z",
+      "last_revised_date": null,
+      "latest_version_verified": "v1",
+      "reading_depth": "abstract/metadata/history; mirror snippets not counted as primary full-text reading",
+      "decision": "Old first release and unchanged v1 outside window; no body proposal."
+    },
+    {
+      "title": "Scaling Laws for Mixture Pretraining Under Data Constraints",
+      "authors": [
+        "Anastasiia Sedova",
+        "Skyler Seto",
+        "Natalie Schluter",
+        "Pierre Ablin"
+      ],
+      "url": "https://machinelearning.apple.com/research/scaling-laws-mixture-pretraining",
+      "first_published_date": null,
+      "publication_month_shown": "2026-08",
+      "reading_depth": "primary search result abstract only",
+      "decision": "Old August landing page; not a new October result. Exact first/revision dates not verified; backfill candidate."
+    },
+    {
+      "title": "Bridging Compute- and Data-Optimal Pretraining",
+      "authors": [
+        "Tian Qin",
+        "K. Hamidieh",
+        "David Alvarez-Melis"
+      ],
+      "url": "https://www.microsoft.com/en-us/research/publication/bridging-compute-and-data-optimal-pretraining/",
+      "first_published_date": null,
+      "publication_month_shown": "2026-07",
+      "reading_depth": "primary search result abstract only",
+      "decision": "Old July page; no new version established; not promoted."
+    },
+    {
+      "title": "ShellElastic: Scalable Elastic Pretraining with Simultaneous Maximal Updates and Hyperparameter Transfer",
+      "authors": [
+        "Can Jin",
+        "Yan Kang",
+        "Yifan Gong",
+        "Chongjian Ge",
+        "Mingze Xu",
+        "Yuanjun Xiong",
+        "Dimitris N. Metaxas",
+        "Hongwu Peng"
+      ],
+      "url": "https://arxiv.org/abs/2610.15124",
+      "first_published_utc_from_search": "2026-10-10T18:56:52Z",
+      "latest_version_verified": null,
+      "reading_depth": "primary search result abstract only",
+      "decision": "Search first date precedes window; history not opened, so later revision unknown. Primary ID resolved for previous secondary-only lead; no technical promotion."
+    },
+    {
+      "title": "Scaling Multilingual Pretraining of Pixel Language Models",
+      "authors": [
+        "Ilker Kesen",
+        "Jenny Kunz",
+        "Kasra Malihi",
+        "Desmond Elliott"
+      ],
+      "url": "https://arxiv.org/abs/2610.29681",
+      "first_published_utc_from_search": "2026-10-21T12:57:41Z",
+      "latest_version_verified": null,
+      "reading_depth": "primary search result abstract only",
+      "decision": "Potential T7/multilingual cross-reference; no primary methods/history audit this round."
+    },
+    {
+      "title": "Scaling Laws for Tool-Use Agents via Controllable Environment Synthesis",
+      "url": "https://arxiv.org/abs/2610.37648",
+      "first_published_date": null,
+      "reading_depth": "primary search result only",
+      "decision": "Agent-branch lead; no methods/version review by foundations."
+    },
+    {
+      "title": "Know, then Draw: A New Learning Paradigm for Visual Generation",
+      "url": "https://arxiv.org/abs/2610.37626",
+      "first_published_date": null,
+      "reading_depth": "primary search result only",
+      "decision": "T7 lead; no methods/version review by foundations."
+    },
+    {
+      "title": "Data Scaling Laws in Stereo Matching: From In-domain Fitting to Cross-domain Generalization",
+      "url": "https://arxiv.org/abs/2610.38600",
+      "first_published_date": null,
+      "reading_depth": "primary search result only",
+      "decision": "Vision-branch lead; no methods/version review by foundations."
+    },
+    {
+      "title": "Revisiting the 16x Pretraining Compute Gap between Diffusion and Autoregressive Language Models",
+      "url": "https://arxiv.org/abs/2610.17590",
+      "discovery_url": "https://picx.dev/gallery/d/scaling-training/10",
+      "first_published_date": null,
+      "reading_depth": "secondary discovery only; primary ID not opened",
+      "decision": "Primary ID newly resolved from secondary lead, but no counts/claims adopted without main-text review."
+    }
+  ],
+  "access_and_coverage_limits": [
+    "Targeted searches are not exhaustive and combined search output does not establish per-query ranking or a complete population.",
+    "parallel-cli not in PATH; used available web search and primary opens instead. No fabricated database search or engagement metric.",
+    "Two direct PDF opens for AIR returned UnexpectedStatusCode; reopening the already retrieved PDF reference succeeded. PDF text can have broken equations; no image or full proof verification is claimed.",
+    "Legacy item checks inspect current version histories, not byte-by-byte archived content diffs. Microsoft has no dated revision history.",
+    "Reading scopes name actual retrieved sections; no code execution, training reproduction, benchmark rerun or independent cost verification.",
+    "Only the weekly review log is written. Parent handles canonical integration, bilingual audit, build and publishing."
+  ],
+  "editorial_summary": "Recommend two concise T1 additions: optimization-certification versus forecast ambiguity, and realized effective-learning-rate controls. No new T2/T3 body addition justified within the two-item priority budget; old and shallow leads remain separate. Existing watched versions do not trigger corrections."
+}

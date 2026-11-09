@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-02",
+  "status": "paired_content_review_pass",
+  "scope": "Root reviewed all changed paired paragraphs, numbers, new inline mathematics, source links and scope conditions. Independent primary cross-reviews covered all five additions. Corrected deployed complete-query timing, unlaunched full factorial, unsought maintainer confirmation, database depth including core, local variable definitions, and Li2SAO locator/fallback. Harness v2 targeted recheck preserves current claims; no complete revision diff. Unchanged chapters retain prior fingerprints. No independent experiments.",
+  "chapters": [
+    "introduction.md",
+    "01-predictability-budget.md",
+    "04-posttraining.md",
+    "05-inference.md",
+    "07-multimodal.md"
+  ],
+  "primary_cross_reviews": [
+    {
+      "reviewer": "frontier",
+      "sources": [
+        "mlodozeniec2026ambiguousfits",
+        "yu2026effectivelrschedule"
+      ],
+      "read": "Rashomon HTML4.4–4.5,B.1/C; AIR PDF2–4/Table1,C.3/C.5.",
+      "findings": [
+        "Real five-parameter bands are inner approximations, not confidence intervals.",
+        "Effective eta/norm, active parameters/token budgets, unequal peaks/tuning and individual trajectories supported."
+      ]
+    },
+    {
+      "reviewer": "foundations",
+      "sources": [
+        "bai2026li2sao",
+        "szot2026synthapi"
+      ],
+      "read": "Li2SAO4–5,C/D,G.4 and scope; SynthAPI3.2,4.1–4.3,B–E.1.",
+      "findings": [
+        "Confirmed8A800/500steps with same-pool critic and28.9/36.4h; not64GPU coding experiment.",
+        "Corrected mechanism locator4.1–4.2; source insight now includes150-step fallback.",
+        "Confirmed supervision-token proxy, per-size fits and full-population score normalization including held-out population.",
+        "D includes core batch; S per instruction; M student parameters."
+      ]
+    },
+    {
+      "reviewer": "community",
+      "sources": [
+        "liu2026worldactionaudit"
+      ],
+      "read": "Abs history/byline; HTML3–6,Tables1–2,Supplement9–10.",
+      "findings": [
+        "Confirmed single-switch/R=2/oracle interval,latency-only scope and nonstandard planning configuration.",
+        "Narrowed1.152x to deployed complete-query path;decode-excluded is1.253x.",
+        "Full allocation factorial not launched after smoke power gate.",
+        "Maintainer confirmation of root cause was not sought.",
+        "HTML Wenbin Zhang versus abstract Zhangg discrepancy retained."
+      ]
+    },
+    {
+      "reviewer": "root",
+      "sources": [
+        "bai2026li2sao",
+        "szot2026synthapi",
+        "liu2026worldactionaudit"
+      ],
+      "read": "Li2SAO abs,introduction,2.1–2.3,4.2,G.3–G.5 and selected H; SynthAPI opening/4.3,C–E.1 selected fit/cost evidence; WAM1–8,Tables1–2,Supplement9–10/opening11.",
+      "findings": [
+        "Observed task/update/token/wall-clock accounting differences preserved.",
+        "No universal exponent, untouched normalization or broad negative planning verdict claimed.",
+        "Actual integrated bilingual diff read after citations and variable definitions added."
+      ]
+    }
+  ],
+  "limitations": [
+    "Selected source sections, not complete proof/code audit.",
+    "No independent reproduction."
+  ],
+  "final_copyedit": "Final Chinese punctuation-wrap copyedit reviewed against unchanged English: removed quotation marks around20tokens/parameter, shortened connective wording in Pythia, routing, ORZ and diagnostic-data sentences without changing assertions. Second copyedit preserves joint-probability-ratio and compute-proxy claims while preventing remaining line-initial punctuation; revised-version citation label uses parentheses. Each change reviewed against unchanged English.",
+  "pdf_review": {
+    "completed_on": "2026-11-09",
+    "scope": "All English pages1–98 and Chinese pages1–69 inspected in15 contact sheets; enlarged English pages1,2,7,8,9,22,36,44,49,61,68,98 and Chinese1,2,7,8,26,32,47,69. Root also inspected EN44/68 and ZH32/47. Final Chinese punctuation copyedits changed only pages7,8,26,32, verified by raster comparison; those pages rechecked at page scale. No remaining observed clipping, overlap, missing glyphs or broken tables. Both PDFs rendered26 display formulas without fallback. No experiments independently reproduced."
+  }
+}

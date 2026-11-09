@@ -1,0 +1,409 @@
+{
+  "date": "2026-11-02",
+  "window": {
+    "start": "2026-10-12",
+    "end": "2026-11-02",
+    "priority_after": "2026-10-27"
+  },
+  "baseline_head": "49446bef5026f105aaba5f02e83523857fdd6a94",
+  "baseline_edition": "v0.3.6",
+  "scope": "T4 post-training/RL and T5 inference budgets/agents; original papers, institutional reports, and source version checks. Research log only; no canonical edits.",
+  "method": "Targeted web searches, primary arXiv metadata/history checks, and methods/experimental/appendix reading. At most two proposed body additions. Exact quantitative claims retained with task/selection/cost/seed boundaries. No code execution, replication, downloaded third-party full text, or broad completeness claim.",
+  "local_context_read": [
+    "METHODOLOGY.md",
+    "UPDATING.md",
+    "README.md current-edition excerpt",
+    "CHANGELOG.md latest entry",
+    "state current version/search dates",
+    "docs/04-posttraining.md and docs/05-inference.md relevant body",
+    "sources/weekly-2026-10-26-frontier.json including candidates and prior checks",
+    "Canonical source search for new candidate arXiv IDs (no duplicate found)"
+  ],
+  "query_batches": [
+    {
+      "date": "2026-11-02",
+      "queries": [
+        "site:arxiv.org \"reinforcement learning\" \"scaling\" after:2026-10-26 before:2026-11-03",
+        "site:arxiv.org \"test-time\" \"budget\" after:2026-10-26 before:2026-11-03",
+        "site:arxiv.org \"agent\" \"compute\" after:2026-10-26 before:2026-11-03"
+      ],
+      "observations": "Discovered Li²SAO2610.40726, Echo2610.37865, EasyProver2610.38174 and PailitaoMMSearch2.02610.36958; search dates are not treated as publication dates."
+    },
+    {
+      "date": "2026-11-02",
+      "queries": [
+        "site:arxiv.org \"test-time scaling\" after:2026-10-26 before:2026-11-03",
+        "site:arxiv.org \"inference\" \"budget\" \"October 30, 2026\""
+      ],
+      "observations": "Found2610.41970 world-action audit (root handles),2610.37175 MLE-World,2610.40927 agentic world modeling. No unsupported ranking by social popularity."
+    }
+  ],
+  "supplied_leads": [
+    {
+      "url": "https://arxiv.org/abs/2610.36077",
+      "from": "root",
+      "outcome": "Metadata/abstract only; actual first submission Oct26, not Oct27. Queue."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37648",
+      "from": "root",
+      "outcome": "Deep targeted reading; body recommendation replacing older Budget-Aware candidate."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41970",
+      "from": "root / independent search",
+      "outcome": "Root handles full audit; no duplicate body proposal."
+    }
+  ],
+  "existing_source_checks": [
+    {
+      "url": "https://arxiv.org/abs/2610.30765",
+      "title": "Scaling Laws for Generative Reward Models",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-22T05:37:00Z",
+      "checked_on": "2026-11-02",
+      "reading_depth": "metadata_history",
+      "body_change": false,
+      "note": "No newer revision listed. Current T4 wording read; no complete repeat audit of original empirical artifacts."
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.12227",
+      "latest_version_verified": "v4",
+      "first_published_utc": "2026-07-14T00:18:42Z",
+      "revision_history": [
+        {
+          "version": "v2",
+          "utc": "2026-08-27T12:13:50Z"
+        },
+        {
+          "version": "v3",
+          "utc": "2026-10-01T21:04:31Z"
+        },
+        {
+          "version": "v4",
+          "utc": "2026-10-05T06:02:06Z"
+        }
+      ],
+      "checked_on": "2026-11-02",
+      "reading_depth": "metadata_history",
+      "body_change": false,
+      "note": "No newer revision listed. Existing T5 transfer/search-cost limitations retained."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.29458",
+      "title": "Harness Scaling for Generalizable Agentic Reinforcement Learning",
+      "latest_version_verified": "v2",
+      "first_published_utc": "2026-10-21T09:15:50Z",
+      "last_revised_utc": "2026-10-25T08:09:22Z",
+      "checked_on": "2026-11-02",
+      "reading_depth": "full_text_targeted",
+      "sections_read": "v2 §§4.1–4.3, Tables1–3; Appendix C.1–C.3, Tables7–11; claims used in current T5 paragraph.",
+      "body_change": false,
+      "record_patch": {
+        "version": "v2",
+        "version_read": "v2",
+        "latest_version_verified": "v2",
+        "last_revised_date": "2026-10-25",
+        "last_revised_utc": "2026-10-25T08:09:22Z",
+        "full_text_url": "https://arxiv.org/html/2610.29458v2",
+        "verification_date": "2026-11-02"
+      },
+      "findings": [
+        "243 combinations of five components×three variants;18 pairwise-balanced training configurations;K=2 consecutive-update allocation remains.",
+        "13.5K ClawGym tasks,300updates,GRPO16×8/PPO128×1;18 held-out configurations and separate tasks;three evaluation runs, not independent training replicates.",
+        "Qwen3-4B GRPO black-box Claude Code mean37.22 versus OpenClaw-trainedRL33.38 remains supported.",
+        "OpenClaw v2026.4.5 training and Claude Code v2.1.205 test;H20 16/32 allocation,4B8K/32K and30B4K/60K caps,compaction affects token count;not compute-equivalent universal result."
+      ],
+      "provenance_correction": "v2 was submitted Oct25, before last week's Oct26 access. Prior log calling v1 latest was incomplete/inconsistent. Treat this as a corrected version check, not a newly published post-Oct26 revision. Targeted current-claim checks are not a complete v1↔v2 semantic diff."
+    }
+  ],
+  "recommended_body_additions": [
+    {
+      "source_record": {
+        "id": "bai2026li2sao",
+        "title": "Li²SAO: Lifting Light Single-Rollout Asynchronous RL Optimization via Group-Relative Actor-Critic Bootstrapping",
+        "authors": [
+          "Zichen Bai",
+          "Yanli Wang",
+          "Yang Liu",
+          "Junhao Shi",
+          "Xueqin Liu",
+          "Jinguo Sun",
+          "Muye Li",
+          "Shaoqiang Zheng",
+          "Xuefei Diao",
+          "Zhuwei Zeng",
+          "Nan Duan",
+          "Peng Cao"
+        ],
+        "date": "2026-10-29",
+        "first_published": "2026-10-29",
+        "first_published_date": "2026-10-29",
+        "first_published_utc": "2026-10-29T09:02:00Z",
+        "last_revised_date": null,
+        "last_revised_utc": null,
+        "url": "https://arxiv.org/abs/2610.40726",
+        "full_text_url": "https://arxiv.org/html/2610.40726v1",
+        "branch": [
+          "T4",
+          "T5"
+        ],
+        "year": 2026,
+        "type": "paper",
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-11-02",
+        "synthesis_status": "proposed",
+        "independent_replication": false,
+        "problem": "同 prompt 的 GRPO 多响应组产生异步同步屏障；单 rollout actor–critic 释放并行度，却需克服 critic 冷启动不准。",
+        "insight": "短暂 group-relative actor–critic 联训，用组中心化回报与结果排序辅助 critic；满足就绪门槛或达到最长 150 步后，一次性切换单 rollout GAE。",
+        "method": "Released post-trained Qwen3-4B, DAPO Math 17K, 500 updates, 128 trajectories/update; 8-response bootstrapping then single-rollout asynchronous actor–critic. Mathematical and ReTool settings; additional 30B-A3B coding appendix.",
+        "result": "At step 500, math mean AIME pass@1 is 67.0% versus GRPO 63.6%; eight-A800 wall clock is 28.9h versus GRPO's better 2-trainer/6-rollout allocation 36.4h. Response lengths, prompt counts, critic work and allocation differ.",
+        "limitation": "One main model family and task setup; 16 evaluation samples/problem do not establish independent training-seed uncertainty. Wall-clock comparisons are configuration-specific, not matched FLOPs or a universal scaling law. Exact-value/on-policy theory does not prove convergence or unbiasedness of clipped, stale, filtered asynchronous implementation.",
+        "sections_read": "Primary abs/history; HTML §§1–5 and limitations; Appendix C.1–C.3, D.1–D.3, F.1, G.3–G.5, H.1–H.4; selected A.5–A.6 theoretical scope and exact-value identities. Figures not digitized; code not executed; proofs not exhaustively audited.",
+        "changes_existing_conclusion": "Extends T4's critic-versus-group-relative optimization branch to asynchronous scheduling and measured training time; changes the cost ledger, not the universal compute-optimal exponent.",
+        "evidence_status": "First release 2026-10-29; v1 latest on 2026-11-02. HTML title spells Single-Rollout; abs metadata contains Singl-Rollout typo; correct HTML spelling retained."
+      },
+      "placement": "T4 §7 immediately after ORZ/VAPO critic paragraph, before subsequent optimization/systems discussion; cross-reference T5 budget ledger.",
+      "proposal_zh": "组相对 RL 可以省去 critic，却仍有同步成本：异步训练中，较早完成的响应要等待同一 prompt 的其他响应。Li²SAO 处理单 rollout 学习的相反问题——critic 初始不够准确，无法可靠引导更新。它先用组相对优势训练 actor，以中心化回报和结果排序训练 critic，再切换到单 rollout GAE。在 Qwen3-4B 数学设置中，500 次更新后的平均 AIME pass@1 为 67.0%，GRPO 为 63.6%。使用八张 A800 时，该运行耗时 28.9 小时，GRPO 配置六张 rollout GPU 时为 36.4 小时；新方法的 actor 与 critic 共用四张训练 GPU。各方法每次更新都收集 128 条轨迹，但回答长度和每批 prompt 数会变化。这是特定配置的墙钟观测，不是等 FLOPs 比较或普适缩放定律。每题采样十六个评测答案，尚不能建立独立训练种子的不确定性；理论中的精确价值恒等式也不保证完整异步实现的收敛或无偏。",
+      "proposal_en": "Group-relative RL can save a critic yet retain a synchronization cost: in asynchronous training, early completions wait for the rest of their prompt group. Li²SAO addresses the opposite problem of single-rollout learning—a critic that is initially too inaccurate to guide updates. It first trains the actor with group-relative advantages and the critic with centered returns plus outcome ranking, then switches to single-rollout GAE. In its Qwen3-4B mathematical setting, 500 updates reach mean AIME pass@1 of 67.0%, versus 63.6% for GRPO. On eight A800 GPUs, this run takes 28.9 hours versus 36.4 for GRPO with six rollout GPUs; the new method shares four trainer GPUs between actor and critic. All collect 128 trajectories per update, but response lengths and prompts per batch change. These are configuration-specific wall-clock observations, not equal-FLOP comparisons or a universal scaling law. Evaluation samples sixteen answers per problem; independent training-seed uncertainty is not established. The theory’s exact-value identities also do not guarantee convergence or unbiasedness of the full asynchronous implementation.",
+      "evidence_locator": [
+        "§4.1–4.2: 8→1 bootstrapping, group-relative critic and ranking auxiliary loss, no critic-only warmup; readiness thresholds or150-step fallback.",
+        "§4 and Appendix A: IID/on-policy/exact-value identities; implementation caveats.",
+        "§5.1/Table1/C/D: main released Qwen3-4B, DAPO Math17K, 500 updates, 128 trajectories; average across AIME2024/25/26.",
+        "Appendix G.4 Table7: all eight A800 SXM4 80GB; GRPO best listed split 2/6 versus Li²SAO 4/4.",
+        "Appendix H: separate 64-A800 30B-A3B coding setting; no transfer of 4B timing claim."
+      ],
+      "cost_protocol": {
+        "main_training": "Single-turn Qwen3-4B and ReTool tool-SFT Qwen3-4B-Instruct-2507; thinking disabled, 32768 context, temperature/top-p 1, DAPO Math17K, 500 updates, global 128 trajectories. GRPO 16 prompts×8 responses; after transition 128×1. LR1e-6 actor, critic5e-6; attention frozen in critic, MLP/head trained; critic two updates. Max policy lag16.",
+        "transition": "EMA residual explained variance >0.2 and rank accuracy >0.65 for10steps after min60; fallback at150. Group-centered returns and .1-margin/.1-weight ranking loss during bootstrap; uniform-reward groups removed and pre-divergence states masked. Post-switch absolute returns/GAE; ranking off; leftover bootstrap groups discarded.",
+        "reward_and_selection": "Boxed-answer or final-integer equivalence gives binary reward with DAPO overlong penalty. ReTool max16turns/120seconds Python. Offline evaluation every100steps, reported main table at500;16answers/problem at temperature1, average AIME2024/25/26.",
+        "wall_clock_hours": {
+          "math": {
+            "grpo_4trainer_4rollout": 51.5,
+            "grpo_2trainer_6rollout": 36.4,
+            "lisao_4trainer_4rollout": 31.8,
+            "li2sao_4trainer_4rollout": 28.9
+          },
+          "retool": {
+            "grpo_4trainer_4rollout": 48.7,
+            "grpo_2trainer_6rollout": 39.6,
+            "lisao_4trainer_4rollout": 35.5,
+            "li2sao_4trainer_4rollout": 33.1
+          }
+        },
+        "hardware_boundary": "Each timing uses8A800 SXM4 80GB; actor and critic share trainer allocation. Equal trajectories/updates does not mean equal response tokens, prompts, FLOPs or tuning/evaluation cost.",
+        "coding_appendix": "64A800,32trainer/32rollout; OpenHands;200updates×256trajectories;128Kcontext/compression;300turn/3600second caps;SWE-Gym+SWE-Smith; protected-test restore/fresh-container verify; infra-aborted rollouts excluded from optimization. Separate 30B-A3B result, not the math timing protocol.",
+        "uncertainty": "HTML search found no seed disclosure. Do not convert this into an exact claim of one training seed; independent-seed uncertainty was not established by inspected sections.",
+        "staleness": "Their off-policy definition requires >1 version lag; one-step lag counted on-policy. GRPO batch and single-rollout lag measurements have a stated one-version difference; do not equate these as a universal common metric."
+      },
+      "cautions": [
+        "Main Qwen3-4B is post-trained, not Qwen3-4B-Base.",
+        "Do not call 128 trajectories equal data exposure, equal tokens or equal FLOPs.",
+        "Do not infer universal actor–critic superiority or a scaling exponent.",
+        "Exact critic/on-policy algebra is weaker than a guarantee for the implemented asynchronous optimizer."
+      ],
+      "proposal_en_words": 163
+    },
+    {
+      "source_record": {
+        "id": "szot2026synthapi",
+        "title": "Scaling Laws for Tool-Use Agents via Controllable Environment Synthesis",
+        "authors": [
+          "Andrew Szot",
+          "Samira Abnar",
+          "Omar Attia",
+          "Abbas Kazerouni",
+          "Michael Kirchhof",
+          "Cheng-Yu Hsieh",
+          "Raviteja Vemulapalli",
+          "Alexander Toshev"
+        ],
+        "date": "2026-10-27",
+        "first_published": "2026-10-27",
+        "first_published_date": "2026-10-27",
+        "first_published_utc": "2026-10-27T17:56:46Z",
+        "last_revised_date": null,
+        "last_revised_utc": null,
+        "url": "https://arxiv.org/abs/2610.37648",
+        "full_text_url": "https://arxiv.org/html/2610.37648v1",
+        "branch": [
+          "T5",
+          "T2"
+        ],
+        "year": 2026,
+        "type": "paper",
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-11-02",
+        "synthesis_status": "proposed",
+        "independent_replication": false,
+        "problem": "扩充 agent 合成任务数量不能识别应将预算投入新工具、同工具下的新任务还是新数据库状态；相同任务数可能具有不同泛化上限。",
+        "insight": "用可执行环境合成分别控制应用数 A、每应用指令数 T、每指令数据库实例数 S 和干扰数据深度 D；以组成相关的上限与任务增长项拟合泛化。",
+        "method": "458752 retained task trajectories from GLM-5.2, up to4 attempts and first verifier-success retained;849 Qwen3.5 SFT students at2B/4B/9B/27B. Per-size logistic-product scaling fit; highest-compute25% held out.",
+        "result": "Composition-aware versus task-count-only held-out normalized MAE0.0285 versus0.1706; up to16× largest fitting budget under authors' supervision-token FLOP proxy. Greater app/database diversity becomes beneficial at larger budgets.",
+        "limitation": "SFT rather than RL or test-time scaling. Diagnostic aggregate is AppWorld plus SynthAPI-Holdout with full-population maximum used in normalization. C≈6ML uses supervision tokens and excludes synthesis/teacher/evaluation; not measured end-to-end compute. Same Python interface, no user-in-loop, synthetic semantic depth, one pipeline for fitted law, no established independent-training-seed uncertainty.",
+        "sections_read": "Primary abs/history; HTML §§1–5; Appendix A.3–A.4 environment interface/statistics; Appendix B–D training/fitting/evaluation; E.1–E.3 numerical breakdowns and limited SimSAT allocation check. Prompt templates partly encountered but not audited as code; figures not digitized; code not run.",
+        "changes_existing_conclusion": "Extends T5 harness-composition transfer to environment-composition allocation, with a fitted held-out forecasting experiment and explicit accounting limits; does not establish general agent RL or test-time laws.",
+        "evidence_status": "First release2026-10-27; v1 latest verified2026-11-02."
+      },
+      "placement": "T5 after §4 training-time harness-diversity subsection (Bai) and before §5 stopping; connect to T2 data composition. Describe a parallel training-data branch, not an empirically proven causal successor to Bai.",
+      "proposal_zh": "执行框架多样性还留下一个分配问题：训练轨迹应来自哪些环境？SynthAPI 控制应用数 A、每应用指令数 T、数据库实例数 S 和干扰深度 D，任务总数为 N=ATS。它在四种尺寸上训练 849 个 Qwen3.5 学生模型，采用 SFT 而非 RL。排除计算预算最高的四分之一运行后，组成相关 logistic 拟合对诊断集归一化表现的留出 MAE 为 0.0285，仅按任务数拟合则为 0.1706；更大预算下，更多工具和数据库多样性更有利。这支持同时建模组成与数量，但有明确边界：各尺寸分别拟合，诊断集是 AppWorld 与 SynthAPI 留出集，分数归一化使用全部已训练模型群的观察最大值。报告的计算代理量为 6ML，其中 L 定义为监督 token；它排除了环境合成、教师采样与评估成本，不是端到端实测 FLOPs。每题四次评测不能建立训练种子不确定性，迁移沿用统一 Python 接口，拟合定律只在一个合成管线中获得验证。",
+      "proposal_en": "Execution-framework diversity leaves another allocation question: which environments should supply the training trajectories? SynthAPI controls apps A, instructions per app T, database profiles S, and distractor depth D, with N=ATS tasks. It trains 849 Qwen3.5 students across four sizes using SFT, not RL. A composition-dependent logistic fit predicts normalized diagnostic performance more accurately than task count alone: held-out MAE is 0.0285 versus 0.1706 when the highest-compute quarter is excluded from fitting. Larger budgets favor more tool and database diversity. This supports modeling composition alongside quantity, with important boundaries. Fits are separate for each size; diagnostics use AppWorld and SynthAPI holdout, and score normalization uses the observed maximum across the full trained population. Reported compute is 6ML with L defined as supervision tokens; it excludes synthesis, teacher sampling, and evaluation costs and is not measured end-to-end FLOPs. Four evaluation trials per task do not establish training-seed uncertainty. Transfer uses a shared Python interface, and the fitted law is validated on one synthesis pipeline.",
+      "evidence_locator": [
+        "§3.2: N=ATS, D includes core batch and changes complexity rather than task count; verifier/oracle feasibility filter.",
+        "§4.1:458752tasks,64apps,10472APIs,849students; GLM expert4attempts; SFT only; diagnostic normalization Eq preceding Table1.",
+        "§4.3/Eq4.2: separate per-size composition-aware logistic model;6ML with L supervision tokens;top25%compute holdout;MAE.0285 vs.1706.",
+        "Appendix B/C: one epoch maximum for scaling fits,4Ktrajectory validation,checkpoint selection; per-size unweighted least squares.",
+        "Appendix D/E: shared Python interface;4trials/task; benchmark details; SimSAT verifies qualitative app-allocation pattern only, not the full fitted law."
+      ],
+      "cost_protocol": {
+        "dataset": "Gemini3.1Pro builds code-backed apps, verifiers, initial states, privileged oracle solutions, without internet. Feasibility filter requires verifierfalse before oracle and true after. Does not certify complete semantics. GLM5.2 up to4 attempts, retainfirstverifiedsuccess, discardallfailed tasks;one supervisedtrajectory percountedtask.",
+        "model_and_training": "Qwen3.5 2B/4B/9B/27B; loss on reasoning/actions only; prompts/toolresults/environment tokens masked;bf16,LR2e-5,warmup1%,maxgradnorm1,sequencepacking.2B/4Bpack262144;9B131072;27B65536.Gradientaccumulation4B/9B2,27B4.8B200/node,usually1node;27B2nodes;Bigdoublesnodes.4Ktrajectoriesvalidation,every200updates;stopafter5increases;lowestvalidationlosscheckpoint. Scalingrunsatmost1epoch;Big4epochs.",
+        "compute": "5.9B total tokens;721M reasoning/action supervisiontokens. C≈6ML defines L as total supervisiontokens; masked tokens still can incur forward/backprop cost, hence this is not a measured all-token compute ledger. Data synthesis, teacher sampling up to4 attempts, unsuccessful tasks,1.8M diagnostic evaluationepisodes are outside trainingproxy.",
+        "formula": "P_hat_M(A,T,S,D)=sigmoid(c0+cA*log2(A*S*D))*sigmoid(b0+bT*log2(T))^nu. Coefficients fitted independently by size; quantity-only comparator uses N=ATS. Diagnostic success averaged4trials/task and normalized relative to eachsize's initialstudent with denominator max across alltrainedsizes/population.",
+        "extrapolation": "Hold top25% training-FLOP runs, fitremaining;reportedmaximum16× largestfittingbudget. Fullpopulationmaxnormalization includesheldouttrainedpopulation; therefore do not describe this as entirely untouched normalization or a new benchmark generalization test. Figuresdisplayonlyobservedoptimalfrontierpoints,butfitusesalltrainingpoints. OverallMAE.0285 and per-size extrapMAEs.004/.051/.026/.028. No independently fixed score calibration or complete modelselection audit performed here.",
+        "evaluation": "Diagnostic set AppWorldTestN168/TestC417 and SynthAPIHoldout4apps×25tasks. ASTRAHigh939 and BFCLv3multiturn800 are additional transfer benchmarks, not the main scaling-fit aggregate. Same discovery metatools/Python REPL and trainprompt usedacrossbenchmarks. AppWorldcap50steps;SynthAPI32;per-actionmax4096outputtokens inclreasoning;defaultQwensampling reportedwithoutexplicitnumericaltemperature.",
+        "limits": "No user-in-loop; synthetic content lacks realistic semantic depth; fittedlawonlyonepipeline. SimSAT N128/256/512/1024 andA8/16/32 supports qualitative allocationpattern, not full lawtransfer. Baseline SFT/RL regimes differ, so comparative scores do not isolate synthesis efficacy/dataefficiency.4evaluationtrials are not4trainingseeds."
+      },
+      "cautions": [
+        "N is task count, not parameter count; M is student parameter count; D here is distractor depth, not training-token count.",
+        "Do not call849models849independentseedreplications.",
+        "Do not claim an RL scalinglaw, universal data recipe or hardwarecost saving.",
+        "Full-population normalization must accompany forecasting metrics if space permits."
+      ],
+      "proposal_en_words": 162
+    }
+  ],
+  "recommended_index_only": [],
+  "candidates_not_promoted": [
+    {
+      "url": "https://arxiv.org/abs/2610.28409",
+      "full_text_url": "https://arxiv.org/html/2610.28409v1",
+      "title": "Rewards for Budget-Aware Multi-Turn Agents That Adapt to Arbitrary Test-Time Constraints",
+      "authors": [
+        "Tom A. Lamb",
+        "Adam Golinski",
+        "Eleonora Gualdoni",
+        "Sinead Williamson",
+        "Michael Kirchhof"
+      ],
+      "first_published_utc": "2026-10-20T15:49:32Z",
+      "latest_version_verified": "v1",
+      "checked_on": "2026-11-02",
+      "reading_depth": "full_text_targeted",
+      "sections_read": "§§2–4,7–8(selected reward definitions),10(algorithm end),11.1–11.8,12.1–12.3. Figures not digitized; theory proofs not exhaustively checked; code not run.",
+      "problem": "An enforced cutoff controls spending without teaching budget allocation.",
+      "mechanism": "Budget-conditioned observations;11trained reward objectives compare truncation, reward gating, magnitude/rate/dual shaping;each policy coversbudgetvalues within oneenvironment/resource type.",
+      "evidence": "Qwen3.5-4B/9B;AppWorld step/call/generated-token budgets and BabyAI steps;8settings. Observed mean regret versus per-budget best: Dual2.92pp,Gate3.33,Trunc7.56. Descriptive aggregate, no universal statistically established winner.",
+      "cost_protocol": "Full-param DrGRPO variant,thinking512/768caps,9B120updates8×8,4B80updates32×8;8B200 training;eval9B8H100/4B4H100. Generated-token budget excludes inputs and observations. Gate permits overbudget episodes to finish during training, costing more generation than truncation;not matchedFLOPs. Negative-advantage segments subsampled,zero-advantagegroupsremoved.",
+      "generalization": "AppWorld step/call budgets interpolation+extrapolation;token budgets interpolation only;BabyAI evaluated onlytrained budgets. ASTRA step-budget2–14 transfer preserves PythonREPL interface;milestone similarity threshold.8.",
+      "uncertainty": "Main comparisons one training seed/method/setting;extra two seeds only9BAppWorld-step SigmoidGate/LinearMag and continued120→200updates. Four rollouts per test task not trainingreplicates. Regret/win ranks descriptive. Natural compliance evaluated withoutcutoff is imperfect.",
+      "reason_not_promoted": "Well-supported potential future budget-learning subsection, but SynthAPI provides a more direct missing allocation/forecasting branch this week. Retain as deeply read queue; no third body addition and no count-padding index addition.",
+      "draft_en_for_future": "A budget controller can stop an agent without teaching it to allocate resources. Lamb et al. instead train Qwen3.5-4B/9B with total and remaining budgets in their observations, comparing eleven reward objectives. Each policy handles one environment and resource type across budget values. They distinguish success within budget from natural compliance measured without a budget cutoff. Allowing overspent training trajectories to finish but withholding success reward outperforms truncation on pooled utility summaries, while costing additional generation. Across eight AppWorld/BabyAI settings, the Dual objective’s observed mean regret against the per-budget best is 2.92 percentage points, versus 7.56 for truncation; this is descriptive, not a statistically established universal ranking. AppWorld supports unseen-budget tests, but token budgets are only interpolated, and BabyAI uses trained budgets. ASTRA transfer preserves the Python-REPL interface. Generated-token costs exclude prompts and observations; call or turn budgets are not FLOPs. Main comparisons use one training seed, with extra seeds for only two objectives in one setting. Imperfect natural compliance means strict deployment still needs an external cutoff."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37865",
+      "title": "Echo: Scaling Visual Reinforcement Learning with Off-policy Experience",
+      "authors": [
+        "Gagan Khandate"
+      ],
+      "first_published_utc": "2026-10-27T19:11:05Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "abstract_metadata",
+      "mechanism": "State-based auxiliary policy imitates visual policy and collects inexpensive unrendered experience; shared privileged critic.",
+      "evidence_read": "Abstract:Genesis three locomotion and two dexterous tasks;headline wall-clock gains.",
+      "reason_not_promoted": "No full hardware/rendering-budget or replication audit;visual robotics branch less directly new than selected two."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38174",
+      "title": "Scaling Lean Theorem Proving for Real-World Code Verification",
+      "authors": [
+        "Debargha Ganguly",
+        "Divya Raghunathan",
+        "Dejan Jovanović",
+        "Vikash Singh",
+        "Soonho Kong",
+        "Aaron Tomb",
+        "Aman Goel",
+        "Ferhat Erata",
+        "Sam Bayless"
+      ],
+      "first_published_utc": "2026-10-28T02:23:25Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "abstract_metadata",
+      "mechanism": "EasyProver uses recursive isolated agents,asynchronous search,parallel tactic probes and elastic elaboration.",
+      "evidence_read": "Abstract:Aegis2045Rust/Lean pairs and11533candidate specifications;2000stratifiedstatements,1054proved with30minutes/statement.",
+      "reason_not_promoted": "No cost/selector/specification-validity audit;proof throughput is not verified program correctness or a scaling law."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36958",
+      "title": "PailitaoMMSearch2.0 Technical Report: Scaling Generative Retrieval to Unified End-to-End Multimodal Search",
+      "first_published_utc_reported_in_search": "2026-10-27T10:17:33Z",
+      "version": null,
+      "reading_depth": "search_abstract",
+      "mechanism": "Multimodal retrieval with CPT and mixed-budget SFT/RL.",
+      "reason_not_promoted": "Industrial A/B and training costs not audited;publication history not separately verified;not promoted."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37175",
+      "title": "MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model",
+      "authors": [
+        "Brian Ko",
+        "Han Wang",
+        "Hejia Geng",
+        "Li Erran Li",
+        "Sherry Yang"
+      ],
+      "first_published_utc_reported_in_search": "2026-10-27T13:01:29Z",
+      "version": null,
+      "reading_depth": "search_abstract",
+      "mechanism": "Predict terminal outputs/confidence to replace some expensive machine-learning experiment executions.",
+      "reason_not_promoted": "No full cost denominator,evaluator integrity,selection protocol or hardware audit;mainbudget claims not adopted."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.40927",
+      "title": "Agentic World Modeling for Agent Test-time Scaling without Environment Replica",
+      "authors": [
+        "Wendi Li",
+        "Huseyin A. Inan",
+        "Wei-Ning Chen",
+        "Yanzhi Chen",
+        "Chetan Bansal",
+        "Saravan Rajmohan",
+        "Sharon Li"
+      ],
+      "first_published_utc_reported_in_search": "2026-10-29T19:55:18Z",
+      "version": null,
+      "reading_depth": "search_abstract",
+      "mechanism": "Read-only access to real shared state informs hypothetical transitions without mutating real environment.",
+      "reason_not_promoted": "Full simulator integrity,token budget andselection protocol not audited;keep as lead,not reliable gain evidence."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36077",
+      "title": "The Trinity: Capability-Driven Recursive Self-Improvement for Multimodal Agents",
+      "first_published_utc": "2026-10-26T18:03:34Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "abstract_metadata",
+      "reason_not_promoted": "Root-supplied date corrected from approximateOct27 to primaryOct26. Author metadata includes an ambiguous concatenation; no fabricated full list. Full data/evaluator/cost audit not done."
+    }
+  ],
+  "access_and_reading_limits": [
+    "All primary pages used this week were accessible through web tool;no claim of comprehensive weekly coverage.",
+    "No parallel-cli workflow used;web searches/primary pages used directly.",
+    "No new code execution or empirical replication;all empirical findings are authors' reports.",
+    "Figures were not digitized;full proofs,code and every appendix prompt were not audited.",
+    "Search-result-only dates are explicitly separated from metadata-history dates.",
+    "First local metadata read attempted python,which was unavailable;successful retry used python3. No repository mutation in that read."
+  ],
+  "editorial_summary": "Propose only Li²SAO (critic bootstrapping and asynchronous measured cost) and SynthAPI (composition-dependent agent SFT forecast). Correct Bai's latest-version record without duplicate count or changing its supported numeric conclusions. Budget-Aware remains a fully read candidate; other leads remain shallow. No universal RL/test-time exponent or lower end-to-end-cost claim is added.",
+  "independent_cross_review": {
+    "reviewer": "foundations",
+    "date": "2026-11-02",
+    "result": "Both paired proposals and key source conditions passed independent targeted review. Corrected Li²SAO section locator and made150-step fallback explicit in record insight; body proposals unchanged."
+  }
+}

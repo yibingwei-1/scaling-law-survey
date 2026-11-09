@@ -1,0 +1,213 @@
+{
+  "date": "2026-11-02",
+  "window": {
+    "from": "2026-10-12",
+    "through": "2026-11-02"
+  },
+  "baseline_head": "49446bef5026f105aaba5f02e83523857fdd6a94",
+  "search_method": "Built-in web search and primary HTML/history reads; parallel-cli absent on PATH (rechecked). Targeted representative discovery, not exhaustive.",
+  "queries": [
+    {
+      "q": "\"scaling laws\" after:2026-10-26 before:2026-11-03",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"multimodal\" after:2026-10-26 before:2026-11-03",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"theory\" after:2026-10-12 before:2026-11-03",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"October\" \"2026\"",
+      "domains": [
+        "research.google",
+        "deepmind.google",
+        "anthropic.com",
+        "openai.com"
+      ]
+    },
+    {
+      "q": "\"scaling laws\" \"2610\" \"October 2026\" theory",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"evaluation\" after:2026-10-26 before:2026-11-03",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling\" \"multimodal\" after:2026-10-12 before:2026-11-03",
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"scaling laws\" \"October\" \"2026\"",
+      "domains": [
+        "epoch.ai",
+        "huggingface.co",
+        "research.google",
+        "ai.meta.com"
+      ]
+    },
+    {
+      "q": "\"Training Dynamics Underlying Language Model Scaling Laws\""
+    },
+    {
+      "q": "\"scaling laws\" \"Oct 2026\" \"generalization\"",
+      "domains": [
+        "arxiv.org"
+      ]
+    }
+  ],
+  "primary_decisions": [
+    {
+      "id": "liu2026worldactionaudit",
+      "title": "When Does Test-Time Search Help World Action Models? An Empirical Audit of Candidate Selection and Simulator Integrity",
+      "authors": [
+        "Jun Liu",
+        "Dajie Sun",
+        "Zhenglun Kong",
+        "Zhenjiang Fan",
+        "Peiyan Dong",
+        "Fan Yang",
+        "Wenbin Zhang",
+        "Geng Yuan",
+        "Xue Lin",
+        "Yanzhi Wang",
+        "Dong Huang"
+      ],
+      "year": 2026,
+      "date": "2026-10-30",
+      "first_published": "2026-10-30",
+      "first_published_date": "2026-10-30",
+      "first_published_utc": "2026-10-30T16:21:07Z",
+      "last_revised_date": null,
+      "version": "v1",
+      "version_read": "v1",
+      "latest_version_verified": "v1",
+      "url": "https://arxiv.org/abs/2610.41970",
+      "full_text_url": "https://arxiv.org/html/2610.41970v1",
+      "type": "paper",
+      "branch": [
+        "T5",
+        "T7"
+      ],
+      "problem": "机器人推理时增加计算，仍需区分可选择的候选差异、真实延迟与模拟器评测有效性。",
+      "insight": "先检查额外计算所依赖的前提，分别审计选择、完整查询计时与渲染完整性。",
+      "method": "Paired candidate replay with fixed continuation; complete-query eager timing; framebuffer sentinel. Details and scope in sections_read.",
+      "result": "Adds configuration-specific evidence for three prerequisites; see paired narrative proposal.",
+      "limitation": "Single Cosmos Policy–RoboCasa configuration; noisy hindsight oracle, latency-only pruning, inconclusive power-gated allocation, and nonstandard planning path. No maintainer confirmation or independent rerun.",
+      "reading_depth": "full_text_targeted",
+      "verification_date": "2026-11-02",
+      "sections_read": "Official metadata/history; HTML §§1–8, Tables1–2, Supplement §§9–10 and opening §11. Did not inspect all Supplement §12–13 text, figure pixels, preregistration artifacts or released code.",
+      "synthesis_status": "incorporated",
+      "changes_existing_conclusion": "T7 connects closed-loop evaluation to the preconditions for inference-time search; does not reverse broader positive scaling evidence.",
+      "evidence_status": "Selected primary text/tables; no independent experimental reproduction.",
+      "metadata_notes": "Abstract author listing says Wenbin Zhangg; HTML byline says Wenbin Zhang. Catalog follows HTML byline and preserves this discrepancy rather than claiming author-confirmed correction.",
+      "independent_replication": false
+    }
+  ],
+  "paired_proposals": [
+    {
+      "chapter": "07-multimodal.md",
+      "insert_before": "## 7.8",
+      "en": "### Inference-Time Search Also Depends on the Evaluation Path\n\nClosed-loop testing leaves another question: does extra search expose useful choices, and is the measurement itself reliable? [Liu et al., 2026, §§3–6 and Supplement §§9–10](https://arxiv.org/html/2610.41970v1) audit Cosmos Policy on RoboCasa. With eight candidates and two shared continuation seeds, a single candidate switch followed by a fixed base policy yields a value-selector result 1.66 percentage points below random. The hindsight oracle's 1.40-point gain has an episode-bootstrap interval spanning zero; it is neither deployable nor a reliable universal ceiling.\n\nThe efficiency audit separates forward-pass savings from complete-query timing: removing 47.9% of forward FLOPs gives at most 1.152× speedup on the tested A6000 eager deployed complete-query path. This latency-only pruning test does not assess action quality. The smoke sample fails its power gate, so the full joint-allocation factorial was not launched; the result remains inconclusive. The authors also report rendering corruption concentrated in a nonstandard planning path, with small direct-policy impact; the authors did not seek maintainer confirmation of the root cause. These results add three prerequisites—candidate separability, realized latency, and evaluation integrity—without establishing that search fails across other models, simulators, or real robots.",
+      "zh": "### 推理时搜索还取决于评测路径\n\n闭环测试仍留下一个问题：增加搜索是否暴露了有用选择，测量本身是否可靠？[Liu 等，2026，§§3–6 与补充 §§9–10](https://arxiv.org/html/2610.41970v1) 审计 Cosmos Policy 在 RoboCasa 上的表现。在八个候选、两个共享续行种子下，先切换一次候选再由固定基础策略续行，value selector 比随机选择低 1.66 个百分点。事后 oracle 的 1.40 个百分点收益，其按 episode bootstrap 的区间跨零；它既不可部署，也不是可靠的普适上限。\n\n效率审计将前向计算节省与完整查询计时分开：删除 47.9% 的前向 FLOPs，在所测 A6000 eager 部署路径的完整查询中最多加速 1.152 倍。这项仅测延迟的剪枝实验没有评估动作质量。小样本试验未通过统计功效门槛，因此没有启动完整的联合分配析因实验，结论仍不确定。作者还报告渲染损坏集中于非标准规划路径，对直接策略的影响较小；作者未就根因寻求维护者确认。这些结果补充了候选可区分性、实际延迟与评测完整性三个前提，不能据此认定搜索在其他模型、模拟器或真实机器人上无效。"
+    }
+  ],
+  "candidates_not_promoted": [
+    {
+      "title": "Information-Theoretic Scaling Laws for Generative Diffusion Training",
+      "url": "https://arxiv.org/abs/2610.33337",
+      "authors": [
+        "Druv Pai",
+        "Dejan Stancevic",
+        "Yi Ma",
+        "Luca Ambrogioni"
+      ],
+      "first_published_utc": "2026-10-23T22:21:06Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "Official metadata, abstract and HTML contents/opening only",
+      "reason": "Promising model-information/memorization/sample-quality link; mathematical assumptions, finite-ensemble estimation and extrapolation protocol still need close reading."
+    },
+    {
+      "title": "Movens-Zero: Scaling Humanoid Motion Foundation Models with Large-Scale Human Videos",
+      "url": "https://arxiv.org/abs/2610.41877",
+      "first_published_utc": "2026-10-30T15:25:49Z",
+      "latest_version_verified": "v1",
+      "reading_depth": "Official metadata/history and abstract",
+      "reason": "Execution-verified data and action-expert scaling; controlled compute, data-quality ablations and benchmark independence not read."
+    },
+    {
+      "title": "PailitaoMMSearch2.0 Technical Report: Scaling Generative Retrieval to Unified End-to-End Multimodal Search",
+      "url": "https://arxiv.org/abs/2610.36958",
+      "reading_depth": "Search abstract only",
+      "reason": "Industrial retrieval lead; online business metrics alone do not identify controlled resource-response curves."
+    },
+    {
+      "title": "Training Dynamics Underlying Language Model Scaling Laws: Loss Deceleration and Zero-Sum Learning",
+      "url": "https://arxiv.org/abs/2506.05447",
+      "final_venue_url": "https://aclanthology.org/2025.acl-long.1366/",
+      "reading_depth": "Primary-source search metadata/abstract only",
+      "reason": "HF rediscovery date must not substitute publication: arXiv June5,2025 and ACL July2025; no new version audit this round."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.17080",
+      "reading_depth": "Search result only",
+      "reason": "Long-horizon multimodal agent candidate; no new protocol evidence."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.27233",
+      "reading_depth": "Search abstract only",
+      "reason": "Medical agent application remains outside LLM scaling priority until controlled cost evidence is checked."
+    }
+  ],
+  "version_checks": [
+    {
+      "url": "https://arxiv.org/abs/2610.27360",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-19T22:39:42Z",
+      "reading_scope": "Official metadata/history; no later version shown."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.27789",
+      "latest_version_verified": "v2",
+      "first_published_utc": "2026-10-20T07:52:23Z",
+      "last_revised_utc": "2026-10-23T11:01:21Z",
+      "reading_scope": "Official metadata/history; theorem/proof candidate remains unpromoted."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.14423",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-10T00:42:37Z",
+      "reading_scope": "Official metadata/history; no later version shown."
+    }
+  ],
+  "other_search_outcomes": "Tool-environment scaling2610.37648 and Trinity2610.36077 delegated to frontier; rounding2610.41074 to foundations. Official-site search also returned security, policy, storage and news pages without controlled scaling evidence; not adopted. HF aggregation used for discovery only.",
+  "limits": [
+    "Search coverage is selective and does not establish absence of new work.",
+    "No independent experiment, code execution or complete proof/version audit."
+  ],
+  "primary_cross_review_corrections": [
+    "Specified deployed complete-query latency, since decode-excluded path is faster.",
+    "Specified full allocation factorial was not launched after the smoke-sample power gate failed.",
+    "Specified root-cause maintainer confirmation was not sought, rather than implying a pending request."
+  ],
+  "prior_publication_check": {
+    "head": "49446bef5026f105aaba5f02e83523857fdd6a94",
+    "github_actions_status": "completed_success",
+    "run_url": "https://github.com/yibingwei-1/scaling-law-survey/actions/runs/40372145237"
+  }
+}

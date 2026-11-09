@@ -1,13 +1,13 @@
 {
-  "catalog_count": 187,
-  "cited_in_technical_chapters": 174,
+  "catalog_count": 192,
+  "cited_in_technical_chapters": 179,
   "chapters": [
     {
       "file": "01-predictability-budget.md",
       "title": "T1　可预测性、预算与训练配方：同一条曲线究竟在比较什么？",
-      "han_characters": 3698,
-      "catalog_sources_cited": 16,
-      "all_external_links": 16
+      "han_characters": 4340,
+      "catalog_sources_cited": 18,
+      "all_external_links": 18
     },
     {
       "file": "02-data.md",
@@ -26,16 +26,16 @@
     {
       "file": "04-posttraining.md",
       "title": "T4　后训练与强化学习：从反馈目标到可扩展推理策略",
-      "han_characters": 7227,
-      "catalog_sources_cited": 34,
-      "all_external_links": 34
+      "han_characters": 7459,
+      "catalog_sources_cited": 35,
+      "all_external_links": 35
     },
     {
       "file": "05-inference.md",
       "title": "T5　推理预算与搜索：如何把更多计算变成更可靠的答案",
-      "han_characters": 7357,
-      "catalog_sources_cited": 33,
-      "all_external_links": 34
+      "han_characters": 7656,
+      "catalog_sources_cited": 34,
+      "all_external_links": 35
     },
     {
       "file": "06-theory-evaluation.md",
@@ -47,9 +47,9 @@
     {
       "file": "07-multimodal.md",
       "title": "第七章　视觉、多模态、扩散与机器人：扩大什么，才能改善目标能力？",
-      "han_characters": 7612,
-      "catalog_sources_cited": 29,
-      "all_external_links": 29
+      "han_characters": 7934,
+      "catalog_sources_cited": 30,
+      "all_external_links": 30
     }
   ],
   "external_links_without_catalog_match": {

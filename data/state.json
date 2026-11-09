@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "edition": "v0.3.6",
-  "last_successful_search": "2026-10-26",
-  "last_content_update": "2026-10-26",
-  "pdf_content_date": "2026-10-26",
+  "edition": "v0.3.7",
+  "last_successful_search": "2026-11-02",
+  "last_content_update": "2026-11-02",
+  "pdf_content_date": "2026-11-02",
   "coverage": "Representative narrative review; not exhaustive; primary claims not independently reproduced",
   "automation": {
     "id": "scaling-law",
@@ -18,7 +18,7 @@
     "status": "published",
     "visibility": "public",
     "branch": "main",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-09"
   },
   "coverage_limits": [
     "Three X posts lack observable counters; one has a labeled search-index view count",
@@ -54,16 +54,20 @@
     "Generative reward models: new judges/human ratings, deployable checkpoint selection and compute-normalized training recipes.",
     "Harness-diverse RL: independent training seeds, full tool/token/runtime budgets and truly unseen execution systems.",
     "VLM subtask regressions: matched training recipes, multiplicity controls and paired equal-budget prompting; scaling-theory proofs and active discovery budgets remain unaudited.",
-    "Size-generalization theory assumptions/proofs; Goodfire working hypothesis and mechanistic behavioral validation beyond readability labels."
+    "Size-generalization theory assumptions/proofs; Goodfire working hypothesis and mechanistic behavioral validation beyond readability labels.",
+    "Rashomon certified real-data envelopes and prospective scale tests; AIR independent seeds, matched tuning and optimizer/architecture transfer.",
+    "SynthAPI forecasts with fit-only normalization and full synthesis/teacher/training/evaluation accounting; Li2SAO independent training uncertainty and matched cost-to-quality.",
+    "WAM candidate/replay and render integrity across stacks and hardware; diffusion-information2610.33337 and Movens-Zero2610.41877 protocol review.",
+    "Goodfire: Gorton October20 response, exact stimuli/ablation/semantic versus arbitrary-channel controls and any released technical companion; current essay export is not a companion paper."
   ],
-  "last_validation_date": "2026-10-26",
-  "source_count": 187,
+  "last_validation_date": "2026-11-09",
+  "source_count": 192,
   "community_count": 22,
   "technical_chapters": 7,
-  "sources_cited_in_technical_chapters": 174,
-  "technical_han_characters": 43695,
+  "sources_cited_in_technical_chapters": 179,
+  "technical_han_characters": 45190,
   "reading_depth_summary": {
-    "正文定向阅读": 141,
+    "正文定向阅读": 146,
     "摘要/引言": 3,
     "摘要/元数据": 31,
     "官方报告选段": 3,
@@ -76,17 +80,17 @@
       "zh-CN"
     ],
     "translated_chapters": 12,
-    "translation_reviewed_on": "2026-10-26"
+    "translation_reviewed_on": "2026-11-02"
   },
   "last_search_run": {
-    "date": "2026-10-26",
-    "window_start": "2026-10-05",
+    "date": "2026-11-02",
+    "window_start": "2026-10-12",
     "status": "completed_with_access_limits",
-    "record": "data/maintenance-runs/2026-10-26.json",
+    "record": "data/maintenance-runs/2026-11-02.json",
     "access_limits": [
-      "Targeted discovery is not exhaustive; search indexing can omit recent work.",
-      "New Reddit record uses a dated search-index snapshot; direct reader has no numeric counters.",
-      "X original returned 403; YouTube candidate returned Cache miss. Failures do not establish absence of material.",
+      "Targeted representative discovery, not exhaustive; index dates can differ from original publication.",
+      "X original403 and YouTube Cache miss persist; technical-report PDF candidate failed with500 after CDN redirect. These failures are not evidence of no new material.",
+      "No new accepted community item; prior22 observations and counters preserved.",
       "Selected primary sections reviewed; no independent experiment reproduction."
     ]
   },

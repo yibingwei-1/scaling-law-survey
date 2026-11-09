@@ -1,0 +1,540 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-11-02",
+  "window": {
+    "start": "2026-10-12",
+    "end": "2026-11-02",
+    "inclusive": true,
+    "priority_subwindow": {
+      "start": "2026-10-26",
+      "end": "2026-11-02"
+    }
+  },
+  "baseline_head": "49446bef5026f105aaba5f02e83523857fdd6a94",
+  "baseline_edition": "v0.3.6",
+  "baseline_catalog_count": 22,
+  "baseline_files_read": [
+    {
+      "path": "README.md",
+      "scope": "Opening status, latest update, research-thread overview."
+    },
+    {
+      "path": "METHODOLOGY.md",
+      "scope": "Complete maintenance/source/attention methodology."
+    },
+    {
+      "path": "UPDATING.md",
+      "scope": "Complete recurring-maintenance and publication policy."
+    },
+    {
+      "path": "data/state.json",
+      "scope": "Current state and watchlist."
+    },
+    {
+      "path": "CHANGELOG.md",
+      "scope": "Latest October 26 entry and recent preceding entries."
+    },
+    {
+      "path": "docs/04-community-radar.md",
+      "scope": "Framing, thresholds, examples, policy and dated follow-ups; reread tail after an initially truncated combined output."
+    },
+    {
+      "path": "sources/community.json",
+      "scope": "All 22 canonical identities and historical metric records; current RD-12 and schema."
+    },
+    {
+      "path": "sources/weekly-2026-10-26-community.json",
+      "scope": "Queries, proposal, watchlist, primary checks and decision; prior evidence used only as historical context."
+    }
+  ],
+  "scope": "Community discovery and bounded primary follow-up for this repository only. Only this weekly JSON log is written; no canonical community record, historical metric, chapter, state or git history is changed.",
+  "policy": {
+    "missing_metrics": "null means unavailable, not zero.",
+    "metric_observation": "Visible indexed scores below are observations on November 2 with unknown measurement time; they are not live counters or current ranks.",
+    "publication_date": "Explicit calendar dates only; crawl dates, reply dates, transcript dates and unanchored relative labels do not substitute for original publication dates.",
+    "attention_thresholds": {
+      "reddit_score": 100,
+      "youtube_views": 100000,
+      "x_explicit_views": 100000
+    },
+    "cross_platform_ranking": false,
+    "inclusion": "Attention prioritizes reading but cannot by itself qualify a single model demo as scaling-law evidence. Link the primary source and preserve limitations.",
+    "deduplication": "Existing 22 canonical identities are preserved. Goodfire, its PDF export and researcher responses are one ongoing research conversation, not independent new community events.",
+    "tools": "Actual searches and reads used web__run. No platform-wide crawl, logged-in account, social API, private data or third-party metric extrapolation."
+  },
+  "search_query_count": 24,
+  "queries": [
+    {
+      "batch": 1,
+      "queries": [
+        {
+          "q": "\"scaling laws\" after:2026-10-11 before:2026-11-03 site:reddit.com"
+        },
+        {
+          "q": "\"test-time compute\" after:2026-10-11 before:2026-11-03 site:reddit.com"
+        },
+        {
+          "q": "\"scaling laws\" after:2026-10-11 before:2026-11-03 site:x.com -site:blog.x.com -site:communitynotes.x.com"
+        },
+        {
+          "q": "\"scaling\" \"October 2026\" site:youtube.com/watch"
+        }
+      ],
+      "outcome": "Returned recurring October 8 and June 25 original Reddit posts, both outside this window; neither recent crawl nor reply makes them new. No qualifying original X or YouTube result."
+    },
+    {
+      "batch": 2,
+      "queries": [
+        {
+          "q": "\"scaling laws\" after:2026-10-25 before:2026-11-03 site:reddit.com"
+        },
+        {
+          "q": "\"test-time scaling\" after:2026-10-25 before:2026-11-03"
+        },
+        {
+          "q": "\"compute-optimal\" after:2026-10-11 before:2026-11-03 site:reddit.com"
+        },
+        {
+          "q": "\"reinforcement learning\" \"scaling\" after:2026-10-25 before:2026-11-03 site:x.com"
+        }
+      ],
+      "outcome": "Broad test-time query discovered a new open-source Deepthink discussion and primary-paper leads, alongside older conference pages and glossary material. Recent crawl dates were not treated as publication dates. No qualifying high-attention platform item at this stage."
+    },
+    {
+      "batch": 3,
+      "queries": [
+        {
+          "q": "\"Neural Networks Are Already Clean\" \"technical\" \"paper\" after:2026-10-25 before:2026-11-03"
+        },
+        {
+          "q": "\"Nick Cammarata\" \"Goodfire\" \"paper\" after:2026-10-25 before:2026-11-03"
+        },
+        {
+          "q": "\"Neural networks are not already clean\" after:2026-10-25 before:2026-11-03"
+        },
+        {
+          "q": "\"OpenAI's major results over the last 3 months\" site:reddit.com"
+        }
+      ],
+      "outcome": "Goodfire-focused queries returned the original essay, Gao response, secondary reporting, and Liv Gorton's original response. No released companion paper was verified. Exact Deepthink title search did not provide a usable date/score."
+    },
+    {
+      "batch": 4,
+      "queries": [
+        {
+          "q": "\"Deepthink\" \"October\" \"2026\" site:reddit.com/r/LocalLLaMA"
+        },
+        {
+          "q": "\"scaling\" \"reinforcement learning\" after:2026-10-25 before:2026-11-03 site:reddit.com"
+        },
+        {
+          "q": "\"test-time scaling\" \"2026\" site:youtube.com/watch",
+          "recency": 21
+        },
+        {
+          "q": "\"scaling\" \"compute\" after:2026-10-25 before:2026-11-03 site:x.com"
+        }
+      ],
+      "outcome": "Deepthink follow-up search returned an explicit October 27 date and score 5. Most other results were product-access discussions or Community Notes documentation; no qualifying YouTube or X item."
+    },
+    {
+      "batch": 5,
+      "queries": [
+        {
+          "q": "\"Gorton\" \"Already Clean\" site:reddit.com"
+        },
+        {
+          "q": "\"Gorton\" \"Cammarata\" site:x.com"
+        },
+        {
+          "q": "\"Neural Networks Are Already Clean\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"scaling\" \"data\" \"MoE\" after:2026-10-25 before:2026-11-03 site:reddit.com"
+        }
+      ],
+      "outcome": "Queries for Gorton-related original Reddit/X posts, a Goodfire YouTube video, and recent data/MoE discussion returned no results."
+    },
+    {
+      "batch": 6,
+      "queries": [
+        {
+          "q": "\"scaling law\" \"2026\" site:youtube.com/watch",
+          "recency": 7
+        },
+        {
+          "q": "\"LLM\" \"data\" \"scaling\" after:2026-10-25 before:2026-11-03 site:reddit.com/r/MachineLearning"
+        },
+        {
+          "q": "\"test-time\" \"scaling\" after:2026-10-25 before:2026-11-03 site:x.com -site:communitynotes.x.com -site:blog.x.com"
+        },
+        {
+          "q": "\"When Does Test-Time Search Help World Action Models\" (site:reddit.com OR site:x.com OR site:youtube.com)"
+        }
+      ],
+      "outcome": "Returned an October 26 4B fine-tune progress thread with indexed score 501 and a primary model-card link. Other results were older deployment/product discussions, general threads and unrelated content. Exact new world-action audit title yielded no qualifying platform link."
+    }
+  ],
+  "proposal": {
+    "status": "no_qualified_new_record",
+    "recommended_new_community_records": 0,
+    "entries": [],
+    "primary_source_catalog_records": [],
+    "radar_rows_zh": [],
+    "radar_rows_en": [],
+    "radar_paragraph_zh": null,
+    "radar_paragraph_en": null,
+    "technical_body_change": false,
+    "rationale": "No candidate combines a new actionable scaling-law contribution with sufficient platform and primary-source evidence to justify an accepted community entry this week. Keep the 22 accepted records and current radar prose. Gorton's newly discovered original response remains a bounded-review follow-up candidate.",
+    "maintenance_note_zh": "本轮24条查询没有建议正式新增社区记录。22条旧记录及计数保留原观测日期。高票模型展示没有被当作规模规律证据；Goodfire后续保留原作者实验回应待查，未确认伴随技术稿已经发表。X与YouTube的访问失败不表示没有新讨论。",
+    "maintenance_note_en": "This round's 24 queries yield no proposed accepted community record. Preserve all 22 existing entries and their observation dates. A high-score model demonstration is not treated as scaling-law evidence. Retain an original experimental response to Goodfire for further checking; no released companion technical paper was verified. X and YouTube access failures do not establish an absence of new discussion.",
+    "note": "Maintenance notes are log-only summaries, not a request to append a redundant canonical radar section."
+  },
+  "context_candidates": [
+    {
+      "candidate_id": "CTX-4B-3D-CODER",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "Update: My 4B coding model is getting better at generating 3D scenes",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xgc7uv/update_my_4b_coding_model_is_getting_better_at/",
+      "author": null,
+      "published_at": "2026-10-26",
+      "publication_date_evidence": "Search-index result explicitly displayed [Monday October 26 2026].",
+      "observed_at": "2026-11-02",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 501
+      },
+      "metric_evidence": "[Monday October 26 2026] [+501 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "attention_status": "high_attention_proxy",
+      "primary_sources": [
+        {
+          "url": "https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder",
+          "kind": "author_model_card",
+          "verification": "Selected release, dataset, report and limitation sections read."
+        },
+        {
+          "url": "https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder/resolve/main/Qwen3.5-4B-3D-Coder_Technical_Report.pdf",
+          "kind": "author_technical_report",
+          "verification": "Canonical download link verified from model card; PDF fetch failed with 500 after CDN redirection. Report content not read."
+        }
+      ],
+      "access_status": "Reddit search-index post body read; original Reddit page not separately opened. Model card readable; report download inaccessible in this tool.",
+      "status": "not_proposed",
+      "reason": "The accessible evidence is a single-model fine-tune progress/demo and release description. No controlled resource-performance relationship or consequential scaling-law revision was verified. Above-threshold attention alone does not warrant inclusion.",
+      "evidence_limit": "Do not infer compute optimality from model size or selected renderings. October 29 report-release statement and October 30 vision-support update on the card postdate the October 26 Reddit post; the latter is not evidence of reactions to those updates."
+    },
+    {
+      "candidate_id": "CTX-DEEPTHINK",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "OpenAI's major results over the last 3 months came from scaling test-time compute with agent swarms. I've been building an open-source equivalent for the past year, and I'd love for you guys to try it.",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xh4bnd/openais_major_results_over_the_last_3_months_came/",
+      "author": "u/Ryoiki-Tokuiten",
+      "published_at": "2026-10-27",
+      "publication_date_evidence": "Search-index result explicitly displayed [Tuesday October 27 2026]; direct reader showed unanchored '54m ago'.",
+      "observed_at": "2026-11-02",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 5
+      },
+      "metric_evidence": "[Tuesday October 27 2026] [+5 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "attention_status": "context_below_screening_threshold",
+      "primary_sources": [
+        {
+          "url": "https://github.com/ryoiki-tokuiten/Deepthink",
+          "kind": "author_repository",
+          "verification": "Repository identity and opening pipeline README paragraphs read; no code execution, full implementation audit or benchmark reproduction."
+        }
+      ],
+      "access_status": "Post and selected author/reply text readable; direct reader has no numeric counters. Repository readable.",
+      "status": "not_proposed",
+      "reason": "Below the attention threshold and no independently checked cost/benchmark evidence. A public pipeline implementation is a follow-up lead, not support for the title's claim about OpenAI.",
+      "evidence_limit": "Reported benchmark improvements and costs in the post were not independently audited. Repository stars are not substituted for Reddit score.",
+      "observations": [
+        {
+          "observed_at": "2026-11-02",
+          "source_kind": "search_index_snapshot",
+          "published_at": "2026-10-27",
+          "score": 5,
+          "metric_measurement_time": null
+        },
+        {
+          "observed_at": "2026-11-02",
+          "source_kind": "direct_reader",
+          "published_at": null,
+          "relative_time_text": "54m ago",
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "views": null,
+            "reposts": null,
+            "score": null
+          },
+          "note": "Unknown reference time; not converted into an absolute date."
+        }
+      ]
+    }
+  ],
+  "unverified_candidates": [
+    {
+      "candidate_id": "UNVERIFIED-X-GOODFIRE",
+      "platform": "X",
+      "url": "https://x.com/nickcammarata/status/2110757819427574056",
+      "published_at": null,
+      "observed_at": "2026-11-02",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "primary_sources": [
+        "https://already-clean.goodfire.com/"
+      ],
+      "access_status": "Direct open again returned (403) Forbidden.",
+      "status": "not_proposed",
+      "reason": "No verified original-page date, text or labeled engagement metrics. Do not refresh historic X records or use third-party counts."
+    },
+    {
+      "candidate_id": "UNVERIFIED-YT-ILYA",
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=UdnYzYw-t5Y",
+      "title": "What comes after scaling pre-training? – Illya Sutskever",
+      "title_source": "Previously discovered secondary title; not newly authenticated from YouTube.",
+      "published_at": null,
+      "observed_at": "2026-11-02",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "metric_measurement_time": null,
+      "access_status": "Direct open again returned Cache miss.",
+      "status": "not_proposed",
+      "reason": "Upload date and counters remain unavailable. Video not watched; transcript dates are not upload dates."
+    }
+  ],
+  "primary_source_checks": [
+    {
+      "url": "https://already-clean.goodfire.com/",
+      "title": "Neural Networks Are Already Clean",
+      "author": "Nick Cammarata",
+      "type": "author_research_essay",
+      "published_at": null,
+      "verification_date": "2026-11-02",
+      "reading_depth": "official_report_sections",
+      "sections_read": "Header, opening Short Version and find-returned companion-paper/threshold caveats; not the full essay or all galleries.",
+      "finding": "Still explicitly a working hypothesis and still describes a technical companion as forthcoming. No released companion was verified in this bounded check.",
+      "change_assessment": "Current visible PDF link points to an essay export. No complete text/version diff or publication-history audit performed; do not claim the website is unchanged.",
+      "status": "existing_event_no_narrative_revision"
+    },
+    {
+      "url": "https://already-clean.goodfire.com/already-clean.pdf",
+      "title": "Neural Networks Are Already Clean",
+      "author": "Nick Cammarata",
+      "type": "essay_pdf_export",
+      "published_at": null,
+      "verification_date": "2026-11-02",
+      "reading_depth": "opening_pages_only",
+      "sections_read": "Text of opening pages and document identity; no full PDF reading or pixel inspection.",
+      "finding": "Same essay title and working-hypothesis framing; not treated as the promised distinct technical companion.",
+      "status": "duplicate_format_not_new_source"
+    },
+    {
+      "url": "https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean",
+      "title": "Neural networks are not already clean",
+      "author": "Leo Gao (leogao)",
+      "published_at": "2026-10-17",
+      "publication_date_evidence": "Direct page header: 17th Oct 2026.",
+      "type": "author_technical_response",
+      "verification_date": "2026-11-02",
+      "reading_depth": "full_short_essay",
+      "sections_read": "Short article body and seven footnotes reread; comments and linked work not comprehensively reviewed.",
+      "finding": "The previously summarized methodological objection remains present. No new substantive update was identified in the read article text; a complete historical diff was not performed.",
+      "status": "existing_response_no_narrative_revision"
+    },
+    {
+      "url": "https://livgorton.com/already-clean-thoughts/",
+      "title": "Some initial thoughts on Nick Cammarata's \"Neural Networks Are Already Clean\"",
+      "author": "Liv Gorton",
+      "published_at": "2026-10-20",
+      "publication_date_evidence": "Original page header: October 20, 2026.",
+      "type": "author_experimental_response",
+      "verification_date": "2026-11-02",
+      "reading_depth": "official_report_sections",
+      "sections_read": "Introduction, selected Concern 1a/1b tests, Concern 2, Concern 3 and opening Concern 4. Full appendix, figure pixels, code and complete experiment protocol not audited.",
+      "finding": "The author reports synthetic-stimulus and ablation checks plus a compressed-InceptionV1 reproduction that challenge particular neuron descriptions; inline Cammarata clarifications distinguish approximate labels and definitions. This adds a concrete follow-up beyond general disagreement.",
+      "limitation": "Self-described preliminary response focused on selected vision examples. No independent rerun here, exhaustive matched-protocol audit or demonstrated general conclusion about modern LLMs. Publication predates this week but lies within the overlap window.",
+      "status": "newly_discovered_followup_candidate_only",
+      "next_check": "Inspect exact model checkpoints, preprocessing, ablation protocol and reproducible artifacts before treating differences as a resolved replication dispute."
+    },
+    {
+      "url": "https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder",
+      "title": "Qwen3.5-4B-3D-Coder",
+      "author": "CCORE",
+      "published_at": null,
+      "type": "author_model_card",
+      "verification_date": "2026-11-02",
+      "reading_depth": "official_report_sections",
+      "sections_read": "Identity, preview framing, October 27/29/30 updates, dataset/report links and known-issues text. No weights or dataset downloaded.",
+      "finding": "The card identifies an independent fine-tune and a now-released report. Primary report text could not be read; single-model release information does not establish a scaling-law result.",
+      "status": "context_only"
+    },
+    {
+      "url": "https://github.com/ryoiki-tokuiten/Deepthink",
+      "title": "Deepthink",
+      "author": "ryoiki-tokuiten",
+      "published_at": null,
+      "type": "author_repository",
+      "verification_date": "2026-11-02",
+      "reading_depth": "readme_opening_only",
+      "sections_read": "Repository identity and initial pipeline-flow explanation.",
+      "finding": "A multi-agent search-pipeline implementation is accessible; the repository was not validated as support for the post's benchmark or frontier-lab claims.",
+      "status": "context_only"
+    }
+  ],
+  "primary_discovery_forwarded": [
+    {
+      "url": "https://arxiv.org/abs/2610.41970",
+      "title": "When Does Test-Time Search Help World Action Models? An Empirical Audit of Candidate Selection and Simulator Integrity",
+      "first_published_date": "2026-10-30",
+      "date_evidence": "Primary arXiv search result printed Fri Oct 30 16:21:07 2026.",
+      "reading_depth": "primary_search_abstract_only",
+      "reason": "Candidate selection, realized compute savings and simulator integrity are directly relevant to the survey; forwarded to parent for full source review.",
+      "technical_claims_adopted": false
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37175",
+      "title": "MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model",
+      "first_published_date": null,
+      "date_evidence": "Only relative search timing returned; no calendar date inferred.",
+      "reading_depth": "primary_search_snippet_only",
+      "reason": "Learned experiment-outcome prediction may change agent search cost; forwarded to parent as a discovery lead only.",
+      "technical_claims_adopted": false
+    }
+  ],
+  "not_selected": [
+    {
+      "url": "https://www.reddit.com/r/singularity/comments/1x0ctxq/can_someone_explain_where_are_we_currently_as_it/",
+      "reason": "October 8 original is outside the October 12–November 2 window; recurring search hit is not a fresh observation to add."
+    },
+    {
+      "url": "https://www.reddit.com/r/IntelligenceEngine/comments/1ufcoax/oh_yeah_might_have_found_a_scaling_law_seems/",
+      "reason": "June 25 original remains outside the window; newer replies/crawls do not change this."
+    },
+    {
+      "url": "https://www.reddit.com/r/DeepSeek/comments/1x4g9l9/didnt_know_you_can_get_banned_on_deepseek/",
+      "reason": "In-window high-score product-policy discussion is unrelated to evidence about scaling laws; not promoted for attention alone."
+    },
+    {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x1uzag/its_finally_here/",
+      "reason": "October 9 product-interface post is outside the window and is not scaling research."
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x29q4a/what_are_people_doing_with_decisions_jevlike/",
+      "reason": "October 10 original outside the window; a high-score reply is not the original post's score."
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xf4sxg/the_minimum_size_of_an_llm_to_generate_a_little/",
+      "reason": "Selected discussion snippets contain speculative parameter/data estimates; original date/score and a relevant primary result were not verified."
+    },
+    {
+      "url": "https://communitynotes.x.com/guide/en/under-the-hood/ranking-notes",
+      "reason": "Search matched generic scaling/compute terms in platform documentation, not a relevant X status."
+    },
+    {
+      "url": "https://www.protologue.com/t/test-time-compute-scaling/",
+      "reason": "Glossary review/crawl timestamp does not establish a new research result or community-platform record."
+    },
+    {
+      "url": "https://blog.redhub.ai/neural-networks-are-already-clean/",
+      "reason": "Secondary October 30 summary; companion-publication status checked against Goodfire itself, not accepted from this summary."
+    },
+    {
+      "url": "https://evidencepress.org/articles/neural-networks-already-clean/",
+      "reason": "Secondary reporting/audit lead; no underlying artifacts or reproduced model experiments independently reviewed, so not adopted as replication evidence."
+    }
+  ],
+  "access_results": [
+    {
+      "url": "https://x.com/nickcammarata/status/2110757819427574056",
+      "observed_at": "2026-11-02",
+      "method": "direct_open",
+      "result": "403 Forbidden",
+      "metrics_available": false
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=UdnYzYw-t5Y",
+      "observed_at": "2026-11-02",
+      "method": "direct_open",
+      "result": "Cache miss",
+      "metrics_available": false
+    },
+    {
+      "url": "https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder/resolve/main/Qwen3.5-4B-3D-Coder_Technical_Report.pdf",
+      "observed_at": "2026-11-02",
+      "method": "official_model_card_download_link",
+      "result": "500 / inaccessible CDN redirection; signed transient URL omitted from log",
+      "content_read": false
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xh4bnd/openais_major_results_over_the_last_3_months_came/",
+      "observed_at": "2026-11-02",
+      "method": "direct_open",
+      "result": "Readable post and selected replies; unknown relative-date reference and no numeric counters",
+      "metrics_available": false
+    },
+    {
+      "url": "https://already-clean.goodfire.com/",
+      "observed_at": "2026-11-02",
+      "method": "direct_open_and_find",
+      "result": "Readable selected sections; companion still described as forthcoming",
+      "content_read": "selected sections"
+    },
+    {
+      "url": "https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean",
+      "observed_at": "2026-11-02",
+      "method": "direct_open",
+      "result": "Readable dated short article; no complete revision history",
+      "content_read": "short body and footnotes"
+    },
+    {
+      "url": "https://livgorton.com/already-clean-thoughts/",
+      "observed_at": "2026-11-02",
+      "method": "direct_open",
+      "result": "Readable dated author response",
+      "content_read": "selected methods and caveats"
+    }
+  ],
+  "limitations": [
+    "Purposeful search across English-language sources, not an exhaustive platform crawl. Date filters did not reliably exclude older originals or new crawls of old publications.",
+    "No verified live counters were obtained. Search-index snapshots have unknown measurement time. Canonical historical counts are not refreshed.",
+    "X and YouTube returned no newly qualified item and known direct candidates remained inaccessible. This does not establish that no new discussions exist.",
+    "Community metrics and primary-source methodological relevance are separate gates. A high-attention release was retained as a candidate rather than inserted merely to increase counts.",
+    "Goodfire/Gao rechecks are bounded readings, not complete semantic diffs. An essay export is not a new companion paper; a separate preliminary researcher response is not a universal refutation.",
+    "No videos watched, models run, model code executed, artifacts reproduced or third-party full text copied into the repository. Only metadata, brief paraphrases and short date/score excerpts are saved."
+  ],
+  "maintenance_decision": {
+    "recommend_community_additions": 0,
+    "recommend_technical_prose_additions": 0,
+    "recommend_catalog_only_sources": 0,
+    "preserve_canonical_record_count": 22,
+    "status": "completed_with_access_limits",
+    "note": "Preserve canonical radar and all 22 records. Retain Gorton and model/pipeline leads in this log for later evidence review; parent handles the separately forwarded primary-paper leads."
+  }
+}

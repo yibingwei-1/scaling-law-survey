@@ -2,24 +2,24 @@
   "schema_version": "1.0",
   "source_language": "zh-CN",
   "target_language": "en",
-  "reviewed_on": "2026-10-26",
+  "reviewed_on": "2026-11-02",
   "review_scope": "Complete chapter translations reviewed for argument, conditions, limitations, source-link multiplicity, and exact mathematics. Hashes detect later drift; they do not establish translation quality or independently revalidate the science.",
   "chapters": {
     "introduction.md": {
       "source_path": "docs/introduction.md",
       "translation_path": "docs/en/introduction.md",
-      "source_sha256": "fb51a0913ce4844a43e3fa6f2ef83327a590c0a4bbd11198bda6bf75b3a52ad8",
-      "translation_sha256": "ebfd4922cb7e4863e0357b50b451985b8d1fe63becfae7b3da2cbe8e324428fc",
+      "source_sha256": "e2085a05833d2a831f99057e5f45833317d879d22e1ed414041bf330714814ae",
+      "translation_sha256": "c33cea54bc72f75ad42760aa53fdb235a32729d35ab4af6c7ac72b4d62ffd0b5",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-10-26"
+      "reviewed_on": "2026-11-02"
     },
     "01-predictability-budget.md": {
       "source_path": "docs/01-predictability-budget.md",
       "translation_path": "docs/en/01-predictability-budget.md",
-      "source_sha256": "da887b20d434af8099d6999957b63416087690893d708fd294516a476b628b61",
-      "translation_sha256": "01dfd316a92dfc97f0060a6a9252f4d3612d4c8f7b35779538b1771d10e1420e",
+      "source_sha256": "7172fef87251f97ff5633e8496beb6372367885012393c502389a183d3d8a007",
+      "translation_sha256": "a1bb1691c8b22b0d906d973f7c2cb7f0178d8143256986fc584588e984310b7e",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-10-26"
+      "reviewed_on": "2026-11-02"
     },
     "02-data.md": {
       "source_path": "docs/02-data.md",
@@ -40,18 +40,18 @@
     "04-posttraining.md": {
       "source_path": "docs/04-posttraining.md",
       "translation_path": "docs/en/04-posttraining.md",
-      "source_sha256": "0447e0b7f6ff329f2a7cad11784211e774f4ebac278bf15b5f87034472866d1d",
-      "translation_sha256": "ad96476468badc7b3ba453139b227335cd91d0bb4f3f52d9a208b76874e9caf1",
+      "source_sha256": "3c1d482abc6887223476d381b3c5067274d42505cc359b6f08ed51e03e2aae4e",
+      "translation_sha256": "c1d87761557d4ab6efaae4e763f6b1b01ea048df181aa4efca9827dbe847869e",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-10-26"
+      "reviewed_on": "2026-11-02"
     },
     "05-inference.md": {
       "source_path": "docs/05-inference.md",
       "translation_path": "docs/en/05-inference.md",
-      "source_sha256": "5162e89efcbeeb336f55122d47eb56ef9faf28ade1c8b8769ab094af69f70676",
-      "translation_sha256": "fe3cef51312e3c8d6b04d229929b9f24fbd047fc7d8d1ee62932efc1e37973f5",
+      "source_sha256": "5cb381e7320f150840c549822651043461d30f089fa790e8f8859cbf66bcb005",
+      "translation_sha256": "a7f70d92722a439ca5c056df164c1a90724f19febd706303f3bd37b27546cfc1",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-10-26"
+      "reviewed_on": "2026-11-02"
     },
     "06-theory-evaluation.md": {
       "source_path": "docs/06-theory-evaluation.md",
@@ -64,10 +64,10 @@
     "07-multimodal.md": {
       "source_path": "docs/07-multimodal.md",
       "translation_path": "docs/en/07-multimodal.md",
-      "source_sha256": "e95fbfead5d77226b986790e9de2b9d2e860b6859160f85fbc93c620f4b1bfc1",
-      "translation_sha256": "ff0778559e79d1f3b66fecde459a9724f135cacb1b936152a2d6be8f4012367c",
+      "source_sha256": "0c5ac0b1c1c9e87a061a43d38077374b32b43667245387c925ee0f8310c4e5ca",
+      "translation_sha256": "fda1acd3a6583257d9bd3244cd6f86ca7c981319b3103a02161d5765a13fac36",
       "status": "reviewed_translation",
-      "reviewed_on": "2026-10-26"
+      "reviewed_on": "2026-11-02"
     },
     "04-community-radar.md": {
       "source_path": "docs/04-community-radar.md",
@@ -100,16 +100,14 @@
     }
   },
   "latest_incremental_review": {
-    "date": "2026-10-26",
+    "date": "2026-11-02",
     "chapters": [
       "introduction.md",
       "01-predictability-budget.md",
-      "03-architecture-deployment.md",
       "04-posttraining.md",
       "05-inference.md",
-      "07-multimodal.md",
-      "04-community-radar.md"
+      "07-multimodal.md"
     ],
-    "scope": "Root reviewed all changed paired paragraphs, numbers, links and scope conditions, with independent cross-review of primary evidence and bilingual changes. Corrected training horizon versus wall-clock time, 1.69 times versus ambiguous increase, repetition-adjusted exposure, threshold inclusivity and Appendix E/L locator. Preserved Gold-selected snapshots, BH denominator, unequal token caps and historical community observations. No new formulas; unchanged chapters retain prior hashes. No independent experiments. Final Chinese diffusion wording removes quoted punctuation at line start; meaning reviewed against unchanged English paragraph."
+    "scope": "Root reviewed all changed paired paragraphs, numbers, new inline mathematics, source links and scope conditions. Independent primary cross-reviews covered all five additions. Corrected deployed complete-query timing, unlaunched full factorial, unsought maintainer confirmation, database depth including core, local variable definitions, and Li2SAO locator/fallback. Harness v2 targeted recheck preserves current claims; no complete revision diff. Unchanged chapters retain prior fingerprints. No independent experiments. Final Chinese punctuation-wrap copyedit reviewed against unchanged English: removed quotation marks around20tokens/parameter, shortened connective wording in Pythia, routing, ORZ and diagnostic-data sentences without changing assertions. Second copyedit preserves joint-probability-ratio and compute-proxy claims while preventing remaining line-initial punctuation; revised-version citation label uses parentheses. Each change reviewed against unchanged English."
   }
 }

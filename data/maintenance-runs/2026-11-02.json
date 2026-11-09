@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-02",
+  "edition": "v0.3.7",
+  "search_window": {
+    "from": "2026-10-12",
+    "through": "2026-11-02"
+  },
+  "status": "completed_with_access_limits",
+  "new_primary_sources": [
+    "mlodozeniec2026ambiguousfits",
+    "yu2026effectivelrschedule",
+    "bai2026li2sao",
+    "szot2026synthapi",
+    "liu2026worldactionaudit"
+  ],
+  "new_body_sources": [
+    "mlodozeniec2026ambiguousfits",
+    "yu2026effectivelrschedule",
+    "bai2026li2sao",
+    "szot2026synthapi",
+    "liu2026worldactionaudit"
+  ],
+  "catalog_only_sources": [],
+  "revised_sources": [
+    "bai2026harnessscaling"
+  ],
+  "new_community_records": [],
+  "new_high_attention_records": 0,
+  "chapters_changed": [
+    "T1",
+    "T4",
+    "T5",
+    "T7"
+  ],
+  "research_logs": [
+    "sources/weekly-2026-11-02-foundations.json",
+    "sources/weekly-2026-11-02-frontier.json",
+    "sources/weekly-2026-11-02-community.json",
+    "sources/weekly-2026-11-02-editor.json",
+    "sources/weekly-2026-11-02-review.json"
+  ],
+  "reason_for_body_updates": [
+    "Near-optimal fits do not uniquely identify extrapolation; certify optimization and characterize forecast variation separately.",
+    "Effective learning-rate trajectories and schedule selection are controls behind apparent scaling gains.",
+    "Asynchronous group sampling trades synchronization for critic calibration and must report measured system cost.",
+    "Tool-use SFT data composition changes the predicted frontier, with normalization and compute-accounting limits.",
+    "Robot search requires candidate separability, realized latency and valid evaluation."
+  ],
+  "version_correction": "Harness v2 was submittedOctober25; last week v1-latest claim was incomplete. Current-claim targeted recheck, not a full semantic diff; historical log preserved.",
+  "access_limits": [
+    "Targeted representative discovery, not exhaustive; index dates can differ from original publication.",
+    "X original403 and YouTube Cache miss persist; technical-report PDF candidate failed with500 after CDN redirect. These failures are not evidence of no new material.",
+    "No new accepted community item; prior22 observations and counters preserved.",
+    "Selected primary sections reviewed; no independent experiment reproduction."
+  ],
+  "publication_target": "https://github.com/yibingwei-1/scaling-law-survey",
+  "review": [
+    "Root reviewed all changed paired paragraphs, numbers, new inline mathematics, source links and scope conditions. Independent primary cross-reviews covered all five additions. Corrected deployed complete-query timing, unlaunched full factorial, unsought maintainer confirmation, database depth including core, local variable definitions, and Li2SAO locator/fallback. Harness v2 targeted recheck preserves current claims; no complete revision diff. Unchanged chapters retain prior fingerprints. No independent experiments.",
+    "All English pages1–98 and Chinese pages1–69 inspected in15 contact sheets; enlarged English pages1,2,7,8,9,22,36,44,49,61,68,98 and Chinese1,2,7,8,26,32,47,69. Root also inspected EN44/68 and ZH32/47. Final Chinese punctuation copyedits changed only pages7,8,26,32, verified by raster comparison; those pages rechecked at page scale. No remaining observed clipping, overlap, missing glyphs or broken tables. Both PDFs rendered26 display formulas without fallback. No experiments independently reproduced."
+  ],
+  "validation": {
+    "status": "pass",
+    "checked_on": "2026-11-09",
+    "quality_record": "data/quality-check.json",
+    "pdf_pages": {
+      "en": 98,
+      "zh-CN": 69
+    },
+    "notes": "Research/content dated November2; final validation and publication completed November9. Both PDFs match this content edition."
+  },
+  "counts": {
+    "catalog": 192,
+    "technical_sources_cited": 179,
+    "community": 22,
+    "technical_han_characters": 45190
+  },
+  "completed_on": "2026-11-09"
+}

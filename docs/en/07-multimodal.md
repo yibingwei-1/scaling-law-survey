@@ -136,6 +136,12 @@ Figure's September 17, 2026 Helix 2.5 report extends the collection question to 
 
 This extends the question of which data to expand, while keeping offline prediction and closed-loop execution as separate validation targets. Developer-reported results over a limited data range and three behaviors do not establish a power law for arbitrary task success or joint model–data–compute optimality. This survey has not independently reproduced the experiments.
 
+### Inference-Time Search Also Depends on the Evaluation Path
+
+Closed-loop testing leaves another question: does extra search expose useful choices, and is the measurement itself reliable? [Liu et al., 2026, §§3–6 and Supplement §§9–10](https://arxiv.org/html/2610.41970v1) audit Cosmos Policy on RoboCasa. With eight candidates and two shared continuation seeds, a single candidate switch followed by a fixed base policy yields a value-selector result 1.66 percentage points below random. The hindsight oracle's 1.40-point gain has an episode-bootstrap interval spanning zero; it is neither deployable nor a reliable universal ceiling.
+
+The efficiency audit separates forward-pass savings from complete-query timing: removing 47.9% of forward FLOPs gives at most 1.152× speedup on the tested A6000 eager deployed complete-query path. This latency-only pruning test does not assess action quality. The smoke sample fails its power gate, so the full joint-allocation factorial was not launched; the result remains inconclusive. The authors also report rendering corruption concentrated in a nonstandard planning path, with small direct-policy impact; the authors did not seek maintainer confirmation of the root cause. These results add three prerequisites—candidate separability, realized latency, and evaluation integrity—without establishing that search fails across other models, simulators, or real robots.
+
 ## 7.8 A Shared Bottleneck Across Domains: Average Progress Versus Progress on the Target
 
 The four routes in this chapter repeatedly exhibit the same structure. After CLIP expands coverage, the bottleneck shifts to the data distribution and transfer objective. After shared generative models add modalities, it shifts to competition and synergy. After diffusion inference adds search, it shifts to evaluators and diversity. After robotics adds trajectories, it shifts to environment coverage, data collection, and closed-loop evaluation.

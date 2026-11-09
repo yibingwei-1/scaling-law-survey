@@ -1,8 +1,8 @@
 # Scaling Law：问题驱动的技术演化综述
 
-版本 v0.3.6 · 检索与核验截至 2026-10-26 · 中文持续更新版
+版本 v0.3.7 · 检索与核验截至 2026-11-02 · 中文持续更新版
 
-从“能否预测规模收益”到“如何联合分配预训练、后训练与推理预算”。本版含 187 条去重主源和独立社区雷达；属于代表性文献的叙事综合，非穷尽性系统综述，未独立复现实验。
+从“能否预测规模收益”到“如何联合分配预训练、后训练与推理预算”。本版含 192 条去重主源和独立社区雷达；属于代表性文献的叙事综合，非穷尽性系统综述，未独立复现实验。
 
 ![研究问题演化图](figures/evolution-map.png)
 
@@ -80,7 +80,7 @@ flowchart TD
 
 想理解经典争议，先读[可预测性与预算](docs/01-predictability-budget.md)的 Kaplan—Chinchilla—复现链，再读[数据](docs/02-data.md)和[部署成本](docs/03-architecture-deployment.md)。想判断“test-time scaling 是否接棒”，先读[后训练](docs/04-posttraining.md)和[推理时计算](docs/05-inference.md)中的 proposer、verifier 和策略分配，再读[能力评估](docs/06-theory-evaluation.md)与负面结果。想跟踪新工作，先看社区雷达提出了哪个问题，再回到原始证据，最后判断它应改变正文哪一条因果连接。
 
-本文以能够解释转折点的代表研究为核心，不按引用数或社媒曝光机械排序。全文的“当前”“最新”均相对于最近增量检索日期 2026-10-26；阅读范围与未解决问题在各章和元数据中披露。
+本文以能够解释转折点的代表研究为核心，不按引用数或社媒曝光机械排序。全文的“当前”“最新”均相对于最近增量检索日期 2026-11-02；阅读范围与未解决问题在各章和元数据中披露。
 
 
 ---
@@ -119,13 +119,19 @@ N_{\rm opt}\propto C^{\beta/(\alpha+\beta)},\quad
 D_{\rm opt}\propto C^{\alpha/(\alpha+\beta)}.
 $$
 
-最优配置平衡两种可缩减误差的边际收益；只有指数相近，参数与数据的预算指数才都接近二分之一。“约 20 token/参数”因此是训练目标和配方下的经验近似，不能当作阅读更多数据便无用的上限。原论文三种拟合方法的结果也并不完全一致。[原论文表 2、3](https://arxiv.org/html/2203.15556v1)
+最优配置平衡两种可缩减误差的边际收益；只有指数相近，参数与数据的预算指数才都接近二分之一。约 20 token/参数因此是训练目标和配方下的经验近似，不能当作阅读更多数据便无用的上限。原论文三种拟合方法的结果也并不完全一致。[原论文表 2、3](https://arxiv.org/html/2203.15556v1)
 
 #### 平滑曲线为什么会给出不同的“最优”？
 
-Porian 等人直接研究 Kaplan 与 Chinchilla 的差异，检查输出层成本、warmup、学习率和批大小随规模变化的影响；校正后在两个数据集上得到更接近 Chinchilla 的配置趋势。由此可见，观测到的规模效应可能混入了小模型优化不足或成本统计不一致，不能全部解释为模型容量的物理性质。[Porian et al., 2024；所读修订版](https://arxiv.org/html/2406.19146)
+Porian 等人直接研究 Kaplan 与 Chinchilla 的差异，检查输出层成本、warmup、学习率和批大小随规模变化的影响；校正后在两个数据集上得到更接近 Chinchilla 的配置趋势。由此可见，观测到的规模效应可能混入了小模型优化不足或成本统计不一致，不能全部解释为模型容量的物理性质。[Porian et al., 2024（所读修订版）](https://arxiv.org/html/2406.19146)
 
 拟合本身也需要审计。Besiroglu 等人从图像重建 Chinchilla 数据，重做第三种参数拟合，指出参数及置信区间的问题；新拟合更接近论文前两种方法的趋势。这是有限材料上的复核，不是取得完整原始训练日志后的完全复现。较稳健的“模型与数据共同扩大”，应与较脆弱的“某组常数能精确外推四个数量级”分开看待。[Chinchilla Scaling: A replication attempt, 2024](https://arxiv.org/html/2404.10102)
+
+#### 同样好的拟合，仍可能给出不同预测
+
+更充分地优化拟合，不一定能识别唯一的预测。[Mlodozeniec 与 Frei（2026 年 10 月 25 日）](https://arxiv.org/html/2610.34514v1)区分求解器误差与 Rashomon 效应：不同参数可同样贴合已有阶梯数据，却给出不同外推。其分支定界方法对参数盒内的拟合损失求界、剔除不可能区域，并能在声明的参数域内认证近似最优性及可接受拟合的预测范围。
+
+研究重新分析四组已发表阶梯，包括从图中提取的 Chinchilla 与 Llama 3 数据，并使用合成例子。必须区分两类演示：真实五参数规律的预测带采用局部搜索，只是完整包络的内近似，因为严格包络认证超出可用预算。因此，合成例子的认证包络不能扩写为所有真实数据预测都已完整认证。保证依赖所选幂律族、参数边界、拟合目标和容差；既未建模运行间随机性，也不构成统计置信区间或函数形式正确性的证明。这将早先的复核争论推进一步：分别报告优化误差与可行预测的差异，再用新尺度检验预测。
 
 ### 3. 优化也是尺度变量：Tensor Programs 与 μP
 
@@ -139,11 +145,17 @@ Tensor Programs V 将这件事转化为 μTransfer：在小宽度模型上调参
 
 本综述据此把一次规模实验的成本拆为“找配方”与“执行配方”。μP 的价值首先是降低前者及跨规模优化失配，而不是宣称更换参数化后所有幂律指数都会改善。这也解释了为什么新的 scaling paper 应报告调参预算和失败运行：它们决定一种方法能否真正指导下一次昂贵训练。
 
+#### 有效学习率补充了实验控制条件
+
+名义学习率相同，不代表优化动力学相同。[Yu 等（2026 年 10 月 29 日）](https://arxiv.org/pdf/2610.40362v1)用名义学习率除以参数块范数，追踪各块的有效学习率。回放记录的范数或调整各块学习率后，权重归一化与权重衰减训练的轨迹大体接近，提示某些表面上的归一化收益来自诱导出的调度。其 AIR 调度将平方根倒数衰减作仿射调整，以适应有限训练时域。
+
+在 Muon 和固定范数的比较中，110M 与 790M 活跃参数的 MoE 分别训练 128B 与 500B token。匹配 warmup 时长、末端学习率及累计学习率之和，同时允许峰值不同，终点损失比 cosine 低约 0.01。这些是单条运行轨迹，调度形状在评估中选择，调参扫描也不等预算。理论支持是在固定目标、常系数动力学下优化方向对齐，并不一般性地优化语言模型损失；迁移已记录轨迹也不同于事先选择可部署调度。由此，规模实验多了一项控制：检查实际相对更新与调度选择，不能把曲线移动全部归因于归一化或容量。
+
 ### 4. 对曲线的复核，需要比最终权重更多的信息
 
 OPT 的贡献之一，是把大模型训练中难以从最终曲线看出的重启、损失异常和硬件问题写入日志。现实中的训练预算包含恢复失败与维护运行，并非仅由成功处理的 token 决定。其开放模型有助于外部分析，但比较 OPT、GPT-3 或其他家族时，数据、实现和配方仍不同，不能把同名参数规模当成完整控制变量。[Zhang et al., 2022，§2.5](https://arxiv.org/html/2205.01068v4)
 
-Pythia 更明确地把“可以研究规模”作为设计目标：8 种规模、原始与去重两个数据版本，共 16 个模型；在各数据版本内控制顺序，并为每个模型提供 154 个检查点。它使研究者可以询问某种行为何时形成、是否随训练时刻和规模稳定变化。代价是统一安排并不自动构成每个规模各自的计算最优训练；同一套件适合回答动力学问题，不代表它已经解出最优预算问题。[Biderman et al., 2023，§2](https://arxiv.org/html/2304.01373v2)
+Pythia 更明确地把“可以研究规模”作为设计目标：8 种规模、原始与去重两个数据版本，16 个模型；在各数据版本内控制顺序，并为每个模型提供 154 个检查点。它使研究者可以询问某种行为何时形成、是否随训练时刻和规模稳定变化。代价是统一安排并不自动构成每个规模各自的计算最优训练；同一套件适合回答动力学问题，不代表它已经解出最优预算问题。[Biderman et al., 2023，§2](https://arxiv.org/html/2304.01373v2)
 
 OLMo 把开放范围继续扩展到数据、训练代码、日志、检查点及评估。它与 Pythia 的问题联系很明确：若要检验一个经验定律，必须允许别人重建产生数据点的过程。**本综述的判断**是，公开模型套件属于规模律的测量基础设施；它们的科学价值不应只由发布时的排行榜名次衡量。[Groeneveld et al., 2024](https://arxiv.org/html/2402.00838v4)
 
@@ -598,9 +610,13 @@ s_i=\exp\!\left(
 {\pi_{\mathrm{old}}(y_{it}\mid x,y_{i,<t})}
 \right),
 $$
-然后在序列层面 clipping。作者特别研究了 MoE 训练稳定性：路由变化可能使局部 token 比值很不稳定，而序列聚合提供另一种控制方式。需注意 $s_i$ 是长度归一化的比值，不是普通的整条序列联合概率密度比；经验稳定性也不能推出所有 token 级重要性采样都在理论上无效。[GSPO，§4–5](https://arxiv.org/abs/2507.18071)
+然后在序列层面 clipping。作者特别研究了 MoE 训练稳定性：路由变化可使局部 token 比值很不稳定，而序列聚合提供另一种控制方式。需注意 $s_i$ 是长度归一化的比值，不是整条序列的联合概率密度比；经验稳定性也不能推出所有 token 级重要性采样都在理论上无效。[GSPO，§4–5](https://arxiv.org/abs/2507.18071)
 
-另一个分支重新认真训练 critic。Open-Reasoner-Zero 采用简化 PPO 配方、规则奖励及特定 GAE 设置，报告可扩展训练；VAPO 则围绕长推理的价值估计偏差与稀疏终点奖励，使用价值预训练和长度相关的信用分配设计。它们说明：“先省掉 critic”是一种工程选择，不是 critic 永久没有价值。两者也不是同一个配方，更不能把训练步数较少直接解释成等比例 FLOPs 更低。[ORZ，§2–3](https://arxiv.org/abs/2503.24290)、[VAPO，§3–4](https://arxiv.org/abs/2504.05118)
+另一个分支重新认真训练 critic。Open-Reasoner-Zero 用简化 PPO 配方、规则奖励及特定 GAE 设置，报告可扩展训练；VAPO 则围绕长推理的价值估计偏差与稀疏终点奖励，使用价值预训练和长度相关的信用分配设计。它们说明：“先省掉 critic”是一种工程选择，不是 critic 永久没有价值。两者也不是同一个配方，更不能把训练步数较少直接解释成等比例 FLOPs 更低。[ORZ，§2–3](https://arxiv.org/abs/2503.24290)、[VAPO，§3–4](https://arxiv.org/abs/2504.05118)
+
+组相对 RL 可以省去 critic，却仍有同步成本：异步训练中，较早完成的响应要等待同一 prompt 的其他响应。[Li²SAO](https://arxiv.org/html/2610.40726v1) 处理单 rollout 学习的相反问题——critic 初始不够准确，无法可靠引导更新。它先用组相对优势训练 actor，以中心化回报和结果排序训练 critic，再切换到单 rollout GAE。
+
+在 Qwen3-4B 数学设置中，500 次更新后的平均 AIME pass@1 为 67.0%，GRPO 为 63.6%。使用八张 A800 时，该运行耗时 28.9 小时，GRPO 配置六张 rollout GPU 时为 36.4 小时；新方法的 actor 与 critic 共用四张训练 GPU。各方法每次更新都收集 128 条轨迹，但回答长度和每批 prompt 数会变化。这是特定配置的墙钟观测，不是等 FLOPs 比较或普适缩放定律。每题采样十六个评测答案，尚不能建立独立训练种子的不确定性；理论中的精确价值恒等式也不保证完整异步实现的收敛或无偏。
 
 信用分配的困难可以用一个简单量级说明：终点信号若在较早位置被反复乘以 $0.95$，经过一百步只剩约 $0.006$。实际 GAE 比这个示意更复杂，但它足以解释为什么长回答里的早期决策可能难以收到有效反馈。缩短轨迹、估计过程价值、改变 advantage 传播与增加中间奖励，分别从不同位置处理同一个问题；中间奖励更密集，也同时增加了定义错误和可被利用的机会。
 
@@ -728,9 +744,15 @@ $$
 
 #### 训练时扩展框架：通过结构化变化学习迁移
 
-应对框架专门化的另一条路线改变训练，而不是在测试时搜索框架。[Bai 等](https://arxiv.org/html/2610.29458v1)把执行过程分成五个各有三种变体的组件，从 243 个配置中选出 18 个两两均衡的训练配置，让同一任务在连续 RL 更新中经历两个相近框架。他们使用 Qwen3-4B 与 30B-A3B、PPO 与 GRPO，在独立任务、18 个留出组合及外部框架上评测。4B GRPO 在未见 Claude Code 中的三基准平均 pass@1 为 37.22%，高于经 OpenClaw 训练的 RL 的 33.38%；这是三次评测运行的平均，不是三次独立训练。
+应对框架专门化的另一条路线改变训练，而不是在测试时搜索框架。[Bai 等](https://arxiv.org/html/2610.29458v2)把执行过程分成五个各有三种变体的组件，从 243 个配置中选出 18 个两两均衡的训练配置，让同一任务在连续 RL 更新中经历两个相近框架。他们使用 Qwen3-4B 与 30B-A3B、PPO 与 GRPO，在独立任务、18 个留出组合及外部框架上评测。4B GRPO 在未见 Claude Code 中的三基准平均 pass@1 为 37.22%，高于经 OpenClaw 训练的 RL 的 33.38%；这是三次评测运行的平均，不是三次独立训练。
 
 主要 RL 比较对齐 300 次更新、每次 128 条 rollout，并未实测对齐总 FLOPs 或墙钟成本。同一预算下，结构化 18 配置也优于穷举 243 配置；后者包含白箱测试配置，不能算留出泛化。因此，框架多样性如何组织，比数量本身更关键。这是有条件的训练时迁移证据，不能推翻此前测试时框架搜索的结论，也未建立普适缩放指数。
+
+#### 环境组成：应该扩展哪些训练轨迹？
+
+执行框架多样性还留下一个分配问题：训练轨迹应来自哪些环境？[SynthAPI](https://arxiv.org/html/2610.37648v1) 控制应用数 A、每应用指令数 T、每条指令的数据库实例数 S 和数据库深度 D（含 core batch 的数据批数），任务总数为 $N=ATS$。它在四种尺寸上训练 849 个 Qwen3.5 学生模型，采用 SFT 而非 RL。排除计算预算最高的四分之一运行后，组成相关 logistic 拟合对诊断集归一化表现的留出 MAE 为 0.0285，仅按任务数拟合则为 0.1706；更大预算下，更多工具和数据库多样性更有利。
+
+这支持同时建模组成与数量，但有明确边界：各尺寸分别拟合，诊断用 AppWorld 与 SynthAPI 留出集，分数归一化使用全部已训练模型群的观察最大值。计算代理量为 $C\approx6ML$，其中 $M$ 为学生参数量，$L$ 为监督 token 数；它排除了环境合成、教师采样与评估成本，不是端到端实测 FLOPs。每题四次评测不能建立训练种子不确定性，迁移沿用统一 Python 接口，拟合定律只在一个合成管线中获得验证。
 
 ### 5. 从“想得更久”到“何时应该停”
 
@@ -1109,6 +1131,12 @@ Lin 等的 *Data Scaling Laws in Imitation Learning for Robotic Manipulation* �
 Figure 在 2026-09-17 的 Helix 2.5 报告，把采集问题扩展到人类经验能否迁移至全身机器人。四组嵌套 Index 子集覆盖 8 倍数据量，固定模型规模和下游训练，测量留出动作预测损失；作者用较小运行预测最大运行，误差为整个数据区间损失变化的 0.54%，并非成功率误差。另一个受控对照报告预训练把 30 个未见家庭、三种行为的完整任务成功率从 9% 提高到 56%。这里的 zero-shot 针对环境与物体，任务仍有异地采集的微调数据。[Figure 官方报告，数据缩放、评估与附录](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization)
 
 它延伸了“扩大哪种数据”的问题，但仍需分别验证离线预测与闭环执行。该证据来自开发方报告、有限数据区间和三种行为，不能据此推得任意任务成功率的幂律，或模型、数据与计算的联合最优关系；本综述未独立复现。
+
+#### 推理时搜索还取决于评测路径
+
+闭环测试仍留下一个问题：增加搜索是否暴露了有用选择，测量本身是否可靠？[Liu 等，2026，§§3–6 与补充 §§9–10](https://arxiv.org/html/2610.41970v1) 审计 Cosmos Policy 在 RoboCasa 上的表现。在八个候选、两个共享续行种子下，先切换一次候选再由固定基础策略续行，value selector 比随机选择低 1.66 个百分点。事后 oracle 的 1.40 个百分点收益，其按 episode bootstrap 的区间跨零；它既不可部署，也不是可靠的普适上限。
+
+效率审计将前向计算节省与完整查询计时分开：删除 47.9% 的前向 FLOPs，在所测 A6000 eager 部署路径的完整查询中最多加速 1.152 倍。这项仅测延迟的剪枝实验没有评估动作质量。小样本试验未通过统计功效门槛，因此没有启动完整的联合分配析因实验，结论仍不确定。作者还报告渲染损坏集中于非标准规划路径，对直接策略的影响较小；作者未就根因寻求维护者确认。这些结果补充了候选可区分性、实际延迟与评测完整性三个前提，不能据此认定搜索在其他模型、模拟器或真实机器人上无效。
 
 ### 7.8 跨领域共同留下的瓶颈：平均进步与目标进步之间
 
@@ -1565,12 +1593,13 @@ Problem 框给出当前方法留下的具体矛盾；Solution 框压缩机制；
 | 2026 | [A study of sequence weighting at scale](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale) | 全文文字 | 网页观测版 / 技术文章 | [02](docs/02-data.md) |
 | 2026 | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | 摘要/元数据 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Adaptive Test-Time Compute Allocation for Reasoning LLMs via Constrained Policy Optimization](https://arxiv.org/abs/2604.14853) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
+| 2026 | [Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation](https://arxiv.org/abs/2610.34514) | 正文定向阅读 | v1 / 论文/预印本 | [01](docs/01-predictability-budget.md) |
 | 2026 | [Capability Scaling-Down Laws for LLM Compression](https://arxiv.org/abs/2610.02462) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Emergent Inverse-Depth Scaling From Nonlinearity In Attention](https://arxiv.org/abs/2610.11063) | 正文定向阅读 | v1 / 论文/预印本 | [06](docs/06-theory-evaluation.md) |
 | 2026 | [FrogNano: Training a 4B Coding Agent via Online Task Synthesis](https://arxiv.org/abs/2609.07925) | 正文定向阅读 | v5 / 论文/预印本 | 索引／待深入综合 |
 | 2026 | [Frontier Pre-training at Microsoft AI](https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai) | 官方报告选段 | 网页观测版 / 报告 | [01](docs/01-predictability-budget.md) |
-| 2026 | [Harness Scaling for Generalizable Agentic Reinforcement Learning](https://arxiv.org/abs/2610.29458) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
+| 2026 | [Harness Scaling for Generalizable Agentic Reinforcement Learning](https://arxiv.org/abs/2610.29458) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | 官方报告选段 | 网页观测版 / 报告 | [07](docs/07-multimodal.md) |
 | 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | 正文定向阅读 | v2 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [How Much Can Language Models Gain from Test-Time Computation?](https://arxiv.org/abs/2610.01110) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
@@ -1578,6 +1607,7 @@ Problem 框给出当前方法留下的具体矛盾；Solution 框压缩机制；
 | 2026 | [Hyperparameter Scaling Laws Across MoE Sparsity](https://arxiv.org/abs/2609.08690) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | 摘要/元数据 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining](https://arxiv.org/abs/2609.39403) | 正文定向阅读 | v1 / 论文/预印本 | 索引／待深入综合 |
+| 2026 | [Li²SAO: Lifting Light Single-Rollout Asynchronous RL Optimization via Group-Relative Actor-Critic Bootstrapping](https://arxiv.org/abs/2610.40726) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Mixed Precision Scaling Laws for Quantized Pretraining](https://arxiv.org/abs/2610.17637) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [More Than Seeing: Vision as Scalable Anchors in Native Multimodal Pre-Training](https://arxiv.org/abs/2610.19443) | 正文定向阅读 | v1 / 论文/预印本 | 索引／待深入综合 |
 | 2026 | [On the Limits of Scale: Inverse Scaling in Vision-Language Models](https://arxiv.org/abs/2610.27360) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
@@ -1589,6 +1619,7 @@ Problem 框给出当前方法留下的具体矛盾；Solution 框压缩机制；
 | 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Scaling Laws for Generative Reward Models](https://arxiv.org/abs/2610.30765) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Scaling Laws for Multimodal Data Mixtures](https://arxiv.org/abs/2610.14423) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
+| 2026 | [Scaling Laws for Tool-Use Agents via Controllable Environment Synthesis](https://arxiv.org/abs/2610.37648) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Scaling Misuse Detection with Self-Assessment](https://safeguards.anthropic.com/2026/self-assessment) | 正文定向阅读 | 网页观测版 / 技术文章 | 索引／待深入综合 |
 | 2026 | [Scaling Multilingual Mixture-of-Experts: How Language Coverage Changes Capacity and Compute Allocation](https://arxiv.org/abs/2610.20247) | 正文定向阅读 | v3 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Scaling Repeated-Data Pretraining: Batch Size, Regularization, and GPU-Time Tradeoffs](https://arxiv.org/abs/2610.15965) | 正文定向阅读 | v1 / 论文/预印本 | [02](docs/02-data.md) |
@@ -1596,3 +1627,5 @@ Problem 框给出当前方法留下的具体矛盾；Solution 框压缩机制；
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Thinking Long, but Short: Stable Sequential Test-Time Scaling for Large Reasoning Models](https://arxiv.org/abs/2601.09855) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [What Is a Repeated Token Worth? The Scaling Geometry of Multi-Epoch Pretraining](https://arxiv.org/abs/2610.05591) | 正文定向阅读 | v1 / 论文/预印本 | [02](docs/02-data.md) |
+| 2026 | [When Does Test-Time Search Help World Action Models? An Empirical Audit of Candidate Selection and Simulator Integrity](https://arxiv.org/abs/2610.41970) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
+| 2026 | [Your LR Schedule May Not Be Principled: Effective Learning Rate Scheduling in Weight-Normalized Training](https://arxiv.org/abs/2610.40362) | 正文定向阅读 | v1 / 论文/预印本 | [01](docs/01-predictability-budget.md) |

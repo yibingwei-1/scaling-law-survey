@@ -1,6 +1,6 @@
 # 文献索引
 
-本索引含 187 条去重后的论文与技术报告主源；社区讨论另列。按首发年份排序，不代表质量或热度排名。
+本索引含 192 条去重后的论文与技术报告主源；社区讨论另列。按首发年份排序，不代表质量或热度排名。
 
 作者栏若为 et al. 仅记录经核验的首位作者；BibTeX 是轻量引用入口，投稿前应从主源补齐作者与正式出版信息。表中阅读层级是简写，具体章节、局限和版本时间见 [papers.json](data/papers.json)。全文文字阅读不表示复核全部图像、代码或实验。
 
@@ -162,12 +162,13 @@
 | 2026 | [A study of sequence weighting at scale](https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale) | 全文文字 | 网页观测版 / 技术文章 | [02](docs/02-data.md) |
 | 2026 | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | 摘要/元数据 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [Adaptive Test-Time Compute Allocation for Reasoning LLMs via Constrained Policy Optimization](https://arxiv.org/abs/2604.14853) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
+| 2026 | [Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation](https://arxiv.org/abs/2610.34514) | 正文定向阅读 | v1 / 论文/预印本 | [01](docs/01-predictability-budget.md) |
 | 2026 | [Capability Scaling-Down Laws for LLM Compression](https://arxiv.org/abs/2610.02462) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Curriculum Reinforcement Learning Can Incentivize Reasoning Capacity in LLMs Beyond the Base Model](https://arxiv.org/abs/2606.22317) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Emergent Inverse-Depth Scaling From Nonlinearity In Attention](https://arxiv.org/abs/2610.11063) | 正文定向阅读 | v1 / 论文/预印本 | [06](docs/06-theory-evaluation.md) |
 | 2026 | [FrogNano: Training a 4B Coding Agent via Online Task Synthesis](https://arxiv.org/abs/2609.07925) | 正文定向阅读 | v5 / 论文/预印本 | 索引／待深入综合 |
 | 2026 | [Frontier Pre-training at Microsoft AI](https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai) | 官方报告选段 | 网页观测版 / 报告 | [01](docs/01-predictability-budget.md) |
-| 2026 | [Harness Scaling for Generalizable Agentic Reinforcement Learning](https://arxiv.org/abs/2610.29458) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
+| 2026 | [Harness Scaling for Generalizable Agentic Reinforcement Learning](https://arxiv.org/abs/2610.29458) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Helix 2.5: Zero-Shot 30-Home Generalization](https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization) | 官方报告选段 | 网页观测版 / 报告 | [07](docs/07-multimodal.md) |
 | 2026 | [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](https://arxiv.org/abs/2609.19107) | 正文定向阅读 | v2 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [How Much Can Language Models Gain from Test-Time Computation?](https://arxiv.org/abs/2610.01110) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
@@ -175,6 +176,7 @@
 | 2026 | [Hyperparameter Scaling Laws Across MoE Sparsity](https://arxiv.org/abs/2609.08690) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Inference-Time Scaling in Diffusion Models through Iterative Partial Refinement](https://arxiv.org/abs/2605.19317) | 摘要/元数据 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
 | 2026 | [IronMind: Scaling Humanoid Dexterous Manipulation via Camera-Space Ego-Centric Pretraining](https://arxiv.org/abs/2609.39403) | 正文定向阅读 | v1 / 论文/预印本 | 索引／待深入综合 |
+| 2026 | [Li²SAO: Lifting Light Single-Rollout Asynchronous RL Optimization via Group-Relative Actor-Critic Bootstrapping](https://arxiv.org/abs/2610.40726) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Mixed Precision Scaling Laws for Quantized Pretraining](https://arxiv.org/abs/2610.17637) | 正文定向阅读 | v1 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [More Than Seeing: Vision as Scalable Anchors in Native Multimodal Pre-Training](https://arxiv.org/abs/2610.19443) | 正文定向阅读 | v1 / 论文/预印本 | 索引／待深入综合 |
 | 2026 | [On the Limits of Scale: Inverse Scaling in Vision-Language Models](https://arxiv.org/abs/2610.27360) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
@@ -186,6 +188,7 @@
 | 2026 | [Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling](https://arxiv.org/abs/2609.19499) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Scaling Laws for Generative Reward Models](https://arxiv.org/abs/2610.30765) | 正文定向阅读 | v1 / 论文/预印本 | [04](docs/04-posttraining.md) |
 | 2026 | [Scaling Laws for Multimodal Data Mixtures](https://arxiv.org/abs/2610.14423) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
+| 2026 | [Scaling Laws for Tool-Use Agents via Controllable Environment Synthesis](https://arxiv.org/abs/2610.37648) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Scaling Misuse Detection with Self-Assessment](https://safeguards.anthropic.com/2026/self-assessment) | 正文定向阅读 | 网页观测版 / 技术文章 | 索引／待深入综合 |
 | 2026 | [Scaling Multilingual Mixture-of-Experts: How Language Coverage Changes Capacity and Compute Allocation](https://arxiv.org/abs/2610.20247) | 正文定向阅读 | v3 / 论文/预印本 | [03](docs/03-architecture-deployment.md) |
 | 2026 | [Scaling Repeated-Data Pretraining: Batch Size, Regularization, and GPU-Time Tradeoffs](https://arxiv.org/abs/2610.15965) | 正文定向阅读 | v1 / 论文/预印本 | [02](docs/02-data.md) |
@@ -193,3 +196,5 @@
 | 2026 | [Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility](https://arxiv.org/abs/2608.04001) | 正文定向阅读 | v2 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [Thinking Long, but Short: Stable Sequential Test-Time Scaling for Large Reasoning Models](https://arxiv.org/abs/2601.09855) | 正文定向阅读 | v1 / 论文/预印本 | [05](docs/05-inference.md) |
 | 2026 | [What Is a Repeated Token Worth? The Scaling Geometry of Multi-Epoch Pretraining](https://arxiv.org/abs/2610.05591) | 正文定向阅读 | v1 / 论文/预印本 | [02](docs/02-data.md) |
+| 2026 | [When Does Test-Time Search Help World Action Models? An Empirical Audit of Candidate Selection and Simulator Integrity](https://arxiv.org/abs/2610.41970) | 正文定向阅读 | v1 / 论文/预印本 | [07](docs/07-multimodal.md) |
+| 2026 | [Your LR Schedule May Not Be Principled: Effective Learning Rate Scheduling in Weight-Normalized Training](https://arxiv.org/abs/2610.40362) | 正文定向阅读 | v1 / 论文/预印本 | [01](docs/01-predictability-budget.md) |
