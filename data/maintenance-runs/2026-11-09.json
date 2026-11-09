@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-09",
+  "edition": "v0.3.8",
+  "search_window": {
+    "from": "2026-10-19",
+    "through": "2026-11-09"
+  },
+  "status": "completed_with_access_limits",
+  "new_primary_sources": [
+    "baron2026dataconstrainedensemble",
+    "roberts2026rewritingscaling",
+    "bae2026priors",
+    "wang2026parallelteams",
+    "vanadrichem2026hinted",
+    "metr2026rdacceleration"
+  ],
+  "new_body_sources": [
+    "baron2026dataconstrainedensemble",
+    "roberts2026rewritingscaling",
+    "bae2026priors",
+    "wang2026parallelteams",
+    "vanadrichem2026hinted"
+  ],
+  "catalog_only_sources": [
+    "metr2026rdacceleration"
+  ],
+  "revised_sources": [
+    "bai2026li2sao",
+    "khandelwal2026multimodalmixtures",
+    "liu2026worldactionaudit"
+  ],
+  "new_community_records": [
+    "RD-13",
+    "RD-14"
+  ],
+  "new_high_attention_records": 2,
+  "chapters_changed": [
+    "T2",
+    "T4",
+    "T5",
+    "T6",
+    "T7",
+    "community",
+    "introduction",
+    "conclusion_copyedit"
+  ],
+  "research_logs": [
+    "sources/weekly-2026-11-09-foundations.json",
+    "sources/weekly-2026-11-09-frontier.json",
+    "sources/weekly-2026-11-09-community.json",
+    "sources/weekly-2026-11-09-editor.json",
+    "sources/weekly-2026-11-09-review.json"
+  ],
+  "reason_for_body_updates": [
+    "Data reuse needs separate independent-member allocation and calibration/serving costs.",
+    "Controlled rewriting introduces generation costs, external teacher information and non-identical total budgets.",
+    "Adaptive inference depends on affordable information and verifier quality.",
+    "Nested team sampling changes draw quality and diversity, under conditional pool and budget definitions.",
+    "Hint interventions offer information below benchmark noise floors but require controlled privileged information."
+  ],
+  "version_correction": "Li2SAO v2 datedNov2 discoveredNov9; preserve earlier v1-latest log as incomplete observation. WAM and multimodalmixtures v2 datedNov3 targeted rechecked. Current cited claims retained, no full version diff.",
+  "review": [
+    "Root reviewed changed paired arguments, quantities, inline mathematics, citations and limitations. Cross-reviews covered both T2 and both T5 additions and Hinted Scaling Laws. Clarified independent ensembles versus snapshots, defined U/R/M/N, made the perfect unpriced verifier explicit, separated AIME/HLE reference leakage from Delphi forecasting and labeled AppendixF answer mixing as constructed. Three version updates were targeted current-claim checks, not complete semantic diffs. Radar dates/metrics are labeled indexed snapshots; AECI interval excludes model-selection uncertainty. Unchanged chapter fingerprints retained. No experiments independently rerun.",
+    " Final PDF copyedit compresses Chinese Min, Roberts, emergence and conclusion wording without changing claims; checked against English. English introduction date corrected toNovember9 to match Chinese. Conclusion is the eighth changed pair, with unchanged English.",
+    "All100 English and71 Chinese pages inspected in15 contact sheets. Enlarged English pages1,2,3,7,14,20,42,47,52,57,77,78,97,100; Chinese1,2,11,15,30,34,40,55,69,71. Root additionally inspected EN20/57 and ZH11/40/55. Final copyedit raster comparison changed only EN6 and ZH11/15/40/55; root inspected all five final pages. A final one-character Chinese connective deletion changed only ZH40, re-rendered and rechecked. No remaining observed clipping, overlap, missing glyphs, broken tables, detached headings or the reported punctuation defects. All-page inspection is through contact sheets, not enlarged reading of every page. No experiments independently reproduced."
+  ],
+  "validation": {
+    "status": "pass",
+    "checked_on": "2026-11-09",
+    "quality_record": "data/quality-check.json",
+    "pdf_pages": {
+      "en": 100,
+      "zh-CN": 71
+    },
+    "checks": [
+      "Bilingual schema/link/fingerprint validation",
+      "Both PDF --check:26display formulas,zero fallback,387unique external targets,518per-line occurrences",
+      "All-page contact sheets and enlarged changed-page review",
+      "Deterministic eight-artifact regeneration",
+      "Old canonical records/observations preserved except declared revisions"
+    ]
+  },
+  "access_limits": [
+    "Representative discovery, not exhaustive.",
+    "X403 and YouTube Cache miss persist; absent metrics do not mean absent discussion.",
+    "Parallel Agent Teams author repository returned404; no execution or independent replication.",
+    "Community counters are indexed snapshots, measurement times unknown."
+  ],
+  "publication_target": "https://github.com/yibingwei-1/scaling-law-survey",
+  "prior_run_publication": {
+    "edition": "v0.3.7",
+    "published_on": "2026-11-09",
+    "commit": "c211b8866aee65cf034596b14b11f70f34994804",
+    "ci_status": "success",
+    "ci_url": "https://github.com/yibingwei-1/scaling-law-survey/actions/runs/42660754718"
+  },
+  "counts": {
+    "catalog": 198,
+    "technical_sources_cited": 184,
+    "community": 24,
+    "technical_han_characters": 46901
+  },
+  "completed_on": "2026-11-09"
+}

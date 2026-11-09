@@ -1,17 +1,17 @@
 {
   "checked_on": "2026-11-09",
-  "edition": "v0.3.7",
-  "source_records": 192,
-  "sources_cited_in_technical_chapters": 179,
+  "edition": "v0.3.8",
+  "source_records": 198,
+  "sources_cited_in_technical_chapters": 184,
   "technical_chapters": 7,
-  "technical_han_characters": 45190,
-  "community_records": 22,
-  "pdf_pages": 69,
-  "pdf_link_annotations": 756,
+  "technical_han_characters": 46901,
+  "community_records": 24,
+  "pdf_pages": 71,
+  "pdf_link_annotations": 780,
   "display_formulas_rendered": 26,
   "display_formula_fallbacks": 0,
   "local_links_and_schema": "pass",
-  "review": "All English pages1–98 and Chinese pages1–69 inspected in15 contact sheets; enlarged English pages1,2,7,8,9,22,36,44,49,61,68,98 and Chinese1,2,7,8,26,32,47,69. Root also inspected EN44/68 and ZH32/47. Final Chinese punctuation copyedits changed only pages7,8,26,32, verified by raster comparison; those pages rechecked at page scale. No remaining observed clipping, overlap, missing glyphs or broken tables. Both PDFs rendered26 display formulas without fallback. No experiments independently reproduced.",
+  "review": "All100 English and71 Chinese pages inspected in15 contact sheets. Enlarged English pages1,2,3,7,14,20,42,47,52,57,77,78,97,100; Chinese1,2,11,15,30,34,40,55,69,71. Root additionally inspected EN20/57 and ZH11/40/55. Final copyedit raster comparison changed only EN6 and ZH11/15/40/55; root inspected all five final pages. A final one-character Chinese connective deletion changed only ZH40, re-rendered and rechecked. No remaining observed clipping, overlap, missing glyphs, broken tables, detached headings or the reported punctuation defects. All-page inspection is through contact sheets, not enlarged reading of every page. No experiments independently reproduced.",
   "limits": [
     "No independent rerun of cited experiments",
     "External URL availability is based on research verification logs, not an automated live link crawl",
@@ -22,22 +22,22 @@
   "publication": "Public GitHub repository yibingwei-1/scaling-law-survey, main branch",
   "pdfs": {
     "en": {
-      "pages": 98,
-      "link_annotations": 771,
+      "pages": 100,
+      "link_annotations": 795,
       "display_formulas_rendered": 26,
       "display_formula_fallbacks": 0,
-      "external_source_targets_verified": 371,
-      "external_link_occurrences_checked": 502,
-      "sha256": "274f71734f43b0c9882f900db5c6974fcc44917254cc6c97a8b7200e55303be1"
+      "external_source_targets_verified": 387,
+      "external_link_occurrences_checked": 518,
+      "sha256": "c914cb723839af235f9c0841b82bb2f364cd3c5c53b0174dc446449fdd62a5db"
     },
     "zh-CN": {
-      "pages": 69,
-      "link_annotations": 756,
+      "pages": 71,
+      "link_annotations": 780,
       "display_formulas_rendered": 26,
       "display_formula_fallbacks": 0,
-      "external_source_targets_verified": 371,
-      "external_link_occurrences_checked": 502,
-      "sha256": "555f8c210eaf62171a34617f6ab46f9d5ed8e0f88fe13d550e7978d02311711e"
+      "external_source_targets_verified": 387,
+      "external_link_occurrences_checked": 518,
+      "sha256": "08a87117c7aaeb4d0bbfa2b3784f0845fc792a68ba6fd4e6d181d23e5c7ba1a3"
     }
   },
   "translation_review": {
@@ -52,8 +52,8 @@
       "All maintained chapters included once in assembled manuscript"
     ],
     "manifest": "data/translation-status.json",
-    "incremental_reviewed_on": "2026-11-02",
-    "incremental_chapters": 5
+    "incremental_reviewed_on": "2026-11-09",
+    "incremental_chapters": 8
   },
-  "content_date": "2026-11-02"
+  "content_date": "2026-11-09"
 }

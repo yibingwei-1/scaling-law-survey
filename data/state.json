@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "edition": "v0.3.7",
-  "last_successful_search": "2026-11-02",
-  "last_content_update": "2026-11-02",
-  "pdf_content_date": "2026-11-02",
+  "edition": "v0.3.8",
+  "last_successful_search": "2026-11-09",
+  "last_content_update": "2026-11-09",
+  "pdf_content_date": "2026-11-09",
   "coverage": "Representative narrative review; not exhaustive; primary claims not independently reproduced",
   "automation": {
     "id": "scaling-law",
@@ -58,19 +58,24 @@
     "Rashomon certified real-data envelopes and prospective scale tests; AIR independent seeds, matched tuning and optimizer/architecture transfer.",
     "SynthAPI forecasts with fit-only normalization and full synthesis/teacher/training/evaluation accounting; Li2SAO independent training uncertainty and matched cost-to-quality.",
     "WAM candidate/replay and render integrity across stacks and hardware; diffusion-information2610.33337 and Movens-Zero2610.41877 protocol review.",
-    "Goodfire: Gorton October20 response, exact stimuli/ablation/semantic versus arbitrary-channel controls and any released technical companion; current essay export is not a companion paper."
+    "Goodfire: Gorton October20 response, exact stimuli/ablation/semantic versus arbitrary-channel controls and any released technical companion; current essay export is not a companion paper.",
+    "Prospective hinted forecasts with independent reference-hint audits and complete evaluation cost; top16logit approximation and posthoc repairs.",
+    "Data-constrained ensembles and rewriting: full serving/generation/teacher/tuning costs, independent scale holdouts and different corpora.",
+    "Prior-based allocation on fresh inputs with paid histories and imperfect verifiers; agent teams with measured compute, retained/excluded-run sensitivity and independent seeds.",
+    "Open-HumanWAM2611.06817v2 renamed fromOpen-HumanScale; WISE2611.03585v1 budget/uncertainty audit.",
+    "METR acceleration: public counterfactual evidence, model-sampling uncertainty and link-function robustness; Goodfire companion and new responses."
   ],
   "last_validation_date": "2026-11-09",
-  "source_count": 192,
-  "community_count": 22,
+  "source_count": 198,
+  "community_count": 24,
   "technical_chapters": 7,
-  "sources_cited_in_technical_chapters": 179,
-  "technical_han_characters": 45190,
+  "sources_cited_in_technical_chapters": 184,
+  "technical_han_characters": 46901,
   "reading_depth_summary": {
-    "正文定向阅读": 146,
+    "正文定向阅读": 151,
     "摘要/引言": 3,
     "摘要/元数据": 31,
-    "官方报告选段": 3,
+    "官方报告选段": 4,
     "全文文字": 9
   },
   "languages": {
@@ -80,18 +85,18 @@
       "zh-CN"
     ],
     "translated_chapters": 12,
-    "translation_reviewed_on": "2026-11-02"
+    "translation_reviewed_on": "2026-11-09"
   },
   "last_search_run": {
-    "date": "2026-11-02",
-    "window_start": "2026-10-12",
+    "date": "2026-11-09",
+    "window_start": "2026-10-19",
     "status": "completed_with_access_limits",
-    "record": "data/maintenance-runs/2026-11-02.json",
+    "record": "data/maintenance-runs/2026-11-09.json",
     "access_limits": [
-      "Targeted representative discovery, not exhaustive; index dates can differ from original publication.",
-      "X original403 and YouTube Cache miss persist; technical-report PDF candidate failed with500 after CDN redirect. These failures are not evidence of no new material.",
-      "No new accepted community item; prior22 observations and counters preserved.",
-      "Selected primary sections reviewed; no independent experiment reproduction."
+      "Representative discovery, not exhaustive.",
+      "X403 and YouTube Cache miss persist; absent metrics do not mean absent discussion.",
+      "Parallel Agent Teams author repository returned404; no execution or independent replication.",
+      "Community counters are indexed snapshots, measurement times unknown."
     ]
   },
   "pdf_status": "current"

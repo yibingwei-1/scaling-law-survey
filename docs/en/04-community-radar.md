@@ -4,7 +4,7 @@ Initial search date: **September 16, 2026**. This round established **18 traceab
 
 Community discussion exposes unresolved questions among researchers and practitioners. Technical conclusions still require papers, author code, and official reports: high view counts indicate reach, not correctness, and vigorous debate is not independent replication. Full fields appear in [community.json](../../sources/community.json); searches and leads not included appear in [community-search-log.md](../../sources/community-search-log.md).
 
-The September 21, September 28, October 12, and October 26 additions bring the cumulative record count to 22. Earlier counters retain their original observation dates; see Sections 6–8 and 10 for the new records.
+The September 21, September 28, October 12, October 26, and November 9 additions bring the cumulative record count to 24. Earlier counters retain their original observation dates; see Sections 6–8 and 10–11 for the new records.
 
 ## 1. Operationalizing “High Attention”
 
@@ -132,3 +132,13 @@ The 2026-09-28 to 2026-10-19 window yielded no formally eligible addition across
 ## 10. October 26 Addition: Do Readable Labels Explain Computation?
 
 The October 5–26 window produced one adopted addition from 24 queries across the three platforms. The previously unverified [Goodfire thread](https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/) now has an explicit October 15 date and indexed score of 887. This is not a live count; the existing 21 historical observations remain unchanged. The [author's essay](https://already-clean.goodfire.com/) presents a working hypothesis, makes readability proportions threshold-dependent, and still describes its technical companion as forthcoming. [Leo Gao's October 17 response](https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean) argues for testing explanations through downstream behavior after replacing activations, and distinguishes explaining neurons from understanding computation between them. This dispute over evidence does not establish that interpretability is solved or prove a universal scaling mechanism. The X original still returned 403; the previously identified YouTube candidate returned Cache miss. Missing metrics do not mean zero attention. See the [complete search record](../../sources/weekly-2026-10-26-community.json).
+
+## 11. November 9, 2026: What do extrapolated scale and R&D acceleration measure?
+
+This round used 32 queries for October 19–November 9 and adds two observations. The 22 historical records keep their original dates and counters; the new counts are also indexed snapshots observed on November 9, with unknown measurement times.
+
+[RD-13: Q Labs](https://www.reddit.com/r/accelerate/comments/1xmfv2j/q_labs_research_presents_quadrillionparameter/) has an indexed November 3 date and score 192. The [authors' blog](https://qlabs.sh/research/parameters/) describes an extrapolated ensemble parameter total, not a trained individual model; the [paper](https://arxiv.org/abs/2610.37842v1) first appeared on October 27. Clarify the data-constrained objective and parameter definition before interpreting the biological analogy.
+
+[RD-14: METR](https://www.reddit.com/r/agi/comments/1xpboa1/metrs_ryan_greenblatt_estimates_ai_is_now/) has an indexed November 6 date and score 132. The [report's](https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/) 1.9x estimate (95% interval 1.5–2.8) compares growth slopes of the benchmark-derived AECI index; alternative link functions yield 1.1–2.9x. The reported 95% interval excludes uncertainty over which models enter the fit. Attribution to AI relies on judgment and extensively redacted evidence, not a publicly reproduced causal multiplier.
+
+Original X posts still returned 403 and the prior YouTube candidate returned Cache miss; missing metrics do not establish no new discussion. Neither comment tree was fully read. Goodfire still labels its companion forthcoming; a new response remains a follow-up candidate. See this week's log. [Search and review log](../../sources/weekly-2026-11-09-community.json)

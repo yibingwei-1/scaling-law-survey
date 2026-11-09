@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.0",
+  "checked_on": "2026-11-09",
+  "window": {
+    "start": "2026-10-19",
+    "end": "2026-11-09",
+    "priority_after": "2026-11-02"
+  },
+  "scope": "T1 budget/optimization, T2 effective data, T3 architecture/deployment. Targeted incremental search, not exhaustive.",
+  "baseline": {
+    "edition": "v0.3.7 in preparation when read",
+    "source_count": 192,
+    "previous_successful_search": "2026-11-02"
+  },
+  "local_context_read": [
+    "METHODOLOGY.md",
+    "UPDATING.md",
+    "sources/weekly-2026-11-02-foundations.json",
+    "docs/en/01-predictability-budget.md",
+    "docs/en/02-data.md",
+    "docs/en/03-architecture-deployment.md",
+    "data/papers.json title/ID deduplication"
+  ],
+  "tools": {
+    "primary": "web__run search/open/find plus Python urllib and standard-library HTMLParser reading original arXiv HTML in memory",
+    "parallel_cli": "shutil.which returned None; not used",
+    "read_errors": [
+      "bs4 absent in system and bundled Python; recovered with standard-library HTMLParser, no package installed."
+    ],
+    "write_scope": "Only this weekly evidence log; no canonical edits or downloaded third-party full texts."
+  },
+  "queries": [
+    {
+      "queries": [
+        "\"scaling laws\" \"pretraining\" after:2026-11-02 before:2026-11-10",
+        "\"compute-optimal\" after:2026-11-02 before:2026-11-10",
+        "\"scaling laws\" \"data\" site:arxiv.org/abs/2611",
+        "\"mixture of experts\" \"scaling\" after:2026-11-02 before:2026-11-10"
+      ],
+      "result": "Mostly older papers/index freshness; Hinted Scaling mirror and Q Labs Reddit lead surfaced. Primary records opened subsequently; no crawl time treated as release date."
+    },
+    {
+      "queries": [
+        "\"Quadrillion-Parameter Transformers\" Q Labs",
+        "site:arxiv.org/abs/2611 \"scaling\" \"pretraining\"",
+        "site:arxiv.org/abs/2611 \"scaling\" \"precision\"",
+        "site:arxiv.org/abs/2611 \"data\" \"compute-optimal\""
+      ],
+      "result": "Q Labs original companion article resolves Baron2610.37842; Yang2611.03590 found. Other results include existing Min and old precision work."
+    },
+    {
+      "queries": [
+        "\"scaling laws\" \"mixture\" \"November 2026\"",
+        "\"scaling laws\" \"pretraining\" \"November 2026\" blog",
+        "site:arxiv.org/abs/2611 \"scaling\" \"deployment\"",
+        "site:arxiv.org/abs/2611 \"scaling\" \"data mixture\""
+      ],
+      "result": "Secondary weekly gallery exposed Roberts rewrite paper; SAE data law secondary lead. Many queries return older or unrelated results; no absence conclusion."
+    },
+    {
+      "queries": [
+        "\"Rewriting Scaling Laws for Synthetic Data\"",
+        "\"scaling\" \"Muon\" \"November 2026\" \"AdamW\"",
+        "site:arxiv.org/abs/2611 \"scaling law\" \"sparse autoencoder\"",
+        "\"MoE\" \"scaling laws\" after:2026-10-19 before:2026-11-10"
+      ],
+      "result": "Roberts primary2610.31867 and SAE2611.07756 verified; EMNLP MoE proceedings lead left shallow. The supposedOct26rewrite update is not a primary revision."
+    }
+  ],
+  "previous_items_rechecked": [
+    {
+      "id": "mlodozeniec2026ambiguousfits",
+      "url": "https://arxiv.org/abs/2610.34514",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-25T19:16:53Z",
+      "last_revised_date": null,
+      "reading_scope": "abstract/metadata/history",
+      "decision": "No version increment; no body correction or fresh complete diff."
+    },
+    {
+      "id": "yu2026effectivelrschedule",
+      "url": "https://arxiv.org/abs/2610.40362",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-29T16:15:08Z",
+      "last_revised_date": null,
+      "reading_scope": "abstract/metadata/history",
+      "decision": "No version increment."
+    },
+    {
+      "id": "dag2026multilingualmoe",
+      "url": "https://arxiv.org/abs/2610.20247",
+      "latest_version_verified": "v3",
+      "first_published_utc": "2026-10-14T14:20:19Z",
+      "last_revised_utc": "2026-10-21T08:54:53Z",
+      "reading_scope": "abstract/metadata/history",
+      "decision": "No version increment."
+    },
+    {
+      "id": "min2026repeatedbatch",
+      "url": "https://arxiv.org/abs/2610.15965",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-11T22:42:39Z",
+      "last_revised_date": null,
+      "reading_scope": "abstract/metadata/history",
+      "decision": "No version increment."
+    },
+    {
+      "id": "kim2026mixedprecision",
+      "url": "https://arxiv.org/abs/2610.17637",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-13T03:05:01Z",
+      "last_revised_date": null,
+      "reading_scope": "abstract/metadata/history",
+      "decision": "No version increment."
+    },
+    {
+      "id": "chai2026repeatedtoken",
+      "url": "https://arxiv.org/abs/2610.05591",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-04T22:55:50Z",
+      "last_revised_date": null,
+      "reading_scope": "abstract/metadata/history",
+      "decision": "No version increment."
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "recommend_body_addition",
+      "priority": 1,
+      "source_record": {
+        "id": "baron2026dataconstrainedensemble",
+        "title": "Improving Data-Constrained Scaling with Hyperparameter Transfer and Ensembling",
+        "authors": [
+          "Ethan Baron",
+          "Shmuel Berman",
+          "Anirudh Satheesh",
+          "Akshay Vegesna",
+          "Samip Dahal",
+          "Andrew Gordon Wilson"
+        ],
+        "year": 2026,
+        "date": "2026-10-27",
+        "first_published_date": "2026-10-27",
+        "first_published_utc": "2026-10-27T18:52:54Z",
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "url": "https://arxiv.org/abs/2610.37842",
+        "full_text_url": "https://arxiv.org/html/2610.37842v1",
+        "type": "paper",
+        "branch": "data-constrained-pretraining",
+        "problem": "Fixed regularization across repeated-data scales and omission of ensembling can give poor configurations at higher budgets.",
+        "insight": "Transfer hyperparameters with unique data, capacity and epochs, while treating independent member count separately from individual capacity.",
+        "method": "Slowrun-inspired Muon/AdamW FineWeb grid; local quadratic hyperparameter minima and power-law transfer; probability-averaged deep and snapshot ensembles; joint loss fitting.",
+        "result": "At100M unique tokens the combined prescription improves validation loss over0.15nats versus the authors fixed-hyperparameter single-member recipe; allocation tested up to12x per-run fitting compute, hyperparameters separately at16x.",
+        "limitation": "Single recipe/corpus and fixed batch;6UNRM proxy excludes calibration, tuning and inference; counted parameters omit input/value embedding tables. Ensemble-size hyperparameter reuse only locally checked. Quadrillion blog is distant extrapolation of summed ensemble parameters. No independent replication.",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-11-09",
+        "sections_read": "HTML abstract/introduction; §§2–7; Appendices B.1–6,C.1–3,D.1–2; selected AppendixA pathology discussion and D.3–4 descriptions. Numerical plots not digitized, no code or training rerun.",
+        "synthesis_status": "proposed",
+        "changes_existing_conclusion": "Adds explicit ensemble allocation after T2 repetition/recipe controls; no claim of unlimited data efficiency, deployment optimality or a measured quadrillion-parameter model.",
+        "evidence_status": "Primary abstract/history and targeted HTML methods/appendices verified; no independent reproduction.",
+        "companion_blog": {
+          "url": "https://qlabs.sh/research/parameters/",
+          "title": "Quadrillion-parameter transformers and how to train them",
+          "authors": [
+            "Akshay Vegesna",
+            "Ethan Baron",
+            "Anirudh Satheesh",
+            "Samip Dahal"
+          ],
+          "publication_month_shown": "2026-11",
+          "first_published_date": null,
+          "reading_scope": "Full article text, figure captions and reference list; plot pixels not audited",
+          "deduplication": "Companion explanation of2610.37842, not another independent study."
+        }
+      },
+      "placement": "T2 §1 after Min recipe/time paragraphs and before the paragraph beginning The options in a data-limited setting. Suggested heading: Ensemble Count Is a Separate Allocation Variable. This is survey synthesis, not a direct claim of response to Min.",
+      "proposal_en": "Retuning repeated-data training also leaves a choice between enlarging one model and training several predictors. Baron et al. (27 October 2026) fit learning-rate and weight-decay prescriptions across unique data, model size and epochs, then add independent ensemble count as a separate loss variable. Larger individual models and more ensemble members need not have the same overfitting effect. Their FineWeb fitting grid spans 25M–400M unique tokens and 30M–398M counted parameters; predictions are combined by averaging token probabilities, with snapshots and weights selected on a separate calibration set.\n\nOn 100M unique tokens, the combined recipe improves validation loss by over 0.15 nats against their fixed-hyperparameter baseline without independent ensembles and tests allocation at up to 12 times the fitting budget. This is distinct from the 16-times hyperparameter-transfer test. The budget proxy is $6UNRM$, where $U$ counts unique tokens, $R$ epochs and $M$ independent runs; $N$ includes output projections but excludes input and value-embedding tables. It omits calibration, snapshot-serving and tuning costs, while batch size stays fixed. Thus the result expands the allocation problem, without establishing a deployment optimum or a universal remedy for data exhaustion. The companion blog's quadrillion-parameter numbers extrapolate to vastly larger budgets and sum parameters across ensemble members; they are not trained-model measurements.",
+      "proposal_zh": "重复数据训练经过重新调参后，仍需选择扩大单个模型，还是训练多个预测器。Baron 等（2026 年 10 月 27 日）针对独特数据量、模型规模与 epoch 数拟合学习率和权重衰减处方，再将独立集成成员数加入损失模型。扩大单个模型与增加集成成员，对过拟合的影响未必相同。其 FineWeb 拟合网格覆盖 25M–400M 独特 token 和 30M–398M 计入规模的参数；输出按 token 概率平均，并用独立校准集选择快照及权重。\n\n在 100M 独特 token 上，联合配方相比作者不使用独立模型集成的固定超参数基线降低验证损失超过 0.15 nats，并在最高为拟合预算 12 倍的配置上检验分配处方。这不同于 16 倍预算的超参数迁移检验。预算代理为 $6UNRM$，其中 $U$ 计独特 token，$R$ 计 epoch，$M$ 计独立训练次数；$N$ 包含输出投影，却不含输入与 value embedding 表。代理不计校准、快照部署和调参成本，batch size 也保持固定。因此，该结果扩大了资源分配问题，并未建立部署最优解或数据耗尽的通用补救方法。配套 blog 的千万亿参数数字外推至远大于实测的预算，并将各集成成员参数相加，不能当作已经训练出的模型规模。",
+      "checks": [
+        {
+          "locator": "§§3–4 and C.1–3",
+          "facts": "GridU25M–400M,N30M–398M counted params; hyperparameter110cells,6excluded when fittedmin+SE not localized. Fixed batch491520. Muon matrices/AdamWother. eLR here is LR multiplier times coupled decay, NOT Yu/AIR rate/norm."
+        },
+        {
+          "locator": "§5.2",
+          "facts": "Independent-run countM and snapshots distinct; loss forM1 fittedquadraticminimum, M>1 adjusted by predicted-vs-observed optimumgap. Huberloglossdelta.001 weighted by6UNRM. This is not allrawobservedlossfitting."
+        },
+        {
+          "locator": "§6.1 versus§4.2",
+          "facts": "Full allocation tested fourbudgets up to1e20,12x sweepbudget on100Munique tokens.16x refers separate hyperparameter extrapolation withtargetU100M,N398M,R32.0.15nats claim versus authors fixedhyperparameter/singlemember baseline, not any optimal feasible upper-bound frontier."
+        },
+        {
+          "locator": "B.1/Table1",
+          "facts": "Ncounts blocks+outputprojection; input/valueembeddingtables omitted. FittingN29.9–398.3M versus total107M–1.07B. Extrapolation tiersN458M–1.17B,total1.17B–2.52B. Do not confuse Nwithtotalweights."
+        },
+        {
+          "locator": "B.2–6",
+          "facts": "Disjoint10Mvalidation and2.1Mcalibration tokens; calibrationselects snapshot subset andweights; probability notlogit/weight averaging. Snapshotcost absenttrainingproxy butinference/storage/evaluation notfree.Independentseeds anddataorders. Cycleheuristic useslast halftraining,notvalidatedR1."
+        },
+        {
+          "locator": "D.2/Table7",
+          "facts": "Single-member hyperparameters reused forensembles; oneM2cell localretuning test0.006nats vs0.040 addingmember, seedstd0.004over8seeds. Notglobal proof ofoptimalityforarbitraryM."
+        },
+        {
+          "locator": "Q Labs companion Figure1/caption",
+          "facts": "5T/1e29/7000x is far extrapolation;parameters summedacrossmembers. BlogmonthNovemberonly; human synapse/token analogynotempiricalstudyestablished. Avoid universal claimthat20token/parameter capsChinchilla."
+        }
+      ],
+      "reproduction": "No independent code/training reproduction; code link exists inprimary https://github.com/qlabs-eng/data-constrained-scaling but repository not executed.",
+      "proposal_en_words": 204
+    },
+    {
+      "decision": "recommend_body_addition",
+      "priority": 2,
+      "source_record": {
+        "id": "roberts2026rewritingscaling",
+        "title": "Rewriting Scaling Laws for Synthetic Data with Compute and Data Constraints",
+        "authors": [
+          "Nicholas Roberts",
+          "Ahmed Ahmed",
+          "Suhas Kotha",
+          "Percy Liang",
+          "Yu Wang",
+          "Alex Renda",
+          "Nitya Mani"
+        ],
+        "year": 2026,
+        "date": "2026-10-22",
+        "first_published_date": "2026-10-22",
+        "first_published_utc": "2026-10-22T19:56:45Z",
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "url": "https://arxiv.org/abs/2610.31867",
+        "full_text_url": "https://arxiv.org/html/2610.31867v1",
+        "type": "paper",
+        "branch": "synthetic-rewriting-cost-mixture-repetition",
+        "problem": "Synthetic rewrites change distribution and incur generation cost; optimal mixture and a teacher capability ceiling cannot be inferred from token counts.",
+        "insight": "Optimize a repetition- and mixture-aware loss under a marginal budget that charges both target training and rewrite generation.",
+        "method": "Qwen3 dense/Adam+Hyperball, FineWeb-Edu and FinePhrase; rewrite-dependent floor and repetition penalty; forward budget holdouts,22B target and5B-token finite-data seed experiments.",
+        "result": "32% rewrite22B target has1.1% forecast error in a33.3x training-budget extrapolation; beats instruct rewriter on10/16 Paloma sources but not macroBPB. Data-limited heldout mixture selection within1.14% of best tested loss.",
+        "limitation": "Teacher pretraining excluded; equal source/rewrite lengths and FLOP-bound generation assumed.22B controls share training cost, not generation-inclusive total. Rewriters receive external SFT and LM-judge selection. Pair-specific fits, four styles and limited sources; no universal optimum or general capability superiority.",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-11-09",
+        "sections_read": "HTML §§1–3,5; Appendices C,E,F including F.1,J,L,M,N.1.4,N.3,N.5,N.6,N.7. Some tables read as text; not every derivation/qualitative example or plot audited, no code or training rerun.",
+        "synthesis_status": "proposed",
+        "changes_existing_conclusion": "Adds generation-cost allocation after WildAI in T2, distinguishing controlled rewrites from wild AI text; narrows teacher-superiority and self-bootstrapping claims.",
+        "evidence_status": "Primary abstract/history and targeted HTML methods/appendices verified; no independent reproduction.",
+        "version_correction_note": "Secondary arxiv.science updated date2026-10-26 is not a verified arXiv revision. Primary lists onlyv1Oct22; attemptedv2HTML returned404. Usev1."
+      },
+      "placement": "T2 §9 after WildAI and before §10. Suggested heading: Rewriting Has a Generation Cost and a Budget-Dependent Mixture. Survey comparison distinguishes curated rewrite intervention from wildAI additions.",
+      "proposal_en": "Synthetic rewriting introduces another budget decision: when should compute create new views of existing documents instead of training longer? Roberts et al. (22 October 2026) jointly model parameter count, training tokens, rewrite fraction and natural-data repetition. Their allocation charges target training plus approximate source-prefill and rewrite-decoding FLOPs; it excludes rewriter pretraining and assumes equal source/rewrite lengths. Rewrites alter the fitted loss floor, an empirical modeling choice rather than a universal mechanism.\n\nA forecast fitted through $3\\times10^{20}$ training FLOPs predicts a roughly 22B model trained near $10^{22}$ FLOPs: its 32% rewrite mixture yields Paloma loss within 1.1% of the forecast and beats the other tested fractions. The four runs share model size and training tokens, so their generation-inclusive budgets differ. The target outperforms the instruction-tuned rewriter on 10 of 16 Paloma sources, while its macro BPB remains worse, 0.983 versus 0.972; neither result establishes general capability superiority.\n\nThe finite-data experiments use a 5B-token seed set and size-matched rewriters. Those rewriters also receive 7M tokens of GLM-5.2-generated instruction tuning and LM-judge checkpoint selection, so this is not a closed information loop. Fits are separate for each target–rewriter pair; source quality, rewrite styles and evaluation change the preferred mixture. The contribution makes generation cost and repetition explicit allocation variables, while leaving total pipeline cost and broader transfer unresolved.",
+      "proposal_zh": "合成改写引入了另一项预算选择：何时应把计算用于为原文生成新表述，而不是继续训练？Roberts 等（2026 年 10 月 22 日）联合建模参数量、训练 token、改写比例和自然数据重复。其分配同时计入目标训练、近似的原文 prefill 与改写 decode FLOPs；不计改写器预训练，并假设原文与改写长度相等。改写改变拟合的损失下限，这是一项经验建模选择，而非普适机制。\n\n使用最高 $3\\times10^{20}$ 训练 FLOPs 拟合的预测，外推到约 $10^{22}$ FLOPs 的约 22B 模型：32% 改写混合的 Paloma 损失与预测相差不超过 1.1%，并优于其余已测比例。四个运行共享模型规模和训练 token，因此计入生成后的总预算不同。目标模型在 16 个 Paloma 来源中的 10 个优于指令微调后的改写器，但宏平均 BPB 仍较差，为 0.983 对 0.972；两者均不能建立一般能力上的全面超越。\n\n有限数据实验使用 5B-token 种子集和同规模改写器。后者还接受 7M token 的 GLM-5.2 生成指令微调，并由 LM judge 选择检查点，因此不是封闭的信息循环。每组目标模型与改写器分别拟合；来源质量、改写风格和评估目标都会改变偏好的混合。该工作将生成成本与重复显式纳入分配变量，但完整流程成本与更广泛迁移仍待检验。",
+      "checks": [
+        {
+          "locator": "§2; AppendixL",
+          "facts": "Rrewritefraction, notepochcount. Ctotal6ND+4NrRD, equalsource/outputlength,negligiblepromptoverhead,FLOPboundgeneration,noamortizationgenerationacrosstargetruns. Rewritertrainingexcluded/amortized; notfullpipelinecost. Floor-onlymixturechangecentralmodelassumption."
+        },
+        {
+          "locator": "§3.2; AppendixN.1.4/Table8",
+          "facts": "Forward33.3x extrapolation usesfitthrough3e20trainingFLOPs;Rpositive ladders onlyto9e19. Distinguish thisholdout fromfinal604-run surfacewhichincludeshero. Heroerror-1.1%;allfour-0.85to-1.40%. Noindependentrunreplication claimed."
+        },
+        {
+          "locator": "AppendixN.3/Table11–12",
+          "facts": "FourrunsN21.9B,D76B,R0/.321/.5/1 sharetrainingbudget~1e22. CtotalvarieswithR,despite loosemaintext totalbudgetphrasing.32%besttested,notglobal empiricalminimum. Paloma10/16betterthaninstruct,butmacro.983vs.972worse;SmolLMbase.943stronger."
+        },
+        {
+          "locator": "§3.3; AppendixF,F.1,J,L.2",
+          "facts": "5Bseed;550M/837M/1B/3Btargets;size-matchedrewriteroneepochpretrainingplus4000SFTexamples from1000seed-docs/fourstyles,7MtokensGLM5.2. GLM5.2+MiniMaxM2.7judgecheckpointselection usingSmolLMreference. Syntheticpoolgeneratedbeforetraining,freshtokensseeneachonce;notclosedinformationlooporiterativeautoregeneration."
+        },
+        {
+          "locator": "AppendixN.1.4/Table6;§3.3",
+          "facts": "Pair-specificfits36trainingrunsW<=18,holdoutW21/24,6fractions.0.74%erroratbestobservedRdoesnotmean everycandidateforecast<.74%;selectedmixtureregretupto1.14% at3BW24. This isbudgetextrapolationwithinpair,notcrosssizetransfer."
+        },
+        {
+          "locator": "AppendixC,M,N.5–7",
+          "facts": "Reference430configsearchselectedonPaloma;sharedfrontier restriction statisticallyrejectedbutretainedbasedmodelparsimonysmallallocationdifference. DCLMcomparison hasseparatehyperparameters/slightlydifferentN,D;DCLMrewriteoptimumisfloor-only,no-generationcost. QAaccuracyoptimumdiffersfromBPB. Keepbroadtransferconditional."
+        }
+      ],
+      "reproduction": "No experiment/code rerun or full proof/plot audit; recorded evidence comes from authors original experiment and targeted appendix reading.",
+      "proposal_en_words": 215
+    }
+  ],
+  "candidates_not_promoted": [
+    {
+      "title": "A Scaling Theory of Multi-Epoch Pretraining: Late-Time Overfitting and Ensembling",
+      "authors": [
+        "Zhen Yang",
+        "Yidi Miao",
+        "Blake Bordelon"
+      ],
+      "url": "https://arxiv.org/abs/2611.03590",
+      "full_text_url": "https://arxiv.org/html/2611.03590v1",
+      "first_published_utc": "2026-11-02T18:34:09Z",
+      "latest_version_verified": "v1",
+      "last_revised_date": null,
+      "reading_depth": "full_text_targeted",
+      "sections_read": "§§1–2,3.1–3.2,3.4–3.6,3.8,4;AppendixAfulltext and selectedF.2conditionaltheorem/G-H-Istatement snippets; proofsnotfullyaudited.",
+      "problem": "Which shared versus member-specific errors set the useful duration of fixed-data repetition?",
+      "mechanism": "Fixed-orderSGDGaussianrandom-featureDMFT;noiselessGFpure-powercontinuumN=Pstoppingallocation;varianceaveragingreducesgrowingerror,sharedcrosscorrelationpersists.",
+      "evidence_conditions": "FineWeb10M–100Munique;11M–680Mnonembeddingparams;mainLMsconstantLR,zeroWD,40epochbudget;4base85Mmembersvs2xwidthmatchedENDproxy0.16natsgain. LMlogitaveraging,notBaronprobabilityaveraging. CountNattention+MLPonly,excludesoutput/input;parameterdefinitionsdiffer. EnsembleFig2evaluatedonlythroughepoch31butcharges40.20members/orderstrategyresampled10orderingsforfixedstepensemblefits,not10independenttrainingreplications.",
+      "limitations": "GFcriticalgrowthconditionalonjointfrequency/inversionassumptions,1<a<b+1,N=P,noiseless;RFtrainingtoownminimum differsLMfixed40epochcharge. Featurelearning/optimizer/token-to-featuremappingmissing; no deployment cost or tuned-regularization causalcomparison.",
+      "decision": "Targeted theory followup retained in queue; two more distinct empirical T2 changes prioritized. Do not describe as an independent replication of Baron or a theorem validating tuned Transformer allocation.",
+      "changes_existing_conclusion": "Qualitative explanation of existing ensemble branch only; no separate body adoption thisround."
+    },
+    {
+      "title": "Scaling Laws for SAE Training Data",
+      "authors": [
+        "Nikita Koriagin",
+        "Nikita Balagansky",
+        "Daniil Gavrilov"
+      ],
+      "url": "https://arxiv.org/abs/2611.07756",
+      "first_published_utc": "2026-11-05T10:00:55Z",
+      "latest_version_verified": "v1",
+      "last_revised_date": null,
+      "reading_depth": "abstract/metadata/history",
+      "decision": "DistinctSAEactivationstorageproblem; no methodscontrolsread orbodyadoption. Claimed8–64xstoragebound needsqualitymetricandactivationgenerationcost audit."
+    },
+    {
+      "title": "Towards a Comprehensive Scaling Law of Mixture-of-Experts",
+      "authors": [
+        "Guoliang Zhao",
+        "Yuhan Fu",
+        "Shuaipeng Li",
+        "Samm Sun",
+        "Ruobing Xie",
+        "An Wang",
+        "Weidong Han",
+        "Zhen Yang",
+        "Weixuan Sun",
+        "Yudong Zhang",
+        "Cheng-zhong Xu",
+        "Di Wang",
+        "Jie Jiang"
+      ],
+      "url": "https://aclanthology.org/2026.emnlp-main.1227/",
+      "publication_month_shown": "2026-10",
+      "first_published_date": null,
+      "latest_version_verified": null,
+      "reading_depth": "primary proceedings search-result abstract/bibliography only",
+      "decision": "450-runjointfivefactorMoElead; exactfirstdate/preprintidentity/versionnotresolved, no newness or narrative claim."
+    },
+    {
+      "title": "Hinted Scaling Laws",
+      "url": "https://arxiv.org/abs/2611.02270",
+      "full_text_url": "https://arxiv.org/html/2611.02270v1",
+      "first_published_date": "2026-11-01",
+      "reading_depth": "abstract/metadata and HTMLintroduction/contents only bythisagent",
+      "decision": "DelegatedtorootforT6deepreview; notcountedasthisagent adoption orreading."
+    }
+  ],
+  "access_and_coverage_limits": [
+    "Date filters returned older papers and unrelated topics; collection is targeted, not an exhaustive arXiv/venue census.",
+    "Secondaryblog/mirrorupdatedtimestamps are discovery signals; Roberts primaryonlyv1 verified.",
+    "No new T3 body addition justified by reviewed evidence; this does not establish absence ofnewarchitecturepapers.",
+    "Noengagementmetricsclaimed bythisagent. Communityresearch handledseparately.",
+    "No modeltraining, code execution, independentreproduction orpixel-levelpaperaudit.",
+    "Only thislogwritten; parent ownsintegration,pairedreview/build andpublishing."
+  ],
+  "editorial_summary": "Recommend two distinct T2 updates: retuned repeated-data ensemble allocation, and generation-cost-aware synthetic rewrite allocation. Retain DMFT ensemble study as deeply examined theory followup. Six watched records have unchanged versions.",
+  "cross_review_of_frontier": {
+    "date": "2026-11-09",
+    "reviewer": "foundations_nov9",
+    "target": "sources/weekly-2026-11-09-frontier.json two T5 proposals",
+    "primary_sources": [
+      "https://arxiv.org/html/2611.06372v1",
+      "https://arxiv.org/html/2611.09798v1"
+    ],
+    "scope": "Bae §§1–2,5 and AppendixE.12 text; Wang §§1–3,8 and Appendices C,D,F,J text. Targeted crosscheck, no proof/code reproduction or PDF pixel audit.",
+    "result": "No major numeric or translation mismatch. Bae verifier qualification recommended and acknowledged by frontier agent; headings/versions not an exhaustive audit.",
+    "checks": [
+      "Bae Table2 RR14.1% +12.5pp =26.6%; Table11 independent100replays +12.0[11.5,12.5] notfused. Crossfit/historysunk and freshQwenofflinepools confirmed.",
+      "Bae §2 assumes effectivelyperfect/freeverifier. Recommend explicit bodyqualifier; laterfalseacceptancerobustnessdoesnotremoveheadlinecondition.",
+      "Wang Table4 teamswin10/12 at100agents; lossesActiveLearning/KimiLinear. 10–11retainedteampools explicit§8. Largerteamtrialsfourtasks1–5runs.",
+      "Wang AppendixC12h/Browser6h;AppendixD excludesinfrakilled andknownkernelexploit;AppendixJ1.0–2.2xtokens/teamagent. Agent-hourproxyisnotFLOP/tokenmatch.",
+      "Wang AppendixC Borden taskcard explicitlyuncapped, explainsTable4109 despiteTable10–100label; remove unresolvedscoreissue fromsourcecaution. Cardsread viaurlliboriginalHTML#A3, omittedinwebexcerpt.",
+      "Chinese/English proposals preserve mechanisms,budgets,countnumbers andlimits; noadditionalpositiveclaim introduced intranslation."
+    ]
+  },
+  "incoming_cross_review": {
+    "reviewer": "frontier_nov9",
+    "date": "2026-11-09",
+    "result": "Primary checks found no substantiveerrors; pairedclaims equivalent. VerifiedBaron12x/16x/Ndefinitions/calibration andRobertsbudgetmismatch/33.3x/teacher-domainvsaggregate/externalSFT.",
+    "post_review_clarification": "Baron body now callsM1baseline noindependentensembles, because snapshotensembling remains within eachrun; U/R/M meanings explicit."
+  }
+}

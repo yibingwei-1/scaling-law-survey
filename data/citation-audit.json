@@ -1,6 +1,6 @@
 {
-  "catalog_count": 192,
-  "cited_in_technical_chapters": 179,
+  "catalog_count": 198,
+  "cited_in_technical_chapters": 184,
   "chapters": [
     {
       "file": "01-predictability-budget.md",
@@ -12,9 +12,9 @@
     {
       "file": "02-data.md",
       "title": "T2　数据瓶颈：从 token 数量到有效信息、混合与训练顺序",
-      "han_characters": 6064,
-      "catalog_sources_cited": 20,
-      "all_external_links": 21
+      "han_characters": 6803,
+      "catalog_sources_cited": 22,
+      "all_external_links": 23
     },
     {
       "file": "03-architecture-deployment.md",
@@ -26,23 +26,23 @@
     {
       "file": "04-posttraining.md",
       "title": "T4　后训练与强化学习：从反馈目标到可扩展推理策略",
-      "han_characters": 7459,
+      "han_characters": 7461,
       "catalog_sources_cited": 35,
       "all_external_links": 35
     },
     {
       "file": "05-inference.md",
       "title": "T5　推理预算与搜索：如何把更多计算变成更可靠的答案",
-      "han_characters": 7656,
-      "catalog_sources_cited": 34,
-      "all_external_links": 35
+      "han_characters": 8300,
+      "catalog_sources_cited": 36,
+      "all_external_links": 37
     },
     {
       "file": "06-theory-evaluation.md",
       "title": "第六章　理论与能力评估：幂律为何出现，又能预测什么？",
-      "han_characters": 6187,
-      "catalog_sources_cited": 19,
-      "all_external_links": 19
+      "han_characters": 6513,
+      "catalog_sources_cited": 20,
+      "all_external_links": 20
     },
     {
       "file": "07-multimodal.md",

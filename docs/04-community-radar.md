@@ -4,7 +4,7 @@
 
 社区的作用是暴露研究者和使用者尚未解决的问题。技术结论仍需回到论文、作者代码和官方报告：高观看量说明传播广，不能证明方法正确；讨论激烈也不等于结论已被独立复现。完整字段见 [community.json](../sources/community.json)，检索轨迹及未纳入线索见 [community-search-log.md](../sources/community-search-log.md)。
 
-2026-09-21、2026-09-28、2026-10-12 与 2026-10-26 各增补一条独立观测，累计 22 条记录；旧计数仍对应各自的原检索日期，新增内容见第 6–8、10 节。
+2026-09-21、2026-09-28、2026-10-12 与 2026-10-26 各增补一条，2026-11-09 增补两条，累计 24 条记录；旧计数仍对应各自的原检索日期，新增内容见第 6–8、10–11 节。
 
 ## 1. 如何操作化“讨论度高”
 
@@ -133,3 +133,13 @@ X 原帖身份、日期或有标签的指标仍未核验；YouTube 本轮未获�
 ## 10. 2026-10-26 追加观测：可读标签是否解释了计算？
 
 本轮覆盖 2026-10-05 至 10-26，24 条三平台查询得到 1 条正式新增。上周未核验的 [Goodfire 原帖](https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/) 现取得明确的 10 月 15 日日期及 887 票索引快照；这不是实时计数，原有 21 条历史观测不变。[作者文章](https://already-clean.goodfire.com/) 自称工作假说，神经元可读性比例依赖阈值，配套技术论文仍标为待发布；[Leo Gao 10 月 17 日的回应](https://www.lesswrong.com/posts/Dkh7pXKjoNWkkxQDz/neural-networks-are-not-already-clean) 则主张用替代激活后的下游行为检验解释，并指出解释神经元尚不等于理解神经元之间的计算。这是证据标准的争论，不能推出可解释性已经解决或普遍 scaling 机制已获证明。X 原链仍为 403，YouTube 旧候选本轮返回 Cache miss；没有指标不等于零关注。 见[完整检索记录](../sources/weekly-2026-10-26-community.json)。
+
+## 11. 2026-11-09 追加观测：外推规模与研发加速分别测量了什么？
+
+本轮32条查询覆盖10月19日至11月9日，追加2条记录。旧22条的计数与观测日期不变；新计数也只是11月9日看到的索引快照，生成时间未知。
+
+[RD-13：Q Labs讨论](https://www.reddit.com/r/accelerate/comments/1xmfv2j/q_labs_research_presents_quadrillionparameter/)的索引显示11月3日、192分。[作者blog](https://qlabs.sh/research/parameters/)中的巨大参数量是外推的集成总量，不是已经训练的单个模型；其[关联论文](https://arxiv.org/abs/2610.37842v1)首发于10月27日。应先区分固定数据下的预算目标与参数口径，再讨论标题中的人类类比。
+
+[RD-14：METR讨论](https://www.reddit.com/r/agi/comments/1xpboa1/metrs_ryan_greenblatt_estimates_ai_is_now/)的索引显示11月6日、132分。[原报告](https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/)的1.9倍（95%区间1.5–2.8）是基准能力指数 AECI 增长斜率之比；不同链接函数得到1.1–2.9倍。所报 95% 区间不包含选取哪些模型的不确定性。AI 归因依赖主观判断和大量删节证据，不是公开复现的因果乘数。
+
+X原帖仍有403、YouTube旧候选仍返回Cache miss；没有取得新指标不表示没有新讨论。两条记录均未完整读取评论树。Goodfire配套论文在原站仍标为待发布；新回应只入待查。详见本周日志。 [检索与核验记录](../sources/weekly-2026-11-09-community.json)

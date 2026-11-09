@@ -1,6 +1,6 @@
 # T4　后训练与强化学习：从反馈目标到可扩展推理策略
 
-> 核验日期：2026-10-12。按问题、机制、实验条件与限制组织；逻辑承接不自动等于直接影响史。新增文献见 [expansion-frontier.json](../sources/expansion-frontier.json)，既有转折与2026材料见 [frontier.json](../sources/frontier.json)。阅读深度逐条记录，不声称完整覆盖截至该日全部论文。
+> 最近增量核验：2026-11-09。按问题、机制、实验条件与限制组织；逻辑承接不自动等于直接影响史。新增文献见 [expansion-frontier.json](../sources/expansion-frontier.json)，既有转折与2026材料见 [frontier.json](../sources/frontier.json)。阅读深度逐条记录，不声称完整覆盖截至该日全部论文。
 
 ## 1. 起点不是“模型还不够大”，而是目标、数据和反馈不一致
 
@@ -135,7 +135,7 @@ $$
 
 另一个分支重新认真训练 critic。Open-Reasoner-Zero 用简化 PPO 配方、规则奖励及特定 GAE 设置，报告可扩展训练；VAPO 则围绕长推理的价值估计偏差与稀疏终点奖励，使用价值预训练和长度相关的信用分配设计。它们说明：“先省掉 critic”是一种工程选择，不是 critic 永久没有价值。两者也不是同一个配方，更不能把训练步数较少直接解释成等比例 FLOPs 更低。[ORZ，§2–3](https://arxiv.org/abs/2503.24290)、[VAPO，§3–4](https://arxiv.org/abs/2504.05118)
 
-组相对 RL 可以省去 critic，却仍有同步成本：异步训练中，较早完成的响应要等待同一 prompt 的其他响应。[Li²SAO](https://arxiv.org/html/2610.40726v1) 处理单 rollout 学习的相反问题——critic 初始不够准确，无法可靠引导更新。它先用组相对优势训练 actor，以中心化回报和结果排序训练 critic，再切换到单 rollout GAE。
+组相对 RL 可以省去 critic，却仍有同步成本：异步训练中，较早完成的响应要等待同一 prompt 的其他响应。[Li²SAO](https://arxiv.org/html/2610.40726v2) 处理单 rollout 学习的相反问题——critic 初始不够准确，无法可靠引导更新。它先用组相对优势训练 actor，以中心化回报和结果排序训练 critic，再切换到单 rollout GAE。
 
 在 Qwen3-4B 数学设置中，500 次更新后的平均 AIME pass@1 为 67.0%，GRPO 为 63.6%。使用八张 A800 时，该运行耗时 28.9 小时，GRPO 配置六张 rollout GPU 时为 36.4 小时；新方法的 actor 与 critic 共用四张训练 GPU。各方法每次更新都收集 128 条轨迹，但回答长度和每批 prompt 数会变化。这是特定配置的墙钟观测，不是等 FLOPs 比较或普适缩放定律。每题采样十六个评测答案，尚不能建立独立训练种子的不确定性；理论中的精确价值恒等式也不保证完整异步实现的收敛或无偏。
 

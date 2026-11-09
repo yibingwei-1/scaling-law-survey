@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "observed_at": "2026-10-12",
-  "coverage": "Purposeful cumulative sample, not an exhaustive ranking; X 4, YouTube 6, Reddit 10. Original snapshots retained; September 28 adds one high-attention proxy discussion of evaluation boundaries.",
+  "observed_at": "2026-11-09",
+  "coverage": "Purposeful cumulative sample, not exhaustive ranking: X4,YouTube6,Reddit14. November9 adds2 observations; historical entries and metric timestamps preserved.",
   "metric_policy": {
     "null_means": "Not observable, not zero",
     "time": "observed_at is retrieval date; platform counter snapshot time is unknown unless explicitly provided",
@@ -13,7 +13,7 @@
       "x": "100000 explicitly labeled views; unavailable counters remain null"
     },
     "threshold_status": "Editorial screening heuristics, not statistically calibrated popularity criteria",
-    "high_attention_proxy_count": 9
+    "high_attention_proxy_count": 13
   },
   "entries": [
     {
@@ -981,6 +981,144 @@
             "score": null
           },
           "note": "Reference time unknown; not converted into a date. Selected replies, not the entire comment tree, were read. The reader may be cached and is not a live counter."
+        }
+      ]
+    },
+    {
+      "id": "RD-13",
+      "platform": "Reddit",
+      "community": "r/accelerate",
+      "title": "Q Labs Research Presents: Quadrillion-Parameter Transformers And How To Train Them",
+      "url": "https://www.reddit.com/r/accelerate/comments/1xmfv2j/q_labs_research_presents_quadrillionparameter/",
+      "author": "u/Lord_44th__Raikage",
+      "published_at": "2026-11-03",
+      "publication_date_evidence": "Explicit November 3 calendar date in the indexed result; direct reader instead exposes unanchored '6h ago'.",
+      "topics": [
+        "data-constrained scaling",
+        "hyperparameter transfer",
+        "ensembling",
+        "extrapolation"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 192
+      },
+      "metric_evidence": "[Tuesday November 03 2026] [+192 votes]",
+      "primary_sources": [
+        {
+          "url": "https://qlabs.sh/research/parameters/",
+          "title": "Quadrillion-parameter transformers and how to train them",
+          "kind": "author_technical_blog",
+          "verification": "Rendered text including summary, §§1–5 and figure captions read; images not digitized. Header gives November 2026 only."
+        },
+        {
+          "url": "https://arxiv.org/abs/2610.37842v1",
+          "title": "Improving Data-Constrained Scaling with Hyperparameter Transfer and Ensembling",
+          "kind": "paper",
+          "verification": "Abstract, authors and submission history checked in this subtask; detailed technical review delegated to foundations researcher."
+        }
+      ],
+      "access_status": "Post and selected replies readable; direct page numeric metrics unavailable.",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "The headline motivates checking whether a parameter count describes a trained individual model, an ensemble total, or an extrapolated optimum. Selected replies also challenge the comparability of human experience and token counts.",
+      "evidence_limit": "192 is an indexed score with unknown measurement time. The post's biological analogy does not establish a controlled sample-efficiency comparison. No independent replication performed; selected replies are not community consensus.",
+      "observed_at": "2026-11-09",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "observations": [
+        {
+          "observed_at": "2026-11-09",
+          "source_kind": "search_index_snapshot",
+          "url": "https://www.reddit.com/r/accelerate/comments/1xmfv2j/q_labs_research_presents_quadrillionparameter/",
+          "published_at": "2026-11-03",
+          "score": 192,
+          "metric_measurement_time": null,
+          "date_score_excerpt": "[Tuesday November 03 2026] [+192 votes]"
+        },
+        {
+          "observed_at": "2026-11-09",
+          "source_kind": "direct_reader",
+          "url": "https://www.reddit.com/r/accelerate/comments/1xmfv2j/q_labs_research_presents_quadrillionparameter/",
+          "published_at": null,
+          "relative_time_text": "6h ago",
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "views": null,
+            "reposts": null,
+            "score": null
+          },
+          "note": "Unknown reference time; not converted into a date or combined with index counts into a growth estimate."
+        }
+      ]
+    },
+    {
+      "id": "RD-14",
+      "platform": "Reddit",
+      "community": "r/agi",
+      "title": "METR's Ryan Greenblatt estimates AI is now speeding up AI by 4.5x. This is 5 months earlier than even AI 2027 predicted. \"I was seriously wrong about RSI speed up ... This is a big update towards ASI within 1-2 years.\"",
+      "url": "https://www.reddit.com/r/agi/comments/1xpboa1/metrs_ryan_greenblatt_estimates_ai_is_now/",
+      "author": "u/Puzzleheaded-King584",
+      "published_at": "2026-11-06",
+      "publication_date_evidence": "Explicit November 6 calendar date in indexed result; direct reader gives unanchored '1h ago'.",
+      "topics": [
+        "capability measurement",
+        "AI R&D acceleration",
+        "causal attribution",
+        "extrapolation"
+      ],
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 132
+      },
+      "metric_evidence": "[Friday November 06 2026] [+132 votes]",
+      "primary_sources": [
+        {
+          "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+          "title": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026",
+          "kind": "official_technical_report",
+          "verification": "Selected report sections and November 6 update checked; exact scope in primary_source_checks below."
+        }
+      ],
+      "access_status": "Post and selected replies readable; direct page numeric metrics unavailable.",
+      "attention_status": "high_attention_proxy",
+      "discussion_focus": "Separate a benchmark time trend, attribution to AI assistance, and forecasts of self-improvement. The title's 4.5x is the poster's framing and is not adopted as the report's measurement.",
+      "evidence_limit": "132 is an indexed snapshot, not a live count. Cross-posts are one research conversation. Original Greenblatt X post returned403; a secondary correction lead remains unverified at source. No independent reproduction or whole-comment-tree analysis.",
+      "observed_at": "2026-11-09",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "comments_complete": false,
+      "observations": [
+        {
+          "observed_at": "2026-11-09",
+          "source_kind": "search_index_snapshot",
+          "url": "https://www.reddit.com/r/agi/comments/1xpboa1/metrs_ryan_greenblatt_estimates_ai_is_now/",
+          "published_at": "2026-11-06",
+          "score": 132,
+          "metric_measurement_time": null,
+          "date_score_excerpt": "[Friday November 06 2026] [+132 votes]"
+        },
+        {
+          "observed_at": "2026-11-09",
+          "source_kind": "direct_reader",
+          "url": "https://www.reddit.com/r/agi/comments/1xpboa1/metrs_ryan_greenblatt_estimates_ai_is_now/",
+          "published_at": null,
+          "relative_time_text": "1h ago",
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "views": null,
+            "reposts": null,
+            "score": null
+          },
+          "note": "Unknown reference time; not converted into a date or combined with index counts into a growth estimate."
         }
       ]
     }

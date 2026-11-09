@@ -1,0 +1,750 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-11-09",
+  "window": {
+    "start": "2026-10-19",
+    "end": "2026-11-09",
+    "inclusive": true,
+    "priority_subwindow": {
+      "start": "2026-11-03",
+      "end": "2026-11-09"
+    }
+  },
+  "baseline_head": "c211b8866aee65cf034596b14b11f70f34994804",
+  "baseline_edition": "v0.3.7",
+  "baseline_catalog_count": 22,
+  "baseline_note": "Nov2 maintenance was finalized and committed by root during this discovery run. The community catalog remained at22 throughout.",
+  "baseline_files_read": [
+    "METHODOLOGY.md",
+    "UPDATING.md",
+    "docs/04-community-radar.md",
+    "sources/community.json (all identities and metrics; latestRD12 in detail)",
+    "sources/weekly-2026-11-02-community.json",
+    "sources/weekly-2026-11-02-editor.json (queries and decision structure)"
+  ],
+  "scope": "Only this weekly JSON file is written. Canonical sources, chapters, metrics, state and git remain root-owned.",
+  "policy": {
+    "missing_metrics": "null is unavailable, not zero",
+    "metric_observation": "Index measurement times are unknown; observation date is not counter timestamp.",
+    "publication_date": "No conversion of unanchored relative dates; no substituting crawl or comment dates.",
+    "attention_thresholds": {
+      "reddit_score": 100,
+      "youtube_views": 100000,
+      "x_explicit_views": 100000
+    },
+    "cross_platform_ranking": false,
+    "deduplication": "One event across reposts; do not refresh22 historical observations.",
+    "tools": "web__run searches and original pages; no social API, private data or logged-in metrics."
+  },
+  "search_query_count": 32,
+  "queries": [
+    {
+      "batch": 1,
+      "queries": [
+        {
+          "q": "\"scaling laws\" after:2026-10-18 before:2026-11-10 site:reddit.com"
+        },
+        {
+          "q": "\"test-time scaling\" after:2026-11-02 before:2026-11-10 site:reddit.com"
+        },
+        {
+          "q": "\"scaling\" \"November 2026\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"scaling laws\" after:2026-10-18 before:2026-11-10 site:x.com -site:blog.x.com -site:communitynotes.x.com"
+        }
+      ],
+      "outcome": "No results returned for four platform-targeted queries; this is a search visibility limitation, not evidence of no discussion."
+    },
+    {
+      "batch": 2,
+      "queries": [
+        {
+          "q": "\"scaling laws\" \"November\" \"2026\" Reddit"
+        },
+        {
+          "q": "\"test-time compute\" after:2026-10-18 before:2026-11-10"
+        },
+        {
+          "q": "\"reinforcement learning\" \"scaling\" after:2026-11-02 before:2026-11-10 site:reddit.com"
+        },
+        {
+          "q": "\"Neural Networks Are Already Clean\" \"paper\" after:2026-11-02 before:2026-11-10"
+        }
+      ],
+      "outcome": "Broad TTC query found four new primary-paper leads. Goodfire queries mostly returned old secondary commentary and an apparent November 6 response lead; no qualified platform record."
+    },
+    {
+      "batch": 3,
+      "queries": [
+        {
+          "q": "\"Takes on\" \"Already Clean\""
+        },
+        {
+          "q": "\"parallel agent teams\" site:reddit.com"
+        },
+        {
+          "q": "\"parallel agent teams\" site:x.com"
+        },
+        {
+          "q": "\"test-time\" \"scaling\" site:youtube.com/watch",
+          "recency": 21
+        }
+      ],
+      "outcome": "Identified original November 6 LessWrong response by neverix. Parallel-team platform searches returned an unrelated April agent-teams discussion; no verified original new-paper post or qualified YouTube item."
+    },
+    {
+      "batch": 4,
+      "queries": [
+        {
+          "q": "\"LLM\" \"scaling\" after:2026-11-02 before:2026-11-10 site:reddit.com/r/LocalLLaMA"
+        },
+        {
+          "q": "\"scaling\" \"compute\" after:2026-11-02 before:2026-11-10 site:x.com -site:communitynotes.x.com -site:blog.x.com"
+        },
+        {
+          "q": "\"scaling laws\" site:youtube.com",
+          "recency": 7
+        },
+        {
+          "q": "\"data\" \"MoE\" \"scaling\" after:2026-10-18 before:2026-11-10 site:reddit.com/r/MachineLearning"
+        }
+      ],
+      "outcome": "Returned mostly local-serving/deployment discussions; verified a November 5 context-budget opinion thread with indexed score43, below threshold and no controlled new scaling result. Some results are old posts surfaced by November replies. X403 and YouTube Cache miss persisted for prior candidates."
+    },
+    {
+      "batch": 5,
+      "queries": [
+        {
+          "q": "\"scaling\" \"paper\" after:2026-11-02 before:2026-11-10 site:reddit.com/r/singularity"
+        },
+        {
+          "q": "\"compute-optimal\" after:2026-10-18 before:2026-11-10 site:reddit.com"
+        },
+        {
+          "q": "\"scaling laws\" \"November\" \"2026\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"scaling\" \"multimodal\" after:2026-11-02 before:2026-11-10 site:x.com"
+        }
+      ],
+      "outcome": "Found high-score November3 Q Labs scaling-paper discussion(score192), November2 weight-space programming discussion(score453), and two November6 METR discussions(score132/127). Opened a compaction thread that links arxiv2611.05306 but direct numeric metrics and exact date unavailable."
+    },
+    {
+      "batch": 6,
+      "queries": [
+        {
+          "q": "\"Quadrillion-Parameter Transformers\""
+        },
+        {
+          "q": "\"Sparks of Weight-Space Programming\""
+        },
+        {
+          "q": "\"AI R&D\" \"automation\" \"November\" \"2026\" site:metr.org"
+        },
+        {
+          "q": "\"new NVIDIA paper says AI models\" \"context\" site:reddit.com"
+        }
+      ],
+      "outcome": "Verified QLabs blog identity and arxiv2610.37842v1(Oct27), direct Reddit authors and unanchored relative dates. Located original MIT weight-space programming blog datedNov2. METR-specific initial query did not return a usable primary source."
+    },
+    {
+      "batch": 7,
+      "queries": [
+        {
+          "q": "\"METR\" \"AI R&D automation\" \"2026\""
+        },
+        {
+          "q": "\"Ryan Greenblatt\" \"2x\" \"November\""
+        },
+        {
+          "q": "\"Quadrillion\" \"Transformers\" site:x.com"
+        },
+        {
+          "q": "\"Weight-Space Programming\" site:youtube.com/watch"
+        }
+      ],
+      "outcome": "Found exact November5 METR assessment through original-site link, plus original Ajeya Cotra November6 commentary. Original Ryan Greenblatt X post403; third-party numbers not used as platform metrics. No qualified X/YouTube new observation."
+    },
+    {
+      "batch": 8,
+      "queries": [
+        {
+          "q": "\"Ryan Greenblatt\" \"3.8\" \"2.5\" \"2026\""
+        },
+        {
+          "q": "\"Independent Assessment of AI R&D Acceleration\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"Quadrillion-parameter\" site:youtube.com/watch"
+        },
+        {
+          "q": "\"AI R&D\" \"November 2026\" site:x.com"
+        }
+      ],
+      "outcome": "Correction leads remained secondary/mirror-only. Additional targeted YouTube and X queries produced no qualified new original observation. Do not promote Greenblatt correction or mirror counters as primary verification."
+    }
+  ],
+  "proposal": {
+    "status": "two_bounded_radar_records_proposed",
+    "recommended_new_community_records": 2,
+    "entries": [
+      {
+        "id": "RD-13",
+        "platform": "Reddit",
+        "community": "r/accelerate",
+        "title": "Q Labs Research Presents: Quadrillion-Parameter Transformers And How To Train Them",
+        "url": "https://www.reddit.com/r/accelerate/comments/1xmfv2j/q_labs_research_presents_quadrillionparameter/",
+        "author": "u/Lord_44th__Raikage",
+        "published_at": "2026-11-03",
+        "publication_date_evidence": "Explicit November 3 calendar date in the indexed result; direct reader instead exposes unanchored '6h ago'.",
+        "topics": [
+          "data-constrained scaling",
+          "hyperparameter transfer",
+          "ensembling",
+          "extrapolation"
+        ],
+        "metrics": {
+          "likes": null,
+          "comments": null,
+          "views": null,
+          "reposts": null,
+          "score": 192
+        },
+        "metric_evidence": "[Tuesday November 03 2026] [+192 votes]",
+        "primary_sources": [
+          {
+            "url": "https://qlabs.sh/research/parameters/",
+            "title": "Quadrillion-parameter transformers and how to train them",
+            "kind": "author_technical_blog",
+            "verification": "Rendered text including summary, §§1–5 and figure captions read; images not digitized. Header gives November 2026 only."
+          },
+          {
+            "url": "https://arxiv.org/abs/2610.37842v1",
+            "title": "Improving Data-Constrained Scaling with Hyperparameter Transfer and Ensembling",
+            "kind": "paper",
+            "verification": "Abstract, authors and submission history checked in this subtask; detailed technical review delegated to foundations researcher."
+          }
+        ],
+        "access_status": "Post and selected replies readable; direct page numeric metrics unavailable.",
+        "attention_status": "high_attention_proxy",
+        "discussion_focus": "The headline motivates checking whether a parameter count describes a trained individual model, an ensemble total, or an extrapolated optimum. Selected replies also challenge the comparability of human experience and token counts.",
+        "evidence_limit": "192 is an indexed score with unknown measurement time. The post's biological analogy does not establish a controlled sample-efficiency comparison. No independent replication performed; selected replies are not community consensus.",
+        "observed_at": "2026-11-09",
+        "metrics_source_kind": "search_index_snapshot",
+        "metric_measurement_time": null,
+        "comments_complete": false,
+        "observations": [
+          {
+            "observed_at": "2026-11-09",
+            "source_kind": "search_index_snapshot",
+            "url": "https://www.reddit.com/r/accelerate/comments/1xmfv2j/q_labs_research_presents_quadrillionparameter/",
+            "published_at": "2026-11-03",
+            "score": 192,
+            "metric_measurement_time": null,
+            "date_score_excerpt": "[Tuesday November 03 2026] [+192 votes]"
+          },
+          {
+            "observed_at": "2026-11-09",
+            "source_kind": "direct_reader",
+            "url": "https://www.reddit.com/r/accelerate/comments/1xmfv2j/q_labs_research_presents_quadrillionparameter/",
+            "published_at": null,
+            "relative_time_text": "6h ago",
+            "metrics": {
+              "likes": null,
+              "comments": null,
+              "views": null,
+              "reposts": null,
+              "score": null
+            },
+            "note": "Unknown reference time; not converted into a date or combined with index counts into a growth estimate."
+          }
+        ]
+      },
+      {
+        "id": "RD-14",
+        "platform": "Reddit",
+        "community": "r/agi",
+        "title": "METR's Ryan Greenblatt estimates AI is now speeding up AI by 4.5x. This is 5 months earlier than even AI 2027 predicted. \"I was seriously wrong about RSI speed up ... This is a big update towards ASI within 1-2 years.\"",
+        "url": "https://www.reddit.com/r/agi/comments/1xpboa1/metrs_ryan_greenblatt_estimates_ai_is_now/",
+        "author": "u/Puzzleheaded-King584",
+        "published_at": "2026-11-06",
+        "publication_date_evidence": "Explicit November 6 calendar date in indexed result; direct reader gives unanchored '1h ago'.",
+        "topics": [
+          "capability measurement",
+          "AI R&D acceleration",
+          "causal attribution",
+          "extrapolation"
+        ],
+        "metrics": {
+          "likes": null,
+          "comments": null,
+          "views": null,
+          "reposts": null,
+          "score": 132
+        },
+        "metric_evidence": "[Friday November 06 2026] [+132 votes]",
+        "primary_sources": [
+          {
+            "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+            "title": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026",
+            "kind": "official_technical_report",
+            "verification": "Selected report sections and November 6 update checked; exact scope in primary_source_checks below."
+          }
+        ],
+        "access_status": "Post and selected replies readable; direct page numeric metrics unavailable.",
+        "attention_status": "high_attention_proxy",
+        "discussion_focus": "Separate a benchmark time trend, attribution to AI assistance, and forecasts of self-improvement. The title's 4.5x is the poster's framing and is not adopted as the report's measurement.",
+        "evidence_limit": "132 is an indexed snapshot, not a live count. Cross-posts are one research conversation. Original Greenblatt X post returned403; a secondary correction lead remains unverified at source. No independent reproduction or whole-comment-tree analysis.",
+        "observed_at": "2026-11-09",
+        "metrics_source_kind": "search_index_snapshot",
+        "metric_measurement_time": null,
+        "comments_complete": false,
+        "observations": [
+          {
+            "observed_at": "2026-11-09",
+            "source_kind": "search_index_snapshot",
+            "url": "https://www.reddit.com/r/agi/comments/1xpboa1/metrs_ryan_greenblatt_estimates_ai_is_now/",
+            "published_at": "2026-11-06",
+            "score": 132,
+            "metric_measurement_time": null,
+            "date_score_excerpt": "[Friday November 06 2026] [+132 votes]"
+          },
+          {
+            "observed_at": "2026-11-09",
+            "source_kind": "direct_reader",
+            "url": "https://www.reddit.com/r/agi/comments/1xpboa1/metrs_ryan_greenblatt_estimates_ai_is_now/",
+            "published_at": null,
+            "relative_time_text": "1h ago",
+            "metrics": {
+              "likes": null,
+              "comments": null,
+              "views": null,
+              "reposts": null,
+              "score": null
+            },
+            "note": "Unknown reference time; not converted into a date or combined with index counts into a growth estimate."
+          }
+        ]
+      }
+    ],
+    "primary_source_catalog_records": [
+      {
+        "id": "metr2026rdacceleration",
+        "title": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026",
+        "authors": [
+          "Tom Cunningham",
+          "Nate Rush",
+          "Parker Whitfill",
+          "Hjalmar Wijk"
+        ],
+        "year": 2026,
+        "date": "2026-11-05",
+        "first_published": "2026-11-05",
+        "first_published_date": "2026-11-05",
+        "last_revised_date": "2026-11-06",
+        "type": "official_technical_report",
+        "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+        "full_text_url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+        "branch": [
+          "T6"
+        ],
+        "version": "Public report; November 6 update",
+        "version_read": "Public report with November 6 update",
+        "latest_version_verified": "November 6 update",
+        "reading_depth": "official_report_sections",
+        "verification_date": "2026-11-09",
+        "synthesis_status": "index_only",
+        "independent_replication": false,
+        "problem": "Does faster benchmark progress identify AI-driven R&D acceleration?",
+        "insight": "Separate observed trends from the unobserved no-AI counterfactual.",
+        "method": "Piecewise AECI trends, internal information and interviews.",
+        "result": "AECI growth-slope estimate: 1.9x (95% interval 1.5–2.8), not a causal treatment effect.",
+        "limitation": "Redactions prevent a public causal replication; no general scaling law follows.",
+        "sections_read": "Summary, subjective conclusions, key findings, process, limitations, methodology, AECI estimation/link-function table, selected access disclosures, update log and author footnote. Remaining appendix text, chart pixels, underlying data and code not comprehensively audited.",
+        "changes_existing_conclusion": "Adds a measurement-versus-attribution example to the community radar and source index; does not rewrite technical chapters.",
+        "evidence_status": "November 6 correction changes AEF item 1.1 to No because no query access; the report citation suggests institutional author METR while footnote 2 names four authors."
+      }
+    ],
+    "technical_body_change": false,
+    "radar_heading_zh": "## 11. 2026-11-09 追加观测：外推规模与研发加速分别测量了什么？",
+    "radar_heading_en": "## 11. November 9, 2026: What do extrapolated scale and R&D acceleration measure?",
+    "radar_preface_zh": "本轮32条查询覆盖10月19日至11月9日，建议追加2条记录。旧22条的计数与观测日期不变；新计数也只是11月9日看到的索引快照，生成时间未知。",
+    "radar_preface_en": "This round used 32 queries for October 19–November 9 and adds two observations. The 22 historical records keep their original dates and counters; the new counts are also indexed snapshots observed on November 9, with unknown measurement times.",
+    "radar_paragraph_zh": "[RD-13：Q Labs讨论](https://www.reddit.com/r/accelerate/comments/1xmfv2j/q_labs_research_presents_quadrillionparameter/)的索引显示11月3日、192分。[作者blog](https://qlabs.sh/research/parameters/)中的巨大参数量是外推的集成总量，不是已经训练的单个模型；其[关联论文](https://arxiv.org/abs/2610.37842v1)首发于10月27日。应先区分固定数据下的预算目标与参数口径，再讨论标题中的人类类比。",
+    "radar_paragraph_en": "[RD-13: Q Labs](https://www.reddit.com/r/accelerate/comments/1xmfv2j/q_labs_research_presents_quadrillionparameter/) has an indexed November 3 date and score 192. The [authors' blog](https://qlabs.sh/research/parameters/) describes an extrapolated ensemble parameter total, not a trained individual model; the [paper](https://arxiv.org/abs/2610.37842v1) first appeared on October 27. Clarify the data-constrained objective and parameter definition before interpreting the biological analogy.",
+    "radar_second_paragraph_zh": "[RD-14：METR讨论](https://www.reddit.com/r/agi/comments/1xpboa1/metrs_ryan_greenblatt_estimates_ai_is_now/)的索引显示11月6日、132分。[原报告](https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/)的1.9倍（95%区间1.5–2.8）是AECI增长斜率之比；不同链接函数得到1.1–2.9倍。AI归因依赖主观判断和大量删节证据，不是公开复现的因果乘数。",
+    "radar_second_paragraph_en": "[RD-14: METR](https://www.reddit.com/r/agi/comments/1xpboa1/metrs_ryan_greenblatt_estimates_ai_is_now/) has an indexed November 6 date and score 132. The [report's](https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/) 1.9x estimate (95% interval 1.5–2.8) compares AECI growth slopes; alternative link functions yield 1.1–2.9x. Attribution to AI relies on judgment and extensively redacted evidence, not a publicly reproduced causal multiplier.",
+    "radar_access_note_zh": "X原帖仍有403、YouTube旧候选仍返回Cache miss；没有取得新指标不表示没有新讨论。两条记录均未完整读取评论树。Goodfire配套论文在原站仍标为待发布；新回应只入待查。详见本周日志。",
+    "radar_access_note_en": "Original X posts still returned 403 and the prior YouTube candidate returned Cache miss; missing metrics do not establish no new discussion. Neither comment tree was fully read. Goodfire still labels its companion forthcoming; a new response remains a follow-up candidate. See this week's log.",
+    "conclusion_change": "The radar gains concrete boundary cases, not a new universal exponent, causal automation claim, or live popularity ranking."
+  },
+  "primary_source_checks": [
+    {
+      "url": "https://qlabs.sh/research/parameters/",
+      "title": "Quadrillion-parameter transformers and how to train them",
+      "authors": [
+        "Akshay Vegesna",
+        "Ethan Baron",
+        "Anirudh Satheesh",
+        "Samip Dahal"
+      ],
+      "published_at": null,
+      "publication_month": "2026-11",
+      "reading_depth": "full_rendered_text",
+      "sections_read": "Header, summary, §§1–5 and figure captions; no image digitization or code execution.",
+      "finding": "The headline's extreme scale is an extrapolated total over ensemble members. Blog and paper differ in their named evaluation contexts; detailed reconciliation delegated to foundations.",
+      "verification_date": "2026-11-09"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37842",
+      "title": "Improving Data-Constrained Scaling with Hyperparameter Transfer and Ensembling",
+      "authors": [
+        "Ethan Baron",
+        "Shmuel Berman",
+        "Anirudh Satheesh",
+        "Akshay Vegesna",
+        "Samip Dahal",
+        "Andrew Gordon Wilson"
+      ],
+      "first_published": "2026-10-27",
+      "first_published_utc": "2026-10-27T18:52:54Z",
+      "latest_version": "v1",
+      "reading_depth": "abstract_metadata",
+      "verification_date": "2026-11-09",
+      "note": "Not a paper first releasedNovember3; community date, blog month and paper date are distinct."
+    },
+    {
+      "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+      "verification_date": "2026-11-09",
+      "record_pointer": "proposal.primary_source_catalog_records[0]",
+      "extra_check": "The trend interval propagates score uncertainty but omits uncertainty over model selection. This is not the same as the link-function sensitivity range.",
+      "version_note": "ExplicitNovember6 update read; do not backdate this correction toNovember5."
+    },
+    {
+      "url": "https://already-clean.goodfire.com/",
+      "title": "Neural Networks Are Already Clean",
+      "author": "Nick Cammarata",
+      "verification_date": "2026-11-09",
+      "reading_depth": "official_report_sections",
+      "sections_read": "Header/working-hypothesis framing and companion/forthcoming matches; not complete essay/galleries.",
+      "finding": "The original still describes its technical companion as forthcoming. No released companion verified. Website not diffed in full.",
+      "status": "existing_event_no_conclusion_change"
+    },
+    {
+      "url": "https://www.lesswrong.com/posts/p6kaX6LqfTHFqC6r6/takes-on-already-clean",
+      "title": "Takes on “Already Clean”",
+      "author": "neverix",
+      "published_at": "2026-11-06",
+      "publication_date_evidence": "Original header explicitly6thNov2026.",
+      "reading_depth": "selected_essay_sections",
+      "sections_read": "Opening, practical-utility discussion, selected sparse-neuron hypothesis and developmental-interpretability passages; linked paper/code and figures not audited.",
+      "finding": "A speculative original response distinguishes useful intervention handles from complete computational explanation and asks how properties persist with scale.",
+      "status": "followup_candidate_only",
+      "next_check": "Read its linked primary neuron paper and exact scope before treating it as an independent replication. Same Goodfire conversation; not a released companion."
+    },
+    {
+      "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+      "title": "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights",
+      "authors": [
+        "Rikiya Takehi",
+        "Jayden Teoh",
+        "Alex Zhang",
+        "Omar Khattab"
+      ],
+      "published_at": "2026-11-02",
+      "publication_date_evidence": "Original headerNovember2,2026.",
+      "reading_depth": "selected_blog_sections",
+      "sections_read": "Header, summary, experiment overview, selectedExperiment7/8setup and logs links; full artifacts not audited.",
+      "finding": "Different experiments grant different tools and feedback. Experiment8 uses a Python environment and bounded forward-pass requests; it cannot be described as raw-weight-only or cost-free learning.",
+      "status": "high_attention_candidate_not_promoted",
+      "reason": "Need cheap-loop-fix controls, editing cost, unselected search history and larger-model transfer before claiming a scaling-law revision."
+    },
+    {
+      "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+      "title": "AI is dramatically accelerating AI research right now",
+      "author": "Ajeya Cotra",
+      "published_at": "2026-11-06",
+      "publication_date_evidence": "Original headerNov06,2026.",
+      "reading_depth": "selected_essay_sections",
+      "sections_read": "Opening disclosure, software/labor-multiplier reasoning and compounding section.",
+      "finding": "Author explicitly presents personal interpretation and did not see the unredacted report. Compounding forecast is a scenario under assumptions, not an additional measurement.",
+      "status": "context_only_no_numeric_claim_adopted"
+    }
+  ],
+  "context_candidates": [
+    {
+      "candidate_id": "CTX-WEIGHTSPACE",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xm6jow/sparks_of_weightspace_programming_llms_can/",
+      "author": "u/teakhop",
+      "published_at": "2026-11-02",
+      "publication_date_evidence": "[Monday November 02 2026]",
+      "observed_at": "2026-11-09",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 453
+      },
+      "metric_evidence": "[Monday November 02 2026] [+453 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "attention_status": "high_attention_proxy",
+      "primary_sources": [
+        "https://rikiyat.github.io/blog/weight-space-programming/"
+      ],
+      "access_status": "Post and selected replies readable; direct reader22hago unanchored, no counters.",
+      "status": "candidate_only",
+      "reason": "Technical follow-up worthwhile, but attention does not establish a resource-performance law. No released repository reproduction claim independently audited."
+    },
+    {
+      "candidate_id": "CTX-METR-CROSSPOST",
+      "platform": "Reddit",
+      "community": "r/OpenAI",
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xpcezu/metrs_ryan_greenblatt_estimates_ai_is_now/",
+      "published_at": "2026-11-06",
+      "observed_at": "2026-11-09",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 127
+      },
+      "metric_evidence": "[Friday November 06 2026] [+127 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "status": "same_event_not_added",
+      "reason": "Same METR conversation asRD14; not independent scientific confirmation."
+    },
+    {
+      "candidate_id": "CTX-CONTEXT-PARAMETERS",
+      "platform": "Reddit",
+      "community": "r/LocalLLaMA",
+      "title": "Rather Qwen4-27b at1Mctx than a big MOE at128k",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xoh2s7/rather_qwen427b_at_1m_ctx_than_a_big_moe_at_128k/",
+      "published_at": "2026-11-05",
+      "observed_at": "2026-11-09",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": 43
+      },
+      "metric_evidence": "[Thursday November 05 2026] [+43 votes]",
+      "metrics_source_kind": "search_index_snapshot",
+      "metric_measurement_time": null,
+      "status": "context_below_screening_threshold",
+      "reason": "User experience/opinion, not controlled scaling evidence. Its linked compaction discussion yielded an actionable primary-paper lead."
+    },
+    {
+      "candidate_id": "CTX-COMPACTION",
+      "platform": "Reddit",
+      "community": "r/tech_x",
+      "url": "https://www.reddit.com/r/tech_x/comments/1xogswx/new_nvidia_paper_says_ai_models_do_not_always/",
+      "author": "u/Bulky_Engineer_2534",
+      "published_at": null,
+      "observed_at": "2026-11-09",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "primary_sources": [
+        "https://arxiv.org/abs/2611.05306"
+      ],
+      "access_status": "Original post/link readable but only2hago unanchored and no counters.",
+      "status": "discovery_only",
+      "reason": "Date and attention not authenticated; primary forwarded for independent technical review."
+    }
+  ],
+  "unverified_candidates": [
+    {
+      "platform": "X",
+      "url": "https://x.com/nickcammarata/status/2110757819427574056",
+      "published_at": null,
+      "observed_at": "2026-11-09",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "access_status": "403Forbidden",
+      "status": "not_promoted"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/RyanGreenblatt/status/2118447235289817503",
+      "published_at": null,
+      "observed_at": "2026-11-09",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "access_status": "403Forbidden",
+      "status": "not_promoted",
+      "note": "Secondary and mirror sources discuss a4.5→3.8 arithmetic correction. Original correction not verified; no canonical quantitative claim or mirror engagement number adopted."
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=UdnYzYw-t5Y",
+      "published_at": null,
+      "observed_at": "2026-11-09",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "views": null,
+        "reposts": null,
+        "score": null
+      },
+      "access_status": "Cache miss",
+      "status": "not_promoted",
+      "note": "Prior title not newly authenticated; not watched, no transcript used as upload date."
+    }
+  ],
+  "primary_discovery_forwarded": [
+    {
+      "url": "https://arxiv.org/abs/2611.09798",
+      "title": "Test-Time Compute Scales Better with Parallel Agent Teams",
+      "scope": "search abstract only",
+      "recipient": "root/frontier"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07453",
+      "title": "Latency-Aware Adaptive Best-of-N",
+      "scope": "search lead only",
+      "recipient": "root/frontier"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06372",
+      "title": "Give Up to Get More: Priors, Not Policies, Govern Test-Time Compute Allocation",
+      "scope": "search lead only",
+      "recipient": "root/frontier"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05919",
+      "title": "Routes of Reasoning: Reading and Reshaping Test-Time Compute in MoE Models",
+      "scope": "search lead only",
+      "recipient": "root/frontier"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05306",
+      "title": "You don't need long context",
+      "scope": "originalRedditlink only",
+      "recipient": "root/frontier"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37842",
+      "title": "Improving Data-Constrained Scaling with Hyperparameter Transfer and Ensembling",
+      "scope": "abstract/history and authorblog",
+      "recipient": "root/foundations"
+    }
+  ],
+  "not_selected": [
+    {
+      "url": "https://www.reddit.com/r/LocalLLM/comments/1w1yqil/i_made_llamacpp_treat_each_cpu_numa_node_like_a/",
+      "reason": "OriginalAugust29 post surfaced byNovember7 reply; not a newNovember study."
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xf1cx0/how_much_difference_does_kv_cache_quants_even_make/",
+      "reason": "October25 hardware anecdotes/implementation discussion; selectedNovember9 reply not treated as controlled primary evidence."
+    },
+    {
+      "url": "https://hcklab.itch.io/scaling-laws/devlog/1750212/080-is-out-for-windows-mac-and-linux-and-somebody-built-the-mac-version-before-i-did-",
+      "reason": "Game titled Scaling Laws, outside scientific scope."
+    },
+    {
+      "url": "https://github.com/statsleelab/weight_space_programming",
+      "reason": "Search excerpt claims complete bit-exact reproduction; not audited and therefore not accepted as independent confirmation."
+    },
+    {
+      "url": "https://github.com/openwsp/openwsp",
+      "reason": "Search excerpt describes partial replication work with limitations; not audited."
+    },
+    {
+      "url": "https://evidencepress.org/articles/neural-networks-already-clean/",
+      "reason": "Older secondary audit/commentary, not the Goodfire companion. Its metric and replication claims not adopted."
+    }
+  ],
+  "limitations": [
+    "Purposeful English-language search, not platform census or current ranking.",
+    "Search date filters also returned old originals and new replies; every accepted date checked explicitly.",
+    "X/YouTube coverage remains access-limited; do not conclude no new material.",
+    "No complete comment trees, video watching, figure digitization, code reruns or primary experiment reproduction in this subtask.",
+    "Technical-paper deep reading is separately owned by foundations/frontier/root; linked lead is not a full-text review."
+  ],
+  "maintenance_decision": "Propose two new community observations and one report index record, preserving22 old observations. Keep Goodfire response and weight-space programming as candidates. No technical-chapter rewrite requested by this file.",
+  "cross_review": {
+    "date": "2026-11-09",
+    "reviewer": "community_nov9",
+    "target": "sources/weekly-2026-11-09-editor.json / vanadrichem2026hinted",
+    "primary_url": "https://arxiv.org/html/2611.02270v1",
+    "scope": "Abs/history; selected §§2–4, 7 and Appendices A–C/F. No code rerun, figure digitization or complete formal-proof audit.",
+    "result": "Pass with two accepted precision edits.",
+    "checks": [
+      "Source identity, authors and first-version timestamp match.",
+      "Budget/accuracy, evaluation subset and seed conditions agree with the paired proposals.",
+      "Qwen2.5 inversion and its posthoc, AIME-only correction are explicitly qualified."
+    ],
+    "requested_precision_edits": [
+      "Tie residual answer leakage specifically to rewritten AIME/HLE reference solutions rather than implying leakage in the Delphi target measurement.",
+      "Describe Appendix F as an answer-mixing control constructed algebraically from unhinted accuracies; do not imply a newly collected randomized intervention experiment."
+    ],
+    "root_response": "Root accepted both edits and will apply them to its log and bilingual integration."
+  },
+  "pdf_visual_review": {
+    "date": "2026-11-09",
+    "reviewer": "community_nov9",
+    "artifact": "English v0.3.8 review render before final copy edits",
+    "raster_directory": "tmp/pdfs/v038-review/en",
+    "all_page_contact_sheets": {
+      "count": 9,
+      "page_range": [
+        1,
+        100
+      ]
+    },
+    "page_scale_inspection": [
+      1,
+      2,
+      3,
+      7,
+      14,
+      20,
+      42,
+      47,
+      52,
+      57,
+      77,
+      78,
+      97,
+      100
+    ],
+    "original_detail_inspection": [
+      3,
+      7,
+      52
+    ],
+    "result": "Pass within the inspected visual scope; no visible clipping, overlap, broken glyphs, unexpected blank pages, table overflow or pagination defects.",
+    "specific_checks": [
+      "New paragraphs on pages 14, 20, 42, 47 and 57 fit cleanly.",
+      "RD13 and RD14 radar on pages 77–78 fit; METR paragraph uses the clarified reported 95% interval wording.",
+      "Page 3 diagram and display mathematics on pages 7 and 52 are legible.",
+      "Reference tables on pages 97 and 100 fit; the final partial page is expected."
+    ],
+    "limits": "All 100 pages inspected as contact sheets, with 14 pages enlarged; not enlarged inspection of every word on every page. No PDF regeneration or main-file changes by this reviewer.",
+    "subsequent_copy_edits": "Root identified English introduction November 2 date text to correct to November 9 and will compare final rebuilt raster pages and inspect changed pages. This review does not claim inspection of those subsequent renders."
+  }
+}

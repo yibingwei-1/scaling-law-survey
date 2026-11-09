@@ -1,0 +1,127 @@
+{
+  "date": "2026-11-09",
+  "window_start": "2026-10-19",
+  "queries": [
+    "site.arxiv.org/abs/2611 scaling laws theory emergence multimodal",
+    "site.arxiv.org \"November\" \"2026\" \"scaling\" \"world models\"",
+    "site.arxiv.org \"2611\" \"scaling\" \"diffusion\"",
+    "site.arxiv.org \"Seeing Through the Illusion\" \"World Action\"",
+    "site.arxiv.org \"Open-HumanScale\"",
+    "site.arxiv.org \"scaling\" \"theory\" after:2026-11-02 before:2026-11-10",
+    "site.epoch.ai \"November\" \"2026\" \"scaling\"",
+    "site.arxiv.org/abs/2611 \"multimodal\" \"scaling laws\""
+  ],
+  "tools": "web search/open plus urllib HTML extraction using standard-library parser; parallel-cli absent on PATH; initial bs4 imports failed, no installed dependency assumed.",
+  "adoptions": [
+    {
+      "source_record": {
+        "id": "vanadrichem2026hinted",
+        "title": "Hinted Scaling Laws",
+        "authors": [
+          "Suze van Adrichem",
+          "Luke Bailey",
+          "Rohith Kuditipudi",
+          "Christine Ye",
+          "Neil Band",
+          "Ahmed Ahmed",
+          "John Duchi",
+          "Percy Liang",
+          "Tatsunori Hashimoto"
+        ],
+        "year": 2026,
+        "date": "2026-11-01",
+        "first_published": "2026-11-01",
+        "first_published_date": "2026-11-01",
+        "first_published_utc": "2026-11-01T22:50:43Z",
+        "last_revised_date": null,
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "url": "https://arxiv.org/abs/2611.02270",
+        "full_text_url": "https://arxiv.org/html/2611.02270v1",
+        "type": "paper",
+        "branch": [
+          "T6",
+          "T1"
+        ],
+        "problem": "Small-model benchmark scores near zero leave large-scale accuracy forecasts unidentified.",
+        "insight": "Intervene on evaluation difficulty using reference-solution hints, fit a joint scale/hint surface, evaluate its zero-hint slice.",
+        "method": "Masking/truncation and teacher-logit mixing; smaller-model fits evaluated on held-out larger models. Delphi plus four released post-trained families.",
+        "result": "Delphi GSM8K prediction within3pp from at-most1e20FLOPs models to1e23FLOPs target;256-question evaluation, solution-conditioned teacher.",
+        "limitation": "One controlled ladder; largest rung one seed; privileged reference solutions, filtered176-question HLE subset, residual answer leakage, teacher/evaluation costs; Qwen2.5 raw-logit inversion and posthoc fix. No prospective independent replication.",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-11-09",
+        "sections_read": "Abs/history; HTML §§1–4,7; §5 metric-order discussion; Appendices A–C, E.1–E.2 and F premise/proposition (not full proof audit); no code run or figure digitization.",
+        "synthesis_status": "incorporated",
+        "changes_existing_conclusion": "Extends T6 emergence/identifiability branch with an intervention on evaluation difficulty; no unassisted capability gain or universal emergence prediction.",
+        "independent_replication": false,
+        "evidence_notes": [
+          "Largest Delphi target has one seed; other11budgets three each; fit seed means.",
+          "HLE requires correct generated solutions and excludes images/multiple-choice/options; final176questions.",
+          "AppendixB finds4/600AIME and2/1760HLE solutions stating answers after rewriting.",
+          "AppendixC uses union of top16logits per model, not full-vocabulary implementation.",
+          "Qwen2.5 correction chosen after observing inversion; AIME only."
+        ]
+      },
+      "proposal_en": "A near-zero score can also leave an extrapolation statistically unidentified. Hinted Scaling Laws adds an evaluation axis: expose part of a reference solution, mask its words, or mix decoding logits with a stronger teacher; fit accuracy jointly against model scale and hint level, then predict at zero hint. This provides measurements that can distinguish otherwise indistinguishable small models. On Delphi, teacher-assisted fits using models trained with at most $10^{20}$ FLOPs predict the $10^{23}$-FLOP model's 25.9% GSM8K accuracy within three percentage points. Here the teacher is solution-conditioned Llama-3.1-8B-Instruct, and evaluation uses 256 GSM8K questions. [van Adrichem et al., 2026, §2–4 and Appendices A–C](https://arxiv.org/html/2611.02270v1)\n\nThe result predicts unhinted accuracy; it does not show that giving hints improves the unassisted model. Delphi is the only controlled training ladder, its largest budget has one seed, and reference-solution generation and teacher inference add evaluation costs. The 176-question HLE subset requires successfully generated reference solutions; residual answer leakage in rewritten AIME/HLE references and a Qwen2.5 raw-logit ranking inversion further limit generality. Appendix F's answer-mixing control constructed from unhinted scores shows why merely raising scores need not add predictive information. Thus the next test is prospective forecasting across recipes with independently checked hints and complete evaluation accounting.",
+      "proposal_zh": "接近零的分数还会让外推在统计上难以识别。Hinted Scaling Laws 增加一条评测轴：展示部分参考解、遮蔽其中词语，或把解码 logits 与更强教师混合；联合拟合模型规模与提示强度下的正确率，再在零提示处预测。这样可以区分原本分数近乎相同的小模型。在 Delphi 上，用训练量不超过 $10^{20}$ FLOPs 的模型和教师辅助测量拟合，对 $10^{23}$ FLOPs 模型的 25.9% GSM8K 正确率预测误差在三个百分点内。这里教师是以参考解为条件的 Llama-3.1-8B-Instruct，评测使用 256 道 GSM8K 题。[van Adrichem 等，2026，§2–4、附录 A–C](https://arxiv.org/html/2611.02270v1)\n\n该结果预测无提示正确率，并不说明提供提示改善了模型独立作答的能力。Delphi 是唯一受控训练阶梯，最大预算只有一个种子；参考解生成和教师推理增加评测成本。176 题的 HLE 子集要求成功生成参考解；改写后的 AIME/HLE 参考解仍有答案泄漏，Qwen2.5 原始 logit 混合还出现排序反转；这些现象进一步限制泛化。附录 F 由无提示分数构造的答案混合对照说明，单纯提高分数不一定增加预测信息。因此，下一步应跨配方事前预测，独立检查提示内容并完整核算评测成本。",
+      "placement": "T6 end6.6 before6.7"
+    }
+  ],
+  "version_checks": [
+    {
+      "id": "liu2026worldactionaudit",
+      "url": "https://arxiv.org/abs/2610.41970",
+      "latest": "v2",
+      "revised_utc": "2026-11-03T13:38:31Z",
+      "reading": "v2 §§3–6,Table1, selected9–10 timing/statistical scopes",
+      "conclusion": "Current cited numbers and limits retained: N8/R2/single-switch, -1.66pp, oracle+1.40episodeCIcrosszero,47.9%forwardFLOPs and1.152xcompletequery,latency-only,fullfactorialunlaunched,maintainerconfirmationnotsought. Author byline now Wenbin Zhang, correcting prior abstract Zhangg discrepancy. Targeted current-claim check, not full version diff. Local versioned endpoints returned identical extracted texts; do not infer versions semantically identical."
+    },
+    {
+      "id": "khandelwal2026multimodalmixtures",
+      "url": "https://arxiv.org/abs/2610.14423",
+      "latest": "v2",
+      "revised_utc": "2026-11-03T15:28:11Z",
+      "reading": "v2 §6/9 and AppendixG directional-capacity variant, H heldout table, I routing discussion selected",
+      "conclusion": "Current narrative retained:268experiments,8/9losses within2.51%,6.73%non-text-heavyCPTtext failure. Extra directional-capacity coefficients do not improve all extrapolation regimes; authors retain simpler form. No full revision diff; not independent replication."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "2611.06817",
+      "title": "Open-HumanWAM: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models",
+      "url": "https://arxiv.org/abs/2611.06817",
+      "first_date": "2026-11-04",
+      "latest": "v2",
+      "revised_date": "2026-11-05",
+      "reading_depth": "abstract_and_metadata",
+      "decision": "queue",
+      "reason": "Search/v1 title Open-HumanScale superseded by Open-HumanWAM and expanded author list in v2. Fifty-thousand-hour human-video scaling and goal-conditioned robot transfer require method/budget/closed-loop audits before adoption. Temporary v1 HTML retrieved but not treated as read."
+    },
+    {
+      "id": "2611.03585",
+      "title": "Seeing Through the Illusion: Test-Time Scaling for World Action Models",
+      "authors": [
+        "Cheikh Ahmed",
+        "Mahdi Mostajabdaveh",
+        "Milad Yazdani",
+        "Zirui Zhou"
+      ],
+      "url": "https://arxiv.org/abs/2611.03585",
+      "first_published_utc": "2026-11-02T18:32:18Z",
+      "latest": "v1",
+      "reading_depth": "abstract_and_metadata",
+      "decision": "queue",
+      "reason": "Candidate action/future consistency selector; fixed four-candidate results do not by themselves identify a budget-scaling law. Method, uncertainty and total selector costs not audited this round."
+    }
+  ],
+  "access_limits": [
+    "Representative search not exhaustive; dates checked against primary history rather than index crawl.",
+    "No independent training/evaluation reproduction.",
+    "Full texts retained only in ignored temporary directory."
+  ],
+  "additional_primary_review": {
+    "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+    "scope": "Root read AECI methodology/link functions and model-selection confidence limitations; supports bounded radar attribution distinction, not full report audit."
+  }
+}

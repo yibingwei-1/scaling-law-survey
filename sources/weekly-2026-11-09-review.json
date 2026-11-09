@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-09",
+  "status": "content_and_pdf_review_pass",
+  "chapters": [
+    "introduction.md",
+    "02-data.md",
+    "04-posttraining.md",
+    "05-inference.md",
+    "06-theory-evaluation.md",
+    "07-multimodal.md",
+    "04-community-radar.md",
+    "conclusion.md"
+  ],
+  "scope": "Root reviewed changed paired arguments, quantities, inline mathematics, citations and limitations. Cross-reviews covered both T2 and both T5 additions and Hinted Scaling Laws. Clarified independent ensembles versus snapshots, defined U/R/M/N, made the perfect unpriced verifier explicit, separated AIME/HLE reference leakage from Delphi forecasting and labeled AppendixF answer mixing as constructed. Three version updates were targeted current-claim checks, not complete semantic diffs. Radar dates/metrics are labeled indexed snapshots; AECI interval excludes model-selection uncertainty. Unchanged chapter fingerprints retained. No experiments independently rerun. Final PDF copyedit compresses Chinese Min, Roberts, emergence and conclusion wording without changing claims; checked against English. English introduction date corrected toNovember9 to match Chinese. Conclusion is the eighth changed pair, with unchanged English.",
+  "cross_review_logs": [
+    "sources/weekly-2026-11-09-foundations.json",
+    "sources/weekly-2026-11-09-frontier.json",
+    "sources/weekly-2026-11-09-community.json"
+  ],
+  "pdf_review": {
+    "date": "2026-11-09",
+    "scope": "All100 English and71 Chinese pages inspected in15 contact sheets. Enlarged English pages1,2,3,7,14,20,42,47,52,57,77,78,97,100; Chinese1,2,11,15,30,34,40,55,69,71. Root additionally inspected EN20/57 and ZH11/40/55. Final copyedit raster comparison changed only EN6 and ZH11/15/40/55; root inspected all five final pages. A final one-character Chinese connective deletion changed only ZH40, re-rendered and rechecked. No remaining observed clipping, overlap, missing glyphs, broken tables, detached headings or the reported punctuation defects. All-page inspection is through contact sheets, not enlarged reading of every page. No experiments independently reproduced.",
+    "en_pages": 100,
+    "zh_pages": 71
+  },
+  "structural_audit": "Independent read-only audit verified12chapter bodies once in each language,7technical chapters,184citations each,5newtechnicalIDs+METRindexonly,old192recordsunchanged except3versions,old22communityentriesunchanged,EnglishdefaultREADME and correct counterpart links. Root corrected finalEnglishintrodate and updated post-copyeditcounts."
+}

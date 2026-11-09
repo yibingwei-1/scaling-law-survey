@@ -1,0 +1,439 @@
+{
+  "date": "2026-11-09",
+  "window": {
+    "start": "2026-10-19",
+    "end": "2026-11-09",
+    "priority_after": "2026-11-02"
+  },
+  "baseline_edition": "v0.3.7 content locally complete; Nov2 publication finalized separately by root",
+  "scope": "T4 posttraining/RL and T5 inference budgets, agents and allocation",
+  "method": "Primary web search and metadata/history checks; targeted methods/results/limitations reading for two T5 proposals plus Li2SAO v2. No new experimental execution or external replication.",
+  "local_context_read": [
+    "METHODOLOGY.md",
+    "UPDATING.md",
+    "sources/weekly-2026-11-02-frontier.json",
+    "docs/en/04-posttraining.md and05-inference.md; long combined output truncated, targeted relevant T5/T4 passages read separately",
+    "data/papers.json list192; six proposed/newIDs checked absent"
+  ],
+  "query_batches": [
+    {
+      "date": "2026-11-09",
+      "queries": [
+        "site:arxiv.org \"scaling\" \"reinforcement learning\" after:2026-11-02 before:2026-11-10",
+        "site:arxiv.org \"test-time\" \"compute\" after:2026-11-02 before:2026-11-10",
+        "site:arxiv.org \"inference\" \"budget\" after:2026-11-02 before:2026-11-10"
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "queries": [
+        "site:arxiv.org \"reinforcement learning\" \"scaling laws\" \"November\" \"2026\"",
+        "site:arxiv.org \"RL\" \"compute\" after:2026-11-02 before:2026-11-10",
+        "site:arxiv.org \"agent\" \"test-time scaling\" after:2026-11-02 before:2026-11-10",
+        "\"post-training\" \"scaling\" after:2026-11-02 before:2026-11-10"
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "queries": [
+        "\"FourSight\" \"arxiv\" \"2026\"",
+        "\"reinforcement learning\" \"scaling\" \"Nov 3\" \"2026\" arxiv",
+        "\"reinforcement learning\" \"scaling\" \"Nov 5\" \"2026\" arxiv",
+        "\"test-time\" \"scaling\" after:2026-10-19 before:2026-11-10 site:research.google"
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "queries": [
+        "\"scaling\" \"reinforcement\" after:2026-10-19 before:2026-11-10 site:thinkingmachines.ai",
+        "\"scaling\" \"agents\" after:2026-10-19 before:2026-11-10 site:anthropic.com/research",
+        "\"parallel agent teams\" Modal November 2026"
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "queries": [
+        "\"2611.06372\" reproduction replication",
+        "\"2611.09798\" reproduction replication",
+        "\"test-time scaling\" after:2026-10-19 before:2026-11-10 site:arxiv.org"
+      ]
+    }
+  ],
+  "existing_source_checks": [
+    {
+      "url": "https://arxiv.org/abs/2610.37648",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-27T17:56:46Z",
+      "last_revised_utc": null,
+      "checked_on": "2026-11-09",
+      "reading_depth": "metadata_history",
+      "body_change": false,
+      "note": "No newer revision shown; no repeat full-text audit this week."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.29458",
+      "latest_version_verified": "v2",
+      "first_published_utc": "2026-10-21T09:15:50Z",
+      "last_revised_utc": "2026-10-25T08:09:22Z",
+      "checked_on": "2026-11-09",
+      "reading_depth": "metadata_history",
+      "body_change": false,
+      "note": "No newer revision shown; no repeat full-text audit this week."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.30765",
+      "latest_version_verified": "v1",
+      "first_published_utc": "2026-10-22T05:37:00Z",
+      "last_revised_utc": null,
+      "checked_on": "2026-11-09",
+      "reading_depth": "metadata_history",
+      "body_change": false,
+      "note": "No newer revision shown; no repeat full-text audit this week."
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.12227",
+      "latest_version_verified": "v4",
+      "first_published_utc": "2026-07-14T00:18:42Z",
+      "last_revised_utc": "2026-10-05T06:02:06Z",
+      "checked_on": "2026-11-09",
+      "reading_depth": "metadata_history",
+      "body_change": false,
+      "note": "No newer revision shown; no repeat full-text audit this week."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.40726",
+      "title": "Li²SAO: Lifting Light Single-Rollout Asynchronous RL Optimization via Group-Relative Actor-Critic Bootstrapping",
+      "latest_version_verified": "v2",
+      "first_published_utc": "2026-10-29T09:02:00Z",
+      "last_revised_utc": "2026-11-02T03:52:43Z",
+      "checked_on": "2026-11-09",
+      "reading_depth": "full_text_targeted",
+      "body_change": "versioned link only; current mechanism/numbers preserved",
+      "record_patch": {
+        "version": "v2",
+        "version_read": "v2",
+        "latest_version_verified": "v2",
+        "last_revised_date": "2026-11-02",
+        "last_revised_utc": "2026-11-02T03:52:43Z",
+        "full_text_url": "https://arxiv.org/html/2610.40726v2",
+        "verification_date": "2026-11-09"
+      },
+      "sections_read": "v2 §§3–5/limitations,Appendices C.1–C.3,D.3,F.1,G.4; current T4 cited mechanisms/numbers and model identity.",
+      "findings": [
+        "Same group-centered critic/ranking→single-rollout GAE;readiness gate or150stepfallback.",
+        "Post-trained Qwen3-4B explicitly distinguished from Qwen3-4B-Base in C.2/D.3 despite generic base language in main text.",
+        "At500steps AIME average pass@1 67.0 vs63.6;8A800 28.9h vsGRPO2trainer6rollout36.4h;128trajectories/update.",
+        "16evaluation samples notindependenttrainingseeduncertainty;no seed text found;implemented-update convergence notguaranteed."
+      ],
+      "provenance_correction": "v2 predates Nov2 scheduled search time but was discovered Nov9. PriorNov2 v1-latest claim is incomplete; preserve old log and explain new verification. This is a targeted claim check, not exhaustive v1→v2 semantic diff."
+    }
+  ],
+  "recommended_body_additions": [
+    {
+      "source_record": {
+        "id": "bae2026priors",
+        "title": "Give Up to Get More: Priors, Not Policies, Govern Test-Time Compute Allocation",
+        "authors": [
+          "Jinhyung Bae"
+        ],
+        "date": "2026-11-04",
+        "first_published": "2026-11-04",
+        "first_published_date": "2026-11-04",
+        "first_published_utc": "2026-11-04T11:32:30Z",
+        "last_revised_date": null,
+        "last_revised_utc": null,
+        "url": "https://arxiv.org/abs/2611.06372",
+        "full_text_url": "https://arxiv.org/html/2611.06372v1",
+        "branch": [
+          "T5"
+        ],
+        "year": 2026,
+        "type": "paper",
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-11-09",
+        "synthesis_status": "proposed",
+        "independent_replication": false,
+        "problem": "预算分配器需要识别下一次尝试的收益；按困难程度单调增加样本会浪费预算，但可用先验的来源与成本也不能忽略。",
+        "insight": "固定独立尝试的边际覆盖收益随成功率呈非单调关系；有验证器时，历史成功率先验可将预算从无望输入转向尚可解决的输入。",
+        "method": "Offline replays of stored math/code/proof responses; static equal-attempt allocation and sequential RR/TS/UCB/myopic policies, cross-fitted related-model histories. Fresh Qwen2.5 samples remain replayed, not a live adaptive-serving experiment.",
+        "result": "At u=16, Table2 Pythia-1.4B MATH RR14.1% and history-TS +12.5 percentage points; Table11 uses independent100-replay set and reports +12.0 [11.5,12.5]. Do not combine their baselines/CIs.",
+        "limitation": "Fixed recurring inputs, iid attempts, main perfect/free verifier and sunk history sampling. Output-character charging is not tokenized FLOPs/latency. Weak priors or false acceptances erase gains; easy cases can lose. Calibration/replay uncertainty does not establish deployment transfer or independent replication.",
+        "sections_read": "Primary metadata/history; HTML §§1–6, Tables1–11, Appendix E.7–E.12; selected theory formulation in §2. Appendix C proofs, continuous-objective appendix and survey coding not fully audited. Public code README read; code not executed.",
+        "changes_existing_conclusion": "Strengthens existing T5 marginal-value allocation discussion with empirical dependence on information quality, recurring-input history and verifier error; not a new universal scaling exponent."
+      },
+      "placement": "T5 §6 after Zhai adaptive-budget paragraph and before closing synthesis paragraph",
+      "proposal_en": "The marginal-value view also raises an information question: how can an allocator identify inputs that will benefit? Bae studies recurring inputs using stored math, code and proof samples. For independent, fixed-cost attempts, the static optimum favors intermediate solvability rather than always giving the hardest inputs more. With a perfect, unpriced verifier that removes solved inputs, the baseline becomes round-robin over unsolved inputs. On Pythia-1.4B MATH, at an average budget of sixteen attempts, a cross-fitted prior from Pythia-6.9B raises the observed solved share from 14.1% to 26.6% under Thompson Sampling; without input-specific information, tested policies gain essentially nothing. This result assumes that the history sampling cost has already been paid. Fresh proxy sampling is charged and can lose its advantage. Evidence is mainly offline replay, including newly generated Qwen2.5 pools; replay intervals do not establish live-serving transfer. Weak priors and false acceptances erode gains, and easy workloads can lose without prior tempering. Output-length checks charge characters, not measured FLOPs or latency. Thus informative, affordable priors and reliable checking are conditions for allocation gains; the policy title does not make algorithm choice irrelevant.",
+      "proposal_zh": "边际收益视角还提出一个信息问题：分配器如何识别哪些输入会受益？Bae 用保存的数学、代码和证明样本研究反复出现的输入。在尝试相互独立、单次成本固定时，静态最优分配偏向中等可解性，而非总给最难输入更多预算。在验证器被视为完美且不计费、并移除已解输入时，基线变成对未解输入轮询。Pythia-1.4B 的 MATH 实验中，平均预算为十六次尝试时，来自 Pythia-6.9B、经交叉拟合的先验使 Thompson Sampling 的观测解题比例从 14.1% 升至 26.6%；缺乏输入特定信息时，所测策略基本没有收益。该结果假定历史采样费用已经支付；新采集的小模型代理样本被计费后可能失去优势。证据主要来自离线回放，包括新生成的 Qwen2.5 样本池；回放区间不能确立在线服务迁移。弱先验与误接受会削弱收益，简单工作负载在不弱化先验时还可能受损。长度检查按字符计费，不是实测 FLOPs 或延迟。因此，有信息且成本可接受的先验与可靠检查是分配收益的条件；论文标题并不表示算法选择无关紧要。",
+      "evidence_locator": [
+        "§2 iid/static assumptions and marginal coverage;§4 static expectedcoverage,notdeliveredselection",
+        "§5Table2 exact14.1+12.5;Table11 separate100replays,CIsconditional",
+        "§1/§5 priorcrossfit/historycostsunk,chargedproxy;§6 measuredFLOPs/latencyabsent",
+        "§5Tables5–8 freshQwen pools,temperingposthocvsCV,verifiererror sensitivity"
+      ],
+      "code_url": "https://github.com/nepersoned/priors-not-policies",
+      "code_access": "Public README/file tree read; no execution",
+      "independent_replication_check": "Two exact-ID search queries across proposed papers found mirrors/digests, no independent empirical replication; this is a bounded search, not proof none exists."
+    },
+    {
+      "source_record": {
+        "id": "wang2026parallelteams",
+        "title": "Test-Time Compute Scales Better with Parallel Agent Teams",
+        "authors": [
+          "Junlin Wang",
+          "Haozhe Chen",
+          "Ang Li",
+          "Rahul Chalamala",
+          "Zhuang Liu"
+        ],
+        "date": "2026-11-06",
+        "first_published": "2026-11-06",
+        "first_published_date": "2026-11-06",
+        "first_published_utc": "2026-11-06T17:53:07Z",
+        "last_revised_date": null,
+        "last_revised_utc": null,
+        "url": "https://arxiv.org/abs/2611.09798",
+        "full_text_url": "https://arxiv.org/html/2611.09798v1",
+        "branch": [
+          "T5"
+        ],
+        "year": 2026,
+        "type": "paper",
+        "version": "v1",
+        "version_read": "v1",
+        "latest_version_verified": "v1",
+        "reading_depth": "full_text_targeted",
+        "verification_date": "2026-11-09",
+        "synthesis_status": "proposed",
+        "independent_replication": false,
+        "problem": "独立 agent 反复搜索可能饱和；扩大单一协作团队则降低跨次尝试的独立性与可选择性。",
+        "insight": "小团队内部共享发现，多个团队之间独立运行，再由任务评分器选择最高分结果，将单次质量与跨次变化分开。",
+        "method": "Qwen3.8-27B in Codex harness,12 continuous-score tasks; best-of-pool estimates over roughly100solo and10–11team runs/task; normally12h/agent,6h on Browser Exploit.",
+        "result": "At100agents,10teams of10 outrank solo sampling on10/12tasks; large-team comparison only4tasks. Scores are conditional retained-pool estimates, not broad deployment success guarantees.",
+        "limitation": "Same agent-hours need not mean equal tokens/FLOPs; team agents use1.0–2.2× solo tokens. Large-team counts sparse; infra-killed and known kernel reward-exploit runs excluded. Gaussian fit misses ceilings/tails. Automatic scorer needed; author code link returned404; no independent replication identified.",
+        "sections_read": "Primary metadata/history; HTML §§1–4,6–8 and Appendices B–F,J; selected Appendix A equations and Appendix I discussion; prompt blocks encountered but not executed or adopted as instructions. Figures not digitized; code unavailable through cited URL.",
+        "changes_existing_conclusion": "Adds nested team sampling as a conditional coordination branch after PTTS, distinguishing stronger individual team draws from greater sampling count; not evidence every larger team or fixed team size is optimal."
+      },
+      "placement": "T5 §1 after PTTS coordinated-coverage subsection, before §2",
+      "proposal_en": "Coordination can also change what counts as one sample. Wang et al. run small teams with a shared forum, keep different teams independent, and select the highest-scoring team. With Qwen3.8-27B and a budget of one hundred agents, ten teams of ten outperform independent agents on ten of twelve long-horizon tasks. Runs normally allow twelve hours per agent, with six hours for Browser Exploit. The intended mechanism is a stronger team-level draw while retaining variation across draws. The curves, however, are combinatorial estimates from retained pools, including only ten or eleven small-team runs per task; very large teams have still fewer repetitions. Infrastructure-killed runs and known kernel reward-exploit runs are excluded. Equal agent-hours do not imply equal tokens or FLOPs: team members consume 1.0–2.2 times the tokens of solo agents. A Gaussian score model explains the tradeoff qualitatively but misses failure tails and ceilings. This extends coordinated sampling under automatic scoring; it does not establish a universal team size, reliable selection without a verifier, or an externally replicated scaling law.",
+      "proposal_zh": "协作还可以改变一次样本的单位。Wang 等让小团队通过共享论坛协作，使不同团队独立运行，再选择评分最高的团队结果。采用 Qwen3.8-27B、总预算为一百个 agent 时，十个十人团队在十二项长时域任务中的十项优于独立 agent。通常每个 agent 运行十二小时，Browser Exploit 为六小时。其机制是提高团队级单次结果的质量，同时保留跨团队变化。不过，这些曲线由保留的运行池作组合估计而得，每项任务只有十或十一个小团队运行；超大团队的重复次数更少。基础设施中止的运行及触发已知内核奖励漏洞的运行被排除。相同 agent 小时数不意味着相同 token 或 FLOPs：团队成员消耗的 token 是独立 agent 的 1.0–2.2 倍。高斯分数模型能定性解释权衡，却不能准确处理失败尾部与分数上限。这将协调采样扩展到自动评分环境，并未确立普适团队规模、无验证器的可靠选择或外部复现的缩放定律。",
+      "evidence_locator": [
+        "§2 pool subset estimator;§3/AppendixFTable4 tenoftwelve",
+        "AppendixC12h exceptBrowser6h;MLSnointermediatejudge",
+        "AppendixD exclusions,verylargepoolsize,forumindexchange",
+        "§4/AppendixB Gaussianfitfailure;§8limitations",
+        "AppendixJ agenthoursvs1.0–2.2xtokens;costbasisconditional,frontierpricedwithupperboundcachewrites"
+      ],
+      "code_url": "https://github.com/modal-projects/parallel-agent-teams-scaling",
+      "code_access": "Author-linked URL returned404 in web tool; cannot verify public artifact release.",
+      "additional_cautions": [
+        "AppendixJ only lists model-serving GPU/token prices; do not claim comprehensive task-verification/sandbox cost without further audit.",
+        "Do not convert10/12wins to statistically significantwins; nobootstrap/CItext found in inspectedfulltext.",
+        "Resolved scoring-description inconsistency: Table 1 summarizes Borden as 0–100, but Appendix C explicitly states that its EdgeBench score is uncapped and strong answers exceed 100. Table 4 score 109.0 therefore is not an unexplained numeric error; no raw Borden score or cross-task normalized headline is used in the draft.",
+        "Securitytaskdescription read only for protocol; no exploit instructions extracted."
+      ]
+    }
+  ],
+  "recommended_index_only": [],
+  "candidates_not_promoted": [
+    {
+      "url": "https://arxiv.org/abs/2611.07453",
+      "title": "Latency-Aware Adaptive Best-of-N",
+      "authors": [
+        "Alon Jacobson",
+        "Qian Xie",
+        "Peter I. Frazier"
+      ],
+      "first_published_utc": "2026-11-05T04:56:16Z",
+      "latest_version_verified": "v1",
+      "checked_on": "2026-11-09",
+      "reading_depth": "abstract_metadata",
+      "mechanism": "Two-stage sampling uses observed first-batch latency and rewards to trade expected quality gain against generations-equivalent cost.",
+      "reason_not_promoted": "Simulation rather than measured live serving; full latency model/calibration/cost ledger not audited. Strong future T3/T5 candidate, no adopted headline."
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05919",
+      "title": "Routes of Reasoning: Reading and Reshaping Test-Time Compute in MoE Models",
+      "authors": [
+        "Shengjie Wang",
+        "Mohsen Fayyaz",
+        "Nanyun Peng"
+      ],
+      "first_published_utc": "2026-11-04T04:13:02Z",
+      "latest_version_verified": "v1",
+      "checked_on": "2026-11-09",
+      "reading_depth": "abstract_metadata",
+      "mechanism": "Probe router logits for reasoning behaviors; modify selected expert routing scores to shorten overthinking.",
+      "reason_not_promoted": "Annotation validity, tuning/selection and uncertainty not audited; token reduction is not automatically latency/FLOP reduction."
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.08615",
+      "title": "s³: Simple Scaling of Swarms via Cooperative Multi-agent RL",
+      "authors": [
+        "Kunal Jha",
+        "Gonçalo Faria",
+        "Shuyue Stella Li",
+        "Scott Geng",
+        "Faeze Brahman",
+        "Noah A. Smith",
+        "Yulia Tsvetkov",
+        "Max Kleiman-Weiner",
+        "Natasha Jaques"
+      ],
+      "first_published_utc": "2026-11-05T19:07:15Z",
+      "latest_version_verified": "v1",
+      "checked_on": "2026-11-09",
+      "reading_depth": "abstract_metadata",
+      "mechanism": "Train agents to decide private work and message reading/sharing, evaluate coordination and exploration plus larger teams.",
+      "reason_not_promoted": "Potential distinct learned-communication branch; matched-budget claim requires full training/inference denominator and uncertainty audit. Abstract only this run; do not adopt25xheadline."
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04887",
+      "title": "FourSight: Stable FP4 RL Post-Training via Sequence Filtering and Sparse Channel Compensation",
+      "authors": [
+        "Yining Wei",
+        "Tianyuan Wu",
+        "Gu Gong",
+        "Yuechen Tao",
+        "Yinghao Yu",
+        "Xiaowen Chu",
+        "Wei Wang"
+      ],
+      "first_published_utc": "2026-11-03T13:33:46Z",
+      "latest_version_verified": "v1",
+      "checked_on": "2026-11-09",
+      "reading_depth": "abstract_metadata",
+      "mechanism": "Filter mismatched sequences and compensate selected activation channels at BF16 in FP4 rollout.",
+      "reason_not_promoted": "Discoveredvia secondary index then verified original. Training quality and120Bsystemmeasurements must be separated; full experimental audit deferred."
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04792",
+      "title": "Density-Aware Reward Scaling: A Reinforcement Learning Framework for Reward-Proportional Sampling",
+      "authors": [
+        "Ria Shekhawat",
+        "Abhijeet Sinha",
+        "Yingtao Zhu",
+        "Dianbo Liu"
+      ],
+      "first_published_utc": "2026-11-03T12:29:58Z",
+      "latest_version_verified": "v1",
+      "checked_on": "2026-11-09",
+      "reading_depth": "abstract_metadata",
+      "mechanism": "Inverse local outcome-density reward adjustment targets diverse high-reward outcomes.",
+      "reason_not_promoted": "Navigation/prompt adaptation mechanisms relevant to mode coverage, but no verified scaling relation or full experimental audit; reward scaling title alone insufficient."
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.08219",
+      "title": "Agent-R²: Scaling Agents for Realistic Productivity Work via Real-Source Data Synthesis",
+      "authors": [
+        "Teng Pan",
+        "Zixuan Wang",
+        "Yuchen Yan",
+        "Qifei Wu",
+        "Yao Chen",
+        "Yingqi Qu",
+        "Ruiqing Zhang",
+        "Yongliang Shen"
+      ],
+      "first_published_utc": "2026-11-05T16:08:05Z",
+      "latest_version_verified": "v1",
+      "checked_on": "2026-11-09",
+      "reading_depth": "abstract_metadata",
+      "mechanism": "Real-source documents and work evidence synthesize SFT/RL tasks with deliverable rubrics.",
+      "reason_not_promoted": "Evaluation contamination, rubric independence, training/sample-generation budgets and seed uncertainty not audited; smallmodelheadline not adopted."
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07367",
+      "title": "Test-Time Self-Play: Scaling without a Verifier",
+      "authors": [
+        "Akira Yoshiyama",
+        "Akmal Ashirmatov",
+        "Jonas Hübotter",
+        "Ido Hakimi",
+        "Andreas Krause"
+      ],
+      "first_published_utc": "2026-11-05T03:07:02Z",
+      "latest_version_verified": "v1",
+      "checked_on": "2026-11-09",
+      "reading_depth": "abstract_metadata",
+      "mechanism": "Asymmetric self-play under varying target-verifier strength.",
+      "reason_not_promoted": "Difficulty-calibrated LiveCodeBench subset and mean@8 headline need full audit of selection, hidden checking, generation/update costs. Candidate, not proof verifier is dispensable."
+    }
+  ],
+  "other_discovery_leads": [
+    {
+      "url": "https://research.google/pubs/cost-effective-agent-test-time-scaling-2/",
+      "title": "Cost-effective Agent Test-Time Scaling",
+      "reading_depth": "institutional_abstract_and_arxiv_metadata_history",
+      "date": "2026 yearonly onpage",
+      "note": "Google CATS-titled institutional page links to BATS current arXiv title; originalNov2025/currentrevisionAug2026, outsidewindow. Do not mistake crawl date or staleinstitutionaltitle for newpaper.",
+      "arxiv_url": "https://arxiv.org/abs/2511.17006",
+      "canonical_title": "Budget-Aware Tool Use Enables Effective Agent Scaling",
+      "latest_version_verified": "v2",
+      "first_published_utc": "2025-11-21T07:18:55Z",
+      "last_revised_utc": "2026-08-17T07:14:22Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.08273",
+      "title": "Accelerating Safe Reinforcement Learning with Massive Parallelism",
+      "reading_depth": "search_abstract",
+      "note": "Robotics safe-RL phase coverage; outsidepriorityLLMbranch,notfullaudit."
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03585",
+      "title": "Seeing Through the Illusion: Test-Time Scaling for World Action Models",
+      "reading_depth": "search_abstract",
+      "note": "Rootnotified; primarysearchresultfirstNov2T18:32:18Z,notNov3announcement."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.27290",
+      "title": "TEX: Test-Time Scaling Testing Agents via Execution-based Cross-Validation",
+      "reading_depth": "search_abstract",
+      "note": "Overlap-window Oct19 result; KxKcrossvalidationcost/selector andrepository audit pending; notpromoted."
+    }
+  ],
+  "access_and_reading_limits": [
+    "No scientific experiments, proofs or code rerun; figures notdigitized.",
+    "Initial URL-based click calls failed invalidarguments; retriedvia returnedreferenceIDs; BaeGitHub accessible,ParallelTeams404.",
+    "Several broadquery results aresecondarydigests; onlyprimarypapers support adoptedclaims.",
+    "First statusmessage incorrectly said allfiveversions unchanged beforetruncatedbatch fullyresolved. Correctedpromptly; Li2SAOv2verifiedtargeted here.",
+    "No fresh or real-time communitymetrics assessed by this agent; communityagent handles discovery."
+  ],
+  "editorial_summary": "Two T5 mechanisms justify proposed synthesis: information-conditioned budget allocation and nested team sampling. UpdateLi2SAOversionrecord/link without changing supportedclaims. Otherpapers remainexplicitly shallowcandidates; noquota-drivenindexpadding.",
+  "cross_review_of_foundations": {
+    "reviewer": "frontier_nov9",
+    "date": "2026-11-09",
+    "result": "Both paired proposals passed targeted primary-source and bilingual argument checks; no substantive correction required.",
+    "sources": [
+      "https://arxiv.org/html/2610.37842v1",
+      "https://qlabs.sh/research/parameters/",
+      "https://arxiv.org/html/2610.31867v1"
+    ],
+    "sections_read": "Baron §§3–6.1, B.1–5, C.2–3, D.2 and Q Labs article/caption; Roberts §§2–3.3, Appendix F/F.1, M and N.3 tables; targeted current-claim checks, not complete proof/code audit.",
+    "checks": [
+      "Baron 12× complete allocation test and16× hyperparameter extrapolation are separate; paper count N includes output projection but excludes input/value tables;6UNRM is training proxy and calibration/snapshot inference/tuning costs are outside.",
+      "Baron0.15nats gain compared with own fixed-hyperparameter single-member baseline; ensemble probability averaging and independent calibration correct. Q Labs quadrillion claim explicitly far extrapolation summed over ensemble, not measured single model.",
+      "Roberts33.3× is training-compute extrapolation from3e20 to1e22, whereas generation-inclusive6ND+4NrDR varies among fourN,D-matched22B runs. Primary maintext uses loose total-budget wording but table/appendix verify qualification.",
+      "Roberts10/16 web-domain advantage coexists with worse macro0.983vs0.972; same-size rewrites still use7M GLM5.2 SFTtokens and LM-judge checkpointselection.",
+      "Both languages preserve same numbers, costs, conditions and limitations; inline times escape verified one backslash in actualstring."
+    ],
+    "additional_queries": [
+      "site:arxiv.org \"Baron\" \"Scaling\" \"2026\" \"Nov\"",
+      "site:arxiv.org \"Roberts\" \"rewriter\" \"2026\"",
+      "site:arxiv.org \"33\" \"rewriting\" \"scaling\" \"2026\""
+    ],
+    "limits": "No experiments repeated, no independent replication established, no complete proof or figure-pixel audit."
+  },
+  "independent_cross_review": {
+    "reviewer": "foundations_nov9",
+    "date": "2026-11-09",
+    "result": "Bae main numbers and distinct replay sets confirmed; made the perfect, unpriced verifier assumption explicit in both languages. Teams main count, time budgets, exclusions and token ratio confirmed. Borden score above 100 was independently resolved against Appendix C: its score is uncapped.",
+    "additional_primary_verification": {
+      "url": "https://arxiv.org/html/2611.09798v1#A3",
+      "read_scope": "Borden Source Inversion task card in Appendix C, fetched from original HTML with Python urllib and HTMLParser in memory. The task card explicitly describes an uncapped score. Initial web-tool extraction omitted this task-card text. No PDF pixels or code execution audited.",
+      "outcome": "Corrected the earlier provisional score-conflict caution; bilingual body paragraphs require no change because they did not use this raw score."
+    }
+  }
+}

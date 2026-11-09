@@ -7372,12 +7372,12 @@
     "date": "2026-10-10",
     "first_published": "2026-10-10",
     "first_published_date": "2026-10-10",
-    "last_revised_date": null,
-    "version": "v1",
-    "version_read": "v1",
-    "latest_version_verified": "v1",
+    "last_revised_date": "2026-11-03",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
     "url": "https://arxiv.org/abs/2610.14423",
-    "full_text_url": "https://arxiv.org/html/2610.14423v1",
+    "full_text_url": "https://arxiv.org/html/2610.14423v2",
     "type": "paper",
     "branch": "multimodal-mixture-capacity-repetition",
     "problem": "等比例双模态交互难以指导不等比例、重复受限的三模态训练。",
@@ -7386,8 +7386,8 @@
     "result": "Eight of nine validation losses within 2.51%; text in the non-text-heavy continuation differs by 6.73%.",
     "limitation": "总参数包含非激活专家与embedding；视觉/音频验证loss含关联文本；主要单种子、固定tokenizer与架构；某些项并非在全部消融指标占优；继续预训练文本失败未被延长训练实证修复；15T示例仅外推。",
     "reading_depth": "full_text_targeted",
-    "verification_date": "2026-10-19",
-    "sections_read": "Metadata/history; §§1–6, §9; Appendix G fit validation/ablations, H held-outs, I router interpretation. Not all appendices or visual plots.",
+    "verification_date": "2026-11-09",
+    "sections_read": "Metadata/history; §§1–6, §9; Appendix G fit validation/ablations, H held-outs, I router interpretation. Not all appendices or visual plots.; November9: v2 §6/9 and AppendixG directional-capacity variant, H heldout table, I routing discussion selected",
     "evidence_status": "Primary metadata and selected sections; no independent reproduction, code audit or figure digitization.",
     "synthesis_status": "incorporated",
     "changes_existing_conclusion": "Adds directional mixing and capacity/repetition coupling to T7; no universal coefficients or repetition cutoff.",
@@ -7401,6 +7401,8 @@
       "Audio near-zero transfer is unstable across folds and does not remove its capacity cost.",
       "Claimed NeurIPS spotlight is author metadata, not independently checked venue acceptance."
     ],
+    "last_revised_utc": "2026-11-03T15:28:11Z",
+    "version_verification_note": "Current narrative retained:268experiments,8/9losses within2.51%,6.73%non-text-heavyCPTtext failure. Extra directional-capacity coefficients do not improve all extrapolation regimes; authors retain simpler form. No full revision diff; not independent replication.",
     "canonical_url": "https://arxiv.org/abs/2610.14423",
     "catalogs": [
       "editorial"
@@ -7698,12 +7700,12 @@
     "first_published": "2026-10-30",
     "first_published_date": "2026-10-30",
     "first_published_utc": "2026-10-30T16:21:07Z",
-    "last_revised_date": null,
-    "version": "v1",
-    "version_read": "v1",
-    "latest_version_verified": "v1",
+    "last_revised_date": "2026-11-03",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
     "url": "https://arxiv.org/abs/2610.41970",
-    "full_text_url": "https://arxiv.org/html/2610.41970v1",
+    "full_text_url": "https://arxiv.org/html/2610.41970v2",
     "type": "paper",
     "branch": [
       "T5",
@@ -7715,13 +7717,15 @@
     "result": "Adds configuration-specific evidence for three prerequisites; see paired narrative proposal.",
     "limitation": "Single Cosmos Policy–RoboCasa configuration; noisy hindsight oracle, latency-only pruning, inconclusive power-gated allocation, and nonstandard planning path. No maintainer confirmation or independent rerun.",
     "reading_depth": "full_text_targeted",
-    "verification_date": "2026-11-02",
-    "sections_read": "Official metadata/history; HTML §§1–8, Tables1–2, Supplement §§9–10 and opening §11. Did not inspect all Supplement §12–13 text, figure pixels, preregistration artifacts or released code.",
+    "verification_date": "2026-11-09",
+    "sections_read": "Official metadata/history; HTML §§1–8, Tables1–2, Supplement §§9–10 and opening §11. Did not inspect all Supplement §12–13 text, figure pixels, preregistration artifacts or released code.; November9: v2 §§3–6,Table1, selected9–10 timing/statistical scopes",
     "synthesis_status": "incorporated",
     "changes_existing_conclusion": "T7 connects closed-loop evaluation to the preconditions for inference-time search; does not reverse broader positive scaling evidence.",
     "evidence_status": "Selected primary text/tables; no independent experimental reproduction.",
-    "metadata_notes": "Abstract author listing says Wenbin Zhangg; HTML byline says Wenbin Zhang. Catalog follows HTML byline and preserves this discrepancy rather than claiming author-confirmed correction.",
+    "metadata_notes": "November2 abstract/byline spelling discrepancy retained in historical log; November9 currentv2 abstract and byline both Wenbin Zhang.",
     "independent_replication": false,
+    "last_revised_utc": "2026-11-03T13:38:31Z",
+    "version_verification_note": "Current cited numbers and limits retained: N8/R2/single-switch, -1.66pp, oracle+1.40episodeCIcrosszero,47.9%forwardFLOPs and1.152xcompletequery,latency-only,fullfactorialunlaunched,maintainerconfirmationnotsought. Author byline now Wenbin Zhang, correcting prior abstract Zhangg discrepancy. Targeted current-claim check, not full version diff. Local versioned endpoints returned identical extracted texts; do not infer versions semantically identical.",
     "canonical_url": "https://arxiv.org/abs/2610.41970",
     "catalogs": [
       "editorial"
@@ -7829,21 +7833,21 @@
     "first_published": "2026-10-29",
     "first_published_date": "2026-10-29",
     "first_published_utc": "2026-10-29T09:02:00Z",
-    "last_revised_date": null,
-    "last_revised_utc": null,
+    "last_revised_date": "2026-11-02",
+    "last_revised_utc": "2026-11-02T03:52:43Z",
     "url": "https://arxiv.org/abs/2610.40726",
-    "full_text_url": "https://arxiv.org/html/2610.40726v1",
+    "full_text_url": "https://arxiv.org/html/2610.40726v2",
     "branch": [
       "T4",
       "T5"
     ],
     "year": 2026,
     "type": "paper",
-    "version": "v1",
-    "version_read": "v1",
-    "latest_version_verified": "v1",
+    "version": "v2",
+    "version_read": "v2",
+    "latest_version_verified": "v2",
     "reading_depth": "full_text_targeted",
-    "verification_date": "2026-11-02",
+    "verification_date": "2026-11-09",
     "synthesis_status": "incorporated",
     "independent_replication": false,
     "problem": "同 prompt 的 GRPO 多响应组产生异步同步屏障；单 rollout actor–critic 释放并行度，却需克服 critic 冷启动不准。",
@@ -7851,9 +7855,10 @@
     "method": "Released post-trained Qwen3-4B, DAPO Math 17K, 500 updates, 128 trajectories/update; 8-response bootstrapping then single-rollout asynchronous actor–critic. Mathematical and ReTool settings; additional 30B-A3B coding appendix.",
     "result": "At step 500, math mean AIME pass@1 is 67.0% versus GRPO 63.6%; eight-A800 wall clock is 28.9h versus GRPO's better 2-trainer/6-rollout allocation 36.4h. Response lengths, prompt counts, critic work and allocation differ.",
     "limitation": "One main model family and task setup; 16 evaluation samples/problem do not establish independent training-seed uncertainty. Wall-clock comparisons are configuration-specific, not matched FLOPs or a universal scaling law. Exact-value/on-policy theory does not prove convergence or unbiasedness of clipped, stale, filtered asynchronous implementation.",
-    "sections_read": "Primary abs/history; HTML §§1–5 and limitations; Appendix C.1–C.3, D.1–D.3, F.1, G.3–G.5, H.1–H.4; selected A.5–A.6 theoretical scope and exact-value identities. Figures not digitized; code not executed; proofs not exhaustively audited.",
+    "sections_read": "Primary abs/history; HTML §§1–5 and limitations; Appendix C.1–C.3, D.1–D.3, F.1, G.3–G.5, H.1–H.4; selected A.5–A.6 theoretical scope and exact-value identities. Figures not digitized; code not executed; proofs not exhaustively audited.; November9 current-v2 claim check: v2 §§3–5/limitations,Appendices C.1–C.3,D.3,F.1,G.4; current T4 cited mechanisms/numbers and model identity.",
     "changes_existing_conclusion": "Extends T4's critic-versus-group-relative optimization branch to asynchronous scheduling and measured training time; changes the cost ledger, not the universal compute-optimal exponent.",
     "evidence_status": "First release 2026-10-29; v1 latest on 2026-11-02. HTML title spells Single-Rollout; abs metadata contains Singl-Rollout typo; correct HTML spelling retained.",
+    "version_verification_note": "v2 predates Nov2 scheduled search time but was discovered Nov9. PriorNov2 v1-latest claim is incomplete; preserve old log and explain new verification. This is a targeted claim check, not exhaustive v1→v2 semantic diff.",
     "canonical_url": "https://arxiv.org/abs/2610.40726",
     "catalogs": [
       "editorial"
@@ -7911,5 +7916,288 @@
     "cited_in": [
       "05-inference.md"
     ]
+  },
+  {
+    "id": "baron2026dataconstrainedensemble",
+    "title": "Improving Data-Constrained Scaling with Hyperparameter Transfer and Ensembling",
+    "authors": [
+      "Ethan Baron",
+      "Shmuel Berman",
+      "Anirudh Satheesh",
+      "Akshay Vegesna",
+      "Samip Dahal",
+      "Andrew Gordon Wilson"
+    ],
+    "year": 2026,
+    "date": "2026-10-27",
+    "first_published_date": "2026-10-27",
+    "first_published_utc": "2026-10-27T18:52:54Z",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "url": "https://arxiv.org/abs/2610.37842",
+    "full_text_url": "https://arxiv.org/html/2610.37842v1",
+    "type": "paper",
+    "branch": "data-constrained-pretraining",
+    "problem": "Fixed regularization across repeated-data scales and omission of ensembling can give poor configurations at higher budgets.",
+    "insight": "Transfer hyperparameters with unique data, capacity and epochs, while treating independent member count separately from individual capacity.",
+    "method": "Slowrun-inspired Muon/AdamW FineWeb grid; local quadratic hyperparameter minima and power-law transfer; probability-averaged deep and snapshot ensembles; joint loss fitting.",
+    "result": "At100M unique tokens the combined prescription improves validation loss over0.15nats versus the authors fixed-hyperparameter single-member recipe; allocation tested up to12x per-run fitting compute, hyperparameters separately at16x.",
+    "limitation": "Single recipe/corpus and fixed batch;6UNRM proxy excludes calibration, tuning and inference; counted parameters omit input/value embedding tables. Ensemble-size hyperparameter reuse only locally checked. Quadrillion blog is distant extrapolation of summed ensemble parameters. No independent replication.",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-11-09",
+    "sections_read": "HTML abstract/introduction; §§2–7; Appendices B.1–6,C.1–3,D.1–2; selected AppendixA pathology discussion and D.3–4 descriptions. Numerical plots not digitized, no code or training rerun.",
+    "synthesis_status": "incorporated",
+    "changes_existing_conclusion": "Adds explicit ensemble allocation after T2 repetition/recipe controls; no claim of unlimited data efficiency, deployment optimality or a measured quadrillion-parameter model.",
+    "evidence_status": "Primary abstract/history and targeted HTML methods/appendices verified; no independent reproduction.",
+    "companion_blog": {
+      "url": "https://qlabs.sh/research/parameters/",
+      "title": "Quadrillion-parameter transformers and how to train them",
+      "authors": [
+        "Akshay Vegesna",
+        "Ethan Baron",
+        "Anirudh Satheesh",
+        "Samip Dahal"
+      ],
+      "publication_month_shown": "2026-11",
+      "first_published_date": null,
+      "reading_scope": "Full article text, figure captions and reference list; plot pixels not audited",
+      "deduplication": "Companion explanation of2610.37842, not another independent study."
+    },
+    "canonical_url": "https://arxiv.org/abs/2610.37842",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "roberts2026rewritingscaling",
+    "title": "Rewriting Scaling Laws for Synthetic Data with Compute and Data Constraints",
+    "authors": [
+      "Nicholas Roberts",
+      "Ahmed Ahmed",
+      "Suhas Kotha",
+      "Percy Liang",
+      "Yu Wang",
+      "Alex Renda",
+      "Nitya Mani"
+    ],
+    "year": 2026,
+    "date": "2026-10-22",
+    "first_published_date": "2026-10-22",
+    "first_published_utc": "2026-10-22T19:56:45Z",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "url": "https://arxiv.org/abs/2610.31867",
+    "full_text_url": "https://arxiv.org/html/2610.31867v1",
+    "type": "paper",
+    "branch": "synthetic-rewriting-cost-mixture-repetition",
+    "problem": "Synthetic rewrites change distribution and incur generation cost; optimal mixture and a teacher capability ceiling cannot be inferred from token counts.",
+    "insight": "Optimize a repetition- and mixture-aware loss under a marginal budget that charges both target training and rewrite generation.",
+    "method": "Qwen3 dense/Adam+Hyperball, FineWeb-Edu and FinePhrase; rewrite-dependent floor and repetition penalty; forward budget holdouts,22B target and5B-token finite-data seed experiments.",
+    "result": "32% rewrite22B target has1.1% forecast error in a33.3x training-budget extrapolation; beats instruct rewriter on10/16 Paloma sources but not macroBPB. Data-limited heldout mixture selection within1.14% of best tested loss.",
+    "limitation": "Teacher pretraining excluded; equal source/rewrite lengths and FLOP-bound generation assumed.22B controls share training cost, not generation-inclusive total. Rewriters receive external SFT and LM-judge selection. Pair-specific fits, four styles and limited sources; no universal optimum or general capability superiority.",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-11-09",
+    "sections_read": "HTML §§1–3,5; Appendices C,E,F including F.1,J,L,M,N.1.4,N.3,N.5,N.6,N.7. Some tables read as text; not every derivation/qualitative example or plot audited, no code or training rerun.",
+    "synthesis_status": "incorporated",
+    "changes_existing_conclusion": "Adds generation-cost allocation after WildAI in T2, distinguishing controlled rewrites from wild AI text; narrows teacher-superiority and self-bootstrapping claims.",
+    "evidence_status": "Primary abstract/history and targeted HTML methods/appendices verified; no independent reproduction.",
+    "version_correction_note": "Secondary arxiv.science updated date2026-10-26 is not a verified arXiv revision. Primary lists onlyv1Oct22; attemptedv2HTML returned404. Usev1.",
+    "canonical_url": "https://arxiv.org/abs/2610.31867",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "02-data.md"
+    ]
+  },
+  {
+    "id": "bae2026priors",
+    "title": "Give Up to Get More: Priors, Not Policies, Govern Test-Time Compute Allocation",
+    "authors": [
+      "Jinhyung Bae"
+    ],
+    "date": "2026-11-04",
+    "first_published": "2026-11-04",
+    "first_published_date": "2026-11-04",
+    "first_published_utc": "2026-11-04T11:32:30Z",
+    "last_revised_date": null,
+    "last_revised_utc": null,
+    "url": "https://arxiv.org/abs/2611.06372",
+    "full_text_url": "https://arxiv.org/html/2611.06372v1",
+    "branch": [
+      "T5"
+    ],
+    "year": 2026,
+    "type": "paper",
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-11-09",
+    "synthesis_status": "incorporated",
+    "independent_replication": false,
+    "problem": "预算分配器需要识别下一次尝试的收益；按困难程度单调增加样本会浪费预算，但可用先验的来源与成本也不能忽略。",
+    "insight": "固定独立尝试的边际覆盖收益随成功率呈非单调关系；有验证器时，历史成功率先验可将预算从无望输入转向尚可解决的输入。",
+    "method": "Offline replays of stored math/code/proof responses; static equal-attempt allocation and sequential RR/TS/UCB/myopic policies, cross-fitted related-model histories. Fresh Qwen2.5 samples remain replayed, not a live adaptive-serving experiment.",
+    "result": "At u=16, Table2 Pythia-1.4B MATH RR14.1% and history-TS +12.5 percentage points; Table11 uses independent100-replay set and reports +12.0 [11.5,12.5]. Do not combine their baselines/CIs.",
+    "limitation": "Fixed recurring inputs, iid attempts, main perfect/free verifier and sunk history sampling. Output-character charging is not tokenized FLOPs/latency. Weak priors or false acceptances erase gains; easy cases can lose. Calibration/replay uncertainty does not establish deployment transfer or independent replication.",
+    "sections_read": "Primary metadata/history; HTML §§1–6, Tables1–11, Appendix E.7–E.12; selected theory formulation in §2. Appendix C proofs, continuous-objective appendix and survey coding not fully audited. Public code README read; code not executed.",
+    "changes_existing_conclusion": "Strengthens existing T5 marginal-value allocation discussion with empirical dependence on information quality, recurring-input history and verifier error; not a new universal scaling exponent.",
+    "canonical_url": "https://arxiv.org/abs/2611.06372",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "wang2026parallelteams",
+    "title": "Test-Time Compute Scales Better with Parallel Agent Teams",
+    "authors": [
+      "Junlin Wang",
+      "Haozhe Chen",
+      "Ang Li",
+      "Rahul Chalamala",
+      "Zhuang Liu"
+    ],
+    "date": "2026-11-06",
+    "first_published": "2026-11-06",
+    "first_published_date": "2026-11-06",
+    "first_published_utc": "2026-11-06T17:53:07Z",
+    "last_revised_date": null,
+    "last_revised_utc": null,
+    "url": "https://arxiv.org/abs/2611.09798",
+    "full_text_url": "https://arxiv.org/html/2611.09798v1",
+    "branch": [
+      "T5"
+    ],
+    "year": 2026,
+    "type": "paper",
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-11-09",
+    "synthesis_status": "incorporated",
+    "independent_replication": false,
+    "problem": "独立 agent 反复搜索可能饱和；扩大单一协作团队则降低跨次尝试的独立性与可选择性。",
+    "insight": "小团队内部共享发现，多个团队之间独立运行，再由任务评分器选择最高分结果，将单次质量与跨次变化分开。",
+    "method": "Qwen3.8-27B in Codex harness,12 continuous-score tasks; best-of-pool estimates over roughly100solo and10–11team runs/task; normally12h/agent,6h on Browser Exploit.",
+    "result": "At100agents,10teams of10 outrank solo sampling on10/12tasks; large-team comparison only4tasks. Scores are conditional retained-pool estimates, not broad deployment success guarantees.",
+    "limitation": "Same agent-hours need not mean equal tokens/FLOPs; team agents use1.0–2.2× solo tokens. Large-team counts sparse; infra-killed and known kernel reward-exploit runs excluded. Gaussian fit misses ceilings/tails. Automatic scorer needed; author code link returned404; no independent replication identified.",
+    "sections_read": "Primary metadata/history; HTML §§1–4,6–8 and Appendices B–F,J; selected Appendix A equations and Appendix I discussion; prompt blocks encountered but not executed or adopted as instructions. Figures not digitized; code unavailable through cited URL.",
+    "changes_existing_conclusion": "Adds nested team sampling as a conditional coordination branch after PTTS, distinguishing stronger individual team draws from greater sampling count; not evidence every larger team or fixed team size is optimal.",
+    "canonical_url": "https://arxiv.org/abs/2611.09798",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "05-inference.md"
+    ]
+  },
+  {
+    "id": "vanadrichem2026hinted",
+    "title": "Hinted Scaling Laws",
+    "authors": [
+      "Suze van Adrichem",
+      "Luke Bailey",
+      "Rohith Kuditipudi",
+      "Christine Ye",
+      "Neil Band",
+      "Ahmed Ahmed",
+      "John Duchi",
+      "Percy Liang",
+      "Tatsunori Hashimoto"
+    ],
+    "year": 2026,
+    "date": "2026-11-01",
+    "first_published": "2026-11-01",
+    "first_published_date": "2026-11-01",
+    "first_published_utc": "2026-11-01T22:50:43Z",
+    "last_revised_date": null,
+    "version": "v1",
+    "version_read": "v1",
+    "latest_version_verified": "v1",
+    "url": "https://arxiv.org/abs/2611.02270",
+    "full_text_url": "https://arxiv.org/html/2611.02270v1",
+    "type": "paper",
+    "branch": [
+      "T6",
+      "T1"
+    ],
+    "problem": "Small-model benchmark scores near zero leave large-scale accuracy forecasts unidentified.",
+    "insight": "Intervene on evaluation difficulty using reference-solution hints, fit a joint scale/hint surface, evaluate its zero-hint slice.",
+    "method": "Masking/truncation and teacher-logit mixing; smaller-model fits evaluated on held-out larger models. Delphi plus four released post-trained families.",
+    "result": "Delphi GSM8K prediction within3pp from at-most1e20FLOPs models to1e23FLOPs target;256-question evaluation, solution-conditioned teacher.",
+    "limitation": "One controlled ladder; largest rung one seed; privileged reference solutions, filtered176-question HLE subset, residual answer leakage, teacher/evaluation costs; Qwen2.5 raw-logit inversion and posthoc fix. No prospective independent replication.",
+    "reading_depth": "full_text_targeted",
+    "verification_date": "2026-11-09",
+    "sections_read": "Abs/history; HTML §§1–4,7; §5 metric-order discussion; Appendices A–C, E.1–E.2 and F premise/proposition (not full proof audit); no code run or figure digitization.",
+    "synthesis_status": "incorporated",
+    "changes_existing_conclusion": "Extends T6 emergence/identifiability branch with an intervention on evaluation difficulty; no unassisted capability gain or universal emergence prediction.",
+    "independent_replication": false,
+    "evidence_notes": [
+      "Largest Delphi target has one seed; other11budgets three each; fit seed means.",
+      "HLE requires correct generated solutions and excludes images/multiple-choice/options; final176questions.",
+      "AppendixB finds4/600AIME and2/1760HLE solutions stating answers after rewriting.",
+      "AppendixC uses union of top16logits per model, not full-vocabulary implementation.",
+      "Qwen2.5 correction chosen after observing inversion; AIME only."
+    ],
+    "canonical_url": "https://arxiv.org/abs/2611.02270",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": [
+      "06-theory-evaluation.md"
+    ]
+  },
+  {
+    "id": "metr2026rdacceleration",
+    "title": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026",
+    "authors": [
+      "Tom Cunningham",
+      "Nate Rush",
+      "Parker Whitfill",
+      "Hjalmar Wijk"
+    ],
+    "year": 2026,
+    "date": "2026-11-05",
+    "first_published": "2026-11-05",
+    "first_published_date": "2026-11-05",
+    "last_revised_date": "2026-11-06",
+    "type": "official_technical_report",
+    "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+    "full_text_url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+    "branch": [
+      "T6"
+    ],
+    "version": "Public report; November 6 update",
+    "version_read": "Public report with November 6 update",
+    "latest_version_verified": "November 6 update",
+    "reading_depth": "official_report_sections",
+    "verification_date": "2026-11-09",
+    "synthesis_status": "index_only",
+    "independent_replication": false,
+    "problem": "Does faster benchmark progress identify AI-driven R&D acceleration?",
+    "insight": "Separate observed trends from the unobserved no-AI counterfactual.",
+    "method": "Piecewise AECI trends, internal information and interviews.",
+    "result": "AECI growth-slope estimate: 1.9x (95% interval 1.5–2.8), not a causal treatment effect.",
+    "limitation": "Redactions prevent a public causal replication; no general scaling law follows.",
+    "sections_read": "Summary, subjective conclusions, key findings, process, limitations, methodology, AECI estimation/link-function table, selected access disclosures, update log and author footnote. Remaining appendix text, chart pixels, underlying data and code not comprehensively audited.",
+    "changes_existing_conclusion": "Adds a measurement-versus-attribution example to the community radar and source index; does not rewrite technical chapters.",
+    "evidence_status": "November 6 correction changes AEF item 1.1 to No because no query access; the report citation suggests institutional author METR while footnote 2 names four authors.",
+    "canonical_url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment",
+    "catalogs": [
+      "editorial"
+    ],
+    "cited_in": []
   }
 ]
